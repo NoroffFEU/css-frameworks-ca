@@ -1,3 +1,44 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: $body-bg;
+  color: $body-color;
+}
+
+main {
+  margin-top: 4rem;
+}
+
+.btn {
+  background-color: $btn-color;
+  border: none;
+
+  &:hover {
+    background-color: #9dc08b;
+  }
+  &-unfollow {
+    background-color: #dc3535;
+  }
+  &-unfollow:hover {
+    background-color: #820000;
+  }
+}
+
+.profile-img {
+  width: 20%;
+}
+
+.name {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.small-text {
+  font-weight: 400;
+}
+
+.table {
+  margin-top: 30px;
+}

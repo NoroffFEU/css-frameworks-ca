@@ -24,6 +24,14 @@ main {
   &-unfollow:hover {
     background-color: #820000;
   }
+  &-post {
+    max-width: 7rem;
+  }
+}
+
+.send-post {
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .profile-img {
@@ -41,4 +49,8 @@ main {
 
 .table {
   margin-top: 30px;
+}
+
+.thumbnail-img {
+  width: 100%;
 }

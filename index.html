@@ -13,8 +13,7 @@
       <div class="col-lg-5 p-3 p-lg-5 pt-lg-3">
         <h1 class="display-4 fw-bold lh-1">Welcome to Urban Garden</h1>
         <p class="lead">Meet your people of interest, gain ideas, exchange experience! Sell and buy seeds, rent your tools or just breathe and refuel your soul in this creative and peaceful community </p>
-        <form>
-          <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+        <!-- <form>
           <h1 class="h3 mb-3 fw-normal">Please log in</h1>
       
           <div class="form-floating">
@@ -31,15 +30,28 @@
               <input type="checkbox" value="remember-me"> Remember me
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
-          <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
+          <button class="w-100 btn btn-lg btn-primary" type="submit"><a href="profile.html">Log in</a></button>
+        </form> -->
+        <form class="p-4 p-md-5 border rounded-3 bg-light">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit"><a class="w-100 btn btn-lg btn-primary" href="profile.html">Log in</a></button>
+          <hr class="my-4">
+          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
         </form>
-        <p class="mt-2">Don't have an account? <strong>Sign up</strong></p>
-        
-        <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
-        </div> -->
+
+        <p class="mt-2">Don't have an account?<strong>Sign up</strong></p>
       </div>
       <div class="col-lg-6 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img class="rounded-lg-3" src="css_frameworks_img\Hero_urban_garden_img.jpg" alt="" width="720">

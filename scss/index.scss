@@ -1,0 +1,45 @@
+h1{
+    
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.card-body-dark {
+    background-color: #212529;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .card-dark {
+    border: 1px solid white;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%
+  }
+  
+  .card-body {
+    flex-grow: 1;
+  }
+  .card-img-top{
+      height:150px
+  }
+
+  @media only screen and (min-width: 300px) {
+    .card-img-top{
+       height:220px
+   }
+ }
+ @media only screen and (min-width: 1000px) {
+    .top-line{
+       margin-bottom: 100px;
+    .profilePic{
+        height: 300px;
+        width: 300px;
+    }
+   }
+ }

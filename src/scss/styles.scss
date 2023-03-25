@@ -1,2 +1,8 @@
+$font-color: #161616;
+
+// Links
+$link-color: $font-color;
+$link-decoration: none;
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "./components/buttons";

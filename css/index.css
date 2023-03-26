@@ -1,16 +1,6 @@
 h1 {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-}
-
-.card-body-dark {
-  background-color: #212529;
-  color: white;
-  border: 1px solid white;
-}
-
-.card-dark {
-  border: 1px solid white;
 }
 
 .card {
@@ -25,7 +15,13 @@ h1 {
 }
 
 .card-img-top {
-  height: 150px;
+  height: 1s50px;
+}
+
+.card-body-dark {
+  background-color: #212529;
+  color: #e7efef;
+  border: 1px solid white;
 }
 
 @media only screen and (min-width: 300px) {
@@ -42,3 +38,5 @@ h1 {
     width: 300px;
   }
 }
+
+/*# sourceMappingURL=index.css.map */

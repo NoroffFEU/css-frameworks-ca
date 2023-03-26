@@ -1,7 +1,13 @@
-$font-color: #161616;
+// text and colors
+
+$body-color: #161616;
+$primary: #3081b0;
+$secondary: #c488a4;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+$font-family-base: "Roboto", sans-serif;
 
 // Links
-$link-color: $font-color;
+$link-color: #474747;
 $link-decoration: none;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";

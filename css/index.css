@@ -122,7 +122,7 @@
 }
 
 .card-img-top {
-  height: 50px;
+  height: 220px;
 }
 
 .card-body-dark {
@@ -131,23 +131,12 @@
   border: 1px solid white;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 960px) {
   .card-img-top {
-    height: 220px;
+    height: 200px;
   }
 }
-button {
-  color: white;
-  border: 0;
-  background: #181ecf;
-}
-
-h1 {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 960px) {
   .top-line {
     margin-bottom: 100px;
   }

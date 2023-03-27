@@ -8,7 +8,7 @@
     flex-grow: 1;
   }
   .card-img-top{
-      height:50px
+    height:220px
   }
   
   .card-body-dark {
@@ -17,8 +17,8 @@
     border: 1px solid white;
   }
   
-    @media only screen and (min-width: 300px) {
+    @media only screen and (min-width: $screen-md-min) {
       .card-img-top{
-         height:220px
+         height:200px
      }
    }

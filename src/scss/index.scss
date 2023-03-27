@@ -13,6 +13,7 @@ main {
 
 .btn {
   background-color: $btn-color;
+  color: $btn-text-color;
   border: none;
 
   &:hover {

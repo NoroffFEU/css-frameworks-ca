@@ -8,16 +8,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <div class="container">
-            <div class="row">
-            <div class="col-6">
-                <h1>My Social</h1>
-                <h2>My social is the biggest social media at the moment </h2>
-            </div>
-            <div class="col-6">
-                // Column content goes here
-            </div>
+    <div class="mt-5">
+        <div class="container m">
+            <div class="row justify-content-center">
+                <div class="col-6 m-5 w-25">
+                    <h1 class="">My Social</h1>
+                    <h2>My social is the biggest social media at the moment </h2>
+                </div>
+                <div class="col-6 m-5 w-25">
+                    <div class="">
+                        <form class="row g-3 d-flex flex-column">
+                            <div class="col-auto">
+                            <label for="staticEmail2" class="visually-hidden">Email</label>
+                            <input type="text"  class="form-control" id="email" placeholder="You E-mail">
+                            </div>
+                            <div class="col-auto">
+                            <label for="inputPassword2" class="visually-hidden">Password</label>
+                            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                            </div>
+                            <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-3 w-100">Confirm identity</button>
+                            </div>
+                            <hr>
+                            <p class="mt-0 ">or</p>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-3 w-100">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -15,10 +15,14 @@ toggleDarkModeButton.addEventListener('click', () => {
 const loginButton = document.getElementById('login-button');
 const passwordInput = document.getElementById('password');
 
-loginButton.addEventListener('click', (event) => {
+function handleLogin(event) {
   if (passwordInput.value.length >= 8) {
     event.preventDefault();
     window.location.href = '/profile/index.html';
   }
-});
+}
 
+if (loginButton) {
+  loginButton.addEventListener('click', handleLogin);
+  handleLogin();
+}

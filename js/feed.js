@@ -30,7 +30,7 @@ const fetchData = async () => {
       
       // Append elements to card and card to cardDiv
       cardBody.appendChild(title);
-      cardBody.appendChild(description);
+      // cardBody.appendChild(description);
       card.appendChild(img);
       card.appendChild(cardBody);
       cardDiv.appendChild(card);

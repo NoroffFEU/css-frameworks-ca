@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
-<body>
-    <div class="mt-5">
-        <div class="container m">
-            <div class="row justify-content-center">
-                <div class="col-6 m-5 w-25">
-                    <h1 class="">My Social</h1>
+<body class="bg-primary">
+    <div class="m-5">
+        <div class="container" style="margin: 150px auto;">
+            <div class="row justify-content-center flex-wrap mt-5 ">
+                <div class="col-6 m-3 p-5 bg-light rounded-3" style="width: 400px;">
+                    <h1 class="text-primary">My Social</h1>
+                    <hr>
                     <h2>My social is the biggest social media at the moment </h2>
                 </div>
-                <div class="col-6 m-5 w-25">
+                <div class="col-6 m-3 p-5  bg-light rounded-3" style=" width: 400px;">
                     <div class="">
                         <form class="row g-3 d-flex flex-column">
                             <div class="col-auto">
                             <label for="staticEmail2" class="visually-hidden">Email</label>
-                            <input type="text"  class="form-control" id="email" placeholder="You E-mail">
+                            <input type="text"  class="form-control" id="email" placeholder="Your E-mail">
                             </div>
                             <div class="col-auto">
                             <label for="inputPassword2" class="visually-hidden">Password</label>
@@ -29,10 +30,13 @@
                             <div class="col-auto">
                             <button type="submit" class="btn btn-primary mb-3 w-100">Confirm identity</button>
                             </div>
-                            <hr>
-                            <p class="mt-0 ">or</p>
+                            <div>
+                                <hr class="m-0">
+                                <p class="text-center m-0">or</p>
+                            </div>
+                            
                             <div class="col-auto">
-                                <button type="submit" class="btn btn-primary mb-3 w-100">Subscribe</button>
+                                <button type="submit" class="btn btn-success mb-3 w-100">Subscribe</button>
                             </div>
                         </form>
                     </div>
@@ -40,5 +44,12 @@
             </div>
         </div>
     </div>
+    <footer class="bg-light mt-5 ">
+        <div class="text-center ">
+            <h2 class="text-secondary pt-4">My Social</h2>
+            <p class="m-0 pb-5">Is a website powered by Bootrtrap and SASS</p>
+        </div>
+
+    </footer>
 </body>
 </html>

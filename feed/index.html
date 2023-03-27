@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <title>Circle | Feed</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand font-weight-bold"
+            style="color: #c488a4"
+            href="index.html"
+            >Circle</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="/profile/index.html"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/feed/index.html">Feed</a>
+              </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container mt-5">
+        <div class="row d-flex">
+          <div class="col-lg-4 bg-light p-3">
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Create new post</label>
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button class="btn btn-primary mt-3">Submit</button>
+            </form>
+          </div>
+          <div class="col-lg-8">
+            <h4 class="m-2">Feed</h4>
+            <div class="dropdown show m-2">
+              <a
+                class="btn-2 dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Sort
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Latest</a>
+                <a class="dropdown-item" href="#">Most popular</a>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <h5 class="card-title">John Doe</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">03/23/2023</h6>
+                </div>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  sed euismod nibh, ac mattis velit. Phasellus ipsum dolor,
+                  tincidunt dictum leo a, laoreet convallis felis.
+                </p>
+                <button class="btn-2">Like</button>
+                <button class="btn-2">Comment</button>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <h5 class="card-title">John Doe</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">03/23/2023</h6>
+                </div>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  sed euismod nibh, ac mattis velit. Phasellus ipsum dolor,
+                  tincidunt dictum leo a, laoreet convallis felis.
+                </p>
+                <button class="btn-2">Like</button>
+                <button class="btn-2">Comment</button>
+              </div>
+            </div>
+            <div class="card m-2">
+              <div class="card-body">
+                <div class="d-flex flex-column">
+                  <h5 class="card-title">John Doe</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">03/23/2023</h6>
+                </div>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                  sed euismod nibh, ac mattis velit. Phasellus ipsum dolor,
+                  tincidunt dictum leo a, laoreet convallis felis.
+                </p>
+                <button class="btn-2">Like</button>
+                <button class="btn-2">Comment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

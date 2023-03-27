@@ -1,33 +1,29 @@
 // Variables and Functions
 @import 'variables';
 
-h1{ 
-  font-size: 30px;
-  font-weight: bold;   
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%
-}
-.card-body {
-  flex-grow: 1;
-}
-.card-img-top{
-    height:1s50px
-}
-.card-body-dark {
-  background-color: $dark;
-  color: $secondary;
-  border: 1px solid white;
+// Base and Layout
+
+// @import 'base';
+
+// colors
+
+
+
+@import 'colors';
+// Cards
+@import'cards';
+
+button{
+  color: white;
+  border: 0;
+  background: $action
 }
 
-  @media only screen and (min-width: 300px) {
-    .card-img-top{
-       height:220px
-   }
- }
+h1{ 
+  font-size: 30px;
+  font-weight: bold;
+}
+
  @media only screen and (min-width: 1000px) {
     .top-line{
        margin-bottom: 100px;

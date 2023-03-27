@@ -1,18 +1,17 @@
 // Theme colors
-$primary:#326dee;
-$secondary:#e7efef;
-$error:#d32752;
+$primary: #030812;
+$secondary:#b3bfb3;
+$action:#181ecf;
 $info:#f6c31c;
-$dark:#212529;
-
+$dark:#1a1a1a;
 // Color palette
 
 $colors:(
     "primary":$primary,
     "secondary":$secondary,
-    "error":$error,
     "info":$info,
     "dark":$dark,
+    "action":$action,
     "blue":#1919e6,
     'red':#e61919,
     'yellow':#e6e619,
@@ -20,7 +19,7 @@ $colors:(
     'orange':#ffa600,
     'purple':#9900ff,
     'gray':#808080,
-    'white':rgb(223, 26, 26),
+    'white':rgb(255, 255, 255),
     'black':black,
 );
 

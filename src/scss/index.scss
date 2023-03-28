@@ -1,57 +1,8 @@
-@import "../../node_modules/bootstrap/scss/functions";
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "base";
+@import "ui";
+@import "typography";
+@import "forms";
 
-body {
-  background-color: $body-bg;
-  color: $body-color;
-}
-
-main {
-  margin-top: 4rem;
-}
-
-.btn {
-  background-color: $btn-color;
-  color: $btn-text-color;
-  border: none;
-
-  &:hover {
-    background-color: #9dc08b;
-  }
-  &-unfollow {
-    background-color: #dc3535;
-  }
-  &-unfollow:hover {
-    background-color: #820000;
-  }
-  &-post {
-    max-width: 7rem;
-  }
-}
-
-.send-post {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-.profile-img {
-  width: 20%;
-}
-
-.name {
-  font-weight: 900;
-  font-size: 1.2rem;
-}
-
-.small-text {
-  font-weight: 400;
-}
-
-.table {
-  margin-top: 30px;
-}
-
-.thumbnail-img {
-  width: 100%;
-}
+@import "../../node_modules/bootstrap/scss/functions";

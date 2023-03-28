@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
     <title>Circle | Feed</title>
   </head>
   <body>
@@ -26,20 +26,22 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon navbar-dark"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link active text-light"
+                  class="nav-link text-light"
                   aria-current="page"
                   href="/profile/index.html"
                   >Profile</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="/feed/index.html">Feed</a>
+                <a class="nav-link active text-light" href="/feed/index.html"
+                  >Feed</a
+                >
               </li>
             </ul>
 
@@ -73,23 +75,19 @@
           </div>
           <div class="col-lg-8">
             <h4 class="m-2">Feed</h4>
-            <div class="dropdown show m-2">
-              <a
-                class="btn-2 dropdown-toggle"
-                href="#"
-                role="button"
-                id="dropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
+            <div class="dropdown m-2">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Sort
-              </a>
-
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Latest</a>
-                <a class="dropdown-item" href="#">Most popular</a>
-              </div>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Latest</a></li>
+                <li><a class="dropdown-item" href="#">Most popular</a></li>
+              </ul>
             </div>
             <div class="card m-2">
               <div class="card-body">
@@ -140,5 +138,10 @@
         </div>
       </div>
     </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

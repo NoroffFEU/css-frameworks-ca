@@ -1,0 +1,52 @@
+body {
+  background-color: #e4dccf;
+  color: #002b5b;
+}
+
+main {
+  margin-top: 4rem;
+}
+
+.btn {
+  background-color: #539165;
+  color: #fff;
+  border: none;
+}
+.btn:hover {
+  background-color: #9dc08b;
+}
+.btn-unfollow {
+  background-color: #dc3535;
+}
+.btn-unfollow:hover {
+  background-color: #820000;
+}
+.btn-post {
+  max-width: 7rem;
+}
+
+.thumbnail-img {
+  width: 100%;
+}
+
+.profile-img {
+  width: 20%;
+}
+
+.name {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.small-text {
+  font-weight: 400;
+}
+
+.send-post {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.table {
+  margin-top: 30px;
+}/*# sourceMappingURL=index.css.map */

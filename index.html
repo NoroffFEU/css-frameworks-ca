@@ -30,18 +30,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                <a class="nav-link" href="#">Feed</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -52,6 +41,60 @@
         </div>
       </nav>
    </header>
+   <main class="container">
+
+    <div class="col-12">
+        <h1 class="col-12 text-center">Login</h1>
+      </div>
+      <div class="col-12 d-flex align-items-center justify-content-center mt-3">
+        <form action="/profile/index.html">
+            <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            </div>
+
+            <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" minlength="8" required>
+            <div id="password" class="form-text">never share your password.</div>
+            </div>
+
+            <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Keep me logged in.</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </form>
+      </div>
+    <br>
+      <div class="col-16 align-items-center justify-content-center mt-3">
+        <h1 class="col-12 text-center">Sign up</h1>
+        <form class="row g-3">
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+              <div id="password" class="form-text">never share your password.</div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                </div>
+              </div>
+            
+            <div class="col-6">
+              <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+          </form>
+      </div>
+
+   </main>
 
 <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

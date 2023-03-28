@@ -1,0 +1,24 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%
+  }
+  .card-body {
+    flex-grow: 1;
+  }
+  .card-img-top{
+    height:220px
+  }
+  
+  .card-body-dark {
+    background-color: $dark;
+    color: $secondary;
+    border: 1px solid white;
+  }
+  
+    @media only screen and (min-width: $screen-md-min) {
+      .card-img-top{
+         height:200px
+     }
+   }

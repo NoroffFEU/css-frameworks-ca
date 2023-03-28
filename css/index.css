@@ -1,0 +1,149 @@
+.text-primary {
+  color: #030812;
+}
+
+.bg-primary {
+  background-color: #030812;
+}
+
+.text-secondary {
+  color: #b3bfb3;
+}
+
+.bg-secondary {
+  background-color: #b3bfb3;
+}
+
+.text-info {
+  color: #f6c31c;
+}
+
+.bg-info {
+  background-color: #f6c31c;
+}
+
+.text-dark {
+  color: #1a1a1a;
+}
+
+.bg-dark {
+  background-color: #1a1a1a;
+}
+
+.text-action {
+  color: #181ecf;
+}
+
+.bg-action {
+  background-color: #181ecf;
+}
+
+.text-blue {
+  color: #1919e6;
+}
+
+.bg-blue {
+  background-color: #1919e6;
+}
+
+.text-red {
+  color: #e61919;
+}
+
+.bg-red {
+  background-color: #e61919;
+}
+
+.text-yellow {
+  color: #e6e619;
+}
+
+.bg-yellow {
+  background-color: #e6e619;
+}
+
+.text-green {
+  color: #19e365;
+}
+
+.bg-green {
+  background-color: #19e365;
+}
+
+.text-orange {
+  color: #ffa600;
+}
+
+.bg-orange {
+  background-color: #ffa600;
+}
+
+.text-purple {
+  color: #9900ff;
+}
+
+.bg-purple {
+  background-color: #9900ff;
+}
+
+.text-gray {
+  color: #808080;
+}
+
+.bg-gray {
+  background-color: #808080;
+}
+
+.text-white {
+  color: rgb(255, 255, 255);
+}
+
+.bg-white {
+  background-color: rgb(255, 255, 255);
+}
+
+.text-black {
+  color: black;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+.card-img-top {
+  height: 220px;
+}
+
+.card-body-dark {
+  background-color: #1a1a1a;
+  color: #b3bfb3;
+  border: 1px solid white;
+}
+
+@media only screen and (min-width: 960px) {
+  .card-img-top {
+    height: 200px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .top-line {
+    margin-bottom: 100px;
+  }
+  .top-line .profilePic {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

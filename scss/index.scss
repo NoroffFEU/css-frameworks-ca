@@ -1,0 +1,27 @@
+// Variables and Functions
+
+@import 'variables';
+
+// @import 'base';
+
+@import '_media_queries';
+
+// colors
+
+@import 'colors';
+
+// Cards
+
+@import'cards';
+
+
+
+ @media only screen and (min-width: $screen-md-min) {
+    .top-line{
+       margin-bottom: 100px;
+    .profilePic{
+        height: 300px;
+        width: 300px;
+    }
+   }
+ }

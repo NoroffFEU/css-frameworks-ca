@@ -1,13 +1,15 @@
 {
-  "name": "css-frameworks-ca",
-  "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
-  "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
+  "name": "250323",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.60.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NoroffFEU/css-frameworks-ca.git"
+  "scripts": {
+    "build": "sass scss:css",
+    "watch": "sass --watch scss:css & live-server"
   },
   "keywords": [
     "CSS",
@@ -17,7 +19,7 @@
     "SCSS",
     "SASS"
   ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
+  "author": "Per Rune Overelv",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"

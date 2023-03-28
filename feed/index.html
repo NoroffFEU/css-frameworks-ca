@@ -140,30 +140,34 @@
       <div class="row justify-content-center send-post">
         <h3 class="text-center mt-4">Add new post:</h3>
         <div class="col-12 col-sm-6">
+          <form action="/index.html">
           <input
             type="text"
             class="form-control mb-2"
-            placeholder="Name"
-            aria-label="Name"
+            placeholder="Name" minlength="3"
+            aria-label="Name" required
           />
         </div>
         <div class="col-12 col-sm-6">
           <input
-            type="text"
+            type="email"
             class="form-control"
             placeholder="Email"
             aria-label="Email"
+            id="email"
+            required
           />
         </div>
         <div class="col-12 col-sm-12">
           <textarea
             class="form-control mx-auto mt-2 p-2"
             id="message"
-            rows="3"
-            placeholder="Type your post"
+            rows="3" minlength="10" required
+            placeholder="Type at least 10 characters"
           ></textarea>
         </div>
         <button class="btn btn-primary btn-post mt-2">Post</button>
+      </form>
       </div>
     </main>
   </body>

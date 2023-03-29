@@ -1,22 +1,2 @@
-$input-disabled-color: red;
-$input-color: red;
-$body-bg: rgb(249, 249, 198);
-// $--bs-btn-bg: #539165;
-// $btn-primary: red;
-$nav-pills-link-active-bg: #bcc2ca;
-$btn-link-btn-color:black;
-$btn-btn-bg: grey;
-$btn-link-color:black;
-$link-color:black;
-$buttons-btn-primary-btn-bg:#bcc2ca;
-$form-control-colums: 50%;
-
-// $btn-primary-btn-border-color: #535455 !important;
-// $background-color-btn-bg: #bcc2ca;
-// $btn-primary-btn-bg: #bcc2ca;
-// $btn-background-color-btn-bg:#bcc2ca;
-// $btn-primary-btn-bg:#bcc2ca;;
-
-// $primary-btn-bg: #bcc2ca;
-
+@import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";

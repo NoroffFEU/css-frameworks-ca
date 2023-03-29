@@ -48,22 +48,38 @@
         <br>
         
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Create new post</label>
+            <label for="exampleFormControlTextarea1" class="form-label comment"> <h3>Create new post: </h3></label>
             <textarea class="form-control mt-2 p-2" id="exampleFormControlTextarea1" placeholder="Type here minimum 5 characters" minlength="5" rows="4"></textarea>
             <div class="col-12">
-                <button class="btn btn-primary" type="submit">Post</button>
+                <button class="btn btn-primary mt-2" type="submit">Post</button>
               </div>
           </div>
 
           <br>
-            <div class="col-4 filter">
+          <div class="row feed-filter">
+            <div class="col-6 filter">
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Filter posts</option>
                     <option value="1">New</option>
                     <option value="2">Old</option>
                     <option value="3">Popular</option>
                   </select>
+
+                  
             </div>
+
+            <div class="col-6 search">
+                <label for="exampleDataList" class="form-label"></label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                    <datalist id="datalistOptions">
+                    <option value="Astronauts">
+                    <option value="Moon">
+                    <option value="Skynet">
+                    
+                    </datalist>
+
+            </div>
+        </div>
 
             <div class="justify-content-center card-container">
                 <div class="card mb-3">

@@ -9,20 +9,26 @@
 </head>
 <body>
     <!-- SEARCH BAR -->
-    <div>
-        <div class="mb-3">
-            <label for="searchBar" class="form-label"></label>
-            <input type="text" class="form-control" id="searchBar" placeholder="Search">
-            <button type="submit" class="btn btn-primary">search</button>
-          </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-4 my-3 ">
+          <!-- <label for="searchBar" class="form-label"></label> -->
+          <input type="text" class="form-control" id="searchBar" placeholder="Search">
+        </div>
+        <div class="col-1 my-3">
+          <button type="submit" class="btn btn-primary">search</button>
+        </div>
+        <!-- SORT -->
+        <select class="col-2 my-3">
+          <option selected>Sort Posts By</option>
+          <option value="1">Newest posts</option>
+          <option value="2">Oldest posts</option>
+          <option value="3">Most popular</option>
+        </select>
+      </div>
     </div>
-    <!-- SORT -->
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Sort Posts By</option>
-        <option value="1">Newest posts</option>
-        <option value="2">Oldest posts</option>
-        <option value="3">Most popular</option>
-      </select>
+    
+    
     <!-- LIST OF POSTS  -->
     <div class="container">
         <div class="row">

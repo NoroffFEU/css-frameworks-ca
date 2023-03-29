@@ -1,104 +1,94 @@
-
-
 @import "variables"; /* /src/scss/_variables.scss */
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.indexBody{
-    background: url(/images/allIndancefront.jpg);
-    background-position: center center;
+.indexBody {
+  background: url(/images/allIndancefront.jpg);
+  background-position: center center;
   background-size: cover;
   background-attachment: fixed;
 }
-header{
-    background-color: $custom-color1;
-    display: flex;
-    justify-content: end;
-    height: 10vh;
-    align-items: center;
+
+header {
+
+  display: flex;
+  justify-content: end;
+  height: 10vh;
+  align-items: center;
 }
 
-
-
-nav{
-    height: 150px;
-    display: flex;
-    align-items: center;
+nav {
+  height: 150px;
+  display: flex;
+  align-items: center;
 }
 
-.mobile-margin{
-    margin-bottom: 100px;
+.mobile-margin {
+  margin-bottom: 100px;
 }
 
-.searchBar{
-    display: flex;
-    flex-direction: row;
-    padding-right: 20px;
+.form-text {
+  color: $text-dark;
 }
 
-.searchButton{
-    margin-left: 10px;
+.feedH1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  font-size: 50px;
 }
-
-
-.form-text{
-   color:  $text-dark;
-}
-
-
 
 .login {
-    width: 360px;
-    height: min-content;
-    padding: 20px;
-    border-radius: 12px;
-    background: $custom-color1;
-   
+  width: 360px;
+  height: min-content;
+  padding: 20px;
+  border-radius: 12px;
+  background: $custom-color1;
 }
 
 .login h1 {
-    font-size: 36px;
-    margin-bottom: 25px;
+  font-size: 36px;
+  margin-bottom: 25px;
 }
 
 .login form {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .login form .form-group {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .login form input[type="submit"] {
-    font-size: 20px;
-    margin-top: 15px;
+  font-size: 20px;
+  margin-top: 15px;
 }
 
-
-.loginContainer{
-    display: flex;
-    justify-content:flex-end;
-    margin-top: 100px;
-    margin-right: 150px;
+.loginContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 100px;
+  margin-right: 150px;
 }
 
-.gradient-custom-2 {
-/* fallback for old browsers */
-background: #fbc2eb;
+.gradient-custom-2,
+nav,
+body {
+  /* fallback for old browsers */
+  background: #fbc2eb;
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgb(145, 84, 128), rgba(166, 193, 238, 1));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(191, 149, 157),
+    rgba(166, 193, 238, 1)
+  );
 
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgb(145, 84, 128), rgba(166, 193, 238, 1))
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgb(191, 149, 157),
+    rgba(166, 193, 238, 1)
+  );
 }
-
-
-
-
-
-
-
-
-

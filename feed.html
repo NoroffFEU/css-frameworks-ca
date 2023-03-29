@@ -7,10 +7,10 @@
     <title>Document</title>
     <link href="dist/css/styles.css" rel="stylesheet" />
   </head>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mobile-margin">
+  <nav class="navbar navbar-expand-lg navbar-light mobile-margin">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="/images/DanceLify.jpg" alt="" width="100" height="24" />
+        <img src="/images/DanceLifySeet.png" alt="" width="120" height="24" />
       </a>
       <button
         class="navbar-toggler"
@@ -26,7 +26,9 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/profile.html"
+              >My Profile</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Feed</a>
@@ -34,32 +36,28 @@
         </ul>
       </div>
     </div>
+    <form>
+      <div class="input-group mb-3">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </div>
+    </form>
   </nav>
-  <form>
-    <div class="input-group mb-3 w-25">
-    <input
-      class="form-control me-2"
-      type="search"
-      placeholder="Search"
-      aria-label="Search"
-    />
-    <button class="btn btn-outline-success" type="submit">Search</button>
-    </div>
-  </form>
-  <div class="form-row">
-    <div class="input-group col-md-4 mt-4 w-25">
-      <label class="input-group-text" for="inputGroupSelect01">Options</label>
-      <select class="form-select" id="inputGroupSelect01">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
 
   <body>
-    <div class="row row-cols-2 row-cols-md-3 g-4 mt-5 mt-md-0">
+    <h1 class="feedH1">ALL POSTS</h1>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Search by dance cathegory</option>
+      <option value="1">Ballet</option>
+      <option value="2">Jazz</option>
+      <option value="3">Hip Hop</option>
+      <option value="4">Contemporary</option>
+    </select>
+    <div class="row row-cols-2 row-cols-md-3 g-4 mt-5 mt-md-0 mx-2">
       <div class="col">
         <div class="card">
           <img

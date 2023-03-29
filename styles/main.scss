@@ -1,0 +1,14 @@
+$theme-colors: (
+  "primary": #709176,
+  "background": #f6edd9,
+);
+
+nav {
+  height: 80px;
+}
+
+.nav-link {
+  color: white;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

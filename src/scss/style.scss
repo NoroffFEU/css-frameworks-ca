@@ -1,3 +1,7 @@
-@use "components";
+@use "../scss/components/colors";
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+.bg-primary {
+    background-color: $background-blue;
+}

@@ -17,7 +17,7 @@
     <link rel="icon" href="images/icons/logo.svg" type="image/svg" />
     <title>NatuGram - Log in</title>
   </head>
-  <body class="bg-secondary">
+  <body>
     <nav class="navbar navbar-dark navbar-expand-lg bg-primary py-3 px-2">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#"
@@ -42,49 +42,51 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#"
+              <a
+                class="nav-link active text-white"
+                aria-current="page"
+                href="../index.html"
                 >Log in</a
               >
             </li>
             <li class="nav-item text-white">
-              <a class="nav-link" href="#">Feed</a>
+              <a class="nav-link" href="/feed/index.html">Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">My profile</a>
+              <a class="nav-link" href="/profile/index.html">Profile</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container text-center mt-5">
+    <div class="d-flex justify-content-center container text-center mt-5">
       <div class="row justify-content-center">
         <div class="col-12">
           <h1 class="text-primary text-center pt-5 mb-4">Log in</h1>
         </div>
-        <div
-          style="max-width: 400px; height: 38px"
-          class="input-group mb-4 mb-lg-0 col-12 ps-5 pe-5"
-        >
-          <input
-            type="text"
-            class="form-control border-primary"
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <div
-          style="max-width: 400px; height: 38px"
-          class="input-group mb-4 mb-lg-0 col-12 ps-5 pe-5"
-        >
-          <input
-            type="password"
-            class="form-control border-primary"
-            placeholder="Password"
-            aria-label="Password"
-            aria-describedby="basic-addon1"
-          />
-        </div>
+        <form class="">
+          <div class="input-group mb-4 col-12 ps-5 pe-5 log-in-input">
+            <input
+              type="text"
+              class="form-control border-primary"
+              placeholder="Username"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="input-group mb-4 col-12 ps-5 pe-5 log-in-input">
+            <input
+              type="password"
+              class="form-control border-primary"
+              placeholder="Password"
+              aria-label="Password"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary text-white">Log in</button>
+          </div>
+        </form>
       </div>
     </div>
 

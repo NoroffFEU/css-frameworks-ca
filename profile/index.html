@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../dist/css/index.css">
+</head>
+<body class="m-0 bg-secondary">
+  <header class="container-fluid bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="../feed/">dev[ops]</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../feed/">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../profile/">Profile</a>
+            </li>
+          </ul>
+          <form class="d-flex col-lg-5 col-me-12 " role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="../">Log Out</a> 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container pt-5">
+    <div class="row">
+      <div class="col-md-4 col-12 mt-4">
+        <div class="card ">
+          <h1 class="text-center">Profile</h1>
+          <div class="card-body mx-md-0 mx-lg-5">
+            <img src="../img/user.png" alt="" style="width: 100%;">
+          
+            <div class="card-body d-flex justify-content-between">
+              <p class="me-2">Follows: 10</p>
+              <p>Following: 6</p>
+            </div>
+            <div class="col-12 btn btn-outline-success">Follow</div>
+            <p class="mt-3">Name: Ola Normann</p>
+            <p>Birth: 08.05.1992</p>
+            <p>Github: Micropop</p>
+            <p>Email: N/A</p>
+            <h4>About Me</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus doloribus perferendis itaque minima maxime dolor vel, repellendus facilis pariatur amet animi quia, sapiente, cumque consequatur veritatis rerum. Temporibus, nostrum saepe.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-12">
+        <h2 class="text-center mt-4" style="color: black;">My latest feeds</h2>
+        <div class="row">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../img/code.jpg" class="img-fluid rounded-start" alt="coding screen with python codes">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Learn Python</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../img/glass_code.jpg" class="img-fluid rounded-start" alt="blury coding screen">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Sharp coding</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-center" style="color: black;">Recently watched feeds</h2>
+        <div class="row">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../img/djengo.jpg" class="img-fluid rounded-start" alt="book for learning djengo">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Djengo it's easy!</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../img/html_tag.jpg" class="img-fluid rounded-start" alt="a html tag">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">HTML for fun!</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="contaner-fuild bg-primary mt-3" style="height: 10rem;"></div>
+  </footer>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

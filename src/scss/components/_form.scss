@@ -1,0 +1,10 @@
+.form-control{
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid $primary;
+    &:focus {
+        background-color: $secondary;
+        border: 2px solid $green;
+        box-shadow: none;
+    }
+}

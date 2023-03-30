@@ -1,0 +1,30 @@
+.hero-banner {
+    position: relative;
+    background-image: url(../../img/background.jpg);
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.filter {
+    position: absolute;
+    height: 100%;
+    background-color: grayscale($color: #00000096);
+    z-index: 0;
+    & .container h1, .container p {
+        color: white;
+    } 
+}
+
+@media (max-width: 767px) {
+    .hero-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100vh;
+        & .container { margin-top: 35rem;}
+    }
+}

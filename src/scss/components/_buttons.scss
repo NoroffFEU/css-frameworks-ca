@@ -1,0 +1,16 @@
+.btn {
+    border-radius: 10px;
+    border: none;
+    color: $primary;
+    background-color: $green;
+    &:hover{
+        background-color: $light-green;
+        color: $primary;
+    }
+}
+
+.btn-outline-success{
+    background-color: transparent;
+    color: $green;
+    border: 4px solid $green;
+}

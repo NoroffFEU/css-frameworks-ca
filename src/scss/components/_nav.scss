@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+    .login-nav {
+        background-color: none;
+        z-index: 22;
+        height: 100%;
+        align-items: start;
+        & .login-container {
+            justify-content: center;
+        }
+    form {
+        margin-top: 5rem;
+
+    }
+    }
+}
+
+.nav-link:hover {
+    color: $light-green;
+}
+
+.input-group {
+    border-radius: 25px;
+}

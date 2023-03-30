@@ -3,6 +3,19 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+
+
 .indexBody {
   background: url(/images/allIndancefront.jpg);
   background-position: center center;
@@ -24,20 +37,13 @@ nav {
   align-items: center;
 }
 
-.mobile-margin {
-  margin-bottom: 100px;
-}
+
 
 .form-text {
   color: $text-dark;
 }
 
-.feedH1 {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-  font-size: 50px;
-}
+
 
 .login {
   width: 360px;
@@ -68,8 +74,8 @@ nav {
 .loginContainer {
   display: flex;
   justify-content: flex-end;
-  margin-top: 100px;
-  margin-right: 150px;
+  
+  
 }
 
 .gradient-custom-2,

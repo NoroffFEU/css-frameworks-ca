@@ -1,7 +1,7 @@
-@use "../scss/components/colors";
+@import "components";
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 .bg-primary {
-    background-color: $background-blue;
+    background-color: aqua !important;
 }

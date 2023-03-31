@@ -1,5 +1,9 @@
 .carousel {
-
+    h2{
+        font-size: 50px;
+        font-family: $special-font;
+        background-color: rgba(53, 52, 52, 0.256);
+    }
     .carousel-image {
         object-fit: cover;
         height: 300px;

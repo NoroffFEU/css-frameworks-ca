@@ -1,1 +1,13 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../scss/components/navbar";
+@import "../scss/components/buttons";
+@import "../scss/components/profile";
+@import "../scss/components/carousel";
 
+
+body {
+    margin: 0;
+    padding: 0;
+    
+}

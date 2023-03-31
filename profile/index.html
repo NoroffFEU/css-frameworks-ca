@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/css/index.css">
+
+  <title>Profile | Penpaw</title>
+
+  <script src="https://kit.fontawesome.com/7838f15d00.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-color">
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <div class="container-fluid">
+        <a class="navbar-brand heading-1" href="#">PenPaw</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/feed/index.html">Feed</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main >
+    <section id="about-me">
+      <div class="container py-3">
+        <div class="row d-flex justify-content-center align-items-center ">
+          <div class="col col-lg-6 mb-2 mb-lg-0">
+            <div class="card mb-3" style="border-radius: .5rem;">
+              <div class="row">
+                <div class="col-md-4 text-center">
+                  <img src="/src/img/Profile.JPG" alt="Avatar" class="img-fluid my-3 rounded-circle"
+                    style="width: 200px;" />
+                  <h3>@baldinho</h3>
+                  <button type="button" class="btn btn-primary mb-5">+ Follow</button>
+                </div>
+                
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h1 class="heading-1 text-center">Balder Retterstol</h1>
+                    <div class="row justify-content-center">
+                      <div class="col-8 mb-3 ">
+                        <div class="row followers">
+                          <div class="col-6 mb-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                              data-bs-target="#modal-followers">
+                              10 Followers
+                            </button>
+                          </div>
+                          <div class="col-6 mb-3">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                              data-bs-target="#modal-following">
+                              1
+                              Following
+                            </button>
+                          </div>
+                        </div>
+                        <p class="profile-desc">I'm just a dreamer, I dream my life away (today)
+                          I'm just a dreamer, who dreams of better days (okay)
+                          I'm just a dreamer, who's searching for the way (today)
+                          I'm just a dreamer, dreaming my life away (oh yeah yeah yeah)</p>
+                      </div>
+                    </div>
+                    <hr class="mt-0 mb-4">
+                    <div class="row pt-1">
+                      <div class="col-6 mb-3">
+                        <h4>Things I Like</h4>
+                        <ul>
+                          <li>Eating moss</li>
+                          <li>Following humans to the bathroom</li>
+                          <li>Kisses</li>
+                        </ul>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h4>Things I Dislike</h4>
+                        <ul>
+                          <li>Flies</li>
+                          <li>The vaccum cleaner</li>
+                          <li>Closed doors</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container card text-center p-2 mb-3" id="user-posts">
+      <h2>Latest Posts</h2>
+      <div class="row user-posts">
+        <ul >
+          <li><a href="#">A day in the neighbor's garage</a></li>
+          <li><a href="#">My favorite whiskas flavour</a></li>
+          <li><a href="#">How to annoy the humans</a></li>
+          <li><a href="#">Droping objects from tables</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark p-3">
+    <p class="text-light m-0 text-center">©Emily R. Ferreira</p>
+  </footer>
+
+
+  <!-- Modal Followers -->
+  <div class="modal fade" id="modal-followers" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Followers</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <ul class="list-group list-group-light">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-1.JPG" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Idunn Retterstol</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-2.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Katie Rabitowitz</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-3.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Pickles Aplenty</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-4.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Meow Meow Fuzzyface</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-5.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">BoJack Horseman</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-6.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Mr. Peanutbutter</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-7.jpeg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Princess Carolyn</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Following -->
+  <div class="modal fade" id="modal-following" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Following</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <ul class="list-group list-group-light">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="/src/img/follower-1.JPG" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+              <div class="ms-3">
+                <p class="fw-bold mb-1">Idunn Retterstol</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

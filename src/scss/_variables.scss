@@ -1,0 +1,25 @@
+// Special Font
+$special-font: 'Fredoka', sans-serif;
+
+// Colors
+$primary-color: #7149C6;
+$secondary-color: #3C6255;
+$tertiary-color: #E8E2E2;
+$light-color: #F5F5DC;
+$dark-color: #413543;
+
+// $primary-color: #3C6255;
+// $secondary-color: #7149C6;
+
+// Headings
+.heading-1 {
+    color: $primary-color;
+    font-family: $special-font;
+    letter-spacing: .2rem;
+}
+
+//Background
+.bg-color{
+    background-color: $dark-color;
+
+}

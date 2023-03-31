@@ -1,11 +1,14 @@
 .navbar {
-    background-color: $light-color;
-    .navbar-brand {
-        color: $primary-color;
-        font-size: 2rem;
-    }
-    .nav-link:hover ,
-    .navbar-toggler{
-        color: $primary-color;
-    }
+  background-color: $light-color;
+  .navbar-brand {
+    color: $primary-color;
+    font-size: 2rem;
+  }
+  .nav-link.active {
+    color: $secondary-color !important;
+  }
+  .nav-link:hover,
+  .navbar-toggler {
+    color: $primary-color;
+  }
 }

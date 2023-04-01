@@ -61,7 +61,7 @@
         <h1 class="text-primary">Your feed</h1>
       </div>
 
-      <div class="row mb-2 mb-lg-4">
+      <div class="row mb-2 mb-lg-4 justify-content-lg-between">
         <!-- SEARCH & SORT -->
         <form class="form-inline row px-4 mb-5 mb-lg-0 col-lg-6">
           <div class="col p-0">
@@ -96,74 +96,74 @@
 
         <!-- NEW POST -->
         <div class="col-6 col-lg-2">
-          <a href="#new-post" class="btn btn-primary text-white">New post</a>
+          <a href="#new-post" class="btn btn-primary text-white">Create new post</a>
         </div>
       </div>
 
       <!-- POSTS -->
       <div class="row">
         <!-- POST 1 -->
-        <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
+        <div class="col-12 col-lg-4 mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Title</p>
+            <h2 class="text-primary mb-1 fw-bold fs-4 text-decoration-underline">Title</h2>
           </div>
-          <img src="../images/post1.jpeg" class="img-fluid post-image" />
-          <div class="row profile-container"></div>
+          <img src="../images/post1.jpeg" class="img-fluid post-image rounded" />
+          <div class="mt-1">This is the descripion for the post...</div>
         </div>
 
         <!-- POST 2 -->
-        <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
+        <div class="col-12 col-lg-4 mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Title</p>
+            <h2 class="text-primary mb-1  fw-bold fs-4 text-decoration-underline">Title</h2>
           </div>
-          <img src="../images/post2.jpeg" class="img-fluid post-image" />
-          <div class="row profile-container"></div>
+          <img src="../images/post2.jpeg" class="img-fluid post-image rounded" />
+          <div class="mt-1">This is the descripion for the post...</div>
         </div>
 
         <!-- POST 3 -->
-        <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
+        <div class="col-12 col-lg-4 mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Title</p>
+            <h2 class="text-primary mb-1  fw-bold fs-4 text-decoration-underline">Title</h2>
           </div>
-          <img src="../images/post3.jpeg" class="img-fluid post-image" />
-          <div class="row profile-container"></div>
+          <img src="../images/post3.jpeg" class="img-fluid post-image rounded" />
+          <div class="mt-1">This is the descripion for the post...</div>
         </div>
 
         <!-- POST 4 -->
-        <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
+        <div class="col-12 col-lg-4 mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Title</p>
+            <h2 class="text-primary mb-1  fw-bold fs-4 text-decoration-underline">Title</h2>
           </div>
-          <img src="../images/post4.jpeg" class="img-fluid post-image" />
-          <div class="row profile-container"></div>
+          <img src="../images/post4.jpeg" class="img-fluid post-image rounded" />
+          <div class="mt-1">This is the descripion for the post...</div>
         </div>
 
         <!-- POST 5 -->
-        <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
+        <div class="col-12 col-lg-4 mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Title</p>
+            <h2 class="text-primary mb-1  fw-bold fs-4 text-decoration-underline">Title</h2>
           </div>
-          <img src="../images/post5.jpeg" class="img-fluid post-image" />
-          <div class="row profile-container"></div>
+          <img src="../images/post5.jpeg" class="img-fluid post-image rounded" />
+          <div class="mt-1">This is the descripion for the post...</div>
         </div>
 
         <!-- POST 6 -->
-        <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
+        <div class="col-12 col-lg-4 mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Title</p>
+            <h2 class="text-primary mb-1  fw-bold fs-4 text-decoration-underline">Title</h2>
           </div>
-          <img src="../images/post6.jpeg" class="img-fluid post-image" />
-          <div class="row profile-container"></div>
+          <img src="../images/post6.jpeg" class="img-fluid post-image rounded" />
+          <div class="mt-1">This is the descripion for the post...</div>
         </div>
       </div>
 
       <div class="d-flex justify-content-center container text-center mt-5">
         <form id="new-post" class="mb-5">
-          <h2
-            class="my-3 display-5 mt-5 text-primary fw-bold text-decoration-underline"
+          <h3
+            class="my-3 display-5 mt-5 text-primary fw-bold text-decoration-underline fs-2"
           >
             Create New Post
-          </h2>
+          </h3>
           <div class="col-12">
             <label for="postTitle" class="form-label"
               ><h3 class="text-primary">Post Title</h3></label
@@ -172,7 +172,7 @@
               type="text"
               class="form-control bg-white"
               id="postTitle"
-              placeholder="Enter post title"
+              placeholder="Enter post title" required
             />
           </div>
           <div class="col-12 mt-3">
@@ -182,7 +182,7 @@
             <input
               type="file"
               class="form-control bg-white"
-              id="postImag display-5e"
+              id="postImag display-5e" required
             />
           </div>
           <div class="col-12 mt-3">
@@ -193,8 +193,8 @@
               class="form-control bg-white"
               id=" display-5postText"
               rows="3"
-              maxlength="60"
-              placeholder="Input text, max 60 words..."
+              maxlength="60" required minlength="10"
+              placeholder="Post text, max 60 words..."
             ></textarea>
           </div>
           <button

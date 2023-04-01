@@ -1,1 +1,11 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+.logo {
+  height: 50px;
+}
+
+.post-image {
+  height: 300px;
+  object-fit: cover;
+}

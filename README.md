@@ -1,2 +1,3 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+This project is a social media application about and for people who live or are interested in everything about the lifestyle: Vanlife.

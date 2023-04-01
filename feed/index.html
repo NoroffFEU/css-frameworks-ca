@@ -11,26 +11,26 @@
 <body>
     <header>
         <nav>
-            <a href="/feed">#VANLIFE</a>
-            <a href="/profile">My profile</a>
+            <a href="/feed" class="d-flex float-start">#VANLIFE</a>
+            <a href="/profile" class="d-flex float-end">My profile</a>
         </nav>
     </header>
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-md-11">
-                    <form class="d-flex mt-3" role="search">
+                    <form class="d-flex mt-3" role="search" style="padding-top: 10px; padding-bottom: 10px; gap: 10px">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-primary" type="submit" role="button">Search</button>
-                        <div class="input-group me-2">
-                            <label class="input-group-text" for="inputGroupSelect01">Sort by</label>
-                            <select class="form-select" id="inputGroupSelect01">
-                              <option selected></option>
-                              <option value="1">How To</option>
-                              <option value="2">Inspiration</option>
-                              <option value="3">My Favourite Things</option>
-                            </select>
-                          </div>
+                        <div class="col-3">
+                          <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                          <select class="form-select" id="autoSizingSelect">
+                            <option selected>Sort by</option>
+                            <option value="1">How To</option>
+                            <option value="2">Inspiration</option>
+                            <option value="3">My Favourite Things</option>
+                          </select>
+                        </div>
                     </form>
                 </div>
             </div>

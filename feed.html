@@ -36,7 +36,7 @@
         </ul>
       </div>
     </div>
-    <form>
+    <form >
       <div class="input-group mb-3">
         <input
           class="form-control me-2"
@@ -51,7 +51,7 @@
   <body>
     <h1 class="feedH1 mb-5 d-flex justify-content-center">DANCE FEED</h1>
     <select class="form-select" aria-label="Default select example">
-      <option selected>Search by dance cathegory</option>
+      <option selected>Sort by dance cathegory</option>
       <option value="1">Ballet</option>
       <option value="2">Jazz</option>
       <option value="3">Hip Hop</option>
@@ -197,6 +197,23 @@
       <p>View all</p>
       </a>
     </div>
+
+<form class="ms-1 me-1">
+  <h1 class="d-flex justify-content-center">New Post</h1>
+  <div class="mb-1">
+    <label for="postTitle" class="form-label">Post Title</label>
+    <input type="text" class="form-control" id="postTitle" placeholder="Enter post title">
+  </div>
+  <div class="mb-1">
+    <label for="postContent" class="form-label">Post Content</label>
+    <textarea class="form-control" id="postContent" rows="3" placeholder="Enter post content"></textarea>
+  </div>
+  <div class="mb-1">
+    <label for="postImage" class="form-label">Post Image</label>
+    <input type="file" class="form-control" id="postImage">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
     <footer class="mt-5">
       <div class="card text-center bg-primary text-white">
         <div class="card-body">

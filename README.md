@@ -1,4 +1,4 @@
-# css-frameworks-ca
+# CSS-Framworks-CA
 This is a school project for the course "CSS Frameworks" at Noroff. The goal of this project is to get to know bootstrap and SCSS.
 
 ## Goal

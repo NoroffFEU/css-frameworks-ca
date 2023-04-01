@@ -6,6 +6,11 @@
 $primary: green;
 
 
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+
+.card-body{
+    background-color: lightgrey;
+}

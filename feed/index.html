@@ -60,17 +60,52 @@
       <div class="col-12 pt-2 pb-4">
         <h1 class="text-primary">Your feed</h1>
       </div>
+
+      <div class="row mb-2 mb-lg-4">
+        <!-- SEARCH & SORT -->
+        <form class="form-inline row px-4 mb-5 mb-lg-0 col-lg-6">
+          <div class="col p-0">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div>
+          <div class="col-2 align-items-start">
+            <button class="btn btn-primary text-white" type="submit">
+              Search
+            </button>
+          </div>
+        </form>
+
+        <div class="dropdown col-6 mb-2 mb-lg-0 col-lg-2">
+          <button
+            class="btn btn-primary text-white dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort posts by
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Newst</a></li>
+            <li><a class="dropdown-item" href="#">Oldest</a></li>
+          </ul>
+        </div>
+
+        <!-- NEW POST -->
+        <div class="col-6 col-lg-2">
+          <a href="#new-post" class="btn btn-primary text-white">New post</a>
+        </div>
+      </div>
+
       <!-- POSTS -->
       <div class="row">
         <!-- POST 1 -->
         <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Username</p>
-            <image
-              src="../images/icons/profile.svg"
-              alt="profile icon"
-              class="logo ms-2"
-            />
+            <p class="text-white mb-1">Title</p>
           </div>
           <img src="../images/post1.jpeg" class="img-fluid post-image" />
           <div class="row profile-container"></div>
@@ -79,12 +114,7 @@
         <!-- POST 2 -->
         <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Username</p>
-            <image
-              src="../images/icons/profile.svg"
-              alt="profile icon"
-              class="logo ms-2"
-            />
+            <p class="text-white mb-1">Title</p>
           </div>
           <img src="../images/post2.jpeg" class="img-fluid post-image" />
           <div class="row profile-container"></div>
@@ -93,12 +123,7 @@
         <!-- POST 3 -->
         <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Username</p>
-            <image
-              src="../images/icons/profile.svg"
-              alt="profile icon"
-              class="logo ms-2"
-            />
+            <p class="text-white mb-1">Title</p>
           </div>
           <img src="../images/post3.jpeg" class="img-fluid post-image" />
           <div class="row profile-container"></div>
@@ -107,12 +132,7 @@
         <!-- POST 4 -->
         <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Username</p>
-            <image
-              src="../images/icons/profile.svg"
-              alt="profile icon"
-              class="logo ms-2"
-            />
+            <p class="text-white mb-1">Title</p>
           </div>
           <img src="../images/post4.jpeg" class="img-fluid post-image" />
           <div class="row profile-container"></div>
@@ -121,12 +141,7 @@
         <!-- POST 5 -->
         <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Username</p>
-            <image
-              src="../images/icons/profile.svg"
-              alt="profile icon"
-              class="logo ms-2"
-            />
+            <p class="text-white mb-1">Title</p>
           </div>
           <img src="../images/post5.jpeg" class="img-fluid post-image" />
           <div class="row profile-container"></div>
@@ -135,16 +150,60 @@
         <!-- POST 6 -->
         <div class="col-12 col-lg-4 bg-primary mb-5 mb-lg-0 pb-3">
           <div class="row pt-2 pb-2">
-            <p class="text-white mb-1">Username</p>
-            <image
-              src="../images/icons/profile.svg"
-              alt="profile icon"
-              class="logo ms-2"
-            />
+            <p class="text-white mb-1">Title</p>
           </div>
           <img src="../images/post6.jpeg" class="img-fluid post-image" />
           <div class="row profile-container"></div>
         </div>
+      </div>
+
+      <div class="d-flex justify-content-center container text-center mt-5">
+        <form id="new-post" class="mb-5">
+          <h2
+            class="my-3 display-5 mt-5 text-primary fw-bold text-decoration-underline"
+          >
+            Create New Post
+          </h2>
+          <div class="col-12">
+            <label for="postTitle" class="form-label"
+              ><h3 class="text-primary">Post Title</h3></label
+            >
+            <input
+              type="text"
+              class="form-control bg-white"
+              id="postTitle"
+              placeholder="Enter post title"
+            />
+          </div>
+          <div class="col-12 mt-3">
+            <label for="postImage" class="form-label"
+              ><h3 class="text-primary">Post Image</h3></label
+            >
+            <input
+              type="file"
+              class="form-control bg-white"
+              id="postImag display-5e"
+            />
+          </div>
+          <div class="col-12 mt-3">
+            <label for="postText" class="form-label"
+              ><h3 class="text-primary">Post Text</h3></label
+            >
+            <textarea
+              class="form-control bg-white"
+              id=" display-5postText"
+              rows="3"
+              maxlength="60"
+              placeholder="Input text, max 60 words..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="mx-5 my-3 mt-4 btn btn-primary text-white"
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
     <script

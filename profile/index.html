@@ -42,48 +42,113 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="../index.html"
+              <a class="nav-link" aria-current="page" href="../index.html"
                 >Log in</a
               >
             </li>
-            <li class="nav-item ">
+            <li class="nav-item">
               <a class="nav-link" href="../feed/index.html">Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="../profile/index.html">Profile</a>
+              <a class="nav-link active" href="../profile/index.html"
+                >Profile</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container text-center mt-5">
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <h1 class="text-primary text-center pt-5 mb-4">Log in</h1>
-        </div>
-        <div class="input-group mb-4 mb-lg-0 col-12 ps-5 pe-5 log-in-input">
-          <input
-            type="text"
-            class="form-control border-primary"
-            placeholder="Username"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-        </div>
-        <div class="input-group mb-4 mb-lg-0 col-12 ps-5 pe-5 log-in-input">
-          <input
-            type="password"
-            class="form-control border-primary"
-            placeholder="Password"
-            aria-label="Password"
-            aria-describedby="basic-addon1"
-          />
+
+    <section class="h-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-9 col-xl-7">
+            <div class="card">
+              <div class="text-white d-flex flex-row bg-primary profile-banner">
+                <div class="ms-4 d-flex flex-column" style="width: 150px">
+                  <img
+                    src="../images/icons/profile.svg"
+                    alt="Placeholder image"
+                    class="img-fluid img-thumbnail mt-4 mb-2"
+                    style="width: 150px; z-index: 1"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-outline-light text-white mt-2 mb-4"
+                    data-mdb-ripple-color="dark"
+                    style="z-index: 1"
+                  >
+                    Follow
+                  </button>
+                </div>
+
+                <div class="ms-3 mt-4">
+                  <div class="d-flex justify-content-start row mb-4">
+                    <div class="row">
+                      <p class="h5 col-4 col-lg-2 small mb-0">69</p>
+                      <p class="small col-5 mb-0">Posts</p>
+                    </div>
+                    <div class="row">
+                      <p class="h5 col-4 col-lg-2 small mb-0">420</p>
+                      <p class="small col-5 mb-0">Followers</p>
+                    </div>
+                    <div class="row">
+                      <p class="h5 col-4 col-lg-2 small mb-0">1337</p>
+                      <p class="small col-5 mb-0">Following</p>
+                    </div>
+                  </div>
+                  <h5 class="text-decoration-underline">@Username</h5>
+                  <p class="small">Lillehammer, Norway</p>
+                </div>
+              </div>
+
+              <div class="card-body p-4 text-black">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <p class="lead text-primary fw-normal mb-0">Recent posts</p>
+                  <p class="mb-0">
+                    <a href="#!" class="text-muted">See all</a>
+                  </p>
+                </div>
+                <div class="row g-2">
+                  <div class="col mb-2">
+                    <img
+                      src="../images/post1.jpeg"
+                      alt="image 1"
+                      class="w-100 h-100"
+                    />
+                  </div>
+                  <div class="col mb-2">
+                    <img
+                      src="../images/post2.jpeg"
+                      alt="image 1"
+                      class="w-100 h-100"
+                    />
+                  </div>
+                </div>
+                <div class="row g-2">
+                  <div class="col">
+                    <img
+                      src="../images/post3.jpeg"
+                      alt="image 1"
+                      class="w-100 h-100"
+                    />
+                  </div>
+                  <div class="col">
+                    <img
+                      src="../images/post4.jpeg"
+                      alt="image 1"
+                      class="w-100 h-100"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

@@ -64,14 +64,14 @@
         <div class="col-12">
           <h1 class="text-primary text-center pt-5 mb-4">Log in</h1>
         </div>
-        <form class="">
+        <form class="" action="feed/index.html">
           <div class="input-group mb-4 col-12 ps-5 pe-5 log-in-input">
             <input
               type="text"
               class="form-control border-primary"
               placeholder="Username"
               aria-label="Username"
-              aria-describedby="basic-addon1"
+              aria-describedby="basic-addon1" required
             />
           </div>
           <div class="input-group mb-4 col-12 ps-5 pe-5 log-in-input">
@@ -80,7 +80,7 @@
               class="form-control border-primary"
               placeholder="Password"
               aria-label="Password"
-              aria-describedby="basic-addon1"
+              aria-describedby="basic-addon1" minlength="8"
             />
           </div>
           <div class="col-12">

@@ -19,7 +19,7 @@ This project should reflect my Sass and Bootstrap technical knowledge and skills
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:saibia8/the-museum-project.git
+git clone git@github.com:saibia8/css-frameworks-ca.git
 ```
 
 2. Install the dependencies:

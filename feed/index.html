@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/index.css" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">BirdBook</a>
+    
+              <button class="navbar-toggler" type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#navbarSupportedContent" 
+                                aria-controls="navbarSupportedContent" 
+                                aria-expanded="false" 
+                                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/profile">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Feed</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+       </header>
+
+       <main class="container">
+        <div><h1>Feed</h1></div>
+        <br>
+        
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label comment"> <h3>Create new post: </h3></label>
+            <textarea class="form-control mt-2 p-2" id="exampleFormControlTextarea1" placeholder="Type here minimum 5 characters" minlength="5" rows="4"></textarea>
+            <div class="col-12">
+                <button class="btn btn-primary mt-2" type="submit">Post</button>
+              </div>
+          </div>
+
+          <br>
+          <div class="row feed-filter d-flex">
+            <div class="col-6  filter">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Filter posts</option>
+                    <option value="1">New</option>
+                    <option value="2">Old</option>
+                    <option value="3">Popular</option>
+                  </select>
+
+                  
+            </div>
+
+            <div class="col-6 search">
+                <label for="exampleDataList" class="form-label"></label>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                    <datalist id="datalistOptions">
+                    <option value="Astronauts">
+                    <option value="Moon">
+                    <option value="Skynet">
+                    
+                    </datalist>
+
+            </div>
+        </div>
+
+            <div class="justify-content-center card-container">
+                <div class="card mb-3">
+                    <img src="/img/astronaut in space (1).jpg" class="card-img-top" alt="man in space">
+                    <div class="card-body">
+                      <h5 class="card-title">Astronauts are silly and here's why</h5>
+                      <p class="card-text">why Astronauts are a silly bunch of people...</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">the Moon and its phases</h5>
+                      <p class="card-text">the moon holds many mysteries we should explore...</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    <img src="/img/celso-405219.jpg" class="card-img-bottom" alt="the moon phase">
+                    <a href="#" class="btn btn-primary">Read more</a>
+                  </div>
+                  <br>
+                  <div class="card mb-3">
+                    <img src="/img/robots and ai.png" class="card-img-top" alt="robot thinking">
+                    <div class="card-body">
+                      <h5 class="card-title">Should we be scared of skynet?</h5>
+                      <p class="card-text">Skynet and why we should worry...</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                  </div>
+                  
+            </div>
+
+            <div class="pageinator">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+       </main>
+    
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

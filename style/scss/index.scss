@@ -1,0 +1,78 @@
+@use "../../node_modules/bootstrap/scss/bootstrap";
+//@use "hero-section";
+//@use "_colors";
+
+$primary: #78a9e3;
+$secondary: #FF8D99;
+
+#post-message {
+  height: min-content;
+  padding: .5rem;
+  border-top: solid $primary .5rem;
+  border-inline: solid $primary .25rem;
+}
+
+#tag-label {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: .25rem;
+}
+
+.search-feeld {
+  border: unset;
+  border-bottom: $primary solid .25rem;
+}
+
+filter-posts {
+  .search-feeld {
+    text-align: center;
+  }
+
+  button.btn.btn-secondary.rounded-circle,
+  button.btn.btn-secondary.rounded-circle > img{
+    // TODO: find out why width is not applied
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+  }
+}
+
+#hero-section {
+  grid-template-columns: repeat(2, 1fr)
+}
+
+#hero-title {
+  grid-row: 1;
+  grid-column: span 2;
+}
+
+#hero-img {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  max-height: 290px;
+  justify-self: center;
+  object-fit: contain;
+}
+
+#join-or-login {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+@media (max-width: 768px) {
+  #hero-title {
+    grid-column: 1/ span 2;
+    grid-row: 2;
+  }
+
+  #hero-img {
+    grid-column: 1/ span 2;
+    grid-row: 1;
+    max-width: 300px;
+  }
+
+  #join-or-login {
+    grid-column: 1/ span 2;
+    grid-row: 3;
+  }
+}

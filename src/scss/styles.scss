@@ -1,0 +1,93 @@
+@import "variables"; /* /src/scss/_variables.scss */
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+
+
+.indexBody {
+  background: url(/images/allIndancefront.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+nav {
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.form-text {
+  color: $text-dark;
+}
+
+
+
+.login {
+  width: 360px;
+  height: min-content;
+  padding: 20px;
+  border-radius: 12px;
+  background: $custom-color1;
+}
+
+.login h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.login form {
+  font-size: 20px;
+}
+
+.login form .form-group {
+  margin-bottom: 12px;
+}
+
+.login form input[type="submit"] {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.loginContainer {
+  display: flex;
+  justify-content: flex-end;
+  
+  
+}
+
+.gradient-custom-2,
+nav,
+body {
+  /* fallback for old browsers */
+  background: #fbc2eb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(191, 149, 157),
+    rgba(166, 193, 238, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgb(191, 149, 157),
+    rgba(166, 193, 238, 1)
+  );
+}

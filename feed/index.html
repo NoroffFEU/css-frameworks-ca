@@ -5,10 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/dist/css/index.css" />
+  <script src="https://kit.fontawesome.com/afd58d732f.js" crossorigin="anonymous"></script>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+  crossorigin="anonymous">
+  </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
+          <a class="fa-solid fa-ghost fa-2x me-3" href="/" style="color: #ff6219;"></a>
           <a class="navbar-brand" href="/index.html">YourSpace</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -16,13 +23,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="/index.html">Home</a>
+                <a class="nav-link " aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/profile">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/feed/">News feed</a>
+                <a class="nav-link active" href="/feed">News feed</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -36,10 +43,6 @@
         <h1>News feed</h1>
         <div class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,24 +55,23 @@
                     </ul>
                   </li>
                 </ul>
-              </div>
             </div>
           </div>
         <div class="border border-left border-right px-0 ">
             <div class="card shadow-0">
               <div class="card-body border-bottom pb-2">
                 <div class="d-flex">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" class="rounded-circle"
+                  <img src="../img/profileimg.webp" class="rounded-circle"
                     height="50" alt="Avatar" loading="lazy" />
                   <div class="d-flex align-items-center w-100 ps-3">
                     <form action="#">
                     <div class="w-100">
                       <div class="form-outline mb-4">
                         <label for="validationDefaultUsername" class="form-label"></label>
-                        <div class="form-group g-3 needs-validation" novalidate>
-                        <input type="text" minlength="8" style="width: 20rem;" id="form143" class="form-control form-status border-0 py-1 px-0"  
+                        <div class="form-group g-3 needs-validation" novalidate >
+                        <input type="text" minlength="8" style="width:100%;" id="form143" class="form-control form-status border-0 py-1 px-0"  
                         aria-describedby="emailHelp" placeholder="Whats on your mind....." required>
-                        <button type="submit" class="btn btn-primary">Post</button>
+                        <button style="margin-top:10px;" type="submit" class="btn btn-primary" >Post</button>
                     </div>
                       </div>
                   </div>
@@ -84,7 +86,7 @@
               </div>
             <div>
               <div class="d-flex p-3 border-bottom">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (29).webp" class="rounded-circle"
+                <img src="../img/girlcar.webp" class="rounded-circle"
                   height="50" alt="Avatar" loading="lazy" />
                 <div class="d-flex w-100 ps-3">
                   <div>
@@ -117,7 +119,7 @@
                 </div>
               </div>
               <div class="d-flex p-3 border-bottom">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (29).webp" class="rounded-circle"
+                <img src="../img/girlcar.webp" class="rounded-circle"
                   height="50" alt="Avatar" loading="lazy" />
                 <div class="d-flex w-100 ps-3">
                   <div>
@@ -137,7 +139,7 @@
                     <div class="card border mb-3 shadow-0" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-3">
-                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (21).webp" alt="Avatar"
+                          <img src="../img/cat.webp" alt="Avatar"
                             class="img-fluid rounded-left" />
                         </div>
                         <div class="col-md-9">
@@ -170,7 +172,7 @@
                 </div>
               </div>
               <div class="d-flex p-3 border-bottom">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (22).webp" class="rounded-circle"
+                <img src="../img/girlbrownhair.webp" class="rounded-circle"
                   height="50" alt="Avatar" loading="lazy" />
                 <div class="d-flex w-100 ps-3">
                   <div>
@@ -192,7 +194,7 @@
                     <div class="card border mb-3 shadow-0" style="max-width: 540px;">
                       <div class="row g-0">
                         <div class="col-md-3">
-                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (20).webp" alt="Avatar"
+                          <img src="../img/girlshorthair.webp" alt="Avatar"
                             class="img-fluid rounded-left" />
                         </div>
                         <div class="col-md-9">
@@ -225,7 +227,7 @@
                 </div>
               </div>
               <div class="d-flex p-3 border-bottom">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (24).webp" class="rounded-circle"
+                <img src="../img/girlred.webp" class="rounded-circle"
                   height="50" alt="Avatar" loading="lazy" />
                 <div class="d-flex w-100 ps-3">
                   <div>
@@ -243,7 +245,7 @@
                       eos <a href="">#deserunt</a> odit libero voluptatibus, iste laudantium,
                       tempore ratione ut.
                     </p>
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp"
+                    <img src="../img/cave.webp"
                       class="img-fluid rounded mb-3" alt="Fissure in Sandstone" />
                     <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
                       <li>
@@ -259,7 +261,7 @@
                 </div>
               </div>
               <div class="d-flex p-3 border-bottom mb-5">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (3).webp" class="rounded-circle"
+                <img src="../img/manfade.webp" class="rounded-circle"
                   height="50" alt="Avatar" loading="lazy" />
                 <div class="d-flex w-100 ps-3">
                   <div>
@@ -297,12 +299,5 @@
           </div>
         </div>
       </div>
-      <script 
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
-      crossorigin="anonymous">
-  </script>
 </body>
-
-
 </html>

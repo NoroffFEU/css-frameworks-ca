@@ -10,7 +10,27 @@
 </head>
 <body class="bg-color">
     <div>
-        <h1 class="text-primary text-center m-5 fs-1 fw-bold"><a class="text-decoration-none" href="/index.html">My Social</a> </h1>
+        <!-- NAV -->
+  <nav class="navbar navbar-expand-lg bg-light d-flex flex-column sticky-top pt-4 pb-0">
+    <h1 class="text-primary text-center m-0 fs-1 fw-bold  ">My Social</h1>
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item">
+            <a class="nav-link active fs-5" aria-current="page" href="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" href="/feed">Feed</a>
+          </li>
+        </ul>
+          <a class="nav-link me-3 fs-5" id="log-out" href="/index.html">Log out</a>
+      </div>
+    </div>
+  </nav>
         <!-- GRID -->
         <div class="container text-center ">
             <div class="row justify-content-around">

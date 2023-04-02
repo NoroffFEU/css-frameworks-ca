@@ -1,0 +1,77 @@
+body::before {
+    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+        "Droid Sans Mono", monospace, monospace;
+    white-space: pre;
+    display: block;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid black;
+    background-color: whitesmoke;
+  }
+  main{
+    margin-top: 5rem;
+  }
+  .img-thumbnail{
+    margin-top: 1.5rem;
+    border-radius: 50%;
+    width: 14rem;
+    background-color: darkslategray;
+  }
+  .name {
+    font-style: normal;
+    font-weight: 500;
+  }
+  .name span {
+    font-weight: 400;
+  }
+  .age {
+    font-style: normal;
+    font-weight: 500;
+  }
+  .age span{
+    font-weight: 400;
+  }
+  .profile{
+  justify-self: auto;
+  }
+  .post{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    justify-self: auto;
+  }
+  .following{
+    margin-top: 10rem;
+  }
+  
+  .card-container{
+    margin-top: 2.5rem;
+    justify-self: center;
+  }
+  
+  .card-img-top{
+    width: 15rem;
+    justify-self: center;
+  }
+  .card-img-bottom{
+    width: 20rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pageinator{
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+  .filter{
+    padding-top: 1.5rem;
+  }
+  .comment h3 {
+    font-size: 16px;
+    margin-bottom: -1rem;
+    font-weight: 600;
+  }
+  .follow-btn{
+    margin: 1rem;
+  }
+  .unfollow-btn{
+    margin: 1rem;
+  }

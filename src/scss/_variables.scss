@@ -1,12 +1,20 @@
-$primary: rgba(149, 148, 148, 0.954);
-$btn-primary: rgba(248, 247, 247, 0.954);
-
 $body-bg: rgb(249, 249, 198);
 $input-bg: white;
-$input-disabled-color: red;
 
-// $input-width: 300px;
+$input-width: 350px;
 
-.btn-primary a {
-    color: white;
+.form-outline {
+    width: $input-width;
 }
+
+$nav-pills-link-active-color: black;
+
+.nav-link {
+    background-color: transparent !important;
+}
+
+.nav-link.active{
+    font-size: 20px;
+    text-decoration: underline;
+}
+

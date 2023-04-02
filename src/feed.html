@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bootstrap demo</title>
+
+    <link rel="stylesheet" href="main.css" />
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+
+
+<!--- Nav-->
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="feed.html">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile..html">profile</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+<!--- Nav ENDS-->
+
+
+<!--- Feed form -->
+
+<h3 class="text-center"> Feed </h3>
+
+<div class="container p-2">
+  <div class="row justify-content-center">
+    <div class="col-10 col-md-6">
+<div class="card">
+  <img src="/src/images/Byggmester-Bob-–-full-fart-mot-mål-.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">ByggmesterBob123</h5>
+    <figure>
+      <blockquote class="blockquote">
+        <p> Today is a nice for painting the house </p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        ByggmesterBob123
+      </figcaption>
+    </figure>
+    <figure>
+      <blockquote class="blockquote">
+        <p> This looks nice ByggmesterBob </p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Oldlady123
+      </figcaption>
+    </figure>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Write a comment</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+    </div>
+    <a href="#" class="btn btn-primary btn-center">Publish comment</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container p-2">
+  <div class="row justify-content-center">
+    <div class="col-10 col-md-6">
+<div class="card">
+  <img src="/src/images/old lady.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Oldlady123</h5>
+    <figure>
+      <blockquote class="blockquote">
+        <p> It will be meat and loaf for dinner today ! Happy Friday :) </p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Oldlady123
+      </figcaption>
+    </figure>
+    <figure>
+      <blockquote class="blockquote">
+        <p> I would love to come and eat Oldlady123 </p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        ByggmesterBob123
+      </figcaption>
+    </figure>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label">Write a comment</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="...">
+    </div>
+    <a href="#" class="btn btn-primary btn-center">Publish comment</a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  
+  <!--- Feed ENDS -->
+
+  <!--- Create Post -->
+  <div class="text-bg-secondary">
+<div class="container p-2">
+  <h3 class="text-center"> Create a post </h3>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Username</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Oldlady123">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Password</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="******">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Write your post</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Upload Picture</label>
+      <input class="form-control" type="file" id="formFile">
+    </div>
+    <button type="button" class="btn btn-info text-align"> Pubslih Post </button>
+  </div>
+</div>
+</div>
+
+    <!--- Create Post ENDS -->
+
+    
+
+ </div>
+    </div>
+  </body>
+</html>

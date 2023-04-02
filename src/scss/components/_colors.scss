@@ -1,4 +1,11 @@
  
-.bg-color {
-    background-color: rgb(225, 240, 255);
+// .bg-color {
+//     background-color: rgb(225, 240, 255);
+// }
+
+.nav-link {
+    color: $primary
+}
+.nav-link.active {
+    color: $link-active;
 }

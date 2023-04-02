@@ -15,7 +15,9 @@
     <!-- navigation -->
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="ms-5 navbar-brand" href="#"><h1>Blabberfeed</h1></a>
+        <a class="ms-5 navbar-brand" href="#"
+          ><h1 class="display-1">Blabberfeed</h1></a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -27,40 +29,101 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          class="collapse navbar-collapse position-absolute top-50 end-0 me-5"
+          id="navbarSupportedContent"
+        >
           <ul class="navbar-nav me-auto ms-5 mb-3 mb-lg-0">
             <li class="nav-item">
               <a class="ms-3 nav-link" aria-current="page" href="/index.html"
-                >Home</a
+                ><h2>Home</h2></a
               >
-            </li>
-            <li class="ms-3 nav-item">
-              <a class="nav-link" href="/feed/index.html">Feed</a>
             </li>
             <li class="ms-3 nav-item">
               <a
-                class="nav-link active"
+                class="nav-link"
                 aria-current="page"
-                href="/profile/index.html"
-                >Profile</a
+                href="/feed/index.html"
+                ><h2>Feed</h2></a
+              >
+            </li>
+            <li class="ms-3 nav-item">
+              <a class="nav-link active" href="/profile/index.html"
+                ><h2>Profile</h2></a
               >
             </li>
           </ul>
-          <form class="ms-3 d-flex" role="search">
-            <input
-              class="form-control me-0"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="ms-1 me-3 btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>
     <!-- end of navigation -->
+    <!-- profile -->
+    <div class="mt-5 text-center p-5 gap-3">
+      <img src="https://picsum.photos/500/350" alt="profileimage" />
+      <h1>Username</h1>
+      <p class="col-12 my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum fuga officiis accusamus. Modi quos perferendis quasi eligendi blanditiis! Harum rerum culpa debitis error dignissimos quia ipsam mollitia aperiam pariatur suscipit? Quidem, nihil! Vero ipsam quidem nobis odio rem nihil molestias nam, eos iure quaerat sequi facere? Quasi totam consequuntur nihil fuga sit assumenda quam dolores, minus doloremque fugit amet aliquam necessitatibus recusandae inventore delectus molestias nam rerum unde consectetur, accusantium facere sunt at. Reiciendis, magni! Soluta suscipit quos optio dicta quasi quo ab asperiores provident. Repudiandae eligendi qui voluptates, earum corporis quo eius labore perferendis numquam ex necessitatibus corrupti ipsum? Impedit, tempore possimus reprehenderit expedita assumenda sed, nostrum fugit nihil culpa consectetur exercitationem molestiae ipsa dolor. Quam, dolore nostrum. Omnis est illo totam cum obcaecati dolor ad ipsa provident. Eum at assumenda fugit deleniti quae, odit asperiores provident soluta ipsum nemo itaque, nostrum, culpa neque vero minus magni iusto placeat tenetur animi iure pariatur aut veniam reiciendis expedita. Fuga, tempora quo? Delectus aperiam laboriosam animi ad? Odit accusamus facilis, optio exercitationem unde dolore nihil tenetur sint cumque quis sapiente error libero impedit ipsa nobis praesentium quidem quibusdam labore modi, vitae eveniet quaerat fuga deleniti itaque? Odit officia error fugiat eveniet.</p>
+      <div class="my-5" id="myPosts">
+        <h2 class="display-4">My posts</h2>
+        <div class="row my-5">
+          <div class="text-center col-12 col-lg-3" id="feedbox">
+            <h2 class="my-2 text-center display-5">Lorem</h2>
+            <img class="my-2" src="https://picsum.photos/400/250" />
+            <p class="my-2 p-3 w-100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perferendis reiciendis maxime dolores labore accusantium cum illo
+              suscipit repudiandae sint, quaerat sunt sequi temporibus iure
+              magnam mollitia itaque error reprehenderit magni!
+            </p>
+          </div>
+          <div class="text-center col-12 col-lg-3" id="feedbox">
+            <h2 class="my-2 text-center display-5">Lorem</h2>
+            <img class="my-2" src="https://picsum.photos/400/250" />
+            <p class="my-2 p-3 w-100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perferendis reiciendis maxime dolores labore accusantium cum illo
+              suscipit repudiandae sint, quaerat sunt sequi temporibus iure
+              magnam mollitia itaque error reprehenderit magni!
+            </p>
+          </div>
+          <div class="text-center col-12 col-lg-3" id="feedbox">
+            <h2 class="my-2 text-center display-5">Lorem</h2>
+            <img class="my-2" src="https://picsum.photos/400/250" />
+            <p class="my-2 p-3 w-100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perferendis reiciendis maxime dolores labore accusantium cum illo
+              suscipit repudiandae sint, quaerat sunt sequi temporibus iure
+              magnam mollitia itaque error reprehenderit magni!
+            </p>
+          </div>
+          <div class="text-center col-12 col-lg-3" id="feedbox">
+            <h2 class="my-2 text-center display-5">Lorem</h2>
+            <img class="my-2" src="https://picsum.photos/400/250" />
+            <p class="my-2 p-3 w-100">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perferendis reiciendis maxime dolores labore accusantium cum illo
+              suscipit repudiandae sint, quaerat sunt sequi temporibus iure
+              magnam mollitia itaque error reprehenderit magni!
+            </p>
+          </div>
+        </div>
+      </div>
+      <button type="follow" class="mx-5 my-3 mt-4 btn btn-primary"><h3>Follow</h3></button>
+      <div class="text-center">
+        <h3 class="display-4" id="followers">Followers</h3>
+        <div class="list-group list-group-light">
+          <a href="#" class="list-group-item list-group-item-action px-3 border-0">Username</a>
+          <a href="#" class="list-group-item list-group-item-action px-3 border-0">Username</a>
+          <a href="#" class="list-group-item list-group-item-action px-3 border-0">Username</a>
+          <a href="#" class="list-group-item list-group-item-action px-3 border-0">More followers</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="text-center mt-5 p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright:
+        <a class="text-reset fw-bold"">Blabberfeed.com</a>
+      </div>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

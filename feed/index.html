@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../dist/css/style.css">
+    <title>My Social | Feed</title>
+</head>
+<body class="bg-color">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg bg-light d-flex flex-column sticky-top pt-4 pb-0">
+      <h1 class="text-primary text-center m-0 fs-1 fw-bold  ">My Social</h1>
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav ms-3">
+            <li class="nav-item">
+              <a class="nav-link  fs-5 fw-semibold"  href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fs-5 fw-semibold" aria-current="page" href="/feed">Feed</a>
+            </li>
+          </ul>
+            <a class="nav-link me-3 fs-5 fw-semibold" id="log-out" href="/index.html">Log out</a>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- SEARCH BAR -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-5 my-3 ">
+          <!-- <label for="searchBar" class="form-label"></label> -->
+          <input type="text" class="form-control " id="searchBar" placeholder="Search">
+        </div>
+        <div class="col-2 my-3">
+          <button type="submit" class="btn btn-primary">search</button>
+        </div>
+        
+      </div>
+    </div>
+    <!-- SORT -->
+    <select class="wsz-2_5 my-3 d-block m-auto" >
+      <option selected>Most relevant</option>
+      <option value="1">Most popular</option>
+      <option value="2">Newest posts</option>
+      <option value="3">Oldest posts</option>
+      <option value="4">All</option>
+    </select>
+    
+    
+    <!-- LIST OF POSTS  -->
+    <div class="container w-75">
+        <div class="row my-5 justify-content-between">
+          <div class=" col-12 col-md-7 col-xl-3 m-auto card">
+            <img class="card-img-top mt-3" src="../img/rsz_amit-pritam-nehckum2yt0-unsplash.jpg"  alt="post image">
+            <div class="card-body">
+              <h5 class="card-title">What can I create?</h5>
+              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias quidem fuga reprehenderit quae vero libero ex. Maxime possimus, vitae repellendus earum a pariatur aliquid delectus molestiae, totam doloremque sint ea.</p>
+              <a href="#" class="btn btn-link">Continue</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-xl-3 m-auto card">
+            <img class="card-img-top mt-3" src="../img/rsz_drew-dempsey-8oh1qhihwem-unsplash.jpg"  alt="post image">
+            <div class="card-body">
+              <h5 class="card-title">My favourit dish</h5>
+              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias quidem fuga reprehenderit quae vero libero ex. Maxime possimus, vitae repellendus earum a pariatur aliquid delectus molestiae, totam doloremque sint ea.</p>
+              <a href="#" class="btn btn-link">Continue</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-xl-3 m-auto card">
+            <img class="card-img-top mt-3" src="../img/rsz_sergey-leont-ev-x5-sjnnrp-w-unsplash.jpg"  alt="post image">
+            <div class="card-body">
+              <h5 class="card-title">Wolking in the city</h5>
+              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias quidem fuga reprehenderit quae vero libero ex. Maxime possimus, vitae repellendus earum a pariatur aliquid delectus molestiae, totam doloremque sint ea.</p>
+              <a href="#" class="btn btn-link">Continue</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+    <!-- FORM -->
+    <h2 class="text-center my-5" >Add your post</h2>
+    <div class="d-flex flex-column m-auto  col-9 col-md-6">
+      <div class="mb-3">
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="your@email.com">
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="text" placeholder="Title" >
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your Text"></textarea>
+      </div>
+      <input class="btn btn-primary w-25 mb-5 m-auto p-2" type="submit" value="Submit">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

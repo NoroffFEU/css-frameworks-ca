@@ -1,6 +1,53 @@
+///////////////////////// Imports ////////////////////////////
 @import "variables";
+@import "feed";
+@import "darkmode";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-body {
-  background: darkgray;
+///////////////////////// Social Links ////////////////////////////
+.bx {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px;
+  width: 42px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px 3px;
+  border-radius: 50%;
+  border: 2px solid $primary;
+}
+
+/////////////////////////  Miscellaneous ////////////////////////////
+
+.feedlist {
+  list-style: none;
+}
+
+.sort-buttons {
+  margin-bottom: 1%;
+}
+
+.content {
+  height: 100vh;
+}
+
+.form-check-input {
+  border-color: $primary;
+}
+.form-check-input:checked {
+  border-color: $primary-light;
+}
+
+.btn {
+  border-radius: 1%;
+}
+
+.btn-margin {
+  margin-bottom: 1vh;
+}
+
+.card,
+.card-img-top {
+  border-radius: 1%;
 }

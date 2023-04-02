@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>News feed</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/dist/css/index.css" />
+  <script src="https://kit.fontawesome.com/afd58d732f.js" crossorigin="anonymous"></script>
+  <script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+  crossorigin="anonymous">
+  </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="fa-solid fa-ghost fa-2x me-3" href="/" style="color: #ff6219;"></a>
+          <a class="navbar-brand" href="/index.html">YourSpace</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/feed">News feed</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container py-5 " style="width: 60rem">
+        <h1>News feed</h1>
+        <div class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Sort
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Date</a></li>
+                      <li><a class="dropdown-item" href="#">Popularity</a></li>
+                      <li><a class="dropdown-item" href="#">Recommended</a></li>
+                    </ul>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        <div class="border border-left border-right px-0 ">
+            <div class="card shadow-0">
+              <div class="card-body border-bottom pb-2">
+                <div class="d-flex">
+                  <img src="../img/profileimg.webp" class="rounded-circle"
+                    height="50" alt="Avatar" loading="lazy" />
+                  <div class="d-flex align-items-center w-100 ps-3">
+                    <form action="#">
+                    <div class="w-100">
+                      <div class="form-outline mb-4">
+                        <label for="validationDefaultUsername" class="form-label"></label>
+                        <div class="form-group g-3 needs-validation" novalidate >
+                        <input type="text" minlength="8" style="width:100%;" id="form143" class="form-control form-status border-0 py-1 px-0"  
+                        aria-describedby="emailHelp" placeholder="Whats on your mind....." required>
+                        <button style="margin-top:10px;" type="submit" class="btn btn-primary" >Post</button>
+                    </div>
+                      </div>
+                  </div>
+                </form>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="d-flex align-items-center">
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </div>
+            <div>
+              <div class="d-flex p-3 border-bottom">
+                <img src="../img/girlcar.webp" class="rounded-circle"
+                  height="50" alt="Avatar" loading="lazy" />
+                <div class="d-flex w-100 ps-3">
+                  <div>
+                    <a href="">
+                      <h6 class="text-body">
+                        Miley Cyrus
+                        <span class="small text-muted font-weight-normal">@mileycyrus</span>
+                        <span class="small text-muted font-weight-normal"> • </span>
+                        <span class="small text-muted font-weight-normal">2h</span>
+                        <span><i class="fas fa-angle-down float-end"></i></span>
+                      </h6>
+                    </a>
+                    <p style="line-height: 1.2;">
+                      Lorem ipsum dolor, sit amet <a href="">#consectetur</a> adipisicing elit.
+                      Nobis assumenda eveniet ipsum libero mollitia vero doloremque
+                      <a href="">#perspiciatis</a> molestiae omnis, quam iure dicta reprehenderit
+                      distinctio facere labore atque, sit <a href="">#ratione</a> quo.
+                    </p>
+                    <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
+                      <li>
+                        <i class="far fa-comment"></i>
+                      </li>
+                      <li><i class="fas fa-retweet"></i><span class="small ps-2">7 Likes</span></li>
+                      <li><i class="far fa-heart"></i><span class="small ps-2">35 Shares</span></li>
+                      <li>
+                        <i class="far fa-share-square"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex p-3 border-bottom">
+                <img src="../img/girlcar.webp" class="rounded-circle"
+                  height="50" alt="Avatar" loading="lazy" />
+                <div class="d-flex w-100 ps-3">
+                  <div>
+                    <a href="#">
+                      <h6 class="text-body">
+                        Miley Cyrus
+                        <span class="small text-muted font-weight-normal">@mileycyrus</span>
+                        <span class="small text-muted font-weight-normal"> • </span>
+                        <span class="small text-muted font-weight-normal">3h</span>
+                        <span><i class="fas fa-angle-down float-end"></i></span>
+                      </h6>
+                    </a>
+                    <p style="line-height: 1.2;">
+                      Nobis assumenda eveniet ipsum libero mollitia vero doloremque molestiae
+                      reprehenderit.
+                    </p>
+                    <div class="card border mb-3 shadow-0" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-3">
+                          <img src="../img/cat.webp" alt="Avatar"
+                            class="img-fluid rounded-left" />
+                        </div>
+                        <div class="col-md-9">
+                          <div class="card-body">
+                            <p class="card-text" style="line-height: 1;">
+                              Title of the news
+                            </p>
+                            <p class="card-text small mb-0" style="line-height: 1.2;">
+                              This is a wider card with supporting text below as a natural lead-in
+                              to additional content.
+                            </p>
+                            <p class="card-text small mb-0" style="line-height: 1.2;">
+                              <i class="fas fa-link fa-xs pe-1"></i>example.pl
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
+                      <li>
+                        <i class="far fa-comment"></i>
+                      </li>
+                      <li><i class="fas fa-retweet"></i><span class="small ps-2">51 Likes</span></li>
+                      <li><i class="far fa-heart"></i><span class="small ps-2">185 Shares</span></li>
+                      <li>
+                        <i class="far fa-share-square"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex p-3 border-bottom">
+                <img src="../img/girlbrownhair.webp" class="rounded-circle"
+                  height="50" alt="Avatar" loading="lazy" />
+                <div class="d-flex w-100 ps-3">
+                  <div>
+                    <a href="#">
+                      <h6 class="text-body">
+                        Bob Marley
+                        <span class="small text-muted font-weight-normal">@bobmarley</span>
+                        <span class="small text-muted font-weight-normal"> • </span>
+                        <span class="small text-muted font-weight-normal">5h</span>
+                        <span><i class="fas fa-angle-down float-end"></i></span>
+                      </h6>
+                    </a>
+                    <p style="line-height: 1.2;">
+                      Lorem ipsum dolor, sit amet <a href="">#consectetur</a> adipisicing elit.
+                      Officiis, <a href="">#repellat</a>. Error cumque temporibus eum pariatur
+                      ducimus facere? Obcaecati fugit, nobis eos <a href="">#deserunt</a> odit
+                      libero voluptatibus, iste laudantium, tempore ratione ut.
+                    </p>
+                    <div class="card border mb-3 shadow-0" style="max-width: 540px;">
+                      <div class="row g-0">
+                        <div class="col-md-3">
+                          <img src="../img/girlshorthair.webp" alt="Avatar"
+                            class="img-fluid rounded-left" />
+                        </div>
+                        <div class="col-md-9">
+                          <div class="card-body">
+                            <p class="card-text" style="line-height: 1;">
+                              Title of the news
+                            </p>
+                            <p class="card-text small mb-0" style="line-height: 1.2;">
+                              This is a wider card with supporting text below as a natural lead-in
+                              to additional content.
+                            </p>
+                            <p class="card-text small mb-0" style="line-height: 1.2;">
+                              <i class="fas fa-link fa-xs pe-1"></i>example.pl
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
+                      <li>
+                        <i class="far fa-comment"></i>
+                      </li>
+                      <li><i class="fas fa-retweet"></i><span class="small ps-2">8 Likes</span></li>
+                      <li><i class="far fa-heart"></i><span class="small ps-2">97 Shares</span></li>
+                      <li>
+                        <i class="far fa-share-square"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex p-3 border-bottom">
+                <img src="../img/girlred.webp" class="rounded-circle"
+                  height="50" alt="Avatar" loading="lazy" />
+                <div class="d-flex w-100 ps-3">
+                  <div>
+                    <a href="">
+                      <h6 class="text-body">
+                        Anna Doe
+                        <span class="small text-muted font-weight-normal">@annadoe</span>
+                        <span class="small text-muted font-weight-normal"> • </span>
+                        <span class="small text-muted font-weight-normal">7h</span>
+                        <span><i class="fas fa-angle-down float-end"></i></span>
+                      </h6>
+                    </a>
+                    <p style="line-height: 1.2;">
+                      Error cumque temporibus eum pariatur ducimus facere? Obcaecati fugit, nobis
+                      eos <a href="">#deserunt</a> odit libero voluptatibus, iste laudantium,
+                      tempore ratione ut.
+                    </p>
+                    <img src="../img/cave.webp"
+                      class="img-fluid rounded mb-3" alt="Fissure in Sandstone" />
+                    <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
+                      <li>
+                        <i class="far fa-comment"></i>
+                      </li>
+                      <li><i class="fas fa-retweet"></i><span class="small ps-2">11 Likes</span></li>
+                      <li><i class="far fa-heart"></i><span class="small ps-2">65 Shares</span></li>
+                      <li>
+                        <i class="far fa-share-square"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex p-3 border-bottom mb-5">
+                <img src="../img/manfade.webp" class="rounded-circle"
+                  height="50" alt="Avatar" loading="lazy" />
+                <div class="d-flex w-100 ps-3">
+                  <div>
+                    <a href="">
+                      <h6 class="text-body">
+                        Mark Twain
+                        <span class="small text-muted font-weight-normal">@marktawin</span>
+                        <span class="small text-muted font-weight-normal"> • </span>
+                        <span class="small text-muted font-weight-normal">10h</span>
+                        <span><i class="fas fa-angle-down float-end"></i></span>
+                      </h6>
+                    </a>
+                    <p style="line-height: 1.2;">
+                      Obcaecati fugit, nobis eos odit libero voluptatibus, iste laudantium,
+                      tempore ratione ut.
+                    </p>
+                    <div class="ratio ratio-16x9 mb-3">
+                      <iframe src="https://www.youtube.com/embed/vlDzYIIOYmM" title="YouTube video"
+                        allowfullscreen></iframe>
+                    </div>
+                    <ul class="list-unstyled d-flex justify-content-between mb-0 pe-xl-5">
+                      <li>
+                        <i class="far fa-comment"></i>
+                      </li>
+                      <li><i class="fas fa-retweet"></i><span class="small ps-2">34 Likes</span></li>
+                      <li><i class="far fa-heart"></i><span class="small ps-2">159 Shares</span></li>
+                      <li>
+                        <i class="far fa-share-square"></i>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

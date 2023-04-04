@@ -11,7 +11,7 @@
    - Delivery
    - Resources
 
-### Goal
+## Goal
 
 To apply knowledge of Bootstrap and SASS to build a responsive front end for a social media application.
 Brief
@@ -54,4 +54,7 @@ Please submit your public GitHub repository URL and any supplementary files, suc
 Design files will not be included in your grade but will help to provide additional context to the marker.
 
    - Please make sure to exclude node_modules by using a .gitignore file.
+
+#
+
 

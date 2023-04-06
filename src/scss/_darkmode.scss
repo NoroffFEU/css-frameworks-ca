@@ -26,6 +26,10 @@ body[data-bs-theme="light"] {
     color: $primary;
   }
 
+  .info-frame {
+    background-color: $secondary-light;
+  }
+
   #searchbar {
     border-radius: 1%;
   }
@@ -65,7 +69,8 @@ body[data-bs-theme="dark"] {
     border-radius: 1%;
   }
 
-  .form-card {
+  .form-card,
+  .profile-card {
     background-color: $secondary-dark;
     border: 2px solid $tertiary-dark;
   }
@@ -82,6 +87,15 @@ body[data-bs-theme="dark"] {
   .social-accounts a,
   .text-mode-color {
     color: $secondary-light;
+  }
+
+  .profile-info-text {
+    color: #9ba6ab;
+  }
+
+  .dark-mode-bg {
+    border: $border-color 2px solid;
+    color: #fff;
   }
 
   .bx {

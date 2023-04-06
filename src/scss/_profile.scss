@@ -1,4 +1,20 @@
-.feed-container,
+.profile-container,
 .profile-header {
-  margin-top: 5%;
+  margin-top: 10%;
+}
+
+.info-frame {
+  background-color: $tertiary-dark;
+}
+
+.profile-text {
+  color: $secondary-light;
+}
+
+.profile-info-text {
+  color: #6c757d;
+}
+
+.bx {
+  background-color: $secondary-light;
 }

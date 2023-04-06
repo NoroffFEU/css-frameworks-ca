@@ -58,24 +58,88 @@
       </div>
     </nav>
 
-    <section class="container">
-      <div class="row content dflex justify-content-center align-items-center">
-        <div class="col-md-5">
-          <h1 class="text-center display-2 profile-header text-mode-color">Profile</h1>
-          <div class="shadow d-flex justify-content-center align-items-center p-3 rounded-lg flex-column">
-            <div class="person-img">
-              <img src="../img/profile.jpeg" class="img-fluid rounded-circle" alt="Profile picture" />
+    <!-- <div class="profile-card shadow d-flex justify-content-center align-items-center p-3 rounded-lg flex-column">
+      <div class="person-img">
+        <img src="../img/profile.jpeg" class="img-fluid rounded-circle" alt="Profile picture" />
+      </div>
+      <div class="person-name my-m2">
+        <h3 class="">John Doe</h3>
+      </div>
+      <div class="info">
+        <h6 class="">Web Developer</h6>
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <div class="info-frame d-flex justify-content-start rounded-3 p-3 px-5 mb-2">
+          <div>
+            <p class="small text-muted mb-1">Articles</p>
+            <p class="mb-0">41</p>
+          </div>
+          <div class="px-3">
+            <p class="small text-muted mb-1">Followers</p>
+            <p class="mb-0">976</p>
+          </div>
+          <div>
+            <p class="small text-muted mb-1">Rating</p>
+            <p class="mb-0">8.5</p>
+          </div>
+        </div>
+        <div class="d-flex pt-1">
+          <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
+          <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="#" class=""><i class="fa-brands fa-facebook-f p-2" aria-hidden="true"></i></a>
+        <a href="#" class=""><i class="fa-brands fa-twitter p-2" aria-hidden="true"></i></a>
+        <a href="#" class=""><i class="fa-brands fa-google p-2" aria-hidden="true"></i></a>
+      </div>
+    </div> -->
+
+    <section class="container profile-container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-10 mt-5 profile-card shadow d-flex">
+          <div class="row z-depth-3">
+            <div class="col-sm-4 bg-primary">
+              <div class="card-block text-center">
+                <img src="../img/profile.jpeg" class="img-fluid rounded-circle mt-5 p-3" alt="Profile picture" />
+                <h2 class="font-weight-bold mt-3 profile-text">John Doe</h2>
+                <p class="profile-text pb-3">Web Designer</p>
+              </div>
             </div>
-            <div class="person-name my-m2">
-              <h3 class="">John Doe</h3>
+            <div class="col-sm-8">
+              <h3 class="mt-5 text-center">Information</h3>
+              <hr class="badge-primary mt-0 w-30">
+              <div class="info-frame d-flex justify-content-center p-3 px-5 mb-2">
+                <div class="text-center">
+                  <p class="small profile-info-text mb-1">Following</p>
+                  <p class="mb-0">41</p>
+                </div>
+                <div class="px-3 text-center">
+                  <p class="small profile-info-text mb-1">Followers</p>
+                  <p class="mb-0">976</p>
+                </div>
+              </div>
+              <h4 class="mt-4 text-center">Projects</h4>
+              <hr class="badge-primary">
+              <div class="info-frame d-flex justify-content-center p-3 px-5 mb-2">
+                <div class="text-center">
+                  <p class="small profile-info-text mb-1">Articles</p>
+                  <p class="mb-0">41</p>
+                </div>
+                <div class="px-3 text-center">
+                  <p class="small profile-info-text mb-1">Starred</p>
+                  <p class="mb-0">976</p>
+                </div>
+                <div class="text-center">
+                  <p class="small profile-info-text mb-1">Rating</p>
+                  <p class="mb-0">8.5</p>
+                </div>
+              </div>
+              <div class="d-flex pt-4 mt-4">
+                <button type="button" class="btn btn-primary me-1 flex-grow-1 dark-mode-bg">Chat</button>
+                <button type="button" class="btn btn-primary me-1 flex-grow-1 dark-mode-bg">Follow</button>
+              </div>
             </div>
-            <div class="info">
-              <h6 class="">Web Developer</h6>
-            </div>
-            <div class="social-icons">
-              <a href="#" class=""><i class="fa-brands fa-facebook-f p-2" aria-hidden="true"></i></a>
-              <a href="#" class=""><i class="fa-brands fa-twitter p-2" aria-hidden="true"></i></a>
-              <a href="#" class=""><i class="fa-brands fa-google p-2" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
@@ -83,68 +147,44 @@
     </section>
 
     <!-- <section class="container">
-      <div class="shadow row d-flex mt-5 pt-8 text-center">
-        <div class="col-md-11">
-          <div class="row z-depth-3">
-            <div class="col-sm-4 bg-primary rounded-left">
-              <div class="card-block">
-                <svg
-                  fill="#dee2e6"
-                  width="256px"
-                  height="256px"
-                  viewBox="-4.16 -4.16 40.32 40.32"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#343a40"
-                  stroke-width="0.00032"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#343a40" stroke-width="0.064"></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M15.992 2c3.396 0 6.998 2.86 6.998 4.995v4.997c0 1.924-0.8 5.604-2.945 7.293-0.547 0.43-0.831 1.115-0.749 1.807 0.082 0.692 0.518 1.291 1.151 1.582l8.703 4.127c0.068 0.031 0.834 0.16 0.834 1.23l0.001 1.952-27.984 0.002v-2.029c0-0.795 0.596-1.045 0.835-1.154l8.782-4.145c0.63-0.289 1.065-0.885 1.149-1.573s-0.193-1.37-0.733-1.803c-2.078-1.668-3.046-5.335-3.046-7.287v-4.997c0.001-2.089 3.638-4.995 7.004-4.995zM15.992-0c-4.416 0-9.004 3.686-9.004 6.996v4.997c0 2.184 0.997 6.601 3.793 8.847l-8.783 4.145s-1.998 0.89-1.998 1.999v3.001c0 1.105 0.895 1.999 1.998 1.999h27.986c1.105 0 1.999-0.895 1.999-1.999v-3.001c0-1.175-1.999-1.999-1.999-1.999l-8.703-4.127c2.77-2.18 3.708-6.464 3.708-8.865v-4.997c0-3.31-4.582-6.995-8.998-6.995v0z"
-                    ></path>
-                  </g>
-                </svg>
-                <h2 class="font-weight-bold mt4 text-white">John</h2>
-                <p class="text-white">Frontend Developer</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#dee2e6" class="bi bi-pencil-square mt-1 mb-4" viewBox="0 0 16 16">
-                  <path
-                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
-                  />
-                </svg>
+      <div class="row content dflex justify-content-center align-items-center">
+        <div class="col-md-5">
+          <h1 class="text-center display-2 profile-header text-mode-color">Profile</h1>
+          <div class="profile-card shadow d-flex justify-content-center align-items-center rounded flex-row">
+            <div class="col-md-4 bg-primary rounded-start text-center">
+              <div class="person-img">
+                <img src="../img/profile.jpeg" class="img-fluid rounded-circle" alt="Profile picture" />
+              </div>
+              <div class="person-name my-m2">
+                <h3 class="info">John Doe</h3>
+              </div>
+              <div class="info">
+                <h6 class="">Web Developer</h6>
               </div>
             </div>
-            <div class="col-sm-8 ml-auto">
-              <h3 class="mt-4 text-center">Information</h3>
-              <hr class="badge-primary mt-0 w-30" />
-              <div class="row">
-                <div class="col-sm-6">
-                  <p class="font-weight-bold">Username:</p>
-                  <h6 class="text-muted">JonDoe</h6>
+            <div class="col-md-8 bg-dark rounded-end text-center h-100">
+              <div class="info-frame d-flex justify-content-start rounded-3 p-3 px-5 mb-2">
+                <div class="mt-auto">
+                  <p class="small text-muted mb-1">Articles</p>
+                  <p class="mb-0">41</p>
                 </div>
-                <div class="col-sm-6">
-                  <p class="font-weight-bold">Followers:</p>
-                  <h6 class="text-muted">13</h6>
-                  <p class="font-weight-bold">Following:</p>
-                  <h6 class="text-muted">13</h6>
+                <div class="px-3 mt-auto">
+                  <p class="small text-muted mb-1">Followers</p>
+                  <p class="mb-0">976</p>
+                </div>
+                <div>
+                  <p class="small text-muted mb-1">Rating</p>
+                  <p class="mb-0">8.5</p>
                 </div>
               </div>
-              <h4 class="mt-5">Projects</h4>
-              <hr class="badge-primary mt-0 w-30" />
-              <div class="row">
-                <div class="col-sm-6">
-                  <p class="font-weight-bold">Most Viewed:</p>
-                  <h6 class="text-muted">Lorem Ipsum</h6>
-                </div>
-                <div class="col-sm-6">
-                  <p class="font-weight-bold">Most Recent:</p>
-                  <h6 class="text-muted">Lorem Ipsum</h6>
-                </div>
+              <div class="d-flex pt-1">
+                <button type="button" class="btn btn-outline-primary me-1 flex-grow-1">Chat</button>
+                <button type="button" class="btn btn-primary flex-grow-1">Follow</button>
+              </div>
+              <div class="social-icons">
+                <a href="#" class=""><i class="fa-brands fa-facebook-f p-2" aria-hidden="true"></i></a>
+                <a href="#" class=""><i class="fa-brands fa-twitter p-2" aria-hidden="true"></i></a>
+                <a href="#" class=""><i class="fa-brands fa-google p-2" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>

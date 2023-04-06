@@ -1,0 +1,105 @@
+///////////////////////// Light Mode ////////////////////////////
+
+/* Light Mode */
+body[data-bs-theme="light"] {
+  background-color: $primary-light;
+  color: black;
+
+  /* Light mode navbar styles */
+  .navbar {
+    background-color: $tertiary-light;
+    border-bottom: 1px solid $secondary-light;
+
+    /* Light mode navbar link styles */
+    .navbar-nav .nav-link {
+      color: $primary-dark;
+
+      /* Light mode navbar active link styles */
+      &.active {
+        color: $primary-light;
+        background-color: $primary;
+      }
+    }
+  }
+
+  .text-mode-color {
+    color: $primary;
+  }
+
+  .info-frame {
+    background-color: $secondary-light;
+  }
+
+  #searchbar {
+    border-radius: 1%;
+  }
+}
+
+///////////////////////// Dark Mode ////////////////////////////
+
+/* Dark Mode */
+body[data-bs-theme="dark"] {
+  background-color: $primary-dark;
+  color: $primary-light;
+
+  /* Dark mode navbar styles */
+  .navbar {
+    background-color: $secondary-dark;
+    border-bottom: 1px solid $tertiary-dark;
+    color: $primary-light;
+
+    /* Dark mode navbar link styles */
+    .navbar-nav .nav-link,
+    .navbar-brand {
+      color: $primary-light;
+
+      /* Dark mode navbar active link styles */
+      &.active {
+        color: $primary-light;
+        background-color: $primary;
+      }
+    }
+
+    input {
+      background-color: $tertiary-dark;
+    }
+  }
+
+  #searchbar {
+    border-radius: 1%;
+  }
+
+  .form-card,
+  .profile-card {
+    background-color: $secondary-dark;
+    border: 2px solid $tertiary-dark;
+  }
+
+  input,
+  input::placeholder {
+    background-color: $tertiary-dark;
+    color: $primary-light;
+  }
+
+  .profile-header,
+  .feed-header,
+  .forgot-password-link a,
+  .social-accounts a,
+  .text-mode-color {
+    color: $secondary-light;
+  }
+
+  .profile-info-text {
+    color: #9ba6ab;
+  }
+
+  .dark-mode-bg {
+    border: $border-color 2px solid;
+    color: #fff;
+  }
+
+  .bx {
+    background-color: $secondary-light;
+  }
+}
+//////////////////////////////////////////////////////////////////

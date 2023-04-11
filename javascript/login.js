@@ -24,7 +24,7 @@ const loginPassword = document.querySelector("#logInPassword");
   });
 })();
 
-// check if input is large enough ,larger than 7 in this case
+// check if input is large enough ,smaller than 8 in this case
 
 function checkInput(input) {
   var value = input.value;

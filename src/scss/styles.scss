@@ -7,16 +7,15 @@
 // Original Styles
 @import "../components/header.scss";
 
-.container-fluid {
-  background-image: url("/css_frameworks_img/Plants.jpeg");
-  background-size: cover;
-  height: 90px;
-  width: 100%;
-}
+// .container-fluid {
+//   background-image: url("/css_frameworks_img/Plants.jpeg");
+//   background-size: cover;
+//   height: 90px;
+//   width: 100%;
+// }
 
 .rounded {
   object-fit: cover;
-
 }
 
 header {
@@ -32,4 +31,10 @@ header {
 
 p {
   margin-bottom: 0rem;
+}
+
+.card-cover {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
 }

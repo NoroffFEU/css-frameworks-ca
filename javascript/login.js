@@ -1,4 +1,5 @@
 const loginPassword = document.querySelector("#logInPassword");
+const button = document.querySelector(".btn");
 
 // bootstrap form validation
 (() => {
@@ -32,8 +33,10 @@ function checkInput(input) {
   if (value.length < 8) {
     input.classList.remove("is-valid");
     input.classList.add("is-invalid");
+    button.setAttribute("disabled", true);
   } else {
     input.classList.add("is-valid");
     input.classList.remove("is-invalid");
+    button.removeAttribute("disabled", false);
   }
 }

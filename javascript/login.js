@@ -25,7 +25,7 @@ const button = document.querySelector(".btn");
   });
 })();
 
-// check if input is large enough ,smaller than 8 in this case
+// check if input on password is large enough ,smaller than 8 in this case
 
 function checkInput(input) {
   var value = input.value;
@@ -33,7 +33,6 @@ function checkInput(input) {
   if (value.length < 8) {
     input.classList.remove("is-valid");
     input.classList.add("is-invalid");
-    button.setAttribute("disabled", true);
   } else {
     input.classList.add("is-valid");
     input.classList.remove("is-invalid");

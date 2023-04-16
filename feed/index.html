@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Feed Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+     <!-- Bootstrap CSS -->
+  </head>
+  <style>
+    body {
+      background-color: #1c1c1e;
+      color: #f0f0f0;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+      color: #f0f0f0;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link:focus {
+      color: #d3d3d3;
+    }
+    .navbar-dark .form-control {
+      background-color: #262626;
+      border-color: #444444;
+      color: #f0f0f0;
+    }
+    .card {
+      background-color: #262626;
+      border-color: #444444;
+      color: #f0f0f0;
+    }
+    .card-title {
+      color: #f0f0f0;
+    }
+    .list-group-item {
+      background-color: #262626;
+      border-color: #444444;
+      color: #f0f0f0;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+    .btn-primary:active,
+    .btn-primary.active {
+      background-color: #0062cc;
+      border-color: #005cbf;
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Social Media</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+        </ul>
+        <form class="form-inline ml-auto">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="d-flex justify-content-between mb-4">
+            <h4 class="font-weight-bold">Feed</h4>
+            <div>
+              <label class="mr-3">Sort by:</label>
+              <select class="form-control">
+                <option value="">Newest</option>
+                <option value="">Oldest</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <img src="https://via.placeholder.com/300x200.png?text=Post+Thumbnail" class="card-img-top" alt="Post Thumbnail">
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet dictum turpis. Duis eget velit et eros bibendum varius. Vestibulum elementum vel ipsum quis vestibulum.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <img src="https://via.placeholder.com/300x200.png?text=Post+Thumbnail" class="card-img-top" alt="Post Thumbnail">
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet dictum turpis. Duis eget velit et eros bibendum varius. Vestibulum elementum vel ipsum quis vestibulum.</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+
+

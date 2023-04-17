@@ -9,19 +9,62 @@
 </head>
 <body>
   <div class="container my-5">
-    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-0 align-items-center rounded-3 border shadow-lg">
       <div class="col-lg-5 p-3 p-lg-5 pt-lg-3">
-        <h1 class="display-4 fw-bold lh-1">Welcome to Urban Garden</h1>
-        <p class="lead">Meet your people of interest, gain ideas, exchange experience! Sell and buy seeds, rent your tools or just breathe and refuel your soul in this creative and peaceful community </p>
-        <form class="p-4 p-md-5 border rounded-3 bg-light">
+        <div class="pb-3">
+          <h1 class="display-4 fw-bold lh-1">Welcome to Urban Garden</h1>
+          <p class="lead">Meet your people of interest, gain ideas, exchange experience! Sell and buy seeds, rent your tools or just breathe and refuel your soul in this creative and peaceful community. </p>
+        </div>
+
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Email</label>
+            <input type="email" class="form-control" id="validationCustom01" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Password</label>
+            <input type="password" class="form-control password" id="validationCustom02" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+
+        <!-- <form class="p-4 p-md-5 border rounded-3 bg-light needs-validation" id="logInForm" novalidate>
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-control" id="floatingInput email" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
+            <div class="form-error">Please enter a valid email</div>
           </div>
+
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" type="password" class="form-control alert" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password (min 8 characters)</label>
+            <div class="form-error">Password must be at least 8 characters</div>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
           </div>
+
+
           <div class="checkbox mb-3">
             <label>
               <input type="checkbox" value="remember-me"> Remember me
@@ -30,7 +73,45 @@
           <button class="w-100 btn btn-lg btn-primary" type="submit"><a class="w-100 btn btn-lg btn-primary" href="profile.html">Log in</a></button>
           <hr class="my-4">
           <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-        </form>
+        </form> -->
+
+
+<!-- 
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Username</label>
+            <input type="text" class="form-control" id="validationCustom01"  required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Password</label>
+            <div class="input-group has-validation">
+              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form> -->
 
         <p class="mt-2">Don't have an account?<strong>Sign up</strong></p>
       </div>
@@ -40,5 +121,6 @@
     </div>
   </div>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/logIn.js"></script>
 </body>
 </html>

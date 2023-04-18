@@ -15,104 +15,21 @@
           <h1 class="display-4 fw-bold lh-1">Welcome to Urban Garden</h1>
           <p class="lead">Meet your people of interest, gain ideas, exchange experience! Sell and buy seeds, rent your tools or just breathe and refuel your soul in this creative and peaceful community. </p>
         </div>
-
-        <form class="row g-3 needs-validation" novalidate>
-          <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Email</label>
-            <input type="email" class="form-control" id="validationCustom01" value="" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Password</label>
-            <input type="password" class="form-control password" id="validationCustom02" value="" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-              <label class="form-check-label" for="invalidCheck">
-                Agree to terms and conditions
-              </label>
-              <div class="invalid-feedback">
-                You must agree before submitting.
+          <div class="col-md-10 mx-auto col-lg-12">
+            <form action="/profile.html" class="p-4 p-md-5 border rounded-3 bg-light">
+              <div class="mb-3">
+                <label for="validationDefault01" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="validationDefault01" placeholder="Email address" title="We need your email" required>
               </div>
-            </div>
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </div>
-        </form>
-
-        <!-- <form class="p-4 p-md-5 border rounded-3 bg-light needs-validation" id="logInForm" novalidate>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput email" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-            <div class="form-error">Please enter a valid email</div>
-          </div>
-
-          <div class="form-floating mb-3">
-            <input type="password" type="password" class="form-control alert" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password (min 8 characters)</label>
-            <div class="form-error">Password must be at least 8 characters</div>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-
-
-          <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me"> Remember me
-            </label>
-          </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit"><a class="w-100 btn btn-lg btn-primary" href="profile.html">Log in</a></button>
-          <hr class="my-4">
-          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
-        </form> -->
-
-
-<!-- 
-        <form class="row g-3 needs-validation" novalidate>
-          <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Username</label>
-            <input type="text" class="form-control" id="validationCustom01"  required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Password</label>
-            <div class="input-group has-validation">
-              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Please choose a username.
+              <div class="mb-3">
+                <label for="validationDefault02" class="form-label">Password</label>
+                <input type="password" class="form-control" id="validationDefault02" value="" minlength="8" placeholder="Password" title="At least 8 characters" required>
               </div>
-            </div>
-          </div>
-
-
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-              <label class="form-check-label" for="invalidCheck">
-                Agree to terms and conditions
-              </label>
-              <div class="invalid-feedback">
-                You must agree before submitting.
+              <div class="col-12">
+              <button class="btn btn-primary" type="submit">Log in</button>
               </div>
-            </div>
+            </form>
           </div>
-          <div class="col-12">
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </div>
-        </form> -->
-
         <p class="mt-2">Don't have an account?<strong>Sign up</strong></p>
       </div>
       <div class="col-lg-6 offset-lg-1 p-0 overflow-hidden shadow-lg">
@@ -121,6 +38,5 @@
     </div>
   </div>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/logIn.js"></script>
 </body>
 </html>

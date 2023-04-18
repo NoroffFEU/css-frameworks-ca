@@ -30,6 +30,6 @@
     "bootstrap": "^5.2.3"
   },
   "devDependencies": {
-    "sass": "^1.60.0"
+    "sass": "^1.62.0"
   }
 }

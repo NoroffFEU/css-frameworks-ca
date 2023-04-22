@@ -8,47 +8,18 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/auth.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <!-- Compiled SASS to CSS -->
+    <link rel="stylesheet" href="styles/style.scss" />
   </head>
   <!-- Dark mode CSS -->
-<style>
-    body {
-        background-color: #1c1c1e;
-        color: #fff;
-    }
-    label {
-        color: #fff;
-    }
-    input.form-control {
-        background-color: #29292d;
-        border-color: #6c757d;
-        color: #fff;
-    }
-    input.form-control:focus {
-        background-color: #29292d;
-        border-color: #6c757d;
-        color: #fff;
-        box-shadow: none;
-    }
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-    }
-    .btn-primary:hover {
-        background-color: #0069d9;
-        border-color: #0062cc;
-    }
-    .invalid-feedback {
-        color: #ffc107;
-    }
-</style>
 
   <body>
     <div class="container">
       <div class="row">
         <div class="col-md-6 mx-auto">
-          <h1 class="text-center mb-4">Login or Register</h1>
-          <form action="/profile" method="post" class="needs-validation" novalidate>
+          <h1 class="text-center mb-4">Login</h1>
+          <form action="/profile/index.html" method="post" class="needs-validation" novalidate ="_blank">
             <div class="form-group">
               <label for="username">Username</label>
               <input type="text" class="form-control" id="username" name="username" required />

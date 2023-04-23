@@ -1,7 +1,7 @@
 # Type:
 
-Npm i/install
-Npm run
+1. Npm i/install
+2. Npm run
 
 # css-frameworks-ca
 # setup node sass

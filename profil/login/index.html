@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/9e8ffdbe7c.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/src/js/index.mjs" defer type="module"></script>
   </head>
   <body>
     <img
@@ -24,47 +25,30 @@
     <div
       class="container min-vh-100 d-flex justify-content-center align-items-center"
     >
-      <form
-        action="profile.html"
-        method="get
-      "
-        class="bg-secondary rounded py-5 px-5"
-      >
-        <h1 class="text-center mb-5">Petstagram</h1>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
-        </div>
-        <div class="form-group pt-2">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-            minlength="8"
-          />
-        </div>
-        <div class="form-check pt-2 pb-3">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label pe-5" for="exampleCheck1"
-            >Remember me</label
-          >
-          <a href="../register/index.html">Register here</a>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">
-          Submit
-        </button>
-      </form>
+    <form id="loginForm">
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          required
+          pattern="^[\w.-]+@(stud.)?noroff.no$"
+          title="Only stud.noroff.no domains"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          required
+          minlength="8"
+        />
+
+      <button type="submit" class="btn btn-primary mt-3">Login</button>
+    </form>
     </div>
   </body>
 </html>

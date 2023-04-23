@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
-    "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css & live-server"
+    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -24,11 +22,5 @@
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
-  "dependencies": {
-    "bootstrap": "^5.2.3"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.2"
-  }
+  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
 }

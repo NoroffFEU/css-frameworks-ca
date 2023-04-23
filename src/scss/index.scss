@@ -1,5 +1,7 @@
 $primary-colour: #000000; 
 $secondary-color: #ffffff;
+$third-color: #dfdfdf;
+$fouth-color: green;
 
 
 img {
@@ -36,16 +38,16 @@ a {
 
 #emailError {
   display: none;
-  color: #dfdfdf;
+  color: $third-color;
 }
 
 #passwordError {
   display: none;
-  color: #dfdfdf;
+  color: $third-color;
 }
 
 .name {
-  color: white;
+  color: $secondary-color;
 }
 
 .logo {
@@ -57,7 +59,7 @@ a {
   border-radius: 100%;
   max-width: 200px;
   display: block;
-  border: solid 7px white;
+  border: solid 7px $secondary-color;
 }
 
 .background-image {
@@ -68,13 +70,13 @@ a {
 }
 
 .nickname {
-  color: white;
+  color: $secondary-color;
   font-size: 20px;
 }
 
 .follow-button {
-  background-color: Green;
-  color: white;
+  background-color: $fouth-color;
+  color: $secondary-color;
   max-width: 300px;
   border-radius: 20px;
 }
@@ -87,7 +89,7 @@ a {
   margin: 40px auto 40px auto;
   box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
   border-radius: 20px;
-  max-width: 600px !important;
+  max-width: 600px!important;
 }
 
 .follower-image {
@@ -101,6 +103,11 @@ a {
   border-radius: 10px;
   border: none;
   box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+  max-width: 300px;
+}
+
+.search-button {
+  color: $fouth-color!important;
 }
 
 .profile-picture-bottom {

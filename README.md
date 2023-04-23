@@ -1,4 +1,4 @@
-#Type:
+# Type:
 
 Npm i/install
 Npm run

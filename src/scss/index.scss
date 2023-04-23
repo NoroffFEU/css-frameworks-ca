@@ -1,4 +1,5 @@
-$primary-colour: #e85a4f; 
+$primary-colour: #000000; 
+$secondary-color: #ffffff;
 
 
 img {
@@ -21,8 +22,8 @@ a {
   font-weight: 600;
 }
 
-.login-h1 {
-  color: white;
+.active {
+  text-decoration: underline!important;
 }
 
 .login {
@@ -32,16 +33,6 @@ a {
   max-width: 600px!important;
 }
 
-.button-login {
-  border-radius: 10px;
-  border: none;
-}
-
-.button-login:hover {
-  box-shadow: 0 -2px 16px rgb(255, 255, 255);
-  background-color: #000000;
-  color: white;
-}
 
 #emailError {
   display: none;
@@ -60,7 +51,6 @@ a {
 .logo {
   max-height: 90px;
   max-width: 90px;
-  background-color: black;
 }
 
 .profile-picture {

@@ -7,16 +7,17 @@
         <link rel="stylesheet" href="dist/css/index.css">
     </head>
     <body>
-        <header class="d-flex justify-content-center align-items-center p-3 bg-info mt-0 mb-2 mx-auto">
+        <header class="d-flex justify-content-center align-items-center p-3 bg-info mt-0 mb-3 mx-auto text-primary">
             <a href="../index.html"><img src="images/pp-logo.svg" style="height: 15%; width: auto; padding: 5px"></a>
             <h1 style="padding: 5px">Product Passion</h1>
         </header>
         <main class="text-center">
-            <h4>A community of passionate product people sharing and collaborating</h4>
-            <h4>- Join us and embark upon your product journey today!</h4>
+            <h4 class="text-primary">We are a community of passionate product people sharing and collaborating:</h4>
+            <h4 class="text-primary">Join us and embark upon your product journey today!</h4>
             <section class="d-flex justify-content-center text mx-auto my-4 p-2 flex-column">
                 <h3>New user? Sign up here</h3>
-                <form action="/profile" class="mx-auto my-3">
+                <form action="/profile" class="mx-auto my-3" id="register-form">
+                    <div id="success-message-cont"></div>
                     <div class="p-2">
                         <div class="name-feedback-container"></div>
                         <input type="text" placeholder="Your name here*" id="full-name" name="full-name" class="text-center bg-info" style="border-radius: 25px">
@@ -30,7 +31,7 @@
                         <input type="text" placeholder="Your password here*" id="password-input" name="password-input" class="text-center bg-info" style="border-radius: 25px">
                     </div>
                     <div class="p-2">Consent to <a href="/X">Terms and conditions</a>
-                        <input type="radio"></button>
+                        <input type="radio" id="consent-radio-button"></button>
                     </div>
                     <div class="p-2"> 
                         <button type="submit" class="btn btn-primary" id="submit-button">Sign Up</button>
@@ -56,7 +57,7 @@
         </main>
         <footer class="container text-center my-4 mx-auto">
             <div class="row d-flex justify-content-center">
-                <div class="col mx-auto my-3 font-weight-bold">All rights reserved © 2023</div>
+                <div class="col mx-auto my-3 font-weight-bold text-primary">All rights reserved © 2023</div>
                 <a href="mailto:post@productpassion.no" class="col mx-auto my-3 font-weight-bold">Post@productpassion.no</a>
             </div>
         </footer>

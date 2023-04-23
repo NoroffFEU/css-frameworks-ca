@@ -1,2 +1,22 @@
-@import "variables";
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+body {
+    margin: 0;
+}
+
+form {
+    width: 80%;
+    height: auto;
+}
+
+#post-message {
+    width: 40%;
+    height: 10rem;
+}
+
+#search-input {
+    width: 40%;
+    height: auto;
+}
+
+.sort-radio {
+    padding: 5px;
+}

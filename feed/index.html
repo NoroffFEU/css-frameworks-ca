@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Passion Feed</title>
+        <link rel="stylesheet" href="../dist/css/index.css">
+    </head>
+    <body>
+        <header class="d-flex justify-content-center align-items-center p-2 bg-info mt-0 mb-2 mx-auto text-primary">
+            <a href="../index.html"><img src="../images/pp-logo.svg" style="height: 15%; width: auto; padding: 5px"></a>
+            <h1 style="padding: 5px">Product Passion</h1>
+        </header>
+        <main>
+            <nav class="navbar navbar-expand-sm text-center mx-auto my-3 d-flex justify-content-center">
+                <a href="../feed/index.html" alt="Feed"><h3 class="p-3 border border-3 border-primary rounded bg-info m-2">Feed</h3></a>
+                <a href="../profile/index.html"><h3 class="p-3 border border-3 bg-info rounded border-primary m-2">Profile</h3></a>
+            </nav>
+            <section class="d-flex justify-content-center text-center" style="margin: auto">
+                <form action="/profile" class="">
+                    <div class="contact-form-div" style="padding: 0.5rem; border-radius: 25px">
+                        <div class="post-title-container"></div>
+                        <input type="text-field" placeholder="Your title here*" id="post-title" name="post-title" class="text-center bg-info" style="border-radius: 25px">
+                    </div>
+                    <div class="contact-form-div" style="padding: 0.5rem">
+                        <div class="post-message-container"></div>
+                        <input type="text-field" placeholder="Your message here*" id="post-message" name="post-message" class="text-center bg-info" style="border-radius: 25px">
+                    </div>
+                    <div class="contact-form-div" style="padding: 0.5rem"> 
+                        <button type="submit" id="post-button" class="btn btn-primary">Publish</button>
+                    </div>
+                </form>
+            </section>
+            <section class="d-flex justify-content-center flex-column text-center" style="margin: 3rem auto 3rem auto">
+                <form action="/profile" class="d-flex justify-content-center text-center flex-column" style="margin: auto">
+                    <div class="contact-form-div" style="padding: 0.5rem">
+                        <div class="post-message-container"></div>
+                        <input type="text-field" placeholder="Search here" id="search-input" name="search-input" class="text-center bg-info" style="border-radius: 25px">
+                    </div>
+                    <div class="form-div"> 
+                        <button type="submit" id="search-button" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </section>
+            <section class="container-md" style="margin: 3rem auto 3rem auto">
+                <div class="row text-center d-flex justify-content-center">
+                    <div class="col-2">
+                        <h4 class="sort-div">Newest</h4>
+                        <input type="radio" class="sort-radio"></button>
+                    </div>
+                    <div class="col-2">
+                        <h4 class="sort-div">Popular</h4>
+                        <input type="radio" class="sort-radio"></button>
+                    </div>
+                    <div class="col-2">
+                        <h4 class="sort-div">Relevance</h4>
+                        <input type="radio" class="sort-radio"></button>
+                    </div>
+                </div>
+            </section>
+            <section class="text-center">
+                <h2 style="margin: auto">Posts</h2>
+                <div class="row" style="margin: auto">
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card text-center" style="width: 80%; height: 18rem; margin: 2rem auto 2rem auto">
+                            <div class="card-header">
+                                Name of poster
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Title of post</h3>
+                                <p class="card-text">Message</p>
+                                <a href="" class="btn btn-primary">See full</a>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="card-link"><img src="../images/like-icon-heart.png" class="card-img" style="width: 2rem; height: auto"></a>
+                                <a href="" class="card-link"><img src="../images/svg-comment.svg" class="card-img" style="width: 2rem; height: auto"></a>
+                                <div>1 day ago</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="container text-center font-weight-bold">
+                <div class="row d-flex justify-content-center my-2 mx-auto">
+                    <p class="col text-primary" style="width: 40%">All rights reserved © 2023</p>
+                    <a href="mailto:post@productpassion.no" class="col">Post@productpassion.no</a>
+                </div>
+        </footer>
+        <script src="js/feed.js"></script>
+    </body>
+</html>

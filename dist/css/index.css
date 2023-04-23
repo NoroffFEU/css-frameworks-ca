@@ -38,10 +38,6 @@ footer {
 }
 
 /* Profile */
-.name {
-  color: #ffffff;
-}
-
 .active {
   text-decoration: underline !important;
 }
@@ -99,18 +95,8 @@ footer {
   max-width: 300px;
 }
 
-.search-button {
-  color: green !important;
-}
-
-.profile-picture-bottom {
-  max-width: 600px;
-  border-radius: 20px;
-}
-
 select {
   max-width: 200px !important;
-  margin: auto !important;
 }
 
 textarea {

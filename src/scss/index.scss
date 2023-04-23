@@ -4,7 +4,7 @@ $third-color: #dfdfdf;
 $fouth-color: green;
 $shadow-color: rgba(47, 54, 64, 0.39);
 
-
+/* Global styles */ 
 img {
   width: 100%;
   padding: 10px;
@@ -25,9 +25,17 @@ a {
   font-weight: 600;
 }
 
-.active {
-  text-decoration: underline!important;
+.logo {
+  max-height: 90px;
+  max-width: 90px;
 }
+
+footer {
+  text-align: center;
+  background-color: rgba(47, 54, 64, 0.39);
+}
+
+/* Login */
 
 .login {
   text-align: center;
@@ -36,24 +44,13 @@ a {
   max-width: 600px!important;
 }
 
-
-#emailError {
-  display: none;
-  color: $third-color;
-}
-
-#passwordError {
-  display: none;
-  color: $third-color;
-}
-
+/* Profile */ 
 .name {
   color: $secondary-color;
 }
 
-.logo {
-  max-height: 90px;
-  max-width: 90px;
+.active {
+  text-decoration: underline!important;
 }
 
 .profile-picture {
@@ -100,6 +97,8 @@ a {
   box-shadow: 0 -2px 16px $shadow-color;
 }
 
+/* Feed */
+
 .search {
   text-align: center;
   border-radius: 10px;
@@ -132,7 +131,3 @@ textarea {
   max-width: 200px!important;
 }
 
-footer {
-  text-align: center;
-  background-color: rgba(47, 54, 64, 0.39);
-}

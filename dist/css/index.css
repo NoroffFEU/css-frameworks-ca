@@ -1,3 +1,4 @@
+/* Global styles */
 img {
   width: 100%;
   padding: 10px;
@@ -18,10 +19,17 @@ a {
   font-weight: 600;
 }
 
-.active {
-  text-decoration: underline !important;
+.logo {
+  max-height: 90px;
+  max-width: 90px;
 }
 
+footer {
+  text-align: center;
+  background-color: rgba(47, 54, 64, 0.39);
+}
+
+/* Login */
 .login {
   text-align: center;
   border-radius: 10px;
@@ -29,23 +37,13 @@ a {
   max-width: 600px !important;
 }
 
-#emailError {
-  display: none;
-  color: #dfdfdf;
-}
-
-#passwordError {
-  display: none;
-  color: #dfdfdf;
-}
-
+/* Profile */
 .name {
   color: #ffffff;
 }
 
-.logo {
-  max-height: 90px;
-  max-width: 90px;
+.active {
+  text-decoration: underline !important;
 }
 
 .profile-picture {
@@ -92,6 +90,7 @@ a {
   box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
 }
 
+/* Feed */
 .search {
   text-align: center;
   border-radius: 10px;
@@ -122,9 +121,4 @@ textarea {
 
 .comment-button {
   max-width: 200px !important;
-}
-
-footer {
-  text-align: center;
-  background-color: rgba(47, 54, 64, 0.39);
 }/*# sourceMappingURL=index.css.map */

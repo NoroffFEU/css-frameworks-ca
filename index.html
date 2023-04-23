@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/css/index.css" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/index.css">
   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <title>Login</title>
@@ -19,22 +19,18 @@
       <form id="contactForm">
         <div class="mb-3">
           <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="* Your email">
-          <div class="emailError" id="emailError">Please enter correct email</div>
+          <input type="email" class="form-control" id="email" placeholder="* Your email" required>
         </div>
         <div class="mb-3">
           <label for="inputPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="* Your password">
-          <div class="passwordError" id="passwordError">
-            Password must be min. 8 characters
-          </div>
+          <input type="password" class="form-control" id="password" placeholder="* Your password" minlength="8"
+            required>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" formaction="/profile/index.html">Submit</button>
 
       </form>
     </div>
   </div>
-  <script src="/js/script.js"></script>
 </body>
 
 </html>

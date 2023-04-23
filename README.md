@@ -1,5 +1,4 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
 # setup node sass
 
 1. Once in the correct folder, run the command npm init. You will be prompted to answer several questions about the project, after which NPM will generate a package.json file in your folder.

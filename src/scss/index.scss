@@ -1,3 +1,10 @@
+$primary-colour: #000000; 
+$secondary-color: #ffffff;
+$third-color: #dfdfdf;
+$fouth-color: green;
+$shadow-color: rgba(47, 54, 64, 0.39);
+
+
 img {
   width: 100%;
   padding: 10px;
@@ -7,7 +14,6 @@ img {
 
 h1 {
   text-align: center;
-  color: brown;
 }
 
 p {
@@ -19,54 +25,42 @@ a {
   font-weight: 600;
 }
 
-.login-h1 {
-  color: white;
+.active {
+  text-decoration: underline!important;
 }
 
 .login {
-
   text-align: center;
   border-radius: 10px;
   border: none;
-  max-width: 600px;
+  max-width: 600px!important;
 }
 
-.button-login {
-  border-radius: 10px;
-  border: none;
-}
-
-.button-login:hover {
-  box-shadow: 0 -2px 16px rgb(255, 255, 255);
-  background-color: #000000;
-  color: white;
-}
 
 #emailError {
   display: none;
-  color: #dfdfdf;
+  color: $third-color;
 }
 
 #passwordError {
   display: none;
-  color: #dfdfdf;
+  color: $third-color;
 }
 
 .name {
-  color: white;
+  color: $secondary-color;
 }
 
 .logo {
   max-height: 90px;
   max-width: 90px;
-  background-color: black;
 }
 
 .profile-picture {
   border-radius: 100%;
   max-width: 200px;
   display: block;
-  border: solid 7px white;
+  border: solid 7px $secondary-color;
 }
 
 .background-image {
@@ -77,39 +71,45 @@ a {
 }
 
 .nickname {
-  color: white;
+  color: $secondary-color;
   font-size: 20px;
 }
 
 .follow-button {
-  background-color: Green;
-  color: white;
+  background-color: $fouth-color;
+  color: $secondary-color;
   max-width: 300px;
   border-radius: 20px;
 }
 
 .follow-button:hover {
-  background-color: white;
+  background-color: $secondary-color;
+  color: $primary-colour;
 }
 
 .post {
   margin: 40px auto 40px auto;
-  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+  box-shadow: 0 -2px 16px $shadow-color;
   border-radius: 20px;
-  max-width: 600px !important;
+  max-width: 600px!important;
 }
 
 .follower-image {
   max-width: 400px;
   border-radius: 100%;
-  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+  box-shadow: 0 -2px 16px $shadow-color;
 }
 
 .search {
   text-align: center;
   border-radius: 10px;
   border: none;
-  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
+  box-shadow: 0 -2px 16px $shadow-color;
+  max-width: 300px;
+}
+
+.search-button {
+  color: $fouth-color!important;
 }
 
 .profile-picture-bottom {
@@ -126,6 +126,10 @@ textarea {
   width: 100%;
   min-height: 400px;
   max-width: 600px;
+}
+
+.comment-button {
+  max-width: 200px!important;
 }
 
 footer {

@@ -7,6 +7,7 @@ img {
 
 h1 {
   text-align: center;
+  color: brown;
 }
 
 p {
@@ -23,10 +24,11 @@ a {
 }
 
 .login {
-  background-color: #000000;
+
   text-align: center;
   border-radius: 10px;
   border: none;
+  max-width: 600px;
 }
 
 .button-login {

@@ -1,6 +1,6 @@
-/*import { login } from "../api/auth/login.mjs";
+import { login } from "../api/auth/login.mjs";
 
-export function setLoginFormListener() {
+export function setloginFormListener() {
   const form = document.querySelector("#loginForm");
 
   form.addEventListener("submit", (event) => {
@@ -11,4 +11,4 @@ export function setLoginFormListener() {
     console.log("it worked");
     login(profile);
   });
-}*/
+}

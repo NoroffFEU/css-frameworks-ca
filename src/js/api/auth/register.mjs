@@ -14,5 +14,15 @@ export async function register(profile) {
   });
 
   const result = await response.json();
+  if (response.ok) {
+    const successMessage = document.createElement("div");
+    successMessage.classList.add("alert", "alert-success");
+    successMessage.setAttribute("role", "alert");
+    successMessage.textContent = "Profil created! you can now log in";
+
+    const messageContainer = document.querySelector("#registerForm");
+    messageContainer.appendChild(successMessage);
+  }
+
   return result;
 }

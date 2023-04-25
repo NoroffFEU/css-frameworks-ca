@@ -1,4 +1,5 @@
 import { HOST_API_URL, LOGIN_API_URL } from "../constants.mjs";
+import * as storage from "../../storage/index.mjs";
 
 export async function login(profile) {
   const loginURL = HOST_API_URL + LOGIN_API_URL;
@@ -12,7 +13,9 @@ export async function login(profile) {
     body,
   });
 
-  const result = await response.json();
+  const { accessToken, ...userProfile } = await response.json();
 
-  localStorage.setItem("token", result.accessToken);
+  storage.save("token", accessToken);
+
+  storage.save("profile", userProfile);
 }

@@ -18,4 +18,10 @@ export async function login(profile) {
   storage.save("token", accessToken);
 
   storage.save("profile", userProfile);
+
+  if (response.ok) {
+    window.location.href = "/profil/profile.html";
+  } else {
+    alert("username or password is wrong");
+  }
 }

@@ -11,8 +11,4 @@ if (path === "/profil/login/index.html") {
   setRegisterFormListener();
 }
 
-//post.createPost();
-//post.updatePost();
-//post.reovePost();
-//post.getPost();
-post.getPosts().then(console.log);
+post.createPost();

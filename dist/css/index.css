@@ -1,10 +1,4 @@
-$primary-colour: #000000; 
-$secondary-color: #ffffff;
-$third-color: #dfdfdf;
-$fouth-color: green;
-$shadow-color: rgba(47, 54, 64, 0.39);
-
-/* Global styles */ 
+/* Global styles */
 img {
   width: 100%;
   padding: 10px;
@@ -36,25 +30,23 @@ footer {
 }
 
 /* Login */
-
 .login {
   text-align: center;
   border-radius: 10px;
   border: none;
-  max-width: 600px!important;
+  max-width: 600px !important;
 }
 
-/* Profile */ 
-
+/* Profile */
 .active {
-  text-decoration: underline!important;
+  text-decoration: underline !important;
 }
 
 .profile-picture {
   border-radius: 100%;
   max-width: 200px;
   display: block;
-  border: solid 7px $secondary-color;
+  border: solid 7px #ffffff;
 }
 
 .background-image {
@@ -65,49 +57,46 @@ footer {
 }
 
 .nickname {
-  color: $secondary-color;
+  color: #ffffff;
   font-size: 20px;
 }
 
 .follow-button {
-  background-color: $fouth-color;
-  color: $secondary-color;
+  background-color: green;
+  color: #ffffff;
   max-width: 300px;
   border-radius: 20px;
 }
 
 .follow-button:hover {
-  background-color: $secondary-color;
-  color: $primary-colour;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .post {
   margin: 40px auto 40px auto;
-  box-shadow: 0 -2px 16px $shadow-color;
+  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
   border-radius: 20px;
-  max-width: 600px!important;
+  max-width: 600px !important;
 }
 
 .follower-image {
   max-width: 400px;
   border-radius: 100%;
-  box-shadow: 0 -2px 16px $shadow-color;
+  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
 }
 
 /* Feed */
-
 .search {
   text-align: center;
   border-radius: 10px;
   border: none;
-  box-shadow: 0 -2px 16px $shadow-color;
+  box-shadow: 0 -2px 16px rgba(47, 54, 64, 0.39);
   max-width: 300px;
 }
 
-
 select {
   max-width: 200px !important;
-
 }
 
 textarea {
@@ -117,6 +106,5 @@ textarea {
 }
 
 .comment-button {
-  max-width: 200px!important;
-}
-
+  max-width: 200px !important;
+}/*# sourceMappingURL=index.css.map */

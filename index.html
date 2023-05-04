@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/css/index.css">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="container login p-5">
+    <h1 class="login-h1">Lovefinderrz</h1>
+    <img src="/img/lovefinderrz.png" class="logo m-3" alt="Lovefinderrz logo">
+    <div class="row">
+      <form id="contactForm">
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="* Your email" required>
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="* Your password" minlength="8"
+            required>
+        </div>
+        <button type="submit" class="btn btn-primary" formaction="/profile/index.html">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,2 +1,10 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+## To run project:
+
+* npm i
+* npm run build
+* npm run watch <br>
+* and start live server
+
+

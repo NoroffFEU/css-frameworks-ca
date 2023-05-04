@@ -1,1 +1,7 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}

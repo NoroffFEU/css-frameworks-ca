@@ -19,7 +19,7 @@ export async function login(profile) {
 
   const { accessToken, ...userInfo } = await response.json();
 
-  storage.save("Token", accessToken);
+  storage.save("token", accessToken);
   storage.save("profile", userInfo);
 
   alert("Welcome back! You are now logged in.");

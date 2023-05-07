@@ -27,21 +27,22 @@ export async function renderPostToHtml(event) {
     const postElement = document.createElement("div");
     postElement.classList.add("post");
     postElement.innerHTML = `
-        <div class="post-header">
-          <img src="#" alt="User profile picture">
-          <div class="post-header-text">
-            <h2>${postData.title}</h2>
-            <p>${postData.content}</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pt-4">
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="/src/scss/images/cat-gd507bc786_640.jpg" alt="Cat relaxing on blanket">
+        <div class="card-body">
+          <p class="card-text">${postData.title}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-primary">Like</button>
+              <button type="button" class="btn btn-sm btn-outline-primary">Comment</button>
+            </div>
+            <small class="text-body-secondary"></small>
           </div>
         </div>
-        <div class="post-content">
-          <p>${newPost.content}</p>
-          <img src="${newPost.image}" alt="${newPost.caption}">
-        </div>
-        <div class="post-footer">
-          <button class="like-button">${newPost.likes} likes</button>
-          <button class="comment-button">${newPost.comments} comments</button>
-        </div>
+      </div>
+    </div>
       `;
     postContainer.appendChild(postElement);
   } catch (error) {

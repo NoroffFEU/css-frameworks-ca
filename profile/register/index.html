@@ -9,7 +9,7 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <title>Document</title>
 </head>
-<body>
+<body class="bg-dark">
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,7 +45,52 @@
        </header>
 
        <main class="flex-grow-1 bg-dark text-light">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
 
+                    <form id="registerForm" method="post" action="/auth/register">
+
+                        <div class="form-group mb-3">
+                            <label for="">Name</label>
+                            <input class="form-control" type="text" name="name" placeholder="Ola_Nordmann" required pattern="^[\w]+$" maxlength="20" title="Username can only contain upper and lowercase letters, numbers and underscore">
+
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="">Email</label>
+                            <input class="form-control" type="email" name="email" placeholder="Ola_Nordmann@noroff.no" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="You can only sign up if you have a noroff email">
+
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="">Password</label>
+                            <input class="form-control" type="password" name="password" required minlength="8">
+
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="">Banner</label>
+                            <input class="form-control" type="url" name="banner">
+
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="">Avatar</label>
+                            <input class="form-control" type="url" name="avatar">
+
+                        </div>
+
+                        <button class="btn btn-success">Register</button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
        </main>
 
 </body>

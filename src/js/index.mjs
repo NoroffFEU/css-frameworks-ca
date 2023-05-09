@@ -12,5 +12,5 @@ const path = location.pathname;
 if (path === '/profile/login'){
     SetLoginFormListener()
 } else if (path === '/profile/register'){
-    SetRegisterFormListener();
+    SetRegisterFormListener()
 }

@@ -1,14 +1,14 @@
 import { BASE_API_URL } from "../constant.mjs";
 
-const path = "/auth/register";
+const path = "/auth/login";
 const method = "post";
 
-export async function register(profile){
-    const registerUrl = BASE_API_URL + path;
+export async function login(profile){
+    const loginUrl = BASE_API_URL + path;
     const body = JSON.stringify(profile);
 
 
-    const reponse = await fetch(registerUrl, {
+    const reponse = await fetch(loginUrl, {
         headers: {
             "Content-Type": "application/json"
         },
@@ -17,5 +17,5 @@ export async function register(profile){
     })
     
     const result = await reponse.json()
-
+    
 }

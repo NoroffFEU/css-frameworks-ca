@@ -17,5 +17,7 @@ export async function register(profile){
     })
     
     const result = await reponse.json()
+    alert("You are now a member")
+    return result
 
 }

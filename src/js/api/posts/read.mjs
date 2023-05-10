@@ -1,6 +1,4 @@
 
-export async function readPost(id) {}
-
 
 import { authToken } from "../authToken.mjs";
 import { BASE_API_URL } from "../constant.mjs";

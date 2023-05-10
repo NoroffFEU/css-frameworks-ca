@@ -1,4 +1,4 @@
-import { readPost, updatePost } from "../api/posts/index.mjs";
+import { readProfile, updateProfile } from "../api/profiles/index.mjs";
 import { load } from "../storage/storage.mjs";
 
 
@@ -7,7 +7,6 @@ import { load } from "../storage/storage.mjs";
 export async function SetUpdateProfileFormListener() {
     const form = document.querySelector("#updateProfile");
 
-    const url = new URL(location.href);
     
     const { name, email } = load("profile")
 
@@ -17,7 +16,7 @@ export async function SetUpdateProfileFormListener() {
         button.disabled = true;
 
 
-        const profile = await readprofile(name);
+        const profile = await readProfile(name);
 
         form.name.value = name;
         form.email.value = email;

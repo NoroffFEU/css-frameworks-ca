@@ -9,9 +9,9 @@ import * as postsAction from "./api/posts/index.mjs";
 
 const path = location.pathname;
 
-if (path === '/profile/login'){
+if (path === '/profile/login/'){
     listeners.SetLoginFormListener()
-} else if (path === '/profile/register'){
+} else if (path === '/profile/register/'){
     listeners.SetRegisterFormListener()
 } else if (path === '/post/create/') {
     listeners.SetCreatePostFormListener

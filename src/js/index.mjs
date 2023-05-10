@@ -2,20 +2,21 @@ import * as constant from "./api/constant.mjs";
 
 console.log(constant.BASE_API_URL);
 
-import { SetRegisterFormListener } from "./handlers/register.mjs";
-import { SetLoginFormListener } from "./handlers/login.mjs";
 
+import * as listeners from "./handlers/index.mjs";
 import * as templates from "./templates/index.mjs";
-
-
 import * as postsAction from "./api/posts/index.mjs";
 
 const path = location.pathname;
 
 if (path === '/profile/login'){
-    SetLoginFormListener()
+    listeners.SetLoginFormListener()
 } else if (path === '/profile/register'){
-    SetRegisterFormListener()
+    listeners.SetRegisterFormListener()
+} else if (path === '/post/create/') {
+    listeners.SetCreatePostFormListener
+} else if (path === '/post/edit/') {
+    listeners.SetUpdatePostFormListener
 }
 
 

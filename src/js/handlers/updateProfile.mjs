@@ -7,19 +7,20 @@ import { load } from "../storage/storage.mjs";
 export async function SetUpdateProfileFormListener() {
     const form = document.querySelector("#updateProfile");
 
-    
-    const { name, email } = load("profile")
 
     if (form) {
 
+        const { name, email } = load("profile");
+
+        form.name.value = name;
+        form.email.value = email;
+        
         const button = form.querySelector("button");
         button.disabled = true;
 
 
         const profile = await readProfile(name);
 
-        form.name.value = name;
-        form.email.value = email;
         form.banner.value = profile.banner;
         form.avatar.value = profile.avatar;
 

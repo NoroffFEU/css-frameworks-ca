@@ -17,10 +17,17 @@ export async function login(profile) {
     body,
   });
 
-  const { accessToken, ...userInfo } = await response.json();
+  //  Gives user Feedback on errors
 
-  storage.save("token", accessToken);
-  storage.save("profile", userInfo);
+  if (response.status == 200) {
+    //Save access token to localStorage
+    const { accessToken, ...userInfo } = await response.json();
+    storage.save("token", accessToken);
+    storage.save("profile", userInfo);
+    window.location.href = "/posts/index.html";
 
-  alert("Welcome back! You are now logged in.");
-}
+  } else {
+    const json = await response.json();
+    alert(json.errors[0].message);
+  }
+};

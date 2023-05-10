@@ -5,7 +5,10 @@ console.log(constant.BASE_API_URL);
 import { SetRegisterFormListener } from "./handlers/register.mjs";
 import { SetLoginFormListener } from "./handlers/login.mjs";
 
+import * as templates from "./templates/index.mjs";
 
+
+import * as posts from "./api/posts/index.mjs";
 
 const path = location.pathname;
 

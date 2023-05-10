@@ -17,13 +17,20 @@ if (path === '/profile/login'){
     listeners.SetCreatePostFormListener
 } else if (path === '/post/edit/') {
     listeners.SetUpdatePostFormListener
+} else if (path === '/profile/edit/') {
+    listeners.SetUpdateProfileFormListener
 }
 
 
-async function testTemplates() {
+
+
+
+
+
+/*async function testTemplates() {
     const posts = await postsAction.readPosts();
     const container = document.querySelector("#post");
     templates.renderPostTemplates(posts, container);
 }
 
-testTemplates()
+testTemplates()*/

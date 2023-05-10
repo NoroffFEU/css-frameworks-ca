@@ -14,7 +14,7 @@ export async function SetUpdateProfileFormListener() {
 
         form.name.value = name;
         form.email.value = email;
-        
+
         const button = form.querySelector("button");
         button.disabled = true;
 
@@ -34,7 +34,8 @@ export async function SetUpdateProfileFormListener() {
             const profile = Object.fromEntries(formData.entries())
             
             console.log("works!")
-            
+            profile.name = name;
+            profile.email = email;
     
             updateProfile(profile)
     

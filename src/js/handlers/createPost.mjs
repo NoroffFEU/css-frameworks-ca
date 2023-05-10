@@ -3,7 +3,7 @@ import { createPost } from "../api/posts/index.mjs";
 
 // handles the creation of posts
 
-export function SetCreatePostFormListener(){
+export function SetCreatePostFormListener() {
     const form = document.querySelector("#createPost");
 
     form.addEventListener("submit", (event) =>{

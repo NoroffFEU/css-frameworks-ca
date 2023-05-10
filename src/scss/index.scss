@@ -23,3 +23,8 @@ body;:before {
     margin-bottom: 10rem;
     justify-self: auto;
   }
+
+  .form-control:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }

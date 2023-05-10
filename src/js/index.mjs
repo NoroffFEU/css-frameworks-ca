@@ -8,7 +8,7 @@ import { SetLoginFormListener } from "./handlers/login.mjs";
 import * as templates from "./templates/index.mjs";
 
 
-import * as posts from "./api/posts/index.mjs";
+import * as postsAction from "./api/posts/index.mjs";
 
 const path = location.pathname;
 
@@ -17,3 +17,12 @@ if (path === '/profile/login'){
 } else if (path === '/profile/register'){
     SetRegisterFormListener()
 }
+
+
+async function testTemplates() {
+    const posts = await postsAction.readPosts();
+    const container = document.querySelector("#post");
+    templates.renderPostTemplates(posts, container);
+}
+
+testTemplates()

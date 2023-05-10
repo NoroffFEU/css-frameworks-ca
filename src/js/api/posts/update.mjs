@@ -8,7 +8,7 @@ export async function updatePost(postData) {
   const updatePostURL = `${HOST_API_URL}${POSTS}/${postData.id}`;
 
   const response = await authFetch(updatePostURL, {
-    method: "Put",
+    method: "PUT",
     body: JSON.stringify(postData),
   });
   return await response.json();

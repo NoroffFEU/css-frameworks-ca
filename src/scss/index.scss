@@ -29,6 +29,18 @@ body;:before {
     cursor: not-allowed;
   }
 
+  .text-style h1 {
+    font-weight: 500;
+    text-decoration: underline;
+    margin-bottom: 0.55rem;
+  }
+  .text-style h2 {
+    font-size: medium;
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
   .btn-styling a {
     text-decoration: none;
+    color: white;
   }

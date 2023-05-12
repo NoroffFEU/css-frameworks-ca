@@ -14,11 +14,13 @@ if (path === '/profile/login/'){
 } else if (path === '/profile/register/'){
     listeners.SetRegisterFormListener()
 } else if (path === '/post/create/') {
-    listeners.SetCreatePostFormListener
+    listeners.SetCreatePostFormListener()
 } else if (path === '/post/edit/') {
-    listeners.SetUpdatePostFormListener
+    listeners.SetUpdatePostFormListener()
 } else if (path === '/profile/edit/') {
-    listeners.SetUpdateProfileFormListener
+    listeners.SetUpdateProfileFormListener()
+} else if (path === '/profile/login/'){
+    listeners.SetLogoutFormListener()
 }
 
 

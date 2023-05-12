@@ -5,6 +5,12 @@ const action = "/posts";
 const method = "put"
 
 export async function updatePost(postData) {
+
+    if (!postData.id) {
+        throw new Error("Update requires an ID")
+    }
+
+
     const updatePostUrl = `${BASE_API_URL}${action}/${postData.id}`;
     
     const response = await authToken(updatePostUrl, {

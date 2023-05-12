@@ -9,7 +9,7 @@ export function headers() {
     }
 }
 
-export async function authToken(url, options) {
+export async function authToken(url, options = {}) {
     return fetch(url, {
         ...options,
         headers: headers()

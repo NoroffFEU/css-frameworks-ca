@@ -1,7 +1,16 @@
-// import * as listeners from "./handlers/index.mjs";
-import * as postMethods from "./api/posts/index.mjs";
-// import * as templates from "./templates/index.mjs";
+import * as post from "./api/posts/index.mjs"
 
+post.updatePost();
+post.deletePost();
+// post.getPost().then(console.log);
+// post.getPosts().then(console.log)
+
+
+
+// import * as listeners from "./handlers/index.mjs";
+// import * as postMethods from "./api/posts/index.mjs";
+// import * as templates from "./templates/index.mjs";
+//  setCreatePostFormListener()
 
 //Fix the listener conflict 
 // const path = location.pathname;
@@ -17,15 +26,6 @@ import * as postMethods from "./api/posts/index.mjs";
 // }
 
 
-// async function testTemplate() {
-//     const posts = await postMethods.getPosts();
-//     const post = posts[99];
-//     // const post = post.pop();
-//     const container = document.querySelector("#post");
-//     templates.renderPostTemplate(post, container);
-//     console.log(post);
-// }
-// testTemplate();
 
 // async function testTemplates() {
 //     const posts = await postMethods.getPosts();
@@ -34,9 +34,3 @@ import * as postMethods from "./api/posts/index.mjs";
 //     console.log(posts)
 // }
 // testTemplates();
-
-postMethods.createPost();
-// post.updatePost();
-// post.removePost();
-// post.getPost(5549).then(console.log);
-// post.getPosts().then(console.log)

@@ -5,7 +5,7 @@ import { authFetch } from "../authFetch.mjs";
 const action = "/posts";
 const method = "delete";
 
-export async function removePost(id) {
+export async function deletePost(id) {
     if (!id) {
         throw new Error("Delete a post requires a postID");
     }
@@ -14,6 +14,8 @@ export async function removePost(id) {
     const response = await authFetch(updatePostUrl, {
         method
     })
+    // return await response.json();
 
-    return await response.json();
+    const post = await response.json();
+    console.log("The post was deleted.");
 }

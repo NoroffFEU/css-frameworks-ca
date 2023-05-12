@@ -1,31 +1,25 @@
 import { createPost } from "../api/posts/index.mjs";
-import * as postMethods from "../api/posts/index.mjs";
 
 function setCreatePostFormListener() {
-    const form = document.querySelector("#createPostForm");
+    const form = document.getElementById("createPostForm");
+
+    // COMO COLOCAR A FOTO DO PERFIL
+    // const userAvatar = document.querySelector(".user-avatar");
+    // userAvatar.innerHTML = `    ${
+    //     profile.author.avatar
+    //       ? `<img src="${postData.author.avatar}" class="rounded-circle" height="50" onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
+    //       : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" alt="${postData.author.name}">`
+    //   }`
 
     if (form) {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
-            const post = Object.fromEntries(formData.entries())
-            
-            //Send to the API
+            const post = Object.fromEntries(formData.entries());
 
             createPost(post);
-            console.log(post);
-
         })
     }
-
 };
-
-setCreatePostFormListener("submit", createPost)
-
-postMethods.createPost();
-// post.updatePost();
-// post.removePost();
-// post.getPost(5549).then(console.log);
-// post.getPosts().then(console.log)
-
+setCreatePostFormListener()

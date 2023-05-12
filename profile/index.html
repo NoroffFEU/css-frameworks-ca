@@ -32,6 +32,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/profile">My Profile</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/posts/">Feed</a>
+            </li>
 
           </ul>
         </div>
@@ -40,74 +43,41 @@
   </header>
 
   <main>
+
     <section id="about-me">
       <div class="container py-3">
-        <div class="row d-flex justify-content-center align-items-center ">
-          <div class="col col-lg-6 mb-2 mb-lg-0">
-            <div class="card mb-3" style="border-radius: .5rem;">
-              <div class="row">
-                <div class="col-md-4 text-center">
-                  <img src="/images/Profile.JPG" alt="Avatar" class="img-fluid my-3 rounded-circle"
-                    style="width: 200px;"/>
-                  <h3>@baldinho</h3>
-                  <button type="button" class="btn btn-primary mb-5">+ Follow</button>
-                </div>
+        <div class="card mb-3" style="border-radius: .5rem;">
 
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h1 class="heading-1 text-center">Balder Retterstol</h1>
-                    <div class="row justify-content-center">
-                      <div class="col-8 mb-3 ">
-                        <div class="row followers">
-                          <div class="col-6 mb-3">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                              data-bs-target="#modal-followers">
-                              10 Followers
-                            </button>
-                          </div>
-                          <div class="col-6 mb-3">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                              data-bs-target="#modal-following">
-                              1
-                              Following
-                            </button>
-                          </div>
-                        </div>
-                        <p class="profile-desc">I'm just a dreamer, I dream my life away (today)
-                          I'm just a dreamer, who dreams of better days (okay)
-                          I'm just a dreamer, who's searching for the way (today)
-                          I'm just a dreamer, dreaming my life away (oh yeah yeah yeah)</p>
-                      </div>
-                    </div>
-                    <hr class="mt-0 mb-4">
-                    <div class="row pt-1">
-                      <div class="col-6 mb-3">
-                        <h4>Things I Like</h4>
-                        <ul>
-                          <li>Eating moss</li>
-                          <li>Following humans to the bathroom</li>
-                          <li>Kisses</li>
-                        </ul>
-                      </div>
-                      <div class="col-6 mb-3">
-                        <h4>Things I Dislike</h4>
-                        <ul>
-                          <li>Flies</li>
-                          <li>The vaccum cleaner</li>
-                          <li>Closed doors</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-md-12 text-center">
+            <img src="/images/Profile.JPG" alt="Avatar" class="img-fluid my-3 rounded-circle" style="width: 200px;" />
+
+            <button type="button" class="btn btn-primary col-12 mb-3">+ Follow</button>
+
+            <h1 class="heading-1 text-center">Balder Retterstol</h1>
+
+            <div class="row followers">
+              <div class="col-6 mb-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-followers">
+                  10 Followers
+                </button>
               </div>
+              <div class="col-6 mb-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-following">
+                  1
+                  Following
+                </button>
+              </div>
+
             </div>
+            
           </div>
         </div>
       </div>
+
     </section>
+
     <section class="container card text-center p-2 mb-3" id="user-posts">
-      <h2>Latest Posts</h2>
+      <h2>My Latest Posts</h2>
       <div class="row user-posts">
         <ul>
           <li><a href="#">A day in the neighbor's garage</a></li>
@@ -227,4 +197,5 @@
     </script>
 
 </body>
+
 </html>

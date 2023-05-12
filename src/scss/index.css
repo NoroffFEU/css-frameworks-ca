@@ -12539,6 +12539,12 @@ fieldset:disabled .btn {
   line-height: 20px;
 }
 
+.carousel h2, .carousel .h2 {
+  font-size: 50px;
+  font-family: "Fredoka", sans-serif;
+  background-color: rgba(53, 52, 52, 0.256);
+}
+
 .carousel .carousel-image {
   -o-object-fit: cover;
      object-fit: cover;

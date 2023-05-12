@@ -42,73 +42,39 @@
     </nav>
   </header>
   <main>
-    <section class="container card mt-3" id="new-post">
+    <!--NOVO POST -->
+    <section class="container card mt-3" id="new-post-container">
       <div class="card-body border-bottom pb-2">
         <div class="d-flex">
-          <img src="/images/Profile.JPG" class="rounded-circle" height="50" alt="Avatar" />
+          <div id="profileAvatar"></div>
           <div class="d-flex align-items-center w-100 ps-3">
-            <form id="createPostForm">
-              <!-- Title input -->
-              <div class="mb-3">
-                <label for="title" class="form-label ">Title</label>
-                <input type="text" name="title" id="titleInput" placeholder="Post title" required class="form-control border border-primary">
-              </div>
-              <!-- Body input -->
-              <div class="mb-3">
-                <label for="body" class="form-label">Body</label>
+                    <form id="createPostForm" class="row">
+                        <!-- Title input -->
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" name="title" required class="form-control border border-primary">
+                        </div>
+                        <!-- Body input -->
+                        <div class="mb-3">
+                            <label for="body" class="form-label">Body</label>
 
-                <textarea name="body" id="bodyInput" placeholder="Your post" required class="form-control border border-primary"></textarea>
-              </div>
-              <!-- Tags input -->
-              <div class="mb-3">
-                <label for="tags" class="form-label">Tags</label>
-                <input type="text" name="tags" class="form-control border border-primary">
-              </div>
-              <!-- Media -->
-              <div class="mb-3">
-                <label for="media" class="form-label">Media URL</label>
-                <input name="media" type="url" class="form-control border border-primary">
-              </div>
-              <div class="d-flex align-items-center">
-                <button type="button" class="btn btn-primary btn-rounded align-self-end" type="submit">Post</button>
-              </div>
+                            <textarea name="body" required class="form-control border border-primary"></textarea>
+                        </div>
+                        <!-- Tags input -->
+                        <!-- <div class="mb-3">
+                            <label for="tags" class="form-label">Tags</label>
+                            <input type="text" name="tags" class="form-control border border-primary">
+                        </div> -->
+                        <!-- Media -->
+                        <div class="mb-3">
+                            <label for="media" class="form-label">Media</label>
+                            <input name="media" type="url" class="form-control border border-primary">
+                        </div>
 
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <!--EXEMPLO NEW POST-->
-    <section class="container card mt-3" id="new-post">
-      <div class="card-body border-bottom pb-2">
-        <div class="d-flex">
-          <img src="/images/Profile.JPG" class="rounded-circle" height="50" alt="Avatar" />
-          <div class="d-flex align-items-center w-100 ps-3">
-            <input type="text" id="form143" class="form-control form-status border-0 "
-              placeholder="EXEMPLO DE FORM PARA NOVO POST" />
-          </div>
-        </div>
-        <div class="d-flex justify-content-between">
-          <ul class="list-unstyled d-flex flex-row ps-3 pt-3" style="margin-left: 50px;">
-            <li>
-              <a href=""><i class="far fa-image pe-2"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fas fa-photo-video px-2"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fas fa-chart-bar px-2"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="far fa-smile px-2"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="far fa-calendar-check px-2"></i></a>
-            </li>
-          </ul>
-          <div class="d-flex align-items-center">
-            <button type="button" class="btn btn-primary btn-rounded" type="submit">Post</button>
+                        <div class="d-grid">
+                            <button class="btn btn-primary" type="submit">Post</button>
+                        </div>
+                    </form>
           </div>
         </div>
       </div>
@@ -137,28 +103,6 @@
         <!--List of post thumbnails-->
 
       </div>
-      <!--EXEMPLO-->
-      
-      <div class="post d-flex  border-bottom mb-5">
-        <img src="/images/follower-2.jpeg" class="rounded-circle" height="50" alt="Avatar" />
-        <div class="post-content ps-3">
-          <a href="#">
-            <h6 class="text-body">
-              Katie Rabitowitz
-              <span class="small text-muted font-weight-normal">• 10h</span>
-            </h6>
-          </a>
-          <p style="line-height: 1.2;">
-            Post body <a href="">View more...</a>
-          </p>
-          <ul class="list-unstyled d-flex justify-content-around mb-0 pe-xl-5">
-            <li><i class="far fa-heart"></i><span class="small ps-2">9</span></li>
-            <li>
-              <i class="far fa-comment"><span class="small ps-2">0 comments</span></i>
-            </li>
-          </ul>
-        </div>
-      </div>
 
       <div class="d-grid">
         <button class="btn btn-primary  mb-3" type="submit">View more posts</button>
@@ -176,7 +120,9 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
   <script src="/src/js/handlers/getPosts.mjs" defer type="module"></script>
-  <!-- <script src="/src/js/handlers/createPost.mjs" defer type="module"></script> -->
+
+  <script src="/src/js/handlers/createPost.mjs" defer type="module"></script>
+
 </body>
 
 </html>

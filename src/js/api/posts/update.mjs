@@ -16,5 +16,7 @@ export async function updatePost(postData) {
         body: JSON.stringify(postData)
     })
 
-    return await response.json();
+        // return await response.json();-POR QUE NAO FUNCIONA?
+    const post = await response.json();
+    console.log(post);
 }

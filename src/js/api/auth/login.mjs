@@ -18,7 +18,6 @@ export async function login(profile) {
   });
 
   //  Gives user Feedback on errors
-
   if (response.status == 200) {
     //Save access token to localStorage
     const { accessToken, ...userInfo } = await response.json();

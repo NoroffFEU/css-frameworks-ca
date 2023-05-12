@@ -10,14 +10,13 @@ async function testTemplates() {
 testTemplates();
 
 
-// async function testTemplate() {
-//     const posts = await postMethods.getPosts();
-//     const post = posts[99];
-//     // const post = post.pop();
-//     const container = document.querySelector("#post");
-//     templates.renderPostTemplate(post, container);
-//     console.log(post);
-// }
-// testTemplate();
+async function testTemplate() {
+    const posts = await postMethods.getPosts();
+    const post = posts[1];
+    const container = document.querySelector("#singlePost");
+    templates.renderPostTemplate(post, container);
+    console.log(post);
+}
+testTemplate();
 
 

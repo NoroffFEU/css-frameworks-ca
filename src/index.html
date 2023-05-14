@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="/dist/css/index.css" />
     <script src="https://kit.fontawesome.com/9e8ffdbe7c.js" crossorigin="anonymous"></script>
+    <script src="./js/index.mjs" defer type="module"></script>
   </head>
   <body class="bg-secondary">
     <header class="p-3 text-bg-dark">
@@ -51,7 +52,7 @@
     <div class="container pt-5">
     <h1 class="display-1 pb-4">Your feed</h1>
     <a href="../post/index.html"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pt-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pt-4" id="post-container">
       <div class="col">
         <div class="card shadow-sm">
           <img src="/src/scss/images/cat-gd507bc786_640.jpg" alt="Cat relaxing on blanket">

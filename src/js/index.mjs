@@ -5,7 +5,8 @@ import * as templates from "./templates/index.mjs";
 
 const path = location.pathname;
 
-if (path === "/profil/login/") {
+if (path === "/profil/login/index.html") {
+  console.log(listeners.setloginFormListener);
   listeners.setloginFormListener();
 } else if (path === "/profil/register/") {
   listeners.setRegisterFormListener();
@@ -15,10 +16,10 @@ if (path === "/profil/login/") {
   listeners.setUpdatePostFormListener();
 }
 
-/*async function testTemplate() {
+async function testTemplate() {
   const posts = await postMethods.getPosts();
   const container = document.querySelector("#post-container");
   templates.renderPostTemplates(posts, container);
 }
 
-testTemplate();*/
+testTemplate();

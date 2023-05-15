@@ -43,12 +43,36 @@
     </header>
 
     <main>
-        <div class="container card mt-5 p-3" id="singlePost">
+        <section class="container card m-3 p-3" id="singlePost">
             <!--Post page-->
 
-        </div>
+        </section>
+
+        <section class="container card m-3 p-3">
+            <!--Post page-->
+            <h2>Leave a comment</h2>
+            <form class="write-post-wrapper d-flex flex-column" id="createCommentForm">
+                <div class="d-flex flex-column">
+                    <div class="d-flex align-items-center">
+                        <div class="profile-img-wrapper">
+                            <img src="#" class="user-image rounded-circle" alt="commenter-avatar" />
+                        </div>
+                        <h3 class="ms-2 profile-name">Name of commenter</h3>
+                    </div>
+                    <div class="form-floating ms-5">
+                        <textarea class="form-control" id="commentInput"
+                        placeholder="Write your comment" name="body" required></textarea>
+
+                    </div>
+                </div>
+                <button class="btn w-25 align-self-end btn-primary mt-2" type="submit">
+                    Post
+                </button>
+            </form>
+
+        </section>
     </main>
-    <footer class="bg-dark p-3 fixed-bottom">
+    <footer class="bg-dark p-3">
         <p class="text-light m-0 text-center">©Emily R. Ferreira</p>
     </footer>
 
@@ -57,6 +81,7 @@
         </script>
 
     <script src="/src/js/handlers/getPosts.mjs" defer type="module"></script>
+    <script src="/src/js/handlers/createPost.mjs" defer type="module"></script>
 </body>
 
 </html>

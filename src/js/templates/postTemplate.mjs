@@ -56,7 +56,7 @@ export function singlePostTemplate(postData) {
   const postContainer = document.createElement("div");
   postContainer.classList.add("post");
   postContainer.innerHTML += `
-    <div class="post d-flex  border-bottom mb-5">
+    <div class="post d-flex">
     ${postData.author.avatar
       ? `<img src="${postData.author.avatar}" class="rounded-circle" height="50" onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
       : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" alt="${postData.author.name}">`
@@ -77,18 +77,19 @@ export function singlePostTemplate(postData) {
       <div class="post-img">
           <img class="img-fluid" src="${postData.media}" alt="">
         </div>
-      <ul class="list-unstyled d-flex justify-content-around mb-0 pe-xl-5">
+      <ul class="list-unstyled d-flex justify-content-around m-2 pe-xl-5">
         <li><i class="far fa-heart"></i><span class="small ps-2">${postData._count.reactions}</span></li>
         <li>
           <i class="far fa-comment"><span class="small ps-2">${postData._count.comments}</span></i>
         </li>
       </ul>
+      <div=class"displayComments">display comentarios</div>
     </div>
-    <div>
-    <p>${postData.comments}</p>
     </div>
   </div>`
+  
   return postContainer;
+  
 }
 
 export function renderSinglePostTemplate(postData, parent) {

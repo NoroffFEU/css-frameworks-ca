@@ -30,9 +30,10 @@ User can create a post content item - OK
 User can update a post content item
 
 User can delete a post content item
+
 Additional features
 The following user stories are optional:
-User can create a comment on a post
+User can create a comment on a post - OK
 User can edit profile media
 User can follow/unfollow a profile
 User can react to a post content item

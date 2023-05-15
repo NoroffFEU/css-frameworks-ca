@@ -23,8 +23,18 @@ export async function getPost(id) {
     const getPostUrl = `${API_SOCIAL_URL}/posts/${id}?_author=true&_comments=true&_reactions=true`;
 
     const response = await authFetch(getPostUrl);
-    // const post = await response.json();
     return await response.json();
 
 }
+
+// export async function getComments(id) {
+//     if (!id) {
+//         throw new Error("Get requires a postID");
+//     }
+//     const getCommentsUrl = `${API_SOCIAL_URL}/posts/${id}?_author=true&_comments=true&_reactions=true`;
+
+//     const response = await authFetch(getCommentsUrl);
+//     return await response.json();
+
+// }
 

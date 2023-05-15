@@ -24,3 +24,14 @@ async function singlePostTemplate() {
 singlePostTemplate();
 
 
+// async function commentsTemplates() {
+//     const queryString = document.location.search;
+//     const params = new URLSearchParams(queryString);
+//     let id = params.get("id");
+//     console.log(id);
+//     const comments = await postMethods.getComments(id);
+//     const container = document.querySelector("#getComments");
+//     templates.renderCommentsTemplates(comments, container)
+//     console.log(comments)
+// }
+// commentsTemplates();

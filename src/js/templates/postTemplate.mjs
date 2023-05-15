@@ -24,6 +24,11 @@ export function postsTemplate(postData) {
        <h5>By: <a href="/profile/index.html?name=${postData.author.name
     }">${postData.author.name
     }</a></h5>
+    <div class="actionBtns">
+    <a class="btn btn-warning" href="/post/edit/?id=${postData.id
+    }"" role="button">Edit</a>
+    <a class="btn btn-danger" href="#" role="button">Delete</a>
+    </div> 
   
       <p style="line-height: 1.2;">
       ${postData.body}   
@@ -40,7 +45,8 @@ export function postsTemplate(postData) {
         </li>
       </ul>
     </div>
-  </div>`
+  </div>
+  `
 
   return postContainer;
 }
@@ -83,15 +89,35 @@ export function singlePostTemplate(postData) {
           <i class="far fa-comment"><span class="small ps-2">${postData._count.comments}</span></i>
         </li>
       </ul>
-      <div=class"displayComments">display comentarios</div>
     </div>
     </div>
-  </div>`
-  
-  return postContainer;
-  
-}
+  </div>
+  <div class="commentContainer"> 
+  <p style="line-height: 1.2;">
+  ${postData.comments[0].body}   
+  </p>
+  <h5>By: <a href="/profile/index.html?name=${postData.comments[0].author.name
+    }">${postData.comments[0].author.name}</a></h5>
+  </div>`;
 
+
+  return postContainer;
+
+  // const commentContainer = document.querySelector("#getComments");
+  // commentContainer.innerHTML += ` <p style="line-height: 1.2;">${postData.comments.body}</p>`
+}
 export function renderSinglePostTemplate(postData, parent) {
   parent.append(singlePostTemplate(postData))
 }
+
+// //COMMENTS
+// export function commentsTemplate(postData) {
+//   const commentContainer = document.createElement("div");
+//   commentContainer.classList.add("comment");
+//   commentContainer.innerHTML += ` <p style="line-height: 1.2;">${postData.comments.body}</p>`
+//                                  return commentContainer;
+// }
+
+// export function renderCommentsTemplates(postDataList, parent) {
+//   parent.append(...postDataList.map(commentsTemplate))
+// }

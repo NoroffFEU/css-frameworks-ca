@@ -14,9 +14,14 @@ export async function updatePost(postData) {
     const response = await authFetch(updatePostUrl, {
         method,
         body: JSON.stringify(postData)
-    })
+    });
+    if (response.status == 200) {
+        window.location.href = "/posts/index.html";
 
-        // return await response.json();-POR QUE NAO FUNCIONA?
-    const post = await response.json();
-    console.log(post);
+    } else {
+        const json = await response.json();
+        alert(json.errors[0].message);
+    }
+
+        // return await response.json();-POR 
 }

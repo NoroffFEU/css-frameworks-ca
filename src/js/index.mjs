@@ -1,19 +1,18 @@
 import * as post from "./api/posts/index.mjs"
 
-post.updatePost();
-post.deletePost();
+
 // post.getPost().then(console.log);
 // post.getPosts().then(console.log)
 
 
 
-// import * as listeners from "./handlers/index.mjs";
+import * as listeners from "./handlers/index.mjs";
 // import * as postMethods from "./api/posts/index.mjs";
 // import * as templates from "./templates/index.mjs";
 //  setCreatePostFormListener()
 
 //Fix the listener conflict 
-// const path = location.pathname;
+const path = location.pathname;
 
 // if (path === '/profile/register/') {
 //     listeners.setRegisterFormListener()
@@ -21,9 +20,9 @@ post.deletePost();
 // //     listeners.setLoginFormListener()
 // } else if (path === '/post/create/') {
 //     listeners.setCreatePostFormListener()
-// } else if (path === '/post/edit/') {
-//     listeners.setUpdatePostFormListener()
-// }
+// } else 
+if (path === '/post/edit/') {
+    listeners.setUpdatePostFormListener()};
 
 
 

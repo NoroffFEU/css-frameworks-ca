@@ -1,22 +1,26 @@
 import * as postMethods from "../api/posts/index.mjs";
 import * as templates from "../templates/index.mjs";
 
-async function testTemplates() {
+async function postsTemplates() {
     const posts = await postMethods.getPosts();
     const container = document.querySelector("#allPosts");
-    templates.renderPostTemplates(posts, container)
+    templates.renderPostsTemplates(posts, container)
     console.log(posts)
 }
-testTemplates();
+postsTemplates();
 
 
-async function testTemplate() {
-    const posts = await postMethods.getPosts();
-    const post = posts[1];
+async function singlePostTemplate() {
+    const queryString = document.location.search;
+    const params = new URLSearchParams(queryString);
+    let id = params.get("id");
+    console.log(id);
+
+    const post = await postMethods.getPost(id);
     const container = document.querySelector("#singlePost");
-    templates.renderPostTemplate(post, container);
     console.log(post);
+    templates.renderSinglePostTemplate(post, container);
 }
-testTemplate();
+singlePostTemplate();
 
 

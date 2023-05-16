@@ -1,29 +1,29 @@
 import { API_SOCIAL_URL } from "../constants.js";
-import { authFetch } from "../authFetch.js";
+import { headers } from "../authFetch.js";
 
 const action = "/posts";
 const method = "delete";
 
 export async function deletePost(id) {
-    if (!id) {
-        throw new Error("Delete a post requires a postID");
+    const options = {
+        method,
+        headers
     }
-
-    const deletePostUrl = `${API_SOCIAL_URL}${action}/${id}`;
-
-    const response = await authFetch(deletePostUrl, {
-        method
-    })
+    fetch(`${API_SOCIAL_URL}${action}${id}`, options)
+    .then((response) => response.json())
+    .catch((error) => alert(json.errors[0].message))
+    .finally(() => window.location.reload());
+ 
+    }            
     // return await response.json();
 
-    const post = await response.json();
-    console.log(post);
-    // console.log("The post was deleted.");
-    if (response.status == 200) {
-        window.location.reload();
+    // const post = await response.json();
+    // console.log(post);
+    // // console.log("The post was deleted.");
+    // if (response.status == 200) {
+    //     window.location.reload();
 
-    } else {
-        const json = await response.json();
-        alert(json.errors[0].message);
-    }
-};
+    // } else {
+    //     const json = await response.json();
+    //     alert(json.errors[0].message);
+    // }

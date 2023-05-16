@@ -92,8 +92,8 @@
         </div>
         <div class="search col-8">
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+            <button class="btn btn-primary" type="submit" id="searchBtn">Search</button>
           </form>
         </div>
       </div>
@@ -123,8 +123,10 @@
   <script src="/src/js/handlers/getPosts.js" defer type="module"></script>
 
   <script src="/src/js/handlers/createPost.js" defer type="module"></script>
+  <script src="/src/js/api/posts/delete.js" defer type="module"></script>
+  <script src="/src/js/handlers/search.js" defer type="module"></script>
 
-  <script src="/src/js/handlers/deletePost.js" defer type="module"></script>
+  <!-- <script src="/src/js/handlers/deletePost.js" defer type="module"></script> -->
 
 </body>
 

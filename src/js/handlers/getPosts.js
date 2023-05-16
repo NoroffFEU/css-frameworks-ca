@@ -23,18 +23,3 @@ async function singlePostTemplate() {
     templates.renderSinglePostTemplate(post, container);
 }
 singlePostTemplate();
-
-
-// async function commentsTemplates() {
-//     const queryString = document.location.search;
-//     const params = new URLSearchParams(queryString);
-//     let id = params.get("id");
-//     const post = await postMethods.getComments(id);
-//     const comments = post.comments;
-//     const sortedComments = comments.sort((a, b) => a.id - b.id);
-//     const container = document.querySelector("#getComments");
-      
-//     templates.renderCommentsTemplates(comments, container)
-//     console.log(comments)
-// }
-// commentsTemplates();

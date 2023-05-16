@@ -29,7 +29,8 @@ export function postsTemplate(postData) {
     <div class="actionBtns">
     <a class="btn btn-warning" href="/post/edit/?id=${postData.id
     }"" role="button">Edit</a>
-    <button class="btn btn-danger btn-delete" type="button">Delete</button>
+    <button class="btn btn-danger btn-delete" type="button" onClick="deletePost(${postData.id
+    })">Delete</button>
     </div> 
   
       <p style="line-height: 1.2;">

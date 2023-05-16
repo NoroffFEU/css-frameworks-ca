@@ -13,15 +13,13 @@ export async function login(profile) {
     body,
   });
 
-  const { accessToken, ...userProfile } = await response.json();
-
-  storage.save("token", accessToken);
-
-  storage.save("profile", userProfile);
+  const json = await response.json();
 
   if (response.ok) {
-    window.location.href = "/profil/profile.html";
-  } else {
-    alert("username or password is wrong");
+    return json;
   }
+
+  console.log(json);
+
+  throw new Error(json.errors[0].message);
 }

@@ -1,9 +1,9 @@
-import { createPost } from "../api/posts/index.mjs";
-import { createComment } from "../api/posts/index.mjs";
+import { createPost } from "../api/posts/index.js";
+import { createComment } from "../api/posts/index.js";
 
 function setCreatePostFormListener() {
     const form = document.getElementById("createPostForm");
-
+// alert("form funciona")
     // COMO COLOCAR A FOTO DO PERFIL
     // const userAvatar = document.querySelector(".user-avatar");
     // userAvatar.innerHTML = `    ${

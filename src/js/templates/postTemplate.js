@@ -1,3 +1,4 @@
+import { API_SOCIAL_URL } from "../api/constants.js";
 export function postsTemplate(postData) {
   //   const userAvatar = document.querySelector("#profileAvatar");
   // userAvatar.innerHTML = `
@@ -24,10 +25,11 @@ export function postsTemplate(postData) {
        <h5>By: <a href="/profile/index.html?name=${postData.author.name
     }">${postData.author.name
     }</a></h5>
+
     <div class="actionBtns">
     <a class="btn btn-warning" href="/post/edit/?id=${postData.id
     }"" role="button">Edit</a>
-    <a class="btn btn-danger" href="#" role="button">Delete</a>
+    <button class="btn btn-danger btn-delete" type="button">Delete</button>
     </div> 
   
       <p style="line-height: 1.2;">
@@ -91,33 +93,47 @@ export function singlePostTemplate(postData) {
       </ul>
     </div>
     </div>
-  </div>
-  <div class="commentContainer"> 
-  <p style="line-height: 1.2;">
-  ${postData.comments[0].body}   
-  </p>
-  <h5>By: <a href="/profile/index.html?name=${postData.comments[0].author.name
-    }">${postData.comments[0].author.name}</a></h5>
   </div>`;
 
 
   return postContainer;
 
-  // const commentContainer = document.querySelector("#getComments");
-  // commentContainer.innerHTML += ` <p style="line-height: 1.2;">${postData.comments.body}</p>`
 }
 export function renderSinglePostTemplate(postData, parent) {
   parent.append(singlePostTemplate(postData))
 }
 
-// //COMMENTS
-// export function commentsTemplate(postData) {
-//   const commentContainer = document.createElement("div");
-//   commentContainer.classList.add("comment");
-//   commentContainer.innerHTML += ` <p style="line-height: 1.2;">${postData.comments.body}</p>`
-//                                  return commentContainer;
-// }
+// export function commentsTemplates(postData) {
+//   for (let i = 0; i < comments.length; i++) {
+//     const COMMENTER_URL = `${API_SOCIAL_URL}/profiles/${sortedComments[i].owner}?_posts=true&_author=true&_following=true&_followers=true`;
+//     const commenterData = await authFetch(COMMENTER_URL);
+//     console.log(COMMENTER_URL);
+//     const commentContainer = document.createElement("div");
+//     commentContainer.classList.add("comment");
+//     commentContainer.innerHTML += `
+//   <div id="${sortedComments[i].id}" class="card d-flex flex-column p-3 mt-3">
+//       <a href="./profile.html?name=${sortedComments[i].owner}">
+//           <div class="d-flex align-items-center">
+//               <div class="profile-img-wrapper">
+//               ${commenterData.avatar
+//         ? `<img src="${commenterData.avatar}" class="rounded-circle" alt="User Image" onerror="this.src='/assets/components/icons/account-icon.png'">`
+//         : `<img src="/assets/components/icons/account-icon.png" alt="User Image" class="rounded-circle">`
+//       }
+//               </div>
+//               <h3 class="no-style user-hover">${sortedComments[i].owner}</h3>
+//           </div>
+//       </a>
+//       <div class="ms-5">
+//           <p class="post-content">${sortedComments[i].body}</p>
+//       </div>
+//       <div class="d-flex justify-content-between">
+//           <p class="post-content text-bg green-text ms-5">
+//           </p>
+//       </div>
+//   </div>`;
 
+//   }
+// }
 // export function renderCommentsTemplates(postDataList, parent) {
-//   parent.append(...postDataList.map(commentsTemplate))
+//   parent.append(...postDataList.map(commentsTemplates))
 // }

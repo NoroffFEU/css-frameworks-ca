@@ -1,6 +1,6 @@
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { API_SOCIAL_URL } from "../constants.js";
 
-import { authFetch } from "../authFetch.mjs";
+import { authFetch } from "../authFetch.js";
 
 const action = "/posts";
 const method = "put";
@@ -23,5 +23,4 @@ export async function updatePost(postData) {
         alert(json.errors[0].message);
     }
 
-        // return await response.json();-POR 
 }

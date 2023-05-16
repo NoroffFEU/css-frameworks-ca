@@ -13,7 +13,7 @@ Replace this text with a description of your social media project.
  Required features
 The following user stories are required for a passing submission:
 
-User with @noroff.no or @stud.noroff.no email can register profile
+User with @noroff.no or @stud.noroff.no email can register profile - OK
 
 Registered user can login -OK
 
@@ -27,7 +27,7 @@ User can view a post content item by ID
 
 User can create a post content item - OK
 
-User can update a post content item
+User can update a post content item - OK
 
 User can delete a post content item
 

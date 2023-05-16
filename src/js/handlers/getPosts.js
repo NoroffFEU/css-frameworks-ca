@@ -1,5 +1,6 @@
-import * as postMethods from "../api/posts/index.mjs";
-import * as templates from "../templates/index.mjs";
+import * as postMethods from "../api/posts/index.js";
+import * as templates from "../templates/index.js";
+
 
 async function postsTemplates() {
     const posts = await postMethods.getPosts();
@@ -28,9 +29,11 @@ singlePostTemplate();
 //     const queryString = document.location.search;
 //     const params = new URLSearchParams(queryString);
 //     let id = params.get("id");
-//     console.log(id);
-//     const comments = await postMethods.getComments(id);
+//     const post = await postMethods.getComments(id);
+//     const comments = post.comments;
+//     const sortedComments = comments.sort((a, b) => a.id - b.id);
 //     const container = document.querySelector("#getComments");
+      
 //     templates.renderCommentsTemplates(comments, container)
 //     console.log(comments)
 // }

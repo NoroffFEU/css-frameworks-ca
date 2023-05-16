@@ -1,5 +1,5 @@
-import { API_SOCIAL_URL } from "../api/constants.mjs";
-import { authFetch } from "../api/authFetch.mjs";
+import { API_SOCIAL_URL } from "../api/constants.js";
+import { authFetch } from "../api/authFetch.js";
 
 const action = "/profiles";
 const profileInfo = "?_posts=true&_author=true&_following=true&_followers=true";

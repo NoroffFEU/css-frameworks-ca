@@ -1,13 +1,21 @@
-import * as post from "./api/posts/index.js"
-
 import * as listeners from "./handlers/index.js";
+//Fix the listener conflict 
+const path = location.pathname;
+if (path === '/post/edit/') {
+    listeners.setUpdatePostFormListener()};
+
+
+// import { removePost } from "./api/posts/index"
+// removePost(6067);
+
+
 // import * as postMethods from "./api/posts/index.mjs";
 // import * as templates from "./templates/index.js";
 
 // listeners.setDeletePostListener();
 // console.log("deleta");
 //Fix the listener conflict 
-const path = location.pathname;
+// const path = location.pathname;
 
 // if (path === '/profile/register/') {
 //     listeners.setRegisterFormListener()
@@ -16,8 +24,8 @@ const path = location.pathname;
 // } else if (path === '/post/create/') {
 //     listeners.setCreatePostFormListener()
 // } else 
-if (path === '/post/edit/') {
-    listeners.setUpdatePostFormListener()};
+// if (path === '/post/edit/') {
+//     listeners.setUpdatePostFormListener()};
 
 
 

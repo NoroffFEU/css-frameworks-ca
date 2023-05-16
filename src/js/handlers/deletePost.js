@@ -1,6 +1,16 @@
 // import { deletePost } from "../api/posts/index.js";
 
+const deletePostButton = document.querySelectorAll(".delete-post");
 
+  // Clicking the Delete button in the cogwheel, targets the closest post and grabs the ID
+  // and feeds it into the deletePost function.
+
+  deletePostButton.forEach((e) => {
+    e.addEventListener("click", (i) => {
+      // Get the post ID from the post however you have that added, and pass it into your delete function
+      deletePost(postId);
+    });
+  });
 
 
 // function setDeletePostListener() {

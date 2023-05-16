@@ -1,6 +1,5 @@
-const searchBtn = document.querySelector("search");
-
-searchBtn.addEventListener("input", e =>{
-    const value = e.target.value
-    console.log(value);
-})
+export function search(e) {
+    e.preventDefault();
+    const searchValue = document.querySelector("#search").value.toLowerCase();
+    window.find(searchValue);
+  }

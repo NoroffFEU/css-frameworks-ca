@@ -1,3 +1,5 @@
+import * as crud from "../api/posts/index.mjs";
+
 export function postTemplate(postData) {
   const post = document.createElement("div");
   post.classList.add("posts");
@@ -34,39 +36,16 @@ export function postTemplate(postData) {
   return tempDiv.firstChild;
 }
 
-/*const postDiv = document.createElement("div");
-  postDiv.innerHTML = postHTML.trim();
-
-  const placeHolderImage = document.createElement("div");
-  placeHolderImage.style.width = "300px";
-  placeHolderImage.style.height = "200px";
-  placeHolderImage.style.objectFit = "cover";
-  placeHolderImage.style.backgroundColor = "gray";
-
-  if (postData.media) {
-    const img = document.createElement("Img");
-    img.src = postData.media;
-    img.alt = `This image is from${postData.title}`;
-    post.append(img);
-  } else {
-    post.append(placeHolderImage);
-  }
-
-  return post;
-}*/
-
-/* To see how i can make it in js
-             <div class="d-flex justify-content-between align-items-center">
-               <div class="btn-group">
-                 <button type="button" class="btn btn-sm btn-outline-primary">Like</button>
-                 <button type="button" class="btn btn-sm btn-outline-primary">Comment</button>
-              </div>
-              <small class="text-body-secondary">136 Likes</small>*/
-
-export function renderPostTemplate(postData, parent) {
+export function createNewPost(postData, parent) {
   parent.append(postTemplate(postData));
 }
 
-export function renderPostTemplates(postDataList, parent) {
+export function renderPosts(postDataList, parent) {
   parent.append(...postDataList.map(postTemplate));
+}
+
+export async function showContentOnPage() {
+  const posts = await crud.getPosts();
+  const container = document.querySelector("#post-container");
+  renderPosts(posts, container);
 }

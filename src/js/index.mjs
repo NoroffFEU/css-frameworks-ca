@@ -1,7 +1,6 @@
 //Functions
 import * as listeners from "./handlers/index.mjs";
-import * as postMethods from "./api/posts/index.mjs";
-import * as templates from "./templates/index.mjs";
+import * as domContent from "./templates/index.mjs";
 import * as storage from "./storage/index.mjs";
 
 const path = location.pathname;
@@ -10,8 +9,9 @@ if (path === "/profil/login/index.html") {
   listeners.setloginFormListener();
 } else if (path === "/profil/register/") {
   listeners.setRegisterFormListener();
-} else if (path === "/post/create/") {
+} else if (path === "/post/create/index.html") {
   listeners.setCreatePostFormListener();
+  domContent.showContentOnPage();
 } else if (path === "/post/edit/") {
   listeners.setUpdatePostFormListener();
 } else if (path === "/profil/profile.html") {
@@ -25,10 +25,3 @@ if (path !== "/profil/login/index.html" && !storage.load("token")) {
   document.body.innerHTML =
     "<p>You are not logged in. Please <a href='/profil/login/index.html'>log in here</a> to continue</p>";
 }
-/*async function testTemplate() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#post-container");
-  templates.renderPostTemplates(posts, container);
-}
-
-testTemplate();*/

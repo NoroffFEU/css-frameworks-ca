@@ -21,14 +21,16 @@
       <nav class="navbar bg-dark shadow-sm">
          <div class="container-lg">
             <a href="/" class="text-decoration-none">
-               <span class="fw-bold text-secondary align-content-center text-uppercase fw-bold fs-4"><img src="/img/logo.png" alt="Picollo logo" class="logo me-2">Picollo</span>
+               <span class="fw-bold text-secondary align-content-center text-uppercase fw-bold fs-4"><img
+                     src="/img/logo.png" alt="Picollo logo" class="logo me-2">Picollo</span>
             </a>
-            <button class="btn btn-secondary" type="submit" data-bs-toggle="modal" data-bs-target="#reg-modal">Sign up</button>
+            <button class="btn btn-secondary" type="submit" data-bs-toggle="modal" data-bs-target="#reg-modal">Sign
+               up</button>
          </div>
       </nav>
    </header>
 
-   <!-- Modal window -->
+   <!-- Register Modal window -->
    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
       <div class="modal-dialog">
          <div class="modal-content">
@@ -37,25 +39,40 @@
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
             <div class="modal-body">
-               <form action="/profile">
-                  <label for="fullNameInput" class="form-label">Full name</label>
-                  <input type="text" class="form-control mb-3" id="fullNameInput" required autocomplete>
+               <form id="registerForm">
+                  <label for="userNameInput" class="form-label">Username</label>
+                  <input type="text" name="name" class="form-control mb-3" id="userNameInput" required autocomplete
+                     pattern="^[\w]+$"
+                     title="Username must only contain lowercase and uppercase letters, numbers and underscore. Example: My_User123">
 
                   <label for="inputEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+                  <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                     required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                     title="Only @noroff.no or @stud.noroff.no domains are allowed to register">
                   <div id="emailHelp" class="form-text mb-3">We'll never share your email with anyone else.</div>
 
                   <label for="inputPassword" class="form-label">Password</label>
                   <div class="input-group">
-                     <input type="password" class="form-control mb-3" aria-label="Password" id="inputPassword"
-                        minlength="8" required>
+                     <input type="password" name="password" class="form-control mb-3" aria-label="Password"
+                        id="inputPassword" minlength="8" required>
                   </div>
 
-                  <label for="inputPassword" class="form-label">Confirm password</label>
+                  <!-- <label for="inputPassword" class="form-label">Confirm password</label>
                   <div class="input-group">
                      <input type="password" class="form-control mb-3" aria-label="Password" id="inputPassword"
                         minlength="8" required>
+                  </div> -->
+
+                  <label for="" class="form-label">Banner</label>
+                  <div class="input-group">
+                     <input class="form-control mb-3" type="url" name="banner">
                   </div>
+
+                  <label for="" class="form-label">Avatar</label>
+                  <div class="input-group">
+                     <input class="form-control mb-3" type="url" name="avatar">
+                  </div>
+
                   <div class="form-group">
                      <label class="mb-2">
                         <input type="checkbox" required class="me-2">I accept the <a href="#">Terms of use</a> & <a
@@ -72,17 +89,18 @@
    </div>
 
    <main>
-      <!-- Form section -->
+      <!-- Login Form section -->
       <section class="container-sm mt-4">
          <h1 class="h1 text-white text-center mb-3">Welcome!</h1>
          <div class="row justify-content-center">
-            <form class="col-md-6 bg-dark p-4 rounded-3" action="/profile">
+            <form class="col-md-6 bg-dark p-4 rounded-3" id="loginForm">
                <label for="inputEmail" class="form-label text-white">Email</label>
                <div class="input-group mb-3">
                   <div class="input-group-prepend">
                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
                   </div>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+                  <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @noroff.no or @stud.noroff.no domains are allowed to register">
                </div>
 
                <label for="inputPassword" class="form-label text-white">Password</label>
@@ -90,9 +108,10 @@
                   <div class="input-group-prepend">
                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
                   </div>
-                  <input type="password" class="form-control" aria-label="Password" aria-describedby="basic-addon1"
-                     id="inputPassword" minlength="8" required>
+                  <input type="password" name="password" class="form-control" aria-label="Password" aria-describedby="basic-addon1"
+                     id="inputPassword" minlength="8" required title="The password must be a minimum of 8 characters in length.">
                </div>
+
                <div class="mb-3 form-check d-flex justify-content-between">
                   <div>
                      <input type="checkbox" class="form-check-input" id="check">
@@ -101,20 +120,21 @@
                   <a href="#" class="text-white text-decoration-none">Forgot password?</a>
                </div>
                <div class="d-flex justify-content-center">
-                  <button type="submit" class="btn btn-secondary w-50 mt-3">Login</button>
+                  <button class="btn btn-secondary w-50 mt-3">Login</button>
                </div>
             </form>
          </div>
       </section>
 
       <section class="container-sm text-center">
-         <p class="text-white mt-5 border-top py-2 d-inline-block px-5">Not a memeber?<a href="#" class="text-secondary ms-2">Create account</a></p>
+         <p class="text-white mt-5 border-top py-2 d-inline-block px-5">Not a memeber?<a href="#"
+               class="text-secondary ms-2">Create account</a></p>
       </section>
    </main>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script> 
-   <script src="/js/api/url.js" type="module"></script>
-   <script src="/js/api/auth.js" type="module"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="src/js/index.mjs" type="module"></script>
+   <script src="src/js/handlers/register.mjs" type="module"></script>
 </body>
 
 </html>

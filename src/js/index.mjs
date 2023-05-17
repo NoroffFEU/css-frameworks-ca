@@ -1,14 +1,17 @@
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener } from "./handlers/login.mjs";
+// import { removePost } from "./api/posts/delete.mjs";
+import * as post from "./api/posts/index.mjs";
 
 setRegisterFormListener();
 setLoginFormListener();
 
+//removePost(6115);
 
+// post.createPost();
+// post.updatePost();
+// post.removePost();
+// post.getPost();
+// post.getPosts().then(console.log);
 
-
-
-//import * as constants from "./api/constants.mjs";
-//import * as register from "./handlers/register.mjs";
-
-//console.log(constants.API_SOCIAL_URL);
+post.getPost(6126).then(console.log)

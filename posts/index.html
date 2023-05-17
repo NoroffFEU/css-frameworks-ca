@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description"
+      content="In Picollo feed page you can see everyone's posts. Come and find your new friends right now!">
+   <meta name="keywords" content="picollo, social, app, profile, pictures, posts, friends">
+   <meta name="author" content="Sabina Kutniauske">
+   <title>Picollo | Posts</title>
+   <link rel="icon" type="image/x-icon" href="../img/favicon.png">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+   <link rel="stylesheet" href="../dist/css/styles.css">
+</head>
+
+<body class="bg-light">
+   <!-- Navbar -->
+   <header class="sticky-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+         <div class="container-lg">
+            <a href="/" class="text-decoration-none navbar-brand">
+               <span class="fw-bold text-secondary align-content-center text-uppercase fw-bold fs-4"><img
+                     src="/img/logo.png" alt="Picollo logo" class="logo me-2">Picollo</span>
+            </a>
+            <!-- Toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+               aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
+               <ul class="navbar-nav list-group mt-4 mt-md-0">
+                  <li class="nav-item">
+                     <a href="#" class="list-group-item list-group-item-action active text-center"
+                        aria-current="true">Posts</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="../profile" class="nav-link text-white text-center">My Account</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+      <h1 class="text-dark text-center mt-3 mb-4 text-uppercase">All posts</h1>
+      <!-- Post button -->
+      <div class="d-flex fw-bold justify-content-center mb-4">
+         <button class="btn btn-primary px-5" type="submit" data-bs-toggle="modal" data-bs-target="#post-modal">
+            <p class="fs-4 mb-0"><i class="bi bi-plus-square me-4"></i>Create new post</p>
+         </button>
+      </div>
+
+      <!-- Modal window -->
+      <div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h3 class="modal-title" id="modal-title">Create new post</h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+               </div>
+               <div class="modal-body">
+                  <form action="/feed">
+                     <label class="form-label fw-semibold">Add</label>
+                     <div class="mb-3">
+                        <i class="bi bi-image fs-1 text-primary"></i>
+                        <p class="d-inline-block px-3">or</p>
+                        <i class="bi bi-camera-reels-fill fs-1 text-primary mb-6"></i>
+                     </div>
+                     <label for="postTitle" class="form-label fw-semibold">Title</label>
+                     <input type="text" class="form-control mb-3" id="postTitle">
+                     <label for="postTextarea" class="form-label fw-semibold">Post text</label>
+                     <textarea class="form-control mb-4" id="postTextarea" rows="3"></textarea>
+                     <button class="btn btn-lg btn-primary w-100" type="submit">Post</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Filter & search -->
+      <div class="container-lg d-flex justify-content-between mb-4 flex-column flex-sm-row">
+         <div>
+            <select class="form-select mb-3 mb-sm-0" aria-label="Select menu">
+               <option selected>Filter</option>
+               <option value="Newest">Newest</option>
+               <option value="Oldest">Oldest</option>
+               <option value="From A-Z">From A-Z</option>
+               <option value="From Z-A">From Z-A</option>
+            </select>
+         </div>
+         <div>
+            <form class="d-flex" role="search">
+               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> <button
+                  class="btn btn-outline-primary me-2" type="submit">Search</button>
+            </form>
+         </div>
+      </div>
+
+      <!-- List of posts thumbnails -->
+      <section class="container-lg mb-5">
+         <div class="row gap-3 ms-3 me-3 m-lg-0 justify-content-around" id="allPosts">               <!-- <img src="../img/posts-thumbnails/aurora-lights.jpg" class="card-img-top mt-2" alt="Aurora lights"> -->
+         </div>
+      </section>
+   </main>
+
+   <!-- Footer -->
+   <footer class="bg-dark py-3">
+      <p class="text-center text-white mb-0">&#174;2023</p>
+   </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../src/js/index.mjs" type="module"></script>
+</body>
+
+</html>

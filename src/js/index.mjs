@@ -1,17 +1,27 @@
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener } from "./handlers/login.mjs";
-// import { removePost } from "./api/posts/delete.mjs";
-import * as post from "./api/posts/index.mjs";
+
+//import * as templates from "./templates/index.mjs";
+import * as postMethods from "./api/posts/index.mjs";
+//import { renderPostTemplate } from "./templates/index.mjs";
+import { renderPostTemplates } from "./templates/index.mjs";
 
 setRegisterFormListener();
 setLoginFormListener();
 
-//removePost(6115);
+// async function testTemplate() {
+//   const posts = await postMethods.getPosts();
+//   const post = posts[76];
+//   const container = document.querySelector("#post10");
+//   renderPostTemplate(post, container);
+// }
 
-// post.createPost();
-// post.updatePost();
-// post.removePost();
-// post.getPost();
-// post.getPosts().then(console.log);
+// testTemplate();
 
-post.getPost(6126).then(console.log)
+async function testTemplates() {
+  const posts = await postMethods.getPosts();
+  const container = document.querySelector("#allPosts");
+  renderPostTemplates(posts, container);
+}
+
+testTemplates();

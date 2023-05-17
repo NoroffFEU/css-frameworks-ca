@@ -5,7 +5,6 @@ import { load } from "../../storage/index.js";
 const action = "/posts";
 const method = "get";
 const profile = JSON.parse(localStorage.getItem("profile"));
-console.log(profile.name);
 const author = "?_author=true&_comments=true&_reactions=true";
 const url = "https://api.noroff.dev/api/v1/social/profiles/Emilytest5/posts";
 
@@ -30,6 +29,7 @@ export async function getMyPosts() {
 export async function getPost(id) {
     if (!id) {
         throw new Error("Get requires a postID");
+        // return (document.location = "/posts")
     }
     const getPostUrl = `${API_SOCIAL_URL}/posts/${id}?_author=true&_comments=true&_reactions=true`;
 

@@ -1,4 +1,4 @@
-import { getPost, updatePost } from "../api/posts/index.js";
+import { getPost, updatePost } from "../../api/posts/index.js";
 
 export async function setUpdatePostFormListener() {
     const form = document.querySelector("#editPostForm");

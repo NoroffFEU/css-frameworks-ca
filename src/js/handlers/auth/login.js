@@ -1,6 +1,6 @@
-import { login } from "../api/auth/login.js";
-import displayMessage from "../ui/components/displayMessage.js";
-import * as storage from "../storage/index.js";
+import { login } from "../../api/auth/login.js";
+import displayMessage from "../../ui/components/displayMessage.js" ;
+import * as storage from "../../storage/index.js";
 
 
 

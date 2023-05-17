@@ -1,6 +1,6 @@
-import { API_SOCIAL_URL } from "../api/constants.js";
-import * as postMethods from "../api/posts/index.js";
-import { authFetch } from "../api/authFetch.js";
+import { API_SOCIAL_URL } from "../../api/constants.js";
+import * as postMethods from "../../api/posts/index.js";
+import { authFetch } from "../../api/authFetch.js";
 
 
 //DESESTRUTURAR ESSA 
@@ -35,13 +35,10 @@ export async function getComments() {
               <div class="ms-5">
                   <p class="post-content">${sortedComments[i].body}</p>
               </div>
-              <div class="d-flex justify-content-between">
-                  <p class="post-content text-bg green-text ms-5">
-                  </p>
-              </div>
+
           </div>`;
       }
 
 }
-getComments();
+
 

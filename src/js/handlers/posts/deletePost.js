@@ -1,4 +1,4 @@
-import { removePost } from "../api/posts/index.js";
+import { removePost } from "../../api/posts/index.js";
 
 export function setDeletePostListener() {
   console.log("alo");

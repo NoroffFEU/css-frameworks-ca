@@ -5,7 +5,6 @@ const action = "/auth/register";
 
 export async function register(profile) {
     const registerUrl = API_SOCIAL_URL + action;
-    // console.log(registerUrl);
     const body = JSON.stringify(profile);
 
     const response = await fetch(registerUrl, {
@@ -20,7 +19,7 @@ export async function register(profile) {
  
     if (response.ok) {
         return json;
-        // window.location.href = "/profile/login";
+
     } 
     throw new Error(json.errors[0].message);
 

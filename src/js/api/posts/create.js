@@ -27,6 +27,5 @@ export async function createComment(commentData) {
         body: JSON.stringify(commentData)
     })
     const comment = await response.json();
-    console.log(comment);
     window.location.reload();
 }

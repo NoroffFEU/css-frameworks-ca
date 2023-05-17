@@ -1,5 +1,5 @@
-import { createPost } from "../api/posts/index.js";
-import { createComment } from "../api/posts/index.js";
+import { createPost } from "../../api/posts/index.js";
+import { createComment } from "../../api/posts/index.js";
 
 export function setCreatePostFormListener() {
     const form = document.getElementById("createPostForm");

@@ -1,4 +1,3 @@
-import { API_SOCIAL_URL } from "../api/constants.js";
 export function postsTemplate(postData) {
   //   const userAvatar = document.querySelector("#profileAvatar");
   // userAvatar.innerHTML = `

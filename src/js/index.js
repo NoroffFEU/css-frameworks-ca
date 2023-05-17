@@ -18,11 +18,14 @@ switch (path) {
     case "/posts/":
         listeners.setCreatePostFormListener();
         listeners.postsTemplates();
-        listeners.setDeletePostListener();
-        
+        break;
+    case "/post/index.html":
+        listeners.getComments();
+        listeners.singlePostTemplate();
+        listeners.setCreateCommentFormListener();
 }
 
-//COMO COLOCAR ISSO ALI EM CIMA?
+
 
 
 

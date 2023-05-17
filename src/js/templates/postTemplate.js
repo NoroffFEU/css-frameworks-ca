@@ -20,24 +20,16 @@ export function postsTemplate(postData) {
     <div class="post-content ps-3">
         <h4 class="text-body">
         ${postData.title}
-          <span class="small text-muted font-weight-normal">• ${postData.created}</span>
+          <span class="small text-muted">• ${postData.created}</span>
         </h4>
        <h5>By: <a href="/profile/index.html?name=${postData.author.name
     }">${postData.author.name
     }</a></h5>
-
-    <div class="actionBtns">
-    <a class="btn btn-warning" href="/post/edit/?id=${postData.id
-    }"" role="button">Edit</a>
-    <button class="btn btn-danger btn-delete" type="button" onClick="deletePost(${postData.id
-    })">Delete</button>
-    </div> 
-  
       <p style="line-height: 1.2;">
       ${postData.body}   
       </p>
       <a href="/post/index.html?id=${postData.id
-    }">View more...</a>
+    }">View post...</a>
       <div class="post-img">
           <img class="img-fluid" src="${postData.media}" alt="">
         </div>
@@ -48,9 +40,14 @@ export function postsTemplate(postData) {
         </li>
       </ul>
     </div>
+    <div class="actionBtns">
+    <a class="btn btn-warning" href="/post/edit/?id=${postData.id
+    }"" role="button">Edit</a>
+    <button class="btn btn-danger btn-delete" type="button" onClick="removePost(${postData.id
+    })">Delete</button>
+    </div> 
   </div>
   `
-
   return postContainer;
 }
 
@@ -103,38 +100,3 @@ export function singlePostTemplate(postData) {
 export function renderSinglePostTemplate(postData, parent) {
   parent.append(singlePostTemplate(postData))
 }
-
-// export function commentsTemplates(postData) {
-//   for (let i = 0; i < comments.length; i++) {
-//     const COMMENTER_URL = `${API_SOCIAL_URL}/profiles/${sortedComments[i].owner}?_posts=true&_author=true&_following=true&_followers=true`;
-//     const commenterData = await authFetch(COMMENTER_URL);
-//     console.log(COMMENTER_URL);
-//     const commentContainer = document.createElement("div");
-//     commentContainer.classList.add("comment");
-//     commentContainer.innerHTML += `
-//   <div id="${sortedComments[i].id}" class="card d-flex flex-column p-3 mt-3">
-//       <a href="./profile.html?name=${sortedComments[i].owner}">
-//           <div class="d-flex align-items-center">
-//               <div class="profile-img-wrapper">
-//               ${commenterData.avatar
-//         ? `<img src="${commenterData.avatar}" class="rounded-circle" alt="User Image" onerror="this.src='/assets/components/icons/account-icon.png'">`
-//         : `<img src="/assets/components/icons/account-icon.png" alt="User Image" class="rounded-circle">`
-//       }
-//               </div>
-//               <h3 class="no-style user-hover">${sortedComments[i].owner}</h3>
-//           </div>
-//       </a>
-//       <div class="ms-5">
-//           <p class="post-content">${sortedComments[i].body}</p>
-//       </div>
-//       <div class="d-flex justify-content-between">
-//           <p class="post-content text-bg green-text ms-5">
-//           </p>
-//       </div>
-//   </div>`;
-
-//   }
-// }
-// export function renderCommentsTemplates(postDataList, parent) {
-//   parent.append(...postDataList.map(commentsTemplates))
-// }

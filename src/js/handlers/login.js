@@ -1,22 +1,32 @@
 import { login } from "../api/auth/login.js";
-
-function setLoginFormListener() {
-    const loginForm = document.querySelector("#loginForm");
-
-    if (loginForm) {
-        loginForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            const loginForm = event.target;
-            const formData = new FormData(loginForm);
-            const profile = Object.fromEntries(formData.entries())
-            console.log(profile)
-
-            //Send to the API
-            login(profile)
+import displayMessage from "../ui/components/displayMessage.js";
+import * as storage from "../storage/index.js";
 
 
-        })
-    }
-};
-setLoginFormListener("submit", login)
+
+export function setLoginFormListener() {
+	console.log("setLoginFormListener");
+	const loginForm = document.querySelector("#loginForm");
+
+	if (loginForm) {
+		loginForm.addEventListener("submit", async (event) => {
+			event.preventDefault();
+
+			const loginForm = event.target;
+			const formData = new FormData(loginForm);
+			const profile = Object.fromEntries(formData.entries());
+			console.log(profile);
+
+			try {
+				const { accessToken, ... userInfo } = await login(profile);
+
+				storage.save("token", accessToken);
+				storage.save("profile", userInfo);
+				window.location.href = "/posts";
+			} catch (error) {
+				displayMessage("danger", error, "#message");
+			}
+		});
+	}
+}
+

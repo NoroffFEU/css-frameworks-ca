@@ -1,7 +1,7 @@
 import { createPost } from "../api/posts/index.js";
 import { createComment } from "../api/posts/index.js";
 
-function setCreatePostFormListener() {
+export function setCreatePostFormListener() {
     const form = document.getElementById("createPostForm");
 // alert("form funciona")
     // COMO COLOCAR A FOTO DO PERFIL
@@ -23,7 +23,7 @@ function setCreatePostFormListener() {
         })
     }
 };
-setCreatePostFormListener()
+
 
 function setCreateCommentFormListener() {
     const form = document.getElementById("createCommentForm");

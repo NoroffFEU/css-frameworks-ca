@@ -34,7 +34,7 @@
               <a class="nav-link" href="/profile">My Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/posts/">Dashboard</a>
+              <a class="nav-link active" aria-current="page" href="/feed">Feed</a>
             </li>
           </ul>
         </div>
@@ -82,7 +82,7 @@
     <!--newsfeed-->
     <section class="container card mt-3" id="newsfeed">
       <div class="row feed-header mb-3 p-3">
-        <h1 class="heading-1 text-center p-3">My Posts</h1>
+        <h1 class="heading-1 text-center p-3">Newsfeed</h1>
         <div class="filter col-4">
           <select class="form-select" aria-label="Default select example">
             <option selected>Filter posts</option>
@@ -104,6 +104,10 @@
 
       </div>
 
+      <div class="d-grid">
+        <button class="btn btn-primary  mb-3" type="submit">View more posts</button>
+      </div>
+
     </section>
 
   </main>
@@ -116,12 +120,15 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 
-  <script src="/src/js/api/posts/delete.js" type="module"></script>
+  <script src="/src/js/handlers/getPosts.js" defer type="module"></script>
 
-  <script src="/src/js/handlers/search.js" type="module"></script>
+  <script src="/src/js/handlers/createPost.js" defer type="module"></script>
+  <script src="/src/js/api/posts/delete.js" defer type="module"></script>
+  <script src="/src/js/handlers/search.js" defer type="module"></script>
 
-  <script src="/src/js/index.js" type="module"></script>
+  <script src="/src/js/index.js" defer type="module"></script>
 
+  <!-- <script src="/src/js/handlers/deletePost.js" defer type="module"></script> -->
 
 </body>
 

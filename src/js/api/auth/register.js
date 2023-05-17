@@ -15,20 +15,15 @@ export async function register(profile) {
         method,
         body
     })
-
-
+    
     const json = await response.json();
-    console.log(response.status);
-    if (response.status == 201) {
-        alert("Welcome! You are now registered.")
-        window.location.href = "/profile/login";
-    } else {
-        alert(json.errors[0].message)
-    }
-
+ 
+    if (response.ok) {
+        return json;
+        // window.location.href = "/profile/login";
+    } 
+    throw new Error(json.errors[0].message);
 
     // alert("Welcome! You are now registered.")
     // window.location.href = "/profile/login";
-
-
 }

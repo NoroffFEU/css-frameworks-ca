@@ -4,7 +4,7 @@ import { authFetch } from "../api/authFetch.js";
 
 
 //DESESTRUTURAR ESSA 
-async function getComments() {
+export async function getComments() {
     const queryString = document.location.search;
     const params = new URLSearchParams(queryString);
     let id = params.get("id");

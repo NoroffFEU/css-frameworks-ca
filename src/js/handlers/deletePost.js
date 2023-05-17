@@ -1,18 +1,23 @@
-// import { deletePost } from "../api/posts/index.js";
+import { removePost } from "../api/posts/index.js";
 
-const deletePostButton = document.querySelectorAll(".delete-post");
-
-  // Clicking the Delete button in the cogwheel, targets the closest post and grabs the ID
-  // and feeds it into the deletePost function.
-
-  deletePostButton.forEach((e) => {
-    e.addEventListener("click", (i) => {
-      // Get the post ID from the post however you have that added, and pass it into your delete function
-      deletePost(postId);
-    });
-  });
-
-
+export function setDeletePostListener() {
+  console.log("alo");
+    const postItem = document.getElementsByClassName("post")
+console.log(postItem);
+    postItem.forEach((post)=> {
+      const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("btn", "btn-warning");
+    deleteBtn.textContent = "Delete";
+      post.append(deleteBtn)
+    })
+    console.log(deleteBtn);
+    for(var i = 0; i <= deleteBtn.length; i++) {
+      deleteBtn[i].addEventListener("click", function() {
+        console.log("Clicked index: " + i);
+      }) 
+      console.log("no for");
+      }
+}
 // function setDeletePostListener() {
 //     const deleteBtn = document.getElementsByClassName("btn-delete");
 //     deleteBtn.setAttribute("data-id", id);

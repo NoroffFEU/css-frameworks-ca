@@ -23,7 +23,7 @@ User can filter the post content feed
 
 User can search the post content feed
 
-User can view a post content item by ID
+User can view a post content item by ID- OK
 
 User can create a post content item - OK
 

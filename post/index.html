@@ -34,7 +34,10 @@
                             <a class="nav-link" href="/profile">My Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/posts">Feed</a>
+                            <a class="nav-link" href="/posts/">Dashboard</a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-dark" id="logout">Logout</button>
                         </li>
                     </ul>
                 </div>
@@ -45,6 +48,7 @@
     <main>
         <section class="container card m-3 p-3" id="singlePost">
             <!--Post page-->
+
 
         </section>
 
@@ -61,8 +65,8 @@
                 <div class="d-flex flex-column">
 
                     <div class="form-floating">
-                        <textarea class="form-control" id="commentInput"
-                        placeholder="Write your comment" name="body" required></textarea>
+                        <textarea class="form-control" id="commentInput" placeholder="Write your comment" name="body"
+                            required></textarea>
 
                     </div>
                 </div>
@@ -73,14 +77,14 @@
 
         </section>
     </main>
-    <footer class="bg-dark p-3">
+    <footer class="bg-dark p-3 fixed-bottom">
         <p class="text-light m-0 text-center">©Emily R. Ferreira</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
         </script>
-        
+
     <script src="/src/js/index.js" type="module"></script>
 </body>
 

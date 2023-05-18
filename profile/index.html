@@ -33,9 +33,11 @@
               <a class="nav-link active" aria-current="page" href="/profile">My Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/posts/">Feed</a>
+              <a class="nav-link" href="/posts/">Dashboard</a>
             </li>
-
+            <li>
+              <button type="button" class="btn btn-dark" id="logout">Logout</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -50,35 +52,34 @@
 
           <div class="col-md-12 text-center">
             <img src="/images/Profile.JPG" alt="Avatar" class="img-fluid my-3 rounded-circle profile-picture"
-              style="width: 200px;" />
-
-            <button type="button" class="btn btn-primary col-12 mb-3 follow">+ Follow</button>
+              style="width: 200px;"/>
 
             <h1 class="heading-1 text-center profile-name">Balder Retterstol</h1>
 
             <div class="row followers">
               <div class="col-6 mb-3">
-                <button type="button" class="btn btn-primary followers">
+                <spam class="followers">
                   10 Followers
-                </button>
+                </spam>
               </div>
               <div class="col-6 mb-3">
-                <button type="button" class="btn btn-primary following">
+                <spam class="following">
                   1
                   Following
-                </button>
+                </spam>
               </div>
 
             </div>
 
           </div>
+          <a class="btn btn-warning" href="/profile/edit" role="button">Edit profile</a>
         </div>
       </div>
 
     </section>
   </main>
 
-  <footer class="bg-dark p-3">
+  <footer class="bg-dark p-3 fixed-bottom">
     <p class="text-light m-0 text-center">©Emily R. Ferreira</p>
   </footer>
 
@@ -86,8 +87,8 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
 
+  <!-- <script src="../src/js/index.js"  type="module"></script> -->
   <script src="../src/js/index.js"  type="module"></script>
-
 </body>
 
 </html>

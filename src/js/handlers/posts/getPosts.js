@@ -1,14 +1,14 @@
 import * as postMethods from "../../api/posts/index.js";
 import * as templates from "../../ui/components/postTemplate.js";
 import { search } from "./search.js";
+import { setupPage } from "./filterPosts.js";
 
 export async function postsTemplates() {
     try {
-
         const posts = await postMethods.getMyPosts();
         const searchBtn = document.querySelector("#searchBtn");
         const container = document.querySelector("#allPosts");
-        templates.renderPostsTemplates(posts, container)
+        templates.renderPostsTemplates(posts, container);
         searchBtn.addEventListener("click", search);
     } catch (error) {
         console.log("Couldn't retrieve posts");

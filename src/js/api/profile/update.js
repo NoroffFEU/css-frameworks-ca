@@ -5,8 +5,8 @@ import { authFetch } from "../authFetch.js";
 const action = "/profiles";
 const method = "put";
 
+
 export async function updateProfile(profileData) {
-    console.log(profileData);
     if (!profileData.name) {
         throw new Error("Profile update requires a profile name");
     }
@@ -23,5 +23,4 @@ export async function updateProfile(profileData) {
         const json = await response.json();
         alert(json.errors[0].message);
     }
-
 }

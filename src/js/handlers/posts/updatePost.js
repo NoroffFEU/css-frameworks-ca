@@ -9,7 +9,7 @@ export async function setUpdatePostFormListener() {
         const post = await getPost(id);
         form.body.value = post.body;
         form.title.value = post.title;
-        // form.tags.value = post.tags;
+        form.tags.value = post.tags;
         form.media.value = post.media;
 
 
@@ -18,6 +18,8 @@ export async function setUpdatePostFormListener() {
             const form = event.target;
             const formData = new FormData(form);
             const post = Object.fromEntries(formData.entries())
+            post.tags = post.tags.split(",");
+            console.log(post);
             post.id = id;
 
             //Send to the API

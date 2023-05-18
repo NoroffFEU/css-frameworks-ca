@@ -36,6 +36,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/posts/">Dashboard</a>
             </li>
+            <li>
+              <button type="button" class="btn btn-dark" id="logout">Logout</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -61,10 +64,10 @@
                 <textarea name="body" required class="form-control border border-primary"></textarea>
               </div>
               <!-- Tags input -->
-              <!-- <div class="mb-3">
+              <div class="mb-3">
                             <label for="tags" class="form-label">Tags</label>
                             <input type="text" name="tags" class="form-control border border-primary">
-                        </div> -->
+                        </div>
               <!-- Media -->
               <div class="mb-3">
                 <label for="media" class="form-label">Media</label>
@@ -84,9 +87,8 @@
       <form id="selectForm" class="row feed-header mb-3 p-3">
         <h1 class="heading-1 text-center p-3">My Posts</h1>
         <div class="filter col-4">
-          <select class="form-select" aria-label="Default select example" id="filterSelect">
-            <option selected>Filter posts</option>
-            <option value="newest" id="filterByLatestPosts">Newest</option>
+          <select class="form-select" aria-label="Default select example" id="filterSelect" onchange="">
+            <option value="newest" id="filterByLatestPosts" selected >Newest</option>
             <option value="oldest" id="filterByOldest">Oldest</option>
           </select>
         </div>
@@ -118,7 +120,7 @@
 
 
   <script src="/src/js/index.js" type="module"></script>
-  <script src="/src/js/handlers/posts/filterPosts.js" type="module"></script>
+
 
 
 </body>

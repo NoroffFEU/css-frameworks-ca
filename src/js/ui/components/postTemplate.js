@@ -1,14 +1,6 @@
 import { setDeletePostListener } from "../../handlers/posts/deletePost.js";
 
 export function postsTemplate(postData) {
-  //   const userAvatar = document.querySelector("#profileAvatar");
-  // userAvatar.innerHTML = `
-  // ${
-  //   //NAO DEVERIA ESTAR AQUI
-  //     postData.author.avatar
-  //       ? `<img src="${postData.author.avatar}"  class="rounded-circle" height="50" onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
-  //       : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" alt="${postData.author.name}">`
-  //   }`
   const postContainer = document.createElement("div");
   postContainer.classList.add("post");
   postContainer.innerHTML += `
@@ -23,11 +15,13 @@ export function postsTemplate(postData) {
       ${postData.title}
         <span class="small text-muted">• ${postData.created}</span>
       </h4>
-     <h5>By: <a href="/profile/index.html?name=${postData.author.name
-      }">${postData.author.name
+     <h5>By: ${postData.author.name
       }</a></h5>
     <p style="line-height: 1.2;">
     ${postData.body}   
+    </p>
+    <p style="line-height: 1.2;">
+    Tags: ${postData.tags}   
     </p>
     <a href="/post/?id=${postData.id
       }">View post...</a>

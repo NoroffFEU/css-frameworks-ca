@@ -1,4 +1,5 @@
 import * as listeners from "./handlers/index.js";
+
 //Fix the listener conflict 
 const path = location.pathname;
 
@@ -18,6 +19,7 @@ switch (path) {
     case "/posts/":
         listeners.setCreatePostFormListener();
         listeners.postsTemplates();
+        // listeners.setupPage();
         break;
     case "/post/":
         listeners.getComments();
@@ -29,6 +31,4 @@ switch (path) {
         break;
 }
 
-
-
-
+listeners.logoutListener()

@@ -12,8 +12,12 @@ export async function createPost(postData) {
         body: JSON.stringify(postData)
     })
     const post = await response.json();
-    console.log(post);
-    window.location.reload();
+   
+    if (response.ok) {
+        window.location.reload();
+
+    } 
+    throw new Error(json.errors[0].message);
 }
 
 export async function createComment(commentData) {
@@ -27,5 +31,9 @@ export async function createComment(commentData) {
         body: JSON.stringify(commentData)
     })
     const comment = await response.json();
-    window.location.reload();
+    if (response.ok) {
+        window.location.reload();
+
+    } 
+    throw new Error(json.errors[0].message);
 }

@@ -12,7 +12,13 @@ export async function getMyPosts() {
     const userPostsUrl = `${API_SOCIAL_URL}${endpoint}${action}${author}`;
     const response = await authFetch(userPostsUrl)
 
-    return await response.json();
+    const json = await response.json();
+ 
+    if (response.ok) {
+        return json;
+
+    } 
+    throw new Error(json.errors[0].message);
 }
 
 export async function getPost(id) {
@@ -22,7 +28,13 @@ export async function getPost(id) {
     const getPostUrl = `${API_SOCIAL_URL}/posts/${id}?_author=true&_comments=true&_reactions=true`;
 
     const response = await authFetch(getPostUrl);
-    return await response.json();
+    const json = await response.json();
+ 
+    if (response.ok) {
+        return json;
+
+    } 
+    throw new Error(json.errors[0].message);
 }
 
 //GETS EVERYONES POSTS

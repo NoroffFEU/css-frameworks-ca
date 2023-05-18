@@ -15,12 +15,12 @@ export async function updatePost(postData) {
         method,
         body: JSON.stringify(postData)
     });
-    if (response.status == 200) {
+    if (response.ok) {
         window.location.href = "/posts/";
 
     } else {
         const json = await response.json();
-        alert(json.errors[0].message);
+        throw new Error(json.errors[0].message);
     }
 
 }

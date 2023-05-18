@@ -18,12 +18,12 @@ switch (path) {
         break;
     case "/posts/":
         listeners.setCreatePostFormListener();
-        listeners.postsTemplates();
+        listeners.getPosts();
         // listeners.setupPage();
         break;
     case "/post/":
         listeners.getComments();
-        listeners.singlePostTemplate();
+        listeners.getPostById();
         listeners.setCreateCommentFormListener();
         break;
     case "/profile/edit/":

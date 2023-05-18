@@ -22,7 +22,4 @@ export async function register(profile) {
 
     } 
     throw new Error(json.errors[0].message);
-
-    // alert("Welcome! You are now registered.")
-    // window.location.href = "/profile/login";
 }

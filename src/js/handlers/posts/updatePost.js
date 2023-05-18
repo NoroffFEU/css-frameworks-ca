@@ -1,4 +1,5 @@
 import { getPost, updatePost } from "../../api/posts/index.js";
+import displayMessage from "../../ui/components/displayMessage.js";
 
 export async function setUpdatePostFormListener() {
     const form = document.querySelector("#editPostForm");
@@ -13,7 +14,7 @@ export async function setUpdatePostFormListener() {
         form.media.value = post.media;
 
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
@@ -23,10 +24,15 @@ export async function setUpdatePostFormListener() {
             post.id = id;
 
             //Send to the API
-            updatePost(post)
+            
             // window.location.href = "/posts/index.html";
             //  Gives user Feedback on errors
-
+            try {
+               await updatePost(post)
+               displayMessage("success", 'You post was updated!', "#message");
+            } catch (error) {
+                displayMessage("danger", error, "#message");
+            }
 
         })
     }

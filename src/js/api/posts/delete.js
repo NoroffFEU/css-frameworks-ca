@@ -17,6 +17,6 @@ export async function removePost(id) {
         window.location.reload();
     } else {
         const json = await response.json();
-        alert(json.errors[0].message);
+        throw new Error(json.errors[0].message);
     }
 }

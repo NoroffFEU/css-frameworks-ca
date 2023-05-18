@@ -6,8 +6,8 @@ export function postsTemplate(postData) {
   postContainer.innerHTML += `
   <div class="post d-flex  border-bottom mb-5">
   ${postData.author.avatar
-          ? `<img src="${postData.author.avatar}" class="rounded-circle" height="50" onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
-          : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" alt="${postData.author.name}">`
+          ? `<img src="${postData.author.avatar}" class="rounded-circle" height="50" width="50" onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
+          : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" width="50" alt="${postData.author.name}">`
       }
 
   <div class="post-content ps-3">
@@ -59,8 +59,8 @@ export function singlePostTemplate(postData) {
   postContainer.innerHTML += `
   <div class="post d-flex">
   ${postData.author.avatar
-          ? `<img src="${postData.author.avatar}" class="rounded-circle" height="50" onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
-          : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" alt="${postData.author.name}">`
+          ? `<img src="${postData.author.avatar}" class="rounded-circle" height="50" width="50"  onerror="this.src='/images/user-icon-image-placeholder.jpg'" alt="${postData.author.name}">`
+          : `<img src="/images/user-icon-image-placeholder.jpg" class="rounded-circle" height="50" width="50" alt="${postData.author.name}">`
       }
 
   <div class="post-content ps-3">

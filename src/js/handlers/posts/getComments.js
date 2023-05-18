@@ -20,18 +20,18 @@ export async function getComments() {
       
         container.innerHTML += `
           <div id="${sortedComments[i].id}" class="card d-flex flex-column p-3 mt-3">
-              <a href="/profile/?name=${sortedComments[i].owner}" class="text-decoration-none">
+             
                   <div class="d-flex align-items-center">
                       <div class="avatar p-1">
                       ${
                         commenterData.avatar
-                          ? `<img src="${commenterData.avatar}" class="rounded-circle" height="50" alt="User Image" onerror="this.src='/images/user-icon-image-placeholder.jpg'">`
-                          : `<img src="/images/user-icon-image-placeholder.jpg" alt="User Image" class="rounded-circle" height="50">`
+                          ? `<img src="${sortedComments[i].author.avatar}" class="rounded-circle" height="50" alt="User Image" onerror="this.src='/images/user-icon-image-placeholder.jpg'">`
+                          : `<img src="/images/user-icon-image-placeholder.jpg" alt="${sortedComments[i].owner}" class="rounded-circle" height="50">`
                       }
                       </div>
                       <h4>${sortedComments[i].owner} says:</h4>
                   </div>
-              </a>
+            
               <div class="ms-5">
                   <p class="post-content">${sortedComments[i].body}</p>
               </div>

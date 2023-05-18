@@ -24,8 +24,10 @@ export function postTemplate(postData) {
 
   if (!postData.media) {
     cardImg.src = "../../../img/no-image.jpg";
+    cardImg.alt = `No image available`;
   } else {
     cardImg.src = postData.media;
+    cardImg.alt = `Image from ${postData.title}`;
   }
 
   cardBody.appendChild(cardTitle);

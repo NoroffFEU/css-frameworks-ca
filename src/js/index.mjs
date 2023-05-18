@@ -11,11 +11,14 @@ if (path === "/profil/login/index.html") {
   listeners.setRegisterFormListener();
 } else if (path === "/post/create/index.html") {
   listeners.setCreatePostFormListener();
-  domContent.showContentOnPage();
 } else if (path === "/post/edit/") {
   listeners.setUpdatePostFormListener();
 } else if (path === "/profil/profile.html") {
   listeners.logoutListener();
+} else if (path === "/posts/index.html") {
+  domContent.showContentOnPage();
+} else if (path === "/posts/userPosts/posts.html") {
+  domContent.showCurrentUserPosts();
 }
 
 // Trying to make it imposible to click the previous button in the browser

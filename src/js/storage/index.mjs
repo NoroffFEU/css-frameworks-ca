@@ -12,3 +12,7 @@ export function load(key) {
 export function remove(key) {
   localStorage.removeItem(key);
 }
+
+export function getCurrentUser() {
+  return JSON.parse(localStorage.getItem("profile"));
+}

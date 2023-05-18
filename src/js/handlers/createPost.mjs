@@ -3,7 +3,7 @@ import { createPost } from "../api/posts/index.mjs";
 export function setCreatePostFormListener() {
   const accessform = document.querySelector("#createPost");
 
-  accessform.addEventListener("submit", (event) => {
+  accessform.addEventListener("submit", async (event) => {
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
@@ -14,7 +14,11 @@ export function setCreatePostFormListener() {
     } else {
       post.tags = [];
     }
-
-    createPost(post);
+    try {
+      await createPost(post);
+      location.href = "/posts/index.html";
+    } catch (error) {
+      console.log("an error aoccured while creating the post", error);
+    }
   });
 }

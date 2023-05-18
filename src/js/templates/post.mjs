@@ -1,4 +1,5 @@
 import * as crud from "../api/posts/index.mjs";
+import { getCurrentUser } from "../storage/index.mjs";
 
 export function postTemplate(postData) {
   const post = document.createElement("div");
@@ -18,13 +19,12 @@ export function postTemplate(postData) {
              }" 
              style="max-width: 420px; max-height: 300px; object-fit: cover;">
         <div class="card-body">
-          <p class="card-text">${postData.title}</p>
+          <h3 class="card-text">${postData.title}</h3>
+          <p class="card-text">${postData.body}</p>
           <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-primary">Like</button>
-              <button type="button" class="btn btn-sm btn-outline-primary">Comment</button>
+          <button type="button" class="btn btn-light">Update post</button>
+          <button type="button" class="btn btn-danger">Delete post</button>
             </div>
-            <small class="text-body-secondary">${postData.likes} Likes</small>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@ export function postTemplate(postData) {
 }
 
 export function createNewPost(postData, parent) {
-  parent.append(postTemplate(postData));
+  parent.prepend(postTemplate(postData));
 }
 
 export function renderPosts(postDataList, parent) {
@@ -47,5 +47,19 @@ export function renderPosts(postDataList, parent) {
 export async function showContentOnPage() {
   const posts = await crud.getPosts();
   const container = document.querySelector("#post-container");
+  renderPosts(posts, container);
+}
+
+export async function showCurrentUserPosts() {
+  const currentUser = getCurrentUser();
+
+  if (!currentUser) {
+    console.log("error");
+    return;
+  }
+
+  const posts = await crud.fetchPostsByUsername(currentUser.name);
+
+  const container = document.querySelector("#userPostContainer");
   renderPosts(posts, container);
 }

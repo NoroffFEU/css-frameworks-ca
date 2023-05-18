@@ -11,7 +11,7 @@ export async function postsTemplates() {
         templates.renderPostsTemplates(posts, container)
         searchBtn.addEventListener("click", search);
     } catch (error) {
-        console.log("no posts yet");
+        console.log("Couldn't retrieve posts");
     }
 }
 

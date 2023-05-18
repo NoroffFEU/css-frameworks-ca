@@ -19,12 +19,11 @@ switch (path) {
         listeners.setCreatePostFormListener();
         listeners.postsTemplates();
         break;
-    case "/post/index.html":
-        listeners.getComments();
-        listeners.singlePostTemplate();
-        listeners.setCreateCommentFormListener();
+        case "/post/":
+            listeners.getComments();
+            listeners.singlePostTemplate();
+            listeners.setCreateCommentFormListener();
 }
-
 
 
 

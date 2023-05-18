@@ -16,7 +16,7 @@ export async function updatePost(postData) {
         body: JSON.stringify(postData)
     });
     if (response.status == 200) {
-        window.location.href = "/posts/index.html";
+        window.location.href = "/posts/";
 
     } else {
         const json = await response.json();

@@ -20,7 +20,6 @@ export async function setUpdatePostFormListener() {
             const post = Object.fromEntries(formData.entries())
             post.id = id;
 
-            console.log("allooooo");
             //Send to the API
             updatePost(post)
             // window.location.href = "/posts/index.html";

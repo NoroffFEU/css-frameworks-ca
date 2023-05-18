@@ -19,10 +19,14 @@ switch (path) {
         listeners.setCreatePostFormListener();
         listeners.postsTemplates();
         break;
-        case "/post/":
-            listeners.getComments();
-            listeners.singlePostTemplate();
-            listeners.setCreateCommentFormListener();
+    case "/post/":
+        listeners.getComments();
+        listeners.singlePostTemplate();
+        listeners.setCreateCommentFormListener();
+        break;
+    case "/profile/edit/":
+        listeners.setUpdateProfileFormListener();
+        break;
 }
 
 

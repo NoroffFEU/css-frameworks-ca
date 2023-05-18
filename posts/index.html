@@ -81,22 +81,22 @@
     </section>
     <!--newsfeed-->
     <section class="container card mt-3" id="newsfeed">
-      <div class="row feed-header mb-3 p-3">
+      <form id="selectForm" class="row feed-header mb-3 p-3">
         <h1 class="heading-1 text-center p-3">My Posts</h1>
         <div class="filter col-4">
-          <select class="form-select" aria-label="Default select example">
+          <select class="form-select" aria-label="Default select example" id="filterSelect">
             <option selected>Filter posts</option>
-            <option value="1">Newest</option>
-            <option value="2">Oldest</option>
+            <option value="newest" id="filterByLatestPosts">Newest</option>
+            <option value="oldest" id="filterByOldest">Oldest</option>
           </select>
         </div>
         <div class="search col-8">
-          <form class="d-flex" role="search">
+          <div class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
             <button class="btn btn-primary" type="submit" id="searchBtn">Search</button>
-          </form>
+          </div>
         </div>
-      </div>
+      </form>
 
       <div class="container-fluid" id="allPosts">
 
@@ -118,6 +118,7 @@
 
 
   <script src="/src/js/index.js" type="module"></script>
+  <script src="/src/js/handlers/posts/filterPosts.js" type="module"></script>
 
 
 </body>

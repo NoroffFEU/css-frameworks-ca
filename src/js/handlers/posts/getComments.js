@@ -24,9 +24,9 @@ export async function getComments() {
                   <div class="d-flex align-items-center">
                       <div class="avatar p-1">
                       ${
-                        commenterData.avatar
-                          ? `<img src="${sortedComments[i].author.avatar}" class="rounded-circle" height="50" alt="User Image" onerror="this.src='/images/user-icon-image-placeholder.jpg'">`
-                          : `<img src="/images/user-icon-image-placeholder.jpg" alt="${sortedComments[i].owner}" class="rounded-circle" height="50">`
+                        sortedComments[i].author.avatar
+                          ? `<img src="${sortedComments[i].author.avatar}" class="rounded-circle" height="50" width="50" alt="${sortedComments[i].owner}" onerror="this.src='/images/user-icon-image-placeholder.jpg'">`
+                          : `<img src="/images/user-icon-image-placeholder.jpg" alt="${sortedComments[i].owner}" class="rounded-circle" height="50" width="50">`
                       }
                       </div>
                       <h4>${sortedComments[i].owner} says:</h4>

@@ -11,6 +11,7 @@ listeners.setRegisterFormListener();
 listeners.setLoginFormListener();
 listeners.setCreatePostListener();
 listeners.setUpdatePostListener();
+listeners.setUpdateProfileListener();
 
 
 // const path = location.pathname;
@@ -32,10 +33,10 @@ listeners.setUpdatePostListener();
 
 // testTemplate();
 
-async function testTemplates() {
-  const posts = await postMethods.getPosts();
-  const container = document.querySelector("#allPosts");
-  renderPostTemplates(posts, container);
-}
+// async function testTemplates() {
+//   const posts = await postMethods.getPosts();
+//   const container = document.querySelector("#allPosts");
+//   renderPostTemplates(posts, container);
+// }
 
-testTemplates();
+// testTemplates();

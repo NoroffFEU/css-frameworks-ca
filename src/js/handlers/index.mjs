@@ -4,3 +4,4 @@ export * from "./register.mjs";
 export * from "./createPost.mjs";
 export * from "./logout.mjs";
 export * from "./deletePost.mjs";
+export * from "./postByIdListener.mjs";

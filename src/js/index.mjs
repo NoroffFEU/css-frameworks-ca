@@ -20,6 +20,8 @@ if (path === "/profil/login/index.html") {
 } else if (path === "/posts/myPosts/posts.html") {
   await domContent.showCurrentUserPosts();
   listeners.setDeleteButtonListeners();
+} else if (path === "/post/postById/index.html") {
+  listeners.displayPostByIdListener();
 }
 
 // Trying to make it imposible to click the previous button in the browser

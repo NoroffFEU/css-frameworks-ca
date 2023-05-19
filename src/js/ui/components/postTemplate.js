@@ -1,4 +1,5 @@
 import { setDeletePostListener } from "../../handlers/posts/deletePost.js";
+import { dateTemplate } from "../components/dateTemplate.js";
 
 export function postsTemplate(postData) {
   const postContainer = document.createElement("div");
@@ -13,7 +14,7 @@ export function postsTemplate(postData) {
   <div class="post-content ps-3">
       <h4 class="text-body">
       ${postData.title}
-        <span class="small text-muted">• ${postData.created}</span>
+        <span class="small text-muted">• ${dateTemplate(postData.created)} </span>
       </h4>
      <h5>By: ${postData.author.name
       }</a></h5>
@@ -66,7 +67,7 @@ export function singlePostTemplate(postData) {
   <div class="post-content ps-3">
       <h4 class="text-body">
       ${postData.title}
-        <span class="small text-muted font-weight-normal">• ${postData.created}</span>
+        <span class="small text-muted font-weight-normal">• ${dateTemplate(postData.created)}  </span>
       </h4>
      <h5>By: <a href="/profile/index.html?name=${postData.author.name
       }">${postData.author.name
@@ -87,6 +88,7 @@ export function singlePostTemplate(postData) {
   </div>
   </div>
 </div>`;
+console.log(postData.comments);
 
 
   return postContainer;

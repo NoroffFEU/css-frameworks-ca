@@ -1,6 +1,6 @@
 import * as listeners from "./handlers/index.js";
 
-//Fix the listener conflict 
+
 const path = location.pathname;
 
 switch (path) {
@@ -19,7 +19,9 @@ switch (path) {
     case "/posts/":
         listeners.setCreatePostFormListener();
         listeners.getPosts();
-        // listeners.setupPage();
+        listeners.filterListener();
+        listeners.searchListener();
+
         break;
     case "/post/":
         listeners.getComments();

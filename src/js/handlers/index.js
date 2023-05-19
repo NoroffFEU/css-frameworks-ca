@@ -8,4 +8,6 @@ export * from "./posts/deletePost.js";
 export * from "./posts/getPosts.js";
 export * from "./posts/getComments.js";
 export * from "./posts/filterPosts.js";
+export * from "./posts/search.js";
 export * from "./profile/updateProfile.js";
+

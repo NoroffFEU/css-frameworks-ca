@@ -1,8 +1,5 @@
-import { API_SOCIAL_URL } from "../../api/constants.js";
-import * as postMethods from "../../api/posts/index.js";
-import { authFetch } from "../../api/authFetch.js";
-import displayMessage from "../../ui/components/displayMessage.js";
-import { dateTemplate } from "../../ui/components/dateTemplate.js";
+import { setDeletePostListener } from "../../handlers/posts/deletePost.js";
+import { dateTemplate } from "../components/dateTemplate.js";
 
 export async function getComments() {
     const queryString = document.location.search;
@@ -16,8 +13,7 @@ export async function getComments() {
     for (let i = 0; i < comments.length; i++) {
         const COMMENT_OWNER_URL = `${API_SOCIAL_URL}/profiles/${sortedComments[i].owner}?_posts=true&_author=true&_following=true&_followers=true`;
         const commenterData = await authFetch(COMMENT_OWNER_URL);
-        console.log(COMMENT_OWNER_URL);
-
+console.log(COMMENT_OWNER_URL);
       try {
         container.innerHTML += `
         <div id="${sortedComments[i].id}" class="card d-flex flex-column p-3 mt-3">

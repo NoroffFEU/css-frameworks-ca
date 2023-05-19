@@ -1,51 +1,32 @@
-import { getMyPosts } from "../../api/posts/read.js";
-import { postsTemplate } from "../../ui/components/postTemplate.js";
+import * as postMethods from "../../api/posts/index.js";
+import * as templates from "../../ui/components/postTemplate.js";
+import displayMessage from "../../ui/components/displayMessage.js";
+import { savePosts } from "../../storage/index.js";
+import { getPosts } from "./getPosts.js";
 
-// SETUP PAGE
-export async function setupPage() {
-    console.log("setup");
-    const allPosts = await getMyPosts();
-    postsTemplate(allPosts);
+export async function filterListener() {
+    const button = document.querySelector("#filterBtn");
+    if (button) {
+        button.addEventListener("click", async () => {
+            const container = document.querySelector("#allPosts");
 
-    const sortSelect = document.querySelector("#filterSelect");
-    sortSelect.addEventListener("input", (event) =>
-        onSortSelect(event, allPosts)
-    );
-    const formSelect = document.querySelector("#selectForm");
-    formSelect.reset();
+            const input = document.querySelector("#filterInput");
+            const tag = input.value.trim();
+            if (tag.length === 0) {
+                container.innerHTML = '';
+                getPosts();
+                return;
+            }
+            try {
+                const posts = await postMethods.filterMyPosts(tag);
+                container.innerHTML = '';
+                templates.renderPostsTemplates(posts, container)
+                savePosts(posts)
 
-    return "Ready";
-}
-
-// SORTING 
-function sortByNewest(postA, postB) {
-    return new Date(postB.created) - new Date(postA.created);
-}
-
-function sortByOldest(postA, postB) {
-    return new Date(postA.created) - new Date(postB.created);
-}
-
-
-// POST SORT
-function sortPostsByNewest(posts) {
-    return posts.sort(sortByNewest);
-}
-
-function sortPostsByOldest(posts) {
-    return posts.sort(sortByOldest);
-}
-
-// SORT EVENT HANDLERS
-function onSortSelect(event, allPosts = []) {
-    const select = event.target;
-    const value = select.value;
-    switch (value) {
-      case "newest":
-        renderPosts(sortPostsByNewest(allPosts));
-        break;
-      case "oldest":
-        renderPosts(sortPostsByOldest(allPosts));
-        break;
+            } catch (error) {
+                displayMessage("danger", error, "#message");
+            }
+        });
     }
 }
+

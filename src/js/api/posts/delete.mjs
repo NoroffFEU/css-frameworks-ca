@@ -1,7 +1,7 @@
 import { HOST_API_URL, POSTS } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
-export async function reovePost(id) {
+export async function removePost(id) {
   if (!id) {
     throw new Error("To delete you need a postID");
   }

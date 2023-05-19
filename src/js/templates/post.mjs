@@ -1,4 +1,5 @@
 import * as crud from "../api/posts/index.mjs";
+
 import { getCurrentUser } from "../storage/index.mjs";
 
 export function postTemplate(postData) {
@@ -17,13 +18,20 @@ export function postTemplate(postData) {
                  ? `This image is from ${postData.title}`
                  : "Placeholder image"
              }" 
-             style="max-width: 420px; max-height: 300px; object-fit: cover;">
+          style="max-width: 420px; max-height: 300px; object-fit: cover;">
         <div class="card-body">
           <h3 class="card-text">${postData.title}</h3>
           <p class="card-text">${postData.body}</p>
           <div class="d-flex justify-content-between align-items-center">
-          <button type="button" class="btn btn-light">Update post</button>
-          <button type="button" class="btn btn-danger">Delete post</button>
+          <a href="/post/edit/index.html?id=${
+            postData.id
+          }" class="btn btn-light">Update post</a>
+          <a href="/post/postById/index.html?id=${
+            postData.id
+          }" class="btn btn-primary" id="view-post">View Post</a>
+          <button type="button" class="btn btn-danger" data-id="${
+            postData.id
+          }">Delete post</button>
             </div>
           </div>
         </div>
@@ -44,22 +52,40 @@ export function renderPosts(postDataList, parent) {
   parent.append(...postDataList.map(postTemplate));
 }
 
+// Showes contet on the feed page without displaying the Update and Delete buttons
+
 export async function showContentOnPage() {
   const posts = await crud.getPosts();
   const container = document.querySelector("#post-container");
   renderPosts(posts, container);
+
+  if (window.location.pathname === "/posts/index.html") {
+    const buttons = document.querySelectorAll(".btn-light, .btn-danger");
+    buttons.forEach((button) => {
+      button.style.display = "none";
+    });
+  }
 }
 
+//displays only the posts of the logged in user - identification by username
+
 export async function showCurrentUserPosts() {
-  const currentUser = getCurrentUser();
+  return new Promise(async (resolve, reject) => {
+    try {
+      const currentUser = getCurrentUser();
 
-  if (!currentUser) {
-    console.log("error");
-    return;
-  }
+      if (!currentUser) {
+        console.log("error");
+        return;
+      }
 
-  const posts = await crud.fetchPostsByUsername(currentUser.name);
+      const posts = await crud.fetchPostsByUsername(currentUser.name);
 
-  const container = document.querySelector("#userPostContainer");
-  renderPosts(posts, container);
+      const container = document.querySelector("#userPostContainer");
+      renderPosts(posts, container);
+      resolve();
+    } catch (error) {
+      reject(error);
+    }
+  });
 }

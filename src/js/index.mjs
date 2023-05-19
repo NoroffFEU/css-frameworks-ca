@@ -11,14 +11,15 @@ if (path === "/profil/login/index.html") {
   listeners.setRegisterFormListener();
 } else if (path === "/post/create/index.html") {
   listeners.setCreatePostFormListener();
-} else if (path === "/post/edit/") {
+} else if (path === "/post/edit/index.html") {
   listeners.setUpdatePostFormListener();
 } else if (path === "/profil/profile.html") {
   listeners.logoutListener();
 } else if (path === "/posts/index.html") {
   domContent.showContentOnPage();
-} else if (path === "/posts/userPosts/posts.html") {
-  domContent.showCurrentUserPosts();
+} else if (path === "/posts/myPosts/posts.html") {
+  await domContent.showCurrentUserPosts();
+  listeners.setDeleteButtonListeners();
 }
 
 // Trying to make it imposible to click the previous button in the browser

@@ -1,17 +1,16 @@
+import router from "./router.mjs";
+
+router();
+
+
 // import { setRegisterFormListener } from "./handlers/register.mjs";
 // import { setLoginFormListener } from "./handlers/login.mjs";
 
 //import * as templates from "./templates/index.mjs";
-import * as listeners from "./handlers/index.mjs";
-import * as postMethods from "./api/posts/index.mjs";
+// import * as postMethods from "./api/posts/index.mjs";
 //import { renderPostTemplate } from "./templates/index.mjs";
-import { renderPostTemplates } from "./templates/index.mjs";
+// import { renderPostTemplates } from "./templates/index.mjs";
 
-listeners.setRegisterFormListener();
-listeners.setLoginFormListener();
-listeners.setCreatePostListener();
-listeners.setUpdatePostListener();
-listeners.setUpdateProfileListener();
 
 
 // const path = location.pathname;

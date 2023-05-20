@@ -5,7 +5,8 @@
     font-size: 2rem;
   }
   .nav-link.active {
-    color: $secondary-color !important;
+    color: $primary-color !important;
+   text-decoration: underline;
   }
   .nav-link:hover,
   .navbar-toggler {

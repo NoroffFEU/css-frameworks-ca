@@ -16,11 +16,11 @@ export async function updateProfile(profileData) {
         method,
         body: JSON.stringify(profileData)
     });
-    if (response.status == 200) {
-        window.location.reload();
+    if (response.ok) {
+
 
     } else {
         const json = await response.json();
-        alert(json.errors[0].message);
+        throw new Error(json.errors[0].message);
     }
 }

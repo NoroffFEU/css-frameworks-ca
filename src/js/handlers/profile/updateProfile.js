@@ -1,5 +1,6 @@
 import { getProfile, updateProfile } from "../../api/profile/index.js";
 import { load } from "../../storage/index.js";
+import displayMessage from "../../ui/components/displayMessage.js";
 
 export async function setUpdateProfileFormListener() {
     const form = document.querySelector("#editProfileForm");
@@ -15,7 +16,7 @@ export async function setUpdateProfileFormListener() {
         form.banner.value = profile.banner;
         form.avatar.value = profile.avatar;
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
             const form = event.target;
             const formData = new FormData(form);
@@ -24,12 +25,12 @@ export async function setUpdateProfileFormListener() {
             profile.name = name;
             profile.email = email;
 
-            //Send to the API
-            updateProfile(profile)
-            // window.location.href = "/posts/index.html";
-            //  Gives user Feedback on errors
-
-
+            try {
+               await updateProfile(profile)
+                displayMessage("success", 'You profile was updated!', "#message");
+             } catch (error) {
+                 displayMessage("danger", error, "#message");
+             }
         })
     }
 };

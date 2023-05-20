@@ -8,16 +8,14 @@ const profileInfo = "?_posts=true&_author=true&_following=true&_followers=true";
 const profile = JSON.parse(localStorage.getItem("profile"));
 
 
+// export async function getMyPosts() {
+//     const username = getName();
+//     const endpoint = `/profiles/${username}`;
+//     const userPostsUrl = `${API_SOCIAL_URL}${endpoint}${action}${author}`;
+//     const response = await authFetch(userPostsUrl);
 
-export async function getMyPosts() {
-    // const username = profile.name;
-    const username = getName();
-    const endpoint = `/profiles/${username}`;
-    const userPostsUrl = `${API_SOCIAL_URL}${endpoint}${action}${author}`;
-    const response = await authFetch(userPostsUrl);
-
-    return await response.json();
-}
+//     return await response.json();
+// }
 
 
 export async function getProfile(name) {

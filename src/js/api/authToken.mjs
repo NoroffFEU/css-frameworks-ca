@@ -1,4 +1,4 @@
-import { load } from "../../storage/storage.mjs";
+import { load } from "../storage/storage.mjs";
 
 export function headers() {
     const token = load("token");

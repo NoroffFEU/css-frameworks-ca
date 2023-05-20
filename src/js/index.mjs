@@ -17,11 +17,12 @@ if (path === "/profil/login/index.html") {
   listeners.logoutListener();
 } else if (path === "/posts/index.html") {
   domContent.showContentOnPage();
+  listeners.setSearchTagListener();
 } else if (path === "/posts/myPosts/posts.html") {
   await domContent.showCurrentUserPosts();
   listeners.setDeleteButtonListeners();
 } else if (path === "/post/postById/index.html") {
-  listeners.displayPostByIdListener();
+  listeners.displayPostById();
 }
 
 // Trying to make it imposible to click the previous button in the browser

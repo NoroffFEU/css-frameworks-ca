@@ -51,8 +51,29 @@
     </header>
     <div class="container pt-5">
     <h1 class="display-1 pb-4">Your feed</h1>
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex pb-5 " role="search">
+      <input
+        id="search-input"
+        type="search"
+        class="form-control form-control-dark text-bg-light"
+        placeholder="Search after tag (only one tag allowed)"
+        aria-label="Search"
+      />
+      <button id="search-button" type="submit" class="btn btn-info ps-4 py-1"><i class="fa-solid fa-tag fa-lg"></i></button>
+    </form>
+    <form class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex pb-5 " role="search">
+      <input
+        id="titleSearch"
+        type="search"
+        class="form-control form-control-dark text-bg-light"
+        placeholder="Search..."
+        aria-label="Search"
+      />
+      <button id="title-search-button" type="submit" class="btn btn-info ps-4 py-1"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+    </form>
+    
     <a href="../post/create/index.html"><i class="fa-solid fa-circle-plus fa-2xl"></i></a>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 pt-4" id="post-container">
-      </div>
+    </div>
   </body>
 </html>

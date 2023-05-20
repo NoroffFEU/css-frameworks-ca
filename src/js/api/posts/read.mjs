@@ -1,8 +1,12 @@
 import { HOST_API_URL, POSTS } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
-export async function getPosts() {
-  const updatePostURL = `${HOST_API_URL}${POSTS}`;
+export async function getPosts(tag) {
+  let updatePostURL = `${HOST_API_URL}${POSTS}`;
+
+  if (tag) {
+    updatePostURL += `?_tag=${tag}&_active=true`;
+  }
 
   const response = await authFetch(updatePostURL);
   return await response.json();

@@ -19,9 +19,7 @@ if (path === '/profile/login/'){
     listeners.SetUpdatePostFormListener()
 } else if (path === '/profile/edit/') {
     listeners.SetUpdateProfileFormListener()
-} else if (path === '/profile/login/'){
-    listeners.SetLogoutFormListener()
-}
+} 
 
 
 

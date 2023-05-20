@@ -1,5 +1,5 @@
 import { BASE_API_URL } from "../constant.mjs";
-import * as storage from "../../storage/storage.mjs"
+import * as storage from "../storage/storage.mjs"
 
 
 const path = "/auth/login";
@@ -17,13 +17,13 @@ export async function login(profile){
         method,
         body
     });
-    
-    const { accessToken, ...user } = await reponse.json()
 
-    storage.save("token", accessToken);
+    const json = await reponse.json()
 
-    storage.save("profile", user);
+    if(reponse.ok) {
+        return json;
+    }
 
-    alert("You are now logged in")
-    
+    throw new Error(json.errors[0].message);
+        
 }

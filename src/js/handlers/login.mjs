@@ -15,8 +15,8 @@ async function handleLogin(event) {
 
   const form = event.target;
   const formData = new FormData(form);
-  const email = formData.get("email");
-  const password = formData.get("password");
+  const emailData = formData.get("email");
+  const passwordData = formData.get("password");
 
   const button = form.querySelector("button");
   button.innerText = "Logging in...";
@@ -25,10 +25,11 @@ async function handleLogin(event) {
   fieldset.disabled = true;
 
   try {
-    const bodyData = { email: email, password: password };
-    const { accessToken, name } = await login(bodyData);
-    index.save("token", accessToken);
-    index.save("name", name);
+    const bodyData = { email: emailData, password: passwordData };
+    const response  = await login(bodyData);
+    index.save("token", response.accessToken);
+    index.save("name", response.name);
+    index.save("profile", response);
     location.href = "/posts/";
   } catch (error) {
     console.error(error);

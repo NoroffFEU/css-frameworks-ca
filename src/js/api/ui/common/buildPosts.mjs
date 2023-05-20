@@ -9,7 +9,7 @@ export default function buildPosts(pathname) {
   if (isLoggedIn()) {
     const name = getName();
 
-    btnLogout.classList.add("btn", "btn-secondary", "me-2");
+    btnLogout.classList.add("btn", "btn-secondary", "ms-2", "ms-0", "ms-md-3");
     btnLogout.id = "logout";
     btnLogout.innerText = `Log out ${name}`;
     menuLi.appendChild(btnLogout);
@@ -22,8 +22,23 @@ export default function buildPosts(pathname) {
       renderPostTemplates(posts, container);
     }
 
-    postTemplates();
-  } else {
-    // menuLi.removeChild(btnLogout);
+    async function postTemplatesUser() {
+      const posts = await postMethods.getPostsUser();
+      const container = document.querySelector("#userPostCard");
+      renderPostTemplates(posts, container);
+    }
+
+    if (
+      window.location.pathname === "/posts/" ||
+      window.location.pathname === "/posts/index.html"
+    ) {
+      postTemplates();
+    }
+    if (
+      window.location.pathname === "/post/edit/" ||
+      window.location.pathname === "/post/edit/index.html"
+    ) {
+      postTemplatesUser();
+    }
   }
 }

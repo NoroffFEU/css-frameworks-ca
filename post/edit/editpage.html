@@ -5,10 +5,10 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Picollo user edit profile page.">
-   <meta name="keywords" content="picollo, social, app, profile, edit">
+   <meta name="description" content="Picollo user profile page with profile picture, username and list of posts.">
+   <meta name="keywords" content="picollo, social, app, profile, user, pictures, posts">
    <meta name="author" content="Sabina Kutniauske">
-   <title>Picollo | Edit Profile </title>
+   <title>Picollo | Edit Post Page</title>
    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
    <link rel="stylesheet" href="../../dist/css/styles.css">
 </head>
@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
                <ul class="navbar-nav list-group">
                   <li class="nav-item">
-                     <a href="../../posts/index.html" class="nav-link text-white text-center me-0 me-md-3">Posts</a>
+                     <a href="../feed" class="nav-link text-white text-center me-0 me-md-3">Posts</a>
                   </li>
                   <li class="nav-item">
                      <a href="#" class="list-group-item list-group-item-action active text-center"
@@ -44,46 +44,31 @@
       </nav>
    </header>
 
-   <main>
-      <!-- User info section -->
+   <main>      
+      <!-- Edit post form -->
       <section class="container-lg">
-         <div class="row mt-5 gap-3 gap-md-5 justify-content-center">
-            <div class="col-md-5">
-               <img src="../../img/no-image.jpg" id="avatarImg" alt="No image available"
-                  class="img-fluid rounded-3 justify-content-start">
+         <h1 class="text-dark text-center mt-3"> Edit your post</h1> 
+         <form id="editPost" class="w-75">
+            <div class="form-group mb-3">
+               <label for="">Title</label>
+               <input class="form-control" type="text" name="title" required>
             </div>
-            <div class="col-md-4 text-center text-md-start">
-               <h1 class="text-dark" id="username"></h1>
-               <h2 class="text-muted mb-4" id="userEmail"></h2>
-               </div>
+            <div class="form-group mb-3">
+               <label for="">Body</label>
+               <textarea class="form-control" name="body" required></textarea>
             </div>
-         </div>
-      </section>
 
-      <!-- Edit profile form -->
-      <section class="container-sm">
-         <h3 class="text-dark mt-5 text-center mb-4">Edit profile</h3>
-         <div class="row justify-content-center">
-            <form id="editProfile" class="col-md-8 bg-dark p-4 rounded-3 mb-5">
-               <div class="form-group mb-3">
-                  <label class="form-label text-white">Name</label>
-                  <input class="form-control mb-3" type="text" name="name" disabled>
-               </div>
-               <div class="form-group mb-3">
-                  <label class="form-label text-white">Email</label>
-                  <input class="form-control" type="email" name="email" disabled>
-               </div>
-               <div class="form-group mb-3">
-                  <label class="form-label text-white">Banner</label>
-                  <input class="form-control" type="url" name="banner">
-               </div>
-               <div class="form-group mb-3">
-                  <label class="form-label text-white">Avatar</label>
-                  <input class="form-control" type="url" name="avatar">
-               </div>
-               <div class="d-flex justify-content-center"><button class="btn btn-secondary w-50 mt-3">Update profile</button></div>
-            </form>
-         </div>
+            <div class="form-group mb-3">
+               <label for="">Tags</label>
+               <input class="form-control" type="text" name="tag">
+            </div>
+            <div class="form-group mb-3">
+               <label for="">Media</label>
+               <input class="form-control" type="url" name="media">
+            </div>
+            <button class="btn btn-primary">Update post</button>
+            <button class="btn btn-danger">Delete post</button>
+         </form>
       </section>
    </main>
 

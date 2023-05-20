@@ -8,7 +8,7 @@
    <meta name="description" content="Picollo user profile page with profile picture, username and list of posts.">
    <meta name="keywords" content="picollo, social, app, profile, user, pictures, posts">
    <meta name="author" content="Sabina Kutniauske">
-   <title>Picollo | Post</title>
+   <title>Picollo | Edit Post</title>
    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
    <link rel="stylesheet" href="../../dist/css/styles.css">
 </head>
@@ -130,21 +130,23 @@
                         <label class="form-label fw-semibold">Media</label>
                         <input class="form-control mb-3" type="url" name="media">
                      </div>
-
                      <button class="btn btn-lg btn-primary w-100">Create Post</button>
                   </form>
                </div>
             </div>
          </div>
       </div>
-
-      <!-- User posts cards-->
-      <!-- <section class="container-lg">
-         <h2 class="fs-3 text-muted text-center mb-3">Posts</h2>
-         <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+              
+         <!-- List of user post cards -->
+      <section class="container-lg mb-5">
+         <h2 class="fs-3 text-muted text-center mb-3">My Posts</h2>
+         <div class="row gap-3 ms-3 me-3 m-lg-0 justify-content-around" id="userPostCard">              
+         </div>
+      </section>
+         <!-- <div class="row row-cols-1 row-cols-md-3 g-4 mb-5" id="userPostCard">
             <div class="col">
-               <div class="card h-100">
-                  <img src="../img/user-posts/back-view-full-length-portrait-young-sportsman-running.jpg"
+               <div class="card h-100"> -->
+                  <!-- <img src="../img/user-posts/back-view-full-length-portrait-young-sportsman-running.jpg"
                      class="card-img-top" alt="A young athlete jogs by the sea">
                   <div class="card-body">
                      <h5 class="card-title">As I run</h5>
@@ -152,90 +154,11 @@
                         rapid, and my muscles engage in a rhythmic movement that propels me forward. As I continue to
                         run, I often experience a sense of clarity and focus that allows me to tune out distractions and
                         focus on the present moment.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col">
-               <div class="card h-100">
-                  <img src="../img/user-posts/close-up-of-man-wearing-red-beanie.jpg" class="card-img-top"
-                     alt="Close up of man wearing red beanie">
-                  <div class="card-body">
-                     <h5 class="card-title">Art face</h5>
-                     <p class="card-text">As an individual, I find the human face to be one of the most fascinating and
-                        expressive subjects in art. Whether it's a realistic portrait or an abstract representation, a
-                        well-crafted face can convey a wealth of emotion and personality.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col">
-               <div class="card h-100">
-                  <img src="../img/user-posts/man-servant-doing-chores-around-house.jpg" class="card-img-top"
-                     alt="A man cleaning an oven">
-                  <div class="card-body">
-                     <h5 class="card-title">Oven cleaning</h5>
-                     <p class="card-text">Despite the difficulty of the task, I find that cleaning the oven can be very
-                        rewarding. A clean oven not only looks better but can also improve the taste of food and reduce
-                        the risk of fires caused by built-up grease.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col">
-               <div class="card h-100">
-                  <img src="../img/user-posts/man-sitting-watching-sunset.jpg" class="card-img-top"
-                     alt="Man sitting and watching the sunset">
-                  <div class="card-body">
-                     <h5 class="card-title">Watching the sunset</h5>
-                     <p class="card-text">Watching the sunset is one of my favorite activities to do, as it's a time to
-                        slow down and appreciate the natural beauty around us. There's something peaceful and calming
-                        about watching the sun slowly dip below the horizon, casting a warm and colorful glow across the
-                        sky.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col">
-               <div class="card h-100">
-                  <img src="../img/user-posts/man-standing-on-brown-rock-cliff-in-front-of-waterfalls.jpg"
-                     class="card-img-top" alt="Man standing on brown rock cliff in front of waterfalls">
-                  <div class="card-body">
-                     <h5 class="card-title">Waterfall</h5>
-                     <p class="card-text">I find that waterfalls are not just beautiful, but they also have a calming
-                        and rejuvenating effect on me. The negative ions produced by the falling water are believed to
-                        improve our mood and reduce stress levels, which makes the experience of being around a
-                        waterfall even more special.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col">
-               <div class="card h-100">
-                  <img src="../img/user-posts/traveler-having-fun-way.jpg" class="card-img-top"
-                     alt="Man with hat and outstretched arms">
-                  <div class="card-body">
-                     <h5 class="card-title">Travel</h5>
-                     <p class="card-text">Traveling allows me to step out of my comfort zone, try new things, and learn
-                        about different cultures and ways of life. One of the most enjoyable aspects of travel is the
-                        sense of adventure and spontaneity that comes with it. Whether it's trying a new food, getting
-                        lost in a new city, or taking an impromptu day trip, there's always something new and exciting
-                        to discover when traveling.
-                     </p>
-                  </div>
-               </div>
-            </div>
-            <div class="col">
-               <div class="card h-100">
-                  <img
-                     src="../img/user-posts/young-happy-cook-preparing-bruschetta-with-avocado-sauce-cherry-tomato-kitchen.jpg"
-                     class="card-img-top" alt="Young happy man preparing bruschetta with avocado">
-                  <div class="card-body">
-                     <h5 class="card-title">Food</h5>
-                     <p class="card-text">Cooking can be challenging and time-consuming, but I find that the sense of
-                        accomplishment that comes with creating a delicious meal is well worth the effort. And even when
-                        things don't turn out perfectly, there's always something to be learned and improved upon for
-                        next time.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section> -->
+                  </div> -->
+               <!-- </div> -->
+            <!-- </div> -->
+         <!-- </div> -->
+    
 
       <!-- Edit post form -->
       <section>

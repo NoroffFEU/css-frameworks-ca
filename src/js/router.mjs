@@ -1,5 +1,5 @@
 import * as listeners from "./handlers/index.mjs";
-import buildPosts from "./api/ui/common/buildPosts.mjs"
+import buildPosts from "./api/ui/common/buildPosts.mjs";
 import { redirectBasedOnLogin } from "./helpers/auth.mjs";
 
 export default function router() {
@@ -21,11 +21,15 @@ export default function router() {
     case "/post/edit/":
     case "/post/edit/index.html":
       listeners.setCreatePostListener();
-      listeners.setUpdatePostListener();
+      // listeners.setUpdatePostListener();
       break;
     case "/profile/edit/":
     case "/profile/edit/index.html":
       listeners.setUpdateProfileListener();
+      break;
+    case "/post/edit/editpage.html":
+      // listeners.setUpdatePostListener();
+      listeners.redirectToEditPage();
       break;
   }
 }

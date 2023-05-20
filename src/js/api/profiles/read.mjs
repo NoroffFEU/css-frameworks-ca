@@ -5,7 +5,9 @@ const action = "/profiles";
 
 export async function getProfiles() {
   const getProfileUrl = `${API_SOCIAL_URL}${action}`;
+  console.log(getProfileUrl);
   const response = await authFetch(getProfileUrl);
+  console.log(response);
   return await response.json();
 };
 

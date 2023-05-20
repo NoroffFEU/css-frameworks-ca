@@ -1,3 +1,6 @@
+import { setUpdatePostListener } from "../handlers/updatePost.mjs";
+import { redirectToEditPage } from "../handlers/redirect.mjs";
+
 export function postTemplate(postData) {
   const cardContainer = document.createElement("div");
   cardContainer.classList.add(
@@ -7,7 +10,7 @@ export function postTemplate(postData) {
     "col-xl-3",
     "shadow"
   );
-
+  
   const cardImg = document.createElement("img");
   cardImg.classList.add("card-img-top", "mt-2");
 
@@ -34,6 +37,17 @@ export function postTemplate(postData) {
   cardBody.appendChild(cardText);
   cardContainer.appendChild(cardImg);
   cardContainer.appendChild(cardBody);
+
+  if ( 
+    window.location.pathname === "/post/edit/" ||
+    window.location.pathname === "/post/edit/index.html") {
+    const buttonEditPost = document.createElement("a");
+    buttonEditPost.classList.add("btn", "btn-primary", "mb-3");
+    buttonEditPost.innerText = "Edit post";
+    cardContainer.appendChild(buttonEditPost);
+    buttonEditPost.addEventListener("click", redirectToEditPage);
+  }
+
   return cardContainer;
 }
 

@@ -20,13 +20,8 @@ export async function setUpdatePostFormListener() {
             const formData = new FormData(form);
             const post = Object.fromEntries(formData.entries())
             post.tags = post.tags.split(",");
-            console.log(post);
             post.id = id;
 
-            //Send to the API
-            
-            // window.location.href = "/posts/index.html";
-            //  Gives user Feedback on errors
             try {
                await updatePost(post)
                displayMessage("success", 'You post was updated!', "#message");

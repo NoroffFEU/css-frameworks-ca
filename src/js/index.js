@@ -21,16 +21,17 @@ switch (path) {
         listeners.getPosts();
         listeners.filterListener();
         listeners.searchListener();
-
         break;
     case "/post/":
-        listeners.getComments();
         listeners.getPostById();
         listeners.setCreateCommentFormListener();
         break;
     case "/profile/edit/":
         listeners.setUpdateProfileFormListener();
         break;
+    case "/profile/":
+            listeners.displayProfileListener();
+            break;
 }
 
 listeners.logoutListener()

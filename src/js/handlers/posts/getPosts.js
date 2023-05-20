@@ -24,7 +24,6 @@ export async function getPostById() {
     
         const post = await postMethods.getPost(id);
         const container = document.querySelector("#singlePost");
-        console.log(post);
         templates.renderSinglePostTemplate(post, container);
     } catch (error) {
         displayMessage("danger", error, "#message");

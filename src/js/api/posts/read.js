@@ -17,12 +17,6 @@ export async function getMyPosts() {
 	return await response.json();
 }
 
-//     if (response.ok) {
-//         return json;
-
-//     } 
-//     throw new Error(json.errors[0].message);
-// }
 
 export async function getPost(id) {
 	if (!id) {
@@ -31,15 +25,14 @@ export async function getPost(id) {
 	const getPostUrl = `${API_SOCIAL_URL}/posts/${id}?_author=true&_comments=true&_reactions=true`;
 
 	const response = await authFetch(getPostUrl);
-	return await response.json();
+	if (response.ok) {
+
+		return await response.json();
+
+	}
+	throw new Error(json.errors[0].message);
 }
 
-//     if (response.ok) {
-//         return json;
-
-//     } 
-//     throw new Error(json.errors[0].message);
-// }
 
 export async function filterMyPosts(tag) {
 
@@ -47,10 +40,7 @@ export async function filterMyPosts(tag) {
 		throw new Error("searchMyPosts requires a tag value");
 	}
 
-
-
 	const url = `${API_SOCIAL_URL}${action}${author}&_tag=${tag}`;
-	console.log(url);
 	const response = await authFetch(url);
 
 	const json = response.json();
@@ -61,9 +51,6 @@ export async function filterMyPosts(tag) {
 
 	throw new Error(json.errors[0].message);
 }
-
-
-
 
 
 //GETS EVERYONES POSTS

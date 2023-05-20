@@ -11,6 +11,7 @@ export function setDeletePostListener() {
 
               try {
                 removePost(id);
+                displayMessage("success", 'You post was updated!', "#message");
 
 			} catch (error) {
 				displayMessage("danger", error, "#message");

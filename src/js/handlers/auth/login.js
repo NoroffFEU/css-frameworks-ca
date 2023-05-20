@@ -5,7 +5,6 @@ import * as storage from "../../storage/index.js";
 
 
 export function setLoginFormListener() {
-	console.log("setLoginFormListener");
 	const loginForm = document.querySelector("#loginForm");
 
 	if (loginForm) {
@@ -15,7 +14,6 @@ export function setLoginFormListener() {
 			const loginForm = event.target;
 			const formData = new FormData(loginForm);
 			const profile = Object.fromEntries(formData.entries());
-			console.log(profile);
 
 			try {
 				const { accessToken, ... userInfo } = await login(profile);

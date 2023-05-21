@@ -21,15 +21,14 @@ export default function router() {
     case "/post/edit/":
     case "/post/edit/index.html":
       listeners.setCreatePostListener();
-      // listeners.setUpdatePostListener();
+      listeners.setUpdatePostListener();
       break;
     case "/profile/edit/":
     case "/profile/edit/index.html":
       listeners.setUpdateProfileListener();
       break;
     case "/post/edit/editpage.html":
-      // listeners.setUpdatePostListener();
-      listeners.redirectToEditPage();
+      listeners.setUpdatePostListener();
       break;
   }
 }

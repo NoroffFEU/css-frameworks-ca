@@ -71,7 +71,8 @@
                      <p class="text-muted">following</p>
                   </div>
                </div>
-               <a href="../../profile/edit/index.html" class="btn btn-primary text-white fw-bold text-uppercase w-75 mb-2">Edit account</a>
+               <a href="../../profile/edit/index.html"
+                  class="btn btn-primary text-white fw-bold text-uppercase w-75 mb-2">Edit account</a>
             </div>
          </div>
       </section>
@@ -136,17 +137,17 @@
             </div>
          </div>
       </div>
-              
-         <!-- List of user post cards -->
+
+      <!-- List of user post cards -->
       <section class="container-lg mb-5">
          <h2 class="fs-3 text-muted text-center mb-3">My Posts</h2>
-         <div class="row gap-3 ms-3 me-3 m-lg-0 justify-content-around" id="userPostCard">              
+         <div class="row gap-3 ms-3 me-3 m-lg-0 justify-content-around" id="userPostCard">
          </div>
       </section>
-         <!-- <div class="row row-cols-1 row-cols-md-3 g-4 mb-5" id="userPostCard">
+      <!-- <div class="row row-cols-1 row-cols-md-3 g-4 mb-5" id="userPostCard">
             <div class="col">
                <div class="card h-100"> -->
-                  <!-- <img src="../img/user-posts/back-view-full-length-portrait-young-sportsman-running.jpg"
+      <!-- <img src="../img/user-posts/back-view-full-length-portrait-young-sportsman-running.jpg"
                      class="card-img-top" alt="A young athlete jogs by the sea">
                   <div class="card-body">
                      <h5 class="card-title">As I run</h5>
@@ -155,13 +156,13 @@
                         run, I often experience a sense of clarity and focus that allows me to tune out distractions and
                         focus on the present moment.</p>
                   </div> -->
-               <!-- </div> -->
-            <!-- </div> -->
-         <!-- </div> -->
-    
+      <!-- </div> -->
+      <!-- </div> -->
+      <!-- </div> -->
+
 
       <!-- Edit post form -->
-      <section>
+      <!-- <section>
          <form id="editPost">
             <div class="form-group mb-3">
                <label for="">Title</label>
@@ -183,15 +184,18 @@
             <button class="btn btn-success">Update post</button>
          </form>
       </section>
-   </main>
-
-   <!-- Footer -->
-   <footer class="bg-dark py-3">
-      <p class="text-center text-white mb-0">&#174;2023</p>
-   </footer>
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="/src/js/index.mjs" type="module"></script>
+   </main> -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body"></div>
+         </div>
+      </div>
+      <!-- Footer -->
+      <footer class="bg-dark py-3">
+         <p class="text-center text-white mb-0">&#174;2023</p>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="/src/js/index.mjs" type="module"></script>
 </body>
 
 </html>

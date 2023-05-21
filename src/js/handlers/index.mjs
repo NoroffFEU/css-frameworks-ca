@@ -5,3 +5,4 @@ export * from "./updatePost.mjs";
 export * from "./updateProfile.mjs";
 export * from "./logout.mjs";
 export * from "./redirect.mjs";
+export * from "./deletePost.mjs"

@@ -1,5 +1,7 @@
 import { setUpdatePostListener } from "../handlers/updatePost.mjs";
 import { redirectToEditPage } from "../handlers/redirect.mjs";
+import { setDeletePostListener } from "../handlers/deletePost.mjs";
+
 
 export function postTemplate(postData) {
   const cardContainer = document.createElement("div");
@@ -44,8 +46,17 @@ export function postTemplate(postData) {
     const buttonEditPost = document.createElement("a");
     buttonEditPost.classList.add("btn", "btn-primary", "mb-3");
     buttonEditPost.innerText = "Edit post";
+    buttonEditPost.href = `/post/edit/editpage.html?id=${postData.id}`;
     cardContainer.appendChild(buttonEditPost);
-    buttonEditPost.addEventListener("click", redirectToEditPage);
+    buttonEditPost.addEventListener("click", setUpdatePostListener);
+
+    const buttonDeletePost = document.createElement("a");
+    buttonDeletePost.classList.add("btn", "btn-danger", "mb-3");
+    buttonDeletePost.innerText = "Delete post";
+    buttonDeletePost.dataset.id = postData.id;
+    buttonDeletePost.dataset.delete = true;
+    cardContainer.appendChild(buttonDeletePost);
+    buttonDeletePost.addEventListener("click", setDeletePostListener);
   }
 
   return cardContainer;

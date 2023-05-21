@@ -23,7 +23,7 @@ export async function register(profile){
         return json;
     }
 
-    throw new Error(json.error.message);
+    throw new Error(json.message);
     
 
 }

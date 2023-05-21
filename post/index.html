@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/index.css">
+
+    <title>PenPaw | Post </title>
+
+    <script src="https://kit.fontawesome.com/7838f15d00.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-color">
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand heading-1" href="/">PenPaw</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile">My Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/posts/">Dashboard</a>
+                        </li>
+                        <li>
+                            <button type="button" class="btn btn-dark" id="logout">Logout</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container card m-3 p-3" id="singlePost">
+            <h1 class="heading-1 text-center p-3">My Post:</h1>
+            <div id="message"></div>
+            <!--Post page-->
+
+
+        </section>
+
+        <section class="container card m-3 p-3" id="getComments">
+            <!--Comments here -->
+            <h3>Comments:</h3>
+
+        </section>
+
+        <section class="container card m-3 p-3">
+            <!--New comment-->
+            <h2>Leave a comment:</h2>
+            <form class="write-post-wrapper d-flex flex-column" id="createCommentForm">
+                <div class="d-flex flex-column">
+
+                    <div class="form-floating">
+                        <textarea class="form-control" id="commentInput" placeholder="Write your comment" name="body"
+                            required></textarea>
+
+                    </div>
+                </div>
+                <button class="btn w-25 align-self-end btn-primary mt-2" type="submit">
+                    Post
+                </button>
+            </form>
+
+        </section>
+    </main>
+    <footer class="bg-dark p-3 fixed-bottom">
+        <p class="text-light m-0 text-center">©Emily R. Ferreira</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+
+    <script src="/src/js/index.js" type="module"></script>
+</body>
+
+</html>

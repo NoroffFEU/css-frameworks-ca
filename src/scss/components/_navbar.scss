@@ -1,0 +1,15 @@
+.navbar {
+  background-color: $light-color;
+  .navbar-brand {
+    color: $primary-color;
+    font-size: 2rem;
+  }
+  .nav-link.active {
+    color: $primary-color !important;
+   text-decoration: underline;
+  }
+  .nav-link:hover,
+  .navbar-toggler {
+    color: $primary-color;
+  }
+}

@@ -1,5 +1,10 @@
 import * as crud from "../api/posts/index.mjs";
 
+/**
+ * Attaches event listeners to delete buttons with the class (".btn-danger")
+ * On click the post get deletet from the DOM
+ */
+
 export function setDeleteButtonListeners() {
   const deleteButtons = document.querySelectorAll(".btn-danger");
   deleteButtons.forEach((button) => {

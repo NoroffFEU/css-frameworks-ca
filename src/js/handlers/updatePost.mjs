@@ -32,6 +32,7 @@ export async function setUpdatePostFormListener() {
       }
 
       updatePost(post);
+      window.location.href = "/posts/myPosts/index.html";
     });
   }
 }

@@ -1,6 +1,10 @@
 import { HOST_API_URL, PROFILES, POSTS } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+/**
+ * @description This function sends a GET request to the API endpoint for fetching posts by username.
+ */
+
 export async function fetchPostsByUsername(username) {
   const getUserPosts = `${HOST_API_URL}${PROFILES}/${username}${POSTS}`;
 

@@ -6,6 +6,7 @@ export function logoutListener() {
   logoutButton.addEventListener("click", () => {
     storage.remove("token");
     storage.remove("profile");
+
     window.location.href = "profil/login/index.html";
   });
 }

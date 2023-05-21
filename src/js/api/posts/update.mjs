@@ -1,6 +1,11 @@
 import { HOST_API_URL, POSTS } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+/**
+ * @description
+ * Updates a post with ID
+ */
+
 export async function updatePost(postData) {
   if (!postData.id) {
     throw new Error("To update you need a postID");

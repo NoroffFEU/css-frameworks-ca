@@ -1,9 +1,9 @@
 # js2-ca
 https://trello.com/b/LZYslLAs/js2-ca
 
-Create an social media website.
+## Create an social media website.
 
-Home, Profile and posts.
+## Home, Profile and posts.
 
 ## Login form, register form.
 ## Edit profile and posts by ID

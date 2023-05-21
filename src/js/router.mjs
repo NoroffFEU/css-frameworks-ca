@@ -4,7 +4,6 @@ import { redirectBasedOnLogin } from "./helpers/auth.mjs";
 
 export default function router() {
   const pathname = window.location.pathname;
-  console.log(pathname);
 
   redirectBasedOnLogin(pathname);
   buildPosts(pathname);
@@ -32,11 +31,3 @@ export default function router() {
       break;
   }
 }
-
-// import * as listeners from "./handlers/index.mjs";
-
-// listeners.setRegisterFormListener();
-// listeners.setLoginFormListener();
-// listeners.setCreatePostListener();
-// listeners.setUpdatePostListener();
-// listeners.setUpdateProfileListener();

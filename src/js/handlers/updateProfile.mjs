@@ -1,5 +1,4 @@
-import { getProfile, updateProfile } from "../api/profiles/index.mjs";
-
+import { updateProfile } from "../api/profiles/index.mjs";
 import { load } from "../storage/index.mjs";
 
 export async function setUpdateProfileListener() {
@@ -9,38 +8,36 @@ export async function setUpdateProfileListener() {
   const userEmail = document.querySelector("#userEmail");
 
   if (form) {
-    const name = load("name");
-    form.name.value = name;
+    const profileData = await load("profile");
+    form.name.value = profileData.name;
+
+    username.innerText = profileData.name;
+    userEmail.innerText = profileData.email;
 
     const button = form.querySelector("button");
     button.disabled = true;
 
-    const profile = await getProfile("profile");
-    console.log(profile);
+    form.banner.value = profileData.banner;
+    form.avatar.value = profileData.avatar;
+    form.email.value = profileData.email;
 
-    form.banner.value = profile.banner;
-    form.avatar.value = profile.avatar;
-
-    if (!profile.avatar) {
+    if (!profileData.avatar) {
       avatarImg.alt = `No image available`;
     } else {
-      avatarImg.src = profile.avatar;
-      avatarImg.alt = `Image from ${profile.name}`;
+      avatarImg.src = profileData.avatar;
+      avatarImg.alt = `Image from ${profileData.name}`;
     }
-
-    username.innerText = profile.name;
-    userEmail.innerText = profile.email;
 
     button.disabled = false;
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const form = event.target;
+      console.log(form);
       const formData = new FormData(form);
       const profile = Object.fromEntries(formData.entries());
-
-      profile.name = name;
-      profile.email = email;
+      profile.name = profileData.name;
+      profile.email = profileData.email;
 
       //Send it to the API
       updateProfile(profile);

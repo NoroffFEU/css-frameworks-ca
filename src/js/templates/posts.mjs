@@ -1,5 +1,4 @@
 import { setUpdatePostListener } from "../handlers/updatePost.mjs";
-import { redirectToEditPage } from "../handlers/redirect.mjs";
 import { setDeletePostListener } from "../handlers/deletePost.mjs";
 
 

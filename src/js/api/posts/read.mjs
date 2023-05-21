@@ -14,7 +14,6 @@ export async function getPosts() {
 
 export async function getPostsUser() {
   const getPostUrl = `${API_SOCIAL_URL}${actionProfiles}${name}${action}`;
-  console.log(getPostUrl);
   const response = await authFetch(getPostUrl);
   return await response.json();
 }

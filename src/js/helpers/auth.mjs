@@ -13,7 +13,8 @@ export function redirectBasedOnLogin(pathname) {
       pathname === "/post/edit/index.html" ||
       pathname === "/post/edit/editpage.html" ||
       pathname === "/profile/edit" ||
-      pathname === "/profile/edit/index.html"
+      pathname === "/profile/edit/index.html" ||
+      pathname === "/post/singlepost.html"
     ) {
       location.href = "/index.html";
     }

@@ -25,7 +25,7 @@ export default function buildPosts(pathname) {
 
     async function postTemplatesUser() {
       const profile = await load("profile");
-      
+
       const aboutUserContainer = document.querySelector("#aboutUser");
       const userImgContainer = document.createElement("div");
       userImgContainer.classList.add("col-md-5");
@@ -38,10 +38,14 @@ export default function buildPosts(pathname) {
       } else {
         userImg.src = profile.avatar;
         userImg.alt = "Your profile image";
-      } 
+      }
 
       const userInfoContainer = document.createElement("div");
-      userInfoContainer.classList.add("col-md-4", "text-center", "text-md-start");
+      userInfoContainer.classList.add(
+        "col-md-4",
+        "text-center",
+        "text-md-start"
+      );
       const userUsername = document.createElement("h1");
       userUsername.classList.add("text-dark");
       userUsername.innerText = profile.name;
@@ -49,7 +53,15 @@ export default function buildPosts(pathname) {
       userEmail.classList.add("text-muted", "mb-4");
       userEmail.innerText = profile.email;
       const editProfileBtn = document.createElement("a");
-      editProfileBtn.classList.add("btn", "btn-primary", "text-white", "fw-bold", "text-uppercase", "w-75", "mb-2");
+      editProfileBtn.classList.add(
+        "btn",
+        "btn-primary",
+        "text-white",
+        "fw-bold",
+        "text-uppercase",
+        "w-75",
+        "mb-2"
+      );
       editProfileBtn.href = "../../profile/edit/index.html";
       editProfileBtn.innerText = "Edit account";
 
@@ -65,6 +77,30 @@ export default function buildPosts(pathname) {
       renderPostTemplates(posts, container);
     }
 
+    async function postTemplatesOne() {
+      const url = new URL(location.href);
+      const id = url.searchParams.get("id");
+      const post = await postMethods.getPost(id);
+      console.log(post);
+      const onePostContainer = document.querySelector("#onePost");
+      const h3Title = document.createElement("h3");
+      h3Title.innerText = post.title;
+      const imgMedia = document.createElement("img");
+
+      const pBody = document.createElement("p");
+      pBody.innerText = post.body;
+
+      if (!post.media) {
+        imgMedia.src = "../../../../../img/no-image.jpg";
+      } else {
+        imgMedia.src = post.media;
+      }
+
+      onePostContainer.appendChild(h3Title);
+      onePostContainer.appendChild(imgMedia);
+      onePostContainer.appendChild(pBody);
+    }
+
     if (
       window.location.pathname === "/posts/" ||
       window.location.pathname === "/posts/index.html"
@@ -77,6 +113,10 @@ export default function buildPosts(pathname) {
       window.location.pathname === "/post/edit/index.html"
     ) {
       postTemplatesUser();
+    }
+
+    if (window.location.pathname === "/post/singlepost.html") {
+      postTemplatesOne();
     }
   }
 }

@@ -81,14 +81,19 @@ export default function buildPosts(pathname) {
       const url = new URL(location.href);
       const id = url.searchParams.get("id");
       const post = await postMethods.getPost(id);
-      console.log(post);
+      
       const onePostContainer = document.querySelector("#onePost");
-      const h3Title = document.createElement("h3");
-      h3Title.innerText = post.title;
+      
       const imgMedia = document.createElement("img");
+      imgMedia.classList.add("img-fluid", "col-4"); 
+      
+      const singlePostTitle = document.createElement("h2");
+      singlePostTitle.innerText = post.title;
+      singlePostTitle.classList.add("text-center", "text-muted");
 
-      const pBody = document.createElement("p");
-      pBody.innerText = post.body;
+      const singlePostText = document.createElement("p");
+      singlePostText.innerText = post.body;
+      singlePostText.classList.add("col-8");
 
       if (!post.media) {
         imgMedia.src = "../../../../../img/no-image.jpg";
@@ -96,9 +101,9 @@ export default function buildPosts(pathname) {
         imgMedia.src = post.media;
       }
 
-      onePostContainer.appendChild(h3Title);
       onePostContainer.appendChild(imgMedia);
-      onePostContainer.appendChild(pBody);
+      onePostContainer.appendChild(singlePostTitle);
+      onePostContainer.appendChild(singlePostText);
     }
 
     if (

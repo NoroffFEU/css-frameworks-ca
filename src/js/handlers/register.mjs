@@ -1,5 +1,5 @@
 import { register } from "../api/auth/register.mjs";
-
+import errorMessage from "../ui/common/errorMessage.mjs";
 
 // handles the registration of profiles
 
@@ -14,8 +14,13 @@ export function SetRegisterFormListener(){
         const profile = Object.fromEntries(formData.entries())
         console.log("works!")
         
-
-        register(profile)
+        try {
+            register(profile)
+        }
+        catch(error) {
+            errorMessage("danger", error, "#message")
+        }
+        
 
     })
 };

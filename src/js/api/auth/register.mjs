@@ -15,7 +15,9 @@ export async function register(profile) {
     body,
   });
   const result = await response.json();
+  
   alert(`${result.name} created account`);
   location.href = "/";
+  
   return result;
-}
+};

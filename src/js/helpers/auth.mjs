@@ -18,4 +18,4 @@ export function redirectBasedOnLogin(pathname) {
       location.href = "/index.html";
     }
   }
-}
+};

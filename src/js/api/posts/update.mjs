@@ -14,5 +14,5 @@ export async function updatePost(postData) {
     body: JSON.stringify(postData),
   });
   return await response.json();
-}
+};
 

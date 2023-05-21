@@ -63,4 +63,5 @@ export function postTemplate(postData) {
 
 export function renderPostTemplates(postDataList, parent) {
   parent.append(...postDataList.map(postTemplate));
-}
+};
+

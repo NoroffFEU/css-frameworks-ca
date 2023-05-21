@@ -30,4 +30,4 @@ export default function router() {
       listeners.setUpdatePostListener();
       break;
   }
-}
+};

@@ -4,4 +4,4 @@ export default function displayMessage(type, message, target) {
   container.innerHTML = `<div class="alert alert-${type}">
                         ${message}
                         </div>`;
-}
+};

@@ -38,4 +38,4 @@ async function handleLogin(event) {
     button.innerText = "Login";
     fieldset.disabled = false;
   }
-}
+};

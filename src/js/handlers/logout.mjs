@@ -8,4 +8,4 @@ export function setLogoutListener(){
       index.remove("name");
       location.href = "/";
    });
-}
+};

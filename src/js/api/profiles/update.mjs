@@ -14,5 +14,5 @@ export async function updateProfile(profileData) {
     body: JSON.stringify(profileData),
   });
   return await response.json();
-}
+};
 

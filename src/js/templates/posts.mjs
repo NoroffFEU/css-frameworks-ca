@@ -1,6 +1,11 @@
 import { setUpdatePostListener } from "../handlers/updatePost.mjs";
 import { setDeletePostListener } from "../handlers/deletePost.mjs";
 
+/**
+  *Generates a post template HTML element based on the provided post data.
+  *@param {object} postData - The data of the post.
+  *@returns {HTMLElement} The generated post template element.
+*/
 export function postTemplate(postData) {
   const cardContainer = document.createElement("div");
   cardContainer.classList.add(
@@ -70,6 +75,11 @@ export function postTemplate(postData) {
   return cardContainer;
 }
 
+/**
+  *Renders post templates for a list of post data and appends them to a parent element.
+  *@param {Array} postDataList - The list of post data.
+  *@param {HTMLElement} parent - The parent element to append the post templates to.
+*/
 export function renderPostTemplates(postDataList, parent) {
   parent.append(...postDataList.map(postTemplate));
 }

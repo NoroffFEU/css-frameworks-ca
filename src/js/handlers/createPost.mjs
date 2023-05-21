@@ -1,5 +1,8 @@
 import { createPost } from "../api/posts/index.mjs";
 
+/**
+  *Sets up the listener for the create post form submission.
+*/
 export function setCreatePostListener() {
   const form = document.querySelector("#createPost");
 

@@ -4,6 +4,13 @@ import * as listeners from "../../../handlers/index.mjs";
 import { isLoggedIn, getName } from "../../../helpers/storage.mjs";
 import { load } from "../../../storage/index.mjs";
 
+/**
+  *Builds the posts section based on the current page pathname.
+  *@param {string} pathname - The current page pathname.
+  *Renders post templates on the posts page.
+  *Renders post templates for the user's posts on the user's profile page.
+  *Renders the template for a single post on the post detail page.
+ */
 export default function buildPosts(pathname) {
   const menuLi = document.querySelector("#forlogout");
   const btnLogout = document.createElement("button");

@@ -2,6 +2,9 @@ import { login } from "../api/auth/login.mjs";
 import * as index from "../storage/index.mjs";
 import displayMessage from "../api/ui/common/displayMessage.mjs";
 
+/**
+  *Sets up the listener for the login form submission.
+*/
 export function setLoginFormListener() {
   const form = document.querySelector("#loginForm");
 
@@ -10,6 +13,10 @@ export function setLoginFormListener() {
   }
 }
 
+/**
+  *Handles the login form submission.
+  *@param {Event} event - The form submission event.
+*/
 async function handleLogin(event) {
   event.preventDefault();
 

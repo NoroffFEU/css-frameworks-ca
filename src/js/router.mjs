@@ -2,6 +2,9 @@ import * as listeners from "./handlers/index.mjs";
 import buildPosts from "./api/ui/common/buildPosts.mjs";
 import { redirectBasedOnLogin } from "./helpers/auth.mjs";
 
+/**
+  *Handles the routing logic based on the current pathname.
+ */
 export default function router() {
   const pathname = window.location.pathname;
 

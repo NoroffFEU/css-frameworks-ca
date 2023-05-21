@@ -1,5 +1,8 @@
 import { getPost, updatePost } from "../api/posts/index.mjs";
 
+/**
+  *Sets the update post form listener to handle form submission for updating a post.
+ */
 export async function setUpdatePostListener() {
   const form = document.querySelector("#editPost");
 
@@ -26,7 +29,7 @@ export async function setUpdatePostListener() {
       const post = Object.fromEntries(formData.entries());
       post.id = id;
 
-      //Send it to the API
+      //Send the updated post data to the API
       updatePost(post);
     });
   }

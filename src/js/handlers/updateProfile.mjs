@@ -1,6 +1,9 @@
 import { updateProfile } from "../api/profiles/index.mjs";
 import { load } from "../storage/index.mjs";
 
+/**
+  *Sets the update profile form listener to handle form submission for updating a user's profile.
+ */
 export async function setUpdateProfileListener() {
   const form = document.querySelector("#editProfile");
   const avatarImg = document.querySelector("#avatarImg");
@@ -39,7 +42,7 @@ export async function setUpdateProfileListener() {
       profile.name = profileData.name;
       profile.email = profileData.email;
 
-      //Send it to the API
+      //Send the updated profile data to the API
       updateProfile(profile);
     });
   }

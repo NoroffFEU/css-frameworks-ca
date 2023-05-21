@@ -13,7 +13,7 @@ export function SetCreatePostFormListener() {
         const formData = new FormData(form);
         const post = Object.fromEntries(formData.entries())
         
-        console.log("works!")
+        //console.log("works!")
         
 
         createPost(post)

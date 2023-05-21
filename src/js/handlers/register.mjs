@@ -3,7 +3,7 @@ import errorMessage from "../ui/common/errorMessage.mjs";
 
 // handles the registration of profiles
 
-export function SetRegisterFormListener(){
+export function SetRegisterFormListener() {
     const form = document.querySelector("#registerForm");
 
     form.addEventListener("submit", (event) =>{

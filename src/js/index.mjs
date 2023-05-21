@@ -23,14 +23,3 @@ if (path === '/profile/login/'){
 
 
 
-
-
-
-
-/*async function testTemplates() {
-    const posts = await postsAction.readPosts();
-    const container = document.querySelector("#post");
-    templates.renderPostTemplates(posts, container);
-}
-
-testTemplates()*/

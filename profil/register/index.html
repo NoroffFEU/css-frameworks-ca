@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/9e8ffdbe7c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/src/js/index.mjs" defer type="module"></script>
+  </head>
+  <body>
+    <div
+      class="container min-vh-100 d-flex justify-content-center align-items-center"
+    >
+      <form method="post" id="registerForm">
+        <div class="form-group mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" required />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            required
+            pattern="[a-zA-Z0-9._-]+@(stud.)?noroff.no$"
+            title="Only stud.noroff.no domains"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            required
+            minlength="8"
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="Banner" class="form-label">Banner</label>
+          <input type="url" name="banner" class="form-control" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="avatar" class="form-label">Avatar</label>
+          <input type="url" name="avatar" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3 mb-3">Create</button>
+      </form>
+    </div>
+  </body>
+</html>

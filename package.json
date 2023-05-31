@@ -2,8 +2,9 @@
   "name": "css-frameworks-ca",
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
-  "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "sass": "^1.60.0"
   },
   "repository": {
     "type": "git",

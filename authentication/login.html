@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in">
+    <title>Log in to your account</title>
+    <link rel="stylesheet" href="../dist/css/index.css">
+  </head>
+<body class="vh-100">
+  <main>
+    <div class="container py-5 vh-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card bg-secondary pb-3 shadow-lg">
+              <div class="card-body p-4">
+                <div class="mb-md-5 mt-md-4">
+                  <h1 class="text-black mb-3 fw-bold">Sign in to DesTiny</h1>
+                  <h3 class="text-black mb-5 fw-light">Sign in to your DesTiny account, 
+                    or create a new account.</h2>
+
+                    <form action="../index.html">
+                        <div class="form-floating mb-3">
+                          <input class="form-control" placeholder="Your email" id="email" rows="1" type="email" required/>
+                          <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input class="form-control" type="password" placeholder="Your password" id="password" name="password" minlength="8" required>
+                          <label for="password">Password</label>
+                        </div>
+                        <div class="text-center pt-4">
+                          <button type="submit" type="submit" class="btn btn-primary w-50 rounded-4 fs-4">Sign in</button>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="register.html" class="text-black fs-5">Create account</a>
+                        </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+</body>
+</html>

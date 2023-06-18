@@ -1,2 +1,2 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+CSS frameworks course assignment, built with HTML, SCSS and Bootstrap

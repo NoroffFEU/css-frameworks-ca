@@ -7,6 +7,7 @@
     <meta name="description" content="Create an account">
     <title>Create your account</title>
     <link rel="stylesheet" href="../dist/css/index.css">
+    <script src="../scripts/index.mjs" defer type="module"></script>
   </head>
 <body class="vh-100">
   <main>
@@ -19,26 +20,43 @@
                   <h1 class="text-black mb-3 fw-bold">Register to DesTiny</h1>
                   <h3 class="text-black mb-5 fw-light">Sign in to your DesTiny account, 
                     or create a new account.</h2>
+                    <form id ="registerForm" method="post" action="auth/register">
 
-                    <form action="../index.html">
                       <div class="form-floating mb-3">
-                        <input class="form-control" placeholder="Username" id="username">
+
+                        
+                        <input class="form-control" placeholder="Username" id="username" type="text" name="name" required pattern="^[\w]+$" title="Your username can only contain lowercase and uppercase letters, numbers and underscores">
                         <label for="username">Username</label>
+
                       </div>
                         <div class="form-floating mb-3">
-                          <input class="form-control" placeholder="Your email" id="email" rows="1">
+
+                          <input class="form-control" placeholder="Your email" id="email" rows="1" type="email" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only noroff emails are allowed to register">
                           <label for="email">Email</label>
+
                         </div>
                         <div class="form-floating mb-3">
+
                           <input class="form-control" type="password" placeholder="Your password" id="password" name="password" minlength="8" required>
                           <label for="password">Password</label>
+
+
                         </div>
                         <div class="text-center pt-4">
                           <button type="submit" class="btn btn-primary w-50 rounded-4 fs-4">Create account</button>
                         </div>
+
                         <div class="text-center mt-3">
                             <a href="login.html" class="text-black fs-5">Already have an account? Log in here</a>
                         </div>
+
+                        <!-- {
+                          "name": "RuTcHlwXMOjGQ0xoX7t2",
+                          "email": "user@example.com",
+                          "avatar": "string",
+                          "password": "stringst"
+                        }
+                      -->
                     </form>
                       
               </div>

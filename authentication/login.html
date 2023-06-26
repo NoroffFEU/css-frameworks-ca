@@ -7,6 +7,7 @@
     <meta name="description" content="Log in">
     <title>Log in to your account</title>
     <link rel="stylesheet" href="../dist/css/index.css">
+    <script src="../scripts/index.mjs" defer type="module"></script>
   </head>
 <body class="vh-100">
   <main>
@@ -20,21 +21,29 @@
                   <h3 class="text-black mb-5 fw-light">Sign in to your DesTiny account, 
                     or create a new account.</h2>
 
-                    <form action="../index.html">
+                    <form id ="loginForm">
+
                         <div class="form-floating mb-3">
-                          <input class="form-control" placeholder="Your email" id="email" rows="1" type="email" required/>
+
+                          <input class="form-control" placeholder="Your email" id="email" rows="1" type="email" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only noroff emails are allowed to register">
                           <label for="email">Email</label>
+
                         </div>
                         <div class="form-floating mb-3">
+
                           <input class="form-control" type="password" placeholder="Your password" id="password" name="password" minlength="8" required>
                           <label for="password">Password</label>
+
+
                         </div>
                         <div class="text-center pt-4">
-                          <button type="submit" type="submit" class="btn btn-primary w-50 rounded-4 fs-4">Sign in</button>
+                          <button class="btn btn-primary w-50 rounded-4 fs-4">Log in</button>
                         </div>
+
                         <div class="text-center mt-3">
-                            <a href="register.html" class="text-black fs-5">Create account</a>
-                        </div>
+                          <a href="register.html" class="text-black fs-5">Create account</a>
+                      </div>
+
                     </form>
               </div>
             </div>

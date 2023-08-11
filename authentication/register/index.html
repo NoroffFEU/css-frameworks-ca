@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Create an account">
     <title>Create your account</title>
-    <link rel="stylesheet" href="../dist/css/index.css">
-    <script src="../scripts/index.mjs" defer type="module"></script>
+    <link rel="stylesheet" href="../../dist/css/index.css">
+    <script src="/scripts/index.mjs" defer type="module"></script>
+
 
   </head>
 <body class="vh-100">
@@ -24,7 +25,6 @@
                     <form id ="registerForm">
 
                       <div class="form-floating mb-3">
-
                         
                         <input class="form-control" placeholder="Username" id="username" type="text" name="name" required pattern="^[\w]+$" title="Your username can only contain lowercase and uppercase letters, numbers and underscores">
                         <label for="username">Username</label>
@@ -41,18 +41,17 @@
                           <input class="form-control" type="password" placeholder="Your password" id="password" name="password" minlength="8" required>
                           <label for="password">Password</label>
 
-
                         </div>
                         <div class="text-center pt-4">
                           <button type="submit" class="btn btn-primary w-50 rounded-4 fs-4">Register</button>
                         </div>
 
                         <div class="text-center mt-3">
-                            <a href="login.html" class="text-black fs-5">Already have an account? Log in here</a>
+                            <a href="../login" class="text-black fs-5">Already have an account? Log in here</a>
                         </div>
 
                     </form>
-                      
+
               </div>
             </div>
           </div>

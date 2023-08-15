@@ -1,1 +1,12 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
 
+.card-right{
+    background-image: url("../public/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}

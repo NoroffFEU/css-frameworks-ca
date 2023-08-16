@@ -1,4 +1,4 @@
-<section class="bg-gray-50 dark:bg-gray-900 h-100vh">
+<section class="bg-gray-150 dark:bg-gray-900 h-100vh">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
         <div  class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="logo" src="../../src/lib/images/logo3.png" alt="logo" >
@@ -29,11 +29,11 @@
                         </div>
                        
                     </div>
-                    <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                    <button class="w-full bg-blue-500 dark:bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                         Sign in
                     </button>
 
-                    <p class="text-sm font-light text-gray-400">
+                    <p class="text-sm font-light text-gray-400 dark:text-gray-200">
                         Don’t have an account yet? / <a href="/register" class="font-medium text-primary-600 hover:underline">Sign up</a>
                     </p>
                 </form>

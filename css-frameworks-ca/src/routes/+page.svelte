@@ -1,4 +1,4 @@
-<section class="bg-gray-150 dark:bg-gray-900 h-100vh">
+<section class="bg-gray-150 dark:bg-gray-900 h-screen">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
         <div  class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="logo" src="../../src/lib/images/logo3.png" alt="logo" >

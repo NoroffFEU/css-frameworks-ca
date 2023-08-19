@@ -7,7 +7,7 @@
     <meta name="description" content="Feed page">
     <title>Latest posts</title>
     <link rel="stylesheet" href="../dist/css/index.css">
-    <script type="module" src="../scripts/index.mjs"></script>
+    <script type="module" src="/scripts/index.mjs"></script>
   </head>
 <body>
 
@@ -67,7 +67,7 @@
             <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
               <button class="btn btn-outline-primary" type="submit">Search</button>
-              <a href="/post/edit" class="btn btn-primary" type="button">Create a new post</a>
+              <a href="/post/create" class="btn btn-primary text-white" type="button">Create a new post</a>
             </div>  
           </div>
         </form>
@@ -78,10 +78,10 @@
 
 <!--Latest posts-->
 <section class="p-3">
-  <div class="container" id="post">
+  <div class="container" id="posts">
     <div class="row text-center d-flex flex-column g-4">
-      <h1>Latest posts</h1>
-
+      <h1>Latest posts by the community</h1>
+      <!--Import list of post thumbnails from api-->
     </div>
   </div>
 </section>

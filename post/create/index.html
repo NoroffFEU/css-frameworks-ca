@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Form to create a new post">
 
-    <title>Destiny | Edit post</title>
+    <title>Destiny | New post</title>
     <link rel="stylesheet" href="../../dist/css/index.css">
     <script type="module" src="/scripts/index.mjs"></script>
+
   </head>
 <body>
     <!--Nav-->
@@ -32,35 +33,38 @@
       </div>
     </nav>
   
-    <!--edit post form-->
+    <!--New post form-->
     <div class="container mt-5">
         <div class="row">
           <div class="col-md-8 mx-auto mt-5">
             <div class="card bg-secondary text-dark p-3">
-              <form class="card-body" id="editPost">
-                <h3 class="card-title my-4">Edit post</h3>
-                <div class="form-group mb-3">
-                    <label for="">Title</label>
-                    <input class="form-control" type="text" name="title" required>
-                  </div>
-      
-                  <div class="form-group mb-3">
-                    <label for="">Body</label>
-                    <textarea class="form-control" name="body" required></textarea>
-                  </div>
-      
-                  <div class="form-group mb-3">
-                    <label for="">Tags</label>
-                    <input class="form-control" type="text" name="tags">
-                  </div>
-      
-                  <div class="form-group mb-3">
-                    <label for="">Media</label>
-                    <input class="form-control" type="url" name="media">
-                  </div>
-                <div class="text-center mt-4 mt-sm-4">
-                  <button class="btn btn-primary btn-lg text-light">Confirm changes</button>
+              <form class="card-body" id="createPost">
+                <h3 class="card-title my-4">Create a new post</h3>
+
+                <div class="mb-3">
+                  <label for="" class="form-label">Title*</label>
+                  <input type="text" class="form-control" placeholder="Enter your post title" name="title" required>
                 </div>
+
+                <div class="mb-3">
+                  <label for="body" class="form-label">Body*</label>
+                  <textarea class="form-control" placeholder="Type something interesting..." name="body" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label for="image" class="form-label">Image URL</label>
+                  <input type="text" class="form-control" placeholder="Add your media URL here" name="image">
+                </div>
+
+                <div class="mb-3">
+                  <label for="tags" class="form-label">Tags</label>
+                  <input type="text" class="form-control" placeholder="Separate with comma" name="tags">
+                </div>
+
+                <div class="text-center mt-4 mt-sm-4">
+                  <button class="btn btn-primary btn-lg text-light">Create post</button>
+                </div>
+
                 <div class="text-center mt-2">
                   <a href="../../posts" class="text-dark fs-5">Go back</a>
                 </div>
@@ -70,6 +74,6 @@
         </div>
       </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
   </body>
 </html>

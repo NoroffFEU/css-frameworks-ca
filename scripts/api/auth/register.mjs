@@ -18,4 +18,7 @@ export async function register(profile) {
   const result = await response.json()
   console.log(result)
 
+    if (response.ok) {
+      window.location.href = '/authentication/login/';
+    }
 }

@@ -8,7 +8,7 @@
 
     <title>Destiny | Update profile</title>
     <link rel="stylesheet" href="../../dist/css/index.css">
-    <script type="module" src="/scripts/index.mjs"></script>
+    <script type="module" src="../../scripts/index.mjs"></script>
 
   </head>
 <body>
@@ -39,6 +39,9 @@
           <div class="col-md-8 mx-auto mt-5">
             <div class="mb-3">
             <a href="../../profile" class="btn btn-close-white btn-m text-light border border-1">Back to profile</a>
+            <!-- Add this element where you want to display the alerts -->
+            <div id="alert-container"></div>
+
             </div>
             <div class="card bg-secondary text-dark p-3">
               <form class="card-body" id="editProfile">
@@ -51,7 +54,7 @@
 
                 <div class="mb-3">
                   <label for="body" class="form-label">Email</label>
-                  <input type="text" class="form-control" name="email" disabled>
+                  <input type="email" class="form-control" name="email" disabled>
                 </div>
 
                 <div class="mb-3">

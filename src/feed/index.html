@@ -65,6 +65,29 @@
             <label for="search--feed">Search</label>
             <button class="btn btn-secondary">Search</button>
           </div>
+          <form action="" class="w-75 m-auto">
+            <h2>Create new post</h2>
+            <div class="form-floating">
+              <input
+                class="form-control"
+                name="topic--feed"
+                id="topic--feed"
+                placeholder="topic"
+                type="text" />
+              <label for="topic--feed">topic</label>
+            </div>
+            <div class="form-floating">
+              <textarea
+                class="form-control"
+                name="text-body--feed"
+                placeholder="your thoughts"
+                id="text-body--feed"
+                cols="30"
+                rows="10"></textarea>
+              <label for="text-body--feed">Your thoughts</label>
+            </div>
+            <button class="btn btn-secondary">Post</button>
+          </form>
           <section class="bg-light">
             <h1>Feed</h1>
             <div class="card mb-3 bg-success p-2" style="width: 95%">

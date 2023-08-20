@@ -55,16 +55,30 @@
       <div class="row">
         <div class="col-lg-2 bg-dark"></div>
         <div class="col-lg-8 bg-light">
-          <div class="form-floating my-4">
-            <input
-              class="form-control mb-2"
-              name="search--feed"
-              id="search--feed"
-              type="text"
-              placeholder="search" />
-            <label for="search--feed">Search</label>
+          <form class="my-4" action="">
+            <div class="form-floating mb-2">
+              <input
+                class="form-control mb-2"
+                name="search--feed"
+                id="search--feed"
+                type="text"
+                required
+                minlength="1"
+                placeholder="search" />
+              <label for="search--feed">Search</label>
+            </div>
+            <select
+              class="form-select w-25 mb-2"
+              name="select--search--feed"
+              id="select--search--feed">
+              <option selected value="sort-by">sort by</option>
+              <option value="user">user</option>
+              <option value="date">date</option>
+              <option value="topic">topic</option>
+              <option value="hashtag">hashtag</option>
+            </select>
             <button class="btn btn-secondary">Search</button>
-          </div>
+          </form>
           <form action="" class="w-75 m-auto">
             <h2>Create new post</h2>
             <div class="form-floating">

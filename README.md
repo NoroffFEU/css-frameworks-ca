@@ -1,2 +1,6 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+social media site created with HTML , CSS , BOOTSTRAP , SASS , JS
+
+npm install
+npm run watch

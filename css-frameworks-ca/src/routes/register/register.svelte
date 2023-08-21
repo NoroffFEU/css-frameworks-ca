@@ -37,7 +37,7 @@
         <div class="flex flex-col w-full bg-white rounded-b md:rounded-r md:rounded-t-none md:rounded-b-none shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700 justify-center">
             <div class="m-auto p-6">
                 <div class="flex items-center text-2xl font-semibold text-gray-900 dark:text-white align-center">
-                    <img class="logo" src="../../src/lib/images/logo3.png" alt="logo">
+                    <img class="logo" src="../../src/lib/images/logo4.png" alt="logo">
                     <p>Future-social </p>   
                 </div>
                 <p class="text-center text-gray-100">Join the future of social networking</p>

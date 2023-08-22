@@ -57,8 +57,40 @@
     </header>
     <main class="container-fluid">
       <div class="row">
-        <div class="col-lg-2 bg-dark"></div>
-        <div class="col-lg-8 bg-light">
+        <div
+          class="col-lg-3 offcanvas-lg bg-dark offcanvas-start"
+          id="offcanvas--new-post">
+          <div class="offcanvas-header">
+            <h2>Create new post</h2>
+            <button
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              data-bs-target="#offcanvas--new-post"></button>
+          </div>
+          <form action="" class="m-auto">
+            <div class="form-floating">
+              <input
+                class="form-control mb-2"
+                name="topic--feed"
+                id="topic--feed"
+                placeholder="topic"
+                type="text" />
+              <label for="topic--feed">topic</label>
+            </div>
+            <div class="form-floating">
+              <textarea
+                class="form-control h-25 mb-2"
+                name="text-body--feed"
+                placeholder="your thoughts"
+                id="text-body--feed"
+                cols="30"
+                rows="10"></textarea>
+              <label for="text-body--feed">Your thoughts</label>
+            </div>
+            <button class="btn btn-secondary">Post</button>
+          </form>
+        </div>
+        <div class="col-lg-7 bg-light">
           <form class="my-4" action="">
             <div class="input-group mb-2">
               <input
@@ -71,6 +103,12 @@
                 placeholder="search" />
               <button class="btn btn-secondary">Search</button>
             </div>
+            <button
+              type="button"
+              data-bs-target="#offcanvas--new-post"
+              data-bs-toggle="offcanvas">
+              new post
+            </button>
             <select
               class="form-select w-25 mb-2"
               name="select--search--feed"
@@ -81,29 +119,6 @@
               <option value="topic">topic</option>
               <option value="hashtag">hashtag</option>
             </select>
-          </form>
-          <form action="" class="m-auto">
-            <h2>Create new post</h2>
-            <div class="form-floating">
-              <input
-                class="form-control mb-2"
-                name="topic--feed"
-                id="topic--feed"
-                placeholder="topic"
-                type="text" />
-              <label for="topic--feed">topic</label>
-            </div>
-            <div class="form-floating">
-              <textarea
-                class="form-control mb-2 h-25"
-                name="text-body--feed"
-                placeholder="your thoughts"
-                id="text-body--feed"
-                cols="30"
-                rows="10"></textarea>
-              <label for="text-body--feed">Your thoughts</label>
-            </div>
-            <button class="btn btn-secondary">Post</button>
           </form>
           <section class="bg-light">
             <h1>Feed</h1>

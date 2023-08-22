@@ -12,6 +12,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.btn {
+  margin-top: 5px;
+}
+
 .btn-primary {
   background-color: #253c6b;
   border: none;
@@ -22,12 +26,13 @@ body {
 }
 
 .btn-secondary {
-  background-color: #b1afaf;
+  background-color: #dfdcdc;
+  color: #181414;
   border: none;
 }
 
 .btn-secondary:hover {
-  background-color: #656262;
+  background-color: #968c8c;
 }
 
 #post-list {

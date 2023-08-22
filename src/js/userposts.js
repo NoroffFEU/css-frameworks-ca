@@ -25,3 +25,4 @@ function addUserPost(title) {
 addUserPost('Life of a UX/UI developer');
 addUserPost('Explroing the Bjørnepark');
 addUserPost('New week, new day');
+addUserPost('Curiousities in the UX world')

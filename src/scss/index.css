@@ -1,5 +1,6 @@
 body {
   background-color: rgba(248, 249, 250, 0.7058823529);
+  color: #181414;
 }
 
 .card {
@@ -16,10 +17,6 @@ body {
   border: none;
 }
 
-nav {
-  background-color: #253c6b;
-}
-
 .btn-primary:hover {
   background-color: #182745;
 }
@@ -31,7 +28,7 @@ nav {
   margin-bottom: 1rem;
 }
 #post-list .post-thumbnail img {
-  width: 100%;
+  width: 230px;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;

@@ -1,7 +1,9 @@
 $primary-color: #253c6b;
+$font-stack: Arial, sans-serif;
 
 body {
     background-color: #f8f9fab4;
+    color: #181414;
 }
 
 .card {
@@ -18,10 +20,6 @@ body {
     border: none;
 }
 
-nav {
-  background-color: #253c6b;
-}
-
 .btn-primary:hover {
     background-color: darken($primary-color, 10%);
 }
@@ -33,10 +31,10 @@ nav {
         margin-bottom: 1rem;
 
         img {
-            width: 100px;
-            height: 100px;
+            width: 230px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 2%;
         }
     }
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../src/scss/index.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="../index.html">Log in</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,25 +34,30 @@
                 </div>
                 <div class="mb-4">
                     <select class="form-select">
-                        <option>Sort by Latest</option>
-                        <option>Sort by Popular</option>
+                        <option>Sort by latest</option>
+                        <option>Sort by popular</option>
                     </select>
                 </div>
                 <div class="row" id="post-list"> <!--Posts will be added here-->
                 </div>
             </div>
+            <!--Post submission area-->
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Create a New Post</h5>
+                        <h5 class="card-title">Create a new post</h5>
                         <form id="createPostForm" action="#" method="post" novalidate>
                             <div class="mb-3">
                                 <label for="postTitle" class="form-label">Title</label>
                                 <input type="text" class="form-control" id="postTitle" name="postTitle" required>
                             </div>
                             <div class="mb-3">
-                                <label for="postImage" class="form-label">Image URL</label>
+                                <label for="postImage" class="form-label">Image</label>
                                 <input type="text" class="form-control" id="postImage" name="postImage" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="postContent" class="form-label">Content</label>
+                              <textarea class="form-control" id="postContent" name="postContent" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Create Post</button>
                         </form>

@@ -1,3 +1,6 @@
+
+// feed items, using placeholder images for dummy-posts
+
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -15,7 +18,7 @@ function addPostThumbnail(title) {
   postThumbnail.classList.add('col-md-4', 'post-thumbnail');
   postThumbnail.innerHTML = `
       <div class="card">
-          <img src="${imageUrl}" class="card-img-top" alt="Post Image">
+          <img src="${imageUrl}" class="card-img-top" alt="Post image, with description of the post">
           <div class="card-body">
               <h6 class="card-title">${title}</h6>
           </div>
@@ -24,13 +27,13 @@ function addPostThumbnail(title) {
   postList.appendChild(postThumbnail);
 }
 
-// example posts
-addPostThumbnail('Cute Kitten 1');
-addPostThumbnail('Adorable Cat 2');
-addPostThumbnail('Playful Kitty 3');
-addPostThumbnail('Sweet Feline 4');
-addPostThumbnail('Curious Kitty 5');
-addPostThumbnail('Curious Kitty 6');
+// example posts, not clickable
+addPostThumbnail('Hightlighted photo of the week');
+addPostThumbnail('Hightlighted post');
+addPostThumbnail('This months treat');
+addPostThumbnail('How to-post');
+addPostThumbnail('UX/UI tips from a pro');
+addPostThumbnail('More posts');
 
 
 

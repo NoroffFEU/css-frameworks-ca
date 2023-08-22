@@ -1,1 +1,14 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+.item-1 {
+    background-color: blue;
+}
+
+$primary-colour: #e85a4f;
+
+p {
+    color: $primary-colour;
+}
 

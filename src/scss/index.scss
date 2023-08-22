@@ -1,5 +1,6 @@
 $primary-color: #253c6b;
 $font-stack: Arial, sans-serif;
+$secondary-color: #b1afaf;
 
 body {
     background-color: #f8f9fab4;
@@ -22,6 +23,15 @@ body {
 
 .btn-primary:hover {
     background-color: darken($primary-color, 10%);
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: darken($secondary-color, 30%);
 }
 
 #post-list {

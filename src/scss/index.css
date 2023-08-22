@@ -10754,10 +10754,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.item-1 {
+.active {
   background-color: blue;
-}
-
-p {
-  color: #e85a4f;
 }/*# sourceMappingURL=index.css.map */

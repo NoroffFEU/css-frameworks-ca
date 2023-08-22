@@ -1,1 +1,60 @@
+$primary-color: #253c6b;
+
+body {
+    background-color: #f8f9fab4;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+}
+
+nav {
+  background-color: #253c6b;
+}
+
+.btn-primary:hover {
+    background-color: darken($primary-color, 10%);
+}
+
+#post-list {
+    margin-top: 2rem;
+
+    .post-thumbnail {
+        margin-bottom: 1rem;
+
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#user-posts {
+    .user-post {
+        margin-bottom: 1rem;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
 

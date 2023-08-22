@@ -1,0 +1,54 @@
+body {
+  background-color: rgba(248, 249, 250, 0.7058823529);
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #253c6b;
+  border: none;
+}
+
+nav {
+  background-color: #253c6b;
+}
+
+.btn-primary:hover {
+  background-color: #182745;
+}
+
+#post-list {
+  margin-top: 2rem;
+}
+#post-list .post-thumbnail {
+  margin-bottom: 1rem;
+}
+#post-list .post-thumbnail img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 2%;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+
+#user-posts .user-post {
+  margin-bottom: 1rem;
+}
+#user-posts .user-post img {
+  max-width: 100%;
+}/*# sourceMappingURL=index.css.map */

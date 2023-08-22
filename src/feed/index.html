@@ -57,39 +57,23 @@
     </header>
     <main class="container-fluid">
       <div class="row">
-        <div
-          class="col-lg-3 offcanvas-lg bg-dark offcanvas-start"
-          id="offcanvas--new-post">
-          <div class="offcanvas-header">
-            <button
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              data-bs-target="#offcanvas--new-post"></button>
+        <section class="col-lg-3 bg-dark text-secondary">
+          <div>
+            <img
+              class="rounded-circle w-100"
+              src="/src/assets/profile.jpeg"
+              alt="Profile picture of Thistle" />
           </div>
-          <h2 class="text-secondary fs-4 mt-4">Create new post</h2>
-          <form action="" class="m-auto">
-            <div class="form-floating">
-              <input
-                class="form-control mb-2"
-                name="topic--feed"
-                id="topic--feed"
-                placeholder="topic"
-                type="text" />
-              <label for="topic--feed">topic</label>
-            </div>
-            <div class="form-floating">
-              <textarea
-                class="form-control h-25 mb-2"
-                name="text-body--feed"
-                placeholder="your thoughts"
-                id="text-body--feed"
-                cols="30"
-                rows="10"></textarea>
-              <label for="text-body--feed">Your thoughts</label>
-            </div>
-            <button class="btn btn-secondary">Post</button>
-          </form>
-        </div>
+          <span>@TipsyThistle</span>
+          <h2>Master of Inebriated Incantations</h2>
+          <ul class="list-unstyled">
+            <li>lvl: 32</li>
+            <li>class: Wizard</li>
+            <li>Race: Human</li>
+            <li>Alignment: Chaotic Good</li>
+          </ul>
+        </section>
+
         <div class="col-lg-7 bg-light">
           <form class="my-4" action="">
             <div class="input-group mb-2">
@@ -182,7 +166,39 @@
             </div>
           </section>
         </div>
-        <div class="col-lg-2 bg-dark"></div>
+        <div
+          class="col-lg-2 offcanvas-lg bg-dark offcanvas-end"
+          id="offcanvas--new-post">
+          <div class="offcanvas-header">
+            <button
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              data-bs-target="#offcanvas--new-post"></button>
+          </div>
+          <h2 class="text-secondary fs-4 mt-4">Create new post</h2>
+          <form action="" class="m-auto">
+            <div class="form-floating">
+              <input
+                class="form-control mb-2"
+                name="topic--feed"
+                id="topic--feed"
+                placeholder="topic"
+                type="text" />
+              <label for="topic--feed">topic</label>
+            </div>
+            <div class="form-floating">
+              <textarea
+                class="form-control h-25 mb-2"
+                name="text-body--feed"
+                placeholder="your thoughts"
+                id="text-body--feed"
+                cols="30"
+                rows="10"></textarea>
+              <label for="text-body--feed">Your thoughts</label>
+            </div>
+            <button class="btn btn-secondary">Post</button>
+          </form>
+        </div>
       </div>
     </main>
     <footer></footer>

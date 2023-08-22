@@ -1,2 +1,4 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+Course Assignment Frameworks, Noroff autumn 2023
+
+Short project with using frameworks such as SCSS and Bootstrap.

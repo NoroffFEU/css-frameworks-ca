@@ -1,11 +1,31 @@
 body {
-  background-color: rgba(248, 249, 250, 0.7058823529);
-  color: #181414;
+  background-color: rgba(235, 236, 238, 0.7058823529);
+}
+body ul {
+  list-style: none;
+}
+body ul li {
+  display: inline-block;
+}
+body a {
+  color: #dfdcdc;
+  text-decoration: none;
+}
+body a:hover {
+  color: rgb(124, 158, 202);
+}
+body nav {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+i {
+  color: pink;
+  font-size: x-large;
 }
 
 .card {
   border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .form-control {

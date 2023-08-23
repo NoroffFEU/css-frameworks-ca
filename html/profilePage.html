@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="/index.html">Socially</a>
+            
+            <!-- Toggler/collapsible Button for smaller screens -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navbar items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/feedPage.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html/profilePage.html">Profile</a>
+                    </li>
+                </ul>
+                
+                <!-- Search bar in navbar -->
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                
+                <!-- Login/Register buttons - These can be hidden if user is already logged in -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 text-center">
+    
+        <!-- Profile Picture -->
+        <img src="path-to-image.jpg" alt="User's profile picture" class="rounded-circle mb-4" width="200">
+    
+        <!-- Username -->
+        <h2 class="mb-3">Ramtin M</h2>
+    
+        <!-- Follow Button -->
+        <button class="btn btn-primary mb-4">Follow</button>
+    
+    </div>
+    <div class="container mt-4">
+    
+        <!-- User Posts (Bootstrap Card Component) -->
+        <h3 class="mb-3">My Posts</h3>
+    
+        <div class="card mb-4">
+            <img src="path-to-post-image.jpg" class="card-img-top" alt="Post Image">
+            <div class="card-body">
+                <h5 class="card-title">Post Title</h5>
+                <p class="card-text">This is a brief overview of the post content...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+        <!-- Repeat the above card for each post -->
+    
+    </div>
+    <div class="container mt-4">
+    
+        <!-- Followers and Following List Groups -->
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h3>Followers</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Follower 1</li>
+                    <li class="list-group-item">Follower 2</li>
+                    <!-- Add more list items for each follower -->
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3>Following</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Following 1</li>
+                    <li class="list-group-item">Following 2</li>
+                    <!-- Add more list items for each following -->
+                </ul>
+            </div>
+        </div>
+    
+    </div>
+    <!-- Optional Footer -->
+<footer class="text-center mt-5">
+    <p>&copy; 2023 Socilly. All rights reserved.</p>
+</footer>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+    
+    

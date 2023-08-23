@@ -1,0 +1,132 @@
+// Variables
+$primary: #364F6B;       // Deep Blue (trustworthy, dependable color)
+$secondary: #3FC1C9;    // Cerulean (gives a pop of color)
+$background-color: #F5F5F5;  // Light Grey (neutral and modern background)
+$font-color: #333;   // Almost Black (for solid readability)
+$border-color: #D9E4E7;  // Cool Grey (subtle for borders)
+
+// Reset and base
+body {
+    background-color: $background-color;
+    font-family: 'Arial', sans-serif;
+    color: $font-color;
+    line-height: 1.6;
+}
+
+// Global Styles
+.container {
+    max-width: 800px;
+}
+
+// Navbar Styles
+.navbar {
+    background-color: $primary !important;
+    border-bottom: 3px solid $secondary;
+
+    .navbar-brand, .nav-link {
+        color: $background-color;
+
+        &:hover, &:focus {
+            color: $secondary;
+        }
+    }
+
+    .btn {
+        background-color: $secondary;
+        color: $primary;
+
+        &:hover, &:focus {
+            background-color: darken($secondary, 10%);
+        }
+    }
+}
+.navbar form {
+    input[type="search"].form-control {
+        height: 36px;  // Adjust this height as per requirement
+    }
+
+    button.btn {
+        height: 36px;  // Match this with the height of the input
+        line-height: 20px;  // Adjust this for vertical alignment of text
+        padding: 0 10px;  // Adjust the horizontal padding if needed
+    }
+}
+.custom-btn {
+    @extend .btn; // Extends Bootstrap's .btn properties
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+// Authentication Page Styles
+.form-control {
+    margin-bottom: 1rem;
+
+    &:focus {
+        border-color: $secondary;
+        box-shadow: none;
+    }
+}
+
+.btn {
+    background-color: $primary;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: darken($primary, 8%);
+    }
+}
+
+// Feed Page Styles
+.search-bar {
+    border: 1px solid $border-color;
+    padding: 10px;
+    width: 100%;
+}
+
+.post {
+    border: 1px solid $border-color;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: white; // A clear white background for content clarity
+}
+
+// Profile Page Styles
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: lighten($secondary, 20%); // A subtle background for profile image
+    border: 3px solid $primary;
+}
+
+.username {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: $primary;
+}
+
+.follow-button {
+    display: inline-block;
+    background-color: $secondary;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: $primary; 
+    font-weight: bold;
+
+    &:hover {
+        background-color: darken($secondary, 10%);
+    }
+}
+@mixin responsive-font($mobile-size, $desktop-size) {
+    font-size: $mobile-size;
+
+    @media screen and (min-width: 992px) { // Bootstrap's lg breakpoint
+        font-size: $desktop-size;
+    }
+}
+
+.heading {
+    @include responsive-font(1.5rem, 2rem);
+}
+

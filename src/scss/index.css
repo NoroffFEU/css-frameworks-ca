@@ -62,7 +62,7 @@ i {
   margin-bottom: 1rem;
 }
 #post-list .post-thumbnail img {
-  width: 230px;
+  width: auto;
   height: 200px;
   -o-object-fit: cover;
      object-fit: cover;

@@ -1,0 +1,8 @@
+.btn-custom {
+  @extend .btn-warning;
+
+  &:hover {
+    @extend .btn-danger;
+    background-color: red;
+  }
+}

@@ -4,6 +4,7 @@ $secondary-color: #dfdcdc;
 $fave-color: pink;
 
 body {
+  height: 100vh;
   background-color: #ebeceeb4;
   ul {
     list-style: none;
@@ -16,13 +17,17 @@ body {
     color: $secondary-color;
     text-decoration: none;
   }
-    a:hover {
-      color: rgb(124, 158, 202);
-    }
-    nav {
-      box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    }
+  a:hover {
+    color: rgb(124, 158, 202);
   }
+  nav {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  }
+}
+
+footer {
+  margin-top: 50px;
+}
 
 i {
   color: $fave-color;
@@ -42,6 +47,14 @@ i {
   margin-top: 5px;
 }
 
+.carousel-item {
+  img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
 .btn-primary {
   background-color: $primary-color;
   border: none;

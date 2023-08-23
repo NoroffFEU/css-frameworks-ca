@@ -65,7 +65,7 @@
                 fullWidth 
                 large 
                 onClick={handleSubmit}/>
-                {footer}
+              
             </div>
         </div>
     </div>

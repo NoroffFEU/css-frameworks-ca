@@ -14,6 +14,13 @@
         <Input placeholder= "username" onChange={(e) => username = e.currentTarget.value} value={username} disabled= {isLoading} type="text" />
 
     </div>
+    <div class="text-neutral-400 text-center mt-4">
+        <p>Already have an account? 
+            <span class="text-white cursor-pointer hover:underline" on:click={onToggle}>
+                <em>Sign in</em>
+            </span>
+        </p>
+    </div>
     </Modal>
   
 </div>
@@ -23,6 +30,7 @@
     import registerModal from "../../../data/registerModal";
     import Modal from "../Modal.svelte";
     import Input from "../Input.svelte";
+    import loginModal from "../../../data/loginModal";
 
     let name =""
 
@@ -33,6 +41,14 @@
     let username = ""
 
     let isLoading = false
+    
+    const onToggle = () => {
+        if(isLoading){
+            return;
+        }
+        registerModal.onClose()
+        loginModal.onOpen()
+    }
 
 const onSubmit = async () => {
 

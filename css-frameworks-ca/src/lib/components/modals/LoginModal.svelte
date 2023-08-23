@@ -1,25 +1,3 @@
-<script>
-  import loginModal from "../../../data/loginModal";
-  import Modal from "../Modal.svelte";
-  import Input from "../Input.svelte";
-
-  let email = "";
-
-  let password = "";
-
-  let isLoading = false;
-
-  const onSubmit = async () => {
-    try {
-      isLoading = true;
-      loginModal.onClose();
-    } catch (error) {
-      console.log(error);
-    } finally {
-      isLoading = false;
-    }
-  };
-</script>
 
 <div>
   <Modal
@@ -46,5 +24,48 @@
         type="password"
       />
     </div>
+    <div class="text-neutral-400 text-center mt-4">
+      <p>First time using Pied Piper?
+          <span class="text-white cursor-pointer hover:underline" on:click={onToggle}>
+              <em>Time to pay the piper</em>
+          </span>
+      </p>
+  </div>
   </Modal>
 </div>
+
+
+<script>
+  import loginModal from "../../../data/loginModal";
+  import registerModal from "../../../data/registerModal";
+
+  import Modal from "../Modal.svelte";
+  import Input from "../Input.svelte";
+
+  let email = "";
+
+  let password = "";
+
+  let isLoading = false;
+
+  const onToggle = () => {
+        if(isLoading){
+            return;
+        }
+        registerModal.onOpen()
+        loginModal.onClose()
+    }
+
+
+  const onSubmit = async () => {
+    try {
+      isLoading = true;
+      loginModal.onClose();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      isLoading = false;
+    }
+  };
+</script>
+

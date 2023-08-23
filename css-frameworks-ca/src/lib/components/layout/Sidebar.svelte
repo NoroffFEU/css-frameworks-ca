@@ -32,7 +32,7 @@
         },    
         {
             name:"Profile",
-            route:"/users/123",
+            route:"/profile",
             iconName:"fa-solid fa-user"
       
         }

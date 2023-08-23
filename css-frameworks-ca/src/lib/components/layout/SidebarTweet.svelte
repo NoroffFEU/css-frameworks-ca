@@ -1,4 +1,4 @@
-<a href="/">
+<div on:click={onClick}>
     <div
      class="mt-6 
      lg:hidden 
@@ -27,5 +27,10 @@
     transition">
         <p class="hidden lg:block text-center font-semibold text-white text-[20px]">Tweet</p>
     </div>
-</a>
-<script></script>
+</div>
+<script>
+    import loginModal from "../../../data/loginModal";
+    const onClick = () => {
+        loginModal.onOpen()
+    }
+</script>

@@ -1,1 +1,56 @@
-/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap");
+:root {
+  --bs-heading-color: #fff;
+}
+
+* {
+  border: red dotted 1px;
+}
+
+body {
+  font-family: "montserrat", sans-serif;
+  font-weight: 400;
+  max-height: 100vh;
+  min-height: 100vh;
+  background-color: #212121;
+}
+
+.pinkbackground {
+  background-color: #FF6D75;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.loginContainer {
+  display: flex;
+  background-color: #212121;
+  height: 70%;
+  justify-content: center;
+  align-items: start;
+}
+.loginContainer img {
+  max-width: 500px;
+  margin-top: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form div {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.roundedBorder input {
+  margin-bottom: 20px;
+  border-radius: 50px;
+}/*# sourceMappingURL=styles.css.map */

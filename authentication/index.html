@@ -21,41 +21,48 @@
       <div class="hero-banner-title">Looking for Frieda</div>
       <div class="hero-banner-subtitle">Search. Inspire. Share.</div>
     </div>
-    <h1>Log in</h1>
-
     <!-- form validation -->
-    <div class="form-container">
-      <div class="form-wrapper">
-        <!-- aftet submission form data will be sent to profile page -->
-        <form action="/profile/index.html" method="post">
-          <div class="form-floating mb-3">
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="name@example.com"
-              required
-            />
-            <label for="email">Email address</label>
-          </div>
+    <div class="container">
+        <div class="col-md-6">
+          <div class="form-container">
+            <div class="form-wrapper">
+              <h1 class="text-center form-title">Log in</h1>
 
-          <div class="form-floating mb-3">
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              placeholder="minimum 8 characters"
-              minlength="8"
-              required
-            />
-            <!-- required min 8 characters -->
-            <label for="password">Password</label>
-          </div>
+              <!-- submission form data will be sent to profile page -->
+              <form action="/profile/index.html" method="post">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                  />
+                  <label for="email">Email address</label>
+                </div>
 
-          <button type="submit" class="btn btn-primary">Log in</button>
-        </form>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="minimum 8 characters"
+                    minlength="8"
+                    required
+                  />
+                  <!-- required min 8 characters -->
+                  <label for="password">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  Log in
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

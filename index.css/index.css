@@ -1,5 +1,5 @@
 p {
-  color: #67927A;
+  color: #67927a;
 }
 
 .hero-banner {
@@ -9,23 +9,37 @@ p {
 .hero-banner-title {
   font-size: 3em;
   font-weight: bold;
-  color: #EAE6E5;
+  color: #eae6e5;
 }
 .hero-banner-subtitle {
   font-size: 1em;
   font-weight: bold;
-  color: #EAE6E5;
+  color: #eae6e5;
 }
 
+.form-container {
+  background-color: #67927a;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .form-container .form-wrapper .form-floating input.form-control {
-  background-color: #EAE6E5;
+  background-color: #eae6e5;
 }
 .form-container .form-wrapper .form-floating label {
-  color: #381D2A;
+  color: #381d2a;
 }
 .form-container .form-wrapper .form-floating .btn-primary {
-  background-color: #67927A;
-  border-color: #67927A;
+  background-color: #67927a;
+  border-color: #67927a;
+}
+.form-container .form-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: #381d2a;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */

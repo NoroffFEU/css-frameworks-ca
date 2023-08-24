@@ -1,6 +1,6 @@
-$primary-color: #67927A;
-$secondary-color: #EAE6E5;
-$dark-color: #381D2A;
+$primary-color: #67927a;
+$secondary-color: #eae6e5;
+$dark-color: #381d2a;
 
 p {
   color: $primary-color;
@@ -21,9 +21,15 @@ p {
     font-weight: bold;
     color: $secondary-color;
   }
-
 }
+
 .form-container {
+  background-color: $primary-color;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .form-wrapper {
     .form-floating {
       input.form-control {
@@ -39,5 +45,13 @@ p {
         border-color: $primary-color;
       }
     }
+  }
+
+  .form-title {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: $dark-color;
+    margin-bottom: 20px;
   }
 }

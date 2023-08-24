@@ -17,6 +17,7 @@
      <i class="fa-brands fa-pied-piper-alt lg"></i>
     </div>
     <div class="mt-6
+
     hidden lg:block
     px-4
     py-2

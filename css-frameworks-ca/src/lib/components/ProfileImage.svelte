@@ -4,5 +4,7 @@
     </a>
 </div>
 <script>
+    export let height = 17
+    export let width = 17
 
 </script>

@@ -1,2 +1,16 @@
 @import "_variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.box-area {
+  background-color: $teal;
+  width: 930px;
+  height: 500px;
+
+  .left-box {
+    background-color: $white;
+  }
+}

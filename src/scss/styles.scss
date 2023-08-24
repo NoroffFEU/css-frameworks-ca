@@ -24,11 +24,18 @@ body {
   display: flex;
 }
 
+@media screen and (max-width: 425px) {
+  .pinkbackground {
+    padding-top: 10%;
+  }
+}
+
 .loginContainer {
   display: flex;
   height: 70%;
   justify-content: center;
   align-items: start;
+  margin-top: 20px;
 
   & img {
     max-width: 500px;
@@ -38,7 +45,8 @@ body {
   @media screen and (max-width: 425px) {
     & img {
       max-width: 300px;
-      margin-bottom: 0;
+      margin-bottom: 20px;
+      padding: 10px;
     }
   }
 }
@@ -103,7 +111,7 @@ form {
     transition: 0.5s;
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 428px) {
     & button {
       width: 90%;
     }

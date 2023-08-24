@@ -1,44 +1,42 @@
-$primary-color: #9cc89f; // Define a variable for the primary color
+$primary-color: #67927A;
+$secondary-color: #EAE6E5;
+$dark-color: #381D2A;
+
+p {
+  color: $primary-color;
+}
 
 .hero-banner {
   background-color: #67927a;
-  color: #fff;
   padding: 20px;
 
   &-title {
-    font-size: 1.5em;
+    font-size: 3em;
     font-weight: bold;
+    color: $secondary-color;
   }
 
   &-subtitle {
-    font-size: 2em;
-    font-weight: bold;
-  }
-
-  &-button {
-    color: #67927a;
-    padding: 10px;
     font-size: 1em;
     font-weight: bold;
-    cursor: pointer;
+    color: $secondary-color;
   }
+
 }
-.container {
+.form-container {
   .form-wrapper {
     .form-floating {
       input.form-control {
-        background-color: #67927a; // Light gray background
-        border-color: $primary-color;
-        color: $primary-color;
+        background-color: $secondary-color;
       }
 
       label {
-        color: $primary-color;
+        color: $dark-color;
       }
 
       .btn-primary {
         background-color: $primary-color;
-        border-color: $primary-color; 
+        border-color: $primary-color;
       }
     }
   }

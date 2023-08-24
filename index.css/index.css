@@ -1,0 +1,31 @@
+p {
+  color: #67927A;
+}
+
+.hero-banner {
+  background-color: #67927a;
+  padding: 20px;
+}
+.hero-banner-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #EAE6E5;
+}
+.hero-banner-subtitle {
+  font-size: 1em;
+  font-weight: bold;
+  color: #EAE6E5;
+}
+
+.form-container .form-wrapper .form-floating input.form-control {
+  background-color: #EAE6E5;
+}
+.form-container .form-wrapper .form-floating label {
+  color: #381D2A;
+}
+.form-container .form-wrapper .form-floating .btn-primary {
+  background-color: #67927A;
+  border-color: #67927A;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -10,7 +10,7 @@
     hover:bg-opacity-10 
     cursor-pointer 
     transition">
-    <i class="fa-brands fa-pied-piper-hat lg text-white"></i>
+    <i class="fa-brands fa-pied-piper-hat fa-xl text-white"></i>
  </div>
 </a>
 <script>

@@ -6,7 +6,7 @@
 
 <div class="app">
 	
-    <div  class="h-screen bg-black">
+    <div  class="h-full custom-background">
 
 		<div class="container h-full mx-auto xl:px-30 max-w-6x">
 			<div class="grid grid-cols-4 h-full">
@@ -19,9 +19,11 @@
 			
 		</div>
 
-</div>
+	</div>
 </div>
 
-<style>
-
+<style  lang="postcss">
+ .custom-background{
+	background-color: #004230;
+ }
 </style>

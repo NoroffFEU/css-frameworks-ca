@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../src/scss/index.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="navbar navbar-expand-md">
     <div class="container">
         <a class="navbar-brand" href="../index.html">
         <img src="../src/img/logo2.png" alt="Logo" title="Back to login"></a>
@@ -16,14 +16,6 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/feed/index.html">Feed</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile/index.html">Profile</a>
-                </li>
-            </ul>
         </div>
     </div>
 </nav>
@@ -60,12 +52,12 @@
                  <br>
                  Log in now at frameWORKS to fave your cute kitties and bears photos!
                 <br><br>
-                This page needs an image.
+                Log in to access your profile and content.
               </p>
                 <div class="card mt-5">
                     <div class="card-body">
                         <h2 class="card-title">Log in</h2>
-                        <form id="authForm" action="../profile/index.html" method="post" novalidate>
+                        <form id="authForm" action="../profile/index.html"  novalidate>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
@@ -75,7 +67,7 @@
                                 <input type="password" class="form-control" id="password" name="password" minlength="8" required>
                             </div>
                             <div class="mb-3">
-                              <button type="submit" class="btn btn-primary">Login</button>
+                              <a href="../profile/index.html"><button type="submit" class="btn btn-primary">Login</button></a>
                               <button type="submit" class="btn btn-secondary">New user?</button><br>
                               <button type="submit" class="btn btn-secondary">Forgot password?</button>
                             </div>

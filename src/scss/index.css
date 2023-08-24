@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: rgba(235, 236, 238, 0.7058823529);
+  background-color: rgba(219, 227, 245, 0.7058823529);
 }
 body ul {
   list-style: none;
@@ -8,19 +8,27 @@ body ul {
 body ul li {
   display: inline-block;
 }
-body a {
-  color: #dfdcdc;
-  text-decoration: none;
-}
-body a:hover {
-  color: rgb(124, 158, 202);
-}
 body nav {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
+.navbar,
 footer {
-  margin-top: 50px;
+  background-color: #253c6b;
+}
+.navbar a,
+footer a {
+  color: #dfdcdc;
+  text-decoration: none;
+  font-weight: 200;
+}
+.navbar a:hover,
+footer a:hover {
+  color: #f8f8f8;
+}
+.navbar img,
+footer img {
+  width: 36px;
 }
 
 i {
@@ -41,18 +49,6 @@ i {
   margin-top: 5px;
 }
 
-.navbar img {
-  width: 36px;
-}
-
-.carousel-item img {
-  height: 400px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
-}
-
 .btn-primary {
   background-color: #253c6b;
   border: none;
@@ -70,6 +66,14 @@ i {
 
 .btn-secondary:hover {
   background-color: #968c8c;
+}
+
+.carousel-item img {
+  height: 400px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
 }
 
 #post-list {

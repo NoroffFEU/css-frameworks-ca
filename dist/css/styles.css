@@ -11859,11 +11859,6 @@ body {
   background-color: #212121;
 }
 
-.h3-white {
-  color: #fff;
-  margin-bottom: 30px;
-}
-
 .pinkbackground {
   background-color: #FF6D75;
   height: 100vh;
@@ -11878,6 +11873,121 @@ body {
     padding-top: 10%;
   }
 }
+.feed {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.feed .card {
+  background-color: #FF6D75;
+  width: 100%;
+  height: 85%;
+  flex-shrink: 0;
+  border-radius: 0px 0px 50px 50px;
+  z-index: 2;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+@media screen and (min-width: 800px) {
+  .feed {
+    width: 50%;
+    position: absolute;
+  }
+}
+.feedbackground {
+  background-color: #212121;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.logoFeed {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  z-index: 1000;
+}
+
+.feedMenu {
+  max-height: 25%;
+  width: 100%;
+  background-color: #fff;
+  margin: 0;
+  position: absolute;
+  bottom: 20px;
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.feedMenu div {
+  min-height: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.card-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  scroll-snap-align: start;
+}
+.card-item .card-icons {
+  width: 60px;
+  height: 300px;
+  position: absolute;
+  right: 30px;
+  bottom: 60px;
+}
+.card-item div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+}
+.card-item svg {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  fill: #fff;
+}
+.card-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-item .feed-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-item .small-p {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+}
+
+#img-1 {
+  background-image: url("https://images.unsplash.com/photo-1692665240237-aadb86836077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80");
+}
+
 .loginContainer {
   display: flex;
   height: 70%;
@@ -11965,6 +12075,11 @@ form button:last-of-type:hover {
 }
 .roundedBorder input:first-of-type {
   margin-bottom: 20px;
+}
+
+.h3-white {
+  color: #fff;
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */

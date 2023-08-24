@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Css frameworks CA</title>
+    <link rel="favicon" href="" />
+    <title>SassTrap</title>
   </head>
   <body>
     <div class="container-fluid pinkbackground">
       <div class="row loginContainer">
-        <img src="img/Sass Trap-logos_white.png" alt="" />
-        <form>
+        <img src="img/sasstrapp-logo.png" alt="" />
+        <form id="loginForm">
           <h3 class="h3-white">Please sign in</h3>
 
           <div class="form-floating roundedBorder">
@@ -31,10 +32,11 @@
             />
             <label for="floatingPassword">Password</label>
           </div>
-          <button type="submit">Sign in</button>
+          <button type="submit" id="login" method="POST">Sign in</button>
           <button type="submit">Create user</button>
         </form>
       </div>
     </div>
   </body>
+  <script type="module" src="js/script.js"></script>
 </html>

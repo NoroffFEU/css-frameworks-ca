@@ -2,10 +2,12 @@ $primary-color: #253c6b;
 $font-stack: Arial, sans-serif;
 $secondary-color: #dfdcdc;
 $fave-color: pink;
+$bg-color: #dbe3f5b4;
+$box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
 body {
   height: 100vh;
-  background-color: #dbe3f5b4;
+  background-color: $bg-color;
   ul {
     list-style: none;
     li {
@@ -13,7 +15,7 @@ body {
     }
   }
   nav {
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    box-shadow: $box-shadow
   }
 }
 
@@ -40,7 +42,7 @@ i {
 
 .card {
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  box-shadow: $box-shadow;
 }
 
 .form-control {
@@ -105,7 +107,7 @@ i {
   .user-post {
     margin-bottom: 1rem;
     img {
-      max-width: 100%;
+      width: 100%;
     }
   }
 }

@@ -1,1 +1,70 @@
+// GoogleFonts
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 
+//variables:
+$font-titles: "Advent Pro", sans-serif;
+$font-main: "Kanit", sans-serif;
+$color-primary: #433520;
+$color-shadow: #d9a406;
+$color-secondary: #025955;
+$color-tertiary: #00917C;
+$color-font: #FDE8CD;
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $color-primary !important;
+}
+
+.text-bg-dark,
+::placeholder {
+    background-color: $color-primary !important;
+    border-color: $color-font;
+    color: $color-font !important;
+    ;
+}
+
+.btn {
+    color: $color-font;
+    border-color: $color-font;
+    --bs-btn-focus-shadow-rgb: 217, 164, 6;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:disabled {
+        color: $color-primary;
+        background-color: $color-font;
+        border-color: $color-font;
+
+    }
+}
+
+.btn-warning {
+    color: $color-font;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+}
+
+.btn-primary {
+    color: $color-font;
+    background-color: $color-secondary;
+    border-color: $color-secondary;
+}
+
+.carousel-item {
+    display: block;
+
+
+}
+
+img {
+    max-height: 500px;
+    object-fit: cover;
+    opacity: 0.7;
+}

@@ -1,5 +1,5 @@
 <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mt-1">
-    <!-- Retweeter Info -->
+
     <div class="flex space-x-4">
         <a href="/profile">
             <img src="../../src/lib/images/profile.png" alt="User Avatar" class="rounded-full w-12 h-12" >
@@ -12,7 +12,7 @@
       <span class="text-gray-400 ml-auto text-xs"><i class="fa-solid fa-retweet"></i> You reposted</span>
     </div>
   
-    <!-- Original Tweet -->
+
     <div class="mt-4 border-l-2 border-gray-300 pl-4">
       <div class="flex items-center space-x-4">
         <img src="../../src/lib/images/logo10.png" alt="User Avatar" class="rounded-full w-10 h-10" >
@@ -24,7 +24,7 @@
       <p class="mt-4 text-gray-700">I love working with tailwind</p>
     </div>
   
-    <!-- Tweet actions: comment, retweet, like, share -->
+
     <div class="flex justify-start space-x-5 text-gray-500 pt-5">
         <button class="flex items-center space-x-1 hover:text-blue-500">
             <i class="far fa-comment"></i>

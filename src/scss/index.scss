@@ -3,14 +3,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: red;
 }
 
-.box-area {
-  background-color: $teal;
-  width: 930px;
-  height: 500px;
-
-  .left-box {
-    background-color: $white;
-  }
+.login-box {
+  background-color: red;
 }

@@ -1,4 +1,4 @@
-<a href="/">
+<a href="/home">
  <div
     class="rounded-full
     h-14 

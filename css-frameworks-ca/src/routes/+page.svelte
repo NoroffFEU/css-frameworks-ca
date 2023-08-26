@@ -1,18 +1,20 @@
-<LoginModal/>
 <RegisterModal/>
-
-
-<header>
-    <Header headerLabel="Home" showReturn={false} />
-</header>
-{#each Array(15) as post, index}
-    <Posts />
-{/each}
-<script>
-    import Header from "../lib/components/Header.svelte";
+<LoginModal/>
+  
+  
+  <script>
+    import loginModal from "../data/loginModal";
+    import registerModal from "../data/registerModal";
     import RegisterModal from "../lib/components/modals/RegisterModal.svelte";
     import LoginModal from "../lib/components/modals/LoginModal.svelte";
-    import Posts from "../lib/components/Posts.svelte";
- 
+    import { onMount } from "svelte";
+
+	onMount( () => {
+        loginModal.onOpen()
+	});
+
+
+
+
+  </script>
   
-</script>

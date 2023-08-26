@@ -58,6 +58,7 @@
             </div>
             <!--Footer-->
             <div class="flex flex-col gap-2 p-10">
+                 <!--Handles the form submit-->
                 <Button 
                 disabled={disabled} 
                 buttonName={actionLabel} 
@@ -77,8 +78,6 @@
     export let onClose
     export let onSubmit
     export let title
-    export let body
-    export let footer
     export let actionLabel
     export let disabled
 

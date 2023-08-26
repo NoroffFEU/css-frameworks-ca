@@ -7,8 +7,8 @@
                 <SidebarItem name={icon.name} route={icon.route} iconName={icon.iconName}/>
                     
             {/each}
-            <SidebarItem name="Logout" route="/logout" iconName="fa-solid fa-right-from-bracket text-white lg" />
-            <SidebarTweet/>
+            <SidebarItem name="Logout" route="/" iconName="fa-solid fa-right-from-bracket text-white lg" />
+            <SideBarPost/>
         </div>
     </aside>
 </section>
@@ -17,12 +17,12 @@
 <script>
     import SidebarLogo from "./SidebarLogo.svelte";
     import SidebarItem from "./SidebarItem.svelte";
-    import SidebarTweet from "./SidebarTweet.svelte";
+    import SideBarPost from "./SideBarPost.svelte";
     const icons = 
     [
         {
             name:"Home",
-            route:"/",
+            route:"/home",
             iconName:"fa-solid fa-house"
         },
         {

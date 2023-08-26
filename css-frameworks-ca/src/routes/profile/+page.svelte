@@ -7,8 +7,10 @@
     <ProfileBio />
 </header>
 
-<section>
-    <h1 class="text-white">WHAT</h1>
+<section class="pt-2 pb-2">
+    {#each Array(5) as post, i}
+        <HomePost/>
+    {/each}
 </section>
 
 
@@ -17,7 +19,7 @@
     import ProfileHero from "../../lib/components/ProfileHero.svelte";
     import Header from "../../lib/components/Header.svelte";
     import ProfileBio from "../../lib/components/ProfileBio.svelte";
-
- import RegisterModal from "../../lib/components/modals/RegisterModal.svelte";
- import LoginModal from "../../lib/components/modals/LoginModal.svelte";
+    import HomePost from "../../lib/components/HomePost.svelte";
+    import RegisterModal from "../../lib/components/modals/RegisterModal.svelte";
+    import LoginModal from "../../lib/components/modals/LoginModal.svelte";
 </script>

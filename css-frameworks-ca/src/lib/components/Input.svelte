@@ -1,7 +1,7 @@
 
 <input 
 disabled={disabled}
-onChange ={onChange}
+on:change ={onChange}
 value={value}
 placeholder={placeholder}
 type={type}

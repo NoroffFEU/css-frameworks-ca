@@ -7,9 +7,10 @@ disabled: opacity-70
 disabled:cursor-not-allowed
 rounded-full
 font-semibold
-hover:opacity-89
+hover:opacity-90
 transition
 border-2
+custom-text-color
 ${fullWidth ? "w-full" : "w-fit"}
 ${secondary ? "bg-white" : "bg-sky-500"}
 ${secondary ? "text-black" : "text-white"}
@@ -34,3 +35,8 @@ ${outline ? "text-whitee" : ""}
     export let disabled 
     export let outline
 </script>
+<style lang="postcss">
+        .custom-text-color{
+       color: #01130e;
+    }
+</style>

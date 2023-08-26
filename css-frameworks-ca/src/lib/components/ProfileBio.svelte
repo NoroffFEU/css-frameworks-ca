@@ -1,6 +1,6 @@
 <article class="border-b-[1px] border-neutral-800 pb-4">
     <div class="flex justify-end p-2">
-        <Button buttonName="Edit profile" secondary/>
+        <Button buttonName="Edit profile" secondary disabled={false}/>
     </div>
     <div class="mt-8 px-4">
         <div class="flex flex-col">

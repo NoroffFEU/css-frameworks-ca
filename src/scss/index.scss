@@ -1,26 +1,31 @@
 $primary-color: #67927a;
 $secondary-color: #eae6e5;
-$dark-color: #381d2a;
+$dark-color: #000;
 
 p {
   color: $primary-color;
 }
 
-.hero-banner {
-  background-color: #67927a;
-  padding: 20px;
+body {
+  background-color: $dark-color;
+}
 
-  &-title {
-    font-size: 3em;
-    font-weight: bold;
-    color: $secondary-color;
-  }
+.body-login {
+  background-image: url("/images/flowers-8100386_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  &-subtitle {
-    font-size: 1em;
-    font-weight: bold;
-    color: $secondary-color;
-  }
+.navbar-custom {
+  height: 150px;
+}
+
+.logo {
+  width: 100%; /* Adjust as needed */
+  max-width: 400px; /* Maximum width for the logo */
+  display: block;
+  margin: 0 auto;
+  margin-top: 200px;
 }
 
 .form-container {
@@ -29,29 +34,26 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.702);
+  height: 100%; /* Ensure form container takes full height of its column */
+}
 
-  .form-wrapper {
-    .form-floating {
-      input.form-control {
-        background-color: $secondary-color;
-      }
+.form-wrapper {
+  .form-floating {
+    input.form-control {
+      background-color: $secondary-color;
+    }
 
-      label {
-        color: $dark-color;
-      }
-
-      .btn-primary {
-        background-color: $primary-color;
-        border-color: $primary-color;
-      }
+    label {
+      color: $secondary-color;
     }
   }
+}
 
-  .form-title {
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    color: $dark-color;
-    margin-bottom: 20px;
-  }
+.form-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: $secondary-color;
+  margin-bottom: 20px;
 }

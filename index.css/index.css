@@ -2,19 +2,26 @@ p {
   color: #67927a;
 }
 
-.hero-banner {
-  background-color: #67927a;
-  padding: 20px;
+body {
+  background-color: #000;
 }
-.hero-banner-title {
-  font-size: 3em;
-  font-weight: bold;
-  color: #eae6e5;
+
+.body-login {
+  background-image: url("/images/flowers-8100386_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.hero-banner-subtitle {
-  font-size: 1em;
-  font-weight: bold;
-  color: #eae6e5;
+
+.navbar-custom {
+  height: 150px;
+}
+
+.logo {
+  width: 100%; /* Adjust as needed */
+  max-width: 400px; /* Maximum width for the logo */
+  display: block;
+  margin: 0 auto;
+  margin-top: 200px;
 }
 
 .form-container {
@@ -23,22 +30,22 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.702);
+  height: 100%; /* Ensure form container takes full height of its column */
 }
-.form-container .form-wrapper .form-floating input.form-control {
+
+.form-wrapper .form-floating input.form-control {
   background-color: #eae6e5;
 }
-.form-container .form-wrapper .form-floating label {
-  color: #381d2a;
+.form-wrapper .form-floating label {
+  color: #eae6e5;
 }
-.form-container .form-wrapper .form-floating .btn-primary {
-  background-color: #67927a;
-  border-color: #67927a;
-}
-.form-container .form-title {
+
+.form-title {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-  color: #381d2a;
+  color: #eae6e5;
   margin-bottom: 20px;
 }
 

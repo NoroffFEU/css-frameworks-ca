@@ -30,8 +30,8 @@
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-8">
-        <!-- Post Thumbnails -->
+      <div class="col-md-8" id="postContainer">
+        
         <div class="card mb-3">
           <img src="/images/GameHub_covers3.jpg" class="card-img-top custom-card-img" alt="Post Image">
           <div class="card-body">
@@ -39,8 +39,8 @@
             <p class="card-text">Brief Description of the game.</p>
           </div>
         </div>
-        <!-- Repeat the card structure for other posts -->
       </div>
+
       <div class="col-md-4">
         <!-- Search Bar -->
         <div class="card mb-3">
@@ -48,7 +48,7 @@
             <h5 class="card-title">Search</h5>
             <form>
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for posts">
+                <input type="text" class="form-control" placeholder="Search for posts" id="searchInput" oninput="filterPosts()">
                 <button class="btn btn-primary" type="button">Search</button>
               </div>
             </form>
@@ -56,35 +56,90 @@
         </div>
         <!-- Sort Options -->
         <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">Sort By</h5>
-            <select class="form-select">
-              <option selected>Choose...</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-            </select>
+            <div class="card-body">
+              <h5 class="card-title">Sort By</h5>
+              <select class="form-select" id="sortOptions" onchange="sortPosts()">
+                <option value="all" selected>Show All</option>
+                <option value="mine">Created by Me</option>
+                <option value="others">Created by Others</option>
+              </select>
+            </div>
           </div>
-        </div>
         <!-- Create New Post Form -->
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Create New Post</h5>
-            <form>
-              <div class="mb-3">
-                <label for="postTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="postTitle" name="postTitle" required>
-              </div>
-              <div class="mb-3">
-                <label for="postDescription" class="form-label">Description</label>
-                <textarea class="form-control" id="postDescription" name="postDescription" rows="3" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Create Post</button>
-            </form>
+            <div class="card-body">
+              <h5 class="card-title">Create New Post</h5>
+              <form onsubmit="createPost(event)">
+                <div class="mb-3">
+                  <label for="postTitle" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="postTitle" name="postTitle" required>
+                </div>
+                <div class="mb-3">
+                  <label for="postDescription" class="form-label">Description</label>
+                  <textarea class="form-control" id="postDescription" name="postDescription" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Post</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Scripts -->
+
+      <!-- Script for new post -->
+    <script>
+        function filterPosts() {
+          // ... existing filterPosts function ...
+        }
+    
+        function createPost(event) {
+          event.preventDefault();
+    
+          const postTitleInput = document.getElementById('postTitle');
+          const postDescriptionInput = document.getElementById('postDescription');
+    
+          const newCard = document.createElement('div');
+          newCard.className = 'card mb-3';
+          newCard.innerHTML = `
+            
+            <div class="card-body">
+              <h5 class="card-title">${postTitleInput.value}</h5>
+              <p class="card-text">${postDescriptionInput.value}</p>
+            </div>
+          `;
+    
+          const postContainer = document.getElementById('postContainer');
+          postContainer.appendChild(newCard);
+    
+          postTitleInput.value = '';
+          postDescriptionInput.value = '';
+        }
+      </script>
+
+
+    <!-- Script for search-->
+  <script>
+    function filterPosts() {
+      const searchInput = document.getElementById('searchInput');
+      const postContainer = document.getElementById('postContainer');
+      const cards = postContainer.getElementsByClassName('card');
+
+      const searchTerm = searchInput.value.toLowerCase();
+
+      for (const card of cards) {
+        const cardTitle = card.querySelector('.card-title').textContent.toLowerCase();
+        const cardDescription = card.querySelector('.card-text').textContent.toLowerCase();
+
+        if (cardTitle.includes(searchTerm) || cardDescription.includes(searchTerm)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      }
+    }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -19,5 +19,11 @@ export default function router() {
     case '/profile/edit/':
       listeners.setUpdateProfileListener()
       return;
+    case '/profile/':
+      listeners.setReadProfileListener()
+      return;
+    case '/posts/':
+      listeners.setReadPostsListener()
+      return;
   }
 }

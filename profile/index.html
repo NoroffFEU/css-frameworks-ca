@@ -7,6 +7,8 @@
     <meta name="description" content="Profile page">
     <title>DesTiny | Profile</title>
     <link rel="stylesheet" href="../dist/css/index.css">
+    <script type="module" src="../scripts/index.mjs"></script>
+
   </head>
 <body>
 
@@ -33,35 +35,21 @@
 
 
 <!--Profile card-->
-<section id="banner-container" class="m-5 border border-primary border-3 position-relative" style="background-image: url('https://picsum.photos/1000/200'); background-repeat: no-repeat; background-size: cover;">
+<section id="banner-container" class="m-5 border border-primary border-3 position-relative no-repeat cover">
   <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);"></div>
   <div class="row align-items-center ms-5">
     <div class="col-2" style="position: relative; z-index: 1;">
-      <img id="profile-image" src="https://picsum.photos/200/200" class="rounded-circle img-thumbnail">
+      <img id="profile-image" src="" class="rounded-circle img-thumbnail">
     </div>
     <div class="col-10">
       <div class="p-5" style="position: relative; z-index: 1;">
-        <h1 id="profile-name" class="text-white">name</h1>
-        <h4 id="profile-email" class="text-white">email</h4>
+        <h1 id="profile-name" class="text-white"></h1>
+        <h4 id="profile-email" class="text-white"></h4>
         <a href="./edit/" class="btn btn-lg btn-primary my-3 text-white">Edit profile</a>
       </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>

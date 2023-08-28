@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="/public/feed/index.html">My Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/public/feed/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/public/profile/index.html">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="/images/profile picture.png" class="img-fluid rounded-circle mb-3" alt="Chrissebah's Profile Picture">
+        <h2>Chrissebah</h2>
+        <button id="followButton" class="btn btn-primary">Follow</button>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            User Posts
+          </div>
+          <div class="card-body">
+            <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Title</h5>
+                <p class="card-text">Description</p>
+              </div>
+            </div>
+            <!-- Repeat the card structure for each user post -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Following/Followers
+          </div>
+          <div class="card-body">
+            <p>Following: <span id="followingCount">100</span></p>
+            <p>Followers: <span id="followersCount">500</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const followButton = document.getElementById("followButton");
+      const followingCount = document.getElementById("followingCount");
+      const followersCount = document.getElementById("followersCount");
+
+      let isFollowing = false;
+
+      followButton.addEventListener("click", function() {
+        if (isFollowing) {
+          // Unfollow logic
+          isFollowing = false;
+          followButton.textContent = "Follow";
+          followingCount.textContent = parseInt(followingCount.textContent) - 1;
+        } else {
+          // Follow logic
+          isFollowing = true;
+          followButton.textContent = "Unfollow";
+          followingCount.textContent = parseInt(followingCount.textContent) + 1;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

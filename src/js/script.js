@@ -17,7 +17,7 @@ function addPostThumbnail(title) {
   postThumbnail.classList.add('col-md-4', 'post-thumbnail');
   postThumbnail.innerHTML = `
       <div class="card">
-          <img src="${imageUrl}" class="card-img-top" alt="Post Image">
+          <img src="${imageUrl}" class="card-img-top" alt="plceholder image">
           <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                   <h6 class="card-title">${title}</h6>

@@ -10,18 +10,18 @@
 <body>
   <nav class="navbar navbar-expand-md">
     <div class="container">
-        <a class="navbar-brand" href="../index.html">
-            <img src="../src/img/logo2.png" alt="Logo" title="Back to login"></a>
+        <a class="navbar-item" href="../index.html">
+            <img src="../src/img/logo2.png" alt="Logo" title="Back to login"><br>Log in</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/feed/index.html">Feed</a>
+                    <a class="nav-link" href="../feed/index.html">Feed</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/profile/index.html">Profile</a>
+                    <a class="nav-link" href="../profile/index.html">Profile</a>
                 </li>
             </ul>
         </div>
@@ -51,15 +51,15 @@
       </div>
       
         <div class="row justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-6 text-center">
               <h1>WELCOME!</h1><h2> To the social media site at frameWORKS</h2>
+              <img src="../src/img/logo.png" alt="frameWORKS' logo">
               <p>At frameWORKS we aim to give the user the best starting content to use
                 Frameworks in their daily work and occupation. While it's true that we're a sleepy
                  bunch, we aim to work through the most of the content, with minimal effort.
-                 <br>
+                 <br><b>
                  Log in now at frameWORKS to fave your cute kitties and bears photos!
-                <br><br>
-                Log in to access your profile and content.
+              </b>
               </p>
                 <div class="card mt-5">
                     <div class="card-body">
@@ -68,15 +68,17 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label" >Email</label>
                                 <input type="email" class="form-control" id="email" placeholder="mirabelle@protonmail.com" name="email" required>
+                                <div class="invalid-feedback" id="emailError">Please enter a valid email address.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
+                                <div class="invalid-feedback" id="passwordError">Password must be at least 8 characters long.</div>
                                 <input type="password" class="form-control" id="password" placeholder="•••••••••" name="password" minlength="8" required>
                             </div>
                             <div class="mb-3">
-                              <a href="../feed/index.html"><button type="submit" class="btn btn-primary">Login</button></a>
-                              <button type="submit" class="btn btn-secondary">New user?</button><br>
-                              <button type="submit" class="btn btn-secondary">Forgot password?</button>
+                              <a href="../feed/index.html"><button type="submit" class="btn btn-primary" onclick="validateForm(event)">Login</button></a>
+                              <button type="submit" class="btn btn-secondary" onclick="showNewUserForm()">New user?</button><br>
+                              <button type="submit" class="btn btn-secondary" onclick="showForgotPasswordForm()">Forgot password?</button>
                             </div>
                         </form>
                     </div>
@@ -86,6 +88,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/js/form.js"></script>
 
     <footer class="bg-dark text-center text-lg-start">
       <!-- Copyright footer with links-->

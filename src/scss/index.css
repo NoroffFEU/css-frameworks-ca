@@ -48,23 +48,19 @@ i {
 .btn {
   margin-top: 5px;
 }
-
-.btn-primary {
+.btn.btn-primary {
   background-color: #253c6b;
   border: none;
 }
-
-.btn-primary:hover {
+.btn.btn-primary:hover {
   background-color: #182745;
 }
-
-.btn-secondary {
+.btn.btn-secondary {
   background-color: #dfdcdc;
   color: #181414;
   border: none;
 }
-
-.btn-secondary:hover {
+.btn.btn-secondary:hover {
   background-color: #968c8c;
 }
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProfilePage - Social Media App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="src/css/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">
+      <img src="src/images/network.png" alt="Logo">
+      <h1 class="d-inline-block align-middle">Welcome to Peztis Media</h1>
+    </div>
+    <div class="header-buttons">
+      <button id="menuBtn" class="btn btn-menu"><i class="fas fa-bars fa-2x"></i></button>
+    </div>
+  </header>
+  
+  <div class="profile-container">
+    <div class="profile-header d-flex justify-content-between align-items-center mb-4">
+      <div class="user-info d-flex align-items-center">
+        <div class="user-avatar mr-2"><img src="" alt="User Avatar"></div>
+        <div class="user-details">
+          <h2 id="username">John Doe</h2>
+          <p>@johndoe</p>
+        </div>
+      </div>
+      <div class="follow-button">
+        <button class="btn btn-follow" id="followBtn">Follow</button>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3">
+        <div class="profile-menu">
+          <ul class="list-unstyled">
+            <li>Profile</li>
+            <li>Lists</li>
+            <li>Topics</li>
+            <li>Bookmarks</li>
+            <li>Moments</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="profile-content">
+          </div>
+          <!-- Dodaj więcej przykładowych postów -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/profile.js"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@ class="
 w-full
 p-4
 text-lg
-bg-black
+custom-background
 border-2
 border-neutral-800
 rounded-md
@@ -31,3 +31,8 @@ disabled:cursor-not-allowed
     export let disabled
     export let onChange
 </script>
+<style lang="postcss">
+  .custom-background{
+background-color: #000806;
+}
+</style>

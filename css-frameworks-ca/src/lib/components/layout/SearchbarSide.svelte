@@ -5,7 +5,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </span>
     
-        <!-- Input Field -->
+        <!-- Seach, form will be added later -->
         <input class="pl-10 pr-4 py-2 rounded-full border border-gray-300 w-full text-sm placeholder-gray-500 focus:outline-none focus:ring-none focus:border-transparent" type="text" placeholder="Search Pied Piper">
     </div>
     

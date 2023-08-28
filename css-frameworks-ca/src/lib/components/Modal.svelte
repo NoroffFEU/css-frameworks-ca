@@ -1,4 +1,5 @@
  {#if  isOpen}
+ <!--OVERLAY-->
     <div
     class="
     justify.center
@@ -13,7 +14,8 @@
     focus:outline-none
     bg-neutral-800
     bg-opacity-70"
-    >
+    > 
+    <!---CONTAINER-->
         <div
         class="
         relative
@@ -22,12 +24,12 @@
         my-6
         mx-auto
         lg:max-w-3xl
-        h-full
+        h-{searchBoolean ? 50 : "full"}
         lg:h-auto"
         >
         <!---CONTENT-->
             <div class="
-            h-full
+            h-{searchBoolean ? 50 : "full"}
             lg:h-auto
             border-0
             rounded-lg
@@ -36,11 +38,10 @@
             flex
             flex-col
             w-full
-            bg-black
+            custom-background
             outline-none
             focus:outline-none"
             >
-    <!---HEADER-->
             <div class="
                 flex
                 items-center
@@ -52,13 +53,11 @@
                     <i class="fa-solid fa-xmark lg text-white"></i>
                 </button>
             </div>
-            <!--BODY-->
             <div class="relative p-10 flex-auto">
             <slot></slot>
             </div>
-            <!--Footer-->
             <div class="flex flex-col gap-2 p-10">
-                 <!--Handles the form submit-->
+                 <!--Form submit-->
                 <Button 
                 disabled={disabled} 
                 buttonName={actionLabel} 
@@ -80,6 +79,9 @@
     export let title
     export let actionLabel
     export let disabled
+    export let searchBoolean
+
+
 
 
     const handleClose = () => {
@@ -104,3 +106,8 @@
 
     
 </script>
+<style lang="postcss">
+     .custom-background{
+	background-color: #000806;
+ }
+</style>

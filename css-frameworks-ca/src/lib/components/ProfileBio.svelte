@@ -1,6 +1,13 @@
 <article class="border-b-[1px] border-neutral-800 pb-4">
     <div class="flex justify-end p-2">
-        <Button buttonName="Edit profile" secondary disabled={false}/>
+        <Button buttonName="Edit profile"
+         secondary={true}
+         disabled={false}
+         fullWidth={false}
+         large={false}
+        outline={false}
+        onClick={handleEdit}
+        />
     </div>
     <div class="mt-8 px-4">
         <div class="flex flex-col">
@@ -49,4 +56,8 @@
     const year = currentDate.getFullYear();
 
     const formattedDate = `${month} ${year}`;
+    //editprofile comes later
+    const handleEdit=() => {
+        console.log("coming soon")
+    }
 </script>

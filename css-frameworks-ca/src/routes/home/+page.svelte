@@ -1,9 +1,9 @@
-<LoginModal/>
+<LoginModal />
 <RegisterModal/>
 
 
 <header>
-    <Header headerLabel="Home" showReturn={false} />
+    <Header headerLabel="Home" />
 </header>
 <section>
     {#each Array(15) as post, index}

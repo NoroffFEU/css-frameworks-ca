@@ -1,6 +1,6 @@
 <script>
 	import Sidebar from "../lib/components/layout/Sidebar.svelte";
-	import FollowSideBar from "../lib/components/layout/FollowSideBar.svelte";
+	import SearchbarSide from "../lib/components/layout/SearchbarSide.svelte";
 	import "../app.css";
 </script>
 
@@ -14,7 +14,7 @@
 				<div class="col-span-3 lg:col-span-2 border-x-[1px]  border-neutral-400">
 					<slot />
 				</div>
-				<FollowSideBar/>
+				<SearchbarSide/>
 			</div>
 			
 		</div>

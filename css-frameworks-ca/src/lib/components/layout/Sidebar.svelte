@@ -1,5 +1,7 @@
 <section class="col-span-1 h-full pr-4 md:pr-6">
+    <SearchModal/>
     <aside class="flex flex-col items-end">
+       
         <div class="space-y-2 lg:w-[230px]">
             <SidebarLogo/>
             {#each icons as icon}
@@ -8,7 +10,13 @@
                     
             {/each}
             <SidebarItem name="Logout" route="/" iconName="fa-solid fa-right-from-bracket text-white lg" />
+            <button class=" md:hidden block" on:click={handleOpenSearch}>          
+                <span class=" inset-y-0 left-0 flex items-center pl-3">
+                    <i class="fa-solid fa-magnifying-glass text-white"></i>
+                </span>
+            </button>
             <SideBarPost/>
+            
         </div>
     </aside>
 </section>
@@ -18,6 +26,9 @@
     import SidebarLogo from "./SidebarLogo.svelte";
     import SidebarItem from "./SidebarItem.svelte";
     import SideBarPost from "./SideBarPost.svelte";
+    import SearchModal from "../modals/SearchModal.svelte";
+    import searchModal from "../../../data/searchModal";
+    
     const icons = 
     [
         {
@@ -37,5 +48,8 @@
       
         }
     ]
+    const handleOpenSearch = () => {
+        searchModal.onOpen()
+    }
 </script>
 <style></style>

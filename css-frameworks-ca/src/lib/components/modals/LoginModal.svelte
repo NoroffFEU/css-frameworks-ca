@@ -6,7 +6,7 @@
     title="Login"
     actionLabel="Sign in"
     onClose={loginModal.onClose}
-  
+    searchBoolean={false}
     {onSubmit} 
   >
   

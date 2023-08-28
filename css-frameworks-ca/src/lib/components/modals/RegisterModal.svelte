@@ -4,7 +4,9 @@
      title="Create an account"
      actionLabel="Register"
      onClose={registerModal.onClose}
-     onSubmit={onSubmit}>
+     onSubmit={onSubmit}
+     searchBoolean={false}
+     >
       <div class=" flex flex-col gap-4">
 
 

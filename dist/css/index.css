@@ -11860,4 +11860,28 @@ textarea.form-control-lg {
   background-position: bottom center;
 }
 
+.w-percentage--95 {
+  width: 95%;
+}
+
+.h-percentage--95 {
+  width: 95%;
+}
+
+.h-px--350 {
+  height: 350px;
+}
+
+.h-px--400 {
+  height: 400px;
+}
+
+.w-px--max--110 {
+  max-width: 100px;
+}
+
+.w-px--min--400 {
+  min-width: 400px;
+}
+
 /*# sourceMappingURL=index.css.map */

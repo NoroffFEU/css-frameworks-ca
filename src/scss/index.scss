@@ -3,9 +3,14 @@ $secondary-color: #eae6e5;
 $dark-color: #000;
 $secondary-light: #eae6e5c4;
 $primary-light: #67927ae9;
+$box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 
 p {
   color: $primary-color;
+}
+
+.btn {
+  box-shadow: $box-shadow;
 }
 
 /* body styles */
@@ -25,7 +30,7 @@ body {
 .navbar-custom {
   background-color: $primary-light;
   border-radius: 0px 0px 50px 50px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.702);
+  box-shadow: $box-shadow;
 }
 
 .logo {
@@ -43,7 +48,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.702);
+  box-shadow: $box-shadow;
 }
 
 .form-wrapper {
@@ -75,10 +80,18 @@ body {
   color: $dark-color;
 }
 
+.profile-btn {
+flex-direction: row;
+justify-content: flex-start;
+}
+
 /* profile container */
 .profile-container {
   background-color: $primary-color;
   border-radius: 0px 0px 70px 70px;
+  box-shadow: $box-shadow;
+
+  width: 100%;
 }
 
 /* Styling for the profile section container */
@@ -89,11 +102,12 @@ body {
   align-items: center;
 
   img.profile-image {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    box-shadow: $box-shadow;
   }
 
   .followers {
@@ -102,25 +116,17 @@ body {
 
   h2 {
     /* Styling for the user name */
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 5px;
+    color: $dark-color;
   }
 
   p {
     /* Styling for follower/following information */
     color: $secondary-color;
-    margin: 2px 0;
   }
 }
-.posts-section {
-  padding: 20px;
-}
 
-.post {
-  margin-bottom: 20px;
-}
+/* profile posts */
 
-.post-image {
-  max-width: 100%;
+.card {
+  box-shadow: $box-shadow;
 }

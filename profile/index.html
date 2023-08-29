@@ -19,7 +19,9 @@
   <body>
     <nav class="navbar navbar-profile">
       <div class="container-fluid">
-        <a class="navbar-brand">LookingForFrieda app</a>
+        <a class="navbar-brand"></a>
+        
+        <!-- search bar -->
         <form class="d-flex" role="search">
           <input
             class="form-control me-2"
@@ -31,31 +33,52 @@
             Search
           </button>
         </form>
+        <div class="profile-btn d-flex">
+          
+        <!-- profile button -->
+        <button type="button" class="btn-profile btn btn-outline-light d-flex">
+          Profile
+          <span class="position-absolute top-0 start-100 translate-middle p-2">
+            <span class="visually-hidden"></span>
+          </span>
+        </button>
+
+        <!-- feed button -->
+        <button type="button" class="btn-profile btn btn-outline-light d-flex ml-2 mr-2">
+          Feed
+          <span class="position-absolute top-0 start-100 translate-middle p-2">
+            <span class="visually-hidden"></span>
+          </span>
+        </button>
+
+        
       </div>
+    </div>
     </nav>
 
     <!-- profile container -->
 
     <div class="container-fluid">
       <div class="row">
-        <div class="profile-container col-md-4 mb-3">
+        <div class="profile-container mb-3">
+          
           <!-- Profile Section -->
           <div class="profile-section d-flex mt-5 mb-5">
             <img
               src="/images/flowers-8100386_1280.jpg"
               alt="Profile Image"
-              class="profile-image"
+              class="profile-image img-thumbnail"
             />
-            <h2>User Name</h2>
+            <h2 class="mb-3 display-5">User Name</h2>
             <div class="followers d-flex">
-            <p>Followers: 100</p>
-            <p>Following: 50</p>
+            <p class="pr-3">Followers: 100</p>
+            <p class="pr-3">Following: 50</p>
           </div>
           </div>
         </div>
 
         <!-- posts section -->
-        <div class="container">
+        <div class="container mb-5">
         <div class="row">       
 
     <div class="col-md-4 mb-3">
@@ -82,11 +105,11 @@
 
       <div class="col-md-4">
         <div class="card pr-2 pl-2">
-          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 3">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 4">
           <div class="card-body">
-            <h5 class="card-title">Post title 3</h5>
+            <h5 class="card-title">Post title 4</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">Last updated 9 mins ago</small></p>
           </div>
         </div>
       </div>
@@ -97,7 +120,7 @@
           <div class="card-body">
             <h5 class="card-title">Post title 4</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
           </div>
         </div>
       </div>
@@ -108,7 +131,7 @@
           <div class="card-body">
             <h5 class="card-title">Post title 5</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
           </div>
         </div>
       </div>
@@ -119,7 +142,7 @@
           <div class="card-body">
             <h5 class="card-title">Post title 6</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">Last updated 4 days ago</small></p>
           </div>
         </div>
       </div>

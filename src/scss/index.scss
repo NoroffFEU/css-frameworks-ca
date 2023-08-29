@@ -74,12 +74,6 @@ h1 {
 }
 
 
-
-.mb-3 {
-    padding: 1rem 3rem;
-}
-
-
 .form-label {
     color: $color-font;
 }
@@ -116,6 +110,9 @@ h1 {
     ;
 }
 
+
+
+
 .btn,
 .btn-primary {
     color: $color-font;
@@ -134,6 +131,14 @@ h1 {
     }
 }
 
+.btn-primary {
+    color: $color-font;
+    background-color: $color-secondary;
+    border-color: $color-tertiary;
+}
+
+
+
 
 .btn-warning {
     color: $color-font;
@@ -141,11 +146,7 @@ h1 {
 
 }
 
-.btn-primary {
-    color: $color-font;
-    background-color: $color-secondary;
-    border-color: $color-tertiary;
-}
+
 
 
 #myCarousel1 {
@@ -167,15 +168,26 @@ h1 {
 .border-bottom,
 .border-top,
 .text-muted,
-h3,
-p {
+h3 {
     color: $color-font !important;
     border-color: $color-font !important;
 }
 
+.feature {
+    p {
+        color: $color-font !important;
+    }
+}
+
+
 h2,
 .col-lg-4 {
+
     text-align: center;
+
+    p {
+        color: $color-font !important;
+    }
 }
 
 .text-bg-primary {
@@ -210,4 +222,32 @@ h2,
     --bs-nav-link-color: $color-font !important;
     --bs-nav-link-hover-color: $color-font !important;
     --bs-nav-link-disabled-color: $color-font !important;
+}
+
+
+.nav-link.active {
+    color: $color-shadow !important;
+    background-color: $color-secondary !important;
+
+}
+
+a {
+    color: $color-font;
+    text-decoration: none;
+}
+
+.list-group {
+    max-width: 800px;
+    margin: 4rem 1rem;
+}
+
+.list-group-item {
+    color: $color-primary;
+    background-color: $color-font;
+}
+
+h6 {
+    p {
+        color: #695433;
+    }
 }

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "compile:sass": "node-sass sass/index.scss css/style.css -w"
+    "watch": "sass --watch sass/index.scss:css/style.css & live-server"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,10 @@
   },
   "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
   "dependencies": {
-    "bootstrap": "^5.2.0",
-    "sass": "^1.66.0"
+    "bootstrap": "^5.2.0"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
-    "node-sass": "^9.0.0"
+    "sass": "^1.66.1"
   }
 }

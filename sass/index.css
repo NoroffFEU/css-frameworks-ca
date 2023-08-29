@@ -7,6 +7,9 @@ body {
 
 .container {
   max-width: 800px;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #D9E4E7;
 }
 
 .navbar {
@@ -33,17 +36,12 @@ body {
 .navbar form button.btn, .navbar form button.custom-btn {
   height: 36px;
   line-height: 20px;
-  padding: 0 10px;
 }
 
 .custom-btn {
   border-radius: 5px;
-  padding: 10px 20px;
 }
 
-.form-control {
-  margin-bottom: 1rem;
-}
 .form-control:focus {
   border-color: #3FC1C9;
   box-shadow: none;
@@ -58,17 +56,56 @@ body {
   background-color: #283b50;
 }
 
-.search-bar {
+.input-group {
+  margin-bottom: 20px;
+}
+.input-group .form-control {
+  border-radius: 0;
   border: 1px solid #D9E4E7;
-  padding: 10px;
-  width: 100%;
+}
+.input-group .btn, .input-group .custom-btn, .input-group .input-group-text {
+  background-color: #364F6B;
+  color: #F5F5F5;
+}
+.input-group .btn:hover, .input-group .custom-btn:hover, .input-group .input-group-text:hover {
+  background-color: #253649;
 }
 
-.post {
+.dropdown button {
+  background-color: #364F6B;
+  color: #F5F5F5;
+}
+.dropdown button:hover {
+  background-color: #283b50;
+}
+
+form .form-control, form textarea {
   border: 1px solid #D9E4E7;
-  padding: 10px;
-  margin-top: 15px;
-  background-color: white;
+}
+form button[type=submit] {
+  background-color: #364F6B;
+  color: #F5F5F5;
+}
+form button[type=submit]:hover {
+  background-color: #283b50;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #D9E4E7;
+}
+.card .card-title {
+  font-size: 1.5rem;
+}
+.card .card-text {
+  color: #4d4d4d;
+}
+.card .btn, .card .custom-btn {
+  background-color: #364F6B;
+  color: #F5F5F5;
+}
+.card .btn:hover, .card .custom-btn:hover {
+  background-color: #283b50;
 }
 
 .profile-image {
@@ -80,20 +117,13 @@ body {
 }
 
 .username {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 1rem;
   color: #364F6B;
 }
 
 .follow-button {
-  display: inline-block;
   background-color: #3FC1C9;
-  padding: 5px 15px;
-  border-radius: 5px;
   text-transform: uppercase;
   color: #364F6B;
-  font-weight: bold;
 }
 .follow-button:hover {
   background-color: #2f9fa6;

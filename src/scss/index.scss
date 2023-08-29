@@ -8,8 +8,9 @@ p {
   color: $primary-color;
 }
 
+/* body styles */
 body {
-  background-color: $dark-color;
+  background-color: $secondary-color;
 }
 
 .body-login {
@@ -18,6 +19,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Authentication page */
 
 .navbar-custom {
   background-color: $primary-light;
@@ -32,6 +35,7 @@ body {
   margin: 0 auto;
 }
 
+/* Log in form */
 .form-container {
   background-color: $primary-light;
   border-radius: 50px 50px 50px 50px;
@@ -60,4 +64,35 @@ body {
   text-align: center;
   color: $dark-color;
   margin-bottom: 20px;
+}
+
+/* Profile page */
+.navbar-profile {
+  background-color: $primary-color;
+}
+
+.navbar-brand {
+  color: $dark-color;
+}
+
+.profile-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-image {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.posts-section {
+  padding: 20px;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post-image {
+  max-width: 100%;
 }

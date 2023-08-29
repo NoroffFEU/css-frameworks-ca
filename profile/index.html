@@ -17,27 +17,61 @@
     <title>Profile page</title>
   </head>
   <body>
-    <div class="hero-banner">
-      <div class="hero-banner-title">Looking For Frieda</div>
-      <div class="hero-banner-subtitle">Search. Inspire. Share. </div>
+    <nav class="navbar navbar-profile">
+      <div class="container-fluid">
+        <a class="navbar-brand">LookingForFrieda app</a>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-light ml-2" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <!-- Profile Section -->
+          <div class="profile-section">
+            <img
+              src="/images/profile-image.jpg"
+              alt="Profile Image"
+              class="profile-image"
+            />
+            <h2>User Name</h2>
+            <p>Followers: 100</p>
+            <p>Following: 50</p>
+          </div>
+        </div>
+
+        <!-- posts section -->
+        <div class="row">
+        <div class="card mb-3 col-sm-6">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3" alt="post image 1">
+          <div class="card-body">
+            <h5 class="card-title">Post title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+
+       <div class="card mb-3 col-sm-6">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3" alt="post image 2">
+          <div class="card-body">
+            <h5 class="card-title">Post title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+
+      </div>
     </div>
-  <h1>Profile page</h1>
-
-  <div class="profile-info">
-    <img src="path-to-profile-image.jpg" alt="Profile image" />
-    <h2>Username</h2>
-    <button class="follow-btn">Follow</button>
-    <p>Followers: 0 | Following: 0</p>
-  </div>
-
-  <div class="user-posts">
-    <h2>User Posts</h2>
-    <ul>
-      <li>Post 1</li>
-      <li>Post 2</li>
-    </ul>
-  </div>
-
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

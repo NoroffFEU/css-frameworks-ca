@@ -19,63 +19,88 @@ html {
     height: 100%;
 }
 
-body,
-{
-font-family: $font-main;
-background-color: $color-primary !important;
-}
+body {
+    font-family: $font-main;
+    background-color: $color-primary !important;
+    color: $color-primary;
 
-.container {
-    max-width: 350px;
-
-    padding: {
-        top: 4rem;
-        bottom: 2rem;
+    .text-center {
+        display: flex;
+        align-items: center;
+        /* padding-top: 40px; */
+        padding-bottom: 40px;
+        background-color: $color-primary;
     }
-
 }
+
+header {
+    .container {
+        justify-content: space-between !important;
+    }
+}
+
+.modal {
+    --bs-modal-bg: #695433;
+}
+
+.modal-dialog {
+    border: 1px solid $color-font;
+    border-radius: 0.5rem;
+    ;
+}
+
+.modal-header {
+    border-color: $color-font;
+}
+
+.btn-close {
+    color: $color-font;
+}
+
+
+.modal-footer {
+    border-color: $color-font;
+    justify-content: center;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
 
 h1 {
     color: $color-font;
-    padding-bottom: 2rem;
-
-
 }
 
-.border {
-    padding: 1rem;
-    border: 1px solid $color-font !important;
-}
+
 
 .mb-3 {
     padding: 1rem 3rem;
-
 }
-
 
 
 .form-label {
     color: $color-font;
 }
 
+
+
 ::placeholder {
     background-color: $color-primary;
     border-color: $color-font;
     color: $color-font !important;
-
-
 }
 
 .form-control {
     background-color: #695433;
-    border: 1px solid $color-font;
+    border-color: $color-font;
     color: $color-primary;
 
     &:focus {
         background-color: $color-font;
         border-color: $color-font;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-shadow;
-        ;
     }
 }
 
@@ -83,18 +108,20 @@ h1 {
     color: $color-font;
 }
 
-// .text-bg-dark,
-// ::placeholder {
-//     background-color: $color-primary !important;
-//     border-color: $color-font;
-//     color: $color-font !important;
-//     ;
-// }
+.text-bg-dark,
+::placeholder {
+    background-color: $color-primary !important;
+    border-color: $color-font;
+    color: $color-font !important;
+    ;
+}
 
-.btn {
+.btn,
+.btn-primary {
     color: $color-font;
     border-color: $color-font;
     --bs-btn-focus-shadow-rgb: 217, 164, 6;
+    --bs-btn-bg: $color-tertiary;
 
     &:hover,
     &:focus,
@@ -107,79 +134,80 @@ h1 {
     }
 }
 
-// .btn-warning {
-//     color: $color-font;
-//     background-color: $color-secondary;
-//     border-color: $color-secondary;
-// }
 
-// .btn-primary {
-//     color: $color-font;
-//     background-color: $color-secondary;
-//     border-color: $color-secondary;
-// }
+.btn-warning {
+    color: $color-font;
+    background-color: $color-secondary;
 
+}
 
-// #myCarousel1 {
-//     .carousel-item {
-//         display: block;
-//     }
-// }
+.btn-primary {
+    color: $color-font;
+    background-color: $color-secondary;
+    border-color: $color-tertiary;
+}
 
 
-// .carousel-item {
-//     img {
-//         max-height: 500px;
-//         object-fit: cover;
-//         opacity: 0.5;
-//     }
+#myCarousel1 {
+    .carousel-item {
+        display: block;
+    }
+}
 
 
-// }
+.carousel-item {
+    img {
+        max-height: 500px;
+        object-fit: cover;
+        opacity: 0.5;
+    }
+}
 
-// .carousel-caption,
-// .border-bottom,
-// .border-top,
-// .text-muted,
-// h3,
-// p {
-//     color: $color-font !important;
-//     border-color: $color-font !important;
-// }
+.carousel-caption,
+.border-bottom,
+.border-top,
+.text-muted,
+h3,
+p {
+    color: $color-font !important;
+    border-color: $color-font !important;
+}
 
-// h2,
-// .col-lg-4 {
-//     text-align: center;
-// }
+h2,
+.col-lg-4 {
+    text-align: center;
+}
 
-// .text-bg-primary {
-//     color: $color-font !important;
-//     background-color: $color-primary !important;
-// }
+.text-bg-primary {
+    color: $color-font !important;
+    background-color: $color-primary !important;
+}
 
-// .bg-gradient {
-//     background-image: none !important;
-// }
+.bg-gradient {
+    background-image: none !important;
+}
 
-// #featured-3 {
-//     margin-top: 3rem;
-// }
+#featured-3 {
+    margin-top: 3rem;
+}
 
-// .fw-normal {
-//     color: $color-shadow
-// }
+.fw-normal {
+    color: $color-shadow
+}
 
-// .border {
-//     border-color: #d9a406 !important;
-//     border-width: 1px !important;
-// }
 
-// .marketing {
-//     margin-top: 2rem !important;
-// }
+.border {
+    border-color: #d9a406 !important;
+    border-width: 1px !important;
+}
 
-// .nav {
-//     --bs-nav-link-color: $color-font !important;
-//     --bs-nav-link-hover-color: $color-font !important;
-//     --bs-nav-link-disabled-color: $color-font !important;
-// }
+
+.marketing {
+    margin-top: 2rem !important;
+}
+
+.nav {
+    --bs-nav-link-color: $color-font !important;
+    --bs-nav-link-hover-color: $color-font !important;
+    --bs-nav-link-disabled-color: $color-font !important;
+}

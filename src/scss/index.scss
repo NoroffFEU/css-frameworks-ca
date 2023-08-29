@@ -19,6 +19,10 @@ body {
     background-color: white; // To ensure posts and forms are visually separated from the background.
     padding: 20px;
     border: 1px solid $border-color;
+
+    .row {
+        margin: 0; // Reset Bootstrap's negative margin for the row.
+    }
 }
 
 // Navbar Styles
@@ -79,7 +83,7 @@ body {
 }
 
 // Feed Page Styles
-.input-group {
+.input-group, .dropdown {
     margin-bottom: 20px;
 
     .form-control {
@@ -87,23 +91,12 @@ body {
         border: 1px solid $border-color;
     }
 
-    .btn, .input-group-text {
+    .btn, .input-group-text, button {
         background-color: $primary;
         color: $background-color;
 
         &:hover {
             background-color: darken($primary, 10%);
-        }
-    }
-}
-
-.dropdown {
-    button {
-        background-color: $primary;
-        color: $background-color;
-        
-        &:hover {
-            background-color: darken($primary, 8%);
         }
     }
 }

@@ -39,7 +39,10 @@
                 <!-- Search bar in navbar -->
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
+                    <button class="btn btn-outline-light" type="submit">
+                        <span class="visually-hidden">Submit Search</span> <!-- For accessibility -->
+                        Search
+                    </button>
                 </form>
                 
                 <!-- Login/Register buttons - These can be hidden if user is already logged in -->
@@ -56,41 +59,47 @@
     </nav>
 
     <div class="container mt-4">
-        <div class="row">
 
-            <!-- Left Section: Post Creation -->
-            <div class="col-12 col-sm-8 mb-4">
-                <!-- Search Bar for posts -->
-                <div class="input-group mb-3">
-                    <!-- ... (Search Bar content remains unchanged) ... -->
-                </div>
-
-                <!-- Sort Options -->
-                <div class="dropdown mb-3">
-                    <!-- ... (Dropdown content remains unchanged) ... -->
-                </div>
-
-                <!-- Create New Post Form -->
-                <form class="mb-5">
-                    <!-- ... (Form content remains unchanged) ... -->
-                </form>
-
-                <!-- List of Posts -->
-                <div class="card mb-4">
-                    <!-- ... (Card content remains unchanged) ... -->
-                </div>
-                <!-- Other posts can follow the same structure as above -->
+        <!-- Sort Options -->
+        <div class="dropdown mb-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort By
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                <li><a class="dropdown-item" href="#">Newest</a></li>
+                <li><a class="dropdown-item" href="#">Oldest</a></li>
+                <li><a class="dropdown-item" href="#">Most Popular</a></li>
+            </ul>
+        </div>
+    
+        <!-- Create New Post Form -->
+        <form class="mb-5">
+            <div class="mb-3">
+                <label for="postTitle" class="form-label">Post Title</label>
+                <input type="text" class="form-control" id="postTitle" required>
             </div>
-
-            <!-- Right Section: Additional or future components (optional) -->
-            <!-- Note: As there was no content for the right section in your original layout, I've left this empty. -->
-            <!-- This can be used for additional features like "Trending Topics", "Friend Suggestions", etc. -->
-            <div class="col-12 col-sm-4">
-                <!-- Content for the right section goes here -->
+            <div class="mb-3">
+                <label for="postContent" class="form-label">Post Content</label>
+                <textarea class="form-control" id="postContent" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Upload Image (optional)</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Post</button>
+        </form>
+    
+        <!-- List of Posts -->
+        <div class="card mb-4">
+            <img src="/img/panda.jpg" class="card-img-top" alt="Post Image">
+            <div class="card-body">
+                <h5 class="card-title">Post Title</h5>
+                <p class="card-text">This is a brief overview of the post content...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
             </div>
         </div>
+        <!-- Repeat above card structure for each post -->
     </div>
-
     
     <!-- Footer -->
     <footer class="text-center mt-5">

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "watch": "sass --watch sass/index.scss:css/style.css & live-server"
+    "build": "sass --watch src/scss:dist/css && live-server"
   },
   "repository": {
     "type": "git",

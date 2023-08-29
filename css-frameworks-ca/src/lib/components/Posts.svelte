@@ -1,3 +1,4 @@
+<!--How a post could look like-->
 <article class="p-5 flex justify-center w-full bg-neutral-300 border-b border-neutral-400">
     <div class="bg-neutral-100 p-5 border border-gray-300 rounded-lg w-full max-w-md mx-auto">
 

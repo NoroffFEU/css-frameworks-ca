@@ -1,3 +1,4 @@
+<!--Reposts might replace for something else-->
 <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md mt-1">
 
     <div class="flex space-x-4">

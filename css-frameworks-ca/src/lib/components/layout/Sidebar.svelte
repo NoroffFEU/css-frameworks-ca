@@ -1,3 +1,4 @@
+<!--Sidebar-->
 <section class="col-span-1 h-full pr-4 md:pr-6">
     <SearchModal/>
     <aside class="flex flex-col items-end">
@@ -36,11 +37,7 @@
             route:"/home",
             iconName:"fa-solid fa-house"
         },
-        {
-            name:"Notifications",
-            route:"/notifications",
-            iconName: "fa-solid fa-bell"
-        },    
+   
         {
             name:"Profile",
             route:"/profile",

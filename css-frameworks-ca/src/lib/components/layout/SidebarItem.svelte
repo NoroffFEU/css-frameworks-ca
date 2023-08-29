@@ -1,4 +1,4 @@
-
+<!--Reusable sidebar items, if i want to add more logos etc to the sidebar-->
 <div class="flex flex-row-items-center">
     <div class="relative
         rouned-full 

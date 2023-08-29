@@ -1,4 +1,4 @@
-
+<!--Reusable Inputs, might remove them if i only use them for login and search-->
 <input 
 disabled={disabled}
 on:change ={onChange}
@@ -33,6 +33,6 @@ disabled:cursor-not-allowed
 </script>
 <style lang="postcss">
   .custom-background{
-background-color: #000806;
+background-color: #01100c;
 }
 </style>

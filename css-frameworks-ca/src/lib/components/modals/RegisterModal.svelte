@@ -1,3 +1,5 @@
+
+<!--Will handle register-->
 <form>
     <Modal disabled={isLoading}
      isOpen={$registerModal.isOpen}
@@ -6,6 +8,7 @@
      onClose={registerModal.onClose}
      onSubmit={onSubmit}
      searchBoolean={false}
+     hideButton = {true}
      >
       <div class=" flex flex-col gap-4">
 
@@ -81,7 +84,7 @@
     let password = "";
     let username = "";
     let isLoading = false;
-    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; // Email validation regex
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g; // Email validation regex "https://regexr.com/3e48o"
 
     let showNameError = false;
     let showEmailError = false;

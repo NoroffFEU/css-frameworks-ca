@@ -1,3 +1,4 @@
+ <!--Reusable modals-->
  {#if  isOpen}
  <!--OVERLAY-->
     <div
@@ -49,7 +50,7 @@
                 p-10
                 rounted-t">
                 <h3 class="text-3xl font-semibold text-white">{title}</h3>
-                <button class="p-1 ml-auto border-0 text-white hover:opacity-70 transition" on:click={handleClose}>
+                <button class="p-1 ml-auto border-0 text-white hover:opacity-70 transition {hideButton ? "hidden" : ""}" on:click={handleClose}>
                     <i class="fa-solid fa-xmark lg text-white"></i>
                 </button>
             </div>
@@ -80,6 +81,7 @@
     export let actionLabel
     export let disabled
     export let searchBoolean
+    export let hideButton
 
 
 
@@ -108,6 +110,6 @@
 </script>
 <style lang="postcss">
      .custom-background{
-	background-color: #000806;
+	background-color: #010d0a;
  }
 </style>

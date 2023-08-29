@@ -1,3 +1,4 @@
+<!--Reusable profile Image, will be used for user profiles-->
 <div class="border-4 border-white h-32 w-32 rounded-full cursor-pointer relative">
     <a href="/profile"  class="w-full h-full" >
         <!-- svelte-ignore a11y-img-redundant-alt -->

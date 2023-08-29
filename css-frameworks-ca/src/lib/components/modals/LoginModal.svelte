@@ -1,7 +1,8 @@
-
+<!--Will handle login-->
 <form>
   <Modal
     disabled={isLoading}
+    hideButton = {true}
     isOpen={$loginModal.isOpen}
     title="Login"
     actionLabel="Sign in"

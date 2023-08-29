@@ -1,8 +1,9 @@
-
+<!--Reusable buttons, using for loggin, tweets, edit profile etc-->
 <button
 disabled= {disabled}
 on:click={onClick}
  class={`
+ 
 disabled: opacity-70
 disabled:cursor-not-allowed
 rounded-full
@@ -34,6 +35,7 @@ ${outline ? "text-whitee" : ""}
     export let onClick
     export let disabled 
     export let outline
+   
 </script>
 <style lang="postcss">
         .custom-text-color{

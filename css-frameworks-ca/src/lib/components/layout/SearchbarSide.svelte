@@ -1,3 +1,4 @@
+<!--right sidebar, if i only will be using it for search i will scrap this-->
 <aside class="px-6 py-4 hidden lg:block">
     <div class="relative w-64">
         <!-- Search Icon -->

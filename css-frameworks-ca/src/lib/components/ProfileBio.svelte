@@ -1,3 +1,4 @@
+<!--Edit profile function, comes later-->
 <article class="border-b-[1px] border-neutral-800 pb-4">
     <div class="flex justify-end p-2">
         <Button buttonName="Edit profile"
@@ -56,7 +57,7 @@
     const year = currentDate.getFullYear();
 
     const formattedDate = `${month} ${year}`;
-    //editprofile comes later
+ 
     const handleEdit=() => {
         console.log("coming soon")
     }

@@ -11871,6 +11871,7 @@ textarea.form-control-lg {
   box-shadow: 4px 9px 4px -1px rgba(216, 44, 53, 0.37);
   color: #d63d46;
   height: 60px;
+  font-weight: 600;
 }
 
 #createUser:hover {
@@ -11879,6 +11880,25 @@ textarea.form-control-lg {
 
 .dropshadow-input {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+  .follower-container {
+    display: none;
+  }
+}
+.feed-head {
+  width: 930px;
+  height: 232px;
+}
+
+.feed-head-text {
+  width: 930px;
+  height: 365px;
+}
+
+div {
+  border: red dotted 1px;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,107 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in to view your frameWORKS-feed</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../src/scss/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in to view your frameWORKS-feed</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/scss/index.css">
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-md">
+  <nav class="navbar sticky-top navbar-expand-md">
     <div class="container">
-        <a class="navbar-item" href="../index.html">
-            <img src="../src/img/logo2.png" alt="Logo" title="Back to login"><br>Log in</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../feed/index.html">Feed</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../profile/index.html">Profile</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-    <div class="container">
-      <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../src/img/carousel_img1.jpg" class="d-block w-100" alt="Carousel example image">
-          </div>
-          <div class="carousel-item">
-            <img src="../src/img/carousel_img2.jpg" class="d-block w-100" alt="Carousel example image"">
-          </div>
-          <div class="carousel-item">
-            <img src="../src/img/carousel_img3.jpg" class="d-block w-100" alt="Carousel example image"">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      
-        <div class="row justify-content-center">
-            <div class="col-md-6 text-center">
-              <h1>WELCOME!</h1><h2> To the social media site at frameWORKS</h2>
-              <img src="../src/img/logo.png" alt="frameWORKS' logo">
-              <p>At frameWORKS we aim to give the user the best starting content to use
-                Frameworks in their daily work and occupation. While it's true that we're a sleepy
-                 bunch, we aim to work through the most of the content, with minimal effort.
-                 <br><b>
-                 Log in now at frameWORKS to fave your cute kitties and bears photos!
-              </b>
-              </p>
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2 class="card-title">Log in to view your feed</h2>
-                        <form id="authForm" action="../profile/index.html"  novalidate>
-                            <div class="mb-3">
-                                <label for="email" class="form-label" >Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="mirabelle@protonmail.com" name="email" required>
-                                <div class="invalid-feedback" id="emailError">Please enter a valid email address.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <div class="invalid-feedback" id="passwordError">Password must be at least 8 characters long.</div>
-                                <input type="password" class="form-control" id="password" placeholder="•••••••••" name="password" minlength="8" required>
-                            </div>
-                            <div class="mb-3">
-                              <a href="../feed/index.html"><button type="submit" class="btn btn-primary" onclick="validateForm(event)">Login</button></a>
-                              <button type="submit" class="btn btn-secondary" onclick="showNewUserForm()">New user?</button><br>
-                              <button type="submit" class="btn btn-secondary" onclick="showForgotPasswordForm()">Forgot password?</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../src/js/form.js"></script>
-
-    <footer class="bg-dark text-center text-lg-start">
-      <!-- Copyright footer with links-->
-      <div class="text-center p-3 text-light">
-        © 2020 Copyright:
-        <a class="text-light" href="https://frameworks.techlilja.io">Frameworks@techlilja.io</a>
-        <ul>
-          <li><a href="../index.html">Log in </a>|</li>
-          <li><a href="../feed/index.html">Feed </a>|</li>
-          <li><a href="..profile/index.html">Profile</a></li>
+      <a class="navbar-item" href="../index.html">
+        <img src="../src/img/logo2.png" alt="Logo" title="Back to login"><br>Log in</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../feed/index.html">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../profile/index.html">Profile</a>
+          </li>
         </ul>
       </div>
-    </footer>
+    </div>
+  </nav>
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <h1>WELCOME!</h1>
+        <h2> To the social media site at frameWORKS</h2>
+        <img src="../src/img/logo.png" alt="frameWORKS' logo">
+        <p>At frameWORKS we aim to give the user the best starting content to use
+          Frameworks in their daily work and occupation. While it's true that we're a sleepy
+          bunch, we aim to work through the most of the content, with minimal effort.
+          <br><b>
+            Log in now at frameWORKS to fave your cute kitties and bears photos!
+          </b>
+        </p>
+        <div class="card mt-5">
+          <div class="card-body">
+            <h2 class="card-title">Log in to view your feed</h2>
+            <form id="authForm" action="../profile/index.html" novalidate>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="your@email.com" name="email" required>
+                <div class="invalid-feedback" id="emailError">Please enter a valid email address.</div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="invalid-feedback" id="passwordError">Password must be at least 8 characters long.</div>
+                <input type="password" class="form-control" id="password" placeholder="•••••••••" name="password"
+                  minlength="8" required>
+              </div>
+              <div class="mb-3">
+                <div>
+                  <a href="../feed/index.html" class="btn btn-primary" onclick="validateForm(event)">Login</a>
+                  <button type="button" class="btn btn-secondary" onclick="showNewUserForm()">New user?</button>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-secondary" onclick="showForgotPasswordForm()">Forgot
+                    password?</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/js/form.js"></script>
+
+  <footer class="bg-dark text-center text-lg-start">
+    <!-- Copyright footer with links-->
+    <div class="text-center p-3 text-light">
+      © 2020 Copyright:
+      <a class="text-light" href="https://frameworks.techlilja.io">Frameworks@techlilja.io</a>
+      <ul>
+        <li><a href="../index.html">Log in </a>|</li>
+        <li><a href="../feed/index.html">Feed </a>|</li>
+        <li><a href="..profile/index.html">Profile</a></li>
+      </ul>
+    </div>
+  </footer>
 
 </body>
+
 </html>

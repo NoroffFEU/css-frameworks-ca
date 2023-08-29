@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +9,34 @@
     <script src="https://kit.fontawesome.com/32ede6fd94.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../src/scss/index.css">
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-md">
-    <div class="container">
-        <a class="navbar-item" href="../index.html">
-            <img src="../src/img/logo2.png" alt="Logo" title="Back to login"><br>Log in</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a class="navbar-item" href="../index.html">
+                <img src="../src/img/logo2.png" alt="Logo" title="Back to login"><br>Log in</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/feed/index.html">Feed</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile/index.html">Profile</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/feed/index.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile/index.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <div class="container">
         <div class="row mt-4">
             <div class="col-md-8">
                 <div class="mb-4">
-                    <input type="text" class="form-control" placeholder="Search..."> <!--dummy search, placeholder only-->
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <!--dummy search, placeholder only-->
                 </div>
                 <div class="mb-4">
                     <select class="form-select">
@@ -51,15 +55,18 @@
                         <form id="createPostForm" action="#" method="post" novalidate>
                             <div class="mb-3">
                                 <label for="postTitle" class="form-label">Title</label>
-                                <input type="text" placeholder="Title of the post" class="form-control" id="postTitle" name="postTitle" required>
+                                <input type="text" placeholder="Title of the post" class="form-control" id="postTitle"
+                                    name="postTitle" required>
                             </div>
                             <div class="mb-3">
-                                <label for="postImage" placeholder="Upload or paste URL" class="form-label">Image</label>
-                                <input type="text" placeholder="Upload or paste URL"  class="form-control" id="postImage" name="postImage" required>
+                                <label for="postImage" class="form-label">Image</label>
+                                <input type="text" placeholder="Upload or paste URL" class="form-control" id="postImage"
+                                    name="postImage" required>
                             </div>
                             <div class="mb-3">
-                              <label for="postContent"  class="form-label">Content</label>
-                              <textarea class="form-control" placeholder="Write your content here" id="postContent" name="postContent" required></textarea>
+                                <label for="postContent" class="form-label">Content</label>
+                                <textarea class="form-control" placeholder="Write your content here" id="postContent"
+                                    name="postContent" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Create your post</button>
                         </form>
@@ -73,16 +80,17 @@
     <script src="../src/js/script.js"></script>
 
     <footer class="bg-dark text-center text-lg-start">
-      <!-- Copyright footer with links-->
-      <div class="text-center p-3 text-light">
-        © 2020 Copyright:
-        <a class="text-light" href="https://frameworks.techlilja.io">Frameworks@techlilja.io</a>
-        <ul>
-          <li><a href="../index.html">Log in </a>|</li>
-          <li><a href="../feed/index.html">Feed </a>|</li>
-          <li><a href="..profile/index.html">Profile</a></li>
-        </ul>
-      </div>
+        <!-- Copyright footer with links-->
+        <div class="text-center p-3 text-light">
+            © 2020 Copyright:
+            <a class="text-light" href="https://frameworks.techlilja.io">Frameworks@techlilja.io</a>
+            <ul>
+                <li><a href="../index.html">Log in </a>|</li>
+                <li><a href="../feed/index.html">Feed </a>|</li>
+                <li><a href="..profile/index.html">Profile</a></li>
+            </ul>
+        </div>
     </footer>
 </body>
+
 </html>

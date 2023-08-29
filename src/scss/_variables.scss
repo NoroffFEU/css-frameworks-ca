@@ -9,3 +9,19 @@ $yellow:  #ffc107;
 $green:   #01b75c;
 $teal:    #0cab7b;
 $cyan:    #03a4c4;
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1000px,
+  xxl: 1000px
+);
+
+.input-title {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+  }

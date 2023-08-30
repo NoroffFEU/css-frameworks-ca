@@ -1,1 +1,46 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
+
+//Variables
+// $font-titles:
+// $font-body:
+$color-primary: #433520;
+$color-secondary: #fff;
+
+.navbar-brand {
+  font-family: "ADLaM Display", cursive;
+}
+
+.masthead {
+  background-image: url(/images/backgroundimage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.profile-links {
+  //   background-color: #433520;
+}
+.profile-links img {
+  width: 200px;
+  height: 150px;
+}
+
+.recent-posts img {
+  width: 60px;
+  height: 60px;
+}
+
+.followers img {
+  width: 40px;
+  height: 40px;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}

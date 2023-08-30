@@ -6,330 +6,94 @@
     <link rel="stylesheet" href="../dist/css/index.css" />
     <title>Document</title>
   </head>
-  <body class="bg-body">
-    <header class="container">HEADER</header>
-    <div class="container p-0">
-      <div
-        class="container w-100 p-0 m-0 feed-head d-flex justify-content-center position-relative"
-      >
-        <img
-          src="../img/profilepic.jpg"
-          alt=""
-          class="rounded-circle profile-pic position-absolute"
-          height="176px"
-          width="176px"
-        />
+  <body class="feed-body">
+    <header class="p-3 dropshadow ">
+      <div class="container">
+        <div
+          class="row"
+        >
+          <a
+            href="/feed/index.html"
+            class="col-6 mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
+          >
+            <img
+              src="/img/sasstrapLogoPink.png"
+              alt=""
+              width="auto"
+              height="32"
+              class="me-4"
+              alt=""
+            />
+          </a>
+          <form class="col-5 d-flex justify-content-end align-items-center " role="search">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+          <a class="p-0 col-1 d-flex justify-content-end align-items-center" href="/profile/index.html">
+          <img id="profile-pic-header"
+                src=""
+                alt="mdo"
+                width="32"
+                height="32"
+                class="rounded-circle"
+                object-fit="cover"
+              /></a>
+    </header>
+    <div class="container p-0" id="content-container">
+      <div id="header-container">
+        <div
+          class="container w-100 p-0 m-0 feed-head d-flex justify-content-center position-relative"
+        >
+          <img
+            src=""
+            alt=""
+            class="rounded-circle profile-pic position-absolute"
+            height="176px"
+            width="176px"
+            id="profile-pic"
+          />
+        </div>
+        <div
+          class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column"
+        >
+          <div class="row w-100">
+            <div class="col-sm pt-5 d-flex align-items-end">
+              <div class="row p-2">
+                <div class="col pl-2 m-0 following-container">
+                  <p class="m-0 text-center">Followers <b>35</b></p>
+                </div>
+                <div class="col pl-3 m-0 following-container">
+                  <p class="m-0 text-center">Following <b>40</b></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm mt-5">
+              <h4 class="text-center font-weight-bold" id="full-name"></h4>
+              <h6 class="text-center nametag" id="username"></h6>
+            </div>
+            <div class="col-sm d-flex align-items-end justify-content-end pt-4">
+              <div class="row p-2">
+                <div class="col"><img src="/img/github.png" alt="" /></div>
+                <div class="col"><img src="/img/facebook.png" alt="" /></div>
+                <div class="col"><img src="/img/instagram.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="container w-100 p-0 mb-5 feed-head-text">Head text</div>
       <div class="container d-flex p-0">
         <div class="container w-50 follower-container">
-          <div class="card mb-4 p-2 row">
-            <div class="mb-3">
-              <h5>Following</h5>
-            </div>
-            <div class="col mb-3 p-0 d-flex justify-content-between">
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-            </div>
-            <div class="col mb-3 p-0 d-flex justify-content-between">
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-            </div>
-            <div class="col mb-3 p-0 d-flex justify-content-between">
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-            </div>
-          </div>
-          <div class="card mb-4 p-2 row">
-            <div class="mb-3">
-              <h5>Followers</h5>
-            </div>
-            <div class="col mb-3 p-0 d-flex justify-content-between">
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-            </div>
-            <div class="col mb-3 p-0 d-flex justify-content-between">
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-            </div>
-            <div class="col mb-3 p-0 d-flex justify-content-between">
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-              <a class="col p-0" href="*"
-                ><img
-                  class="rounded-circle"
-                  width="50px"
-                  height="50px"
-                  object-fit="cover"
-                  src="/img/placeholder-profile.jpg"
-                  alt=""
-              /></a>
-            </div>
-          </div>
+          <div class="card mb-4 p-2 row">FOLLOWERS</div>
+          <div class="card mb-4 p-2 row">FOLLOWING</div>
         </div>
-        <div class="container w-100">
-          <div class="card w-100">
-            <div class="card-text row p-2">
-              <img
-                class="rounded-circle col"
-                src="/img/placeholder-profile.jpg"
-                style="width: 50px; object-fit: cover"
-                alt=""
-              />
-              <div class="col-10">
-                <h5>Username</h5>
-                <p>Time</p>
-              </div>
-            </div>
-            <img
-              class="card-img-top feed-image"
-              src="/img/feedimage.jpg"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <p class="card-text mt/2">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <div>
-                <svg
-                  width="25"
-                  height="23"
-                  viewBox="0 0 25 23"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12.0996 3.08703L12.5 3.62215L12.9004 3.08703C14.0729 1.51973 15.9524 0.5 18.05 0.5C21.609 0.5 24.5 3.3988 24.5 6.9875C24.5 8.42062 24.2714 9.7438 23.8743 10.9711L23.8732 10.9744C22.9215 13.9861 20.9729 16.4091 18.8757 18.2115C16.7763 20.0158 14.5567 21.1733 13.1139 21.6642L13.1139 21.6642L13.1086 21.6661C12.9662 21.7163 12.7455 21.75 12.5 21.75C12.2545 21.75 12.0338 21.7163 11.8914 21.6661L11.8914 21.666L11.8861 21.6642C10.4433 21.1733 8.22375 20.0158 6.12433 18.2115C4.02712 16.4091 2.07846 13.9861 1.12676 10.9744L1.12677 10.9744L1.12572 10.9711C0.728642 9.7438 0.5 8.42062 0.5 6.9875C0.5 3.3988 3.39098 0.5 6.95 0.5C9.0476 0.5 10.9271 1.51973 12.0996 3.08703Z"
-                    stroke="#FF6D75"
-                  />
-                </svg>
-                <svg
-                  width="26"
-                  height="25"
-                  viewBox="0 0 26 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.52884 21.3849L9.52887 21.3849L9.52521 21.3801C9.36107 21.1677 9.1286 20.9997 8.89982 20.8853C8.67193 20.7714 8.39759 20.6856 8.12906 20.6856H6.25313C3.07558 20.6856 0.5 18.1186 0.5 14.9575V13.7069V6.22811C0.5 3.06699 3.07558 0.5 6.25313 0.5H18.7594C21.9369 0.5 24.5125 3.06699 24.5125 6.22811V14.9575C24.5125 18.1186 21.9369 20.6856 18.7594 20.6856H16.8834C16.3371 20.6856 15.8156 20.9481 15.4849 21.3833L15.4837 21.3849L13.6077 23.8736L13.607 23.8746C13.2749 24.3175 12.8711 24.5 12.5063 24.5C12.1414 24.5 11.7377 24.3175 11.4055 23.8746L11.4048 23.8736L9.52884 21.3849ZM5.75313 11.2556C5.75313 12.2163 6.524 13.0063 7.50375 13.0063C8.4835 13.0063 9.25438 12.2163 9.25438 11.2556C9.25438 10.2916 8.46774 9.505 7.50375 9.505C6.53977 9.505 5.75313 10.2916 5.75313 11.2556ZM10.7556 11.2556C10.7556 12.2163 11.5265 13.0063 12.5063 13.0063C13.486 13.0063 14.2569 12.2163 14.2569 11.2556C14.2569 10.2916 13.4702 9.505 12.5063 9.505C11.5423 9.505 10.7556 10.2916 10.7556 11.2556ZM15.7581 11.2556C15.7581 12.2163 16.529 13.0063 17.5088 13.0063C18.4885 13.0063 19.2594 12.2163 19.2594 11.2556C19.2594 10.2916 18.4727 9.505 17.5088 9.505C16.5448 9.505 15.7581 10.2916 15.7581 11.2556Z"
-                    stroke="#FF6D75"
-                  />
-                </svg>
-                <svg
-                  width="29"
-                  height="25"
-                  viewBox="0 0 29 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.8571 7.64286H18.3571V7.14286V1.16184L27.8641 10.1617L18.3571 20.1757V14.2857V13.7857H17.8571H14.2857C10.6292 13.7857 7.41285 14.7188 4.86497 16.5879C3.08967 17.8902 1.65652 19.6341 0.627677 21.7987C0.953026 17.9977 1.93394 14.8161 3.9522 12.4446C6.49925 9.4518 10.7932 7.64286 17.8571 7.64286Z"
-                    stroke="#FF6D75"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div>card1</div>
-          <div>card2</div>
-        </div>
+        <div class="container w-100" id="feed-container"></div>
       </div>
     </div>
+    <script type="module" src="/js/feed.js"></script>
+    <script type="module" src="/js/users.js"></script>
   </body>
 </html>

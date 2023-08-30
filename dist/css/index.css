@@ -103,7 +103,7 @@
   --bs-highlight-bg: #fdfcf0;
   --bs-border-width: 1px;
   --bs-border-style: solid;
-  --bs-border-color: rgba(33, 33, 33, 0.3);
+  --bs-border-color: #ff6d75;
   --bs-border-color-translucent: rgba(33, 33, 33, 0.175);
   --bs-border-radius: 20px;
   --bs-border-radius-sm: 0.25rem;
@@ -11912,7 +11912,45 @@ textarea.form-control-lg {
   object-fit: cover;
   border-radius: 0px;
   border: 1px solid rgba(33, 33, 33, 0.3);
+}
+
+.dropshadow {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.nametag {
+  color: #ff6d75;
+}
+
+.feed-body {
+  background-color: rgba(33, 33, 33, 0.1);
+}
+
+.card-profile {
+  max-height: 50px;
+  max-width: 50px;
+  object-fit: cover;
+}
+
+.following-container {
+  max-width: fit-content;
+}
+
+.btn-light {
+  background-color: #fff;
+  color: #212121;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  min-width: fit-content;
+}
+.btn-light:active {
+  background-color: #ff6d75;
+}
+.btn-light:hover {
+  background-color: #ff6d75;
+}
+
+header {
+  background-color: #fff;
 }
 
 /* div {

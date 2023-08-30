@@ -29,5 +29,43 @@
   object-fit: cover;
   border-radius: 0px;
   border: 1px solid rgba(33, 33, 33, 0.3);
+}
+
+.dropshadow {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.nametag {
+  color: $pink;
+}
+
+.feed-body {
+  background-color: $gray-100;
+}
+
+.card-profile {
+  max-height: 50px;
+  max-width: 50px;
+  object-fit: cover;
+}
+
+.following-container {
+  max-width: fit-content;
+}
+
+.btn-light {
+  background-color: $white;
+  color: $black;
+  border: 1px solid $gray-200;
+  min-width: fit-content;
+  &:active {
+    background-color: $pink;
+  }
+  &:hover {
+    background-color: $pink;
+  }
+}
+
+header {
+  background-color: $white;
 }

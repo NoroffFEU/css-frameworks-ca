@@ -1,4 +1,4 @@
-
+@import "~bootstrap/scss/bootstrap";
 @import "variables";
 
 body{
@@ -27,4 +27,8 @@ body{
 .custom-rounded-image {
   border-radius: 50%; 
   width: 20%; 
+}
+.custom-rounded-image2{
+  border-radius: 50%; 
+  
 }

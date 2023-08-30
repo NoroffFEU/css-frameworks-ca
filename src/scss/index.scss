@@ -7,10 +7,6 @@ body {
   background-color: $white;
 }
 
-.login-box {
-  background-color: $main-green;
-}
-
 .logo {
   font-weight: bolder;
   color: $white;
@@ -32,17 +28,13 @@ body {
 // PROFILE PAGE
 
 .navbar {
-  background-color: $dark-green;
-
   .logo-nav {
     color: $white;
     font-weight: 700;
-    margin-right: 40px;
   }
 
   .nav-link {
     color: $white;
-    margin-left: 20px;
   }
 }
 
@@ -51,10 +43,20 @@ body {
 
   .profile-pic {
     height: 300px;
-    padding-top: 20px;
   }
 
   .username {
     font-size: 2rem;
   }
+}
+
+.card-profile {
+  width: 300px;
+  @include boxShadow();
+}
+
+// FEED PAGE
+
+.card-feed {
+  width: 240px;
 }

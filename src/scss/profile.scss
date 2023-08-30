@@ -1,0 +1,41 @@
+// Importer Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Importer dine egendefinerte variabler
+@import "variables";
+
+.profile-image {
+  width: 150px; /* Juster størrelsen etter behov */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.background-img{
+  background-image: url(../../dist/css/img/profilepage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.posts-img{
+  width: 200px;
+}
+
+.btn-primary{
+  background-color: $button;
+  border: none;
+}
+.btn-primary:hover{
+  background-color:$button-hover ;
+}
+
+.bg{
+  background-color:$profile-bg;
+  }
+
+  .follow-img{
+    width: 40px; /* Juster størrelsen etter behov */
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }

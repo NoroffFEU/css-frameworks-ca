@@ -4,8 +4,8 @@
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
-    "build": "sass src/scss/styles.scss:dist/css/styles.css",
-    "watch": "sass --watch src/scss/styles.scss:dist/css/styles.css & live-server"
+    "build": "sass src/scss/styles.scss:dist/css/styles.css && sass src/scss/feed.scss:dist/css/feed.css",
+    "watch": "sass --watch src/scss:dist/css & sass --watch src/scss/feed.scss:dist/css/feed.css & live-server"
   },
   "repository": {
     "type": "git",

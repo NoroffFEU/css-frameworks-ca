@@ -1,0 +1,22 @@
+@import "variables"; 
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+header {
+    background-color: $primary;
+}
+
+.card-body {
+    textarea {
+        border: none;
+    }
+    label,
+    button {
+        border-radius: 25px;
+    }
+}
+
+.btn-primary:focus {
+    box-shadow: none;
+    outline: none;
+}
+

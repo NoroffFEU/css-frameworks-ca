@@ -1,1 +1,19 @@
+@import "variables";
 
+
+.brand-logo{
+    width: min(50%, 200px);
+}
+
+.hor-center{
+    margin: 0 auto;
+}
+
+.custom-btn-large{
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .rounded-pill;
+    width: min(100%, 400px);
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'

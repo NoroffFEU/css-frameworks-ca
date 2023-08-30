@@ -105,21 +105,9 @@ body {
 .search {
   box-shadow: $box-shadow;
   margin-right: auto;
-  display: none;
 }
 
-/* breakpoint for small viewports */
-@media (max-width: 767px) {
-  input.me-2 {
-    display: none;
-  }
-}
 
-@media (min-width: 767px) {
-  .navbar-bottom {
-    display: none;
-  }
-}
 
 /* profile container */
 .profile-container {

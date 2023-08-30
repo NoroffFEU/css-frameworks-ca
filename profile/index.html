@@ -19,30 +19,30 @@
   <body>
 
     <nav class="navbar navbar-profile">
-      <div class="container d-flex">
+      <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand"></a>
         
         <!-- search bar -->
          <button class="search-btn btn btn-outline-light mr-1" type="submit">
             Search
           </button>
-          <form class="search d-flex mr-auto" role="search">
+          <form class="search d-md-flex d-none mr-auto" role="search">
           <input
-            class="form-control me-2"
+            class="form-control"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
         </form>        
         
-        <!-- profile button -->
+        <!-- profile and feed button -->
+        <div class="d-flex align-items-center">
         <a class="btn-profile btn btn-outline-light d-flex ml-2 mr-2 disabled" aria-disabled="true" role="button" data-bs-toggle="button">Profile</a>
         
-
-        <!-- feed button -->
         <a href="../feed/index.html" class="btn-profile btn btn-outline-light d-flex ml-2 mr-2" role="button" data-bs-toggle="button">Feed</a>
       </div>
     </div>
+  </div>
     </nav>
 
      <!-- Bottom navbar menu (@chatGPT) -->

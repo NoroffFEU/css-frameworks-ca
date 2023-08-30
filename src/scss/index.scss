@@ -1,38 +1,33 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-
-.bg-img{
-    background: url(/src/assets/background.jpeg);
-    
+.bg-img {
+  background: url(/src/assets/background.jpeg);
 }
-.bg-login{
-    background: url(/src/assets/backgroundloging.jpeg);
-    background-size: cover;
-    background-position: bottom center;
-    
+.bg-login {
+  background: url(/src/assets/backgroundloging.jpeg);
+  background-size: cover;
+  background-position: bottom center;
 }
 
-.w-percentage--95{
-    width: 95%;
+.w-percentage--95 {
+  width: 95%;
 }
-.h-percentage--95{
-    width: 95%;
-}
-
-.h-px--350{
-    height: 350px;
-}
-.h-px--400{
-    height: 400px;
+.h-percentage--95 {
+  width: 95%;
 }
 
-
-.w-px--max--110{
-    max-width: 100px;
+.h-px--350 {
+  height: 350px;
+}
+.h-px--400 {
+  height: 400px;
 }
 
+.w-px--max--110 {
+  max-width: 100px;
+}
 
-.w-px--min--400{
-    min-width: 400px;
+.w-px--min--400 {
+  min-width: 400px;
 }

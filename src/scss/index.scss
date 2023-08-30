@@ -3,7 +3,7 @@ $secondary-color: #eae6e5;
 $dark-color: #000;
 $secondary-light: #eae6e5c4;
 $primary-light: #67927ae9;
-$box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
 
 p {
   color: $primary-color;
@@ -11,6 +11,18 @@ p {
 
 .btn {
   box-shadow: $box-shadow;
+  text-decoration: none;
+}
+
+/* nav bottom */
+.navbar-bottom {
+  background-color: $primary-light;
+  box-shadow: $box-shadow;
+  border-radius: 60px 60px 0px 0px;
+
+  i.fas {
+    color: $secondary-color;
+  }
 }
 
 /* body styles */
@@ -78,10 +90,10 @@ body {
     align-items: center;
     justify-content: space-between;
   }
-}
 
-.navbar-brand {
-  color: $dark-color;
+  .navbar-brand {
+    color: $dark-color;
+  }
 }
 
 .profile-btn {

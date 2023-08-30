@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Enter your description here" />
+    <meta name="Looking for Frieda | Profile" content="Looking for Frieda profile page" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
@@ -33,30 +33,47 @@
             placeholder="Search"
             aria-label="Search"
           />
-         
         </form>        
         
         <!-- profile button -->
-        <div class="profile-btn d-flex">
-        <button type="button" class="btn-profile btn btn-outline-light d-flex">
-          Profile
-          <span class="position-absolute top-0 start-100 translate-middle p-2">
-            <span class="visually-hidden"></span>
-          </span>
-        </button>
+        <a class="btn-profile btn btn-outline-light d-flex ml-2 mr-2 disabled" aria-disabled="true" role="button" data-bs-toggle="button">Profile</a>
+        
 
         <!-- feed button -->
-        <button type="button" class="btn-profile btn btn-outline-light d-flex ml-2 mr-2">
-          Feed
-          <span class="position-absolute top-0 start-100 translate-middle p-2">
-            <span class="visually-hidden"></span>
-          </span>
-        </button>
-
-        
+        <a href="../feed/index.html" class="btn-profile btn btn-outline-light d-flex ml-2 mr-2" role="button" data-bs-toggle="button">Feed</a>
       </div>
     </div>
     </nav>
+
+     <!-- Bottom navbar menu (@chatGPT) -->
+     <nav class="navbar navbar-bottom navbar-expand fixed-bottom navbar-light">
+      <div class="container justify-content-around">
+        <ul class="navbar-nav">
+    
+          <div class="icon-container d-flex align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="../profile/index.html">
+                <i class="fas fa-home fa-lg fa-2x"></i>
+              </a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="post-icon fas fa-plus-circle fa-3x"></i>
+              </a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search fa-2x"></i>
+              </a>
+            </li>
+          </div>
+    
+        </ul>
+      </div>
+    </nav>
+
 
     <!-- profile container -->
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="Description" content="Enter your description here" />
+    <meta name="Looking for Frieda | Feed" content="Looking for Frieda feed page" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
@@ -17,21 +17,138 @@
     <title>Feed page</title>
   </head>
   <body>
-    <div class="hero-banner">
-      <div class="hero-banner-title">Looking For Frieda</div>
-      <div class="hero-banner-subtitle">Search. Inspire. Share.</div>
-    </div>
-    <h1>Feed page</h1>
 
-    <div class="user-posts">
-      <h2>Posts in thumbnails</h2>
-      <div class="posts">
-        <img src="thumbnail-image.jpg" alt="Thumbnail of post 1" />
-        <li>Post 1</li>
-        <li>Post 2</li>
-        <li>Post 3</li>
+    <nav class="navbar navbar-profile">
+      <div class="container d-flex">
+        <a class="navbar-brand"></a>
+        
+        <!-- search bar -->
+         <button class="search-btn btn btn-outline-light mr-1" type="submit">
+            Search
+          </button>
+          <form class="search d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+         
+        </form>        
+        
+        <!-- profile button -->
+        <a href="../profile/index.html" class="btn-profile btn btn-outline-light d-flex ml-2 mr-2" role="button" data-bs-toggle="button">Profile</a>        
+
+        <!-- feed button -->
+        <a class="btn-profile btn btn-outline-light d-flex ml-2 mr-2 disabled" aria-disabled="true" role="button" data-bs-toggle="button">Feed</a>
+
+        
       </div>
     </div>
+    </nav>
+
+    <!-- Bottom navbar menu (@chatGPT) -->
+    <nav class="navbar navbar-bottom navbar-expand fixed-bottom navbar-light">
+      <div class="container justify-content-around">
+        <ul class="navbar-nav">
+    
+          <div class="icon-container d-flex align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="../profile/index.html">
+                <i class="fas fa-home fa-lg fa-2x"></i>
+              </a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="post-icon fas fa-plus-circle fa-3x"></i>
+              </a>
+            </li>
+    
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search fa-2x"></i>
+              </a>
+            </li>
+          </div>
+    
+        </ul>
+      </div>
+    </nav>
+
+        <!-- posts section -->
+        <div class="container mb-5 mt-5">
+        <div class="row">       
+
+    <div class="col-sm-4 mb-3">
+        <div class="card pr-2 pl-2">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3" alt="post image 1">
+          <div class="card-body">
+            <h5 class="card-title">Post title 1</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3">
+        <div class="card pr-2 pl-2">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 2">
+          <div class="card-body">
+            <h5 class="card-title">Post title 2</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3">
+        <div class="card pr-2 pl-2">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 4">
+          <div class="card-body">
+            <h5 class="card-title">Post title 4</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 9 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3">
+        <div class="card pr-2 pl-2">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 4">
+          <div class="card-body">
+            <h5 class="card-title">Post title 4</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 1 day ago</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3">
+        <div class="card pr-2 pl-2">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 5">
+          <div class="card-body">
+            <h5 class="card-title">Post title 5</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4 mb-3">
+        <div class="card pr-2 pl-2">
+          <img src="../images/flowers-8100386_1280.jpg" class="card-img-top mt-3 " alt="post image 1">
+          <div class="card-body">
+            <h5 class="card-title">Post title 6</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 4 days ago</small></p>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../dist/css/index.css" />
-    <title>Document</title>
+    <title>SassTrap | Feed</title>
   </head>
   <body class="feed-body">
     <header class="p-3 dropshadow ">
@@ -54,6 +54,7 @@
             class="rounded-circle profile-pic position-absolute"
             height="176px"
             width="176px"
+            object-fit="cover"
             id="profile-pic"
           />
         </div>
@@ -61,7 +62,7 @@
           class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column"
         >
           <div class="row w-100">
-            <div class="col-sm pt-5 d-flex align-items-end">
+            <div class="col-sm pt-5 d-flex align-items-end justify-content-center">
               <div class="row p-2">
                 <div class="col pl-2 m-0 following-container">
                   <p class="m-0 text-center">Followers <b>35</b></p>
@@ -71,11 +72,11 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm mt-5">
+            <div class="col-sm mt-5" id="name-container">
               <h4 class="text-center font-weight-bold" id="full-name"></h4>
               <h6 class="text-center nametag" id="username"></h6>
             </div>
-            <div class="col-sm d-flex align-items-end justify-content-end pt-4">
+            <div class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2">
               <div class="row p-2">
                 <div class="col"><img src="/img/github.png" alt="" /></div>
                 <div class="col"><img src="/img/facebook.png" alt="" /></div>
@@ -86,11 +87,87 @@
         </div>
       </div>
       <div class="container d-flex p-0">
-        <div class="container w-50 follower-container">
-          <div class="card mb-4 p-2 row">FOLLOWERS</div>
-          <div class="card mb-4 p-2 row">FOLLOWING</div>
+        <div class="container w-50 follower-container p-0 me-2">
+          <div class="card mb-4 p-1 container">
+            <div class="container w-100 mt-3 mb-3">
+              <h6 class="nametag">I'm following <b>40</b></h6>
+            </div>
+            <div class="container mb-2 w-100 d-flex justify-content-between align-items-center">
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+            </div>
+            <div class="container mb-2 w-100 d-flex justify-content-between align-items-center">
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+            </div>
+            <div class="container mb-2 w-100 d-flex justify-content-between align-items-center">
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4 p-1 container">
+            <div class="container w-100 mt-3 mb-3">
+              <h6 class="nametag">Following me <b>35</b></h6>
+            </div>
+            <div class="container mb-2 w-100 d-flex justify-content-between align-items-center">
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+            </div>
+            <div class="container mb-2 w-100 d-flex justify-content-between align-items-center">
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+            </div>
+            <div class="container mb-2 w-100 d-flex justify-content-between align-items-center">
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+              <div class="col-3 p-0 d-flex justify-content-center">
+                <img class="rounded-circle border follow-img" width="50" src="/img/feedimage.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          
+
         </div>
-        <div class="container w-100" id="feed-container"></div>
+        <div class="container w-100 p-0" id="feed-container"></div>
       </div>
     </div>
     <script type="module" src="/js/feed.js"></script>

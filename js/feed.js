@@ -18,6 +18,15 @@ profileName.innerText = users[0].name;
 const profileUsername = document.getElementById("username");
 profileUsername.innerText = users[0].username;
 
+const nameContainer = document.getElementById("name-container");
+if (window.innerWidth < 577) {
+  nameContainer.classList.remove("mt-5");
+} else {
+  nameContainer.classList.add("mt-5");
+}
+
+console.log(nameContainer);
+
 //Upload
 const uploadContainer = document.createElement("div");
 uploadContainer.classList.add("card", "mb-4");

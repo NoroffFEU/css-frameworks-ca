@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <title>SassTrap | Profile</title>
+  </head>
+  <body class="feed-body">
+    <header class="p-3 dropshadow ">
+        <div class="container">
+          <div
+            class="row"
+          >
+            <a
+              href="/feed/index.html"
+              class="col-6 mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
+            >
+              <img
+                src="/img/sasstrapLogoPink.png"
+                alt=""
+                width="auto"
+                height="32"
+                class="me-4"
+                alt=""
+              />
+            </a>
+            <form class="col-5 d-flex justify-content-end align-items-center " role="search">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+            </form>
+            <a class="p-0 col-1 d-flex justify-content-end align-items-center" href="/profile/index.html">
+            <img id="profile-pic-header"
+                  src=""
+                  alt="mdo"
+                  width="32"
+                  height="32"
+                  class="rounded-circle"
+                  object-fit="cover"
+                /></a>
+      </header>
+      <div class="container p-0" id="content-container">
+        <div id="header-container">
+          <div
+            class="container w-100 p-0 m-0 feed-head d-flex justify-content-center position-relative"
+          >
+            <img
+              src=""
+              alt=""
+              class="rounded-circle profile-pic position-absolute"
+              height="176px"
+              width="176px"
+              object-fit="cover"
+              id="profile-pic"
+            />
+          </div>
+          <div
+            class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column"
+          >
+            <div class="row w-100">
+              <div class="col-sm pt-5 d-flex align-items-end justify-content-center">
+                <div class="row p-2">
+                  <div class="col pl-2 m-0 following-container">
+                    <p class="m-0 text-center">Followers <b>35</b></p>
+                  </div>
+                  <div class="col pl-3 m-0 following-container">
+                    <p class="m-0 text-center">Following <b>40</b></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm mt-5" id="name-container">
+                <h4 class="text-center font-weight-bold" id="full-name"></h4>
+                <h6 class="text-center nametag" id="username"></h6>
+              </div>
+              <div class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2">
+                <div class="row p-2">
+                  <div class="col"><img src="/img/github.png" alt="" /></div>
+                  <div class="col"><img src="/img/facebook.png" alt="" /></div>
+                  <div class="col"><img src="/img/instagram.png" alt="" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  </body>
+  <script type="module" src="/js/feed.js"></script>
+  <script type="module" src="/js/users.js"></script>
+</html>

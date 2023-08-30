@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/styles.css" />
+    <title>Feed Page</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- Search Bar and Sort Options -->
+      <div class="mb-4">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search posts..."
+            aria-label="Search"
+          />
+          <button class="btn btn-primary" type="button">Search</button>
+          <div class="input-group-append">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sort By
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Newest</a></li>
+              <li><a class="dropdown-item" href="#">Oldest</a></li>
+              <li><a class="dropdown-item" href="#">Most Popular</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form to Create a New Post -->
+      <div class="mb-4">
+        <h4>Create New Post</h4>
+        <form action="/create-post" method="post">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="postTitle"
+              placeholder="Post Title"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              name="postContent"
+              rows="3"
+              placeholder="Post Content"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <input
+              type="file"
+              class="form-control"
+              name="postImage"
+              accept="image/*"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Create Post</button>
+        </form>
+      </div>
+
+      <!-- List of Post Thumbnails -->
+      <h4>Posts</h4>
+      <div class="row">
+        <!-- Sample Post Thumbnail -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img
+              src="path-to-image.jpg"
+              class="card-img-top"
+              alt="Post Thumbnail"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">Some brief content...</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- More post thumbnails/cards can be added similarly -->
+      </div>
+    </div>
+
+    <!-- Ensure you've imported Bootstrap's CSS, JS, and any other necessary dependencies in your project. -->
+  </body>
+</html>

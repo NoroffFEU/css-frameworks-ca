@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./scss/styles.css" />
+    <title>User Profile</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Profile Details -->
+        <div class="col-md-4">
+          <!-- Profile Image -->
+          <div class="d-flex justify-content-center mb-4">
+            <img
+              src="path-to-profile-image.jpg"
+              alt="User's Profile Image"
+              class="img-fluid rounded-circle"
+              style="width: 150px"
+            />
+          </div>
+
+          <!-- Username -->
+          <h2 class="text-center mb-4">Username</h2>
+
+          <!-- Follow Button and Followers/Following Info -->
+          <div class="d-grid gap-2 mb-3">
+            <button class="btn btn-primary">Follow</button>
+          </div>
+
+          <!-- Badges for Following/Followers Info -->
+          <div class="d-flex justify-content-center mb-3">
+            <span class="badge bg-primary me-3 p-2">
+              <strong>150</strong> Following
+            </span>
+            <span class="badge bg-info p-2">
+              <strong>200</strong> Followers
+            </span>
+          </div>
+        </div>
+
+        <!-- User Posts -->
+        <div class="col-md-8">
+          <h3 class="mb-4">User Posts</h3>
+
+          <!-- Using Bootstrap Card component for posts -->
+          <div class="card mb-3">
+            <div class="card-header">Post Title 1</div>
+            <div class="card-body">
+              <p class="card-text">
+                This is a sample post content. You can fetch the user's posts
+                from the backend and display them here.
+              </p>
+            </div>
+          </div>
+          <!-- More posts can be added in a similar manner -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Ensure you've imported Bootstrap's CSS, JS, and any other necessary dependencies in your project. -->
+  </body>
+</html>

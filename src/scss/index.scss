@@ -1,11 +1,60 @@
-@import "_variables";
+@import "variables";
+@import "mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: red;
+  background-color: $white;
 }
 
 .login-box {
-  background-color: red;
+  background-color: $main-green;
+}
+
+.logo {
+  font-weight: bolder;
+  color: $white;
+}
+
+.login-btn {
+  background-color: $dark-green;
+  color: $white;
+
+  &:hover {
+    background-color: $light-green;
+  }
+}
+
+.forgot {
+  color: white;
+}
+
+// PROFILE PAGE
+
+.navbar {
+  background-color: $dark-green;
+
+  .logo-nav {
+    color: $white;
+    font-weight: 700;
+    margin-right: 40px;
+  }
+
+  .nav-link {
+    color: $white;
+    margin-left: 20px;
+  }
+}
+
+.profile-box {
+  @include boxShadow();
+
+  .profile-pic {
+    height: 300px;
+    padding-top: 20px;
+  }
+
+  .username {
+    font-size: 2rem;
+  }
 }

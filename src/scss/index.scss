@@ -74,6 +74,10 @@ body {
 /* Profile page */
 .navbar-profile {
   background-color: $primary-color;
+  .container {
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .navbar-brand {
@@ -81,8 +85,22 @@ body {
 }
 
 .profile-btn {
-flex-direction: row;
-justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* search bar */
+.search {
+  box-shadow: $box-shadow;
+  margin-right: auto;
+  display: none;
+}
+
+/* breakpoint for small viewports */
+@media (max-width: 767px) {
+  input.form-control {
+    display: none;
+  }
 }
 
 /* profile container */
@@ -90,7 +108,6 @@ justify-content: flex-start;
   background-color: $primary-color;
   border-radius: 0px 0px 70px 70px;
   box-shadow: $box-shadow;
-
   width: 100%;
 }
 

@@ -1,10 +1,21 @@
 @import "variables"; 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.btn-block {
-    width: 100%;
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
 }
 
-.container-height {
-    height: 100vh;
+main {
+    flex: 1;
 }
+
+.bg-image {
+    background-image: url("../../images/bg-Logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+

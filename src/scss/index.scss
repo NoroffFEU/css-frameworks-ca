@@ -6,6 +6,7 @@
 $font-titles: "Advent Pro", sans-serif;
 $font-main: "Kanit", sans-serif;
 $color-primary: #433520;
+$color-primary-light: #695433;
 $color-shadow: #d9a406;
 $color-secondary: #025955;
 $color-tertiary: #00917C;
@@ -87,7 +88,7 @@ h1 {
 }
 
 .form-control {
-    background-color: #695433;
+    background-color: $color-primary-light;
     border-color: $color-font;
     color: $color-primary;
 
@@ -167,7 +168,7 @@ h1 {
 .carousel-caption,
 .border-bottom,
 .border-top,
-.text-muted,
+
 h3 {
     color: $color-font !important;
     border-color: $color-font !important;
@@ -182,7 +183,6 @@ h3 {
 
 h2,
 .col-lg-4 {
-
     text-align: center;
 
     p {
@@ -250,4 +250,36 @@ h6 {
     p {
         color: #695433;
     }
+}
+
+.bg-light {
+    background-color: $color-primary !important;
+}
+
+.card {
+    border: 1px solid $color-primary-light;
+
+    img {
+        object-fit: cover;
+        opacity: 0.85;
+    }
+}
+
+.card-body {
+    background-color: $color-primary-light;
+}
+
+.card-text {
+    color: $color-font;
+}
+
+.btn-group {
+    .btn {
+        color: $color-font;
+        border: 1px solid $color-font;
+    }
+}
+
+.text-muted {
+    color: $color-font !important;
 }

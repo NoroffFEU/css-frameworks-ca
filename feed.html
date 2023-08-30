@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&family=Ms+Madi&display=swap"
+      rel="stylesheet"
+    />
+    <link href="dist/css/universal.css" rel="stylesheet" />
+    <link href="dist/css/feed.css" rel="stylesheet" />
+    <title>PlantScape</title>
+  </head>
+  <body class="background-img">
+    <div class="color-overlay">
+    </div>
+    <nav class="navbar navbar-expand navbar-light">
+      <div class="container">
+        <p class="fw-bold text-center mt-3 logo-title">PlantScape</p>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feed.html">Feed</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p class="text-center mt-5 fw-bold fs-4">Feed</p>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6 bg">
+          <h1>Create a New Post</h1>
+          <form>
+            <div class="form-group">
+              <label for="postTitle">Title</label>
+              <input type="text" class="form-control" id="postTitle" required>
+            </div>
+            <div class="form-group">
+              <label for="postContent">Content</label>
+              <textarea class="form-control" id="postContent" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Post</button>
+          </form>
+        </div>
+    
+        <div class="col-md-6 bg">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control form-control-sm" placeholder="Search">
+            </div>
+            <div class="col-md-6 ">
+              <select class="form-select form-select-sm" aria-label="Sort">
+                <option selected>Sort by...</option>
+                <option value="1">Date</option>
+                <option value="2">Title</option>
+              </select>
+            </div>
+          </div>
+    
+          <h2>Recent Posts</h2>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Post Title 1</h5>
+              <p class="card-text">This is the content of the first post.</p>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Post Title 2</h5>
+              <p class="card-text">This is the content of the second post.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </body>
+  <footer class="footer py-3 text-center pb-4 mt-5">
+    <div class="container">
+      <p>&copy; 2023 PlantScape. All rights reserved.</p>
+    </div>
+    <figcaption class="blockquote-footer">
+      Designed with 🌱 <cite title="Source Title">by Line Nilsen</cite>
+    </figcaption>
+  </footer>
+
+    </div>
+
+</html>

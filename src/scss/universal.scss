@@ -1,0 +1,18 @@
+// Importer Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Importer dine egendefinerte variabler
+@import "variables";
+
+.navbar{
+  background-color: $footer-navbar;
+}
+footer{
+  background-color: $footer-navbar;
+}
+
+.logo-title {
+  font-family: 'Ms Madi', cursive;
+  font-size: 2rem;
+}
+

@@ -1,0 +1,27 @@
+// Importer Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Importer dine egendefinerte variabler
+@import "variables";
+
+
+.background-img{
+  background-image: url(../../dist/css/img/posts.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.feed{
+  background-color: $feedbackground;
+}
+
+.bg{
+  background-color:$feed-background;
+  }
+.btn-primary{
+  background-color: $button;
+  border: none;
+}
+.btn-primary:hover{
+  background-color:$button-hover ;
+}

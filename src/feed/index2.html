@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed2</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">My Feed</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link 2</a>
+            </li>
+        </ul>
+        <form class="form-inline ml-3">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search for posts" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="button">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-2" style="width: 15%;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Roar Falch Hanssen</h5>
+                    <!-- Content for the first column here -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" style="width: 40%;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Column 2</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search for posts">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Search</button>
+                        </div>
+                    </div>
+                    <!-- Add post list and sort options here -->
+                    <form>
+                        <div class="form-group">
+                            <label for="newPost">Create a new post:</label>
+                            <textarea class="form-control" id="newPost" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" style="width: 25%;">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Column 3</h5>
+                    <!-- Content for the third column here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

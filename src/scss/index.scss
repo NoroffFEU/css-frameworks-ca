@@ -1,11 +1,12 @@
 $primary-color: #253c6b;
 $font-stack: Arial, sans-serif;
 $secondary-color: #dfdcdc;
-$fave-color: pink;
+$fave-color: rgb(197, 123, 135);
 $bg-color: #dbe3f5b4;
 $box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 $a-hover: #f8f8f8;
 $btn-secondary: #181414;
+
 
 body {
   height: 100vh;
@@ -37,10 +38,6 @@ footer {
     }
   }
 
-  .navbar-toggler.light-bg {
-    color: $a-hover;
-  }
-
   img {
     width: 36px;
   }
@@ -58,6 +55,10 @@ i {
 
 .form-control {
   margin-bottom: 1rem;
+}
+
+main {
+  margin: 50px;
 }
 
 .btn {
@@ -83,14 +84,6 @@ i {
   }
 }
 
-.carousel-item {
-  img {
-    height: 400px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-}
 
 #post-list {
   margin-top: 2rem;

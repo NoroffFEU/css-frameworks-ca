@@ -30,7 +30,6 @@ function addPostThumbnail(title) {
   `;
   postList.appendChild(postThumbnail);
 
-  // Add event listener to the heart icon
   const favoriteBtn = postThumbnail.querySelector('.favorite-btn');
   favoriteBtn.addEventListener('click', function(event) {
     const heartIcon = favoriteBtn.querySelector('i.fa-heart');

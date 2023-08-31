@@ -26,17 +26,13 @@ footer a {
 footer a:hover {
   color: #f8f8f8;
 }
-.navbar .navbar-toggler.light-bg,
-footer .navbar-toggler.light-bg {
-  color: #f8f8f8;
-}
 .navbar img,
 footer img {
   width: 36px;
 }
 
 i {
-  color: pink;
+  color: rgb(197, 123, 135);
   font-size: x-large;
 }
 
@@ -47,6 +43,10 @@ i {
 
 .form-control {
   margin-bottom: 1rem;
+}
+
+main {
+  margin: 50px;
 }
 
 .btn {
@@ -66,14 +66,6 @@ i {
 }
 .btn.btn-secondary:hover {
   background-color: #968c8c;
-}
-
-.carousel-item img {
-  height: 400px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
 }
 
 #post-list {

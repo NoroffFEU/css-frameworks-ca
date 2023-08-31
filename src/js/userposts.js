@@ -24,7 +24,7 @@ function addUserPost(title) {
     userPosts.appendChild(userPost);
 }
 
-//example 
+//examples added here
 
 addUserPost('Life of a UX/UI developer');
 addUserPost('Explroing the Bjørnepark');

@@ -33,8 +33,8 @@
     const icons = 
     [
         {
-            name:"Home",
-            route:"/home",
+            name:"Feed",
+            route:"/feed",
             iconName:"fa-solid fa-house"
         },
    

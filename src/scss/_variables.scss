@@ -1,21 +1,15 @@
 $primary: #40a3b3;
-$info: #0265fa;
-
-
-
+$info:    #397374;
 
 
 // scss-docs-start color-variables
-$blue:      #0265fa;
-$indigo:      #7b49cb;
-$purple:      #360395;
+$blue:    #0265fa;
+$indigo:  #7b49cb;
+$purple:  #360395;
 $pink:    #f29ac6;
-
-
 $red:     #ec7531;
 $orange:  #EF922C;
 $yellow:  #ebc14a;
-// $yellow:  #f9c905;
 $green:   #1FA62C;
 $cyan:    #40A3B3;
 $teal:    #397374;
@@ -32,18 +26,3 @@ $teal:    #397374;
 //   xl: 1000px,
 //   xxl: 1000px
 // );
-
-input[type=checkbox]:checked{
-  background-color: #028DD2 !important;
-}
-
-// .form-check-input:checked{
-//   background-color: #028DD2 !important;
-//   border: 0;
-// }
-// .form-check-input:focus, .label::after, label.form-check-label:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus {
-//   color: gray;
-//   outline: 0;
-//   border: 0;
-//   box-shadow: 0 0 0 0.1rem gray !important;
-// }

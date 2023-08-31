@@ -1,1 +1,40 @@
+// Importer Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+// Importer dine egendefinerte variabler
+@import "variables";
+
+
+.navbar{
+  background-color: $footer-navbar;
+}
+footer{
+  background-color: $footer-navbar;
+}
+body{
+  background-image: url(../../dist/css/img/login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+
+.logo-title {
+  font-family: 'Ms Madi, cursive';
+  font-size: 2rem;
+}
+
+.bg{
+  background-color:$login;
+  }
+  .bg2{
+    background-color: $signup;
+  }
+
+  .btn-primary{
+    background-color: $button-login;
+    border: none;
+  }
+  .btn-primary:hover{
+    background-color:$button-hover ;
+  }

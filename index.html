@@ -3,7 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SMA</title>
+    <link
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="container mt-3 mb-5">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <h1 class="text-center">Social Media Application</h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 d-flex justify-content-around align-items-center">
+          <a href="/profile" class="btn btn-primary disabled">Profile</a>
+          <a href="/feed" class="btn btn-primary disabled">Feed</a>
+          <a href="/index.html" class="btn btn-primary bg-dark">Log in</a>
+      </div>
+      <form class="row g-4">
+        <div class="col-12 text-center"><h2>Log in</h2></div>
+        <div class="col-xs-12 col-sm-4">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="col-xs-12 col-sm-5">
+          <input
+            type="password"
+            class="form-control"
+            id="inputPassword2"
+            placeholder="Password (Min. 8 Characters)"
+          />
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <a href="/profile/index.html" type="submit" class="btn btn-primary">Log in</a>
+        </div>
+      </form>
+      <form class="row g-4 mt-5 needs-validation" novalidate>
+        <div class="col-12 text-center"><h2>Create account</h2></div>
+        <div class="col-12">
+          <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+        </div>
+        <div class="col-12">
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend" >@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Username" required>
+          </div>
+        </div>
+        <div class="col-12">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword2"
+              placeholder="Password (Min. 8 Characters)"
+            />
+          </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">State</option>
+            <option>Agder</option>
+            <option>Akershus</option>
+            <option>Buskerud</option>
+            <option>Finnmark</option>
+            <option>Hedmark</option>
+            <option>Innlandet</option>
+            <option>Møre og Romsdal</option>
+            <option>Nordland</option>
+            <option>Oslo</option>
+            <option>Rogaland</option>
+            <option>Sogn og Fjordane</option>
+            <option>Telemark</option>
+            <option>Troms</option>
+            <option>Vestfold</option>
+            <option>Østfold</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <a href="/profile/index.html" class="btn btn-primary" type="submit">Create Account</a>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

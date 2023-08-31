@@ -2,12 +2,15 @@
 
 //Fonts
 @import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Raleway:wght@100;400&display=swap");
 
 //Variables
-// $font-titles:
-// $font-body:
-$color-primary: #433520;
-$color-secondary: #fff;
+$primary: #17e440;
+
+body {
+  font-family: "ADLaM Display", cursive;
+  font-family: "Raleway", sans-serif;
+}
 
 .navbar-brand {
   font-family: "ADLaM Display", cursive;

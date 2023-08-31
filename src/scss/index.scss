@@ -1,11 +1,12 @@
+//Variables
+$primary: #e48f17;
+$secondary: #000000;
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 //Fonts
 @import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Raleway:wght@100;400&display=swap");
-
-//Variables
-$primary: #17e440;
 
 body {
   font-family: "ADLaM Display", cursive;
@@ -48,4 +49,8 @@ a:visited,
 a:hover,
 a:active {
   text-decoration: none;
+}
+
+.margin-unset {
+  margin: unset;
 }

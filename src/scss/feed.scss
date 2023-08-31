@@ -2,7 +2,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 header {
-    background-color: $primary;
+    background: linear-gradient(to right, rgb(255, 166, 0), $primary);
 }
 
 .card-body {
@@ -15,8 +15,41 @@ header {
     }
 }
 
-.btn-primary:focus {
-    box-shadow: none;
-    outline: none;
+.input-group {
+    input,
+    button {
+        border-radius: 25px;
+    }
 }
 
+.btn-primary:focus {
+    box-shadow: none;
+}
+
+main {
+    .card{
+        border-color: $primary;
+    }
+}
+
+main::-webkit-scrollbar {
+    width: 0.5rem;
+}
+  
+main::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+main::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+}
+  
+main::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+  
+  
+  

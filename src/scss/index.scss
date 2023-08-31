@@ -59,4 +59,11 @@ body {
 
 .card-feed {
   width: 240px;
+  @include boxShadow();
+}
+
+.create-form {
+  color: $white;
+  @include boxShadow();
+  height: 550px;
 }

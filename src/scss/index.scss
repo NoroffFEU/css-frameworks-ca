@@ -2,12 +2,13 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 p {
-  color: $dark;
+  color: $primary;
 }
 
 .btn {
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.579);
   text-decoration: none;
+  color: $primary;
 }
 
 /* nav bottom */
@@ -30,7 +31,7 @@ body {
   background-image: url("/img/pexels-elina-sazonova-4130215.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;  
+  background-position: top 0px left 0px;
 }
 
 /* Authentication page */
@@ -39,33 +40,29 @@ body {
   background-color: $primary;
 }
 
-.logo {
-}
-
 .max-width {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* Log in form */
 .form-container {
-  background-color: $primary;
   justify-content: center;
 }
 
 .form-wrapper {
   .form-floating {
     input.form-control {
-      background-color: $secondary;
+      background-color: $primary;
     }
 
     label {
-      color: $secondary;
+      color: $light;
     }
   }
 }
 
 .form-title {
-  color: $dark;
+  color: $primary;
 }
 
 /* Profile page */
@@ -82,8 +79,6 @@ body {
 }
 
 /* search bar */
-.search {
-}
 
 /* profile container */
 .profile-container {

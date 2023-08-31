@@ -13,31 +13,32 @@
   </head>  
   
   <body class="body-login bg-image">
-    <nav class="navbar">
+    <nav class="navbar mt-3">
     </nav>
-    <div class="container d-flex justify-content-center align-items-center mt-5">
-          <img class="logo image-fluid max-width mt-5" src="/img/logo.png" alt="logo of Looking for Frieda">
+    <div class="container">
+          <img class="logo image-fluid max-width mt-5" src="/img/logo-boho.png" alt="logo of Boho styles">
 </div>
     <!-- form validation -->
-    <div class="container">
-      <div class="row justify-content-center align-items-center min-vh-100">
-        <div class="col-12 col-md-8">
+    <div class="container mb-1">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-12 justify-content-center align-items-center col-md-12">
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col-12 justify-content-center col-md-12">
           <!-- Form Container -->
     <div class="container">
-      <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="row justify-content-center align-items-center min-vh-70">
         <div class="col-12 col-md-10 mx-0">
-          <div class="form-container px-5 py-5 d-flex">
+          <div class="form-container py-4 d-flex">
             <div class="form-wrapper">
-              <h1 class="text-center form-title mb-5">Log in</h1>
+              <h1 class="text-center form-title mb-2">Log in</h1>
 
               <!-- submission form data will be sent to profile page -->
               <form action="/profile/index.html" method="post">
-                <div class="form-floating mb-3">
+                <p class="m-0">E-mail adress</p>
+                <div class="form-floating mb-1">
                   <input
                     type="email"
-                    class="form-control"
+                    class="form-control px-4"
                     id="email"
                     name="email"
                     placeholder="name@example.com"
@@ -45,8 +46,9 @@
                   />
                   <label for="email">Email address</label>
                 </div>
-
+                <p class="m-0">Password</p>
                 <div class="form-floating mb-3">
+                  
                   <input
                     type="password"
                     class="form-control"
@@ -60,15 +62,19 @@
                   <label for="password">Password</label>
                 </div>
 
-                <button type="submit" class="btn btn-block btn-outline-light">
+                <div class="container d-flex align-items-center justify-content-center">
+
+                <button type="submit" class="btn btn-sm btn-outline-primary px-4 py-1">
                   Log in
                 </button>
+              </div>
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>

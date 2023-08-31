@@ -1,29 +1,30 @@
-// scss-docs-start color-variables
-$green: #67927a;
-$teal: #9cc89f;
+$white:    #eae6e5;
+$gray-500: #a09fa9;
+$black:    #231d21;
 
-// scss-docs-start gray-color-variables
-$gray-100: #eae6e5;
-$gray-900: #2d2c2c;
+// scss-docs-start color-variables
+$red:     #754b4e;
+
 
 // scss-docs-start colors-map
 $colors: (
-  "green": $green,
-  "teal": $teal,
-  "gray": $gray-100,
-  "gray-dark": $gray-900,
+  "red":        $red,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-500,
 );
 
 // scss-docs-start theme-color-variables
-$primary: $green;
-$secondary: $gray-100;
-$light: $teal;
-$dark: $gray-900;
+$primary:       $white;
+$secondary:     $red;
+$light:         $gray-500;
+$dark:          $black;
+// scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "light": $light,
-  "dark": $dark,
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "light":      $light,
+  "dark":       $dark
 );

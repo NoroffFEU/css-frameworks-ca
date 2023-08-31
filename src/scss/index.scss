@@ -2,5 +2,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 h1 {
-    color: $secondary;
+  color: $white;
+  background-color: $primary;
+}
+
+.btn {
+  color: $secondary;
 }

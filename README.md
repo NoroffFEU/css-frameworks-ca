@@ -1,7 +1,5 @@
 # css-frameworks-ca
 
-![logo](assets/images/readmelogo.png)
-
 A school project site for a mockup social media
 
 ## Description

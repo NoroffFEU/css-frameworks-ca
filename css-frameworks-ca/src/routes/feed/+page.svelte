@@ -3,7 +3,7 @@
 
 
 <header>
-    <Header headerLabel="Home" />
+    <Header headerLabel="Feed" />
 </header>
 <section>
     {#each Array(15) as post, index}

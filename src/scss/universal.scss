@@ -1,7 +1,6 @@
-// Importer Bootstrap
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// Importer dine egendefinerte variabler
 @import "variables";
 
 .navbar{
@@ -12,7 +11,10 @@ footer{
 }
 
 .logo-title {
-  font-family: 'Ms Madi', cursive;
+  font-family: $font-familie-logo;
   font-size: 2rem;
 }
 
+.content-font{
+  font-family: $font-karla;
+}

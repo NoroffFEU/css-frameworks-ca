@@ -1,32 +1,49 @@
+$primary: #40a3b3;
+$info: #0265fa;
+
+
+
+
+
 // scss-docs-start color-variables
-$blue:      #7c95ba;
+$blue:      #0265fa;
 $indigo:      #7b49cb;
 $purple:      #360395;
 $pink:    #f29ac6;
-$red:     #f88b96;
 
 
-$darkorange: #ec7531;
+$red:     #ec7531;
 $orange:  #EF922C;
-$yellow:  #514c38;
-$green:   #76d2a4;
-$teal:    #40A3B3;
-$cyan:    #397374;
+$yellow:  #ebc14a;
+// $yellow:  #f9c905;
+$green:   #1FA62C;
+$cyan:    #40A3B3;
+$teal:    #397374;
 
 
 
 
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1000px,
-  xxl: 1000px
-);
 
-.input-title {
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 1px solid black;
-  }
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1000px,
+//   xxl: 1000px
+// );
+
+input[type=checkbox]:checked{
+  background-color: #028DD2 !important;
+}
+
+// .form-check-input:checked{
+//   background-color: #028DD2 !important;
+//   border: 0;
+// }
+// .form-check-input:focus, .label::after, label.form-check-label:focus, .form-check-input::after, .form-check-input:not(:disabled):not(.disabled):active:focus {
+//   color: gray;
+//   outline: 0;
+//   border: 0;
+//   box-shadow: 0 0 0 0.1rem gray !important;
+// }

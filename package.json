@@ -1,7 +1,7 @@
 {
   "name": "css-frameworks-ca",
   "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
+  "description": "A social media app where you can find bohemian inspired styles",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",

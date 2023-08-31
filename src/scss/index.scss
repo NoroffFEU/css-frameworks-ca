@@ -1,11 +1,122 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-h1 {
-  color: $white;
-  background-color: $primary;
+p {
+  color: $dark;
 }
 
 .btn {
-  color: $secondary;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.579);
+  text-decoration: none;
+}
+
+/* nav bottom */
+.navbar-bottom {
+  background-color: $primary;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.579);
+
+  i.fas {
+    color: $secondary;
+  }
+}
+
+/* body styles */
+body {
+  background-color: $primary;
+}
+
+.body-login {
+  //image from: https://pixabay.com/illustrations/flowers-wildflowers-bloom-botanical-8100386/
+  background-image: url("/img/pexels-elina-sazonova-4130215.jpg");
+}
+
+/* Authentication page */
+
+.navbar-custom {
+  background-color: $primary;
+}
+
+.logo {
+  width: 50px; /* Adjust as needed */
+  max-width: 50px; /* Maximum width for the logo */
+}
+
+/* Log in form */
+.form-container {
+  background-color: $primary;
+  justify-content: center;
+}
+
+.form-wrapper {
+  .form-floating {
+    input.form-control {
+      background-color: $secondary;
+    }
+
+    label {
+      color: $secondary;
+    }
+  }
+}
+
+.form-title {
+  color: $dark;
+}
+
+/* Profile page */
+.navbar-profile {
+  background-color: $primary;
+  .container {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    color: $dark;
+  }
+}
+
+/* search bar */
+.search {
+}
+
+/* profile container */
+.profile-container {
+  background-color: $primary;
+  border-radius: 0px 0px 70px 70px;
+  width: 100%;
+}
+
+/* Styling for the profile section container */
+
+.profile-section {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .followers {
+    flex-direction: row;
+  }
+
+  h2 {
+    /* Styling for the user name */
+    color: $dark;
+  }
+
+  p {
+    /* Styling for follower/following information */
+    color: $secondary;
+  }
+}
+
+/* profile posts */
+
+.card {
 }

@@ -38,3 +38,7 @@ $spacers: (
   4: $spacer * 3.5,
   5: $spacer * 5,
 );
+
+/* enable shadow */
+$box-shadow:                  0 .1rem 0.3rem rgba($black, .55);
+$box-shadow-lg:               0 1rem 3rem rgba($black, .175);

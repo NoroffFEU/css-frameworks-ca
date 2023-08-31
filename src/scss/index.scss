@@ -1,12 +1,13 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+$enable-shadows: true;
+
 p {
   color: $primary;
 }
 
 .btn {
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.579);
   text-decoration: none;
   color: $primary;
 }
@@ -14,7 +15,6 @@ p {
 /* nav bottom */
 .navbar-bottom {
   background-color: $primary;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.579);
 
   i.fas {
     color: $secondary;
@@ -101,9 +101,7 @@ body {
     object-fit: cover;
   }
 
-  .followers {
-    flex-direction: row;
-  }
+
 
   h2 {
     /* Styling for the user name */
@@ -118,5 +116,3 @@ body {
 
 /* profile posts */
 
-.card {
-}

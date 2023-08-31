@@ -52,6 +52,11 @@ header {
     border-color: $color-font;
 }
 
+.p-3 {
+    padding: 1.5rem 1rem !important;
+}
+
+
 .btn-close {
     color: $color-font;
 }
@@ -159,7 +164,9 @@ h1 {
     img {
         max-height: 500px;
         object-fit: cover;
+        object-position: center;
         opacity: 0.5;
+        overflow: hidden;
     }
 }
 

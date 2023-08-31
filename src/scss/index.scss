@@ -1,1 +1,12 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+.nav-link:hover {
+  transform: scale(1.2);
+}
+
+.my-card {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  min-height: 100px;
+}

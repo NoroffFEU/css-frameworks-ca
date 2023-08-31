@@ -26,13 +26,15 @@ body {
   background-color: $primary;
 }
 
-.bg-image {
+.bg-img {
   //image from: https://www.pexels.com/nb-no/bilde/sjarmerende-om-harmoni-ung-4130215/
   background-image: url("/img/pexels-elina-sazonova-4130215.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: top 0px left 0px;
+  background-repeat: no-repeat;
 }
+  
+  
+
 
 /* Authentication page */
 

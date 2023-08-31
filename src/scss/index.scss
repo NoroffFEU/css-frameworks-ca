@@ -25,9 +25,12 @@ body {
   background-color: $primary;
 }
 
-.body-login {
-  //image from: https://pixabay.com/illustrations/flowers-wildflowers-bloom-botanical-8100386/
+.bg-image {
+  //image from: https://www.pexels.com/nb-no/bilde/sjarmerende-om-harmoni-ung-4130215/
   background-image: url("/img/pexels-elina-sazonova-4130215.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;  
 }
 
 /* Authentication page */
@@ -37,8 +40,10 @@ body {
 }
 
 .logo {
-  width: 50px; /* Adjust as needed */
-  max-width: 50px; /* Maximum width for the logo */
+}
+
+.max-width {
+    max-width: 100%;
 }
 
 /* Log in form */

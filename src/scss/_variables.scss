@@ -1,30 +1,40 @@
-$white:    #eae6e5;
+$white: #eae6e5;
 $gray-500: #a09fa9;
-$black:    #231d21;
+$black: #231d21;
 
 // scss-docs-start color-variables
-$red:     #754b4e;
-
+$red: #754b4e;
 
 // scss-docs-start colors-map
 $colors: (
-  "red":        $red,
-  "black":      $black,
-  "white":      $white,
-  "gray":       $gray-500,
+  "red": $red,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-500,
 );
 
 // scss-docs-start theme-color-variables
-$primary:       $white;
-$secondary:     $red;
-$light:         $gray-500;
-$dark:          $black;
+$primary: $white;
+$secondary: $red;
+$light: $gray-500;
+$dark: $black;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "light":      $light,
-  "dark":       $dark
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark,
+);
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 1.5,
+  3: $spacer,
+  4: $spacer * 3.5,
+  5: $spacer * 5,
 );

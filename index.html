@@ -21,7 +21,7 @@
           <a href="/feed" class="btn btn-primary disabled">Feed</a>
           <a href="/index.html" class="btn btn-primary bg-dark">Log in</a>
       </div>
-      <form class="row g-4">
+      <form action="/profile/index.html" class="row g-4 needs-validation">
         <div class="col-12 text-center"><h2>Login</h2></div>
         <div class="col-xs-12 col-sm-4">
           <input
@@ -29,6 +29,7 @@
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="name@example.com"
+            required
           />
         </div>
         <div class="col-xs-12 col-sm-5">
@@ -37,13 +38,15 @@
             class="form-control"
             id="inputPassword2"
             placeholder="Password (Min. 8 Characters)"
+            pattern=".{8,}"
+            required
           />
         </div>
         <div class="col-xs-12 col-sm-3">
-          <a href="/profile/index.html" type="submit" class="btn btn-primary">Log in</a>
+          <button type="submit" class="btn btn-primary">Log in</button>
         </div>
       </form>
-      <form class="row g-4 mt-5 needs-validation" novalidate>
+      <form action="/profile/index.html" class="row g-4 mt-5 needs-validation">
         <div class="col-12 text-center"><h2>Create account</h2></div>
         <div class="col-12">
           <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
@@ -63,6 +66,8 @@
               class="form-control"
               id="inputPassword2"
               placeholder="Password (Min. 8 Characters)"
+              required
+              pattern=".{8,}"
             />
           </div>
         <div class="col-md-6">
@@ -100,7 +105,7 @@
           </div>
         </div>
         <div class="col-12">
-          <a href="/profile/index.html" class="btn btn-primary" type="submit">Create Account</a>
+          <button class="btn btn-primary" type="submit">Create Account</button>
         </div>
       </form>
     </div>

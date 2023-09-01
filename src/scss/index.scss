@@ -1,30 +1,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-$enable-shadows: true;
-
-
-.btn {
-  text-decoration: none;
-}
-
-/* nav bottom */
-.navbar-bottom {
-  background-color: $secondary;
-
-  i.fas {
-    color: $primary;
-  }
-
-  p {
-    color: $primary;
-  }
-}
-
 /* body styles */
-body {
-  background-color: $primary;
-}
 
 .bg-img {
   //image from: https://www.pexels.com/nb-no/bilde/sjarmerende-om-harmoni-ung-4130215/
@@ -33,77 +10,18 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Authentication page */
-
-.navbar-custom {
-  background-color: $primary;
-}
-
-.max-width {
-  max-width: 100%;
-}
-
-/* Log in form */
-.form-container {
-  justify-content: center;
-}
-
-.form-wrapper {
-  .form-floating {
-    input.form-control {
-      background-color: $primary;
-    }
-
-    label {
-      color: $light;
-    }
-  }
-}
-
-.form-title {
-  color: $primary;
-}
-
-/* Profile page */
-.navbar-profile {
-  background-color: $primary;
-  .container {
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .navbar-brand {
-    color: $dark;
-  }
-}
-
-
-
 /* profile container */
 .profile-container {
-  background-color: $primary;
   border-radius: 0px 0px 70px 70px;
-  width: 100%;
 }
 
 /* Styling for the profile section container */
 
 .profile-section {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   img.profile-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
   }
-
-  h2 {
-    /* Styling for the user name */
-    color: $secondary;
-  }
 }
-
-/* profile posts */

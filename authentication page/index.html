@@ -12,7 +12,7 @@
     <title>Authentication page</title>
   </head>  
   
-  <body class="bg-img min-vh-100 max-width">
+  <body class="bg-img min-vh-100 w-100">
     <nav class="navbar mt-3">
     </nav>
     <div class="container">
@@ -28,30 +28,30 @@
     <div class="container">
       <div class="row justify-content-center align-items-center min-vh-70">
         <div class="col-12 col-md-10 mx-0">
-          <div class="form-container py-4 d-flex">
+          <div class="form-container py-4 d-flex justify-content-center">
             <div class="form-wrapper">
               <h1 class="text-center form-title mb-2">Log in</h1>
 
-              <!-- submission form data will be sent to profile page -->
+              <!-- submission form data -->
               <form action="/profile/index.html" method="post">
-                <p class="m-0">E-mail adress</p>
-                <div class="form-floating mb-1">
+                <p class="m-0 text-primary">E-mail adress</p>
+                <div class="form-floating mb-1 text-light">
                   <input
                     type="email"
-                    class="form-control px-4"
+                    class="form-control border-secondary bg-primary "
                     id="email"
                     name="email"
                     placeholder="name@example.com"
                     required
                   />
-                  <label for="email">Email address</label>
+                  <label for="email ">Email address</label>
                 </div>
-                <p class="m-0">Password</p>
-                <div class="form-floating mb-3">
+                <p class="m-0 text-primary">Password</p>
+                <div class="form-floating mb-3 text-light">
                   
                   <input
                     type="password"
-                    class="form-control"
+                    class="form-control border-secondary"
                     id="password"
                     name="password"
                     placeholder="minimum 8 characters"
@@ -74,6 +74,15 @@
         </div>
       </div>
     </div>
+
+    <footer class="footer footer-expand fixed-bottom">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+          <p class="h6 text-primary my-5"> &copy; 2023 Boho Styles</p>
+        </div>
+      </div>
+    </footer>
+    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>

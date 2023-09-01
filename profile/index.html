@@ -12,7 +12,7 @@
     <title>Profile page</title>
   </head>  
   
-  <body>
+  <body class="bg-primary">
     <nav class="navbar navbar-expand-lg bg-secondary shadow">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -30,32 +30,32 @@
     
   
 <!-- Bottom navbar menu (@chatGPT) -->
-<nav class="navbar navbar-bottom navbar-expand fixed-bottom navbar-light">
+<nav class="navbar navbar-bottom navbar-expand fixed-bottom navbar-light bg-secondary">
     <div class="container justify-content-around">
       <ul class="navbar-nav">
         <div class="icon-container d-flex align-items-center">
           <p
-            class="h6 copyright d-none d-md-block d-lg-block m-3 align-items-center"
+            class="h6 copyright d-none d-md-block d-lg-block m-3 align-items-center text-primary"
           >
             &copy; 2023 Boho Styles
           </p>
           <li class="nav-item">
             <a class="nav-link" href="../profile/index.html">
-              <i class="fas fa-home fa-lg fa-2x d-md-none d-lg-none"></i>
+              <i class="fas fa-home fa-lg fa-2x d-md-none d-lg-none text-primary"></i>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i
-                class="post-icon fas fa-plus-circle fa-3x d-md-none d-lg-none"
+                class="post-icon fas fa-plus-circle fa-3x d-md-none d-lg-none text-primary"
               ></i>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <i class="fas fa-search fa-2x d-md-none d-lg-none"></i>
+              <i class="fas fa-search fa-2x d-md-none d-lg-none text-primary"></i>
             </a>
           </li>
         </div>
@@ -63,24 +63,22 @@
     </div>
   </nav>
 
-  
-  
       <!-- profile container -->
   
       <div class="container-fluid">
         <div class="row">
-          <div class="profile-container mb-3">
+          <div class="profile-container mb-3 w-100 bg-primary d-flex flex-column justify-content-center align-items-center">
             
             <!-- Profile Section -->
-            <div class="profile-section d-flex mt-5 mb-5">
-              <img
+            <div class="profile-section mt-5 mb-5 d-flex flex-column justify-content-center align-items-center">
+                <img
                 src="/img/profile.jpg"
                 alt="Profile Image"
-                class="profile-image img-thumbnail mb-2"
-              />
-              <h2 class="mb-3 display-5">User Name</h2>
- <div class="followers d-flex">
-                <p class="h6 m-2">Following: 100 Followers: 200</p>
+                class="profile-image img-thumbnail mb-2 shadow img-fluid"
+            >
+              <h2 class="mb-3 display-5 text-secondary">User Name</h2>
+                <div class="followers d-flex">
+                <p class="h6 mt-1 mb-2 text-light">Following: 100 | Followers: 200</p>
             </div>
 
             <div class="container">
@@ -88,15 +86,14 @@
                     <div class="d-flex justify-content-center align-items-center">        
                             
                             <!-- follow btn -->
-                            <button type="button" class="btn btn-secondary" disabled>Follow</button>             
+                            <button type="button" class="btn btn-secondary shadow-sm" disabled>Follow</button>             
                         </div>
                     </div>
                 </div>
             </div>
 
-            </div>
           </div>
-
+</div>
           
   
           <!-- posts section -->

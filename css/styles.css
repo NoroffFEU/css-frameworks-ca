@@ -1,11 +1,5 @@
 @import url(/sass/styles.css);
 
-:root {
-  --smoky: whitesmoke;
-  --turquoise: #298da3;
-  --trans-turq: #298da332;
-}
-
 /* GLOBAL */
 
 * {
@@ -41,14 +35,12 @@ body {
 /* HEADER */
 
 header {
-  background-color: #298da362;
   z-index: 3;
   position: sticky;
 }
 
 /* FOOTER */
 footer {
-  background-color: #298da3;
   z-index: 3;
   position: sticky;
 }
@@ -102,18 +94,6 @@ form,
   cursor: pointer;
 }
 
-#profile section:nth-child(odd) {
-  background-color: white;
-}
-
-#profile section:nth-child(even) {
-  background-color: #298da334;
-}
-
-#profile .profile-posts {
-  background-color: white !important;
-}
-
 .post-img {
   height: 80%;
   width: 100%;
@@ -122,12 +102,6 @@ form,
 }
 
 /* FEED */
-.navbar-nav > li:nth-child(even) {
-  background-color: #298da321;
-}
-.navbar-nav > li:nth-child(odd) {
-  background-color: #ffffff; /* White */
-}
 
 .content-nav {
   margin-top: -1rem;
@@ -138,10 +112,6 @@ form,
   z-index: 2;
   top: 0.5rem;
   width: 34%;
-}
-
-.create-post {
-  background-color: blue;
 }
 
 /* MEDIA QUERIES */

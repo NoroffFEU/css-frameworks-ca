@@ -17,6 +17,13 @@ body {
   font-family: "ADLaM Display", cursive;
 }
 
+.masthead {
+  background-image: url(/images/backgroundimage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .profile img {
   width: 200px;
   height: 150px;

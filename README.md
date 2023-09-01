@@ -1,2 +1,2 @@
-# css-frameworks-ca
-Replace this text with a description of your social media project.
+# css-frameworks
+Using Bootstrap and SASS to build a responsive front end for a social media application (Course Assignment).

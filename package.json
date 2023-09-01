@@ -28,7 +28,6 @@
   "devDependencies": {
     "bootstrap": "^5.2.0",
     "live-server": "^1.2.2",
-    "node-sass": "^6.0.1",
     "sass": "^1.66.1"
   }
 }

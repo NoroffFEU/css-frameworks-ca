@@ -17,12 +17,22 @@ h1 {
     font-family: "LuckiestGuy", Arial, Helvetica, sans-serif;
 }
 
+h2 {
+    font-family: "RobotoSeriff";
+}
+
 $background-image: "../../images/background_css-frameworks.jpg";
 
 .background {
     background-image: url($background-image);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom;
+    background-position: center;
     height: 100vh;
+    opacity: 90%;
+}
+
+#password::placeholder,
+#email::placeholder {
+    text-align: center;
 }

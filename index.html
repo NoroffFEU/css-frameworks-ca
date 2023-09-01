@@ -4,12 +4,90 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>Authentication Page</title>
     <link rel="stylesheet" href="/dist/css/index.css" />
   </head>
   <body>
-    <button class="btn btn-success">Hello World</button>
-    <button>Hello</button>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card-group mb-0">
+            <div class="card p-4">
+              <div class="col d-flex justify-content-center">
+                <a href="/feed/index.html" class="p-2 bg-orange mb-5">
+                  <img src="/images/logo.png" class="logo" />
+                </a>
+              </div>
+              <div class="card-body">
+                <form
+                  action="profile/index.html"
+                  class="needs-validation was-validated"
+                >
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="userName"
+                        placeholder="Username"
+                        required
+                      />
+                      <label for="userName" class="form-label">Username</label>
+                    </div>
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        required
+                        minlength="8"
+                      />
+                      <label for="password" class="form-label">Password</label>
+                      <div class="invalid-feedback">
+                        Password must be at lest 8 characters long
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </div>
+                    <div class="col-6 text-rigth">
+                      <button type="button" class="btn btn-link px-0">
+                        Forgot password?
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card text-white py-5 d-md-down-none card-sigup">
+              <div class="card-body text-center">
+                <div>
+                  <h2>Sign up</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a href="profile/index.html">
+                    <button type="button" class="btn btn-primary mt-3">
+                      Register Now!
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

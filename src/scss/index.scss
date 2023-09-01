@@ -3,21 +3,21 @@
 
 $enable-shadows: true;
 
-p {
-  color: $light;
-}
 
 .btn {
   text-decoration: none;
-  color: $light;
 }
 
 /* nav bottom */
 .navbar-bottom {
-  background-color: $primary;
+  background-color: $secondary;
 
   i.fas {
-    color: $secondary;
+    color: $primary;
+  }
+
+  p {
+    color: $primary;
   }
 }
 
@@ -77,10 +77,7 @@ body {
   }
 }
 
-/* search bar */
-.shorter-input {
-  width: 10px;
-}
+
 
 /* profile container */
 .profile-container {

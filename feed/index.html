@@ -13,35 +13,19 @@
   </head>  
   
   <body>
-    <nav class="navbar navbar-profile">
-        <div class="container d-flex">
-          <a class="navbar-brand"></a>
+    <nav class="navbar navbar-expand-lg bg-secondary shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo-boho.png" alt="logo boho styles" class="img-fluid" width="150px" height="auto">
+              </a>
           
-          <!-- search bar --> 
-          <div class="mr-auto">
-           <button class="search-btn btn btn-outline-light mr-1" type="submit">
-              Search
-            </button>
-            <!-- search bar hide in small viewports -->
-            <form class="search d-md-flex d-none mr-auto" role="search">
-            <input
-              class="form-control"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>        
-          </div>
-          <!-- profile and feed button -->
-          <div class="d-flex align-items-center">
-          <a href="../profile/index.html" class="btn-profile btn btn-outline-light d-flex ml-2 mr-2" role="button" data-bs-toggle="button">Profile</a>        
-  
-          <!-- feed button -->
-          <a class="btn-profile btn btn-outline-light d-flex ml-2 mr-2 disabled" aria-disabled="true" role="button" data-bs-toggle="button">Feed</a>
-  
-          </div>
+              <form class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
+                <div class="input-group">
+                    <input class="form-control me-0" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </div>
+            </form>
         </div>
-      </div>
       </nav>
   
       <!-- Bottom navbar menu (@chatGPT) -->
@@ -50,21 +34,23 @@
           <ul class="navbar-nav">
       
             <div class="icon-container d-flex align-items-center">
+                <p class="h6 copyright d-none d-md-block d-lg-block m-3 align-items-center">&copy; 2023 Boho Styles</p>
               <li class="nav-item">
                 <a class="nav-link" href="../profile/index.html">
-                  <i class="fas fa-home fa-lg fa-2x"></i>
+                  <i class="fas fa-home fa-lg fa-2x d-md-none d-lg-none"></i>
+                </a>
+                
+              </li>
+      
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <i class="post-icon fas fa-plus-circle fa-3x d-md-none d-lg-none"></i>
                 </a>
               </li>
       
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <i class="post-icon fas fa-plus-circle fa-3x"></i>
-                </a>
-              </li>
-      
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="fas fa-search fa-2x"></i>
+                  <i class="fas fa-search fa-2x d-md-none d-lg-none"></i>
                 </a>
               </li>
             </div>
@@ -72,6 +58,22 @@
           </ul>
         </div>
       </nav>
+
+      <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="d-flex justify-content-center align-items-center">
+
+                    <!-- buttons  -->
+                    <div class="d-flex">
+                        <a class="btn btn-outline-secondary shadow-sm mx-1" href="../profile/index.html" role="button">Profile</a>
+                    </div> 
+                    <div class="d-flex">
+                        <a class="btn-profile btn btn-outline-light d-flex disabled shadow-sm" aria-disabled="true" role="button" data-bs-toggle="button">Feed</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   
           <!-- posts section -->
           <div class="container mb-5 mt-5">

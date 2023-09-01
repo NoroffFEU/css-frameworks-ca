@@ -4,12 +4,12 @@
 $enable-shadows: true;
 
 p {
-  color: $primary;
+  color: $light;
 }
 
 .btn {
   text-decoration: none;
-  color: $primary;
+  color: $light;
 }
 
 /* nav bottom */
@@ -32,9 +32,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-  
-  
-
 
 /* Authentication page */
 
@@ -81,6 +78,9 @@ body {
 }
 
 /* search bar */
+.shorter-input {
+  width: 10px;
+}
 
 /* profile container */
 .profile-container {
@@ -103,18 +103,10 @@ body {
     object-fit: cover;
   }
 
-
-
   h2 {
     /* Styling for the user name */
-    color: $dark;
-  }
-
-  p {
-    /* Styling for follower/following information */
     color: $secondary;
   }
 }
 
 /* profile posts */
-

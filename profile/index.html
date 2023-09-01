@@ -13,45 +13,20 @@
   </head>  
   
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                
-                <!-- Logo -->
-                <div class="col-12 col-lg-3 d-lg-block col-md-3 col-sm-2">
-                    <a href="#">
-                        <img class="img-fluid" src="../img/logo-boho.png" alt="Logo of Boho styles">
-                    </a>
+    <nav class="navbar bg-secondary shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo-boho.png" alt="Bootstrap" width="auto" height="44">
+              </a>
+          
+              <form class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center">
+                <div class="input-group">
+                    <input class="form-control me-0 shorter-input" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
                 </div>
-    
-                <!-- Search Bar-->
-                <div class="col-12 col-md-9 col-lg-9">
-                    <form class="d-flex justify-content-between align-items-center">
-                        <div class="col-sm-1 d-md-flex">
-                            
-                            <input class="form-control form-control-sm me-1" type="search" placeholder="Search" aria-label="Search"> 
-                            
-                            <!-- Search Button-->
-                            <button class="btn btn-outline-primary" type="submit">Search</button>
-                        </div>
-    
-                        <!-- Buttons  -->
-                        <div class="d-none d-md-flex ms-2">
-                            <a class="btn-profile btn btn-outline-secondary d-flex disabled" aria-disabled="true" role="button" data-bs-toggle="button">Profile</a>
-                            <a href="../feed/index.html" class="btn-profile btn btn-outline-primary d-flex ms-1" role="button" data-bs-toggle="button">Feed</a>
-                        </div>
-    
-                        <!-- Buttons  -->
-                        <div class="d-flex d-md-none">
-                            <a class="btn-profile btn btn-outline-secondary d-flex disabled" aria-disabled="true" role="button" data-bs-toggle="button">Profile</a>
-                            <a href="../feed/index.html" class="btn-profile btn btn-outline-primary d-flex ms-1" role="button" data-bs-toggle="button">Feed</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            </form>
         </div>
-    </nav>
-    
+      </nav>
     
     
   
@@ -101,10 +76,27 @@
               <h2 class="mb-3 display-5">User Name</h2>
               <div class="followers d-flex">
               <p>Followers: 100</p>
-              <p class="ml-3">Following: 50</p>
+              <p>Following: 50</p>
+            </div>
+
+            <div class="container">
+                <div class="row align-items-center">
+                    
+                    <div class="d-flex justify-content-center align-items-center">
+        
+                            <!-- buttons  -->
+                            <div class="d-flex">
+                                <a class="btn-profile btn btn-outline-light d-flex disabled shadow-sm" aria-disabled="true" role="button" data-bs-toggle="button">Profile</a>
+                                <a href="../feed/index.html" class="btn btn-outline-secondary d-flex ms-1 shadow-sm" role="button" data-bs-toggle="button">Feed</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             </div>
           </div>
+
+          
   
           <!-- posts section -->
           <div class="container mb-5">

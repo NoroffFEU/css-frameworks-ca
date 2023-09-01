@@ -1,9 +1,3 @@
-@media screen and (max-width: 768px) {
-  .follower-container {
-    display: none;
-  }
-}
-
 .feed-head {
   min-height: 232px;
   background-image: url(https://s3-alpha-sig.figma.com/img/bc64/94af/13fef00cc203207e3ad7b7b191213800?Expires=1694390400&Signature=bPV0PYHBqlKVS-ak9s7LhPDKb4GGLu5qTGg9XP7JQUsRJHcUcMwF2HDfut1jCRBnm9o-4Qrl8rNKehyN8q6GIjMASr-Gpqn7GoRxYu7g3e1o~Ay1~8ULZUwQSPw44aPGC0Zg9ivXwW-~zS2HAj2qRTSDuwoS4gGiQapcRz7ViC1XIAdU4tghniklk8OUP84nmeEzcocH7I6pMTLOHLDYuHP98boaYgDg2Apy2U-Yvjil40xU9G9gBiJ80yIOtJwrBKsBChiOaprb7fX~GcJfuTA1Z19yb0Dn2cFOKNXvRw~z347npNXoc8eznK9Se1O0~BFXm7uLATbiGU7kRs4YTA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
@@ -16,7 +10,6 @@
   border-radius: 0px 0px 20px 20px;
   border: 1px solid rgba(33, 33, 33, 0.3);
   background: $white;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .profile-pic {

@@ -8,87 +8,110 @@
   </head>
   <body class="feed-body">
     <header class="p-3 dropshadow ">
-        <div class="container">
-          <div
-            class="row"
-          >
-            <a
-              href="/feed/index.html"
-              class="col-6 mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
-            >
-              <img
-                src="/img/sasstrapLogoPink.png"
-                alt=""
-                width="auto"
-                height="32"
-                class="me-4"
-                alt=""
-              />
-            </a>
-            <form class="col-5 d-flex justify-content-end align-items-center " role="search">
-              <input
-                type="search"
-                class="form-control"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </form>
-            <a class="p-0 col-1 d-flex justify-content-end align-items-center" href="/profile/index.html">
-            <img id="profile-pic-header"
-                  src=""
-                  alt="mdo"
-                  width="32"
-                  height="32"
-                  class="rounded-circle"
-                  object-fit="cover"
-                /></a>
-      </header>
-      <div class="container p-0" id="content-container">
-        <div id="header-container">
-          <div
-            class="container w-100 p-0 m-0 feed-head d-flex justify-content-center position-relative"
+      <div class="container">
+        <div
+          class="row"
+        >
+          <a
+            href="/feed/index.html"
+            class="col-6 mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
           >
             <img
-              src=""
+              src="/img/sasstrapLogoPink.png"
               alt=""
-              class="rounded-circle profile-pic position-absolute"
-              height="176px"
-              width="176px"
-              object-fit="cover"
-              id="profile-pic"
+              width="auto"
+              height="32"
+              class="me-4"
+              alt=""
             />
-          </div>
-          <div
-            class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column"
-          >
-            <div class="row w-100">
-              <div class="col-sm pt-5 d-flex align-items-end justify-content-center">
-                <div class="row p-2">
-                  <div class="col pl-2 m-0 following-container">
-                    <p class="m-0 text-center">Followers <b>35</b></p>
-                  </div>
-                  <div class="col pl-3 m-0 following-container">
-                    <p class="m-0 text-center">Following <b>40</b></p>
-                  </div>
+          </a>
+          <form class="col-5 d-flex justify-content-end align-items-center " role="search">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+          <a class="p-0 col-1 d-flex justify-content-end align-items-center" href="/profile/index.html">
+          <img id="profile-pic-header"
+                src=""
+                alt="mdo"
+                width="32"
+                height="32"
+                class="rounded-circle"
+                object-fit="cover"
+              /></a>
+    </header>  
+    <div class="container p-3 pt-0" id="content-container">
+      <div id="header-container">
+        <div
+          class="container w-100 p-0 m-0 feed-head d-flex justify-content-center position-relative"
+        >
+        <button class="btn primary position-absolute" id="follow-btn">Follow</button>
+          <img
+            src=""
+            alt=""
+            class="rounded-circle profile-pic position-absolute"
+            height="176px"
+            width="176px"
+            object-fit="cover"
+            id="profile-pic"
+          />
+        </div>
+        <div
+          class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column"
+        >
+          <div class="row w-100">
+            <div class="col-sm pt-5 d-flex align-items-end justify-content-center">
+              <div class="row p-2">
+                <div class="col pl-2 m-0 following-container">
+                  <p class="m-0 text-center">Followers <b>35</b></p>
+                </div>
+                <div class="col pl-3 m-0 following-container">
+                  <p class="m-0 text-center">Following <b>40</b></p>
                 </div>
               </div>
-              <div class="col-sm mt-5" id="name-container">
-                <h4 class="text-center font-weight-bold" id="full-name"></h4>
-                <h6 class="text-center nametag" id="username"></h6>
-              </div>
-              <div class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2">
-                <div class="row p-2">
-                  <div class="col"><img src="/img/github.png" alt="" /></div>
-                  <div class="col"><img src="/img/facebook.png" alt="" /></div>
-                  <div class="col"><img src="/img/instagram.png" alt="" /></div>
-                </div>
+            </div>
+            <div class="col-sm mt-5" id="name-container">
+              <h4 class="text-center font-weight-bold" id="full-name"></h4>
+              <h6 class="text-center nametag" id="username"></h6>
+            </div>
+            <div class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2">
+              <div class="row p-2">
+                <div class="col"><img src="/img/github.png" alt="" /></div>
+                <div class="col"><img src="/img/facebook.png" alt="" /></div>
+                <div class="col"><img src="/img/instagram.png" alt="" /></div>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
+      <div class="container row d-flex p-0 m-0">
+        <div class="container row w-100 p-0 m-0 mb-4" id="side-container">
+          <div class="container col w-50 follower-container m-0 p-0 me-2" id="followers-container"></div>
+          <div class="container col w-50 follower-container m-0 p-0" id="following-container"></div>
+      </div>
+        <div class="container card dropshadow p-0 w-100 m-0" id="profile-container">
+          <div class="container row w-100">
+            <h6 class="pt-3">Latest posts</h6>
+          </div>
+          <div class="container row mt-3 p-3 m-0">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+              <img class="img-profile p-0 dropshadow col-2 m-1" src="/img/feedimage.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/followers.js"></script>
+    <script type="module" src="/js/users.js"></script>
+    <script type="module" src="/js/head.js"></script>
   </body>
-  <script type="module" src="/js/feed.js"></script>
-  <script type="module" src="/js/users.js"></script>
 </html>

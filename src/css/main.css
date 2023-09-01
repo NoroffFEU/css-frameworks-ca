@@ -1,5 +1,7 @@
-@charset "UTF-8";
-@import "../assets/bootstrap/css/bootstrap.min.css";
+body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #fff;
   font-family: Arial, sans-serif;
@@ -18,18 +20,18 @@ body {
 
 .header {
   display: flex;
-  justify-content: center; /* Centruj napis na gorze strony */
+  justify-content: center;
   align-items: center;
   padding: 20px 0;
 }
 
 .logo {
-  font-size: 24px; /* Powiększ napis WELCOME */
+  font-size: 24px;
   font-weight: bold;
   color: #8a3ffc;
   text-align: center;
   width: 100%;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Dodaj delikatny cień */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .auth-page {
@@ -65,7 +67,7 @@ body {
   margin-bottom: 5px;
 }
 .auth-page .auth-form .form-group .form-control {
-  width: 90%; /* Zmniejsz szerokość pola wprowadzania */
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;

@@ -10,6 +10,12 @@
 
 </head>
 
+<!-- 
+The authentication page should have a form to login or register to the application. 
+Ensure to include HTML form validation and use /profile as the action attribute.
+ Password must have a minimum length of 8 characters.
+ -->
+
 <body>
 
     <h1>The Sage Community </h1>
@@ -18,46 +24,46 @@
 
     <h2>welcome back</h2>
 
-<form class="container-fluid" action="">
+    <form class="container-fluid" action="">
 
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Username</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="josephineee97">
-    </div>
-
-
-
-
-    <!--    PAssword -->
-
-    <div class="mb-3">
-
-        <label for="inputPassword6" class="col-form-label">Password</label>
-
-        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-<!--         validation applies to input elements -->
-
-        <div class="col-auto">
-            <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-            </span>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Username</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="josephineee97">
         </div>
-    </div>
 
-    <!-- button -->
 
-    <a href="profile.html"><button type="button"  class="btn btn-primary btn-lg">login</button></a>
-    <!-- 
+
+
+        <!--    PAssword -->
+
+        <div class="mb-3">
+
+            <label for="inputPassword6" class="col-form-label">Password</label>
+
+            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+            <!--         validation applies to input elements -->
+
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    Must be 8-20 characters long.
+                </span>
+            </div>
+        </div>
+
+        <!-- button -->
+
+        <a href="profile.html"><button type="button" class="btn btn-primary btn-lg">login</button></a>
+        <!-- 
 
       
       make it work with the validation of password
  -->
 
-</form>
+    </form>
     <!-- username -->
 
-    
-<!-- 
+
+    <!-- 
     <nav class="navbar navbar-expand fixed-bottom bg-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -80,7 +86,7 @@
         </div>
     </nav> -->
 
-   
+
 
 </body>
 

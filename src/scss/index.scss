@@ -1,2 +1,52 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background-color: $bg;
+}
+
+.logo {
+  width: 120px;
+  border-radius: $circle;
+}
+
+.logo-nav {
+  width: 80px;
+}
+
+.card-sigup {
+  background-color: $tertiary;
+}
+
+.btn {
+  background-color: $btn-g;
+}
+
+.post-img {
+  max-width: 60px;
+  border-radius: $circle;
+}
+
+.fa-solid {
+  font-size: 1.5rem;
+}
+
+.post-title {
+  text-transform: uppercase;
+}
+
+.img-profile {
+  border-radius: $circle;
+}
+
+.main-img {
+  max-width: 300px;
+}
+
+.bg-profile {
+  background: center / cover no-repeat url(/images/bg-profile.jpg);
+}
+
+.card-follow {
+  background-color: $btn-g;
+}

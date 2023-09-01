@@ -5,14 +5,13 @@
 @import "variables";
 
 .profile-image {
-  width: 150px; /* Juster størrelsen etter behov */
+  width: 150px;
   height: 150px;
   object-fit: cover;
-  border-radius: 50%;
 }
 
 .background-img{
-  background-image: url(../../dist/css/img/profilepage.jpg);
+  background-image: url(/img/profilepage.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

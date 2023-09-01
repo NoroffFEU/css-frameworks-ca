@@ -10709,7 +10709,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-image: url(../../dist/css/img/login.jpg);
+  background-image: url(/img/login.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -11953,12 +11953,21 @@ header {
   object-fit: cover;
 }
 
+.header-logo {
+  max-width: 150px;
+  object-fit: cover;
+}
+
 #follow-btn {
   z-index: 5;
   bottom: -50px;
   background-color: #ff6d75;
   width: 150px;
   color: #fff;
+}
+
+.img-profile {
+  max-height: 200px;
 }
 
 /* div {

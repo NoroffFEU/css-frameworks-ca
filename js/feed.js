@@ -20,8 +20,8 @@ uploadProfilepic.style.height = "50px";
 uploadProfilepic.style.objectFit = "cover";
 uploadHead.appendChild(uploadProfilepic);
 
-const uploadHeadText = document.createElement("p");
-uploadHeadText.classList.add("text-muted", "pt-3");
+const uploadHeadText = document.createElement("textarea");
+uploadHeadText.classList.add("text-muted", "pt-3", "border-0", "w-100");
 uploadHeadText.innerText = "What's on your mind?";
 uploadHead.appendChild(uploadHeadText);
 

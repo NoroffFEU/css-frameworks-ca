@@ -7,42 +7,56 @@
     <title>SassTrap | Feed</title>
   </head>
   <body class="feed-body">
-    <header class="p-3 dropshadow">
-      <div class="container">
-        <div
-          class="row"
+    <nav class="navbar navbar-expand-md dropshadow">
+      <div class="container w-100">
+        <a class="navbar-brand" href="/feed/index.html"
+          ><img class="header-logo" src="/img/sasstrapLogoPink.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler btn-toggle"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          data-bs-target="#hamburger-nav"
         >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="hamburger-nav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/feed/index.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/index.html">Profile</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-end w-100">
+            <form class="form-inline my-2 my-md-0">
+              <input class="form-control" type="text" placeholder="Search" />
+            </form>
+          </div>
           <a
-            href="/feed/index.html"
-            class="col-6 mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
+            class="p-0 col-1 d-flex justify-content-center align-items-center"
+            href="/profile/index.html"
           >
             <img
-              src="/img/sasstrapLogoPink.png"
-              alt=""
-              width="auto"
+              id="profile-pic-header"
+              src=""
+              alt="mdo"
+              width="32"
               height="32"
-              class="me-4"
-              alt=""
-            />
-          </a>
-          <form class="col-5 d-flex justify-content-end align-items-center " role="search">
-            <input
-              type="search"
-              class="form-control"
-              placeholder="Search..."
-              aria-label="Search"
-            />
-          </form>
-          <a class="p-0 col-1 d-flex justify-content-end align-items-center" href="/profile/index.html">
-          <img id="profile-pic-header"
-                src=""
-                alt="mdo"
-                width="32"
-                height="32"
-                class="rounded-circle"
-                object-fit="cover"
-              /></a>
-    </header>
+              class="rounded-circle"
+              object-fit="cover"
+          /></a>
+        </div>
+      </div>
+    </nav>
     <div class="container-sm p-3 pt-0" id="content-container">
       <div id="header-container">
         <div
@@ -62,7 +76,9 @@
           class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column dropshadow"
         >
           <div class="row w-100">
-            <div class="col-sm pt-5 d-flex align-items-end justify-content-center">
+            <div
+              class="col-sm pt-5 d-flex align-items-end justify-content-center"
+            >
               <div class="row p-2">
                 <div class="col pl-2 m-0 following-container">
                   <p class="m-0 text-center">Followers <b>35</b></p>
@@ -76,7 +92,9 @@
               <h4 class="text-center font-weight-bold" id="full-name"></h4>
               <h6 class="text-center nametag" id="username"></h6>
             </div>
-            <div class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2">
+            <div
+              class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2"
+            >
               <div class="row p-2">
                 <div class="col"><img src="/img/github.png" alt="" /></div>
                 <div class="col"><img src="/img/facebook.png" alt="" /></div>
@@ -86,11 +104,20 @@
           </div>
         </div>
       </div>
-      <div class="container w-100 d-flex p-0" >
-        <div class="container w-50 p-0 me-3 d-none d-md-block" id="side-container">
-          <div class="container w-100 follower-container m-0 p-0 mb-3" id="followers-container"></div>
-          <div class="container w-100 follower-container m-0 p-0" id="following-container"></div>
-      </div>
+      <div class="container w-100 d-flex p-0">
+        <div
+          class="container w-50 p-0 me-3 d-none d-md-block"
+          id="side-container"
+        >
+          <div
+            class="container w-100 follower-container m-0 p-0 mb-3"
+            id="followers-container"
+          ></div>
+          <div
+            class="container w-100 follower-container m-0 p-0"
+            id="following-container"
+          ></div>
+        </div>
         <div class="container w-100 p-0" id="feed-container"></div>
       </div>
     </div>
@@ -98,6 +125,5 @@
     <script type="module" src="/js/feed.js"></script>
     <script type="module" src="/js/followers.js"></script>
     <script type="module" src="/js/users.js"></script>
-
   </body>
 </html>

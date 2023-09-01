@@ -31,8 +31,8 @@ users.forEach((person) => {
     "border",
     "m-1"
   );
-  followersIcon.style.width = "50px";
-  followersIcon.style.height = "50px";
+  followersIcon.style.width = "30px";
+  followersIcon.style.height = "30px";
   followersIcon.style.objectFit = "cover";
   followersIcon.src = person.profilePicture;
   followesIconContainer.appendChild(followersIcon);
@@ -69,17 +69,9 @@ users.forEach((person) => {
     "border",
     "m-1"
   );
-  followingIcon.style.width = "50px";
-  followingIcon.style.height = "50px";
+  followingIcon.style.width = "30px";
+  followingIcon.style.height = "30px";
   followingIcon.style.objectFit = "cover";
   followingIcon.src = person.profilePicture;
   followingIconContainer.appendChild(followingIcon);
 });
-
-if (window.innerWidth < 768) {
-  followersCard.classList.style.display = "none";
-  followingCard.classList.style.display = "none";
-} else {
-  followersCard.classList.style.display = "block";
-  followingCard.classList.style.display = "block";
-}

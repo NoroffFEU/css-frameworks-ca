@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <title>SassTrap | Profile</title>
+  </head>
+  <body class="feed-body">
+    <nav class="navbar navbar-expand-md dropshadow">
+      <div class="container w-100">
+        <a class="navbar-brand" href="/feed/index.html"
+          ><img class="header-logo" src="/img/sasstrapLogoPink.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler btn-toggle"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          data-bs-target="#hamburger-nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="hamburger-nav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/feed/index.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/index.html">Profile</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-end w-100">
+            <form class="form-inline my-2 my-md-0">
+              <input class="form-control" type="text" placeholder="Search" />
+            </form>
+          </div>
+          <a
+            class="p-0 col-1 d-flex justify-content-center align-items-center"
+            href="/profile/index.html"
+          >
+            <img
+              id="profile-pic-header"
+              src=""
+              alt="mdo"
+              width="32"
+              height="32"
+              class="rounded-circle"
+              object-fit="cover"
+          /></a>
+        </div>
+      </div>
+    </nav>
+    <div class="container p-3 pt-0" id="content-container">
+      <div id="header-container">
+        <div
+          class="container w-100 p-0 m-0 feed-head d-flex justify-content-center position-relative"
+        >
+          <button class="btn primary position-absolute" id="follow-btn">
+            Follow
+          </button>
+          <img
+            src=""
+            alt=""
+            class="rounded-circle profile-pic position-absolute"
+            height="176px"
+            width="176px"
+            object-fit="cover"
+            id="profile-pic"
+          />
+        </div>
+        <div
+          class="container w-100 p-0 mb-5 feed-head-text justify-content-center align-items-center d-flex flex-column"
+        >
+          <div class="row w-100">
+            <div
+              class="col-sm pt-5 d-flex align-items-end justify-content-center"
+            >
+              <div class="row p-2">
+                <div class="col pl-2 m-0 following-container">
+                  <p class="m-0 text-center">Followers <b>35</b></p>
+                </div>
+                <div class="col pl-3 m-0 following-container">
+                  <p class="m-0 text-center">Following <b>40</b></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm mt-5" id="name-container">
+              <h4 class="text-center font-weight-bold" id="full-name"></h4>
+              <h6 class="text-center nametag" id="username"></h6>
+            </div>
+            <div
+              class="col-sm d-flex align-items-end justify-content-center pt-2 mb-2"
+            >
+              <div class="row p-2">
+                <div class="col"><img src="/img/github.png" alt="" /></div>
+                <div class="col"><img src="/img/facebook.png" alt="" /></div>
+                <div class="col"><img src="/img/instagram.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container row d-flex p-0 m-0">
+        <div class="container row w-100 p-0 m-0 mb-4" id="side-container">
+          <div
+            class="container col w-50 follower-container m-0 p-0 me-2"
+            id="followers-container"
+          ></div>
+          <div
+            class="container col w-50 follower-container m-0 p-0"
+            id="following-container"
+          ></div>
+        </div>
+        <div
+          class="container card dropshadow p-0 w-100 m-0"
+          id="profile-container"
+        ></div>
+      </div>
+    </div>
+    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/followers.js"></script>
+    <script type="module" src="/js/users.js"></script>
+    <script type="module" src="/js/head.js"></script>
+  </body>
+</html>

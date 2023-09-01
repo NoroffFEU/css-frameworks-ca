@@ -1,0 +1,40 @@
+@import "variables";
+
+
+.navbar {
+    background-color: $white; 
+}
+
+.card {
+    border: none;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+
+.btn-primary {
+    background-color: $blue; 
+    border-color: $blue; 
+}
+
+.nav-link:hover {
+    background-color: darken($blue, 10%); 
+    border-color: darken($blue, 10%); 
+    color: red; 
+}
+
+
+.square-avatar {
+    width: 48px; 
+    height: 48px; 
+    object-fit: cover; 
+    border-radius: 50%;
+}
+
+
+.nav-link.profile-link {
+    cursor: pointer; 
+}
+

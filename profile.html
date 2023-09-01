@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SociLink | Username's Profile</title>
+    <meta
+      name="description"
+      content="View the latest updates, photos, and videos from Username. Connect, interact, and engage with Username on SociLink." />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="/profile.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- NAV -->
+      <nav class="navbar p-3 p-sm-4">
+        <div
+          class="container-fluid d-flex justify-content-center justify-content-between justify-content-sm-around">
+          <a href="#" class="navbar-brand">
+            <img
+              src="/resources/images/logo_tmb.png"
+              alt="SociLink logo"
+              class="mini-icon" />
+          </a>
+          <a href="/feed.html">
+            <img
+              src="/resources/icons/web-content.png"
+              alt="view feed"
+              class="mini-icon" />
+          </a>
+          <img
+            src="/resources/icons/add.png"
+            alt="create post"
+            class="clickable mini-icon" />
+          <a href="/profile.html">
+            <img
+              src="/resources/icons/profile-user.png"
+              alt="view profile"
+              class="mini-icon" />
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div id="profile" class="bg-light">
+      <div class="space-2">
+        <div class="container-xxl">
+          <!-- Wrapper -->
+          <div class="row">
+            <div class="left col-md-6">
+              <section class="profile-info p-4 p-sm-5 rounded">
+                <div class="container">
+                  <div
+                    class="row col d-flex justify-content-center justify-content-sm-between">
+                    <img
+                      src="/resources/icons/profile-user.png"
+                      alt="profile picture"
+                      class="img-fluid profile-img col-4 col-sm-3 col-md-4" />
+                    <div class="col-4 col-sm-6 col-md-4">
+                      <p>Username</p>
+                      <p class="small user-status">Active now</p>
+                      <p style="white-space: nowrap">Newbie 🌱</p>
+                    </div>
+                    <div class="d-flex col-4 col-sm-3 col-md-4 gap-4" ;>
+                      <img
+                        src="/resources/icons/mail.png"
+                        alt="send message"
+                        class="mini-icon" />
+                      <img
+                        src="/resources/icons/like.png"
+                        alt="follow user"
+                        class="mini-icon" />
+                    </div>
+                    <p class="col-12 mt-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Harum cumque dignissimos iure distinctio? Error eveniet
+                      iure accusantium reiciendis aperiam vero officia, sequi
+                      iste autem dolorum! Dignissimos, sunt?
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <section class="followers p-4 mt-4 rounded">
+                <p class="lead">Recent Followers</p>
+                <div
+                  class="d-flex justify-content-center justify-content-evenly gap-3 mt-5">
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable d-md-none d-xl-block" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable d-none d-sm-block d-md-none" />
+                </div>
+                <p class="view-more small mt-5 d-flex justify-content-end">
+                  View all followers ➔
+                </p>
+              </section>
+              <section class="following p-4 mt-4 rounded">
+                <p class="lead">Following</p>
+                <div
+                  class="d-flex justify-content-center justify-content-evenly gap-3 mt-5">
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable d-md-none d-xl-block" />
+                  <img
+                    src="/resources/icons/profile-user.png"
+                    alt="profile-user"
+                    class="profile-img clickable d-none d-sm-block d-md-none" />
+                </div>
+                <p class="view-more small mt-5 d-flex justify-content-end">
+                  View all followed users ➔
+                </p>
+              </section>
+            </div>
+            <div class="right col-md-6">
+              <p class="lead py-3 px-4">Recent posts by Username</p>
+              <section class="profile-posts rounded">
+                <!-- POST CAROUSEL -->
+
+                <div
+                  id="carouselExampleSlidesOnly"
+                  class="carousel slide"
+                  data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="container post">
+                        <div
+                          class="row p-4 d-flex justify-content-center align-items-center justify-content-between">
+                          <img
+                            src="/resources/icons/profile-user.png"
+                            alt="profile-user"
+                            class="icon col-3 col-lg-2" />
+                          <div class="col-5 col-lg-auto">
+                            <p>Username</p>
+                            <p class="timestamp small">< 4 hours ago</p>
+                          </div>
+                          <div class="col-4 col-lg-2 d-flex gap-3 gap-sm-4">
+                            <img
+                              src="/resources/icons/dislike.png"
+                              alt="dislike post"
+                              class="mini-icon" />
+                            <img
+                              src="/resources/icons/like.png"
+                              alt="like post"
+                              class="mini-icon" />
+                          </div>
+                          <div class="d-flex flex-column align-items-center">
+                            <p class="col-12 mt-3">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Consequuntur fugit asperiores quam adipisci
+                              nisi, at rerum officia quia voluptatem odit
+                              blanditiis ipsa libero nobis ipsum rem quibusdam?
+                            </p>
+                          </div>
+                          <div
+                            class="d-lg-flex flex-lg-row-reverse justify-content-lg-between">
+                            <p class="view-more small d-flex mt-3">
+                              View all comments ➔
+                            </p>
+                            <div class="d-flex clickable mt-2">
+                              <img
+                                src="/resources/icons/comment.png"
+                                alt="comment post"
+                                class="mini-icon" />
+                              <p class="ms-3 mt-1">Comment</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container post">
+                        <div
+                          class="row p-4 d-flex justify-content-center align-items-center justify-content-between">
+                          <img
+                            src="/resources/icons/profile-user.png"
+                            alt="profile-user"
+                            class="icon col-3 col-lg-2" />
+                          <div class="col-5 col-lg-auto">
+                            <p>Username</p>
+                            <p class="timestamp small">< 4 hours ago</p>
+                          </div>
+                          <div class="col-4 col-lg-2 d-flex gap-3 gap-sm-4">
+                            <img
+                              src="/resources/icons/dislike.png"
+                              alt="dislike post"
+                              class="mini-icon" />
+                            <img
+                              src="/resources/icons/like.png"
+                              alt="like post"
+                              class="mini-icon" />
+                          </div>
+                          <div class="d-flex flex-column align-items-center">
+                            <img
+                              src="/resources/images/hiking-img.png"
+                              alt="image post"
+                              class="img-fluid post-img mt-3" />
+                            <p class="col-12 mt-3">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit.
+                            </p>
+                          </div>
+                          <div
+                            class="d-lg-flex flex-lg-row-reverse justify-content-lg-between">
+                            <p class="view-more small d-flex mt-3">
+                              View all comments ➔
+                            </p>
+                            <div class="d-flex clickable mt-2">
+                              <img
+                                src="/resources/icons/comment.png"
+                                alt="comment post"
+                                class="mini-icon" />
+                              <p class="ms-3 mt-1">Comment</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="container post">
+                        <div
+                          class="row p-4 d-flex justify-content-center align-items-center justify-content-between">
+                          <img
+                            src="/resources/icons/profile-user.png"
+                            alt="profile-user"
+                            class="icon col-3 col-lg-2" />
+                          <div class="col-5 col-lg-auto">
+                            <p>Username</p>
+                            <p class="timestamp small">< 4 hours ago</p>
+                          </div>
+                          <div class="col-4 col-lg-2 d-flex gap-3 gap-sm-4">
+                            <img
+                              src="/resources/icons/dislike.png"
+                              alt="dislike post"
+                              class="mini-icon" />
+                            <img
+                              src="/resources/icons/like.png"
+                              alt="like post"
+                              class="mini-icon" />
+                          </div>
+                          <div class="d-flex flex-column align-items-center">
+                            <p class="col-12 mt-3">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Eveniet ad earum autem delectus unde tenetur
+                              esse est praesentium fugit fuga quia quis quasi
+                              ipsum illum quisquam dicta, soluta, accusantium
+                              ab, laudantium ea. Quos cupiditate voluptatem
+                              eius, consequatur blanditiis iure iusto eveniet
+                              vero aliquid id sed magni odit?
+                            </p>
+                          </div>
+                          <div
+                            class="d-lg-flex flex-lg-row-reverse justify-content-lg-between">
+                            <p class="view-more small d-flex mt-3">
+                              View all comments ➔
+                            </p>
+                            <div class="d-flex clickable mt-2">
+                              <img
+                                src="/resources/icons/comment.png"
+                                alt="comment post"
+                                class="mini-icon" />
+                              <p class="ms-3 mt-1">Comment</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="p-5 pb-4">
+      <p class="mt-4 text-light text-center">
+        © SociLink 2023. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

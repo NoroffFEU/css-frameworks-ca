@@ -1,0 +1,151 @@
+@import url(/sass/styles.css);
+
+:root {
+  --smoky: whitesmoke;
+  --turquoise: #298da3;
+  --trans-turq: #298da332;
+}
+
+/* GLOBAL */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.space-2 {
+  padding: 5% 0;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.icon {
+  width: auto;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.mini-icon {
+  width: auto;
+  height: 2rem;
+  cursor: pointer;
+}
+
+/* HEADER */
+
+header {
+  background-color: #298da362;
+  z-index: 3;
+  position: sticky;
+}
+
+/* FOOTER */
+footer {
+  background-color: #298da3;
+  z-index: 3;
+  position: sticky;
+}
+
+/* INDEX/LOGIN PAGE */
+
+#login {
+  background-image: url(/resources/bg/socilink-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-bg {
+  background-image: url(/resources/images/hero.jpg);
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  background-position: 50% 40%;
+}
+
+.hero-img {
+  object-fit: cover;
+}
+
+.hero-slogan {
+  width: 70%;
+  max-width: 30rem;
+}
+
+form,
+.profile-intro {
+  max-width: 30rem;
+}
+
+/* PROFILE */
+
+.profile-img {
+  height: 4rem;
+  width: auto;
+}
+
+.user-status,
+.timestamp {
+  font-style: italic;
+  margin-top: -1rem;
+  white-space: nowrap;
+}
+
+.view-more {
+  font-style: italic;
+  cursor: pointer;
+}
+
+#profile section:nth-child(odd) {
+  background-color: white;
+}
+
+#profile section:nth-child(even) {
+  background-color: #298da334;
+}
+
+#profile .profile-posts {
+  background-color: white !important;
+}
+
+.post-img {
+  height: 80%;
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+}
+
+/* FEED */
+.navbar-nav > li:nth-child(even) {
+  background-color: #298da321;
+}
+.navbar-nav > li:nth-child(odd) {
+  background-color: #ffffff; /* White */
+}
+
+.content-nav {
+  margin-top: -1rem;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 2;
+  top: 0.5rem;
+  width: 34%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 992px) {
+  .space {
+    padding: 5%;
+  }
+  .hero-bg {
+    display: none;
+  }
+}

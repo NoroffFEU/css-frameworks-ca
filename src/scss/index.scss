@@ -1,1 +1,305 @@
+$primary: #26BFBF;
+$secondary: #F39237;
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+// Path: src/scss/styles.scss
+
+$colours: (
+  
+  "secondary": #F39237,
+  "tertiary": #F7B678b8, 
+  "quaternary": #26bfbf8b,
+  "white-text": #ffffff,
+  "black-text": #000000,
+  "invalide": #ff0000,
+);
+
+@mixin button-border($radius) {
+    border-radius: $radius;
+    border: 2px solid $primary;
+    color: $primary;
+}
+
+@mixin flex-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  // margin-bottom: 2rem;
+  font-size: 2rem;
+}
+@mixin main-border {
+  border: 15px solid $primary;
+  
+}
+
+@mixin invalid-feedback {
+  color: map-get($colours, "invalide");
+  display: none;
+}
+
+@mixin input-border($radius) {
+  border-radius: $radius;
+  border: 2px solid $primary;
+}
+
+@mixin vibe-color {
+  color: map-get($colours, "secondary");
+  font-family: 'Sail', cursive;
+  font-size: 2rem;
+}
+
+@mixin connect-color {
+  color: $primary;
+  font-family: 'Sail', cursive;
+  font-size: 2rem;
+};
+@mixin post-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid map-get($colours, "secondary");
+  margin: 0 0 -3rem 0;
+};
+@mixin reply-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid $primary;
+  margin: 0 0 -3rem 0;
+};
+@mixin reply-container {
+  margin: 1rem 2rem;
+  background-color: map-get($colours,"quaternary" );
+}
+.nav-bottom-border {
+  border-bottom: 2px solid map-get($colours, "secondary");
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+};
+body {
+  @include main-border;
+  border-bottom: none;
+  font-family: poppins;
+  height: 200vh;
+  margin-bottom: 0rem;
+  
+  
+};
+nav {
+  @include main-border;
+  border-bottom: none;
+  margin-bottom: 0rem;
+  height: 8rem;
+};
+.footer-border {
+  border-right: 15px solid $primary;
+  border-left: 15px solid $primary;
+  border-bottom: 15px solid $primary;
+  
+  
+}
+.login-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+};
+
+input {
+  @include input-border(10px);
+  padding: 1rem 2rem;
+  
+  font-weight: 700;
+  color: $primary;
+  transition: all 0.3s ease-in-out;
+  &:focus {
+    outline: none;
+    border: 2px solid map-get($colours, "secondary");
+  }
+  &:focus ~ .invalid-feedback {
+    display: block;
+  }
+};
+
+button {
+@include button-border(10px);
+background-color: $primary;
+color: map-get($colours, "white-text");
+font-size: 1rem;
+font-weight: 500;
+padding: .3rem;
+height: 3.5rem;
+// margin: 1rem;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+&:hover {
+    background-color: map-get($colours, "white-text");
+    color: $primary;
+    border: 2px solid $primary;
+}
+};
+.invalid-feedback {
+  @include invalid-feedback;
+};
+.flex-form {
+    @include flex-form;
+};
+.form-control {
+  border: 1px solid $primary;
+  border-radius: 10px;
+};
+.vibe-color {
+  @include vibe-color;
+};
+.connect-color {
+  @include connect-color;
+};
+.vibe-color-footer {
+  @include vibe-color;
+  font-size: 1.3rem;
+  // margin: 0;
+  // padding: 0;
+  // text-align: center;
+  // width: 100%;
+  // margin-top: 1rem;
+};
+.connect-color-footer {
+  @include connect-color;
+  // font-size: 1.3rem;
+  // margin: 0;
+  // padding: 0;
+  // text-align: center;
+  // width: 100%;
+  // margin-top: 1rem;
+};
+
+.sign-up {
+  color: $primary;
+  background-color: map-get($colours, "white-text");
+  border: 2px solid $primary;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    font-weight: 1000;
+  }
+};
+
+//Feed page
+.main-margin-feed-page {
+  margin-top: 10rem;
+};
+.search-border {
+  border: 1px solid $primary;
+  border-radius: 10px;
+  color: $primary;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    outline: none;
+    background-color:  $primary;
+    color: map-get($colours, "white-text");
+  }
+};
+textarea {
+  @include input-border(10px);
+  color: $primary;
+  transition: all 0.3s ease-in-out;
+  &:focus {
+    outline: none;
+    border: 2px solid map-get($colours, "secondary");
+  }
+  &:focus ~ .invalid-feedback {
+    display: block;
+  }
+};
+.sm-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center
+};
+
+// Profile page
+.profile-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid map-get($colours, "secondary");
+  };
+.post-title,
+.followers-title,
+.following-title {
+  color: map-get($colours, "secondary");
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+};
+.post-number,
+.followers-number,
+.following-number {
+  color: $primary;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+};
+.follow-btn {
+  @include button-border(10px);
+  background-color: $primary;
+  color: map-get($colours, "white-text");
+  font-size: 1rem;
+  font-weight: 500;
+  padding: .3rem;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+      background-color: map-get($colours, "white-text");
+      color: $primary;
+      border: 2px solid $primary;
+  }
+};
+.username {
+  color: $primary;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  margin: 1rem 2rem;
+};
+
+.my-vibes-title {
+  color: map-get($colours, "secondary");
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  
+};
+.my-posts-container {
+  margin: 1rem 2rem;
+  background-color: map-get($colours,"tertiary" );
+};
+.reply-post {
+  margin-top: -1rem;
+};
+.my-reply-container {
+  @include reply-container;
+}
+.post-img {
+  @include post-img;
+};
+.reply-img {
+  @include reply-img;
+};

@@ -35,9 +35,12 @@
               alt="view feed"
               class="mini-icon" />
           </a>
+
           <img
             src="/resources/icons/add.png"
             alt="create post"
+            data-bs-toggle="modal"
+            data-bs-target="#createPostModal"
             class="clickable mini-icon" />
           <a href="/profile.html">
             <img
@@ -48,7 +51,67 @@
         </div>
       </nav>
     </header>
+
     <div id="feed" class="bg-light">
+      <!-- Create Post Modal -->
+      <div
+        class="modal fade"
+        id="createPostModal"
+        tabindex="-1"
+        aria-labelledby="createPostModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="createPostModalLabel">Create Post</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="createPostForm">
+                <div class="mb-3">
+                  <label for="postContent" class="form-label"
+                    >What would you like to share today? 🤩</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="postContent"
+                    rows="4"
+                    placeholder="Enter post content"></textarea>
+                </div>
+                <div class="post-type d-flex gap-4 mx-2">
+                  <img
+                    src="/resources/icons/image.png"
+                    alt="share an image"
+                    class="mini-icon" />
+                  <img
+                    src="/resources/icons/poll.png"
+                    alt="create a poll"
+                    class="mini-icon" />
+                  <img
+                    src="/resources/icons/video.png"
+                    alt="share a video"
+                    class="mini-icon" />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal">
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" id="submitPost">
+                Create Post
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="space-2">
         <!-- Left side -->
         <div class="wrapper d-md-flex">

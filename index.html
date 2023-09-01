@@ -20,14 +20,14 @@
         <h3 class="text-white">Welcome Back</h3>
         <form action="/profile.html" class="w-100 d-flex flex-column">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" placeholder="Type your username" id="email">
+            <input type="email" class="form-control" placeholder="Type your username" id="email" required>
             <label for="email" class="form-label">
               <i class="bi bi-person"></i>
               Username
             </label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" placeholder="Type your password" id="password">
+            <input type="password" class="form-control" placeholder="Type your password" id="password" minlength="8" required>
             <label for="password" class="form-label">
               <i class="bi bi-lock"></i>
               Password
@@ -51,14 +51,14 @@
               <div class="modal-body">
                 <form action="/profile.html" class="d-flex flex-column align-items-center">
                   <div class="form-floating mb-3 w-100">
-                    <input type="email" class="form-control" placeholder="Type your email">
+                    <input type="email" class="form-control" placeholder="Type your email" required>
                     <label for="new-user-email" class="form-label">
                       <i class="bi bi-person"></i>
                       Your Email Address
                     </label>
                   </div>
                   <div class="form-floating mb-3 w-100">
-                    <input type="password" class="form-control" placeholder="Choose a password">
+                    <input type="password" class="form-control" placeholder="Choose a password" minlength="8" required>
                     <label for="new-user-password" class="form-label">
                       <i class="bi bi-lock"></i>
                       Choose a password

@@ -4,21 +4,9 @@
     font-family: "LuckiestGuy";
     src: url(../../fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
 }
-@font-face {
-    font-family: "Roboto";
-    src: url(../../fonts/Roboto/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: "RobotoSeriff";
-    src: url(../../fonts/Roboto_Serif/static/RobotoSerif-Medium.ttf);
-}
 
 h1 {
     font-family: "LuckiestGuy", Arial, Helvetica, sans-serif;
-}
-
-h2 {
-    font-family: "RobotoSeriff";
 }
 
 $background-image: "../../images/background_css-frameworks.jpg";

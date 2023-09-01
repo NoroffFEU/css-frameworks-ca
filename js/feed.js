@@ -1,3 +1,5 @@
+// Adds a "sticky" effect to the content navbar as the user scrolls down the page
+
 $(document).ready(function () {
   var navOffset = $(".content-nav").offset().top;
 

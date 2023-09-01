@@ -1,3 +1,6 @@
+/* Validates the email and password fields by checking for validity,
+and updating the class lists accordingly */
+
 function validate(field) {
   const loginEmail = document.querySelector("#login-email");
   const loginPassword = document.querySelector("#login-password");
@@ -20,6 +23,9 @@ function validate(field) {
     }
   }
 }
+
+/* Waits for the web page to fully load,
+then adds form validation logic to the form elements with the class .needs-validation */
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".needs-validation");

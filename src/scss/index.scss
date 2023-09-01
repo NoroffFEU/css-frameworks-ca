@@ -1,1 +1,28 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: "LuckiestGuy";
+    src: url(../../fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(../../fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "RobotoSeriff";
+    src: url(../../fonts/Roboto_Serif/static/RobotoSerif-Medium.ttf);
+}
+
+h1 {
+    font-family: "LuckiestGuy", Arial, Helvetica, sans-serif;
+}
+
+$background-image: "../../images/background_css-frameworks.jpg";
+
+.background {
+    background-image: url($background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    height: 100vh;
+}

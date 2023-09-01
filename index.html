@@ -8,20 +8,29 @@
     <link rel="stylesheet" href="dist/css/index.css">
 </head>
 <body>
-    <div class="position-absolute top-50 start-50 translate-middle text-center">
-    <h1>Travellers Compass</h1>
-    <h2>Share your journey, get tips from others and travel together</h2>
-    <form>
-        <div>
-          <label for="email">Username</label>
-          <input type="email" id="email" placeholder="Username">
+    <div class="container-fluid text-center background d-flex flex-column align-items-center justify-content-center">
+        <div class="row">
+            <div class="text-white">
+                <h1>Travellers Compass</h1>
+                <h2 class="fst-italic">Share your journey, get tips from others and travel together</h2>
+            </div>
         </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Password">
+        <div class="row">
+            <form>
+                <div>
+                  <label for="email" class="d-none">Username</label>
+                  <input type="email" id="email" placeholder="Username" class="form-control">
+                </div>
+                <div>
+                  <label for="password" class="d-none">Password</label>
+                  <input type="password" id="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="d-flex flex-column">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <a href="#" class="text-decoration-none link-secondary">or register here</a>
+                </div>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
     </div>
 </body>
 </html>

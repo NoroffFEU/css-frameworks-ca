@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SC login</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/index.css">
+    <script src="validation.js"></script>
+</head>
+
+<!-- 
+The authentication page should have a form to login or register to the application. 
+Ensure to include HTML form validation and use /profile as the action attribute.
+ Password must have a minimum length of 8 characters.
+ -->
+
+<body class="text-center">
+
+    <h1 class="mt-5">The Sage Community </h1>
+    <img src="brand/leaf-logo.png" alt="brand logo" height="100" width="auto">
+    <h2 class="h5 mb-5 mt-2">welcome back</h2>
+
+
+
+    <!-- form form form -->
+
+
+    <form class="container-fluid needs-validation" novalidate action="profile.html">
+
+
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Username</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="josephineee97">
+        </div>
+
+        <div class="mb-3">
+            <label for="validationCustom03" class="form-label">Password</label>
+            <input type="password" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Must be 8-20 characters long.
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">login</button>
+        </div>
+    </form>
+
+
+
+
+
+    <!-- 
+    <nav class="navbar navbar-expand fixed-bottom bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="profile.html">profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feed.html">feed</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+
+
+
+
+    <script src="validation.js"></script>
+
+    <!-- // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})() -->
+
+
+
+</body>
+
+</html>

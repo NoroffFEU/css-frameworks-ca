@@ -11919,10 +11919,6 @@ textarea.form-control-lg {
   width: min(50%, 200px);
 }
 
-.hor-center {
-  margin: 0 auto;
-}
-
 .custom-btn-large {
   width: min(100%, 400px);
 }
@@ -11935,7 +11931,7 @@ textarea.form-control-lg {
   width: min(100%, 100px);
 }
 
-.sidebar-icon {
+.icon-large {
   font-size: 36px;
 }
 
@@ -11972,12 +11968,8 @@ textarea.form-control-lg {
   width: 10%;
 }
 
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.image-profile {
   width: min(100%, 300px);
-  margin: 0 auto;
 }
 
 /*# sourceMappingURL=index.css.map */

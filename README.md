@@ -6,7 +6,7 @@ A simple overview of the use/purpose of the project.
 
 ## Description
 
-A site was made for my css frameworks course assingmnet .
+A web appilcation was made for my css frameworks course assingmnet .
 
 ## Built With
 
@@ -36,7 +36,7 @@ Fork the repository.
 Make your desired changes or additions.
 Submit a pull request.
 
-That's it! I will review your contribution and merge it if it aligns with the goals and style of my travel blog.
+That's it! I will review your contribution and merge it if it aligns with the goals and style of my Social media applitcation.
 
 If you have any questions or need assistance, feel free to reach out to me. Thank you for your support!
 

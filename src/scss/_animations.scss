@@ -1,0 +1,27 @@
+
+
+$color1: #9bffd0;
+$color2: #d5faef;
+$color3: #c2ffb4;
+
+.animate-color {
+    animation: colorSwitch 10s infinite;
+}
+
+@keyframes colorSwitch {
+    0% {
+        background-color: $color1;
+    }
+
+    33% {
+        background-color: $color2;
+    }
+
+    66% {
+        background-color: $color3;
+    }
+
+    100% {
+        background-color: $color1;
+    }
+}

@@ -16,6 +16,7 @@ $color-font: #FDE8CD;
 body,
 html {
     height: 100%;
+
 }
 
 body {
@@ -37,6 +38,7 @@ header {
         justify-content: space-between !important;
     }
 }
+
 
 .modal {
     --bs-modal-bg: #695433;
@@ -78,51 +80,69 @@ h1 {
 }
 
 
-.form-label {
-    color: $color-font;
+.form-label,
+{
+color: $color-font;
 }
 
 
-
-::placeholder {
-    background-color: $color-primary;
-    border-color: $color-font;
-    color: $color-font !important;
-}
 
 .form-control {
-    background-color: $color-primary-light;
+    background-color: $color-primary;
     border-color: $color-font;
     color: $color-primary;
 
-    &:focus {
+    &:active,
+    &:disabled {
+        color: $color-primary;
         background-color: $color-font;
+        border-color: $color-font;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-shadow;
+    }
+
+    &:focus {
+        border-color: $color-font;
+        background-color: $color-primary;
+        color: $color-font;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-shadow;
+    }
+
+
+    &:hover {
+        color: $color-font;
         border-color: $color-font;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-shadow;
     }
 }
 
+::placeholder {
+    color: $color-font !important;
+}
+
+.modal-content {
+    .form-control {
+        background-color: $color-primary-light;
+        border-color: $color-font;
+        color: $color-primary;
+
+        &:focus {
+            background-color: $color-font;
+            border-color: $color-font;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $color-shadow;
+        }
+    }
+}
+
+
 .form-text {
     color: $color-font;
 }
 
-.text-bg-dark,
-::placeholder {
-    background-color: $color-primary !important;
-    border-color: $color-font;
-    color: $color-font !important;
-    ;
-}
 
-
-
-
-.btn,
-.btn-primary {
+.btn-secondary {
     color: $color-font;
     border-color: $color-font;
-    --bs-btn-focus-shadow-rgb: 217, 164, 6;
-    --bs-btn-bg: $color-tertiary;
+    background-color: $color-primary-light;
 
     &:hover,
     &:focus,
@@ -139,6 +159,30 @@ h1 {
     color: $color-font;
     background-color: $color-secondary;
     border-color: $color-tertiary;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:disabled {
+        color: $color-primary;
+        background-color: $color-font !important;
+        border-color: $color-font;
+
+    }
+}
+
+.btn {
+    a {
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:disabled {
+            color: $color-primary !important;
+            background-color: $color-font;
+            border-color: $color-font;
+        }
+    }
 }
 
 
@@ -147,10 +191,7 @@ h1 {
 .btn-warning {
     color: $color-font;
     background-color: $color-secondary;
-
 }
-
-
 
 
 #myCarousel1 {
@@ -195,6 +236,14 @@ h2,
     }
 }
 
+.my-4 {
+    h2 {
+        color: $color-font;
+        text-align: left;
+    }
+}
+
+
 .text-bg-primary {
     color: $color-font !important;
     background-color: $color-primary !important;
@@ -232,13 +281,18 @@ h2,
 
 .nav-link.active {
     color: $color-shadow !important;
-    background-color: $color-secondary !important;
-
 }
 
+
 a {
-    color: $color-font;
-    text-decoration: none;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        color: $color-font !important;
+        text-decoration: none !important;
+    }
 }
 
 .list-group {
@@ -267,11 +321,15 @@ h6 {
     img {
         object-fit: cover;
         opacity: 0.85;
+        height: 350px;
+        width: 100%;
+
     }
 }
 
 .card-body {
     background-color: $color-primary-light;
+    max-height: 200px;
 }
 
 .card-text {
@@ -287,4 +345,35 @@ h6 {
 
 .text-muted {
     color: $color-font !important;
+}
+
+// form {
+//     display: inline-block;
+// }
+
+.navbar {
+    padding: 0.75rem 0;
+}
+
+.navbar-dark {
+    background-color: $color-primary;
+}
+
+.navbar-toggler {
+    color: $color-font !important;
+    border: 1px solid $color-font;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.navbar-toggler-icon {
+    color: $color-font !important;
+
+}
+
+.rounded-circle {
+    height: 140px;
+    width: 140px;
 }

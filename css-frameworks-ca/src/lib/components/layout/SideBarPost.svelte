@@ -39,9 +39,7 @@
 
 </script>
 <style lang="postcss">
-    .custom-button-color{
-        background-color: #007C5C;
-    }
+
     .custom-text-color{
        color: #01130e;
     }

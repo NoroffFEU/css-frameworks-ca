@@ -19,52 +19,36 @@ Ensure to include HTML form validation and use /profile as the action attribute.
 <body class="text-center">
 
     <h1 class="mt-5">The Sage Community </h1>
-
     <img src="brand/leaf-logo.png" alt="brand logo" height="100" width="auto">
-
     <h2 class="h5 mb-5 mt-2">welcome back</h2>
 
-    <form class="container-fluid" action="">
+
+
+    <!-- form form form -->
+
+
+    <form class="container-fluid needs-validation" novalidate action="profile.html">
+
 
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Username</label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="josephineee97">
         </div>
 
-
-
-
-        <!--    PAssword -->
-
         <div class="mb-3">
-
-            <label for="inputPassword6" class="col-form-label">Password</label>
-
-            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            <!--         validation applies to input elements -->
-
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    Must be 8-20 characters long.
-                </span>
+            <label for="validationCustom03" class="form-label">Password</label>
+            <input type="password" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Must be 8-20 characters long.
             </div>
         </div>
-
-        <!-- button -->
-
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <a href="profile.html"><button class="btn btn-primary" type="button">login</button></a>
-          </div>
-
-     
-        <!-- 
-
-      
-      make it work with the validation of password
- -->
-
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">login</button>
+        </div>
     </form>
-    <!-- username -->
+
+
+
 
 
     <!-- 
@@ -89,6 +73,32 @@ Ensure to include HTML form validation and use /profile as the action attribute.
             </div>
         </div>
     </nav> -->
+
+
+
+
+
+    <script src="validation.js"></script>
+
+    <!-- // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})() -->
 
 
 

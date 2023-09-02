@@ -1,1 +1,18 @@
+@import "animations";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+
+
+.bg-primary {
+    background-color: $primary;
+}
+
+.center-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 

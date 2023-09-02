@@ -1,0 +1,43 @@
+.card {
+  margin-top: 100px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.was-validated input:invalid {
+  border-color: #dc3545;
+}
+
+.was-validated .invalid-feedback {
+  display: block;
+}
+
+.custom-card-img {
+  width: 200px;
+  height: auto;
+}
+
+.custom-navbar {
+  background-color: #343a40; /* Background color */
+}
+
+.navbar-brand {
+  color: #fff; /* Text color */
+  font-size: 1.5rem; /* Font size */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* Toggler icon color */
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #fff; /* Link text color */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #f8f9fa; /* Link text color on hover */
+}
+
+/*# sourceMappingURL=styles.css.map */

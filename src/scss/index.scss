@@ -186,14 +186,6 @@ color: $color-font;
 }
 
 
-
-
-.btn-warning {
-    color: $color-font;
-    background-color: $color-secondary;
-}
-
-
 #myCarousel1 {
     .carousel-item {
         display: block;
@@ -376,4 +368,11 @@ h6 {
 .rounded-circle {
     height: 140px;
     width: 140px;
+}
+
+#profile-pic {
+    img {
+        width: 250px;
+        height: 250px;
+    }
 }

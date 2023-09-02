@@ -1,6 +1,8 @@
 <!--Sidebar-->
 <section class="col-span-1 h-full pr-4 md:pr-6">
     <SearchModal/>
+    <PostModal/>
+
     <aside class="flex flex-col items-end">
        
         <div class="space-y-2 lg:w-[230px]">
@@ -29,6 +31,8 @@
     import SideBarPost from "./SideBarPost.svelte";
     import SearchModal from "../modals/SearchModal.svelte";
     import searchModal from "../../../data/searchModal";
+    import PostModal from "../modals/PostModal.svelte";
+    import postModal from "../../../data/postModal";
     
     const icons = 
     [

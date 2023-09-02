@@ -16,7 +16,9 @@
 
     <div class="mt-4 border-l-2 border-gray-300 pl-4">
       <div class="flex items-center space-x-4">
-        <img src="../../src/lib/images/logo10.png" alt="User Avatar" class="rounded-full w-10 h-10" >
+        <a href="/userprofile">
+           <img src="../../src/lib/images/logo10.png" alt="User Avatar" class="rounded-full w-10 h-10" >
+        </a>
         <div class="text-sm">
           <p class="font-bold">Profile456</p>
           <p>@Profile456</p>

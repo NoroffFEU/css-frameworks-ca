@@ -3,7 +3,7 @@
 
 
 <header>
-    <Header headerLabel="Feed" />
+    <Header headerLabel="Feed" showOptions={true} />
 </header>
 <section>
     {#each Array(15) as post, index}

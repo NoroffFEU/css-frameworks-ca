@@ -1,7 +1,7 @@
 <!--Edit profile function, comes later-->
 <article class="border-b-[1px] border-neutral-800 pb-4">
-    <div class="flex justify-end p-2">
-        <Button buttonName="Edit profile"
+    <div class="flex justify-end p-2 ">
+        <Button buttonName={btnName}
          secondary={true}
          disabled={false}
          fullWidth={false}
@@ -9,19 +9,20 @@
         outline={false}
         onClick={handleEdit}
         />
+
     </div>
     <div class="mt-8 px-4">
         <div class="flex flex-col">
             <p class="text-white text-2xl font-semibold">
-                Profile123
+                {profileName}
             </p>
             <p class="text-md text-neutral-500">
-                @Profile123
+                @{profileName}
             </p>
         </div>
         <div class="flex flex-col mt-4">
             <p class="text-white">
-                The official Pide-piper account of Profile123, my flute are my own
+                {bio}
             </p>
             <div class="flex flex-row items-center gap-2 mt-4 text-neutral-500">
                 <p>
@@ -57,8 +58,14 @@
     const year = currentDate.getFullYear();
 
     const formattedDate = `${month} ${year}`;
- 
+
+    export let bio = ""
+    export let btnName = ""
+    export let profileName
+    
+    let follow = false
     const handleEdit=() => {
         console.log("coming soon")
     }
+ 
 </script>

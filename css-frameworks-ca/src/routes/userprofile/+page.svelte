@@ -2,12 +2,12 @@
 <RegisterModal/>
 
 <header>
-    <Header headerLabel="Profile123" showOptions={false}  />
-    <ProfileHero src="../src/lib/images/profile.png"/>
+    <Header headerLabel="Profile456" showOptions={false}  />
+    <ProfileHero  src="../src/lib/images/logo10.png"/>
     <ProfileBio
-     bio="The official Pide-piper account of Profile123, my flute are my own"
-     btnName="Edit profile"
-     profileName="profile123"
+     bio="The official Pide-piper account of Profile456, my flute are not my own"
+      btnName="Follow" 
+      profileName="Profile456"
       />
 </header>
 

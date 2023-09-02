@@ -23,7 +23,7 @@
         type="text"
       />
       {#if showErrorPassword}
-      <small class="text-red-500 pl-1">Wrong password</small>
+      <small class="text-red-500 pl-1" >Wrong password</small>
       {/if}
       <Input
         placeholder="Password *"
@@ -61,6 +61,7 @@
   let isLoading = false;
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
 
+
   let showErrorMail
   let showErrorPassword
   $: showErrorMail = false
@@ -78,9 +79,9 @@
         isLoading = true;
         showErrorMail = !email.match(regex);
         showErrorPassword = password.length < 8;
-
+      
   
-        if (!showErrorMail && !showErrorPassword) {
+        if (!showErrorMail && !showErrorPassword ) {
             loginModal.onClose();
             goto("/profile");
         }

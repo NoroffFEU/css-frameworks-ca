@@ -1,5 +1,5 @@
 <!--Button for sending a "piperpeep, / tweet :P"-->
-<button  class="w-full">
+<button  class="w-full" on:click={handlePost}>
     <div >
         <div
          class="mt-6 
@@ -36,6 +36,13 @@
 </button>
 
 <script>
+
+
+    import PostModal from "../modals/PostModal.svelte";
+    import postModal from "../../../data/postModal";
+    const handlePost = () => {
+        postModal.onOpen()
+    }
 
 </script>
 <style lang="postcss">

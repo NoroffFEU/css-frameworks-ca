@@ -1,15 +1,32 @@
 {
-  "name": "example",
-  "version": "1.0.0",
-  "description": "",
+  "name": "css-frameworks-example",
+  "version": "0.0.1",
+  "description": "CSS Frameworks social media project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoroffFEU/css-frameworks-cs.git"
+  },
+  "keywords": [
+    "css",
+    "frameworks",
+    "bootstrap"
+  ],
+  "author": "Roar Falch Hanssen <roahan10771@stud.noroff.no>",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kobraz/css-frameworks-ca/issues"
+  },
+  "homepage": "https://github.com/Kobraz/css-frameworks-ca#readme",
   "dependencies": {
     "bootstrap": "^5.2.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.66.1"
   }
 }

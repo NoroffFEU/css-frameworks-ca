@@ -1,0 +1,22 @@
+// scss-docs-start color-variables
+$blue:    #073780;
+$indigo:  #3b098b;
+$purple:  #382261;
+$pink:    #6b1a43;
+$red:     #791e27;
+$orange:  #92490d;
+$yellow:  hsl(45, 92%, 29%);
+$green:   #27262d;
+$teal:    #0d4d39;
+$cyan:    #09677a;
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) ;

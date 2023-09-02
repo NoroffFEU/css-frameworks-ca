@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meower | My Profile</title>
+    <script type="module" src="../main.ts"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <nav-header></nav-header>
+
+    <section class="h-100">
+      <div class="py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-9 col-xl-7">
+            <div class="card">
+              <profile-header></profile-header>
+              <div class="card-body p-4 text-black">
+                <div class="mb-5">
+                  <p class="lead fw-normal mb-1">About</p>
+                  <div class="card p-4 bg-surface">
+                    <p class="font-italic mb-1">Bird watcher</p>
+                    <p class="font-italic mb-1">Yoga instructor</p>
+                    <p class="font-italic mb-0">Napping enthusiast</p>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <p class="lead fw-normal mb-0">Recent Meows</p>
+                  <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+                </div>
+
+                <user-post-text></user-post-text>
+                <user-post-image
+                  img-url="https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+                ></user-post-image>
+                <user-post-image
+                  img-url="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                ></user-post-image>
+                <user-post-image
+                  img-url="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1829&q=80"
+                ></user-post-image>
+                <user-post-image
+                  img-url="https://images.unsplash.com/photo-1596854372407-baba7fef6e51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
+                ></user-post-image>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

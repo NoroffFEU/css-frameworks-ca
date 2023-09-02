@@ -1,0 +1,52 @@
+$base-size-map: (
+  "3xs": 3rem,
+  "2xs": 6rem,
+  "xs": 10rem,
+  "sm": 16rem,
+  "md": 32rem,
+);
+
+$max-width-map: map-merge(
+  $base-size-map,
+  (
+    "lg": 48rem,
+    "xl": 64rem,
+    "2xl": 80rem,
+  )
+);
+
+$max-height-map: map-merge(
+  $base-size-map,
+  (
+    "lg": 45rem,
+    "xl": 60rem,
+    "2xl": 75rem,
+  )
+);
+
+@each $key, $value in $max-width-map {
+  .max-w-#{$key} {
+    max-width: $value;
+  }
+}
+
+@each $key, $value in $max-height-map {
+  .max-h-#{$key} {
+    max-height: $value;
+  }
+}
+
+$max-vh-map: (
+  "xs": 10vh,
+  "sm": 18.75vh,
+  "md": 37.5vh,
+  "lg": 56.25vh,
+  "xl": 75vh,
+  "2xl": 100vh,
+);
+
+@each $key, $value in $max-vh-map {
+  .max-vh-#{$key} {
+    max-height: $value;
+  }
+}

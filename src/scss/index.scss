@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+@import "../../node_modules/bootstrap/scss/bootstrap"; 
+=======
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -9,3 +12,161 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+<<<<<<< HEAD
+
+>>>>>>> c3b0a97f2da42f7737e13f9bb539f1adaf6acaac
+
+$primary: #67927a;
+$secondary: #eae6e5;
+$dark-color: #000;
+$secondary-light: #eae6e5c4;
+$primary-light: #67927ae9;
+$box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+
+p {
+  color: $primary;
+}
+
+.btn {
+  box-shadow: $box-shadow;
+  text-decoration: none;
+}
+
+/* nav bottom */
+.navbar-bottom {
+  background-color: $primary-light;
+  box-shadow: $box-shadow;
+  border-radius: 60px 60px 0px 0px;
+
+  i.fas {
+    color: $secondary;
+  }
+}
+
+/* body styles */
+body {
+  background-color: $secondary;
+}
+
+.body-login {
+  //image from: https://pixabay.com/illustrations/flowers-wildflowers-bloom-botanical-8100386/
+  background-image: url("/images/flowers-8100386_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Authentication page */
+
+.navbar-custom {
+  background-color: $primary-light;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: $box-shadow;
+}
+
+.logo {
+  width: 100%; /* Adjust as needed */
+  max-width: 400px; /* Maximum width for the logo */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Log in form */
+.form-container {
+  background-color: $primary-light;
+  border-radius: 50px 50px 50px 50px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $box-shadow;
+}
+
+.form-wrapper {
+  .form-floating {
+    input.form-control {
+      background-color: $secondary;
+    }
+
+    label {
+      color: $secondary;
+    }
+  }
+}
+
+.form-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: $dark-color;
+  margin-bottom: 20px;
+}
+
+/* Profile page */
+.navbar-profile {
+  background-color: $primary;
+  .container {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    color: $dark-color;
+  }
+}
+
+.profile-btn {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* search bar */
+.search {
+  box-shadow: $box-shadow;
+  margin-right: auto;
+}
+
+/* profile container */
+.profile-container {
+  background-color: $primary;
+  border-radius: 0px 0px 70px 70px;
+  box-shadow: $box-shadow;
+  width: 100%;
+}
+
+/* Styling for the profile section container */
+
+.profile-section {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: $box-shadow;
+  }
+
+  .followers {
+    flex-direction: row;
+  }
+
+  h2 {
+    /* Styling for the user name */
+    color: $dark-color;
+  }
+
+  p {
+    /* Styling for follower/following information */
+    color: $secondary;
+  }
+}
+
+/* profile posts */
+
+.card {
+  box-shadow: $box-shadow;
+}
+=======
+>>>>>>> 08334fd2de1977234f86e8cdbd8e4d76b0dc0114

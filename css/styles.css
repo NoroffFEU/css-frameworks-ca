@@ -110,7 +110,7 @@ form,
 .sticky {
   position: fixed;
   z-index: 2;
-  top: 0.5rem;
+  top: 0;
   width: 34%;
 }
 

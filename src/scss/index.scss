@@ -1,1 +1,18 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+$my-copy-bg-color: #333;
+$glossy-light-blue: #ADD8E6;
+
+.my-copy {
+  background-color: $my-copy-bg-color;
+}
+
+
+.my-profile {
+  background: $glossy-light-blue;
+}
+
+
+.nav-link:hover {
+  transform: scale(1.2);
+}

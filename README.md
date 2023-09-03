@@ -5,8 +5,8 @@
 * [Screenshot](#screenshot)
 * [About the Project](#About-the-Project)
 * [Doggoz](#Doggos)
-* [Languages used in the projects](#Languages-used-in-the-projects)
-* [Tools used in the projects](#Tools)
+* [Languages used in the projects](#Languages-used-in-the-project)
+* [Tools used in the projects](#Tools-used-in-the-project)
 * [Getting started](#getting-started)
 * [Contact](#contact)
 * [Acknowledgments](#Acknowledgment)
@@ -21,11 +21,11 @@ The ultimate social platform for dog owners. Easily create a profile for your fu
 View the Live Version: [here](https://chalund-cssframework.netlify.app)
 
 
-## Languages used in the projects
+## Languages used in the project
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-## Tools used in the projects
+## Tools used in the project
 
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23F24E1E.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 

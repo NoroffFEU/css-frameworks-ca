@@ -80,9 +80,8 @@ h1 {
 }
 
 
-.form-label,
-{
-color: $color-font;
+.form-label {
+    color: $color-font;
 }
 
 
@@ -206,7 +205,6 @@ color: $color-font;
 .carousel-caption,
 .border-bottom,
 .border-top,
-
 h3 {
     color: $color-font !important;
     border-color: $color-font !important;
@@ -370,9 +368,30 @@ h6 {
     width: 140px;
 }
 
+
 #profile-pic {
     img {
         width: 250px;
         height: 250px;
+        opacity: 1;
+    }
+}
+
+.featurette {
+    position: relative;
+
+    img {
+        opacity: 0.3;
+        max-height: 600px;
+
+    }
+
+    .carousel-caption {
+        position: absolute;
+        top: 20%;
+        max-height: 300px;
+        left: 0;
+        right: 0;
+
     }
 }

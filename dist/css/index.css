@@ -11858,15 +11858,16 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.nav-link:hover {
-  transform: scale(1.2);
+.my-copy {
+  background-color: #333;
 }
 
-.my-card {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border-radius: 20px;
-  min-height: 100px;
+.my-profile {
+  background: #ADD8E6;
+}
+
+.nav-link:hover {
+  transform: scale(1.2);
 }
 
 /*# sourceMappingURL=index.css.map */

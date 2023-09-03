@@ -1,12 +1,18 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.nav-link:hover {
-  transform: scale(1.2);
+$my-copy-bg-color: #333;
+$glossy-light-blue: #ADD8E6;
+
+.my-copy {
+  background-color: $my-copy-bg-color;
 }
 
-.my-card {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  border-radius: 20px;
-  min-height: 100px;
+
+.my-profile {
+  background: $glossy-light-blue;
+}
+
+
+.nav-link:hover {
+  transform: scale(1.2);
 }

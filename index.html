@@ -61,7 +61,7 @@
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Please sign in</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form>
+                    <form action="feed/index.html" class="needs-validation">
                         <div class="modal-body">
 
                             <div class="mb-3">
@@ -73,19 +73,19 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                                <div id="passwordHelpBlock" class="form-text">
+                                <input type="password" class="form-control" id="exampleInputPassword1" minlength="8"
+                                    required>
+                                <!-- <div id="passwordHelpBlock" class="form-text" >
                                     Your password must be 8-20 characters long, contain letters and numbers, and must
                                     not
                                     contain spaces, special characters, or emoji.
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary"><a href="feed/index.html"
-                                    aria-label="Submit">Submit</a></button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>

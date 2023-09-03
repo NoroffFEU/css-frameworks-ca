@@ -1,4 +1,19 @@
+<<<<<<< HEAD
 @import "../../node_modules/bootstrap/scss/bootstrap"; 
+=======
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+/* body styles */
+
+.bg-img {
+  //image from: https://www.pexels.com/nb-no/bilde/sjarmerende-om-harmoni-ung-4130215/
+  background-image: url("/img/pexels-elina-sazonova-4130215.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+>>>>>>> c3b0a97f2da42f7737e13f9bb539f1adaf6acaac
 
 $primary: #67927a;
 $secondary: #eae6e5;

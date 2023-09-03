@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Here you can connect to others, and see what they have on their minds!" />
+		<title>The Connectiverse | Feed</title>
+		<link rel="stylesheet" href="dist/css/styles.css" />
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://kit.fontawesome.com/6c3e32c1c7.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body class="pb-5">
+		<header>
+			<nav class="navbar navbar-expand-md bg-primary">
+				<div class="container-fluid">
+					<h2 class="navbar-brand">Connectiverse</h2>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="profile.html">Profile</a>
+							</li>
+							<li class="nav-item active" aria-current="page">
+								<a class="nav-link">Feed</a>
+							</li>
+							<li class="nav-item dropdown"></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<div class="container mt-5">
+				<div class="row gap-4 d-flex justify-content-center">
+					<div class="card bg-primary col-md-3">
+						<fieldset class="form-check d-flex flex-column">
+							<legend class="d-none">Filter options</legend>
+							<div>
+								<input
+									class="form-check-input"
+									type="radio"
+									name="filter"
+									id="popularityRadio" />
+								<label class="form-chec-label" for="popularityRadio"
+									>Filter by popularity</label
+								>
+							</div>
+							<div>
+								<input
+									class="form-check-input"
+									type="radio"
+									name="filter"
+									id="trendingRadio" />
+								<label class="form-check-label" for="trendingRadio"
+									>Filter by trending</label
+								>
+							</div>
+							<div>
+								<input
+									class="form-check-input"
+									type="radio"
+									name="filter"
+									id="latestRadio" />
+								<label class="form-check-label" for="latestRadio"
+									>Filter by latest</label
+								>
+							</div>
+							<div>
+								<input
+									class="form-check-input"
+									type="radio"
+									name="filter"
+									id="areaRadio" />
+								<label class="form-check-label" for="areaRadio"
+									>Filter by area</label
+								>
+							</div>
+						</fieldset>
+						<div class="d-flex flex-row">
+							<div class="input-group">
+								<input
+									value="Search"
+									class="form-control"
+									type="search"
+									id="searchbar"
+									placeholder="Search" />
+								<label class="form-label d-none" for="searchbar">Search</label>
+							</div>
+							<button
+								type="button"
+								class="btn btn-info"
+								aria-label="Search button"
+								title="Search button">
+								<i class="fa-solid fa-magnifying-glass"></i>
+							</button>
+						</div>
+					</div>
+					<div
+						class="card bg-primary col-md-6 d-flex justify-content-center text-center">
+						<h1 class="toast-header">What are you thinking about?</h1>
+						<form>
+							<textarea
+								class="form-control"
+								placeholder="Write a post!"
+								value="Text field for writing post message"
+								aria-label="Write post message here"
+								required
+								minlength="5"></textarea>
+							<input type="submit" class="btn btn-info my-3" value="Submit" />
+						</form>
+					</div>
+				</div>
+				<div class="row gap-4 d-flex justify-content-center mt-3">
+					<div class="card bg-primary col-md-4 col-sm-3">
+						<img src="images/thumbnail.svg" alt="Thumbnail placeholder" />
+						<div class="d-flex flex-row justify-content-between">
+							<div><i class="fa-solid fa-user"></i>Coolguy51</div>
+							<div>54 <i class="fa-solid fa-heart"></i></div>
+						</div>
+					</div>
+					<div class="card bg-primary col-md-4 col-sm-3">
+						<img src="images/thumbnail.svg" alt="Thumbnail placeholder" />
+						<div class="d-flex flex-row justify-content-between">
+							<div><i class="fa-solid fa-user"></i>Coolguy51</div>
+							<div>54 <i class="fa-solid fa-heart"></i></div>
+						</div>
+					</div>
+					<div class="card bg-primary col-md-4 col-sm-3">
+						<img src="images/thumbnail.svg" alt="Thumbnail placeholder" />
+						<div class="d-flex flex-row justify-content-between">
+							<div><i class="fa-solid fa-user"></i>Coolguy51</div>
+							<div>54 <i class="fa-solid fa-heart"></i></div>
+						</div>
+					</div>
+					<div class="card bg-primary col-md-4 col-sm-3">
+						<img src="images/thumbnail.svg" alt="Thumbnail placeholder" />
+						<div class="d-flex flex-row justify-content-between">
+							<div><i class="fa-solid fa-user"></i>Coolguy51</div>
+							<div>54 <i class="fa-solid fa-heart"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="bg-primary d-flex p-3 fixed-bottom justify-content-center">
+			<h2 class="navbar-brand">Designed and developed by Kevin Havn</h2>
+		</footer>
+	</body>
+</html>

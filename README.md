@@ -1,5 +1,5 @@
 # css-frameworks-ca
-![Screenshot](/images/css-frameworks-a.jpg)
+![Screenshot](/images/css-frameworks-ca.jpg)
 
 ## Table of Contents
 * [Screenshot](#screenshot)

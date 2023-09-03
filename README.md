@@ -29,3 +29,6 @@ https://www.w3.org/Style/Examples/007/fonts.en.html
 
 Pictures are copy right free found from:
 https://www.pexels.com/
+
+Navbar is taken from documentation:
+https://getbootstrap.com/docs/4.0/components/navbar/

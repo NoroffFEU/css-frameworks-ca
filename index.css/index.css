@@ -1,0 +1,52 @@
+p {
+  color: #67927a;
+}
+
+body {
+  background-color: #000;
+}
+
+.body-login {
+  background-image: url("/images/flowers-8100386_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar-custom {
+  height: 150px;
+}
+
+.logo {
+  width: 100%; /* Adjust as needed */
+  max-width: 400px; /* Maximum width for the logo */
+  display: block;
+  margin: 0 auto;
+  margin-top: 200px;
+}
+
+.form-container {
+  background-color: #67927a;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.702);
+  height: 100%; /* Ensure form container takes full height of its column */
+}
+
+.form-wrapper .form-floating input.form-control {
+  background-color: #eae6e5;
+}
+.form-wrapper .form-floating label {
+  color: #eae6e5;
+}
+
+.form-title {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: #eae6e5;
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */

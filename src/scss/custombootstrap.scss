@@ -1,0 +1,17 @@
+@import "variables"; /* /src/scss/_variables.scss */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+.img-fluid {
+    border-radius: 1rem 0 0 1rem;
+    object-fit: cover;
+    height: 100%;
+  }
+
+.card {
+    border-radius: 1rem;
+}
+
+.mask {
+    background-color: rgba(251, 251, 251, 0.15);
+}

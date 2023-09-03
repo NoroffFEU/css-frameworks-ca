@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsfeed</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <link rel="stylesheet" href="../dist/css/custombootstrap.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">CSSFRAMEWORKS</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/feed">Feed</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/profile">Profile</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="vh-100 container-md">
+            <h1 class="mt-4 mb-4">Newsfeed</h1>
+            <div class="row mt-4 mb-2">
+                <div class="input-group rounded col-md">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon">
+                    <span class="input-group-text border-0" id="search-addon">
+                        Search
+                    </span>
+                </div>
+                <div class="col-md">
+                    <select class="form-select" aria-label="Sorting options">
+                        <option selected>Newest</option>
+                        <option value="1">Oldest</option>
+                        <option value="2">Most popular</option>
+                        <option value="3">Most viewed</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <button id="postmodal" class="btn btn-dark">New post</button>
+                </div>
+            </div>
+            <div class="row gx-5">
+                <div class="col-md-6 mb-4">
+                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-fluid">
+                        <a href="#!">
+                            <div class="mask"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">27/08/2023</span>
+                    <h4><strong>Facilis consequatur eligendi</strong></h4>
+                    <p class="text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+                        eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+                        sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+                    </p>
+                    <button type="button" class="btn btn-primary">Read more</button>
+                </div>
+            </div>
+            <div class="row gx-5">
+                <div class="col-md-6 mb-4">
+                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-fluid" />
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">24/08/2023</span>
+                    <h4><strong>Facilis consequatur eligendi</strong></h4>
+                    <p class="text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+                        eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+                        sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+                    </p>
+                    <button type="button" class="btn btn-primary">Read more</button>
+                </div>
+            </div>
+            <div class="row gx-5">
+                <div class="col-md-6 mb-4">
+                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-fluid">
+                        <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">22/08/2023</span>
+                    <h4><strong>Facilis consequatur eligendi</strong></h4>
+                    <p class="text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+                        eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+                        sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+                    </p>
+                    <button type="button" class="btn btn-primary">Read more</button>
+                </div>
+            </div>
+            <dialog id="modal">
+                <form method="dialog">
+                    <button id="closemodal"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
+                    <div class="container">
+                        <div class="row">
+                            
+                            <div class="col-md-8 col-md-offset-2">
+                                
+                                <h1>Create post</h1>
+                                
+                                <form action="" method="POST">
+                                    <div class="form-group">
+                                        <label for="title">Title<span class="require">*</span></label>
+                                        <input type="text" id="title" class="form-control" name="title">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="description">Article</label>
+                                        <textarea rows="5" id="description" class="form-control" name="description"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <p><span class="require">*</span> - required fields</p>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">
+                                            Create post
+                                        </button>
+                                        <button class="btn btn-default">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>
+            </dialog>
+        </section>
+    </main>
+</body>
+
+</html>

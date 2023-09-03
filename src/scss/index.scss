@@ -1,3 +1,4 @@
+@import "../scss/variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 @font-face {
@@ -8,8 +9,6 @@
 h1 {
     font-family: "LuckiestGuy", Arial, Helvetica, sans-serif;
 }
-
-$background-image: "../../images/background_css-frameworks.jpg";
 
 .background {
     background-image: url($background-image);
@@ -24,3 +23,4 @@ $background-image: "../../images/background_css-frameworks.jpg";
 #email::placeholder {
     text-align: center;
 }
+

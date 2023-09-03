@@ -147,7 +147,7 @@ h1 {
     &:focus,
     &:active,
     &:disabled {
-        color: $color-primary;
+        color: $color-primary !important;
         background-color: $color-font;
         border-color: $color-font;
 

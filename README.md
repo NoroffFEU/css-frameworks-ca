@@ -4,10 +4,12 @@
 ## Table of Contents
 * [Screenshot](#screenshot)
 * [About the Project](#About-the-Project)
-* [Description of the Platform](#Doggos)
+* [The Social Media App](#Doggos)
 * [Languages used in the projects](#Languages-used-in-the-projects)
 * [Getting started](#getting-started)
 * [Contact](#contact)
+* [Acknowledgments](#Acknowledgment)
+
 
 ## About the Project
 School project: Crafting a responsive social media app front-end with Bootstrap and SASS expertise.
@@ -26,7 +28,7 @@ View the Live Version: [here](https://chalund-cssframework.netlify.app)
 ### Installation
 1. Clone the repo
 ```
-git clone https://github.com/chalund/Portfolio-1.git
+git clone https://github.com/chalund/css-frameworks-ca.git
 ```
 2. Open the folder with a code editor.
 
@@ -45,3 +47,9 @@ Interested in contributing to the project? Follow these steps to get started.
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chalund@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://pe.linkedin.com/in/charlotte-lund-48419b249/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/chalund)
+
+## Acknowledgment
+* [Noroff.com](https://www.noroff.no/)
+* [Bootstrap.com](https://getbootstrap.com/)
+* [Bootstrap Icons](https://icons.getbootstrap.com/)
+* [Bootday.com](https://www.bootdey.com/)

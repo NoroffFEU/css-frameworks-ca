@@ -1,5 +1,5 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "css-frameworks",
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.1"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
 }

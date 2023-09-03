@@ -1,2 +1,2 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+This is my contirbute to the CSS Frameworks course assignment

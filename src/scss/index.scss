@@ -1,1 +1,26 @@
+@import "../scss/variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@font-face {
+    font-family: "LuckiestGuy";
+    src: url(../../fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf);
+}
+
+h1 {
+    font-family: "LuckiestGuy", Arial, Helvetica, sans-serif;
+}
+
+.background {
+    background-image: url($background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    opacity: 90%;
+}
+
+#password::placeholder,
+#email::placeholder {
+    text-align: center;
+}
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A social media for travers. Log in or register to join the network.">
+    <title>Social Media | Login</title>
+    <link rel="stylesheet" href="dist/css/index.css">
+</head>
+<body>
+    <div class="container-fluid text-center background">
+        <div class="row justify-content-center">
+            <div class="text-white col-lg-5 col-md-7 col-sm-8 col-9">
+                <h1 class="display-2 mt-5 pt-5 mb-0 lh-1">Travellers Compass</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="text-white col-lg-5 col-md-8 col-sm-8 col-9">
+                <h2 class="fst-italic mt-0 mb-5">Share your journey, get tips from others and travel together</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <form class="col-lg-3 col-md-4 col-sm-5 col-6" action="html/profile.html">
+                <div class="mb-2">
+                  <label for="email" class="d-none">Username</label>
+                  <input type="email" id="email" placeholder="Username" class="form-control p-3" required>
+                </div>
+                <div>
+                  <label for="password" class="d-none">Password</label>
+                  <input type="password" id="password" placeholder="Password" class="form-control p-3 mb-4" minlength="8" required>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <button type="submit" class="btn btn-primary col-4">Login</button>
+                    <a href="#" class="text-decoration-none link-secondary">or register here</a>
+                </div>
+            </form>
+        </div>   
+    </div>
+</body>
+</html>

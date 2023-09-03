@@ -1,2 +1,3 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+My social media course assignment. Consists of a log in page, a feed page and a profile page.

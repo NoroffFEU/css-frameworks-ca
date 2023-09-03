@@ -1,0 +1,64 @@
+body {
+  background: linear-gradient(0deg, rgb(171, 165, 234), rgb(252, 151, 197) 80%);
+}
+
+main {
+  min-height: 100vh;
+}
+
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 40px;
+  width: 300px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 6px;
+}
+
+.search_input {
+  color: white;
+  background: none;
+  border: transparent;
+  caret-color: transparent;
+  line-height: 16px;
+  margin-left: 10px;
+  margin-top: 4;
+}
+
+.search_icon {
+  height: 28px;
+  width: 28px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #353b48;
+  text-decoration: none;
+  background-color: white;
+}
+
+.attachment-icon,
+.image-icon,
+.smiley-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #353b48;
+  text-decoration: none;
+}
+
+.attachment-icon:hover,
+.image-icon:hover,
+.smiley-icon:hover {
+  color: #0056b3;
+}
+
+.accordion-body {
+  background: linear-gradient(0deg, rgb(171, 165, 234), rgb(252, 151, 197) 80%);
+}
+
+.posts {
+  max-width: 600px;
+  margin: 0 auto; /* Center the .posts div horizontally */
+}

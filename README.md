@@ -1,2 +1,5 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+This project is just to learn Bootstrap and SCSS.
+
+To build, just use npm run dev.

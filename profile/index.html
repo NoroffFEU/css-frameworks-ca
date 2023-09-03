@@ -14,6 +14,12 @@
     ></script>
     <title>Food is Love | Profile page</title>
     <link rel="stylesheet" href="/dist/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -54,11 +60,10 @@
                   <li><a class="dropdown-item" href="#">Meat</a></li>
                   <li><a class="dropdown-item" href="#">Vegan</a></li>
                   <li>
-                    <hr class="dropdown-divider" />
-                    Breakfast
+                    <a class="dropdown-item" href="#">Seafood</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">Seafood</a>
+                    <a class="dropdown-item" href="#">Breakfast</a>
                   </li>
                 </ul>
               </li>
@@ -70,7 +75,10 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button
+                class="btn btn-outline-success bg-primary border border-0"
+                type="submit"
+              >
                 Search
               </button>
             </form>
@@ -81,14 +89,18 @@
     <main class="mx-4">
       <div class="container">
         <div class="row text-center py-3">
-          <div class="col-12 bg-profile py-5">
+          <div class="col-12 bg-profile py-4">
             <img
               src="/images/profile-picture.jpg"
               class="img-fluid img-profile float-center main-img"
               alt="#"
             />
-            <div class="d-inline bg-dark">
-              <h1>Henrik Ekengren</h1>
+            <div>
+              <div
+                class="col-md-3 bg-primary my-2 mx-auto text-light py-2 card px-0"
+              >
+                <h2>Henrik Ekengren</h2>
+              </div>
               <button class="btn btn-primary">Follow</button>
             </div>
           </div>
@@ -260,16 +272,16 @@
             <div class="col-md-8 mx-2">
               <div class="row post my-5 py-3 bg-secondary card">
                 <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-2 align-items-center pe-0 ps-4">
+                  <div class="d-flex col-md-3 align-items-center pe-0 ps-2">
                     <span class="userimage"
                       ><img
                         src="/images/profile-picture.jpg"
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Henrik</span>
+                    <span class="username fs-6 ps-0 fw-medium">Henrik</span>
                   </div>
-                  <div class="col text-center pe-2">
+                  <div class="col-md-8 text-start ps-5">
                     <h2 class="post-title">Steak and chilli</h2>
                   </div>
                 </div>
@@ -295,7 +307,7 @@
               </div>
               <div class="row post my-5 py-3 bg-secondary card">
                 <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-2 align-items-center pe-0 ps-4">
+                  <div class="d-flex col-md-3 align-items-center pe-0 ps-4">
                     <span class="userimage"
                       ><img
                         src="/images/profile-picture.jpg"
@@ -304,8 +316,8 @@
                     /></span>
                     <span class="username fs-6 ps-2 fw-medium">Henrik</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col-md-8 text-start ps-5">
+                    <h2 class="post-title">Salmon and almods</h2>
                   </div>
                 </div>
                 <img
@@ -330,7 +342,7 @@
               </div>
               <div class="row post my-5 py-3 bg-secondary card">
                 <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-2 align-items-center pe-0 ps-4">
+                  <div class="d-flex col-md-3 align-items-center pe-0 ps-4">
                     <span class="userimage"
                       ><img
                         src="/images/profile-picture.jpg"
@@ -339,8 +351,8 @@
                     /></span>
                     <span class="username fs-6 ps-2 fw-medium">Henrik</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col-md-8 text-start ps-5">
+                    <h2 class="post-title">Brunch</h2>
                   </div>
                 </div>
                 <img
@@ -365,7 +377,7 @@
               </div>
               <div class="row post my-5 py-3 bg-secondary card">
                 <div class="post-header d-flex align-items-center py-3">
-                  <div class="d-flex col-2 align-items-center pe-0 ps-4">
+                  <div class="d-flex col-md-3 align-items-center pe-0 ps-4">
                     <span class="userimage"
                       ><img
                         src="/images/profile-picture.jpg"
@@ -374,8 +386,8 @@
                     /></span>
                     <span class="username fs-6 ps-2 fw-medium">Henrik</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col-md-8 text-start ps-5">
+                    <h2 class="post-title">Pizza</h2>
                   </div>
                 </div>
                 <img

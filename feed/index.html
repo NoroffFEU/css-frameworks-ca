@@ -14,6 +14,12 @@
     ></script>
     <title>Food is Love | Home Page</title>
     <link rel="stylesheet" href="/dist/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -25,6 +31,13 @@
           <div class="col-1">
             <a href="/feed/index.html">
               <img src="/images/logo.png" class="logo logo-nav" />
+            </a>
+          </div>
+          <div class="col-1 text-center text-light">
+            <a href="/profile/index.html">
+              <i
+                class="fa-sharp fa-solid fa-user text-light fs-2 user-icon"
+              ></i>
             </a>
           </div>
           <button
@@ -42,7 +55,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle fs-3"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -53,13 +66,8 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Meat</a></li>
                   <li><a class="dropdown-item" href="#">Vegan</a></li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                    Breakfast
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Seafood</a>
-                  </li>
+                  <li><a class="dropdown-item" href="#">Seafood</a></li>
+                  <li><a class="dropdown-item" href="#">Breakfast</a></li>
                 </ul>
               </li>
             </ul>
@@ -70,7 +78,10 @@
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button
+                class="btn btn-outline-success bg-primary border border-0"
+                type="submit"
+              >
                 Search
               </button>
             </form>
@@ -84,29 +95,40 @@
           <div class="row">
             <div class="col">
               <div class="col bg-primary p-4 m-3 card">
-                <img
-                  src="/images/profile-picture.jpg"
-                  alt=""
-                  class="img-fluid float-start img-profile"
-                />
-                <h3>Adeline</h3>
-                <p>Food lover. Happy to share some recipes<3</p>
+                <a href="/profile/index.html">
+                  <img
+                    src="/images/profile-picture.jpg"
+                    alt=""
+                    class="img-fluid float-start img-profile"
+                  />
+                  <h3 class="text-dark">Henrik</h3>
+                  <p class="text-dark">
+                    Food lover. Happy to share some recipes<3
+                  </p>
+                </a>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row">
                 <form>
-                  <label for="newPost">New Post</label>
+                  <div class="fs-2 fw-bold text-center">
+                    <label for="newPost">New Recipe</label>
+                  </div>
                   <textarea
                     name="newPost"
                     id="newPost"
                     cols="30"
-                    rows="3"
+                    rows="5"
                     class="form-control"
                   >
                   </textarea>
-                  <div>
-                    <button type="submit" class="btn btn-primary">Post</button>
+                  <div class="d-grid col-3 mx-auto">
+                    <button
+                      type="submit"
+                      class="btn btn-primary mt-3 fw-bold text-uppercase"
+                    >
+                      New Post
+                    </button>
                   </div>
                 </form>
               </div>
@@ -119,10 +141,10 @@
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Juan Perez</span>
+                    <span class="username fs-6 ps-2 fw-medium">Mats</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col text-start ps-5">
+                    <h2 class="post-title fw-bold">Steak and chilli</h2>
                   </div>
                 </div>
                 <img
@@ -154,10 +176,10 @@
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Juan Perez</span>
+                    <span class="username fs-6 ps-2 fw-medium">Per</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col text-start ps-5">
+                    <h2 class="post-title fw-bold">Salmon and almods</h2>
                   </div>
                 </div>
                 <img
@@ -189,10 +211,10 @@
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Juan Perez</span>
+                    <span class="username fs-6 ps-2 fw-medium">Ana</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col text-start ps-5">
+                    <h2 class="post-title fw-bold">Breakfast toasts</h2>
                   </div>
                 </div>
                 <img
@@ -224,10 +246,10 @@
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Juan Perez</span>
+                    <span class="username fs-6 ps-2 fw-medium">Fredrik </span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col text-start ps-5">
+                    <h2 class="post-title fw-bold">Margarita Pizza</h2>
                   </div>
                 </div>
                 <img
@@ -259,10 +281,10 @@
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Juan Perez</span>
+                    <span class="username fs-6 ps-2 fw-medium">Maria</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col text-start ps-5">
+                    <h2 class="post-title fw-bold">Delicious Dumplings</h2>
                   </div>
                 </div>
                 <img
@@ -294,10 +316,10 @@
                         alt=""
                         class="img-fluid post-img"
                     /></span>
-                    <span class="username fs-6 ps-2 fw-medium">Juan Perez</span>
+                    <span class="username fs-6 ps-2 fw-medium">Daniel</span>
                   </div>
-                  <div class="col text-center pe-2">
-                    <h2 class="post-title">Steak and chilli</h2>
+                  <div class="col text-start ps-5">
+                    <h2 class="post-title fw-bold">Swedish pancakes</h2>
                   </div>
                 </div>
                 <img
@@ -322,7 +344,9 @@
               </div>
             </div>
             <div class="col">
-              <div class="col bg-tertiary p-4 m-3 card pb-5">
+              <div
+                class="col bg-tertiary p-4 m-3 card pb-5 quote-container text-light fs-4"
+              >
                 <p>
                   “Cooking is a bit like cinema. It's the emotion that counts.”
                 </p>

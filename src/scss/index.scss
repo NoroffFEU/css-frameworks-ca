@@ -2,6 +2,11 @@ $primary: #000000;
 $secondary: #ffffff;
 $info: #2c2c2c;
 
+footer {
+    background-color: $secondary;
+    color: $primary;
+}
+
 body {
     color: $info;
     background-color: $secondary;

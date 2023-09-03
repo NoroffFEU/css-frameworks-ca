@@ -395,3 +395,13 @@ h6 {
 
     }
 }
+
+main {
+    .container-fluid {
+        background-image: url("../../pics/pawel-czerwinski-yn97LNy0bao-unsplash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 50vh;
+    }
+}

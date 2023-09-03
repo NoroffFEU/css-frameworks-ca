@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-1">
+              <img
+                class="rounded-circle shadow-4-strong mb-2"
+                alt="profile1"
+                src="../images/profile2.jpg"
+                style="width: 70px; height: 70px"
+                onclick="redirect()"
+              />
+            </div>
+            <div class="col-md-11">
+              <div class="row-md-8">
+                <textarea class="form-control" rows="2" id="comment"></textarea>
+                <div class="pb-1"></div>
+              </div>
+              <div class="row-md-4">
+                <button class="btn btn-small btn-primary float-end">
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pb-5"></div>
+      <div class="pb-5"></div>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="true"
+            >
+              Sort
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="?sort=date">Date</a>
+              <a class="dropdown-item" href="?sort=followers">Followers</a>
+              <a class="dropdown-item" href="?sort=favourites">Favourites</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-4 float-end">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="search">Search Posts</span>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="pb-1"></div>
+      <div class="card">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row border-bottom">
+                <div class="pb-4"></div>
+                <div class="col-md-2">
+                  <img
+                    class="rounded-circle shadow-4-strong mb-2"
+                    alt="profile4"
+                    src="../images/profile4.jpg"
+                    style="width: 70px; height: 70px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="fs-4"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Oej Oed
+                  </div>
+                  <div
+                    class="fs-6"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    The original is the best isn't it?
+                  </div>
+                  <img
+                    src="../images/gelato.jpg"
+                    class="img-fluid"
+                    style="height: 400px"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div
+                    class="fs-6 fw-lighter"
+                    style="font-family: FreeMono, monospace; font-weight: 100"
+                  >
+                    17.August
+                  </div>
+                </div>
+                <div class="pb-4"></div>
+              </div>
+              <div class="row border-bottom">
+                <div class="pb-4"></div>
+                <div class="col-md-2">
+                  <img
+                    class="rounded-circle shadow-4-strong mb-2"
+                    alt="profile3"
+                    src="../images/profile3.jpg"
+                    style="width: 70px; height: 70px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="fs-4"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Doe Joe
+                  </div>
+                  <div
+                    class="fs-6"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Eating out with my friends xoxo!
+                  </div>
+                  <img
+                    src="../images/friends.jpg"
+                    class="img-fluid"
+                    style="height: 400px"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div
+                    class="fs-6 fw-lighter"
+                    style="font-family: FreeMono, monospace; font-weight: 100"
+                  >
+                    12.August
+                  </div>
+                </div>
+                <div class="pb-4"></div>
+              </div>
+              <div class="row border-bottom">
+                <div class="pb-4"></div>
+                <div class="col-md-2">
+                  <img
+                    class="rounded-circle shadow-4-strong mb-2"
+                    alt="profile1"
+                    src="../images/profile1.jpg"
+                    style="width: 70px; height: 70px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="fs-4"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Joe Doe
+                  </div>
+                  <div
+                    class="fs-6"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    I am sorry for posting twice! Here is more Ice cream!
+                  </div>
+                  <img
+                    src="../images/black-cone.jpg"
+                    class="img-fluid"
+                    style="height: 400px"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div
+                    class="fs-6 fw-lighter"
+                    style="font-family: FreeMono, monospace; font-weight: 100"
+                  >
+                    10.August
+                  </div>
+                </div>
+                <div class="pb-4"></div>
+              </div>
+              <div class="row border-bottom">
+                <div class="pb-4"></div>
+                <div class="col-md-2">
+                  <img
+                    class="rounded-circle shadow-4-strong mb-2"
+                    alt="profile1"
+                    src="../images/profile1.jpg"
+                    style="width: 70px; height: 70px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="fs-4"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Joe Doe
+                  </div>
+                  <div
+                    class="fs-6"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    I LOVE ICE CREAM!
+                  </div>
+                  <img
+                    src="../images/cone.jpg"
+                    class="img-fluid"
+                    style="height: 400px"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div
+                    class="fs-6 fw-lighter"
+                    style="font-family: FreeMono, monospace; font-weight: 100"
+                  >
+                    10.August
+                  </div>
+                </div>
+                <div class="pb-4"></div>
+              </div>
+              <div class="row border-bottom">
+                <div class="pb-4"></div>
+                <div class="col-md-2">
+                  <img
+                    class="rounded-circle shadow-4-strong mb-2"
+                    alt="profile1"
+                    src="../images/profile1.jpg"
+                    style="width: 70px; height: 70px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="fs-4"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Joe Doe
+                  </div>
+                  <div
+                    class="fs-6"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    I LOVE ICE CREAM!
+                  </div>
+                  <img
+                    src="../images/cone.jpg"
+                    class="img-fluid"
+                    style="height: 400px"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div
+                    class="fs-6 fw-lighter"
+                    style="font-family: FreeMono, monospace; font-weight: 100"
+                  >
+                    10.August
+                  </div>
+                </div>
+                <div class="pb-4"></div>
+              </div>
+              <div class="row border-bottom">
+                <div class="pb-4"></div>
+                <div class="col-md-2">
+                  <img
+                    class="rounded-circle shadow-4-strong mb-2"
+                    alt="profile4"
+                    src="../images/profile4.jpg"
+                    style="width: 70px; height: 70px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="fs-4"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Oej Oed
+                  </div>
+                  <div
+                    class="fs-6"
+                    style="font-family: FreeMono, monospace; font-weight: 300"
+                  >
+                    Ice cream tastes better on cupcakes
+                  </div>
+                  <img
+                    src="../images/cupcake.jpg"
+                    class="img-fluid"
+                    style="height: 400px"
+                  />
+                </div>
+                <div class="col-md-2">
+                  <div
+                    class="fs-6 fw-lighter"
+                    style="font-family: FreeMono, monospace; font-weight: 100"
+                  >
+                    7.August
+                  </div>
+                </div>
+                <div class="pb-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2023 - Ida Nguyen</p>
+    </footer>
+  </body>
+  <script>
+    function redirect() {
+      window.location.href = "../profile/index.html";
+    }
+  </script>
+</html>

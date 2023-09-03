@@ -16,40 +16,94 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="dist/css/index.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Document</title>
   </head>
   <body>
-    <main>
-      <div class="container">
-        <div class="logo">FrostyFriends</div>
-      </div>
-      <h1>FrostyFriends</h1>
-      <form>
-        <div class="form-group">
-          <label for="InputEmail1">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="InputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
+      <div class="row">
+        <div class="col-md-12">
+          <div
+            class="fs-1 text-center"
+            style="font-family: OCR A Std, monospace; font-weight: 600"
           >
+            FrostyFriends
+          </div>
         </div>
-        <div class="form-group">
-          <label for="InputPassword1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="InputPassword1"
-            placeholder="Password"
-          />
+        <div class="row border rounded-5 p-3 shadow">
+          <div
+            class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column"
+            style="background: #053b8d"
+          >
+            <div class="featured-image">
+              <img
+                src="images/login.jpg"
+                class="img-fluid"
+                style="width: 1080px"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 login-box">
+            <form action="/profile/index.html">
+              <div class="row justify-content-center">
+                <div class="input-group mb-3">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control form-control-lg bg-light fs-6"
+                    placeholder="Email address"
+                    required="required"
+                  />
+                </div>
+                <div class="input-group mb-1">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-control form-control-lg bg-light fs-6"
+                    required="required"
+                    minlength="8"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="input-group mb-5 d-flex justify-content-between">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="formCheck"
+                    />
+                    <label class="form-check-label text-secondary"
+                      ><small>Remember Me</small></label
+                    >
+                  </div>
+                  <div>
+                    <small
+                      ><a href="/feed/index.html"
+                        >I forgot my password</a
+                      ></small
+                    >
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <button class="btn btn-lg btn-primary w-100 fs-6">
+                    Login
+                  </button>
+                </div>
+                <div class="input-group mb-3">
+                  <button class="btn btn-lg btn-light w-100 fs-6">
+                    Sign up
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <button type="login" class="btn btn-primary">Log in</button>
-      </form>
-    </main>
+      </div>
+    </div>
     <footer>
       <p>© 2023 - Ida Nguyen</p>
     </footer>

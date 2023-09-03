@@ -1,132 +1,18 @@
-p {
-  color: #67927a;
-}
-
-.btn {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-  text-decoration: none;
-}
-
-/* nav bottom */
-.navbar-bottom {
-  background-color: rgba(103, 146, 122, 0.9137254902);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-  border-radius: 60px 60px 0px 0px;
-}
-.navbar-bottom i.fas {
-  color: #eae6e5;
-}
-
-/* body styles */
-body {
-  background-color: #eae6e5;
-}
-
-.body-login {
-  background-image: url("/images/flowers-8100386_1280.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Authentication page */
-.navbar-custom {
-  background-color: rgba(103, 146, 122, 0.9137254902);
-  border-radius: 0px 0px 50px 50px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-}
-
-.logo {
-  width: 100%; /* Adjust as needed */
-  max-width: 400px; /* Maximum width for the logo */
+@charset "UTF-8";
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import "../../node_modules/bootstrap/scss/bootstrap"; 
+ *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   index.scss 1:9  root stylesheet */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  margin: 0 auto;
-}
-
-/* Log in form */
-.form-container {
-  background-color: rgba(103, 146, 122, 0.9137254902);
-  border-radius: 50px 50px 50px 50px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-}
-
-.form-wrapper .form-floating input.form-control {
-  background-color: #eae6e5;
-}
-.form-wrapper .form-floating label {
-  color: #eae6e5;
-}
-
-.form-title {
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  color: #000;
-  margin-bottom: 20px;
-}
-
-/* Profile page */
-.navbar-profile {
-  background-color: #67927a;
-}
-.navbar-profile .container {
-  align-items: center;
-  justify-content: space-between;
-}
-.navbar-profile .navbar-brand {
-  color: #000;
-}
-
-.profile-btn {
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-/* search bar */
-.search {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-  margin-right: auto;
-}
-
-/* profile container */
-.profile-container {
-  background-color: #67927a;
-  border-radius: 0px 0px 70px 70px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-  width: 100%;
-}
-
-/* Styling for the profile section container */
-.profile-section {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.profile-section img.profile-image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
-}
-.profile-section .followers {
-  flex-direction: row;
-}
-.profile-section h2 {
-  /* Styling for the user name */
-  color: #000;
-}
-.profile-section p {
-  /* Styling for follower/following information */
-  color: #eae6e5;
-}
-
-/* profile posts */
-.card {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.16);
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   ╷\a 1 │ @import \"../../node_modules/bootstrap/scss/bootstrap\"; \a   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   ╵\a   index.scss 1:9  root stylesheet";
 }
 
 /*# sourceMappingURL=output.css.map */

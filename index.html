@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="src/scss/index.css" />
+    <title>login</title>
+  </head>
+  <body>
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <div class="col-md-8 col-lg-7 col-xl-6">
+            <img
+              src="https://images.unsplash.com/photo-1550853418-bb4348ff6a80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+              class="img-fluid"
+              alt="Ann lady"
+            />
+          </div>
+          <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form action="/profile.html">
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  id="form1Example13"
+                  class="form-control form-control-lg"
+                  required
+                />
+                <label class="form-label" for="form1Example13"
+                  >Email address</label
+                >
+              </div>
+              <div class="form-outline mb-4">
+                <input
+                  type="password"
+                  id="form1Example23"
+                  class="form-control form-control-lg"
+                  min="8"
+                  max="12"
+                  required
+                />
+                <label class="form-label" for="form1Example23">Password</label>
+              </div>
+              <div
+                class="d-flex justify-content-around align-items-center mb-4"
+              >
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Sign in
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

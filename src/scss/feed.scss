@@ -1,13 +1,19 @@
-.divider:after,
-.divider:before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  /* background: #eee; */
-}
 body {
   background: #654ea3;
   background: linear-gradient(to right, #e83574, #68034b);
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #68034b;
+}
+
+.card:first-of-type {
+  margin: 2rem auto;
 }

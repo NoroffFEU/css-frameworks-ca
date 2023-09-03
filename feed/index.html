@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +7,13 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <!-- Brand Logo -->
             <a class="navbar-brand" href="/index.html">Socially</a>
-            
-            <!-- Toggler/collapsible Button for smaller screens -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <!-- Navbar items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -35,17 +26,13 @@
                         <a class="nav-link" href="/profile/index.html">Profile</a>
                     </li>
                 </ul>
-                
-                <!-- Search bar in navbar -->
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
                     <button class="btn btn-outline-light" type="submit">
-                        <span class="visually-hidden">Submit Search</span> <!-- For accessibility -->
+                        <span class="visually-hidden">Submit Search</span>
                         Search
                     </button>
-                </form>
-                
-                <!-- Login/Register buttons - These can be hidden if user is already logged in -->
+                </form>                
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/index.html">Login</a>
@@ -57,10 +44,7 @@
             </div>
         </div>
     </nav>
-
     <div class="container mt-4">
-
-        <!-- Sort Options -->
         <div class="dropdown mb-3">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 Sort By
@@ -71,8 +55,6 @@
                 <li><a class="dropdown-item" href="#">Most Popular</a></li>
             </ul>
         </div>
-    
-        <!-- Create New Post Form -->
         <form class="mb-5">
             <div class="mb-3">
                 <label for="postTitle" class="form-label">Post Title</label>
@@ -88,8 +70,6 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit Post</button>
         </form>
-    
-        <!-- List of Posts -->
         <div class="card mb-4">
             <img src="/img/panda.jpg" class="card-img-top" alt="Post Image">
             <div class="card-body">
@@ -98,17 +78,26 @@
                 <a href="#" class="btn btn-primary">Read More</a>
             </div>
         </div>
-        <!-- Repeat above card structure for each post -->
+        <div class="card mb-4">
+            <img src="/img/panda.jpg" class="card-img-top" alt="Post Image">
+            <div class="card-body">
+                <h5 class="card-title">Post Title</h5>
+                <p class="card-text">This is a brief overview of the post content...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <img src="/img/panda.jpg" class="card-img-top" alt="Post Image">
+            <div class="card-body">
+                <h5 class="card-title">Post Title</h5>
+                <p class="card-text">This is a brief overview of the post content...</p>
+                <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
     </div>
-    
-    <!-- Footer -->
     <footer class="text-center mt-5">
         <p>&copy; 2023 Socially. All rights reserved.</p>
     </footer>
-
-    <!-- Scripts -->
     <script src="/js/bootstrap.bundle.min.js"></script>
-    <!-- If using Bootstrap Icons, make sure to import them too -->
-
 </body>
 </html>

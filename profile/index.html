@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="../feed/index.html">Feed</a>
+          <a class="nav-item nav-link" href="../index.html">Log out</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="card">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="text-center p-5">
+                    <img
+                      class="rounded-circle shadow-4-strong mb-2"
+                      alt="profile2"
+                      src="../images/profile2.jpg"
+                      style="width: 200px; height: 200px"
+                    />
+                    <div class="mb-4">
+                      <div
+                        class="fs-2 text-center"
+                        style="
+                          font-family: OCR A Std, monospace;
+                          font-weight: 600;
+                        "
+                      >
+                        Person Personson
+                      </div>
+                      <div
+                        class="fs-5 text-center mb-4"
+                        style="
+                          font-family: OCR A Std, monospace;
+                          font-weight: 200;
+                        "
+                      >
+                        @PerP
+                      </div>
+                      <button class="btn btn-lg btn-primary mb-4">
+                        Follow
+                      </button>
+                      <div class="card">
+                        <div class="mb-2"></div>
+                        <div
+                          class="fs-5 text-center mb-2"
+                          style="
+                            font-family: OCR A Std, monospace;
+                            font-weight: 600;
+                          "
+                        >
+                          Followers 152032
+                        </div>
+                        <div
+                          class="fs-5 text-center"
+                          style="
+                            font-family: OCR A Std, monospace;
+                            font-weight: 600;
+                          "
+                        >
+                          Following 5748
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="row-md-8">
+                          <textarea
+                            class="form-control"
+                            rows="2"
+                            id="comment"
+                          ></textarea>
+                        </div>
+                        <div class="pb-1"></div>
+                        <div class="row-md-4">
+                          <button class="btn btn-small btn-primary float-end">
+                            Share
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pb-5"></div>
+                  <button
+                    class="btn btn-small btn-primary"
+                    onclick="redirect()"
+                  >
+                    Home
+                  </button>
+                  <div class="pb-1"></div>
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row border-bottom">
+                        <div class="pb-4"></div>
+                        <div class="col-md-2">
+                          <img
+                            class="rounded-circle shadow-4-strong mb-2"
+                            alt="profile2"
+                            src="../images/profile2.jpg"
+                            style="width: 70px; height: 70px"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div
+                            class="fs-4"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 300;
+                            "
+                          >
+                            Person Personson
+                          </div>
+                          <div
+                            class="fs-6"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 300;
+                            "
+                          >
+                            Eating out with my friends xoxo!
+                          </div>
+                          <img
+                            src="../images/friends.jpg"
+                            class="img-fluid"
+                            style="height: 400px"
+                          />
+                        </div>
+                        <div class="col-md-2">
+                          <div
+                            class="fs-6 fw-lighter"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 100;
+                            "
+                          >
+                            13.August
+                          </div>
+                        </div>
+                        <div class="pb-4"></div>
+                      </div>
+                      <div class="row border-bottom">
+                        <div class="pb-4"></div>
+                        <div class="col-md-2">
+                          <img
+                            class="rounded-circle shadow-4-strong mb-2"
+                            alt="profile2"
+                            src="../images/profile2.jpg"
+                            style="width: 70px; height: 70px"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div
+                            class="fs-4"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 300;
+                            "
+                          >
+                            Person Personson
+                          </div>
+                          <div
+                            class="fs-6"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 300;
+                            "
+                          >
+                            My black cone!
+                          </div>
+                          <img
+                            src="../images/black-cone.jpg"
+                            class="img-fluid"
+                            style="height: 400px"
+                          />
+                        </div>
+                        <div class="col-md-2">
+                          <div
+                            class="fs-6 fw-lighter"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 100;
+                            "
+                          >
+                            11.August
+                          </div>
+                        </div>
+                        <div class="pb-4"></div>
+                      </div>
+                      <div class="row border-bottom">
+                        <div class="pb-4"></div>
+                        <div class="col-md-2">
+                          <img
+                            class="rounded-circle shadow-4-strong mb-2"
+                            alt="profile2"
+                            src="../images/profile2.jpg"
+                            style="width: 70px; height: 70px"
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div
+                            class="fs-4"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 300;
+                            "
+                          >
+                            Person Personson
+                          </div>
+                          <div
+                            class="fs-6"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 300;
+                            "
+                          >
+                            I LOVE ICE CREAM!
+                          </div>
+                          <img
+                            src="../images/cone.jpg"
+                            class="img-fluid"
+                            style="height: 400px"
+                          />
+                        </div>
+                        <div class="col-md-2">
+                          <div
+                            class="fs-6 fw-lighter"
+                            style="
+                              font-family: FreeMono, monospace;
+                              font-weight: 100;
+                            "
+                          >
+                            11.August
+                          </div>
+                        </div>
+                        <div class="pb-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2023 - Ida Nguyen</p>
+    </footer>
+  </body>
+  <script>
+    function redirect() {
+      window.location.href = "../feed/index.html";
+    }
+  </script>
+</html>

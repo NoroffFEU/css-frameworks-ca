@@ -22,5 +22,4 @@ $(document).ready(function () {
       $(".content-nav").removeClass("sticky").css("top", "0");
     }
   });
-  test;
 });

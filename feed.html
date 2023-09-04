@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="dropdown ms-3 py-3">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Feed
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#">Feed</a></li>
+          <li><a class="dropdown-item" href="./profile.html">Profile</a></li>
+          <li><a class="dropdown-item" href="./index.html">Sign out</a></li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <div class="searchbar">
+            <input
+              class="search_input"
+              type="text"
+              name=""
+              placeholder="Search..."
+            />
+            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="sort">
+        <div class="container text-center px-3">
+          <select class="form-select mt-3" aria-label="sort">
+            <option selected>Sort</option>
+            <option value="1">Popular</option>
+            <option value="2">Recent</option>
+          </select>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item m-3">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              New post
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div class="container-fluid">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                      ></label>
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                        placeholder="What's happening?"
+                      ></textarea>
+                    </div>
+                    <div
+                      class="d-flex justify-content-start align-items-center mb-3"
+                    >
+                      <a href="#" class="attachment-icon me-2"
+                        ><i class="fas fa-paperclip"></i
+                      ></a>
+                      <a href="#" class="image-icon me-2"
+                        ><i class="fas fa-image"></i
+                      ></a>
+                      <a href="#" class="smiley-icon me-auto"
+                        ><i class="fas fa-smile"></i
+                      ></a>
+                      <button type="button" class="btn btn-primary">
+                        Post
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="posts">
+        <div class="container">
+          <div class="row mx-3">
+            <div class="col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="profile-info me-3 d-flex align-items-center px-3"
+                    >
+                      <img
+                        src="/images/profileimg.png"
+                        alt="profileimg"
+                        style="width: 45px; height: 45px"
+                      />
+                      <h6 class="card-subtitle mb-0 text-muted ms-2">
+                        @ Username
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="post-content mt-3 px-3">
+                    <p class="card-text">
+                      "Just had the most amazing cup of coffee ☕️! #CoffeeLover
+                      #MorningBoost"
+                    </p>
+                  </div>
+                  <div class="px-3">
+                    <hr class="hr hr-blurry" />
+                  </div>
+                  <div class="post-icons d-flex justify-content-center">
+                    <a href="#" class="me-2"><i class="far fa-heart"></i></a>
+                    <p class="me-2">94</p>
+                    <a href="#" class="me-2"><i class="far fa-comment"></i></a>
+                    <p class="me-2">12</p>
+                    <a href="#"><i class="fas fa-share"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="profile-info me-3 d-flex align-items-center px-3"
+                    >
+                      <img
+                        src="/images/profileimg.png"
+                        alt="profileimg2"
+                        style="width: 45px; height: 45px"
+                      />
+                      <h6 class="card-subtitle mb-0 text-muted ms-2">
+                        @ Username
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="post-content mt-3 px-3">
+                    <img
+                      src="/images/manhattan1.webp"
+                      alt="manhattan"
+                      class="img-fluid"
+                    />
+                    <p class="card-text mt-3">
+                      Manhattan drink from last night! 😍
+                    </p>
+                  </div>
+                  <div class="px-3">
+                    <hr class="hr hr-blurry" />
+                  </div>
+                  <div class="post-icons d-flex justify-content-center">
+                    <a href="#" class="me-2"><i class="far fa-heart"></i></a>
+                    <p class="me-2">94</p>
+                    <a href="#" class="me-2"><i class="far fa-comment"></i></a>
+                    <p class="me-2">12</p>
+                    <a href="#"><i class="fas fa-share"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row mx-3">
+            <div class="col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="profile-info me-3 d-flex align-items-center px-3"
+                    >
+                      <img
+                        src="/images/profileimg.png"
+                        alt="profileimg"
+                        style="width: 45px; height: 45px"
+                      />
+                      <h6 class="card-subtitle mb-0 text-muted ms-2">
+                        @ Username
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="post-content mt-3 px-3">
+                    <p class="card-text">
+                      "Just had the most amazing cup of coffee ☕️! #CoffeeLover
+                      #MorningBoost"
+                    </p>
+                  </div>
+                  <div class="px-3">
+                    <hr class="hr hr-blurry" />
+                  </div>
+                  <div class="post-icons d-flex justify-content-center">
+                    <a href="#" class="me-2"><i class="far fa-heart"></i></a>
+                    <p class="me-2">94</p>
+                    <a href="#" class="me-2"><i class="far fa-comment"></i></a>
+                    <p class="me-2">12</p>
+                    <a href="#"><i class="fas fa-share"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="profile-info me-3 d-flex align-items-center px-3"
+                    >
+                      <img
+                        src="/images/profileimg.png"
+                        alt="profileimg2"
+                        style="width: 45px; height: 45px"
+                      />
+                      <h6 class="card-subtitle mb-0 text-muted ms-2">
+                        @ Username
+                      </h6>
+                    </div>
+                  </div>
+                  <div class="post-content mt-3 px-3">
+                    <img
+                      src="/images/manhattan1.webp"
+                      alt="manhattan"
+                      class="img-fluid"
+                    />
+                    <p class="card-text mt-3">
+                      Manhattan drink from last night! 😍
+                    </p>
+                  </div>
+                  <div class="px-3">
+                    <hr class="hr hr-blurry" />
+                  </div>
+                  <div class="post-icons d-flex justify-content-center">
+                    <a href="#" class="me-2"><i class="far fa-heart"></i></a>
+                    <p class="me-2">94</p>
+                    <a href="#" class="me-2"><i class="far fa-comment"></i></a>
+                    <p class="me-2">12</p>
+                    <a href="#"><i class="fas fa-share"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer><p>&copy; 2023</p></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

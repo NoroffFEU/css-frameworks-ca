@@ -4,7 +4,12 @@ body {
 
 main {
   min-height: 100vh;
+  max-width: 860px;
+  margin: auto;
+
 }
+
+
 
 .searchbar {
   margin-bottom: auto;
@@ -61,4 +66,16 @@ main {
 .posts {
   max-width: 600px;
   margin: 0 auto; /* Center the .posts div horizontally */
+}
+
+.sort {
+  max-width: 300px;
+  margin: auto;
+}
+
+footer {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,5 +1,20 @@
 # css-frameworks-ca
 
+[Netlify](https://comfy-lily-a4a72a.netlify.app/)
+
+## Description
+
 My social media course assignment. Consists of a log in page, a feed page and a profile page.
 
-Netlify: https://64f4c8238d3917398b54de7b--musical-longma-3c7004.netlify.app/
+## Built With
+
+- [HTML]
+- [CSS]
+- [Bootstrap]
+- [SASS]
+
+## Contributing
+
+## Contact
+
+[My LinkedIn page](https://www.linkedin.com/in/beate-vangsnes/)

@@ -1,0 +1,22 @@
+input {
+    border-width: $input-border-width;
+    margin-bottom: 20px;
+}
+
+.form-signin form {
+    text-align: center;
+}
+
+.form-signin form .form-floating label {
+    text-align: left;
+    top: -4px;
+}
+
+.form-signin form .form-floating input {
+    height: calc(3rem + 6px);
+}
+
+.remember,
+.form-signin a {
+    font-size: 18px;
+}

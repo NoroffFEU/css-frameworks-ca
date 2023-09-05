@@ -2,26 +2,16 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "components/buttons";
+@import "components/forms";
+@import "components/typography";
+@import "layout";
 
-// body {
-//     background: lightblue;
-// }
-
-h1,
-button {
-    font-family: $font-family-sans-serif;
-    font-style: italic;
-    color: purple;
+body {
+    background-color: #c2dfea;
 }
-
-body:before {
-    background: url("../../images/small-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
+main {
+    // background: url("../../images/bg-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
+    background: url("../../images/bg2-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
     background-size: cover;
-    content: "";
-    display: block;
-    opacity: 0.6;
-}
-
-input {
-    border-width: $input-border-width;
+    padding-bottom: 200px;
 }

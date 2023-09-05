@@ -1,0 +1,25 @@
+.form-signin {
+    padding: 80px 40px;
+    width: min(100% - 40px, 1000px);
+    padding: 100px 40px 180px 40px;
+    // margin-inline: auto; //sets margin for only left and right
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.form-signin form {
+    max-width: 430px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.form-signin img {
+    padding: 40px 0 50px 0;
+    max-width: 450px;
+    margin: 0 auto;
+}

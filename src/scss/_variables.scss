@@ -1,1 +1,15 @@
-$primary: orange;
+$primary: black;
+$secondary: #af7fee;
+$bs-body-font-family: "trade-gothic-next", sans-serif;
+
+$font-family-sans-serif: "trade-gothic-next", sans-serif;
+
+// "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+//     "Segoe UI Symbol", "Noto Color Emoji";
+// $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+// border: $input-border-width solid $input-border-color;
+
+$input-border-width: 3px;
+$input-border-color: $primary;
+$input-focus-border-color: $secondary;

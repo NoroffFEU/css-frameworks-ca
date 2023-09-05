@@ -4,9 +4,24 @@
 @import "components/buttons";
 
 // body {
-//     background: red;
+//     background: lightblue;
 // }
 
-// h1 {
-//     color: blue;
-// }
+h1,
+button {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+    color: purple;
+}
+
+body:before {
+    background: url("../../images/small-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
+    background-size: cover;
+    content: "";
+    display: block;
+    opacity: 0.6;
+}
+
+input {
+    border-width: $input-border-width;
+}

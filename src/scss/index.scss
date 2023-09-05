@@ -11,7 +11,11 @@ body {
 }
 main {
     // background: url("../../images/bg-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
-    background: url("../../images/bg2-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
+    background: url("../../images/bg2-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg");
+
+    // padding-bottom: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    // background-attachment: fixed;
     background-size: cover;
-    padding-bottom: 200px;
 }

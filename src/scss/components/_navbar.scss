@@ -1,0 +1,13 @@
+.navbar h1 a,
+.nav-link {
+    color: $navbar-text-color;
+}
+
+.nav-link.active {
+    color: var(--bs-navbar-active-color);
+}
+
+.navbar h1 a:hover,
+.nav-link:hover {
+    color: $secondary;
+}

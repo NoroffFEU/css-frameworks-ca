@@ -17,7 +17,7 @@
 <header class="row">
   <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="#">CSS Frameworks</a>
+      <a class="navbar-brand text-white" href="/"><h2>CSS Frameworks</h2></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
               aria-label="Toggle navigation" aria-controls="navbarSupportedContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarMobile">
         <ul class="navbar-nav mb-2 me-auto mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./feed">feed</a>
+            <a class="nav-link text-white active" aria-current="page" href="/">Home</a>
           </li>
         </ul>
       </div>
@@ -40,14 +37,15 @@
     <h1>Please log in to continue.</h1>
   </div>
   <div class="row">
-    <form class="w-50 mx-auto" method="post" action="./profile/">
+    <div class="errorWrapper"></div>
+    <form>
       <div class="form-outline mb-4">
-        <input type="email" id="username" class="form-control"/>
+        <input type="email" id="username" class="form-control" required/>
         <label class="form-label" for="username">Email address</label>
       </div>
 
       <div class="form-outline mb-4">
-        <input type="password" id="passwd" class="form-control"/>
+        <input type="password" id="passwd" class="form-control" required/>
         <label class="form-label" for="passwd">Password</label>
       </div>
 

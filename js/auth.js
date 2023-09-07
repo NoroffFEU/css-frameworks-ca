@@ -1,67 +1,71 @@
-const apiBaseURL = "https://api.noroff.dev/api/v1";
-const apiRegister = "https://api.noroff.dev/api/v1/social/auth/register";
-const apiLogin = "https://api.noroff.dev/api/v1/social/auth/login";
+const API_BASE_URL = 'https://api.noroff.dev/api/v1';
 
-async function registerUser(name, email, password) {
+async function registerUser(name, email, password, avatar, banner) {
     try {
-      const response = await fetch(`${apiRegister}`, {
+      const response = await fetch(`${API_BASE_URL}/social/auth/register`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password })
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          avatar,
+          banner,
+        }),
       });
-      
+  
+      if (!response.ok) {
+        throw new Error('Registration failed');
+      }
+  
       const data = await response.json();
-      return data;
+      console.log('User registered successfully:', data);
     } catch (error) {
-      console.error('Error registering user:', error);
+      console.error('Error:', error);
     }
   }
   
+  registerUser('my_username', 'first.last@stud.noroff.no', 'UzI1NiIsInR5cCI', 'https://img.service.com/avatar.jpg', 'https://img.service.com/banner.jpg');
+
   async function loginUser(email, password) {
     try {
-      const response = await fetch(`${apiLogin}`, {
+      const response = await fetch(`${API_BASE_URL}/social/auth/login`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({
+          email,
+          password,
+        }),
       });
-      
-      const data = await response.json();
-      if (data.accessToken) {
-        localStorage.setItem('accessToken', data.accessToken);
-      }
-      return data;
-    } catch (error) {
-      console.error('Error logging in:', error);
-    }
-  }
-  async function fetchProtectedData(endpoint) {
-    try {
-      const token = localStorage.getItem('accessToken');
-      const options = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      
-      const response = await fetch(`${apiBaseURL}${endpoint}`, options);
-      
+  
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error('Login failed');
       }
   
       const data = await response.json();
-      return data;
+      console.log('User logged in successfully:', data);
+  
+      // Store the access token in localStorage
+      localStorage.setItem('accessToken', data.accessToken);
     } catch (error) {
-      console.error('Error fetching protected data:', error);
+      console.error('Error:', error);
     }
   }
-  
-  registerUser('Ramtin_Mosh', 'rammos68620@stud.noroff.no', 'UzI1NiIsInR5cCI')
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
 
+  loginUser('first.last@stud.noroff.no', 'UzI1NiIsInR5cCI');
+
+  function getAuthHeader() {
+    const token = localStorage.getItem('accessToken');
+    return {
+      Authorization: `Bearer ${token}`,
+    };
+  }
+  
+
+
+  
   

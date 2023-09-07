@@ -27,8 +27,6 @@ async function registerUser(name, email, password, avatar, banner) {
     }
   }
   
-  registerUser('my_username', 'first.last@stud.noroff.no', 'UzI1NiIsInR5cCI', 'https://img.service.com/avatar.jpg', 'https://img.service.com/banner.jpg');
-
   async function loginUser(email, password) {
     try {
       const response = await fetch(`${API_BASE_URL}/social/auth/login`, {
@@ -55,15 +53,17 @@ async function registerUser(name, email, password, avatar, banner) {
       console.error('Error:', error);
     }
   }
-
-  loginUser('first.last@stud.noroff.no', 'UzI1NiIsInR5cCI');
-
+  
   function getAuthHeader() {
     const token = localStorage.getItem('accessToken');
+    if (!token) {
+      throw new Error('No access token found');
+    }
     return {
       Authorization: `Bearer ${token}`,
     };
   }
+  
   
 
 

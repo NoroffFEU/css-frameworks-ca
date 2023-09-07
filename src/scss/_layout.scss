@@ -1,18 +1,23 @@
 .form-signin {
-    padding: 80px 40px;
-    width: min(100% - 40px, 1000px);
-    padding: 100px 40px 180px 40px;
+    padding: 100px 60px;
     // margin-inline: auto; //sets margin for only left and right
-    margin: auto;
+    //   max-width: min(100% - 40px, 1000px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     max-width: 500px;
+    height: 100vh;
 }
 
-.form-signin form {
-    max-width: 430px;
-}
+// .signin-content {
+//     margin-inline: auto;
+//     max-width: 380px;
+// }
+
+// .signin-content form,
+// .btn-create {
+//     max-width: 380px;
+//     margin-inline: auto;
+// }
 
 img {
     max-width: 100%;
@@ -20,5 +25,4 @@ img {
 
 .form-signin img {
     padding: 40px 0 50px 0;
-    max-width: 450px;
 }

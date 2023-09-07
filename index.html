@@ -6,7 +6,7 @@
         <title>CSS Frameworks CA - Elise</title>
         <link rel="stylesheet" href="https://use.typekit.net/yyb1tse.css" />
         <link rel="stylesheet" href="/dist/css/index.css" />
-
+        <script src="js/script.js" defer></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -17,28 +17,31 @@
     <body>
         <main class="form-signin w-100 m-auto">
             <img src="images/Logo-stronger-together.png" alt="" />
-            <form>
-                <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" /> -->
+            <div class="signin-content">
+                <form class="needs-validation" action="/feed.html" novalidate>
+                    <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+                    <div class="">
+                        <label for="validationCustom01">Email address</label>
+                        <input type="email" class="form-control" id="validationCustom01" placeholder="E-mail" required />
+                        <!-- pattern="/\S+@\S+\.\S+/" -->
+                        <div class="valid-feedback">Email looks good!</div>
+                        <div class="invalid-feedback">Sorry, that is not a valid email</div>
+                    </div>
+                    <div class="">
+                        <label for="validationCustom02">Password (min 8 characters)</label>
+                        <input type="password" class="form-control" id="validationCustom02" placeholder="Password" pattern="(?=.*[a-z]).{8,}" required />
+                        <div class="valid-feedback">Yes! Password is valid</div>
+                        <div class="invalid-feedback">Sorry, your password must be at least 8 characters</div>
+                    </div>
 
-                <h1 class="h3 mb-3 fw-normal">Sign in</h1>
-
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                    <label for="floatingInput">Email address</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                    <label for="floatingPassword">Password</label>
-                </div>
-
-                <div class="checkbox mb-3">
-                    <label class="remember"> <input type="checkbox" value="remember-me" /> Remember me </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                <!-- <p class="mt-5 mb-3 text-muted">© 2017–2022</p> -->
-                <a href="#">Forgot password?</a>
-                <button href="#" class="w-100 btn btn-lg btn-secondary">Create account</button>
-            </form>
+                    <div class="checkbox mb-3">
+                        <label class="remember"> <input type="checkbox" value="remember-me" /> Remember me </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <a href="#">Forgot password?</a>
+                </form>
+                <button href="#" class="w-100 btn btn-lg btn-secondary btn-create">Create account</button>
+            </div>
         </main>
     </body>
 </html>

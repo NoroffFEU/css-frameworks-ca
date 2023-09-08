@@ -1,0 +1,15 @@
+.card {
+  flex-direction: row;
+}
+.card img {
+  width: 30%;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+  .card img {
+    width: 100%;
+  }
+}

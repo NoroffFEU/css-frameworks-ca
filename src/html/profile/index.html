@@ -9,15 +9,17 @@
   <meta name="author" content="Kjell-Arne (Sovak)">
   <meta name="description" content="Main home page for css framework school assignment containing sign in form">
   <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/overrides.css">
   <script defer type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script defer type="text/javascript" src="../assets/js/index.js"></script>
+  <script defer type="module" src="../assets/js/index.js"></script>
+  <script defer type="module" src="../assets/js/functions/profilePageFunctions.js"></script>
   <title>CSS Frameworks | Profile</title>
 </head>
 <body>
 <header class="row">
   <nav class="navbar navbar-expand-lg bg-primary">
     <div class="container">
-      <a class="navbar-brand" href="/">CSS Frameworks</a>
+      <a class="navbar-brand text-white" href="/">CSS Frameworks</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile"
               aria-label="Toggle navigation" aria-controls="navbarSupportedContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
@@ -25,13 +27,13 @@
       <div class="collapse navbar-collapse" id="navbarMobile">
         <ul class="navbar-nav mb-2 me-auto mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./">Home</a>
+            <a class="nav-link text-white active" aria-current="page" href="./">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/feed">feed</a>
+            <a class="nav-link text-white" href="/feed">feed</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/profile">profile</a>
+            <a class="nav-link text-white" href="/profile">profile</a>
           </li>
         </ul>
       </div>
@@ -39,11 +41,32 @@
   </nav>
 </header>
 <main class="container">
-  <div class="my-5 d-flex justify-content-center">
-    <h1>Profile.</h1>
-  </div>
   <div class="row">
+    <div class="my-5 d-flex justify-content-center">
+      <h1>Profile</h1>
+    </div>
+    <div class="card">
+      <img src="https://placebear.com/200/200" class="card-img" alt="Profile Image">
+      <div class="card-body">
+        <h5 class="card-title">Kjell-Arne Neshagen</h5>
+        <p class="card-text">Some descriptive text about myself..</p>
+      </div>
+    </div>
+  </div>
+  <div class="my-5 d-flex justify-content-center">
+    <h3>Posts</h3>
+  </div>
+  <div class="row profile-feed-row">
 
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Read more..</a>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 <footer>

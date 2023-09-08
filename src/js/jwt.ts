@@ -80,8 +80,11 @@ const response = await fetch(`${endpoints.baseUrl+endpoints.login}`,{method:"POS
 const data = await response.json()
 console.log(data)
 localStorage.setItem("token",JSON.stringify(data.accessToken))
-
+changePage(data.name)
 }
 
 
-
+function changePage(name:string
+){
+    window.location.href=`/src/profile/index.html?user=${name}`
+}

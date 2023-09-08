@@ -68,5 +68,9 @@ function login({ email, password }) {
         const data = yield response.json();
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));
+        changePage(data.name);
     });
+}
+function changePage(name) {
+    window.location.href = `/src/profile/index.html?user=${name}`;
 }

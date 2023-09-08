@@ -6,7 +6,7 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="/dist/css/style.css" />
 	</head>
-	<body>
+	<body text-center>
 		<nav class="navbar navbar-expand-lg bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">Navbar</a>
@@ -39,75 +39,36 @@
 				</div>
 			</div>
 		</nav>
-		<main>
-			<div class="px-4 py-5 my-5 text-center">
-				<h1 class="display-5 fw-bold">Centered hero</h1>
-				<div class="col-lg-6 mx-auto">
-					<p class="lead mb-4">
-						Quickly design and customize responsive mobile-first sites with
-						Bootstrap, the world’s most popular front-end open source toolkit,
-						featuring Sass variables and mixins, responsive grid system,
-						extensive prebuilt components, and powerful JavaScript plugins.
-					</p>
-					<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-						<button type="button" class="btn btn-primary btn-lg px-4 gap-3">
-							Primary button
-						</button>
-						<button type="button" class="btn btn-outline-secondary btn-lg px-4">
-							Secondary
-						</button>
-					</div>
-				</div>
-			</div>
-		</main>
 
-		<div class="card mb-3" style="max-width: 540px">
-			<div class="row g-0">
-				<div class="col-md-4">
-					<img src="..." class="img-fluid rounded-start" alt="..." />
-				</div>
-				<div class="col-md-8">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">
-							This is a wider card with supporting text below as a natural
-							lead-in to additional content. This content is a little bit
-							longer.
-						</p>
-						<p class="card-text">
-							<small class="text-muted">Last updated 3 mins ago</small>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<h2 id="contactus" class="display-5 fw-bold px-4 py-5 my-5 text-center">
-			Contact us
-		</h2>
-		<form class="m-4 col-8 mx-auto">
-			<div class="cointainer md-5">
-				<div class="mb-3">
-					<label for="" class="form-label">Full name</label>
+		<main class="form-signin w-100 m-auto">
+			<form action="/profile/index.html">
+				<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+				<div class="form-floating">
 					<input
 						type="email"
 						class="form-control"
-						id="exampleInputEmail1"
-						aria-describedby="emailHelp"
+						id="floatingInput"
+						placeholder="name@example.com"
+						required
 					/>
+
+					<label for="floatingInput">Email address</label>
 				</div>
-				<div class="mb-3">
-					<label for="exampleInputEmail1" class="form-label">Email</label>
-					<input type="email" class="form-control" id="exampleInputPassword1" />
-				</div>
-				<div class="input-group">
-					<textarea
+				<div class="form-floating">
+					<input
+						type="password"
 						class="form-control"
-						aria-label="With textarea"
-						placeholder="Write your message"
-					></textarea>
+						id="floatingPassword"
+						placeholder="Password"
+						required
+						minlength="8"
+						maxlength="25"
+					/>
+					<label for="floatingPassword">Password</label>
 				</div>
-				<button type="submit" class="btn btn-primary mt-2">Submit</button>
-			</div>
-		</form>
+				<button type="submit" class="btn btn-primary">Sign in</button>
+			</form>
+		</main>
 	</body>
 </html>

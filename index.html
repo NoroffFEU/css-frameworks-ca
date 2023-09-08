@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Website CA</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/dist/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start image-container">
+            <lottie-player
+              src="https://lottie.host/eeb23b83-63e4-4815-b406-5ab88ce12833/161yU4Sqhp.json"
+              background="#fff"
+              speed="0.8"
+              style="width: 300px; height: 300px"
+              loop
+              autoplay
+              direction="1"
+              mode="normal"
+            ></lottie-player>
+          </div>
+
+          <div class="col-md-10 mx-auto col-lg-5 rounded-3 p-2 mt-2 form-color">
+            <form id="emailForm" class="p-4 p-md-5 border rounded-3 bg-light">
+              <h1 class="display-4 fw-bold lh-1 mb-3">Twibble™</h1>
+              <p class="col-lg-10">Share Whats on Your Mind</p>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="Username, Email Or Phone Number"
+                />
+
+                <label for="floatingInput" class="opacity-75">
+                  Username Or Email
+                </label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="floatingPassword"
+                  placeholder="Password"
+                />
+
+                <label class="opacity-75" for="floatingPassword"
+                  >Password</label
+                >
+              </div>
+
+              <div
+                class="d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="checkbox mb-3">
+                  <label class="opacity-75">
+                    <input type="checkbox" value="r" />
+                    Remember Me
+                  </label>
+                </div>
+                <button
+                  class="w-50 btn btn-lg btn-info"
+                  id="loginButton"
+                  disabled
+                >
+                  <a
+                    href="/pages/FeedPage.html"
+                    style="color: #ffff; text-decoration: none"
+                    >Login</a
+                  >
+                </button>
+                <hr />
+                <p class="text-center opacity-75">OR</p>
+                <button class="w-50 btn btn-sm btn-info">
+                  <a href="#">Register</a>
+                </button>
+              </div>
+
+              <div
+                class="d-flex gap-3 mt-5 align-items-center justify-content-center"
+              >
+                <p class="opacity-75 fw-semibold">Privacy</p>
+                <p class="opacity-75 fw-semibold">Legal</p>
+              </div>
+            </form>
+
+            <div class="d-flex align-items-center justify-content-center">
+              <img
+                src="/images/icons/AppStore.png"
+                class="dicon"
+                alt="Download icon Apple Store"
+              />
+              <img
+                src="/images/icons/GooglePlay.png"
+                class="dicon"
+                alt="DownLoad icon Google Play"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container-fluid mt-5 border-top px-5">
+      <div class="row">
+        <div class="row">
+          <ul
+            class="nav gap-2 align-items-center justify-content-center opacity-75 fw-semibold p-4"
+          >
+            <li>Privacy</li>
+            <li>Jobs</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Get references to the password input field and form
+      const passwordInput = document.getElementById("floatingPassword");
+      const passwordForm = document.getElementById("passwordForm");
+
+      // Add an event listener to the password input field
+      passwordInput.addEventListener("input", () => {
+        const password = passwordInput.value;
+        const isValidPassword = isValidPasswordFormat(password); // Replace with your validation logic from regex.js
+
+        // Enable or disable the login button based on the password validity
+        if (isValidPassword) {
+          loginButton.removeAttribute("disabled");
+        } else {
+          loginButton.setAttribute("disabled", "disabled");
+        }
+      });
+
+      // Define your password validation function using the provided regex
+      function isValidPasswordFormat(password) {
+        // Use the provided password regex to validate the password
+        const passwordRegex = /^(?=.*[A-Z]).{8,}$/;
+        return passwordRegex.test(password);
+      }
+    </script>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>

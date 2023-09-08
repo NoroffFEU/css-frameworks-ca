@@ -1,19 +1,18 @@
+// SIGN IN //
 .form-control {
     border-width: $input-border-width;
     margin-bottom: 20px;
     height: 48.5px;
 }
 
-// .form-signin {
-//     color: $primary;
-// }
-
-.form-signin label {
+.form-signin label,
+.main-feed form {
     text-align: left;
 }
 
 .form-signin h1,
-.checkbox {
+.checkbox,
+.btn-share {
     text-align: center;
 }
 
@@ -44,4 +43,16 @@
 
 .invalid-feedback {
     background-color: rgba(220, 53, 69, 0.9);
+}
+
+.form-label {
+    margin-bottom: 0;
+}
+
+.main-feed form div div {
+    padding-inline: 2px;
+}
+
+.upload-file {
+    padding-inline: 4px;
 }

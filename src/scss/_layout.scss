@@ -8,21 +8,18 @@
     height: 100vh;
 }
 
-// .signin-content {
-//     margin-inline: auto;
-//     max-width: 380px;
-// }
-
-// .signin-content form,
-// .btn-create {
-//     max-width: 380px;
-//     margin-inline: auto;
-// }
-
 img {
     max-width: 100%;
 }
 
 .form-signin img {
     padding: 40px 0 50px 0;
+}
+
+.main-feed {
+    max-width: 1320px;
+}
+
+.album .container .col-11 {
+    margin-inline: auto;
 }

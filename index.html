@@ -14,7 +14,7 @@
             defer
         ></script>
     </head>
-    <body>
+    <body class="body-signin">
         <main class="form-signin w-100 m-auto">
             <img src="images/Logo-stronger-together.png" alt="" />
             <div class="signin-content">
@@ -22,14 +22,15 @@
                     <h1 class="h3 mb-3 fw-normal">Sign in</h1>
                     <div class="">
                         <label for="validationCustom01">Email address</label>
-                        <input type="email" class="form-control" id="validationCustom01" placeholder="E-mail" required />
+                        <input type="email" class="form-control" id="validationCustom01" placeholder="E-mail" required pattern="\S+@\S+\.\S+" />
                         <!-- pattern="/\S+@\S+\.\S+/" -->
                         <div class="valid-feedback">Email looks good!</div>
                         <div class="invalid-feedback">Sorry, that is not a valid email</div>
                     </div>
                     <div class="">
                         <label for="validationCustom02">Password (min 8 characters)</label>
-                        <input type="password" class="form-control" id="validationCustom02" placeholder="Password" pattern="(?=.*[a-z]).{8,}" required />
+                        <input type="password" class="form-control" id="validationCustom02" placeholder="Password" required minlength="8" />
+                        <!-- pattern="(?=.*[a-z]).{8,}" -->
                         <div class="valid-feedback">Yes! Password is valid</div>
                         <div class="invalid-feedback">Sorry, your password must be at least 8 characters</div>
                     </div>

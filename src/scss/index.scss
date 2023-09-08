@@ -9,14 +9,29 @@
 @import "components/navbar";
 @import "layout";
 
-body {
-    background-color: #c2dfea;
-    background-color: #7798ab;
-    background-color: #d2dee7;
+.body-signin {
+    // background-color: #c2dfea;
+    // background-color: #7798ab;
+    background-color: $bg-grey;
 }
-main {
+
+.form-signin {
     // background: url("../../images/bg-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
     background: url("../../images/bg2-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg");
+
+    // padding-bottom: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    // background-attachment: fixed;
+    background-size: cover;
+}
+
+.body-feed {
+    background-color: $secondary;
+}
+.main-feed {
+    // background: url("../../images/bg-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
+    background: url("../../images/Two-people-workout-AdobeStock_195639931\(1\).jpg");
 
     // padding-bottom: 200px;
     background-repeat: no-repeat;

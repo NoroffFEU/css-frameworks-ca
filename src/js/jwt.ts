@@ -1,3 +1,5 @@
+import { endpoints } from "./endpoints.js";
+
 
 type registerProp = "email"|"userName"|"password"|"repeatedPassword"
 
@@ -53,11 +55,7 @@ collectInput(inputPassword,"password")
 collectInput(inputUserName,"userName")
 collectInput(inputRpassword,"repeatedPassword")
 
-const endpoints = {
-    register:"/social/auth/register",
-    login:"/social/auth/login",
-    baseUrl:"https://api.noroff.dev/api/v1"
-}
+
 
 async function registerAccount({email,userName,password}:registerInputValues){
     const response = await fetch(`${endpoints.baseUrl+endpoints.register}`

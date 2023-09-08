@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+const endpoints_js_1 = require("./endpoints.js");
 const registerObject = {
     email: "email",
     userName: "username",
@@ -44,14 +46,9 @@ collectInput(inputEmail, "email");
 collectInput(inputPassword, "password");
 collectInput(inputUserName, "userName");
 collectInput(inputRpassword, "repeatedPassword");
-const endpoints = {
-    register: "/social/auth/register",
-    login: "/social/auth/login",
-    baseUrl: "https://api.noroff.dev/api/v1"
-};
 function registerAccount({ email, userName, password }) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`${endpoints.baseUrl + endpoints.register}`, { method: "POST", headers: { "Content-type": "application/json" },
+        const response = yield fetch(`${endpoints_js_1.endpoints.baseUrl + endpoints_js_1.endpoints.register}`, { method: "POST", headers: { "Content-type": "application/json" },
             body: JSON.stringify({ email, name: userName, password }) });
         const data = yield response.json();
     });
@@ -64,7 +61,7 @@ buttonLogin === null || buttonLogin === void 0 ? void 0 : buttonLogin.addEventLi
 });
 function login({ email, password }) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`${endpoints.baseUrl + endpoints.login}`, { method: "POST", headers: { "Content-type": "application/json" }, body: JSON.stringify({ email, password }) });
+        const response = yield fetch(`${endpoints_js_1.endpoints.baseUrl + endpoints_js_1.endpoints.login}`, { method: "POST", headers: { "Content-type": "application/json" }, body: JSON.stringify({ email, password }) });
         const data = yield response.json();
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));

@@ -26,7 +26,7 @@ function updateProfile({
   profileElements.user.textContent = name;
   profileElements.email.textContent = email;
   avatar
-    ? (profileElements.img.href = avatar)
+    ? (profileElements.img.src = avatar)
     : (profileElements.img.src = "/src/assets/profile.jpeg");
   banner
     ? (profileElements.background.style.backgroundImage = `url(${banner})`)

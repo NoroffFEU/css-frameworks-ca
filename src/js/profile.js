@@ -15,18 +15,26 @@ const profileElements = {
     user: document.querySelector("#userName"),
     email: document.querySelector("#email"),
     img: document.querySelector("#profile--picture"),
-    background: document.querySelector("#profile--header")
+    background: document.querySelector("#profile--header"),
 };
-function updateProfile({ name = "Thistlebeard the Tipsy", email = "@TipsyThistle", banner, avatar }) {
+function updateProfile({ name = "Thistlebeard the Tipsy", email = "@TipsyThistle", banner, avatar, }) {
     profileElements.user.textContent = name;
     profileElements.email.textContent = email;
-    avatar ? profileElements.img.href = avatar : profileElements.img.src = "/src/assets/profile.jpeg";
+    avatar
+        ? (profileElements.img.src = avatar)
+        : (profileElements.img.src = "/src/assets/profile.jpeg");
+    banner
+        ? (profileElements.background.style.backgroundImage = `url(${banner})`)
+        : (profileElements.background.style.backgroundImage =
+            "/src/assets/background.jpeg");
 }
 console.log(endpoint);
 function fetchPosts(url) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log(localStorage.getItem("token"));
-        const response = yield fetch(url, { headers: { Authorization: `Bearer ${endpoint.getToken()}` } });
+        const response = yield fetch(url, {
+            headers: { Authorization: `Bearer ${endpoint.getToken()}` },
+        });
         const data = yield response.json();
         updateProfile(data);
         console.log(data);

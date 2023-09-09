@@ -12,9 +12,12 @@ const registerObject = {
     email: "email",
     userName: "username",
     password: "password",
-    repeatedPassword: "password"
+    repeatedPassword: "password",
 };
-const loginObject = { email: "", password: "" };
+const loginObject = {
+    email: "",
+    password: "",
+};
 const inputPassword = document.querySelector("#password--register");
 const inputEmail = document.querySelector("#email--register");
 const inputRpassword = document.querySelector("#password--register--repeat");
@@ -44,10 +47,13 @@ collectInput(inputEmail, "email");
 collectInput(inputPassword, "password");
 collectInput(inputUserName, "userName");
 collectInput(inputRpassword, "repeatedPassword");
-function registerAccount({ email, userName, password }) {
+function registerAccount({ email, userName, password, }) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`${endpoints.baseUrl + endpoints.register}`, { method: "POST", headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ email, name: userName, password }) });
+        const response = yield fetch(`${endpoints.baseUrl + endpoints.register}`, {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ email, name: userName, password }),
+        });
         const data = yield response.json();
     });
 }
@@ -59,7 +65,11 @@ buttonLogin === null || buttonLogin === void 0 ? void 0 : buttonLogin.addEventLi
 });
 function login({ email, password }) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`${endpoints.baseUrl + endpoints.login}`, { method: "POST", headers: { "Content-type": "application/json" }, body: JSON.stringify({ email, password }) });
+        const response = yield fetch(`${endpoints.baseUrl + endpoints.login}`, {
+            method: "POST",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ email, password }),
+        });
         const data = yield response.json();
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));

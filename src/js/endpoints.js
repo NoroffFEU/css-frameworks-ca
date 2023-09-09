@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.endpoints = void 0;
-exports.endpoints = {
+export const endpoints = {
     register: "/social/auth/register",
     login: "/social/auth/login",
     baseUrl: "https://api.noroff.dev/api/v1",
@@ -9,16 +6,13 @@ exports.endpoints = {
     allUsers: "/social/profiles",
     postsByOneUser: "/social/profiles/<name>/posts"
 };
-function endpointObject(userId) {
-    return { register: "/social/auth/register",
-        login: "/social/auth/login",
+export default function endpointObject(userId) {
+    return { register: "https://api.noroff.dev/api/v1/social/auth/register",
+        login: "https://api.noroff.dev/api/v1/social/auth/login",
         baseUrl: "https://api.noroff.dev/api/v1",
-        oneUser: `/social/profiles/${userId}`,
-        allUsers: "/social/profiles",
-        postsByOneUser: `/social/profiles/${userId}/posts`
+        profileOneUser: `https://api.noroff.dev/api/v1/social/profiles/${userId}`,
+        profileAllUsers: "https://api.noroff.dev/api/v1/social/profiles",
+        postsByOneUser: `https://api.noroff.dev/api/v1/social/profiles/${userId}/posts`,
+        getToken: function () { return JSON.parse(localStorage.getItem("token") || ""); }
     };
-}
-exports.default = endpointObject;
-function getUserUrl(userID) {
-    return ``;
 }

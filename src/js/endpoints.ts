@@ -8,17 +8,15 @@
 }
 
 
-export default function endpointObject(userId:string){
-    return {register:"/social/auth/register",
-    login:"/social/auth/login",
+export default function endpointObject(userId:string|null){
+    return {register:"https://api.noroff.dev/api/v1/social/auth/register",
+    login:"https://api.noroff.dev/api/v1/social/auth/login",
     baseUrl:"https://api.noroff.dev/api/v1",
-    oneUser:`/social/profiles/${userId}`,
-    allUsers:"/social/profiles",
-    postsByOneUser:`/social/profiles/${userId}/posts`
+    profileOneUser:`https://api.noroff.dev/api/v1/social/profiles/${userId}`,
+    profileAllUsers:"https://api.noroff.dev/api/v1/social/profiles",
+    postsByOneUser:`https://api.noroff.dev/api/v1/social/profiles/${userId}/posts`,
+    getToken:function(){return JSON.parse(localStorage.getItem("token")||"")}
     }}
 
 
-function getUserUrl(userID:string){
-    return ``
-}
 

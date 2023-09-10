@@ -1,10 +1,10 @@
 :root {
     --bs-navbar-active-color: white;
     --bs-navbar-color: #ffffff;
-    --bs-border-width: 1px
-    --navbar-btn-border-color: #ffffff; 
-    --navbar-btn-border-width: 2px;
-  
+    // --bs-border-width: 1px
+    // --navbar-btn-border-color: #ffffff;
+    // --navbar-btn-border-width: 2px;
+    --bs-card-border-radius: 20px;
 }
 
 // .navbar-toggler:focus {
@@ -16,9 +16,10 @@ $primary: black;
 $secondary: #af7fee;
 $navbar-text-color: white;
 
-$bg-grey: #d2dee7;
+$bg-blue-grey: #d2dee7;
 $bg-light-blue: #c2dfea;
 $bg-lighter-blue: #e0eff4;
+$bg-light-grey: #e3e3e3;
 
 $font-family: "trade-gothic-next", sans-serif;
 
@@ -26,6 +27,8 @@ $input-border-width: 3px;
 $input-border-color: $primary;
 $input-focus-border-color: $secondary;
 $input-btn-hover-color: rgba(0, 0, 0, 0.797);
+
+$card-border-radius: 20px;
 
 // $btn-hover-bg-shade-amount: 20%;
 // $btn-hover-bg-tint-amount: 20%;

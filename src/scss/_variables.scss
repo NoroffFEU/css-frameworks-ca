@@ -1,6 +1,16 @@
 :root {
     --bs-navbar-active-color: white;
+    --bs-navbar-color: #ffffff;
+    --bs-border-width: 1px
+    --navbar-btn-border-color: #ffffff; 
+    --navbar-btn-border-width: 2px;
+  
 }
+
+// .navbar-toggler:focus {
+//     text-decoration: none;
+//     outline: 0;
+//     box-shadow: 0 0 0 var(--bs-navbar-toggler-focus-width);
 
 $primary: black;
 $secondary: #af7fee;

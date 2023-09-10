@@ -16,7 +16,8 @@ img {
     padding: 40px 0 50px 0;
 }
 
-.main-feed {
+.main-feed,
+.album .container {
     max-width: 1320px;
 }
 
@@ -28,26 +29,39 @@ img {
     margin-top: 10px;
 }
 
-.album .container .col-11 {
+.album {
+    padding-top: 0;
+}
+
+.album .container .col-12,
+.album .container .col-12 .col-11 {
     margin-inline: auto;
 }
 
 .profile-image {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 20px;
     border: 3px solid black;
-    top: -70px;
-    left: 10px;
+    top: -60px;
+    left: 7px;
 }
 
 .album-heading {
-    margin-bottom: 20px;
+    margin: 0 0 20px 15px;
 }
 
 .feed-heading {
     position: relative;
-    left: 115px;
-    top: 15px;
+    left: 93px;
+    top: 18px;
+    width: 241px;
+}
+
+.feed-post {
+    background-color: lightgray;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
 }

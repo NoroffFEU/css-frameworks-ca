@@ -4,15 +4,19 @@ export const endpoints = {
     baseUrl: "https://api.noroff.dev/api/v1",
     oneUser: "/social/profiles/<name>",
     allUsers: "/social/profiles",
-    postsByOneUser: "/social/profiles/<name>/posts"
+    postsByOneUser: "/social/profiles/<name>/posts",
 };
 export default function endpointObject(userId) {
-    return { register: "https://api.noroff.dev/api/v1/social/auth/register",
+    return {
+        register: "https://api.noroff.dev/api/v1/social/auth/register",
         login: "https://api.noroff.dev/api/v1/social/auth/login",
         baseUrl: "https://api.noroff.dev/api/v1",
         profileOneUser: `https://api.noroff.dev/api/v1/social/profiles/${userId}`,
         profileAllUsers: "https://api.noroff.dev/api/v1/social/profiles",
         postsByOneUser: `https://api.noroff.dev/api/v1/social/profiles/${userId}/posts`,
-        getToken: function () { return JSON.parse(localStorage.getItem("token") || ""); }
+        changeMedia: `https://api.noroff.dev/api/v1/social/profiles/${userId}/media`,
+        getToken: function () {
+            return JSON.parse(localStorage.getItem("token") || "");
+        },
     };
 }

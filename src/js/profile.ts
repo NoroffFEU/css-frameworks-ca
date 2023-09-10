@@ -9,6 +9,42 @@ const profileElements = {
   img: document.querySelector("#profile--picture") as HTMLImageElement,
   background: document.querySelector("#profile--header") as HTMLElement,
 };
+const changeAvatarinput = document.querySelector(
+  "#change-picture--profile"
+) as HTMLInputElement;
+const changeAvatarButton = document.querySelector(
+  "#change-picture--profile--button"
+) as HTMLButtonElement;
+const changeBannerinput = document.querySelector(
+  "#change-picture--banner"
+) as HTMLInputElement;
+const changeBannerButton = document.querySelector(
+  "#change-picture--banner--button"
+) as HTMLButtonElement;
+const changeMediaObject: { avatar: string; banner: string } = {
+  avatar: changeAvatarinput.value,
+  banner: changeAvatarinput.value,
+};
+
+function attachListenerMedia(input) {
+  input.addEventListener("input", () => {
+    if (input.value) {
+      input === changeAvatarinput
+        ? (changeMediaObject.avatar = input.value)
+        : (changeMediaObject.banner = input.value);
+    }
+    console.log(changeMediaObject);
+  });
+}
+
+document.querySelectorAll("button[data-mediaSelector]").forEach((button) => {
+  button.addEventListener("click", () => {
+    changeMedia(changeMediaObject);
+  });
+});
+
+attachListenerMedia(changeAvatarinput);
+attachListenerMedia(changeBannerinput);
 
 interface profileInfo {
   name: string | null;
@@ -34,11 +70,13 @@ function updateProfile({
         "/src/assets/background.jpeg");
 }
 
-console.log(endpoint);
 async function fetchPosts(url: string) {
   console.log(localStorage.getItem("token"));
   const response = await fetch(url, {
-    headers: { Authorization: `Bearer ${endpoint.getToken()}` },
+    headers: {
+      Authorization: `Bearer ${endpoint.getToken()}`,
+      "Content-type": "application/json",
+    },
   });
   const data = await response.json();
   updateProfile(data);
@@ -46,3 +84,22 @@ async function fetchPosts(url: string) {
 }
 
 fetchPosts(endpoint.profileOneUser);
+
+async function changeMedia({
+  avatar,
+  banner,
+}: {
+  avatar: string;
+  banner: string;
+}) {
+  const response = await fetch(endpoint.changeMedia, {
+    method: "PUT",
+    body: JSON.stringify({ avatar, banner }),
+    headers: {
+      Authorization: `Bearer ${endpoint.getToken()}`,
+      "Content-type": "application/json",
+    },
+  });
+  const data = await response.json();
+  console.log(data);
+}

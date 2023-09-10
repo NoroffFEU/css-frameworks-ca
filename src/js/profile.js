@@ -17,6 +17,31 @@ const profileElements = {
     img: document.querySelector("#profile--picture"),
     background: document.querySelector("#profile--header"),
 };
+const changeAvatarinput = document.querySelector("#change-picture--profile");
+const changeAvatarButton = document.querySelector("#change-picture--profile--button");
+const changeBannerinput = document.querySelector("#change-picture--banner");
+const changeBannerButton = document.querySelector("#change-picture--banner--button");
+const changeMediaObject = {
+    avatar: changeAvatarinput.value,
+    banner: changeAvatarinput.value,
+};
+function attachListenerMedia(input) {
+    input.addEventListener("input", () => {
+        if (input.value) {
+            input === changeAvatarinput
+                ? (changeMediaObject.avatar = input.value)
+                : (changeMediaObject.banner = input.value);
+        }
+        console.log(changeMediaObject);
+    });
+}
+document.querySelectorAll("button[data-mediaSelector]").forEach((button) => {
+    button.addEventListener("click", () => {
+        changeMedia(changeMediaObject);
+    });
+});
+attachListenerMedia(changeAvatarinput);
+attachListenerMedia(changeBannerinput);
 function updateProfile({ name = "Thistlebeard the Tipsy", email = "@TipsyThistle", banner, avatar, }) {
     profileElements.user.textContent = name;
     profileElements.email.textContent = email;
@@ -28,12 +53,14 @@ function updateProfile({ name = "Thistlebeard the Tipsy", email = "@TipsyThistle
         : (profileElements.background.style.backgroundImage =
             "/src/assets/background.jpeg");
 }
-console.log(endpoint);
 function fetchPosts(url) {
     return __awaiter(this, void 0, void 0, function* () {
         console.log(localStorage.getItem("token"));
         const response = yield fetch(url, {
-            headers: { Authorization: `Bearer ${endpoint.getToken()}` },
+            headers: {
+                Authorization: `Bearer ${endpoint.getToken()}`,
+                "Content-type": "application/json",
+            },
         });
         const data = yield response.json();
         updateProfile(data);
@@ -41,3 +68,17 @@ function fetchPosts(url) {
     });
 }
 fetchPosts(endpoint.profileOneUser);
+function changeMedia({ avatar, banner, }) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const response = yield fetch(endpoint.changeMedia, {
+            method: "PUT",
+            body: JSON.stringify({ avatar, banner }),
+            headers: {
+                Authorization: `Bearer ${endpoint.getToken()}`,
+                "Content-type": "application/json",
+            },
+        });
+        const data = yield response.json();
+        console.log(data);
+    });
+}

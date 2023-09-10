@@ -6,7 +6,7 @@
 }
 
 .form-signin label,
-.main-feed form {
+.feed__share form {
     text-align: left;
 }
 
@@ -49,11 +49,11 @@
     margin-bottom: 0;
 }
 
-.main-feed .form-control {
+.feed__share .form-control {
     margin-bottom: 5px;
 }
 
-.main-feed form div div {
+.feed__share form div div {
     padding-inline: 2px;
 }
 

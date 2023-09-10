@@ -27,10 +27,12 @@
     background-size: cover;
 }
 
-.body-feed {
+.body-feed,
+.body-profile {
     background-color: $secondary;
 }
-.main-feed {
+
+.feed__share {
     // background: url("../../images/bg-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
     background: url("../../images/Two-people-workout-AdobeStock_195639931\(1\).jpg");
 

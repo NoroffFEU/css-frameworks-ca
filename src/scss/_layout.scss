@@ -8,20 +8,21 @@
     height: 100vh;
 }
 
-img {
-    max-width: 100%;
-}
+// img {
+//     max-width: 100%;
+// }
 
 .form-signin img {
     padding: 40px 0 50px 0;
 }
 
-.main-feed,
-.album .container {
+.feed__share,
+.feed__posts .container,
+.profile__user {
     max-width: 1320px;
 }
 
-.main-feed .row {
+.feed__share .row {
     padding-inline: 10px;
 }
 
@@ -29,16 +30,16 @@ img {
     margin-top: 10px;
 }
 
-.album {
+.feed__posts {
     padding-top: 0;
 }
 
-.album .container .col-12,
-.album .container .col-12 .col-11 {
+.feed__posts .container .col-12,
+.feed__posts .container .col-12 .col-11 {
     margin-inline: auto;
 }
 
-.album .col-11 {
+.feed__posts .col-11 {
     padding-top: 10px;
 }
 
@@ -52,7 +53,7 @@ img {
     left: 7px;
 }
 
-.album-heading {
+.feed__posts-heading {
     margin: 0 0 20px 15px;
 }
 
@@ -72,4 +73,9 @@ img {
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-radius: 20px;
+}
+
+.profile__user-box {
+    border-radius: 20px;
+    padding: 10px;
 }

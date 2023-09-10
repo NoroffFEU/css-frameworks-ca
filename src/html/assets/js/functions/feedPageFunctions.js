@@ -5,7 +5,7 @@ const listFeed = () => {
   let feedList = "";
   Feed.map(({title, body}) => {
     feedList += `
-      <div class="card mb-5">
+      <div class="card mb-5 post-bg">
       <div class="card-body">
         <h4 class="card-title">${title}</h4>
         <p class="card-text">${body}</p>

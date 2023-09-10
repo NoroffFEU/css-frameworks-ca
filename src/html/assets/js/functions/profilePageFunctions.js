@@ -6,7 +6,7 @@ const profileListFeed = () => {
   Feed.map(({userId, title, body}) => {
     if (userId === 1) {
       feedList += `
-      <div class="card mb-5">
+      <div class="card mb-5 post-bg">
       <div class="card-body">
         <h4 class="card-title">${title}</h4>
         <p class="card-text">${body}</p>

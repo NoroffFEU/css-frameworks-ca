@@ -11965,11 +11965,11 @@ textarea.form-control-lg {
 }
 
 .post .card-header img {
-  width: 10%;
+  width: 7.5%;
 }
 
 .image-profile {
-  width: min(100%, 300px);
+  width: min(100%, 240px);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -77,5 +77,5 @@ function login({ email, password }) {
     });
 }
 function changePage(name) {
-    window.location.href = `/src/profile/index.html?user=${name}`;
+    window.location.href = `/src/profile/index.html?user=${name}&current=${name}`;
 }

@@ -2,6 +2,7 @@ import endpoints from "./endpoints.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
+const currentUser = queries.get("current");
 const endpoint = endpoints(userId);
 const profileElements = {
   user: document.querySelector("#userName") as HTMLElement,
@@ -26,7 +27,9 @@ const changeMediaObject: { avatar: string; banner: string } = {
   banner: changeAvatarinput.value,
 };
 
-function attachListenerMedia(input) {
+console.log(userId, currentUser);
+
+function attachListenerMedia(input: HTMLInputElement) {
   input.addEventListener("input", () => {
     if (input.value) {
       input === changeAvatarinput
@@ -80,7 +83,8 @@ async function fetchPosts(url: string) {
   const data = await response.json();
   updateProfile(data);
   data.posts.forEach((element: postObject) => renderUserPosts(element));
-  console.log(data);
+  followUnfollow(data.followers);
+  console.log(data, data.followers);
 }
 fetchPosts(endpoint.profileOneUserAllEnabled);
 
@@ -132,4 +136,34 @@ ${body}
   </div>
     `;
   }
+}
+
+function followUnfollow(followers: string[]) {
+  const button = document.querySelector("#follow--button") as HTMLButtonElement;
+  console.log(
+    followers.some((element) => element.name === currentUser),
+    followers
+  );
+  button.textContent = followers.some((element) => element.name === currentUser)
+    ? "unfollow"
+    : "follow";
+  console.log(button.textContent);
+  button.addEventListener("click", () => {
+    follow(button);
+  });
+}
+
+async function follow(button: HTMLButtonElement) {
+  console.log(endpoint[button.textContent]);
+  const response = await fetch(endpoint[button.textContent?.trim()], {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${endpoint.getToken()}`,
+    },
+  });
+  const data = await response.json();
+  button.textContent === "follow"
+    ? (button.textContent = "unfollow")
+    : (button.textContent = "follow");
+  console.log(data);
 }

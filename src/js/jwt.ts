@@ -99,5 +99,5 @@ async function login({ email, password }: typeof loginObject) {
 }
 
 function changePage(name: string) {
-  window.location.href = `/src/profile/index.html?user=${name}`;
+  window.location.href = `/src/profile/index.html?user=${name}&current=${name}`;
 }

@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import endpoints from "./endpoints.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
+const currentUser = queries.get("current");
 const endpoint = endpoints(userId);
 const profileElements = {
     user: document.querySelector("#userName"),
@@ -25,6 +26,7 @@ const changeMediaObject = {
     avatar: changeAvatarinput.value,
     banner: changeAvatarinput.value,
 };
+console.log(userId, currentUser);
 function attachListenerMedia(input) {
     input.addEventListener("input", () => {
         if (input.value) {
@@ -64,7 +66,8 @@ function fetchPosts(url) {
         const data = yield response.json();
         updateProfile(data);
         data.posts.forEach((element) => renderUserPosts(element));
-        console.log(data);
+        followUnfollow(data.followers);
+        console.log(data, data.followers);
     });
 }
 fetchPosts(endpoint.profileOneUserAllEnabled);
@@ -102,4 +105,32 @@ ${body}
   </div>
     `;
     }
+}
+function followUnfollow(followers) {
+    const button = document.querySelector("#follow--button");
+    console.log(followers.some((element) => element.name === currentUser), followers);
+    button.textContent = followers.some((element) => element.name === currentUser)
+        ? "unfollow"
+        : "follow";
+    console.log(button.textContent);
+    button.addEventListener("click", () => {
+        follow(button);
+    });
+}
+function follow(button) {
+    var _a;
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log(endpoint[button.textContent]);
+        const response = yield fetch(endpoint[(_a = button.textContent) === null || _a === void 0 ? void 0 : _a.trim()], {
+            method: "PUT",
+            headers: {
+                Authorization: `Bearer ${endpoint.getToken()}`,
+            },
+        });
+        const data = yield response.json();
+        button.textContent === "follow"
+            ? (button.textContent = "unfollow")
+            : (button.textContent = "follow");
+        console.log(data);
+    });
 }

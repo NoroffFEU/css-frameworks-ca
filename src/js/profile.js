@@ -55,7 +55,6 @@ function updateProfile({ name = "Thistlebeard the Tipsy", email = "@TipsyThistle
 }
 function fetchPosts(url) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(localStorage.getItem("token"));
         const response = yield fetch(url, {
             headers: {
                 Authorization: `Bearer ${endpoint.getToken()}`,
@@ -64,10 +63,11 @@ function fetchPosts(url) {
         });
         const data = yield response.json();
         updateProfile(data);
+        data.posts.forEach((element) => renderUserPosts(element));
         console.log(data);
     });
 }
-fetchPosts(endpoint.profileOneUser);
+fetchPosts(endpoint.profileOneUserAllEnabled);
 function changeMedia({ avatar, banner, }) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch(endpoint.changeMedia, {
@@ -81,4 +81,25 @@ function changeMedia({ avatar, banner, }) {
         const data = yield response.json();
         console.log(data);
     });
+}
+function renderUserPosts({ body, created, tags, title, owner }) {
+    const postContainer = document.querySelector("#container--posts");
+    if (postContainer) {
+        postContainer.innerHTML += `<div class="card bg-secondary p-2 w-percentage--95">
+    <div class="row">
+      <div class="col-3">
+        <span class="text-primary fs-6">${owner}</span>
+      </div>
+      <div class="col-9">
+      <h3>${title}</h3>
+        <p class="card-text text-black">
+${body}
+        </p>${tags
+            .map((tag) => `<span class="badge text-bg-primary m-1">${tag}</span>`)
+            .join("")}
+      </div>
+    </div>
+  </div>
+    `;
+    }
 }

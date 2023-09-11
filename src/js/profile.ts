@@ -71,7 +71,6 @@ function updateProfile({
 }
 
 async function fetchPosts(url: string) {
-  console.log(localStorage.getItem("token"));
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${endpoint.getToken()}`,
@@ -80,10 +79,10 @@ async function fetchPosts(url: string) {
   });
   const data = await response.json();
   updateProfile(data);
+  data.posts.forEach((element: postObject) => renderUserPosts(element));
   console.log(data);
 }
-
-fetchPosts(endpoint.profileOneUser);
+fetchPosts(endpoint.profileOneUserAllEnabled);
 
 async function changeMedia({
   avatar,
@@ -102,4 +101,35 @@ async function changeMedia({
   });
   const data = await response.json();
   console.log(data);
+}
+
+interface postObject {
+  body: string;
+  created: Date;
+  tags: string[];
+  title: string;
+  owner: string;
+}
+
+function renderUserPosts({ body, created, tags, title, owner }: postObject) {
+  const postContainer = document.querySelector("#container--posts");
+
+  if (postContainer) {
+    postContainer.innerHTML += `<div class="card bg-secondary p-2 w-percentage--95">
+    <div class="row">
+      <div class="col-3">
+        <span class="text-primary fs-6">${owner}</span>
+      </div>
+      <div class="col-9">
+      <h3>${title}</h3>
+        <p class="card-text text-black">
+${body}
+        </p>${tags
+          .map((tag) => `<span class="badge text-bg-primary m-1">${tag}</span>`)
+          .join("")}
+      </div>
+    </div>
+  </div>
+    `;
+  }
 }

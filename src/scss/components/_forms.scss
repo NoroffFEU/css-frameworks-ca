@@ -1,8 +1,26 @@
 // SIGN IN //
 .form-control {
     border-width: $input-border-width;
-    margin-bottom: 20px;
     height: 48.5px;
+    background-clip: border-box;
+
+    &:focus {
+        box-shadow: none;
+        border-width: $input-focus-border-width;
+    }
+}
+
+.navbar .form-control {
+    border-color: $navbar-text-color;
+
+    &:focus {
+        border-color: $secondary;
+        border-width: $input-focus-border-width;
+    }
+
+    &:hover {
+        border-color: $secondary;
+    }
 }
 
 .form-signin label,
@@ -28,29 +46,9 @@
 
 .valid-feedback,
 .invalid-feedback {
-    position: relative;
-    top: -17px;
     color: $navbar-text-color;
     padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    margin-top: 0.1rem;
-    border-radius: 0.375rem;
-}
-
-.valid-feedback {
-    background-color: rgba(25, 135, 84, 0.9);
-}
-
-.invalid-feedback {
-    background-color: rgba(220, 53, 69, 0.9);
-}
-
-.form-label {
-    margin-bottom: 0;
-}
-
-.feed__share .form-control {
-    margin-bottom: 5px;
+    border-radius: $border-radius-nav-and-input;
 }
 
 .feed__share form div div {

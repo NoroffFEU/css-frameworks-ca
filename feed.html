@@ -20,7 +20,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <h1><a class="navbar-brand" href="#">STRONGER</a></h1>
+                    <h1><a class="navbar-brand fs-1" href="#">STRONGER</a></h1>
 
                     <button
                         class="navbar-toggler"
@@ -37,15 +37,15 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">Feed</a>
+                                <a class="nav-link fs-4" aria-current="page" href="#">Feed</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="profile.html">Profile</a>
+                                <a class="nav-link fs-4" href="profile.html">Profile</a>
                             </li>
                         </ul>
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                            <input class="form-control me-2 my-2" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-success my-2" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
@@ -57,14 +57,13 @@
                     <h1 class="fw-light">Share your latest workout</h1>
                     <form class="needs-validation" novalidate>
                         <div class="row">
-                            <div class="col-12 col-sm-8">
-                                <label for="validationCustom01">Title</label>
+                            <div class="col-12 col-sm-8 mb-2">
+                                <label for="validationCustom01 mb-0">Title</label>
                                 <input type="text" class="form-control" id="validationCustom01" placeholder="Give your workout a title" required min-length="1" />
-                                <div class="valid-feedback">Title looks good!</div>
-                                <div class="invalid-feedback">Sorry, your workout must have a title.</div>
+                                <div class="invalid-feedback bg-danger">Sorry, your workout must have a title.</div>
                             </div>
-                            <div class="col-12 col-sm-4">
-                                <label for="select-workout" class="form-label">Type of woorkout</label>
+                            <div class="col-12 col-sm-4 mb-2">
+                                <label for="select-workout" class="form-label mb-0">Type of woorkout</label>
                                 <select class="form-select form-control" id="select-workout" required>
                                     <option selected disabled value="">Choose...</option>
                                     <option>Running outdors</option>
@@ -74,22 +73,22 @@
                                     <option>Skiing</option>
                                     <option>Other</option>
                                 </select>
-                                <div class="invalid-feedback">Please select a workout.</div>
+                                <div class="invalid-feedback bg-danger">Please select a workout.</div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
-                                <label for="file">Upload your image</label>
+                            <div class="col-12 mb-2">
+                                <label class="mb-0" for="file">Upload your image</label>
                                 <input type="file" class="form-control upload-file" aria-label="file example" data-browse="Select File" />
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
-                                <label for="description">Description</label>
+                            <div class="col-12 mb-2">
+                                <label for="description mb-0">Description</label>
                                 <textarea type="text" class="form-control" id="description" placeholder="Describe your workout"></textarea>
                             </div>
                         </div>
-                        <div class="btn-share">
+                        <div class="btn-share mt-2">
                             <button href="#" class="w-100 btn btn-lg btn-secondary btn-create">Create account</button>
                         </div>
                     </form>
@@ -98,14 +97,14 @@
 
             <section class="feed__posts">
                 <div class="container bg-light py-5">
-                    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto">
                         <!-- row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 -->
-                        <div class="feed__posts-heading">
+                        <div class="feed__posts-heading ms-3 mb-3">
                             <h1>Latest workouts</h1>
                         </div>
-                        <div class="feed-post col-12">
-                            <div class="col-11">
-                                <h1 class="feed-heading feed-name">Peter Peterson</h1>
+                        <div class="feed-post col-12 mb-3">
+                            <div class="col-11 mx-auto">
+                                <h1 class="feed-heading feed-name mb-0">Peter Peterson</h1>
                                 <p class="feed-heading feed-title">Marathon prep!</p>
                                 <div class="card shadow-sm">
                                     <img src="images/profile-1-harry-cunningham-EPi3TRQc5Z0-unsplash.jpg" alt="Profile image" title="Profile image" width="100%" class="profile-image" />
@@ -129,9 +128,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="feed-post col-12">
-                            <div class="col-11">
-                                <h1 class="feed-heading feed-name">Jamie Jameson</h1>
+                        <div class="feed-post col-12 mb-3">
+                            <div class="col-11 mx-auto">
+                                <h1 class="feed-heading feed-name mb-0">Jamie Jameson</h1>
                                 <p class="feed-heading feed-title">Weight lifting day!</p>
                                 <div class="card shadow-sm">
                                     <img src="images/profile-2-christian-buehner-DItYlc26zVI-unsplash.jpg" alt="Profile image" title="Profile image" width="100%" class="profile-image" />
@@ -155,9 +154,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="feed-post col-12">
-                            <div class="col-11">
-                                <h1 class="feed-heading feed-name">Cathy Catyson</h1>
+                        <div class="feed-post col-12 mb-3">
+                            <div class="col-11 mx-auto">
+                                <h1 class="feed-heading feed-name mb-0">Cathy Catyson</h1>
                                 <p class="feed-heading feed-title">Yoga and restitution!</p>
                                 <div class="card shadow-sm">
                                     <img src="images/profile-3-gabriel-silverio-u3WmDyKGsrY-unsplash.jpg" alt="Profile image" title="Profile image" width="100%" class="profile-image" />

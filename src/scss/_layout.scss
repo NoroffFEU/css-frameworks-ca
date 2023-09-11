@@ -1,16 +1,11 @@
 .form-signin {
     padding: 100px 60px;
-    // margin-inline: auto; //sets margin for only left and right
     //   max-width: min(100% - 40px, 1000px);
     display: flex;
     flex-direction: column;
     max-width: 500px;
     height: 100vh;
 }
-
-// img {
-//     max-width: 100%;
-// }
 
 .form-signin img {
     padding: 40px 0 50px 0;
@@ -26,17 +21,8 @@
     padding-inline: 10px;
 }
 
-.btn-share {
-    margin-top: 10px;
-}
-
 .feed__posts {
     padding-top: 0;
-}
-
-.feed__posts .container .col-12,
-.feed__posts .container .col-12 .col-11 {
-    margin-inline: auto;
 }
 
 .feed__posts .col-11 {
@@ -47,14 +33,10 @@
     position: absolute;
     width: 60px;
     height: 60px;
-    border-radius: 20px;
+    border-radius: $border-radius-card;
     border: 1px solid black;
     top: -67px;
     left: 7px;
-}
-
-.feed__posts-heading {
-    margin: 0 0 20px 15px;
 }
 
 .feed-heading {
@@ -64,18 +46,13 @@
     width: 241px;
 }
 
-.feed-name {
-    margin-bottom: 0;
-}
-
 .feed-post {
     background-color: $bg-light-grey;
     padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-radius: 20px;
+    border-radius: $border-radius-card;
 }
 
 .profile__user-box {
-    border-radius: 20px;
+    border-radius: $border-radius-card;
     padding: 10px;
 }

@@ -138,7 +138,7 @@ ${body}
   }
 }
 
-function followUnfollow(followers: string[]) {
+function followUnfollow(followers: { name: string }[]) {
   const button = document.querySelector("#follow--button") as HTMLButtonElement;
   console.log(
     followers.some((element) => element.name === currentUser),
@@ -154,16 +154,18 @@ function followUnfollow(followers: string[]) {
 }
 
 async function follow(button: HTMLButtonElement) {
-  console.log(endpoint[button.textContent]);
-  const response = await fetch(endpoint[button.textContent?.trim()], {
-    method: "PUT",
-    headers: {
-      Authorization: `Bearer ${endpoint.getToken()}`,
-    },
-  });
-  const data = await response.json();
-  button.textContent === "follow"
-    ? (button.textContent = "unfollow")
-    : (button.textContent = "follow");
-  console.log(data);
+    if (button.textContent && button.textContent in endpoint) {
+      console.log(endpoint[button.textContent]);
+    const response = await fetch(endpoint[button.textContent?.trim()], {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${endpoint.getToken()}`,
+      },
+    });
+    const data = await response.json();
+    button.textContent === "follow"
+      ? (button.textContent = "unfollow")
+      : (button.textContent = "follow");
+    console.log(data);
+  }
 }

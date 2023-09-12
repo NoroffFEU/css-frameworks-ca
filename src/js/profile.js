@@ -120,17 +120,19 @@ function followUnfollow(followers) {
 function follow(button) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(endpoint[button.textContent]);
-        const response = yield fetch(endpoint[(_a = button.textContent) === null || _a === void 0 ? void 0 : _a.trim()], {
-            method: "PUT",
-            headers: {
-                Authorization: `Bearer ${endpoint.getToken()}`,
-            },
-        });
-        const data = yield response.json();
-        button.textContent === "follow"
-            ? (button.textContent = "unfollow")
-            : (button.textContent = "follow");
-        console.log(data);
+        if (button.textContent && button.textContent in endpoint) {
+            console.log(endpoint[button.textContent]);
+            const response = yield fetch(endpoint[(_a = button.textContent) === null || _a === void 0 ? void 0 : _a.trim()], {
+                method: "PUT",
+                headers: {
+                    Authorization: `Bearer ${endpoint.getToken()}`,
+                },
+            });
+            const data = yield response.json();
+            button.textContent === "follow"
+                ? (button.textContent = "unfollow")
+                : (button.textContent = "follow");
+            console.log(data);
+        }
     });
 }

@@ -25,5 +25,8 @@ export default function router() {
     case '/posts/':
       listeners.setReadPostsListener()
       return;
+    case '/post/':
+      listeners.setReadPostListener()
+      return;
   }
 }

@@ -13,6 +13,7 @@ export function setCreatePostFormListener() {
       post.tags = post.tags.split(",").map(tag => tag.trim());
 
       await createPost(post);
+    
     });
   }
 }

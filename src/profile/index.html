@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Josefin+Sans:wght@400;700&family=Josefin+Slab:wght@400;700&family=Montserrat+Alternates:ital,wght@0,400;1,200&family=Montserrat:wght@400;500;700&family=Noto+Sans&family=Noto+Serif:wght@400;700&family=Oswald&family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <script src="/src/js/index.js"></script>
+    <script type="module" src="/src/js/profile.js"></script>
   </head>
   <body>
     <header class="bg-primary">
@@ -66,11 +66,46 @@
             <img
               class="rounded-circle w-100 mt-3"
               src="/src/assets/profile.jpeg"
-              alt="Profile picture of Thistle" />
+              alt="Profile picture of Thistle"
+              id="profile--picture" />
           </div>
-          <button class="btn btn-success my-3">Follow</button>
+          <div class="input-group my-2">
+            <input
+              class="form-control"
+              name="change-picture--profile"
+              id="change-picture--profile"
+              type="text"
+              required
+              minlength="1"
+              placeholder="img url here" />
+            <button
+              id="change-picture--profile--button"
+              type="button"
+              class="btn btn-secondary"
+              data-mediaSelector>
+              Change picture
+            </button>
+          </div>
+          <div class="input-group my-2">
+            <input
+              class="form-control"
+              name="change-picture--banner"
+              id="change-picture--banner"
+              type="text"
+              required
+              minlength="1"
+              placeholder="banner url here" />
+            <button
+              id="change-picture--banner--button"
+              type="button"
+              data-mediaSelector
+              class="btn btn-secondary">
+              Change banner
+            </button>
+          </div>
+          <button id="follow--button" class="btn btn-success my-3">Follow</button>
 
-          <p>@TipsyThistle</p>
+          <p id="email">@TipsyThistle</p>
           <h2 class="fs-4">Master of Inebriated Incantations</h2>
           <ul class="list-unstyled">
             <li>lvl: 32</li>
@@ -80,11 +115,14 @@
           </ul>
         </section>
         <div
-          class="col-lg-9 container d-flex flex-column justify-content-end bg-img">
+          class="col-lg-9 container d-flex flex-column justify-content-end bg-img"
+          id="profile--header">
           <div class="row">
             <div
               class="col-lg-12 text-primary d-flex justify-content-center align-items-center">
-              <h1 class="my-5 px-2 bg-secondary">Thistlebeard the Tipsy</h1>
+              <h1 id="userName" class="my-5 px-2 bg-secondary">
+                Thistlebeard the Tipsy
+              </h1>
             </div>
           </div>
           <div class="row bg-light justify-content-between align-self-end p-3">
@@ -179,65 +217,9 @@
 
             <div class="col-lg-8 text-secondary">
               <h2 class="text-primary">Latest posts</h2>
-              <div class="overflow-y-auto m-auto h-px--350 w-100">
-                <div class="card bg-secondary p-2 w-percentage--95">
-                  <div class="row">
-                    <div class="col-3">
-                      <img
-                        class="rounded-circle m-2 w-100"
-                        src="/src/assets/profile.jpeg"
-                        alt="Profile picture of Thistle" />
-                      <span class="text-primary fs-6">@TipsyThistle</span>
-                    </div>
-                    <div class="col-9">
-                      <p class="card-text text-black">
-                        Thistlebeard the Tipsy 🍻 Just conjured a spell for
-                        bottomless ale mugs at the Dragon's Den Inn. A true
-                        masterwork of wizardry if I say so myself. Who's joining
-                        me? #AleMagic
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card bg-secondary p-2 w-percentage--95">
-                  <div class="row">
-                    <div class="col-4">
-                      <img
-                        class="rounded-circle w-100"
-                        src="/src/assets/profile.jpeg"
-                        alt="Profile picture of Thistle" />
-                      <span class="text-primary fs-6">@TipsyThistle</span>
-                    </div>
-                    <div class="col-8">
-                      <p class="card-text text-black">
-                        Thistlebeard the Tipsy 🍻 Just conjured a spell for
-                        bottomless ale mugs at the Dragon's Den Inn. A true
-                        masterwork of wizardry if I say so myself. Who's joining
-                        me? #AleMagic
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card bg-secondary p-2 w-percentage--95">
-                  <div class="row">
-                    <div class="col-4">
-                      <img
-                        class="rounded-circle w-100"
-                        src="/src/assets/profile.jpeg"
-                        alt="Profile picture of Thistle" />
-                      <span class="text-primary fs-6">@TipsyThistle</span>
-                    </div>
-                    <div class="col-8">
-                      <p class="card-text text-black">
-                        Thistlebeard the Tipsy 🍻 Just conjured a spell for
-                        bottomless ale mugs at the Dragon's Den Inn. A true
-                        masterwork of wizardry if I say so myself. Who's joining
-                        me? #AleMagic
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div
+                id="container--posts"
+                class="overflow-y-auto m-auto h-px--350 w-100"></div>
             </div>
           </div>
         </div>

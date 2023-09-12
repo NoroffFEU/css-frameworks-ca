@@ -24,16 +24,20 @@
 }
 
 @media (min-width: 550px) {
+    .feed__posts .col-11 {
+        padding-top: 20px;
+    }
+
     .feed-heading {
         width: 400px;
-        left: 98px;
-        top: 5px;
+        left: 93px;
+        top: -3px;
     }
 
     .profile-image {
-        width: 75px;
-        height: 75px;
-        top: -88px;
+        width: 70px;
+        height: 70px;
+        top: -80px;
         left: 15px;
     }
 

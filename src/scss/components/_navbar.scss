@@ -1,9 +1,26 @@
-.navbar h1 a,
 .nav-link {
     color: $navbar-text-color;
+    border-radius: $btn-border-radius;
+
+    &:hover {
+        color: $primary;
+        background: $secondary;
+        border-radius: $btn-border-radius;
+    }
+
+    &:focus {
+        color: $primary;
+        background: $secondary;
+        border-radius: $btn-border-radius;
+    }
 }
 
-.navbar h1 a:hover,
-.nav-link:hover {
+.current {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    text-decoration-thickness: 2px;
+}
+
+.navbar-brand:hover {
     color: $secondary;
 }

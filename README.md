@@ -15,3 +15,9 @@ Trade Gothic Next LT Pro Regular
 font-family: "trade-gothic-next", sans-serif;
 font-weight: 400;
 font-style: normal;
+
+Trade Gothic Next LT Pro Bold Italic
+
+    font-family: "trade-gothic-next", sans-serif;
+    font-weight: 700;
+    font-style: italic;

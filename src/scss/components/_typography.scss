@@ -3,14 +3,25 @@ body {
 }
 
 h1,
-.btn {
+.btn,
+.nav-link,
+.feed-name,
+.navbar-brand {
     font-style: italic;
 }
 
-.feed-name {
-    font-size: 20px;
+h1,
+.btn,
+.feed-name,
+.navbar-brand {
+    font-weight: 800;
 }
 
-.feed-title {
-    font-size: 20px;
+.nav-link {
+    font-weight: 400;
 }
+
+// .feed-name,
+// .feed-title {
+//     font-size: 20px;
+// }

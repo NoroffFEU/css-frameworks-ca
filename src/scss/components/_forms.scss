@@ -1,13 +1,16 @@
 // SIGN IN //
 .form-control {
     border-width: $input-border-width;
-    height: 48.5px;
     background-clip: border-box;
 
     &:focus {
         box-shadow: none;
         border-width: $input-focus-border-width;
     }
+}
+
+.signin-content .form-control {
+    height: 48.5px;
 }
 
 .navbar .form-control {

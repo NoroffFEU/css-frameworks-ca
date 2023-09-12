@@ -1,6 +1,5 @@
 .form-signin {
     padding: 100px 60px;
-    //   max-width: min(100% - 40px, 1000px);
     display: flex;
     flex-direction: column;
     max-width: 500px;
@@ -26,33 +25,32 @@
 }
 
 .feed__posts .col-11 {
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .profile-image {
     position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: $border-radius-card;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
     border: 1px solid black;
-    top: -67px;
+    top: -74px;
     left: 7px;
 }
 
 .feed-heading {
     position: relative;
-    left: 73px;
-    top: 8px;
+    left: 80px;
     width: 241px;
 }
 
 .feed-post {
     background-color: $bg-light-grey;
     padding-bottom: 15px;
-    border-radius: $border-radius-card;
+    border-radius: $card-border-radius;
 }
 
 .profile__user-box {
-    border-radius: $border-radius-card;
+    border-radius: $card-border-radius;
     padding: 10px;
 }

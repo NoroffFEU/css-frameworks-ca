@@ -1,1 +1,7 @@
+@use "./utilities/variables" as variables;
+@use "./components/navbar";
+
+body{
+    background-color: map-get($map: variables.$colors, $key: green-background);
+}
 

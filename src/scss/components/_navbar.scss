@@ -1,0 +1,5 @@
+@use "../utilities/variables" as variables;
+
+nav{
+    background-color: map-get($map: variables.$colors, $key: green-header-footer);
+}

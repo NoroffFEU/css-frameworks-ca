@@ -1,6 +1,11 @@
-$primary: black;
+// $primary: black;
+$primary: rgb(33, 37, 41);
 $secondary: #af7fee;
 $navbar-text-color: white;
+
+//overwrites
+$navbar-brand-color: $navbar-text-color;
+$nav-link-color: $navbar-text-color;
 
 $bg-blue-grey: #d2dee7;
 $bg-light-blue: #c2dfea;
@@ -15,7 +20,7 @@ $input-focus-border-width: 4px;
 
 $input-border-color: $primary;
 $input-focus-border-color: $secondary;
-$input-btn-hover-color: rgba(0, 0, 0, 0.797);
+$signin-btn-hover-color: rgba(0, 0, 0, 0.797);
 
 $card-border-radius: 20px;
 $border-radius-nav-and-input: 0.375rem;
@@ -24,13 +29,6 @@ $box-shadow-input-and-btn: none;
 //Overwrites:
 $nav-link-hover-color: $primary;
 $navbar-brand-hover-color: $secondary;
-
-// $btn-hover-bg-shade-amount: 20%;
-// $btn-hover-bg-tint-amount: 20%;
-
-// $input-btn-focus-color: rgba(0, 0, 0, 0.249);
-
-// background-color: var(--#{$prefix}btn-hover-bg);
 
 $btn-nav-hover-bg: $secondary;
 $btn-hover-border-color: $navbar-text-color;

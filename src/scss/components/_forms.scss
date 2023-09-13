@@ -26,17 +26,6 @@
     }
 }
 
-.form-signin label,
-.feed__share form {
-    text-align: left;
-}
-
-.form-signin h1,
-.checkbox,
-.btn-share {
-    text-align: center;
-}
-
 .remember,
 .form-signin a {
     font-size: 18px;
@@ -50,14 +39,5 @@
 .valid-feedback,
 .invalid-feedback {
     color: $navbar-text-color;
-    padding: 0.25rem 0.5rem;
     border-radius: $border-radius-nav-and-input;
-}
-
-.feed__share form div div {
-    padding-inline: 2px;
-}
-
-.upload-file {
-    padding-inline: 4px;
 }

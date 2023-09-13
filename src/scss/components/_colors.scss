@@ -1,3 +1,12 @@
+.body-signin {
+    background-color: $bg-blue-grey;
+}
+
+.body-profile,
+.body-feed {
+    background-color: $bg-light-grey;
+}
+
 h1,
 h2,
 h3,
@@ -6,4 +15,14 @@ a,
 label,
 input {
     color: $primary;
+}
+
+.form-signin {
+    background: url("../../images/bg2-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") center no-repeat;
+    background-size: cover;
+}
+
+.feed__share {
+    background: url("../../images/Two-people-workout-AdobeStock_195639931\(1\).jpg") top no-repeat;
+    background-size: cover;
 }

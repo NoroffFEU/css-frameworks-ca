@@ -15,28 +15,28 @@
         ></script>
     </head>
     <body class="body-signin">
-        <main class="form-signin w-100 m-auto">
-            <img src="images/Logo-stronger-together.png" alt="" />
-            <div class="signin-content">
+        <main class="form-signin d-flex flex-column w-100 vh-100 m-auto py-5 px-5">
+            <img src="images/Logo-stronger-together.png" class="pt-5 pb-4 mt-5" alt="" />
+            <div class="signin-content px-2 px-sm-5">
                 <form class="needs-validation" action="/profile.html" novalidate>
-                    <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+                    <h1 class="h3 mb-3 text-center">Sign in</h1>
                     <div class="mb-3">
-                        <label for="validationCustom01 mb-0">Email address</label>
-                        <input type="email" class="form-control" id="validationCustom01" placeholder="E-mail" required pattern="\S+@\S+\.\S+" />
-                        <div class="valid-feedback bg-success">Email looks good!</div>
-                        <div class="invalid-feedback bg-danger">Sorry, that is not a valid email</div>
+                        <label for="email" class="mb-0">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail" required pattern="\S+@\S+\.\S+" />
+                        <div class="valid-feedback bg-success py-1 px-2">Email looks good!</div>
+                        <div class="invalid-feedback bg-danger py-1 px-2">Sorry, that is not a valid email</div>
                     </div>
                     <div class="mb-3">
-                        <label for="validationCustom02 mb-0">Password (min 8 characters)</label>
-                        <input type="password" class="form-control" id="validationCustom02" placeholder="Password" required minlength="8" />
-                        <div class="valid-feedback bg-success">Yes! Password is valid</div>
-                        <div class="invalid-feedback bg-danger">Sorry, your password must be at least 8 characters</div>
+                        <label for="password" class="mb-0">Password (min 8 characters)</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" required minlength="8" />
+                        <div class="valid-feedback bg-success py-1 px-2">Yes! Password is valid</div>
+                        <div class="invalid-feedback bg-danger py-1 px-2">Sorry, your password must be at least 8 characters</div>
                     </div>
 
-                    <div class="checkbox mb-3">
+                    <div class="checkbox mb-3 text-center">
                         <label class="remember mb-0"> <input type="checkbox" value="remember-me" /> Remember me </label>
                     </div>
-                    <button class="w-100 btn btn-lg btn-primary mb-1" type="submit">Sign in</button>
+                    <button class="w-100 btn btn-lg btn-primary text-center mb-1" type="submit">Sign in</button>
                     <a href="#">Forgot password?</a>
                 </form>
                 <button href="#" class="w-100 btn btn-lg btn-secondary btn-create mt-5">Create account</button>

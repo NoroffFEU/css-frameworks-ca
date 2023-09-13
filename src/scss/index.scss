@@ -10,33 +10,8 @@
 @import "layout";
 @import "media";
 
-.body-signin {
-    background-color: $bg-blue-grey;
-}
-
-.form-signin {
-    background: url("../../images/bg2-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
-.body-profile,
-.body-feed {
-    background-color: $bg-light-grey;
-}
-
-.feed__share {
-    // background: url("../../images/bg-woman-stairs-tyler-nix-Y1drF0Y3Oe0-unsplash\(1\).jpg") top no-repeat;
-    background: url("../../images/Two-people-workout-AdobeStock_195639931\(1\).jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
-.feed__share-box h1,
-.feed__posts-heading h1 {
-    border-bottom: 2px solid black;
-    // text-align: left;
-    margin-bottom: 20px;
-}
+// .feed__share-box h1,
+// .feed__posts-heading h1 {
+//     border-bottom: 2px solid black;
+//     margin-bottom: 20px;
+// }

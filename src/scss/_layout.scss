@@ -1,31 +1,11 @@
 .form-signin {
-    padding: 100px 60px;
-    display: flex;
-    flex-direction: column;
     max-width: 500px;
-    height: 100vh;
-}
-
-.form-signin img {
-    padding: 40px 0 50px 0;
 }
 
 .feed__share,
 .feed__posts .container,
 .profile__user {
     max-width: 1320px;
-}
-
-.feed__share .row {
-    padding-inline: 10px;
-}
-
-.feed__posts {
-    padding-top: 0;
-}
-
-.feed__posts .col-11 {
-    padding-top: 15px;
 }
 
 .profile-image {
@@ -46,11 +26,9 @@
 
 .feed-post {
     background-color: $bg-light-grey;
-    padding-bottom: 15px;
     border-radius: $card-border-radius;
 }
 
 .profile__user-box {
     border-radius: $card-border-radius;
-    padding: 10px;
 }

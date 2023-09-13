@@ -1,18 +1,26 @@
+.btn:focus {
+    box-shadow: $box-shadow-input-and-btn;
+}
+
 .btn-primary:hover {
-    background-color: $input-btn-hover-color;
-}
-
-.btn a {
-    text-decoration: none;
-}
-
-.btn-share a {
-    width: 50%;
+    background-color: $signin-btn-hover-color;
 }
 
 .navbar-toggler {
-    border-width: var(--navbar-btn-border-width);
-    border-color: var(--navbar-btn-border-color);
+    border-width: 0;
+    color: $navbar-text-color;
+
+    &:focus {
+        border-width: 0;
+        box-shadow: $box-shadow-input-and-btn;
+    }
+
+    &-child:hover {
+        color: $secondary;
+    }
+}
+
+.navbar-toggler .span:hover {
 }
 
 .navbar .btn {
@@ -29,7 +37,3 @@
         color: $primary;
     }
 }
-
-// .btn a {
-//     color: $navbar-text-color;
-// }

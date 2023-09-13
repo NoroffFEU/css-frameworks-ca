@@ -1,5 +1,5 @@
 .nav-link {
-    color: $navbar-text-color;
+    color: $nav-link-color;
     border-radius: $btn-border-radius;
 
     &:hover {
@@ -21,6 +21,7 @@
     text-decoration-thickness: 2px;
 }
 
-.navbar-brand:hover {
+.navbar-brand:hover,
+.navbar-toggler:hover {
     color: $secondary;
 }

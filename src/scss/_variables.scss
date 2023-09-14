@@ -1,16 +1,28 @@
 // $primary: black;
 $primary: rgb(33, 37, 41);
 $secondary: #af7fee;
-$navbar-text-color: white;
+// $navbar-text-color: rgb(248, 249, 250);
+// $navbar-text-color: #ffffff;
 
 //overwrites
-$navbar-brand-color: $navbar-text-color;
-$nav-link-color: $navbar-text-color;
+$nav-link-color: #ffffff;
+$navbar-brand-color: $nav-link-color;
 
-$bg-blue-grey: #d2dee7;
-$bg-light-blue: #c2dfea;
-$bg-lighter-blue: #e0eff4;
-$bg-light-grey: #e3e3e3;
+$bg-blue-grey: #d2dee7; //body-signin
+// $bg-light-grey: #e3e3e3; //.body-profile, .body-feed, .feed-post
+$card-bg: #e3e3e3;
+
+$nav-link-hover-color: $primary;
+$navbar-brand-hover-color: $secondary;
+$card-border-radius: 20px;
+$btn-border-radius: 0.5rem;
+$card-border-width: 0;
+
+//custom
+$font-size-tiny: 0.8rem;
+
+// $bg-light-blue: #c2dfea;
+// $bg-lighter-blue: #e0eff4;
 
 $font-family: "trade-gothic-next", sans-serif;
 $btn-font-family: $font-family;
@@ -22,14 +34,9 @@ $input-border-color: $primary;
 $input-focus-border-color: $secondary;
 $signin-btn-hover-color: rgba(0, 0, 0, 0.797);
 
-$card-border-radius: 20px;
-$border-radius-nav-and-input: 0.375rem;
 $box-shadow-input-and-btn: none;
 
 //Overwrites:
-//
-$nav-link-hover-color: $primary;
-$navbar-brand-hover-color: $secondary;
 
 $btn-nav-hover-bg: $secondary;
-$btn-hover-border-color: $navbar-text-color;
+$btn-hover-border-color: $nav-link-color;

@@ -20,3 +20,9 @@ h1,
 .nav-link {
     font-weight: 400;
 }
+
+.comment,
+.add-comment .btn,
+.add-comment .form-control {
+    font-size: $font-size-tiny;
+}

@@ -1,6 +1,7 @@
 // SIGN IN //
 .form-control {
     border-width: $input-border-width;
+    border-radius: $btn-border-radius;
     background-clip: border-box;
 
     &:focus {
@@ -14,7 +15,7 @@
 }
 
 .navbar .form-control {
-    border-color: $navbar-text-color;
+    border-color: $nav-link-color;
 
     &:focus {
         border-color: $secondary;
@@ -24,6 +25,15 @@
     &:hover {
         border-color: $secondary;
     }
+}
+
+.input-group {
+    border-radius: $btn-border-radius;
+}
+
+.input-group .form-control {
+    border-width: $card-border-width;
+    background-color: $card-bg;
 }
 
 .remember,
@@ -38,6 +48,6 @@
 
 .valid-feedback,
 .invalid-feedback {
-    color: $navbar-text-color;
-    border-radius: $border-radius-nav-and-input;
+    color: $nav-link-color;
+    border-radius: $btn-border-radius;
 }

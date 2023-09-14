@@ -2,19 +2,10 @@
     background-color: $bg-blue-grey;
 }
 
-.body-profile,
-.body-feed {
-    background-color: $bg-light-grey;
-}
-
-h1,
-h2,
-h3,
-p,
-a,
-label,
-input {
-    color: $primary;
+.comment,
+.body-feed,
+.body-profile {
+    background-color: $card-bg;
 }
 
 .form-signin {

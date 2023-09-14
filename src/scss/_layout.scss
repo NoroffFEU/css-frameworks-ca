@@ -8,27 +8,24 @@
     max-width: 1320px;
 }
 
-.profile-image {
-    position: absolute;
+// .profile-image {
+//     position: absolute;
+//     top: -74px;
+//     left: 7px;
+// }
+
+.profile-image,
+.user-img {
     width: 65px;
     height: 65px;
-    border-radius: 20px;
-    border: 1px solid black;
-    top: -74px;
-    left: 7px;
 }
 
-.feed-heading {
-    position: relative;
-    left: 80px;
-    width: 241px;
-}
+// .feed-heading {
+//     position: relative;
+//     left: 80px;
+//     width: 241px;
+// }
 
-.feed-post {
-    background-color: $bg-light-grey;
-    border-radius: $card-border-radius;
-}
-
-.profile__user-box {
-    border-radius: $card-border-radius;
+.comment {
+    border-radius: $btn-border-radius;
 }

@@ -12,8 +12,13 @@ export function setCreatePostFormListener() {
 
       post.tags = post.tags.split(",").map(tag => tag.trim());
 
-      await createPost(post);
-    
+      try {
+        await createPost(post);
+        
+        window.location.href = '/posts/';
+      } catch (error) {
+        console.error("Error creating post:", error);
+      }
     });
   }
 }

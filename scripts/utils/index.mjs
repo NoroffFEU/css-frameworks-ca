@@ -1,2 +1,2 @@
-import { getValueFromURLParameter } from "./getValueFromURLParameter.mjs"
-import { getUserName } from "./getUserName"
+export { getValueFromURLParameter } from "./getValueFromURLParameter.mjs"
+export { getUserName } from "./getUserName.mjs"

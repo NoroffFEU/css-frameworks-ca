@@ -13,7 +13,6 @@ export async function setReadPostListener() {
     try {
         const post = await getPost(postId);
         const singlePostContainer = document.getElementById("single-post");
-
         renderPostTemplate(post, singlePostContainer);
     } catch (error) {
         console.error("Error fetching and displaying the post:", error);

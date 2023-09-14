@@ -1,7 +1,9 @@
 @use "./utilities/variables" as variables;
 @use "./components/navbar";
+@use "./components/login";
 
 body{
     background-color: map-get($map: variables.$colors, $key: green-background);
+    min-height: 70vh;
 }
 

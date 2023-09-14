@@ -1,0 +1,30 @@
+@use "../utilities/variables" as variables;
+
+.all-user-posts{
+    border: 2px solid map-get($map: variables.$colors, $key:blue-dark );
+
+    .custom-border{
+        border: 2px solid map-get($map: variables.$colors, $key:blue-dark );
+    }
+
+    .profile-pic-tiny{
+        height: 50px;
+        margin: 5px;
+    }
+
+    .profile-name-post{
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    p{
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+}
+
+@media (width: 600px) {
+    .all-user-posts .custom-border{
+        border-radius: 15px;
+    }
+}

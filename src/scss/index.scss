@@ -1,9 +1,14 @@
 @use "./utilities/variables" as variables;
-@use "./components/navbar";
+@use "./components/navigation";
 @use "./components/login";
+@use "./components/profile_summary";
+@use "./components/user-posts";
 
 body{
     background-color: map-get($map: variables.$colors, $key: green-background);
     min-height: 70vh;
 }
 
+main{
+    min-height: 90vh;
+}

@@ -11,8 +11,12 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Ecology Society</a>
-            <ul class="navbar-nav w-75 d-flex flex-row-reverse">
+            <a class="navbar-brand justify-content-center" href="#">Ecology Society</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link disabled" aria-current="page" href="#">Profile</a>
                 </li>
@@ -22,17 +26,42 @@
                 
             </ul>
         </div>
+        </div>
       </nav>
       
       <main>
-        <section class="container profile-summary">
+        <section class="container">
             <div class="row">
-                <div class="col-4">
-
+                <div class="col-4 col-xl-4 profile-summary mt-lg-5 mr-lg-0 mb-lg-5 mt-lg-0 m-sm-0">
+                    <img class="profile-pic" src="../images_and_icon/icons/user_icon.png" alt="User icon created by Freepik">
+                    <div class="d-flex flex-column justify-content-center">
+                        <p class="profile-name">Name Nameson</p>
+                        <p>Climate activist</p>
+                        <button class="btn btn-primary mb-1">
+                            Follow
+                        </button>
+                    </div>
+                </div>
+                <div class="col-xl-8 all-user-posts  mt-lg-5 mr-lg-0 mb-lg-5 mt-lg-0 m-sm-0">
+                    <div class="single-post m-3 custom-border">
+                        <div class="d-flex">
+                            <img class="profile-pic-tiny" src="../images_and_icon/icons/user_icon.png" alt="User icon created by Freepik">
+                            <div>
+                                <p class="profile-name-post mt-1 mr-1 mb-0 ml-1">Name Nameson</p>
+                                <p class="mt-1 mr-1 mb-0 ml-1">01.01.2023</p>
+                            </div>
+                        </div>
+                        <p class="post-text">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore recusandae odit id, inventore animi, totam, ipsam molestiae iusto natus fugit velit minima repellendus omnis. Eum corrupti officia reiciendis voluptates at?
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
       </main>
       
+      <footer>
+        <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
+      </footer>
 </body>
 </html>

@@ -1,0 +1,51 @@
+@use "../utilities/variables" as variables;
+
+nav, footer{
+    background-color: map-get($map: variables.$colors, $key: green-header-footer);
+    margin: 0px;
+    
+    footer{
+        min-height: 150px
+    }
+
+    .container-fluid{
+        margin: 0px auto;
+    }
+
+    .navbar{
+        margin: 0px;
+    }
+
+    .navbar-nav{
+        align-items: flex-end;
+    }
+
+    .nav-link{
+        margin: 10px auto;
+        padding: 1rem;
+        max-height: 50px;
+        border-radius: 15px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .disabled{
+        color: map-get($map: variables.$colors, $key: blue-dark);
+        background-color: map-get($map: variables.$colors, $key: green-accents);
+    }
+}
+
+
+@media (min-width: 600px){
+    .navbar-nav{
+        width: 75%;
+        flex-direction: row-reverse !important;
+    }
+    .nav-link{
+        margin: 0px 50px;
+    }
+    .container-fluid{
+        width: 80%;
+        height: 50px;
+    }
+}

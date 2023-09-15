@@ -1,6 +1,12 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+/**
+ * send delete request to api endpoint to remove post
+ * @param {number} id - id of post to be removed
+ * @returns {Promise<Object>} - return nothing, on failure will throw an error
+ */
+
 const action = "/posts";
 const method = "delete";
 

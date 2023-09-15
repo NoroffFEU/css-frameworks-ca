@@ -1,6 +1,14 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 
+/**
+ * logs in a registered user, stores profile and access token in local storage 
+ * @param {Object} profile - the user profile object containing all profile information
+ * @param {string} profile.email - noroff email
+ * @param {string} profile.password - password 
+ * @returns {Promise<void>} - redirect to home page on success, else displays an error message based on server response
+ */
+
 const action = "/auth/login";
 const method = "post";
 

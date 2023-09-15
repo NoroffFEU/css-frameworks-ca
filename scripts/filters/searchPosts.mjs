@@ -7,7 +7,10 @@ document.getElementById("search-form").addEventListener("submit", function (e) {
     filterPostsBySearch(searchQuery);
 });
 
-
+/**
+ * updates the displayed posts based on a search query
+ * @param {string} query - query posts are filtered by
+ */
 export async function filterPostsBySearch(query) {
     try {
         const allPosts = await postMethods.getPosts();

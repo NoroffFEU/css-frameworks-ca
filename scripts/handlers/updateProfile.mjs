@@ -8,7 +8,7 @@ export async function setUpdateProfileListener() {
     const { name, email } = load("profile");
     form.name.value = name;
     form.email.value = email;
-
+    //disable button before page finished loading
     const button = form.querySelector("button");
     button.disabled = true;
 
@@ -16,7 +16,7 @@ export async function setUpdateProfileListener() {
 
     form.banner.value = profile.banner;
     form.avatar.value = profile.avatar;
-
+    //enable button when page finished loading
     button.disabled = false;
 
     form.addEventListener("submit", async (event) => {
@@ -27,7 +27,7 @@ export async function setUpdateProfileListener() {
       updatedProfile.name = name; 
       updatedProfile.email = email;
       await updateProfile(updatedProfile);
-
+      //set updated profile content to local storage
       localStorage.setItem("profile", JSON.stringify(updatedProfile));
       window.location.href = `/profile/`; 
     });

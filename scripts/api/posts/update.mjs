@@ -1,6 +1,13 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+/**
+ * put request, updates a post based on id
+ * @param {Object} postData - all the data for the post
+ * @param {number} postData.id - post id
+ * @returns {Promise<Object>} - returns nothing
+ * @throws {Error} - throws error on failure based on response status or if the id is not provided
+ */
 const action = "/posts";
 const method = "put";
 

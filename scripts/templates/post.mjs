@@ -1,6 +1,7 @@
 import { getUserName } from "../utils/getUserName.mjs";
 import { setDeletePostListener } from "../handlers/deletePost.mjs";
 
+//general layout of posts. Displays functional edit/delete buttons if author is equal to logged in profile name
 export function postTemplate(postData) {
     const post = document.createElement("div");
     post.classList.add("post", "m-2", "p-4", "bg-secondary", "border", "border-primary", "rounded");

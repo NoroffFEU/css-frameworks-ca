@@ -1,6 +1,12 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
+/**
+ * sends post request to api endpoint
+ * @param {Object} postData - contains post data such as title, body, tags and media
+ * @returns {Promise<Object>} - returns nothing
+ */
+
 const action = "/posts";
 const method = "post";
 

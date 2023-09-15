@@ -2,7 +2,10 @@ import * as postMethods from "../api/posts/index.mjs";
 import * as templates from "../templates/index.mjs"; 
 
 document.getElementById("applyFilters").addEventListener("click", applyFilters);
-
+/**
+ * applies filters based on user input , and updates the posts accordingly
+ * @throws {Error} throws error on failure
+ */
 export async function applyFilters() {
     try {
         const hasImage = document.getElementById("hasImage").checked;
@@ -17,7 +20,12 @@ export async function applyFilters() {
         console.error("Error applying filters:", error);
     }
 }
-
+/**
+ * retrieve the list of posts based on specified filter criteria
+ * @param {boolean} hasImage - if true will filter posts with images
+ * @param {boolean} hasTags - if true will filter posts with tags
+ * @returns {Promise<Object[]>} - returns posts based on filter criteria
+ */
 export async function getFilteredPosts(hasImage, hasTags) {
     const params = new URLSearchParams();
     if (hasImage) {

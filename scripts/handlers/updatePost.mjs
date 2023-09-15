@@ -14,9 +14,10 @@ export async function setUpdatePostListener() {
 
         form.title.value = post.title;
         form.body.value = post.body;
-        form.tags.value = post.tags || ""; 
-        form.media.value = post.media || ""; 
+        form.tags.value = post.tags || ""; //optional
+        form.media.value = post.media || ""; //optional
 
+        //button avaialbe after content has loaded
         button.disabled = false;
 
         form.addEventListener("submit", async (event) => {
@@ -24,7 +25,6 @@ export async function setUpdatePostListener() {
             const formData = new FormData(form);
             const post = Object.fromEntries(formData.entries());
             post.id = id;
-
 
             //avoid error if tags are empty
             if (post.tags === "") {

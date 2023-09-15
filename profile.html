@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is page gives the user an overview of their activity, and the activity of their friends."
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <title>Z | Profile</title>
+</head>
+<body class="bg-black">
+  <nav class="navbar navbar-expand-md" data-bs-theme="dark">
+    <div class="container-lg">
+      <a href="/feed.html" class="navbar-brand">
+        <img src="./public/brand-logo.svg" alt="Z brand logo"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"    data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        <div class="navbar-nav mx-auto">
+          <a class="nav-link" href="/feed.html">Feed</a>
+          <a class="nav-link active" href="/profile.html">Profile</a>
+          <a class="nav-link" href="/index.html">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-lg" data-bs-theme="dark">
+    <div class="row">
+      <div class="col-md-8 text-white">
+        <div class="row mt-4 flex-column align-items-center">
+          <img src="./public/profile-image.webp" class="rounded-circle image-profile" alt="Profile picture of the user"/>
+          <h5 class="text-center mt-3">User Name</h5>
+          <p class="text-body-secondary text-center">123 Posts</p>
+          <p class="text-body-secondary text-center">321 Followers</p>            
+          <button class="custom-btn-normal">Follow</button>
+        </div>
+        <div class="row mt-5 border-top">
+          <h3 class="my-4 ">Posts</h3>
+          <div class="col column-gap-4 mx-md-auto">
+            <div class="post mb-4">
+              <div class="card-header d-flex align-items-center">
+                <img src="./public/profile-image.webp" class="rounded-circle" alt="Profile picture of the user."/>
+                <p class="card-title ms-3">User Name</p>
+              </div>
+              <div class="card-body">
+                <img src="./public/profile-background.webp" class="card-img-top" alt="Post image."/>
+                <div class="post-content">
+                  <h5 class="card-title mt-3">Post Title</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, officia hic veritatis explicabo voluptas non voluptatem. Tenetur unde dolor numquam!</p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-between">
+                  <p>
+                    <a class="text-decoration-none" data-bs-toggle="collapse" href="#comments1" role="button">12 Comments</a>
+                  </p>
+                  <p>29 likes</p>
+                </div>
+                <div class="collapse" id="comments1">
+                  <div class="card card-body">A List of comments</div>
+                </div>
+              </div>
+            </div>
+            <div class="post mb-4">
+              <div class="card-header d-flex align-items-center">
+                <img src="./public/profile-image.webp" class="rounded-circle" alt="Profile picture of the user."/>
+                <p class="card-title ms-3">User Name</p>
+              </div>
+              <div class="card-body">
+                <img src="./public/profile-background.webp" class="card-img-top" alt="Post image"/>
+                <div class="post-content">
+                  <h5 class="card-title mt-3">Post Title</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, officia hic veritatis explicabo voluptas non voluptatem. Tenetur unde dolor numquam!</p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-between">
+                  <p>
+                    <a class="text-decoration-none" data-bs-toggle="collapse" href="#comments2" role="button">12 Comments</a>
+                  </p>
+                  <p>29 likes</p>
+                </div>
+                <div class="collapse" id="comments2">
+                  <div class="card card-body">A List of comments</div>
+                </div>
+              </div>
+            </div>
+            <div class="post mb-4">
+              <div class="card-header d-flex align-items-center">
+                <img src="./public/profile-image.webp" class="rounded-circle" alt="Profile picture of the user"/>
+                <p class="card-title ms-3">User Name</p>
+              </div>
+              <div class="card-body">
+                <img src="./public/profile-background.webp" class="card-img-top" alt="Post image."/>
+                <div class="post-content">
+                  <h5 class="card-title mt-3">Post Title</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, officia hic veritatis explicabo voluptas non voluptatem. Tenetur unde dolor numquam!</p>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-between">
+                  <p>
+                    <a class="text-decoration-none" data-bs-toggle="collapse" href="#comments3" role="button">12 Comments</a>
+                  </p>
+                  <p>29 likes</p>
+                </div>
+                <div class="collapse" id="comments3">
+                  <div class="card card-body">A List of comments</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-4 mt-5 border-top pt-4 text-white">
+        <h3>Following</h3>
+        <div class="contact-group mb-5">
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user"/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-check icon-large"></i>
+          </div>
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user"/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-check icon-large"></i>
+          </div>
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user"/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-check icon-large"></i>
+          </div>
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user."/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-check icon-large"></i>
+          </div>
+        </div>
+        <h3>Followers</h3>
+        <div class="contact-group mb-5">
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user"/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-circle icon-large"></i>
+          </div>
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user."/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-circle icon-large"></i>
+          </div>
+          <div class="contact-card mb-3">
+            <img src="./public/profile-image.webp" class="rounded-circle img-thumbnail" alt="Profile picture of the user."/>
+            <div class="contact-details">
+              <p class="blockquote">User Name</p>
+              <p class="blockquote-footer">Offline</p>
+            </div>
+            <i class="bi bi-person-circle icon-large"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

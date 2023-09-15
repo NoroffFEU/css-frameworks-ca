@@ -51,3 +51,18 @@
     color: $nav-link-color;
     border-radius: $btn-border-radius;
 }
+
+.feed__posts select {
+    background-color: $card-bg;
+    width: 179px;
+    border-width: $btn-border-width;
+    border-color: $card-bg;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: $card-bg;
+        border-width: $btn-border-width;
+        border-color: $card-bg;
+    }
+}

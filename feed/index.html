@@ -107,11 +107,29 @@
                 <div class="container bg-light py-5">
                     <div class="col-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 mx-auto">
                         <!-- row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 -->
-                        <div class="d-flex flex-column flex-sm-row justify-content-between ms-2 mb-3">
-                            <div class="feed__posts-heading">
+                        <div class="row d-flex flex-column flex-sm-row justify-content-between ms-2 mb-3">
+                            <div class="feed__posts-heading ps-0">
                                 <h1 class="border-bottom border-primary border-3">Latest workouts</h1>
                             </div>
-                            <div class="btn-group h-100">
+                            <select class="text-start fs-6 btn form-select form-control h-100" id="select-workout" required="">
+                                <option selected="" disabled="" value="">Sort by activity</option>
+                                <option>All activities</option>
+                                <option>Running outdors</option>
+                                <option>Weight lifting</option>
+                                <option>Body strength</option>
+                                <option>Yoga</option>
+                                <option>Skiing</option>
+                                <option>Cycling</option>
+                                <option>Spinning</option>
+                                <option>Threadmill</option>
+                                <option>Aerobic</option>
+                                <option>Stretching</option>
+                                <option>Crossfit</option>
+                                <option>Swimming</option>
+                                <option>Hiking</option>
+                                <option>Other</option>
+                            </select>
+                            <!-- <div class="btn-group h-100">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">All activities</button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Running outdoors</a></li>
@@ -129,7 +147,7 @@
                                     <li><a class="dropdown-item" href="#">Hiking</a></li>
                                     <li><a class="dropdown-item" href="#">Other</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="card feed-post col-12 mb-3 pb-3">

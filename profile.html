@@ -54,20 +54,37 @@
 
         <!-- Profile Content -->
         <main>
-            <section class="profile__user py-3 text-center container">
-                <div class="card profile__user-box bg-light shadow-sm col-sm-11 col-md-8 col-lg-7 col-xl-6 mx-auto p-2">
-                    <!-- Profile Picture -->
-                    <div class="text-center">
-                        <img src="images/profile-3-gabriel-silverio-u3WmDyKGsrY-unsplash.jpg" alt="Profile Picture" class="profile__user-img img-fluid rounded-circle w-25 shadow-sm" />
-                        <h3>Cathy Catyson</h3>
-                    </div>
-                    <!-- Profile Information -->
-                    <div class="mt-3">
-                        <div class="text-start">
-                            <p><strong>Email:</strong> yoga-cathy@mail.com</p>
-                            <p><strong>Location:</strong> New York, USA</p>
-                            <p><strong>Bio:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <section class="profile py-3 text-center container">
+                <div class="card profile__box bg-dark text-light shadow-sm col-sm-11 col-md-8 col-lg-7 col-xl-6 mx-auto p-2">
+                    <div class="d-sm-flex">
+                        <!-- Profile information -->
+                        <div class="profile__info text-center mt-2 border border-white p-2 p-md-3 m-2 mb-sm-0">
+                            <img src="images/profile-3-gabriel-silverio-u3WmDyKGsrY-unsplash.jpg" alt="Profile Picture" class="profile__user-img img-fluid rounded-circle w-25 shadow-sm" />
+                            <h3 class="mb-0 color-secondary">Cathy Catyson</h3>
+                            <p class="mb-0">yoga-cathy@mail.com</p>
+                            <p class="mb-0">New York, USA</p>
                         </div>
+                        <!-- Profile followers -->
+                        <div class="profile__follow mt-2 border border-white p-2 p-md-3 mx-2 mt-2 mb-0 d-flex align-items-center">
+                            <!-- <div class="container"> -->
+                                    <div class="text-center follow mx-auto pb-1 pb-sm-0">
+                                        <div class="d-flex justify-content-center">
+                                            <a class="nav-link follow__count p-2 me-1" href="#">
+                                                <p class="mb-0 fs-4">435</p>
+                                                <p class="mb-0">Followers</p>
+                                            </a>
+                                            <a class="nav-link follow__count p-2 ms-1" href="#">
+                                                <p class="mb-0 fs-4">378</p>
+                                                <p class="mb-0">Following</p>
+                                            </a>
+                                        </div>
+                                        <button class="btn btn-secondary follow-button mt-2 mt-md-3">Follow</button>
+                                    </div>
+                            <!-- </div> -->
+                        </div> 
+                    </div>
+                    <div class="profile__follow mt-2 border border-white p-2 p-md-3 mx-2 mt-0 mb-2">
+                        <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores maxime labore cumque nobis repellendus officiis voluptatem assumenda natus sunt.</p>
                     </div>
                 </div>
             </section>

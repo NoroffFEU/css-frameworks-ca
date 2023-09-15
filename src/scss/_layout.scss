@@ -4,8 +4,12 @@
 
 .feed__share,
 .feed__posts .container,
-.profile__user {
+.profile {
     max-width: 1320px;
+}
+
+.follow-button {
+    width: 154px;
 }
 
 // .profile-image {
@@ -28,4 +32,9 @@
 
 .comment {
     border-radius: $btn-border-radius;
+}
+
+.profile__info,
+.profile__follow {
+    border-radius: $card-border-radius;
 }

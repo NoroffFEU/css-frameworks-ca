@@ -21,7 +21,11 @@
     text-decoration-thickness: 2px;
 }
 
-.navbar-brand:hover,
+.navbar-brand,
 .navbar-toggler:hover {
+    color: $secondary;
+}
+
+.navbar-brand:hover {
     color: $secondary;
 }

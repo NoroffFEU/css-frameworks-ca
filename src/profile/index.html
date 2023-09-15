@@ -18,6 +18,7 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="/dist/css/index.css" />
     <script type="module" src="/src/js/profile.js"></script>
+    <script src="/src/js/nav.js" defer></script>
   </head>
   <body>
     <header class="bg-primary">
@@ -50,9 +51,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="../../index.html"
-                  >Logout</a
-                >
+                <button id="logout" class="nav-link text-white">Logout</button>
               </li>
             </ul>
           </div>
@@ -103,7 +102,9 @@
               Change banner
             </button>
           </div>
-          <button id="follow--button" class="btn btn-success my-3">Follow</button>
+          <button id="follow--button" class="btn btn-success my-3">
+            Follow
+          </button>
 
           <p id="email">@TipsyThistle</p>
           <h2 class="fs-4">Master of Inebriated Incantations</h2>

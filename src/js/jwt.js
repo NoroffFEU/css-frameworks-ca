@@ -73,6 +73,7 @@ function login({ email, password }) {
         const data = yield response.json();
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));
+        localStorage.setItem("currentUser", JSON.stringify(data.name));
         changePage(data.name);
     });
 }

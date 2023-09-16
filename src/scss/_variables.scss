@@ -1,12 +1,13 @@
+//Overwrites, but some of them dont work?
 $primary: #212529;
 $secondary: #af7fee;
 $body-bg: #e3e3e3;
 $card-bg: $body-bg;
 $input-bg: #f8f9fa;
-$nav-link-color: $input-bg; //Does not affect the styling of the .nav-link class. Why?
-$navbar-brand-color: $secondary; //Does not affect the styling of the .nav-link class. Why?
-$navbar-brand-hover-color: $secondary; //Does not affect the styling of the .nav-link class. Why?
-$nav-link-hover-color: $primary; //Does not affect the styling of the .nav-link class. Why?
+$navbar-dark-color: $input-bg; //Does not affect the styling of the .nav-link class directly. Why?
+$navbar-brand-color: $secondary; //Does not affect the styling of the .nav-link class directly. Why?
+$navbar-brand-hover-color: $secondary; //Does not affect the styling of the .nav-link class directily. Why?
+$nav-link-hover-color: $primary; //Does not affect the styling of the .nav-link class directly. Why?
 $btn-hover-bg: $secondary;
 $card-border-radius: 20px;
 $btn-border-radius: 0.5rem;
@@ -19,7 +20,7 @@ $input-border-color: $primary;
 $input-focus-border-color: $secondary;
 $btn-focus-box-shadow: none;
 $btn-hover-bg: $secondary;
-$btn-hover-border-color: $nav-link-color;
+$btn-hover-border-color: $navbar-dark-color;
 
 //custom
 $bg-blue-grey-custom: #d2dee7; //body-signin
@@ -28,4 +29,4 @@ $signin-btn-hover-color: #000000cb;
 
 //Overwrites:
 $btn-hover-bg: $secondary;
-$btn-hover-border-color: $nav-link-color;
+$btn-hover-border-color: $navbar-dark-color;

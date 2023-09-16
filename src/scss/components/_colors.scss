@@ -17,8 +17,6 @@
 }
 
 .navbar .form-control {
-    border-color: $nav-link-color;
-
     &:focus,
     &:hover {
         border-color: $secondary;
@@ -26,8 +24,6 @@
 }
 
 .nav-link {
-    color: $nav-link-color;
-
     &:hover,
     &:focus {
         color: $primary;
@@ -36,15 +32,13 @@
 }
 
 .navbar-toggler {
-    color: $nav-link-color;
-
     &-child:hover {
         color: $secondary;
     }
 }
 
 .navbar .btn {
-    color: $nav-link-color;
+    color: $navbar-dark-color;
     border-color: $btn-hover-border-color;
 
     &:hover,

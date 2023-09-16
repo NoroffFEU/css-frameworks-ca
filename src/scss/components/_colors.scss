@@ -1,10 +1,8 @@
 .body-signin {
-    background-color: $bg-blue-grey;
+    background-color: $bg-blue-grey-custom;
 }
 
-.comment,
-.body-feed,
-.body-profile {
+.comment {
     background-color: $card-bg;
 }
 
@@ -18,10 +16,49 @@
     background-size: cover;
 }
 
-.feed__share-box {
-    background-color: $card-bg;
+.navbar .form-control {
+    border-color: $nav-link-color;
+
+    &:focus,
+    &:hover {
+        border-color: $secondary;
+    }
 }
 
+.nav-link {
+    color: $nav-link-color;
+
+    &:hover,
+    &:focus {
+        color: $primary;
+        background: $secondary;
+    }
+}
+
+.navbar-toggler {
+    color: $nav-link-color;
+
+    &-child:hover {
+        color: $secondary;
+    }
+}
+
+.navbar .btn {
+    color: $nav-link-color;
+    border-color: $btn-hover-border-color;
+
+    &:hover,
+    &:focus {
+        background: $btn-hover-bg;
+        border-color: $secondary;
+        color: $primary;
+        box-shadow: $btn-focus-box-shadow;
+    }
+}
+
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-toggler:hover,
 .profile__info h3 {
     color: $secondary;
 }

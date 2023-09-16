@@ -1,5 +1,5 @@
 .btn:focus {
-    box-shadow: $box-shadow-input-and-btn;
+    box-shadow: $btn-focus-box-shadow;
 }
 
 .btn-primary:hover {
@@ -8,31 +8,15 @@
 
 .navbar-toggler {
     border-width: 0;
-    color: $nav-link-color;
 
     &:focus {
         border-width: 0;
-        box-shadow: $box-shadow-input-and-btn;
-    }
-
-    &-child:hover {
-        color: $secondary;
+        box-shadow: $btn-focus-box-shadow;
     }
 }
 
 .navbar .btn {
     height: 48.5px;
-}
-
-.navbar .btn {
-    color: $nav-link-color;
-    border-color: $btn-hover-border-color;
-
-    &:hover {
-        background: $btn-nav-hover-bg;
-        border-color: $secondary;
-        color: $primary;
-    }
 }
 
 .btn-sm {

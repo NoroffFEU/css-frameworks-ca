@@ -1,36 +1,31 @@
-// $primary: black;
-$primary: rgb(33, 37, 41);
+$primary: #212529;
 $secondary: #af7fee;
-
-//overwrites
-$nav-link-color: #ffffff;
-$navbar-brand-color: $nav-link-color;
-$card-bg: #e3e3e3; //.body-profile, .body-feed, .feed-post
-
-$bg-blue-grey: #d2dee7; //body-signin
-
-$nav-link-hover-color: $primary;
-$navbar-brand-hover-color: $secondary;
+$body-bg: #e3e3e3;
+$card-bg: $body-bg;
+$input-bg: #f8f9fa;
+$nav-link-color: $input-bg; //Does not affect the styling of the .nav-link class. Why?
+$navbar-brand-color: $secondary; //Does not affect the styling of the .nav-link class. Why?
+$navbar-brand-hover-color: $secondary; //Does not affect the styling of the .nav-link class. Why?
+$nav-link-hover-color: $primary; //Does not affect the styling of the .nav-link class. Why?
+$btn-hover-bg: $secondary;
 $card-border-radius: 20px;
 $btn-border-radius: 0.5rem;
 $card-border-width: 0;
-
-//custom
-$font-size-tiny: 0.8rem;
-
-$font-family: "trade-gothic-next", sans-serif;
-$btn-font-family: $font-family;
-
-$input-border-width: 2px;
-$input-focus-border-width: 2px;
-
+$body-font-family: "trade-gothic-next", sans-serif;
+$btn-font-family: $body-font-family;
+$input-border-width: 2.5px;
+$input-focus-border-width: 2.5px;
 $input-border-color: $primary;
 $input-focus-border-color: $secondary;
-$signin-btn-hover-color: rgba(0, 0, 0, 0.797);
+$btn-focus-box-shadow: none;
+$btn-hover-bg: $secondary;
+$btn-hover-border-color: $nav-link-color;
 
-$box-shadow-input-and-btn: none;
+//custom
+$bg-blue-grey-custom: #d2dee7; //body-signin
+$font-size-tiny: 0.8rem;
+$signin-btn-hover-color: #000000cb;
 
 //Overwrites:
-
-$btn-nav-hover-bg: $secondary;
+$btn-hover-bg: $secondary;
 $btn-hover-border-color: $nav-link-color;

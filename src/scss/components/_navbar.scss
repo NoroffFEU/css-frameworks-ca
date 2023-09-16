@@ -1,16 +1,8 @@
 .nav-link {
-    color: $nav-link-color;
     border-radius: $btn-border-radius;
 
-    &:hover {
-        color: $primary;
-        background: $secondary;
-        border-radius: $btn-border-radius;
-    }
-
+    &:hover,
     &:focus {
-        color: $primary;
-        background: $secondary;
         border-radius: $btn-border-radius;
     }
 }
@@ -19,13 +11,4 @@
     text-decoration: underline;
     text-underline-offset: 0.2rem;
     text-decoration-thickness: 2px;
-}
-
-.navbar-brand,
-.navbar-toggler:hover {
-    color: $secondary;
-}
-
-.navbar-brand:hover {
-    color: $secondary;
 }

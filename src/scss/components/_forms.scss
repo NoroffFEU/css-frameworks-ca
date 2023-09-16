@@ -1,30 +1,14 @@
-// SIGN IN //
 .form-control {
-    border-width: $input-border-width;
     border-radius: $btn-border-radius;
     background-clip: border-box;
 
     &:focus {
         box-shadow: none;
-        border-width: $input-focus-border-width;
     }
 }
 
 .signin-content .form-control {
     height: 48.5px;
-}
-
-.navbar .form-control {
-    border-color: $nav-link-color;
-
-    &:focus {
-        border-color: $secondary;
-        border-width: $input-focus-border-width;
-    }
-
-    &:hover {
-        border-color: $secondary;
-    }
 }
 
 .input-group {

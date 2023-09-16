@@ -5,6 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<link rel="stylesheet" href="/dist/css/style.css" />
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg bg-light">
@@ -47,7 +53,63 @@
 		</form>
 
 		<div class="d-flex justify-content-center mt-5">
-			<button class="btn btn-secondary">Create a new post</button>
+			<!-- Button modal-->
+			<button
+				type="button"
+				class="btn btn-secondary"
+				data-bs-toggle="modal"
+				data-bs-target="#exampleModal"
+				data-bs-whatever="@getbootstrap"
+			>
+				Create a new post
+			</button>
+			<!-- Modal -->
+
+			<div
+				class="modal fade"
+				id="exampleModal"
+				tabindex="-1"
+				aria-labelledby="exampleModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">
+								New message
+							</h1>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="mb-3">
+									<label for="message-text" class="col-form-label"
+										>Write a post</label
+									>
+									<textarea class="form-control" id="message-text"></textarea>
+								</div>
+								<div class="mb-3">
+									<label for="formFile" class="form-label">Add a photo</label>
+									<input class="form-control" type="file" id="formFile" />
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn border" data-bs-dismiss="modal">
+								Close
+							</button>
+							<button type="button" class="btn btn-secondary">
+								Create post
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="dropdown p-1">
 				<button
 					class="btn btn-secondary dropdown-toggle"

@@ -9,6 +9,10 @@ document
 
 const logoutButton: HTMLButtonElement = document.querySelector("#logout");
 
+logoutButton.textContent = `logout(${JSON.parse(
+  localStorage.getItem("currentUser")
+)})`;
+
 logoutButton.addEventListener("click", () => {
   localStorage.clear();
   window.location.href = "../../index.html";

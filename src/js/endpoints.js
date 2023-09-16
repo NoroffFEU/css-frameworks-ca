@@ -19,8 +19,12 @@ export default function endpointObject(userId) {
         postsByOneUser: `https://api.noroff.dev/api/v1/social/profiles/${userId}/posts`,
         changeMedia: `https://api.noroff.dev/api/v1/social/profiles/${userId}/media`,
         allPostsFollowed: `https://api.noroff.dev/api/v1/social/posts/following?_author=true`,
+        createPost: `https://api.noroff.dev/api/v1/social/posts`,
+        delete: function (id) {
+            return `https://api.noroff.dev/api/v1/social/posts/${id}`;
+        },
         react: function (symbol) {
-            return `/social/posts/<id>/react/${symbol}`;
+            return `https://api.noroff.dev/api/v1/social/posts/<id>/react/${symbol}`;
         },
         getToken: function () {
             return JSON.parse(localStorage.getItem("token") || "");

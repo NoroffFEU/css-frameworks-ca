@@ -38,7 +38,7 @@ function renderPosts(
       <div class="col-8">
       <h3>${title}</h3>
         <p class="card-text text-black">
-          ${body}${media&&media}
+          ${body}${media && media}
         </p>
         ${tags
           .map(
@@ -79,3 +79,42 @@ callApi(
   },
   postOption
 );
+
+const createMessageTitle = document.querySelector("#title--feed");
+const createMessageMessage = document.querySelector("#text-body--feed");
+const createMessageMedia = document.querySelector("#media--feed");
+const createMessageTags = document.querySelector("#tags--feed");
+const postButton = document.querySelector("#post--button");
+
+createMessageMedia?.addEventListener("input", () => {
+  messageObject.media = createMessageMedia.value;
+});
+createMessageTitle?.addEventListener("input", () => {
+  messageObject.title = createMessageTitle.value;
+});
+createMessageMessage?.addEventListener("input", () => {
+  messageObject.body = createMessageMessage.value;
+  console.log(messageObject);
+});
+createMessageTags?.addEventListener("input", () => {
+  const tagArr = createMessageTags.value.split("#");
+  messageObject.tags = tagArr;
+  console.log(messageObject);
+});
+
+const messageObject: { title: string; message: string; media: string } = {
+  title: "",
+  body: "",
+  media: "",
+};
+
+postButton?.addEventListener("click", () => {
+  const message = optionFactory("POST", messageObject);
+  callApi(
+    endpoint.createPost,
+    (data) => {
+      console.log(data);
+    },
+    message
+  );
+});

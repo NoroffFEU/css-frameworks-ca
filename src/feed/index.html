@@ -374,11 +374,11 @@
             <div class="form-floating">
               <input
                 class="form-control mb-2"
-                name="topic--feed"
-                id="topic--feed"
-                placeholder="topic"
+                name="title--feed"
+                id="title--feed"
+                placeholder="title"
                 type="text" />
-              <label for="topic--feed">topic</label>
+              <label for="title--feed">title</label>
             </div>
             <div class="form-floating">
               <textarea
@@ -390,7 +390,27 @@
                 rows="10"></textarea>
               <label for="text-body--feed">Your thoughts</label>
             </div>
-            <button class="btn btn-secondary">Post</button>
+            <div class="form-floating">
+              <input
+                class="form-control mb-2"
+                name="media--feed"
+                id="media--feed"
+                placeholder="img url"
+                type="text" />
+              <label for="topic--feed">img url</label>
+            </div>
+            <div class="form-floating">
+              <input
+                class="form-control mb-2"
+                name="tags--feed"
+                id="tags--feed"
+                placeholder="tags seperated by #"
+                type="text" />
+              <label for="tags--feed">tags seperated by #</label>
+            </div>
+            <button id="post--button" type="button" class="btn btn-secondary">
+              Post
+            </button>
           </form>
         </div>
       </div>

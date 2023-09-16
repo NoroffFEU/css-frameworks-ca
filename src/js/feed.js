@@ -29,7 +29,7 @@ function renderPosts(domEl, { id, title, body, tags, media, created, updated, _c
       <div class="col-8">
       <h3>${title}</h3>
         <p class="card-text text-black">
-          ${body}
+          ${body}${media && media}
         </p>
         ${tags
         .map((element) => `<span class="badge text-bg-primary m-1">${element}</span>`)
@@ -57,3 +57,34 @@ console.log(postOption);
 callApi(endpoint.allPostsFollowed, (data) => {
     data.forEach((element) => renderPosts(document.querySelector("#feed--container"), element));
 }, postOption);
+const createMessageTitle = document.querySelector("#title--feed");
+const createMessageMessage = document.querySelector("#text-body--feed");
+const createMessageMedia = document.querySelector("#media--feed");
+const createMessageTags = document.querySelector("#tags--feed");
+const postButton = document.querySelector("#post--button");
+createMessageMedia === null || createMessageMedia === void 0 ? void 0 : createMessageMedia.addEventListener("input", () => {
+    messageObject.media = createMessageMedia.value;
+});
+createMessageTitle === null || createMessageTitle === void 0 ? void 0 : createMessageTitle.addEventListener("input", () => {
+    messageObject.title = createMessageTitle.value;
+});
+createMessageMessage === null || createMessageMessage === void 0 ? void 0 : createMessageMessage.addEventListener("input", () => {
+    messageObject.body = createMessageMessage.value;
+    console.log(messageObject);
+});
+createMessageTags === null || createMessageTags === void 0 ? void 0 : createMessageTags.addEventListener("input", () => {
+    const tagArr = createMessageTags.value.split("#");
+    messageObject.tags = tagArr;
+    console.log(messageObject);
+});
+const messageObject = {
+    title: "",
+    body: "",
+    media: "",
+};
+postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => {
+    const message = optionFactory("POST", messageObject);
+    callApi(endpoint.createPost, (data) => {
+        console.log(data);
+    }, message);
+});

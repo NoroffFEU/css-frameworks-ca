@@ -1,6 +1,6 @@
 # css-frameworks-ca
 
-# Social media site - Stronger together
+## Social media site - Stronger together
 
 ![Social media site - Stronger together](images/readme-img.jpg)
 

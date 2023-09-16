@@ -1,0 +1,23 @@
+.feed__share,
+.profile {
+    padding-top: 100px;
+}
+
+.follow-button {
+    width: 154px;
+}
+
+.profile-image,
+.user-img {
+    width: 65px;
+    height: 65px;
+}
+
+.comment {
+    border-radius: $btn-border-radius;
+}
+
+.profile__info,
+.profile__follow {
+    border-radius: $card-border-radius;
+}

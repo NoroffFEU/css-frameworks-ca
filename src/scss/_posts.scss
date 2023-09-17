@@ -1,0 +1,8 @@
+.post {
+  border: solid 2px rgb(13, 143, 13);
+
+  &:hover {
+    border-color: white;
+    transition: all 0.5s ease-out;
+  }
+}

@@ -55,13 +55,14 @@ function optionFactory(method, body) {
 const postOption = optionFactory("GET", {});
 console.log(postOption);
 callApi(endpoint.allPostsFollowed, (data) => {
-    data.forEach((element) => renderPosts(document.querySelector("#feed--container"), element));
+    data.forEach((element) => renderPosts(postContainer, element));
 }, postOption);
 const createMessageTitle = document.querySelector("#title--feed");
 const createMessageMessage = document.querySelector("#text-body--feed");
 const createMessageMedia = document.querySelector("#media--feed");
 const createMessageTags = document.querySelector("#tags--feed");
 const postButton = document.querySelector("#post--button");
+const postContainer = document.querySelector("#feed--container");
 createMessageMedia === null || createMessageMedia === void 0 ? void 0 : createMessageMedia.addEventListener("input", () => {
     messageObject.media = createMessageMedia.value;
 });
@@ -81,6 +82,7 @@ const messageObject = {
     title: "",
     body: "",
     media: "",
+    tags: [],
 };
 postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => {
     const message = optionFactory("POST", messageObject);

@@ -2,7 +2,7 @@ import endpoints from "./endpoints.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const currentUser: string = JSON.parse(localStorage.getItem("currentUser"));
 const endpoint = endpoints(userId);
 const profileElements = {
   user: document.querySelector("#userName") as HTMLElement,

@@ -53,7 +53,11 @@ function renderPosts(
 }
 
 function optionFactory(method: htmlMethod, body: {}) {
-  const newObject = {
+  const newObject: {
+    method: htmlMethod;
+    headers: { Authorization: string; "Content-type": string };
+    body?: {};
+  } = {
     method: method,
     headers: {
       Authorization: `Bearer ${endpoint.getToken()}`,
@@ -73,18 +77,27 @@ console.log(postOption);
 callApi(
   endpoint.allPostsFollowed,
   (data: post[]) => {
-    data.forEach((element: post) =>
-      renderPosts(document.querySelector("#feed--container"), element)
-    );
+    data.forEach((element: post) => renderPosts(postContainer, element));
   },
   postOption
 );
 
-const createMessageTitle = document.querySelector("#title--feed");
-const createMessageMessage = document.querySelector("#text-body--feed");
-const createMessageMedia = document.querySelector("#media--feed");
-const createMessageTags = document.querySelector("#tags--feed");
-const postButton = document.querySelector("#post--button");
+const createMessageTitle = document.querySelector(
+  "#title--feed"
+) as HTMLInputElement;
+const createMessageMessage = document.querySelector(
+  "#text-body--feed"
+) as HTMLInputElement;
+const createMessageMedia = document.querySelector(
+  "#media--feed"
+) as HTMLInputElement;
+const createMessageTags = document.querySelector(
+  "#tags--feed"
+) as HTMLInputElement;
+const postButton = document.querySelector("#post--button") as HTMLButtonElement;
+const postContainer = document.querySelector(
+  "#feed--container"
+) as HTMLDivElement;
 
 createMessageMedia?.addEventListener("input", () => {
   messageObject.media = createMessageMedia.value;
@@ -102,17 +115,23 @@ createMessageTags?.addEventListener("input", () => {
   console.log(messageObject);
 });
 
-const messageObject: { title: string; message: string; media: string } = {
+const messageObject: {
+  title: string;
+  body: string;
+  media: string;
+  tags: string[];
+} = {
   title: "",
   body: "",
   media: "",
+  tags: [],
 };
 
 postButton?.addEventListener("click", () => {
   const message = optionFactory("POST", messageObject);
   callApi(
     endpoint.createPost,
-    (data) => {
+    (data: {}[]) => {
       console.log(data);
     },
     message

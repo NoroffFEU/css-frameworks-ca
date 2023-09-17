@@ -27,7 +27,7 @@ export async function setUpdatePostListener() {
             post.id = id;
 
             //avoid error if tags are empty
-            if (post.tags === "") {
+            if (!post.tags) {
                 post.tags = [];
             } else if (post.tags) {
                 post.tags = post.tags.split(",").map(tag => tag.trim());

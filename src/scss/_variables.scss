@@ -1,32 +1,27 @@
-//Overwrites, but some of them dont work?
+//Overwrites
 $primary: #212529;
 $secondary: #af7fee;
 $body-bg: #e3e3e3;
 $card-bg: $body-bg;
 $input-bg: #f8f9fa;
 $navbar-dark-color: $input-bg;
-$navbar-brand-color: $secondary; //Does not affect the styling of the .nav-link class directly. Why?
-$navbar-brand-hover-color: $secondary; //Does not affect the styling of the .nav-link class directily. Why?
-$nav-link-hover-color: $primary; //Does not affect the styling of the .nav-link class directly. Why?
-$btn-hover-bg: $secondary;
+$navbar-dark-brand-color: $secondary;
+$navbar-dark-brand-hover-color: $navbar-dark-brand-color;
 $card-border-radius: 20px;
 $btn-border-radius: 0.5rem;
 $card-border-width: 0;
-$body-font-family: "trade-gothic-next", sans-serif;
-$btn-font-family: $body-font-family;
+$body-font-family: "trade-gothic-next", sans-serif; //custom
 $input-border-width: 2.5px;
 $input-focus-border-width: 2.5px;
 $input-border-color: $primary;
 $input-focus-border-color: $secondary;
-$btn-focus-box-shadow: none;
-$btn-hover-bg: $secondary;
-$btn-hover-border-color: $navbar-dark-color;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none; //Does not affect the styling of the .nav-link class directly. Why?
 
 //custom
+$nav-link-hover-color: $primary; //Does not affect the styling of the .nav-link class directly. Why?
 $bg-blue-grey-custom: #d2dee7; //body-signin
 $font-size-tiny: 0.8rem;
 $signin-btn-hover-color: #000000cb;
-
-//Overwrites:
 $btn-hover-bg: $secondary;
 $btn-hover-border-color: $navbar-dark-color;

@@ -135,7 +135,7 @@ function renderUserPosts({
   const postContainer = document.querySelector("#container--posts");
 
   if (postContainer) {
-    postContainer.innerHTML += `<div class="card bg-secondary p-2 w-percentage--95">
+    postContainer.innerHTML += `<div id="div${id}" class="card bg-secondary p-2 w-percentage--95">
     <div class="row">
       <div class="col-3">
         <span class="text-primary fs-6">${owner}</span>
@@ -144,8 +144,8 @@ function renderUserPosts({
     <div>
       <h3>${title}</h3>
       <div>
-      <button id="button--${id}" class="btn btn-secondary">update</button>
-      <button btn btn-outline-secondary>delete</button>
+      <button id="button--${id}" class="btn btn-success">delete</button>
+      <button btn btn-outline-success>update</button>
       </div>
       </div>  
       <p class="card-text text-black">
@@ -171,6 +171,7 @@ function buttonDeleteListener(button: HTMLButtonElement, id: number) {
       },
       deleteOption
     );
+    document.querySelector(`#div${id}`).style.display = "none";
   });
 }
 

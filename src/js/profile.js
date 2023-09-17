@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import endpoints from "./endpoints.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
-const currentUser = queries.get("current");
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 const endpoint = endpoints(userId);
 const profileElements = {
     user: document.querySelector("#userName"),

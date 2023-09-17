@@ -2,7 +2,7 @@ import endpoints from "./endpoints.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
-const currentUser = queries.get("current");
+const currentUser: string = JSON.parse(localStorage.getItem("currentUser"));
 const endpoint = endpoints(userId);
 const profileElements = {
   user: document.querySelector("#userName") as HTMLElement,
@@ -154,8 +154,8 @@ function followUnfollow(followers: { name: string }[]) {
 }
 
 async function follow(button: HTMLButtonElement) {
-    if (button.textContent && button.textContent in endpoint) {
-      console.log(endpoint[button.textContent]);
+  if (button.textContent && button.textContent in endpoint) {
+    console.log(endpoint[button.textContent]);
     const response = await fetch(endpoint[button.textContent?.trim()], {
       method: "PUT",
       headers: {

@@ -18,7 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Josefin+Sans:wght@400;700&family=Josefin+Slab:wght@400;700&family=Montserrat+Alternates:ital,wght@0,400;1,200&family=Montserrat:wght@400;500;700&family=Noto+Sans&family=Noto+Serif:wght@400;700&family=Oswald&family=Source+Code+Pro:wght@400;700&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <script src="/src/js/index.js"></script>
+    <script src="/src/js/feed.js" type="module"></script>
+    <script src="/src/js/nav.js" defer></script>
   </head>
   <body>
     <header class="bg-primary">
@@ -48,9 +49,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="../../index.html"
-                  >Logout</a
-                >
+                <button id="logout" class="nav-link text-white">Logout</button>
               </li>
             </ul>
           </div>
@@ -110,7 +109,7 @@
           </button>
           <section class="bg-light">
             <h1>Feed</h1>
-            <div class="overflow-y-auto h-px--400">
+            <div id="feed--container" class="overflow-y-auto h-px--400">
               <div class="card mb-3 bg-secondary p-2 w-percentage--95">
                 <div class="row">
                   <div class="col-4">
@@ -375,11 +374,11 @@
             <div class="form-floating">
               <input
                 class="form-control mb-2"
-                name="topic--feed"
-                id="topic--feed"
-                placeholder="topic"
+                name="title--feed"
+                id="title--feed"
+                placeholder="title"
                 type="text" />
-              <label for="topic--feed">topic</label>
+              <label for="title--feed">title</label>
             </div>
             <div class="form-floating">
               <textarea
@@ -391,7 +390,27 @@
                 rows="10"></textarea>
               <label for="text-body--feed">Your thoughts</label>
             </div>
-            <button class="btn btn-secondary">Post</button>
+            <div class="form-floating">
+              <input
+                class="form-control mb-2"
+                name="media--feed"
+                id="media--feed"
+                placeholder="img url"
+                type="text" />
+              <label for="topic--feed">img url</label>
+            </div>
+            <div class="form-floating">
+              <input
+                class="form-control mb-2"
+                name="tags--feed"
+                id="tags--feed"
+                placeholder="tags seperated by #"
+                type="text" />
+              <label for="tags--feed">tags seperated by #</label>
+            </div>
+            <button id="post--button" type="button" class="btn btn-secondary">
+              Post
+            </button>
           </form>
         </div>
       </div>

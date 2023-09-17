@@ -16,11 +16,6 @@ const registerObject: registerInputValues = {
   repeatedPassword: "password",
 };
 
-const loginObject: { email: string; password: string } = {
-  email: "",
-  password: "",
-};
-
 const inputPassword = document.querySelector(
   "#password--register"
 ) as HTMLInputElement;
@@ -41,6 +36,10 @@ const loginPassword = document.querySelector(
 ) as HTMLInputElement;
 const buttonRegister = document.querySelector("#button--register");
 const buttonLogin = document.querySelector("#button--login");
+const loginObject: { email: string; password: string } = {
+  email: loginUserName.value ? loginUserName.value : "",
+  password: loginPassword.value ? loginPassword.value : "",
+};
 
 loginPassword.addEventListener("input", () => {
   loginObject.password = loginPassword.value;
@@ -95,6 +94,7 @@ async function login({ email, password }: typeof loginObject) {
   const data = await response.json();
   console.log(data);
   localStorage.setItem("token", JSON.stringify(data.accessToken));
+  localStorage.setItem("currentUser", JSON.stringify(data.name));
   changePage(data.name);
 }
 

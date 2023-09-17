@@ -14,10 +14,6 @@ const registerObject = {
     password: "password",
     repeatedPassword: "password",
 };
-const loginObject = {
-    email: "",
-    password: "",
-};
 const inputPassword = document.querySelector("#password--register");
 const inputEmail = document.querySelector("#email--register");
 const inputRpassword = document.querySelector("#password--register--repeat");
@@ -26,6 +22,10 @@ const loginUserName = document.querySelector("#username--login");
 const loginPassword = document.querySelector("#password--login");
 const buttonRegister = document.querySelector("#button--register");
 const buttonLogin = document.querySelector("#button--login");
+const loginObject = {
+    email: loginUserName.value ? loginUserName.value : "",
+    password: loginPassword.value ? loginPassword.value : "",
+};
 loginPassword.addEventListener("input", () => {
     loginObject.password = loginPassword.value;
     console.log(loginObject);
@@ -73,6 +73,7 @@ function login({ email, password }) {
         const data = yield response.json();
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));
+        localStorage.setItem("currentUser", JSON.stringify(data.name));
         changePage(data.name);
     });
 }

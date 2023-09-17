@@ -8,6 +8,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import endpoints from "./endpoints.js";
+import callApi from "./callApi.js";
+import optionFactory from "./optionFactory.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -66,6 +68,7 @@ function fetchPosts(url) {
         const data = yield response.json();
         updateProfile(data);
         data.posts.forEach((element) => renderUserPosts(element));
+        data.posts.forEach((element) => buttonDeleteListener(document.querySelector(`#button--${element.id}`), element.id));
         followUnfollow(data.followers);
         console.log(data, data.followers);
     });
@@ -85,7 +88,7 @@ function changeMedia({ avatar, banner, }) {
         console.log(data);
     });
 }
-function renderUserPosts({ body, created, tags, title, owner }) {
+function renderUserPosts({ body, created, tags, title, owner, id, }) {
     const postContainer = document.querySelector("#container--posts");
     if (postContainer) {
         postContainer.innerHTML += `<div class="card bg-secondary p-2 w-percentage--95">
@@ -94,8 +97,14 @@ function renderUserPosts({ body, created, tags, title, owner }) {
         <span class="text-primary fs-6">${owner}</span>
       </div>
       <div class="col-9">
+    <div>
       <h3>${title}</h3>
-        <p class="card-text text-black">
+      <div>
+      <button id="button--${id}" class="btn btn-secondary">update</button>
+      <button btn btn-outline-secondary>delete</button>
+      </div>
+      </div>  
+      <p class="card-text text-black">
 ${body}
         </p>${tags
             .map((tag) => `<span class="badge text-bg-primary m-1">${tag}</span>`)
@@ -105,6 +114,14 @@ ${body}
   </div>
     `;
     }
+}
+const deleteOption = optionFactory("DELETE", {}, endpoint);
+function buttonDeleteListener(button, id) {
+    button.addEventListener("click", () => {
+        callApi(endpoint.delete(id), (data) => {
+            console.log(data, "deleted");
+        }, deleteOption);
+    });
 }
 function followUnfollow(followers) {
     const button = document.querySelector("#follow--button");

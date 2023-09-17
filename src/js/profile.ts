@@ -1,4 +1,6 @@
 import endpoints from "./endpoints.js";
+import callApi from "./callApi.js";
+import optionFactory from "./optionFactory.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
@@ -83,6 +85,12 @@ async function fetchPosts(url: string) {
   const data = await response.json();
   updateProfile(data);
   data.posts.forEach((element: postObject) => renderUserPosts(element));
+  data.posts.forEach((element: postObject) =>
+    buttonDeleteListener(
+      document.querySelector(`#button--${element.id}`),
+      element.id
+    )
+  );
   followUnfollow(data.followers);
   console.log(data, data.followers);
 }
@@ -108,6 +116,7 @@ async function changeMedia({
 }
 
 interface postObject {
+  id: number;
   body: string;
   created: Date;
   tags: string[];
@@ -115,7 +124,14 @@ interface postObject {
   owner: string;
 }
 
-function renderUserPosts({ body, created, tags, title, owner }: postObject) {
+function renderUserPosts({
+  body,
+  created,
+  tags,
+  title,
+  owner,
+  id,
+}: postObject) {
   const postContainer = document.querySelector("#container--posts");
 
   if (postContainer) {
@@ -125,8 +141,14 @@ function renderUserPosts({ body, created, tags, title, owner }: postObject) {
         <span class="text-primary fs-6">${owner}</span>
       </div>
       <div class="col-9">
+    <div>
       <h3>${title}</h3>
-        <p class="card-text text-black">
+      <div>
+      <button id="button--${id}" class="btn btn-secondary">update</button>
+      <button btn btn-outline-secondary>delete</button>
+      </div>
+      </div>  
+      <p class="card-text text-black">
 ${body}
         </p>${tags
           .map((tag) => `<span class="badge text-bg-primary m-1">${tag}</span>`)
@@ -136,6 +158,20 @@ ${body}
   </div>
     `;
   }
+}
+
+const deleteOption = optionFactory("DELETE", {}, endpoint);
+
+function buttonDeleteListener(button: HTMLButtonElement, id: number) {
+  button.addEventListener("click", () => {
+    callApi(
+      endpoint.delete(id),
+      (data) => {
+        console.log(data, "deleted");
+      },
+      deleteOption
+    );
+  });
 }
 
 function followUnfollow(followers: { name: string }[]) {

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Feed page">
+    <title>Latest posts</title>
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <script type="module" src="/scripts/index.mjs"></script>
+    <script type="module" src="/scripts/filters/index.mjs"></script>
+  </head>
+<body>
+
+<!--Nav-->
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3">
+  <div class="container">
+   <a href="../posts" class="navbar-brand">DesTiny</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto d-flex align-items-center justify-content-center">
+        <li class="nav-item">
+         <a href="" class="nav-link text-white">Home</a>
+        </li>
+        <li class="nav-item mx-lg-5">
+         <a href="../profile" class="nav-link text-white">Profile</a>
+        </li>
+        <li class="nav-item">
+         <a href="../index.html" class="nav-link btn btn-light text-black px-3 py-1 mt-4 mt-lg-0">Log out</a> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Filters-->
+<section class="mt-5 justify-content-center">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="form-group text-center justify-content-center align-items-center">
+          <form id="feed-filters">
+            <label>Filters:</label>
+            <input type="checkbox" name="hasImage" id="hasImage" />
+            <label for="hasImage">Images </label>
+            <input type="checkbox" name="hasTags" id="hasTags" />
+            <label for="hasTags">Tags </label>
+            <button type="button" id="applyFilters" class="btn btn-secondary">Apply Filters</button>
+        </form>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Search bar-->
+<section class="p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-lg-8 col-md-10 mx-auto">
+        <form class="form-inline my-2" id="search-form">
+          <div class="input-group mx-auto">
+              <input class="form-control form-control-sm" type="search" id="search-input" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                  <button class="btn btn-outline-primary" type="submit">Search</button>
+                  <a href="/post/create" class="btn btn-primary text-white" type="button">Create a new post</a>
+              </div>  
+          </div>
+      </form>
+      
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Latest posts-->
+<section class="p-3">
+  <div class="container d-flex flex-column align-items-center">
+    <div class="row text-center">
+      <h1>Latest posts by the community</h1>
+    </div>
+    <div class="row mx-auto w-50" id="posts">
+      <!-- Import list of post cards from api -->
+    </div>
+  </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -3,6 +3,7 @@
 @use "./components/login";
 @use "./components/profile_summary";
 @use "./components/user-posts";
+@use "./components/add_post";
 
 body{
     background-color: map-get($map: variables.$colors, $key: green-background);

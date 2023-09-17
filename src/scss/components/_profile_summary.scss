@@ -2,10 +2,7 @@
 
 .profile-summary{
     border: 2px solid map-get($map: variables.$colors, $key:blue-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
+    border-radius: 0px 0px 15px 15px;
 
     .profile-name{
         font-size: 1rem;
@@ -17,12 +14,19 @@
     }
 }
 
+.followers, .following{
+    border: 2px solid map-get($map: variables.$colors, $key:blue-dark);
+    
+    h2{
+        font-size: 1.2rem;
+    }
+}
+
 
 @media (min-width: 600px){
     .profile-summary{
         border: 2px solid map-get($map: variables.$colors, $key:blue-dark);
         border-radius: 15px;
-        display: flex;
         width: 80%;
         max-width: 400px;
 

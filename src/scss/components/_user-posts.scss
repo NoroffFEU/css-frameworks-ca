@@ -1,20 +1,20 @@
 @use "../utilities/variables" as variables;
 
+.profile-pic-tiny{
+    height: 50px;
+    margin: 5px;
+}
+
+.profile-name-post{
+    font-weight: 500;
+    font-size: 0.7rem;
+}
+
 .all-user-posts{
     border: 2px solid map-get($map: variables.$colors, $key:blue-dark );
 
     .custom-border{
         border: 2px solid map-get($map: variables.$colors, $key:blue-dark );
-    }
-
-    .profile-pic-tiny{
-        height: 50px;
-        margin: 5px;
-    }
-
-    .profile-name-post{
-        font-weight: 500;
-        font-size: 1rem;
     }
 
     p{
@@ -26,5 +26,8 @@
 @media (width: 600px) {
     .all-user-posts .custom-border{
         border-radius: 15px;
+    }
+    .profile-name-post{
+        font-size: 1rem;
     }
 }

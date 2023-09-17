@@ -1,0 +1,29 @@
+//Overwrites
+$primary: #212529;
+$secondary: #af7fee;
+$body-bg: #e3e3e3;
+$card-bg: $body-bg;
+$input-bg: #f8f9fa;
+$navbar-dark-color: $input-bg;
+$navbar-dark-brand-color: $secondary;
+$navbar-dark-brand-hover-color: $navbar-dark-brand-color;
+$card-border-radius: 20px;
+$btn-border-radius: 0.5rem;
+$card-border-width: 0;
+$body-font-family: "trade-gothic-next", sans-serif; //custom
+$input-border-width: 2.7px;
+$input-focus-border-width: 2.7px;
+$input-border-color: $primary;
+$input-focus-border-color: $secondary;
+$btn-box-shadow: none; //Does not affect the styling of the .btn-class Why?
+$btn-focus-box-shadow: none; //Does not affect the styling of the .btn-class. Why?
+
+//custom
+$nav-link-hover-color: $primary;
+$bg-blue-grey-custom: #d2dee7; //body-signin
+$font-size-tiny: 0.8rem;
+$signin-btn-hover-color: #000000cb;
+$btn-hover-bg: $secondary;
+$btn-hover-border-color: $navbar-dark-color;
+
+//Testing to make changes before making a pull request.

@@ -39,11 +39,13 @@
                 
                 <div class="row">
                     <form class="d-flex justify-content-center align-items-center flex-column" action="">
-                        <div class="form-outline mb-4">
-                            <textarea class="form-control write-post" id="form4Example3" placeholder="Say something clever about the environment"></textarea>
-                            <label class="form-label" for="form4Example3"></label>
+                        <div class="form-outline">
+                            <fieldset>
+                                <textarea class="form-control write-post" id="form4Example3" placeholder="Say something clever about the environment, minimum  25 characters, max 250" minlength="25" maxlength="250"></textarea>
+                                <label class="form-label" for="form4Example3"></label>
+                            </fieldset>
                           </div>
-                          <button type="submit" class="btn btn-primary btn-block mb-4">Send</button> 
+                          <button type="submit" class="btn btn-primary btn-block mb-4" disabled>Send</button> 
                     </form>
                 </div>
 
@@ -136,5 +138,7 @@
           </div>
           <!-- https://mdbootstrap.com/docs/standard/navigation/footer/ -->
       </footer>
+
+      <script src="../dist/js/formValidation.js"></script>
 </body>
 </html>

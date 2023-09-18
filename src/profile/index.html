@@ -21,6 +21,52 @@
     <script src="/src/js/nav.js" defer></script>
   </head>
   <body>
+    <div id="modal" class="container bg-primary">
+      <button id="close-modal" class="btn-close ms-auto"></button>
+      <h2 class="text-secondary fs-4 mt-4">Edit post</h2>
+      <form action="" class="m-auto">
+        <div class="form-floating">
+          <input
+            class="form-control mb-2"
+            name="title__modal--edit"
+            id="title__modal--edit"
+            placeholder="title"
+            type="text" />
+          <label for="title__modal--edit">title</label>
+        </div>
+        <div class="form-floating">
+          <textarea
+            class="form-control h-25 mb-2"
+            name="body__modal--edit"
+            placeholder="your thoughts"
+            id="body__modal--edit"
+            cols="30"
+            rows="10"></textarea>
+          <label for="body__modal--edit">Your thoughts</label>
+        </div>
+        <div class="form-floating">
+          <input
+            class="form-control mb-2"
+            name="media__modal--edit"
+            id="media__modal--edit"
+            placeholder="img url"
+            type="text" />
+          <label for="media__modal--edit">img url</label>
+        </div>
+        <div class="form-floating">
+          <input
+            class="form-control mb-2"
+            name="tags__modal--edit"
+            id="tags__modal--edit"
+            placeholder="tags seperated by #"
+            type="text" />
+          <label for="tags__modal--edit">tags seperated by #</label>
+        </div>
+        <button id="post__modal--edit" type="button" class="btn btn-secondary">
+          Post
+        </button>
+      </form>
+    </div>
     <header class="bg-primary">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">

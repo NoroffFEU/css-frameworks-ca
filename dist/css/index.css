@@ -11884,4 +11884,10 @@ textarea.form-control-lg {
   min-width: 400px;
 }
 
+#modal {
+  position: fixed;
+  display: none;
+  z-index: 3000;
+}
+
 /*# sourceMappingURL=index.css.map */

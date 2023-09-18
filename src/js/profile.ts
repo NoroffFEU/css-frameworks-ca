@@ -85,12 +85,18 @@ async function fetchPosts(url: string) {
   const data = await response.json();
   updateProfile(data);
   data.posts.forEach((element: postObject) => renderUserPosts(element));
-  data.posts.forEach((element: postObject) =>
+  data.posts.forEach((element: postObject) => {
     buttonDeleteListener(
       document.querySelector(`#button--${element.id}`),
       element.id
-    )
-  );
+    );
+    document
+      .querySelector(`#button--edit--${element.id}`)
+      ?.addEventListener("click", () => {
+        showModal();
+        getPostText(element.id);
+      });
+  });
   followUnfollow(data.followers);
   console.log(data, data.followers);
 }
@@ -142,16 +148,19 @@ function renderUserPosts({
       </div>
       <div class="col-9">
     <div>
-      <h3>${title}</h3>
+      <h3 id="title${id}">${title}</h3>
       <div>
       <button id="button--${id}" class="btn btn-success">delete</button>
-      <button btn btn-outline-success>update</button>
+      <button id="button--edit--${id}" btn btn-outline-success>update</button>
       </div>
       </div>  
-      <p class="card-text text-black">
+      <p id="body${id}" class="card-text text-black">
 ${body}
         </p>${tags
-          .map((tag) => `<span class="badge text-bg-primary m-1">${tag}</span>`)
+          .map(
+            (tag) =>
+              `<span class="badge text-bg-primary m-1 tag${id}">${tag}</span>`
+          )
           .join("")}
       </div>
     </div>
@@ -205,4 +214,27 @@ async function follow(button: HTMLButtonElement) {
       : (button.textContent = "follow");
     console.log(data);
   }
+}
+
+function showModal() {
+  document.querySelector("#modal").style.display = "block";
+}
+
+document.querySelector("#close-modal")?.addEventListener("click", () => {
+  document.querySelector("#modal").style.display = "none";
+});
+
+function getPostText(id) {
+  document.querySelector("#title__modal--edit").value = document.querySelector(
+    `#title${id}`
+  ).textContent;
+  document.querySelector("#body__modal--edit").value = document.querySelector(
+    `#body${id}`
+  )?.textContent;
+  const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
+
+  document.querySelector("#tags__modal--edit").value = tagArr
+    .map((tag) => tag.textContent)
+    .join("#");
+  console.log(tagArr);
 }

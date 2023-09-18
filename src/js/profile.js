@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var _a;
 import endpoints from "./endpoints.js";
 import callApi from "./callApi.js";
 import optionFactory from "./optionFactory.js";
@@ -68,7 +69,15 @@ function fetchPosts(url) {
         const data = yield response.json();
         updateProfile(data);
         data.posts.forEach((element) => renderUserPosts(element));
-        data.posts.forEach((element) => buttonDeleteListener(document.querySelector(`#button--${element.id}`), element.id));
+        data.posts.forEach((element) => {
+            var _a;
+            buttonDeleteListener(document.querySelector(`#button--${element.id}`), element.id);
+            (_a = document
+                .querySelector(`#button--edit--${element.id}`)) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
+                showModal();
+                getPostText(element.id);
+            });
+        });
         followUnfollow(data.followers);
         console.log(data, data.followers);
     });
@@ -98,16 +107,16 @@ function renderUserPosts({ body, created, tags, title, owner, id, }) {
       </div>
       <div class="col-9">
     <div>
-      <h3>${title}</h3>
+      <h3 id="title${id}">${title}</h3>
       <div>
       <button id="button--${id}" class="btn btn-success">delete</button>
-      <button btn btn-outline-success>update</button>
+      <button id="button--edit--${id}" btn btn-outline-success>update</button>
       </div>
       </div>  
-      <p class="card-text text-black">
+      <p id="body${id}" class="card-text text-black">
 ${body}
         </p>${tags
-            .map((tag) => `<span class="badge text-bg-primary m-1">${tag}</span>`)
+            .map((tag) => `<span class="badge text-bg-primary m-1 tag${id}">${tag}</span>`)
             .join("")}
       </div>
     </div>
@@ -153,4 +162,20 @@ function follow(button) {
             console.log(data);
         }
     });
+}
+function showModal() {
+    document.querySelector("#modal").style.display = "block";
+}
+(_a = document.querySelector("#close-modal")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
+    document.querySelector("#modal").style.display = "none";
+});
+function getPostText(id) {
+    var _a;
+    document.querySelector("#title__modal--edit").value = document.querySelector(`#title${id}`).textContent;
+    document.querySelector("#body__modal--edit").value = (_a = document.querySelector(`#body${id}`)) === null || _a === void 0 ? void 0 : _a.textContent;
+    const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
+    document.querySelector("#tags__modal--edit").value = tagArr
+        .map((tag) => tag.textContent)
+        .join("#");
+    console.log(tagArr);
 }

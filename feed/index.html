@@ -34,23 +34,32 @@
 
       <main>
         <section class="posts-history d-flex justify-content-center align-items-center flex-column">
-            <h1 class="h3 m-5">All posts</h1>
+            <h1 class="h2 m-5">Feed</h1>
             <div class="container">
                 
                 <div class="row">
                     <form class="d-flex justify-content-center align-items-center flex-column" action="">
+                        <h2 class="h3"><u>Add a post:</u></h2>
                         <div class="form-outline">
                             <fieldset>
                                 <textarea class="form-control write-post" id="form4Example3" placeholder="Say something clever about the environment, minimum  25 characters, max 250" minlength="25" maxlength="250"></textarea>
                                 <label class="form-label" for="form4Example3"></label>
                             </fieldset>
                           </div>
-                          <button type="submit" class="btn btn-primary btn-block mb-4" disabled>Send</button> 
+                          <button type="submit" class="btn btn-primary btn-block mb-4" disabled>Post</button> 
                     </form>
                 </div>
 
                 <div class="row justify-content-center">
                     <div class="col-xl-8 all-user-posts mr-lg-0 mb-lg-5 mt-lg-0 m-sm-0">
+                        <h3 class="text-center mt-3">All posts:</h3>
+                        <form action="#" class="d-flex justify-content-center">
+                            <label for="sort-by">Sort By</label>
+                            <select name="sort-by" id="sort-by">
+                                <option value="newest-posts">Newest Posts</option>
+                                <option value="oldest-posts">Oldest posts</option>
+                            </select>
+                        </form>
                         <div class="single-post m-3 custom-border">
                             <div class="d-flex">
                                 <img class="profile-pic-tiny" src="../images_and_icon/icons/user_icon.png" alt="User icon created by Freepik">

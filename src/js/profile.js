@@ -75,6 +75,7 @@ function fetchPosts(url) {
             (_a = document
                 .querySelector(`#button--edit--${element.id}`)) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
                 showModal();
+                editObject.id = element.id;
                 getPostText(element.id);
             });
         });
@@ -110,7 +111,7 @@ function renderUserPosts({ body, created, tags, title, owner, id, }) {
       <h3 id="title${id}">${title}</h3>
       <div>
       <button id="button--${id}" class="btn btn-success">delete</button>
-      <button id="button--edit--${id}" btn btn-outline-success>update</button>
+      <button data-id=${id} id="button--edit--${id}" btn btn-outline-success>update</button>
       </div>
       </div>  
       <p id="body${id}" class="card-text text-black">
@@ -127,7 +128,7 @@ ${body}
 const deleteOption = optionFactory("DELETE", {}, endpoint);
 function buttonDeleteListener(button, id) {
     button.addEventListener("click", () => {
-        callApi(endpoint.delete(id), (data) => {
+        callApi(endpoint.getId(id), (data) => {
             console.log(data, "deleted");
         }, deleteOption);
         document.querySelector(`#div${id}`).style.display = "none";
@@ -169,13 +170,49 @@ function showModal() {
 (_a = document.querySelector("#close-modal")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
     document.querySelector("#modal").style.display = "none";
 });
+const modalTitle = document.querySelector("#title__modal--edit");
+const modalBody = document.querySelector("#body__modal--edit");
+const modalTags = document.querySelector("#tags__modal--edit");
 function getPostText(id) {
-    var _a;
-    document.querySelector("#title__modal--edit").value = document.querySelector(`#title${id}`).textContent;
-    document.querySelector("#body__modal--edit").value = (_a = document.querySelector(`#body${id}`)) === null || _a === void 0 ? void 0 : _a.textContent;
+    var _a, _b, _c, _d;
+    modalTitle.value = (_a = document.querySelector(`#title${id}`)) === null || _a === void 0 ? void 0 : _a.innerText;
+    modalBody.value = (_b = document.querySelector(`#body${id}`)) === null || _b === void 0 ? void 0 : _b.innerText;
     const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
-    document.querySelector("#tags__modal--edit").value = tagArr
-        .map((tag) => tag.textContent)
-        .join("#");
+    modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
+    editObject.setAll((_c = document.querySelector(`#body${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#title${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText));
     console.log(tagArr);
 }
+const editObject = {
+    body: "",
+    title: "",
+    tags: [],
+    media: "",
+    id: 0,
+    setAll: function (title, body, tags, media) {
+        if (body)
+            this.body = body;
+        if (title)
+            this.title = title;
+        if (tags.length > 0)
+            this.tags = tags;
+        if (media)
+            this.media = media;
+    },
+};
+modalBody.addEventListener("input", () => {
+    editObject.body = modalBody.value;
+    console.log(editObject);
+});
+modalTitle.addEventListener("input", () => {
+    editObject.title = modalTitle.value;
+});
+modalTags.addEventListener("input", () => {
+    editObject.tags = modalBody.value.split("#");
+});
+const updateButton = document.querySelector("#post__modal--edit");
+updateButton === null || updateButton === void 0 ? void 0 : updateButton.addEventListener("click", () => {
+    const editOption = optionFactory("PUT", editObject, endpoint);
+    callApi(endpoint.getId(editObject.id), (data) => {
+        console.log(data);
+    }, editOption);
+});

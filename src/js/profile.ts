@@ -94,6 +94,7 @@ async function fetchPosts(url: string) {
       .querySelector(`#button--edit--${element.id}`)
       ?.addEventListener("click", () => {
         showModal();
+        editObject.id = element.id;
         getPostText(element.id);
       });
   });
@@ -151,7 +152,7 @@ function renderUserPosts({
       <h3 id="title${id}">${title}</h3>
       <div>
       <button id="button--${id}" class="btn btn-success">delete</button>
-      <button id="button--edit--${id}" btn btn-outline-success>update</button>
+      <button data-id=${id} id="button--edit--${id}" btn btn-outline-success>update</button>
       </div>
       </div>  
       <p id="body${id}" class="card-text text-black">
@@ -174,7 +175,7 @@ const deleteOption = optionFactory("DELETE", {}, endpoint);
 function buttonDeleteListener(button: HTMLButtonElement, id: number) {
   button.addEventListener("click", () => {
     callApi(
-      endpoint.delete(id),
+      endpoint.getId(id),
       (data) => {
         console.log(data, "deleted");
       },
@@ -224,17 +225,76 @@ document.querySelector("#close-modal")?.addEventListener("click", () => {
   document.querySelector("#modal").style.display = "none";
 });
 
+const modalTitle = document.querySelector(
+  "#title__modal--edit"
+) as HTMLInputElement;
+const modalBody = document.querySelector(
+  "#body__modal--edit"
+) as HTMLInputElement;
+const modalTags = document.querySelector(
+  "#tags__modal--edit"
+) as HTMLInputElement;
+
 function getPostText(id) {
-  document.querySelector("#title__modal--edit").value = document.querySelector(
-    `#title${id}`
-  ).textContent;
-  document.querySelector("#body__modal--edit").value = document.querySelector(
-    `#body${id}`
-  )?.textContent;
+  modalTitle.value = document.querySelector(`#title${id}`)?.innerText;
+  modalBody.value = document.querySelector(`#body${id}`)?.innerText;
   const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
 
-  document.querySelector("#tags__modal--edit").value = tagArr
-    .map((tag) => tag.textContent)
-    .join("#");
+  modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
+  editObject.setAll(
+    document.querySelector(`#body${id}`)?.innerText,
+    document.querySelector(`#title${id}`)?.innerText,
+    tagArr.map((element) => element.innerText)
+  );
   console.log(tagArr);
 }
+
+const editObject: {
+  title: string;
+  body: string;
+  tags: string[];
+  media?: string;
+  id: number;
+  setAll: Function;
+} = {
+  body: "",
+  title: "",
+  tags: [],
+  media: "",
+  id: 0,
+  setAll: function (
+    title: string,
+    body: string,
+    tags: string[],
+    media: string
+  ) {
+    if (body) this.body = body;
+    if (title) this.title = title;
+    if (tags.length > 0) this.tags = tags;
+    if (media) this.media = media;
+  },
+};
+
+modalBody.addEventListener("input", () => {
+  editObject.body = modalBody.value;
+  console.log(editObject);
+});
+modalTitle.addEventListener("input", () => {
+  editObject.title = modalTitle.value;
+});
+modalTags.addEventListener("input", () => {
+  editObject.tags = modalBody.value.split("#");
+});
+
+const updateButton = document.querySelector("#post__modal--edit");
+
+updateButton?.addEventListener("click", () => {
+  const editOption = optionFactory("PUT", editObject, endpoint);
+  callApi(
+    endpoint.getId(editObject.id),
+    (data) => {
+      console.log(data);
+    },
+    editOption
+  );
+});

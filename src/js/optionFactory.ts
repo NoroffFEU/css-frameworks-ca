@@ -11,7 +11,7 @@ interface endpointObject {
   changeMedia: string;
   allPostsFollowed: string;
   createPost: string;
-  delete: Function;
+  getId: Function;
   react: Function;
   getToken: Function;
 }

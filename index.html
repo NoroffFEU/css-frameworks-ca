@@ -6,53 +6,42 @@
 		<title>Document</title>
 		<link rel="stylesheet" href="/dist/css/style.css" />
 	</head>
-	<body text-center>
-		<nav class="navbar navbar-expand-lg bg-light">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">WoofyNetwork</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
+	<body>
+		<main class="container">
+			<div class="d-lg-flex justify-content-center p-5">
+				<img
+					src="/assets/illustration-log-in.png"
+					class="login-illustration img-fluid d-none d-lg-block"
+					alt=""
+				/>
+				<div class="form-signin p-5 border">
+					<form action="/feed/">
+						<h1 class="text-center">Please sign in</h1>
+						<label for="floatingInput">Email address</label>
+
+						<input
+							type="email"
+							class="form-control"
+							id="floatingInput"
+							placeholder="name@example.com"
+							required
+						/>
+						<label for="floatingPassword">Password</label>
+
+						<input
+							type="password"
+							class="form-control"
+							id="floatingPassword"
+							placeholder="Password"
+							required
+							minlength="8"
+							maxlength="25"
+						/>
+
+						<button type="submit" class="btn btn-primary m-3">Sign in</button>
+					</form>
+				</div>
 			</div>
-		</nav>
-
-		<main class="form-signin col-5 m-auto p-5">
-			<form action="/feed/">
-				<h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
-
-				<div class="form-floating m-3">
-					<input
-						type="email"
-						class="form-control"
-						id="floatingInput"
-						placeholder="name@example.com"
-						required
-					/>
-
-					<label for="floatingInput">Email address</label>
-				</div>
-				<div class="form-floating m-3">
-					<input
-						type="password"
-						class="form-control"
-						id="floatingPassword"
-						placeholder="Password"
-						required
-						minlength="8"
-						maxlength="25"
-					/>
-					<label for="floatingPassword">Password</label>
-				</div>
-				<button type="submit" class="btn btn-primary m-3">Sign in</button>
-			</form>
 		</main>
 	</body>
 </html>

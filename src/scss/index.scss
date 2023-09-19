@@ -31,3 +31,9 @@
 .w-px--min--400 {
   min-width: 400px;
 }
+
+#modal {
+  position: fixed;
+  display: none;
+  z-index: 3000;
+}

@@ -20,7 +20,7 @@ export default function endpointObject(userId) {
         changeMedia: `https://api.noroff.dev/api/v1/social/profiles/${userId}/media`,
         allPostsFollowed: `https://api.noroff.dev/api/v1/social/posts/following?_author=true`,
         createPost: `https://api.noroff.dev/api/v1/social/posts`,
-        delete: function (id) {
+        getId: function (id) {
             return `https://api.noroff.dev/api/v1/social/posts/${id}`;
         },
         react: function (symbol) {

@@ -7,6 +7,14 @@ export const endpoints = {
     postsByOneUser: "/social/profiles/<name>/posts",
 };
 export default function endpointObject(userId) {
+    function closureCount() {
+        let _count = -10;
+        const increment = () => {
+            return (_count += 10);
+        };
+        return increment;
+    }
+    const countTen = closureCount();
     return {
         register: "https://api.noroff.dev/api/v1/social/auth/register",
         login: "https://api.noroff.dev/api/v1/social/auth/login",
@@ -20,6 +28,7 @@ export default function endpointObject(userId) {
         changeMedia: `https://api.noroff.dev/api/v1/social/profiles/${userId}/media`,
         allPostsFollowed: `https://api.noroff.dev/api/v1/social/posts/following?_author=true`,
         createPost: `https://api.noroff.dev/api/v1/social/posts`,
+        paginatedPosts: `https://api.noroff.dev/api/v1/social/posts?limit=100&offset=${countTen()}&_author=true&_comments=true&_reactions=true&sort=updated`,
         getId: function (id) {
             return `https://api.noroff.dev/api/v1/social/posts/${id}`;
         },
@@ -29,5 +38,8 @@ export default function endpointObject(userId) {
         getToken: function () {
             return JSON.parse(localStorage.getItem("token") || "");
         },
+        //searchFor: function (category: string, query: string) {
+        // return `https://api.noroff.dev/api/v1/social/posts?${category}=${query}`;
+        //},
     };
 }

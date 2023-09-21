@@ -19,13 +19,13 @@ function callApi(endpoint, callBack, options) {
 function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author }) {
     domEl.innerHTML += ` <div class="card mb-3 bg-secondary p-2 w-percentage--95">
     <div class="row">
-      <div class="col-4">
-        <img
+      <a href="/src/profile/index.html?user=${author.name}" class="col-4">
+        <img 
           class="rounded-circle w-25"
           src=${author.avatar}
           alt="Profile picture of Thistle" />
         <span class="text-primay fs-6">${author.name}</span>
-      </div>
+      </a>
       <div class="col-8">
       <h3>${title}</h3>
         <p class="card-text text-black">
@@ -54,7 +54,7 @@ function optionFactory(method, body) {
 }
 const postOption = optionFactory("GET", {});
 console.log(postOption);
-callApi(endpoint.allPostsFollowed, (data) => {
+callApi(endpoint.paginatedPosts, (data) => {
     data.forEach((element) => renderPosts(postContainer, element));
 }, postOption);
 const createMessageTitle = document.querySelector("#title--feed");
@@ -90,3 +90,28 @@ postButton === null || postButton === void 0 ? void 0 : postButton.addEventListe
         console.log(data);
     }, message);
 });
+/*
+const options = optionFactory("GET", {}, endpoint);
+const searchSelect = document.querySelector(
+  "#select--search--feed"
+) as HTMLSelectElement;
+const searchInput = document.querySelector("#search--feed") as HTMLInputElement;
+const searchButton = document.querySelector(
+  "#search--button"
+) as HTMLButtonElement;
+
+type searchCategory = "user" | "created" | "title" | "tags";
+
+searchButton?.addEventListener("click", () => {
+  const category: searchCategory = searchSelect.value;
+  const query: string = searchInput.value;
+  console.log(endpoint.searchFor(category, query));
+  callApi(
+    endpoint.searchFor(category, query),
+    (data) => {
+      console.log(data);
+    },
+    options
+  );
+});
+*/

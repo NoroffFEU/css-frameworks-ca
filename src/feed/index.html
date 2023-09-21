@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../scss/styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Feed Page</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SocialVibe</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../profile/index.html"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <div class="mb-4">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search posts..."
+            aria-label="Search"
+          />
+          <button class="btn btn-primary" type="button">Search</button>
+          <div class="input-group-append">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sort By
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Newest</a></li>
+              <li><a class="dropdown-item" href="#">Oldest</a></li>
+              <li><a class="dropdown-item" href="#">Most Popular</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h4>Create New Post</h4>
+        <form action="/create-post" method="post">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="postTitle"
+              placeholder="Post Title"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              name="postContent"
+              rows="3"
+              placeholder="Post Content"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <input
+              type="file"
+              class="form-control"
+              name="postImage"
+              accept="image/*"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Create Post</button>
+        </form>
+      </div>
+
+      <h4>Posts</h4>
+      <div class="row">
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-md-2 mb-4">
+              <div class="card h-100">
+                <img
+                  src="../assets/car.jpg"
+                  class="card-img-top"
+                  alt="Post Thumbnail 1"
+                  style="height: 100px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h6 class="card-title">Post Title 1</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 mb-4">
+              <div class="card h-100">
+                <img
+                  src="../assets/mypisu.jpg"
+                  class="card-img-top"
+                  alt="Post Thumbnail 2"
+                  style="height: 100px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h6 class="card-title">Post Title 2</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 mb-4">
+              <div class="card h-100">
+                <img
+                  src="../assets/car.jpg"
+                  class="card-img-top"
+                  alt="Post Thumbnail 3"
+                  style="height: 100px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h6 class="card-title">Post Title 3</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 mb-4">
+              <div class="card h-100">
+                <img
+                  src="../assets/car.jpg"
+                  class="card-img-top"
+                  alt="Post Thumbnail 3"
+                  style="height: 100px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h6 class="card-title">Post Title 3</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 mb-4">
+              <div class="card h-100">
+                <img
+                  src="../assets/car.jpg"
+                  class="card-img-top"
+                  alt="Post Thumbnail 3"
+                  style="height: 100px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h6 class="card-title">Post Title 3</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-2 mb-4">
+              <div class="card h-100">
+                <img
+                  src="../assets/mypisu.jpg"
+                  class="card-img-top"
+                  alt="Post Thumbnail 4"
+                  style="height: 100px; object-fit: cover"
+                />
+                <div class="card-body">
+                  <h6 class="card-title">Post Title 4</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

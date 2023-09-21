@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/dist/css/style.css" />
+	</head>
+	<body>
+		<main class="container">
+			<div class="d-lg-flex justify-content-center p-5">
+				<img
+					src="/assets/illustration-log-in.png"
+					class="login-illustration img-fluid d-none d-lg-block"
+					alt=""
+				/>
+				<div class="form-signin p-5 border">
+					<form action="/feed/">
+						<h1 class="text-center">Please sign in</h1>
+						<label for="floatingInput">Email address</label>
+
+						<input
+							type="email"
+							class="form-control"
+							id="floatingInput"
+							placeholder="name@example.com"
+							required
+						/>
+						<label for="floatingPassword">Password</label>
+
+						<input
+							type="password"
+							class="form-control"
+							id="floatingPassword"
+							placeholder="Password"
+							required
+							minlength="8"
+							maxlength="25"
+						/>
+
+						<button type="submit" class="btn btn-primary m-3">Sign in</button>
+					</form>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

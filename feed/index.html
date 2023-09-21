@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/dist/css/style.css" />
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">WoofyNetwork </a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse text-center navbar-collapse"
+					id="navbarSupportedContent"
+				>
+					<ul class="navbar-nav ms-auto justify-content-end">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="/feed/">Feed</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/profile/">Profile</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<form class="md-2 col-8 col-lg-4 p-3 mx-auto" role="search">
+			<input
+				class="form-control"
+				type="search"
+				placeholder="Search"
+				aria-label="Search"
+			/>
+		</form>
+
+		<div class="d-flex justify-content-center mt-5">
+			<!-- Button modal-->
+			<button
+				type="button"
+				class="btn btn-secondary"
+				data-bs-toggle="modal"
+				data-bs-target="#exampleModal"
+				data-bs-whatever="@getbootstrap"
+			>
+				Create a new post
+			</button>
+			<!-- Modal -->
+
+			<div
+				class="modal fade"
+				id="exampleModal"
+				tabindex="-1"
+				aria-labelledby="exampleModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">
+								New message
+							</h1>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div class="mb-3">
+									<label for="message-text" class="col-form-label"
+										>Write a post</label
+									>
+									<textarea class="form-control" id="message-text"></textarea>
+								</div>
+								<div class="mb-3">
+									<label for="formFile" class="form-label">Add a photo</label>
+									<input class="form-control" type="file" id="formFile" />
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn border" data-bs-dismiss="modal">
+								Close
+							</button>
+							<button type="button" class="btn btn-secondary">
+								Create post
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown p-1">
+				<button
+					class="btn btn-secondary dropdown-toggle"
+					type="button"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					Sort
+				</button>
+				<ul class="dropdown-menu dropdown-menu-dark">
+					<li><a class="dropdown-item active" href="#">Top</a></li>
+					<li><a class="dropdown-item" href="#">Recent</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="md-2 col-8 col-lg-4 p-3 mx-auto">
+			<div class="col mt-3">
+				<div class="card shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Charlie</h5>
+					</div>
+					<p class="p-3">
+						"Beanie life, keeping it chill. 😎❄️ #BeanieStyle #CozyVibes"
+					</p>
+					<img src="/assets/post1.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Bella</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post2.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Rocky</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post3.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Daisy</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post4.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Lucy</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post5.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Tucker</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post6.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Ruby</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post7.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Pugster the Pug</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post8.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mt-3 shadow-sm">
+					<div class="d-flex flex-lg-row p-2 align-items-center p-2">
+						<img
+							src="/assets/pug-social.png"
+							class="rounded-circle img-thumbnail"
+							alt=""
+						/>
+						<h5 class="text-primary d-flex m-3">Cooper</h5>
+					</div>
+					<p class="p-3">
+						"Deep in thought today... 😐 What's going through my pug mind? Share
+						your best guess, friends! 🤔🐾 #PugsterThoughts #SeriousPug"
+					</p>
+					<img src="/assets/post10.jpg" class="" alt="..." />
+					<div class="card-footer">
+						<small class="text-body-secondary">updated 3 mins ago</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

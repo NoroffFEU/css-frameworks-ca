@@ -1,0 +1,191 @@
+// scss-docs-start gray-color-variables
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$grays: (
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+) ;
+// scss-docs-end gray-colors-map
+// fusv-enable
+
+// scss-docs-start color-variables
+$blue:    #8DA1F7 ;
+$indigo:  #817AD6 ;
+$purple:  #b393ed ;
+$pink:    #EC8DF7 ;
+$red:     #dc3545 ;
+$orange:  #fd7e14 ;
+$yellow:  #ffc107 ;
+$green:   #279260 ;
+$teal:    #20c997 ;
+$cyan:    #0dcaf0 ;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+) ;
+// scss-docs-end colors-map
+
+
+
+
+
+// scss-docs-start theme-color-variables
+$primary:       $blue ;
+$secondary:     $gray-600 ;
+$success:       $green ;
+$info:          $cyan ;
+$warning:       $yellow ;
+$danger:        $red ;
+$light:         $gray-100 ;
+$dark:          $gray-900 ;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+) ;
+// scss-docs-end theme-colors-map
+
+// scss-docs-start theme-text-variables
+$primary-text-emphasis:   shade-color($primary, 60%) ;
+$secondary-text-emphasis: shade-color($secondary, 60%) ;
+$success-text-emphasis:   shade-color($success, 60%) ;
+$info-text-emphasis:      shade-color($info, 60%) ;
+$warning-text-emphasis:   shade-color($warning, 60%) ;
+$danger-text-emphasis:    shade-color($danger, 60%) ;
+$light-text-emphasis:     $gray-700 ;
+$dark-text-emphasis:      $gray-700 ;
+// scss-docs-end theme-text-variables
+
+// scss-docs-start theme-bg-subtle-variables
+$primary-bg-subtle:       tint-color($primary, 80%) ;
+$secondary-bg-subtle:     tint-color($secondary, 80%) ;
+$success-bg-subtle:       tint-color($success, 80%) ;
+$info-bg-subtle:          tint-color($info, 80%) ;
+$warning-bg-subtle:       tint-color($warning, 80%) ;
+$danger-bg-subtle:        tint-color($danger, 80%) ;
+$light-bg-subtle:         mix($gray-100, $white) ;
+$dark-bg-subtle:          $gray-400 ;
+// scss-docs-end theme-bg-subtle-variables
+
+// scss-docs-start theme-border-subtle-variables
+$primary-border-subtle:   tint-color($primary, 60%) ;
+$secondary-border-subtle: tint-color($secondary, 60%) ;
+$success-border-subtle:   tint-color($success, 60%) ;
+$info-border-subtle:      tint-color($info, 60%) ;
+$warning-border-subtle:   tint-color($warning, 60%) ;
+$danger-border-subtle:    tint-color($danger, 60%) ;
+$light-border-subtle:     $gray-200 ;
+$dark-border-subtle:      $gray-500 ;
+// scss-docs-end theme-border-subtle-variables
+
+
+
+
+
+
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                true ;
+$enable-rounded:              true ;
+$enable-shadows:              false ;
+$enable-gradients:            false ;
+$enable-transitions:          true ;
+$enable-reduced-motion:       true ;
+$enable-smooth-scroll:        true ;
+$enable-grid-classes:         true ;
+$enable-container-classes:    true ;
+$enable-cssgrid:              false ;
+$enable-button-pointers:      true ;
+$enable-rfs:                  true ;
+$enable-validation-icons:     true ;
+$enable-negative-margins:     false ;
+$enable-deprecation-messages: true ;
+$enable-important-utilities:  true ;
+
+$enable-dark-mode:            true ;
+$color-mode-type:             data; // `data` or `media-query`
+
+// Prefix for :root CSS variables
+
+$variable-prefix:             bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix !default;
+
+// Gradient
+//
+// The gradient which is added to components if `$enable-gradients` is `true`
+// This gradient is also added to elements with `.bg-gradient`
+// scss-docs-start variable-gradient
+$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
+// scss-docs-end variable-gradient
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+// scss-docs-end spacer-variables-maps
+
+// Position
+//
+// Define the edge positioning anchors of the position utilities.
+
+// scss-docs-start position-map
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+) !default;

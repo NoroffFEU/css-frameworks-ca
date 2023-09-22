@@ -2,6 +2,23 @@ import endpointObject from "./endpoints.js";
 
 const endpoint = endpointObject("Jarle");
 
+function observerTargetClosure() {
+  let target: Element;
+  function setTarget() {
+    if (document.querySelectorAll("[data-observed]")) {
+      const observedObj = document.querySelectorAll("[data-observed]");
+      target = observedObj[observedObj.length - 1];
+    }
+  }
+  function isObserving(bool: boolean, obs) {
+    console.log(target);
+    bool ? obs.observe(target) : obs.unobserve(target);
+  }
+
+  return [setTarget, isObserving];
+}
+const [setTarget, isObserving] = observerTargetClosure();
+
 type htmlMethod = "POST" | "GET" | "PATCH" | "PUT" | "DELETE";
 
 async function callApi(endpoint: string, callBack: Function, options: {}) {
@@ -26,7 +43,7 @@ function renderPosts(
   domEl: HTMLDivElement,
   { id, title, body, tags, media, created, updated, _count, author }: post
 ) {
-  domEl.innerHTML += ` <div class="card mb-3 bg-secondary p-2 w-percentage--95">
+  domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
     <div class="row">
       <a href="/src/profile/index.html?user=${author.name}" class="col-4">
         <img 
@@ -78,6 +95,12 @@ callApi(
   endpoint.paginatedPosts,
   (data: post[]) => {
     data.forEach((element: post) => renderPosts(postContainer, element));
+
+    const observedObj = document.querySelectorAll("[data-observed]");
+    const target = observedObj[observedObj.length - 1];
+    console.log(observedObj, target);
+    setTarget();
+    isObserving(true, intersectionObserver);
   },
   postOption
 );
@@ -162,3 +185,26 @@ searchButton?.addEventListener("click", () => {
   );
 });
 */
+
+const intersectionObserver = new IntersectionObserver((entries) =>
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      callApi(
+        endpoint.paginatedPosts,
+        (data: post[]) => {
+          data.forEach((element: post) => renderPosts(postContainer, element));
+          isObserving(false, intersectionObserver);
+          setTarget();
+          isObserving(true, intersectionObserver);
+          console.log(entry, "is intersecting");
+        },
+        postOption
+      ),
+        {
+          root: null,
+          rootMargin: "0px",
+          threshold: 1,
+        };
+    }
+  })
+);

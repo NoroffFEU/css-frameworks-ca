@@ -28,7 +28,7 @@ export default function endpointObject(userId) {
         changeMedia: `https://api.noroff.dev/api/v1/social/profiles/${userId}/media`,
         allPostsFollowed: `https://api.noroff.dev/api/v1/social/posts/following?_author=true`,
         createPost: `https://api.noroff.dev/api/v1/social/posts`,
-        paginatedPosts: `https://api.noroff.dev/api/v1/social/posts?limit=100&offset=${countTen()}&_author=true&_comments=true&_reactions=true&sort=updated`,
+        paginatedPosts: `https://api.noroff.dev/api/v1/social/posts?limit=10&offset=${countTen()}&_author=true&_comments=true&_reactions=true&sort=updated`,
         getId: function (id) {
             return `https://api.noroff.dev/api/v1/social/posts/${id}`;
         },

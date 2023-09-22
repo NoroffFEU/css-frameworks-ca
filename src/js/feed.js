@@ -9,6 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import endpointObject from "./endpoints.js";
 const endpoint = endpointObject("Jarle");
+function observerTargetClosure() {
+    let target;
+    function setTarget() {
+        if (document.querySelectorAll("[data-observed]")) {
+            const observedObj = document.querySelectorAll("[data-observed]");
+            target = observedObj[observedObj.length - 1];
+        }
+    }
+    function isObserving(bool, obs) {
+        console.log(target);
+        bool ? obs.observe(target) : obs.unobserve(target);
+    }
+    return [setTarget, isObserving];
+}
+const [setTarget, isObserving] = observerTargetClosure();
 function callApi(endpoint, callBack, options) {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch(endpoint, options);
@@ -17,7 +32,7 @@ function callApi(endpoint, callBack, options) {
     });
 }
 function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author }) {
-    domEl.innerHTML += ` <div class="card mb-3 bg-secondary p-2 w-percentage--95">
+    domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
     <div class="row">
       <a href="/src/profile/index.html?user=${author.name}" class="col-4">
         <img 
@@ -56,6 +71,11 @@ const postOption = optionFactory("GET", {});
 console.log(postOption);
 callApi(endpoint.paginatedPosts, (data) => {
     data.forEach((element) => renderPosts(postContainer, element));
+    const observedObj = document.querySelectorAll("[data-observed]");
+    const target = observedObj[observedObj.length - 1];
+    console.log(observedObj, target);
+    setTarget();
+    isObserving(true, intersectionObserver);
 }, postOption);
 const createMessageTitle = document.querySelector("#title--feed");
 const createMessageMessage = document.querySelector("#text-body--feed");
@@ -115,3 +135,19 @@ searchButton?.addEventListener("click", () => {
   );
 });
 */
+const intersectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+        callApi(endpoint.paginatedPosts, (data) => {
+            data.forEach((element) => renderPosts(postContainer, element));
+            isObserving(false, intersectionObserver);
+            setTarget();
+            isObserving(true, intersectionObserver);
+            console.log(entry, "is intersecting");
+        }, postOption),
+            {
+                root: null,
+                rootMargin: "0px",
+                threshold: 1,
+            };
+    }
+}));

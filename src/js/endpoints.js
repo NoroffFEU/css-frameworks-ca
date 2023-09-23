@@ -15,6 +15,7 @@ export default function endpointObject(userId) {
         return increment;
     }
     const countTen = closureCount();
+    const countTenFollowed = closureCount();
     return {
         register: "https://api.noroff.dev/api/v1/social/auth/register",
         login: "https://api.noroff.dev/api/v1/social/auth/login",
@@ -26,7 +27,7 @@ export default function endpointObject(userId) {
         unfollow: `https://api.noroff.dev/api/v1/social/profiles/${userId}/unfollow`,
         postsByOneUser: `https://api.noroff.dev/api/v1/social/profiles/${userId}/posts`,
         changeMedia: `https://api.noroff.dev/api/v1/social/profiles/${userId}/media`,
-        allPostsFollowed: `https://api.noroff.dev/api/v1/social/posts/following?_author=true`,
+        allPostsFollowed: `https://api.noroff.dev/api/v1/social/posts/following??limit=10&offset=${countTenFollowed()}&_author=true&_comments=true&_reactions=true&sort=updated`,
         createPost: `https://api.noroff.dev/api/v1/social/posts`,
         paginatedPosts: `https://api.noroff.dev/api/v1/social/posts?limit=10&offset=${countTen()}&_author=true&_comments=true&_reactions=true&sort=updated`,
         getId: function (id) {
@@ -37,6 +38,9 @@ export default function endpointObject(userId) {
         },
         getToken: function () {
             return JSON.parse(localStorage.getItem("token") || "");
+        },
+        sortAfter: function (sortWord = "updated") {
+            return `https://api.noroff.dev/api/v1/social/posts?limit=10&offset=${countTen()}&_author=true&_comments=true&_reactions=true&sort=${sortWord}`;
         },
         //searchFor: function (category: string, query: string) {
         // return `https://api.noroff.dev/api/v1/social/posts?${category}=${query}`;

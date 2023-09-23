@@ -2,6 +2,14 @@ import endpointObject from "./endpoints.js";
 
 const endpoint = endpointObject("Jarle");
 
+let feedUrl = endpoint.sortAfter();
+const sortInput = document.querySelector("#sort--feed") as HTMLInputElement;
+
+sortInput.addEventListener("input", () => {
+  feedUrl = endpoint.sortAfter(sortInput.value);
+  console.log(sortInput.value);
+});
+
 function observerTargetClosure() {
   let target: Element;
   function setTarget() {
@@ -92,7 +100,7 @@ const postOption = optionFactory("GET", {});
 console.log(postOption);
 
 callApi(
-  endpoint.paginatedPosts,
+  feedUrl,
   (data: post[]) => {
     data.forEach((element: post) => renderPosts(postContainer, element));
 
@@ -101,6 +109,7 @@ callApi(
     console.log(observedObj, target);
     setTarget();
     isObserving(true, intersectionObserver);
+    console.log(feedUrl);
   },
   postOption
 );
@@ -165,7 +174,7 @@ const options = optionFactory("GET", {}, endpoint);
 const searchSelect = document.querySelector(
   "#select--search--feed"
 ) as HTMLSelectElement;
-const searchInput = document.querySelector("#search--feed") as HTMLInputElement;
+const sortInput = document.querySelector("#search--feed") as HTMLInputElement;
 const searchButton = document.querySelector(
   "#search--button"
 ) as HTMLButtonElement;
@@ -190,13 +199,14 @@ const intersectionObserver = new IntersectionObserver((entries) =>
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       callApi(
-        endpoint.paginatedPosts,
+        feedUrl,
         (data: post[]) => {
           data.forEach((element: post) => renderPosts(postContainer, element));
           isObserving(false, intersectionObserver);
           setTarget();
           isObserving(true, intersectionObserver);
           console.log(entry, "is intersecting");
+          console.log(feedUrl);
         },
         postOption
       ),

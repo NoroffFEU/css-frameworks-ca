@@ -1,34 +1,41 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/social/auth/register";
+const API_BASE_URL = "https://api.noroff.dev";
 
-async function registerNewUser(url, data) {
+//API endpoints
+//Register = /api/v1/social/auth/register
+
+async function registerUser(url, userData) {
   try {
     const postData = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(userData),
     };
-
     const response = await fetch(url, postData);
+    console.log(response);
     const json = await response.json();
-    return json;
+    console.log(json);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
-// Example to register a new user
-const newUser = {
-  name: "new_user_name",
-  email: "new_user_email@example.com",
-  password: "new_user_password",
-};
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-registerNewUser(`${API_BASE_URL}/api/v1/social/auth/register`, newUser)
-  .then((response) => {
-    console.log("User registered successfully:", response);
-  })
-  .catch((error) => {
-    console.error("Error registering user:", error);
+    const userName = document.getElementById("userName").value;
+    const userEmail = document.getElementById("userEmail").value;
+    const userPassword = document.getElementById("userPassword").value;
+
+    const userData = {
+      name: userName,
+      email: userEmail,
+      password: userPassword,
+    };
+
+    const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
+    await registerUser(registerUrl, userData);
   });

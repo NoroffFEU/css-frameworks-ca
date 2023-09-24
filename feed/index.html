@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+
+  
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg p-3" style="background-color: #feb35e">
+      <a class="navbar-brand" href="/index.html">MeowFeed</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/feed/index.html">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile/index.html">Profile</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </form>
+      </div>
+    </nav>
+
+    <div class="container mt-5 pb-5">
+      <div class="row g-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">New Meow-Post</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="postContent" class="form-label">Content</label>
+                  <textarea
+                    class="form-control"
+                    id="postContent"
+                    rows="4"
+                    required></textarea>
+                </div>
+                <div class="mb-3">
+
+                  <label for="postImage" class="form-label"
+                  >Image</label>
+                  <input type="file" class="form-control" id="postImage" />
+                </div>
+
+                <button
+                  class="btn btn-lg btn-primary mt-4 mb-4"
+                  id="Submit"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+<div class="container">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="p-3">
+          <div class="card border-0 shadow-lg rounded-3 text-center">
+            <img
+              class="card-img-top"
+              src="https://images.pexels.com/photos/977935/pexels-photo-977935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="A cute cat"
+            />
+            <div class="card-body">
+              <p class="card-text">Cute cat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="col-md-4">
+        <div class="p-3">
+          <div class="card border-0 shadow-lg rounded-3 text-center">
+            <img
+              class="card-img-top"
+              src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+              alt="Another cute cat"
+            />
+            <div class="card-body">
+              <p class="card-text">Another cute cat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-3">
+          <div class="card border-0 shadow-lg rounded-3 text-center">
+            <img
+              class="card-img-top"
+              src="https://images.pexels.com/photos/982300/pexels-photo-982300.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Another cute cat"
+            />
+            <div class="card-body">
+              <p class="card-text">Another cute cat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="p-3">
+          <div class="card border-0 shadow-lg rounded-3 text-center">
+            <img
+              class="card-img-top"
+              src="https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="A cute cat"
+            />
+            <div class="card-body">
+              <p class="card-text">Cute cat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-3">
+          <div class="card border-0 shadow-lg rounded-3 text-center">
+            <img
+              class="card-img-top"
+              src="https://images.pexels.com/photos/1741206/pexels-photo-1741206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Another cute cat"
+            />
+            <div class="card-body">
+              <p class="card-text">Another cute cat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-3">
+          <div class="card border-0 shadow-lg rounded-3 text-center">
+            <img
+              class="card-img-top"
+              src="https://images.pexels.com/photos/1404819/pexels-photo-1404819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Another cute cat"
+            />
+            <div class="card-body">
+              <p class="card-text">Another cute cat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <footer>
+        <p class="text-center">&copy; 2023 - Nelly</p>
+    </footer>
+  </body>
+</html>

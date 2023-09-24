@@ -9,8 +9,8 @@ function addUserPost(title) {
     const userPost = document.createElement('div');
     userPost.classList.add('col-md-6', 'user-post');
     
-    const randomWidth = getRandomNumber(300, 400);
-    const randomHeight = getRandomNumber(300, 400);
+    const randomWidth = getRandomNumber(300, 300);
+    const randomHeight = getRandomNumber(300, 300);
     const placeholderPostImageUrl = `https://placebear.com/${randomWidth}/${randomHeight}`;
     
     userPost.innerHTML = `

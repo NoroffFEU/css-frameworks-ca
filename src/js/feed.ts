@@ -2,14 +2,22 @@ import endpointObject from "./endpoints.js";
 
 const endpoint = endpointObject("Jarle");
 
-let feedUrl = endpoint.sortAfter();
-const sortInput = document.querySelector("#sort--feed") as HTMLInputElement;
+const sortInput = document.querySelector("#sort--feed") as HTMLSelectElement;
+const sortOrder = document.querySelector("#sort--order") as HTMLInputElement;
+const searchInput = document.querySelector("#search--feed") as HTMLInputElement;
 
-sortInput.addEventListener("input", () => {
-  feedUrl = endpoint.sortAfter(sortInput.value);
-  console.log(sortInput.value);
+/*sortOrder.addEventListener("input", () => {
+  endpoint.sortAfter() = endpoint.sortOrder(
+    endpoint.sortAfter(sortInput.value),
+    sortOrder.value
+  );
+  endpoint.sortAfter();
 });
 
+sortInput.addEventListener("input", () => {
+  console.log(sortInput.value);
+});
+*/
 function observerTargetClosure() {
   let target: Element;
   function setTarget() {
@@ -100,7 +108,9 @@ const postOption = optionFactory("GET", {});
 console.log(postOption);
 
 callApi(
-  feedUrl,
+  endpoint.sortAndPaginate.setString(
+    endpoint.generatePaginate(sortInput.value, sortOrder.value)
+  ),
   (data: post[]) => {
     data.forEach((element: post) => renderPosts(postContainer, element));
 
@@ -109,7 +119,6 @@ callApi(
     console.log(observedObj, target);
     setTarget();
     isObserving(true, intersectionObserver);
-    console.log(feedUrl);
   },
   postOption
 );
@@ -199,14 +208,19 @@ const intersectionObserver = new IntersectionObserver((entries) =>
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       callApi(
-        feedUrl,
+        endpoint.sortAndPaginate.setString(
+          endpoint.generatePaginate(sortInput.value, sortOrder.value)
+        ),
         (data: post[]) => {
           data.forEach((element: post) => renderPosts(postContainer, element));
           isObserving(false, intersectionObserver);
           setTarget();
           isObserving(true, intersectionObserver);
-          console.log(entry, "is intersecting");
-          console.log(feedUrl);
+          console.log(
+            "string=" + endpoint.sortAndPaginate.getString(),
+            "count=" + endpoint.sortAndPaginate.getCount(),
+            data
+          );
         },
         postOption
       ),

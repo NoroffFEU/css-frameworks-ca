@@ -9,12 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import endpointObject from "./endpoints.js";
 const endpoint = endpointObject("Jarle");
-let feedUrl = endpoint.sortAfter();
 const sortInput = document.querySelector("#sort--feed");
-sortInput.addEventListener("input", () => {
-    feedUrl = endpoint.sortAfter(sortInput.value);
-    console.log(sortInput.value);
+const sortOrder = document.querySelector("#sort--order");
+const searchInput = document.querySelector("#search--feed");
+/*sortOrder.addEventListener("input", () => {
+  endpoint.sortAfter() = endpoint.sortOrder(
+    endpoint.sortAfter(sortInput.value),
+    sortOrder.value
+  );
+  endpoint.sortAfter();
 });
+
+sortInput.addEventListener("input", () => {
+  console.log(sortInput.value);
+});
+*/
 function observerTargetClosure() {
     let target;
     function setTarget() {
@@ -75,14 +84,13 @@ function optionFactory(method, body) {
 }
 const postOption = optionFactory("GET", {});
 console.log(postOption);
-callApi(feedUrl, (data) => {
+callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), (data) => {
     data.forEach((element) => renderPosts(postContainer, element));
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
     setTarget();
     isObserving(true, intersectionObserver);
-    console.log(feedUrl);
 }, postOption);
 const createMessageTitle = document.querySelector("#title--feed");
 const createMessageMessage = document.querySelector("#text-body--feed");
@@ -144,13 +152,12 @@ searchButton?.addEventListener("click", () => {
 */
 const intersectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (entry.isIntersecting) {
-        callApi(feedUrl, (data) => {
+        callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), (data) => {
             data.forEach((element) => renderPosts(postContainer, element));
             isObserving(false, intersectionObserver);
             setTarget();
             isObserving(true, intersectionObserver);
-            console.log(entry, "is intersecting");
-            console.log(feedUrl);
+            console.log("string=" + endpoint.sortAndPaginate.getString(), "count=" + endpoint.sortAndPaginate.getCount(), data);
         }, postOption),
             {
                 root: null,

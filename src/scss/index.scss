@@ -1,3 +1,6 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .profile-pic {
   border-radius: 100%;
   object-fit: cover;

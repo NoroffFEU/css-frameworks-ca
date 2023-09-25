@@ -4,34 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile | SMA</title>
-    <link
-    href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="../dist/css/index.css" />
+    <link rel="stylesheet" href="../dist/css/index.css" />
   </head>
   <body>
-    <div class="container mt-3 mb-5">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 mb-3">
-            <h1 class="text-center">Social Media Application</h1>
-          </div>
-          <div class="col-xs-12 col-sm-6 mb-3 d-flex justify-content-around align-items-center">
-            <a href="/profile" class="btn btn-primary bg-dark">Profile</a>
-            <a href="/feed" class="btn btn-primary">Feed</a>
-            <a href="/index.html" class="btn btn-primary">Log out</a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-3" href="/index.html"
+          >Social Media Application</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <ul class="nav nav-pills me-3 gap-5">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/profile/index.html"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../feed/index.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Log out</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container mt-3 mb-5">
         <div class="row mb-4">
           <div class="col-xs-12 col-sm-6 text-center mt-5">
-            <img src="/img/profile-pic.jpg" class="img-thumbnail  profile-pic" alt="profile picture">
-          <h2 class="col-12 text-center mt-1">@korny</h2>
+            <img
+              src="/img/profile-pic.jpg"
+              class="img-thumbnail profile-pic"
+              alt="profile picture"
+            />
+            <h2 class="col-12 text-center mt-1">@korny</h2>
           </div>
 
           <div class="col-xs-12 col-sm-6 text-center mt-5 profile-btns">
             <button class="col-6 btn btn-primary">Follow</button>
             <button class="col-6 btn btn-primary">Message</button>
-            <button class="col-6 btn btn-primary bg-dark" disabled>13 Followers</button>
-            <button class="col-6 btn btn-primary bg-dark" disabled>6 Following</button>
+            <button class="col-6 btn btn-primary bg-dark" disabled>
+              13 Followers
+            </button>
+            <button class="col-6 btn btn-primary bg-dark" disabled>
+              6 Following
+            </button>
           </div>
         </div>
         <div class="row">
@@ -40,49 +75,94 @@
           </div>
           <div class="col-12 d-flex justify-content-center">
             <div class="row row-cols-1 g-4 text-center mt-1">
-            <div class="col">
-              <div class="card">
-                <img src="/img/profile-pic.jpg" class="card-img-top post-pic" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">My computer is safe</h5>
-                  <p class="card-text">..for now! Front-End Development sometimes makes me want to throw my pc out the window.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago by @korny</small></p>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="/img/profile-pic.jpg"
+                    class="card-img-top post-pic"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">My computer is safe</h5>
+                    <p class="card-text">
+                      ..for now! Front-End Development sometimes makes me want
+                      to throw my pc out the window.
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 3 mins ago by @korny</small
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="/img/profile-pic.jpg" class="card-img-top post-pic" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Disregard my previous post!</h5>
-                  <p class="card-text">Programming is hard and not fun. Who even made this complicated piece of sh*t?</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 2 days ago by @korny</small></p>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="/img/profile-pic.jpg"
+                    class="card-img-top post-pic"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Disregard my previous post!</h5>
+                    <p class="card-text">
+                      Programming is hard and not fun. Who even made this
+                      complicated piece of sh*t?
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 2 days ago by @korny</small
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="/img/profile-pic.jpg" class="card-img-top post-pic" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Programming is so easy!</h5>
-                  <p class="card-text">I seriously believe a monkey can do programming, it is so fun and easy!</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 3 months ago by @korny</small></p>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="/img/profile-pic.jpg"
+                    class="card-img-top post-pic"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Programming is so easy!</h5>
+                    <p class="card-text">
+                      I seriously believe a monkey can do programming, it is so
+                      fun and easy!
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 3 months ago by @korny</small
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="/img/profile-pic.jpg" class="card-img-top post-pic" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">I'm starting programming school!</h5>
-                  <p class="card-text">For the next two years I will be studying Front-End development, wish me luck.</p>
-                  <p class="card-text"><small class="text-body-secondary">Last updated 1 year ago by @korny</small></p>
+              <div class="col">
+                <div class="card">
+                  <img
+                    src="/img/profile-pic.jpg"
+                    class="card-img-top post-pic"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">I'm starting programming school!</h5>
+                    <p class="card-text">
+                      For the next two years I will be studying Front-End
+                      development, wish me luck.
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 1 year ago by @korny</small
+                      >
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

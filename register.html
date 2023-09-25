@@ -46,7 +46,7 @@
       <div class="container">
         <h1>Registration Form</h1>
         <form
-          id="signup-form"
+          id="registerForm"
           action="https://api.noroff.dev/api/v1/social/auth/register"
           method="post"
           class="needs-validation was-validated"
@@ -63,13 +63,16 @@
             />
           </div>
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
+            <label for="email" class="form-label">E-mail</label>
             <input
               type="email"
               class="form-control"
               id="userEmail"
               name="email"
+              aria-describedby="emailHelp"
+              required
             />
+            <div id="emailHelp" class="form-text">Noroff email required.</div>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>

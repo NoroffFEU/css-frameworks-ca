@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins&family=Sail&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a6b44b4960.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="container-fluid ">
+    <header>
+      <nav
+        class="navbar navbar-expand-sm z-3 nav-bottom-border bg-white fixed-top"
+        data-bs-theme="light"
+      >
+        <div class="pt-4 p-md-4 d-flex">
+          <a href="/profile/index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="5rem"
+              height="5rem"
+              viewBox="0 0 139 183.627"
+            >
+              <g
+                id="Group_5"
+                data-name="Group 5"
+                transform="translate(-57 -39)"
+              >
+                <g
+                  id="Ellipse_1"
+                  data-name="Ellipse 1"
+                  transform="translate(57 39)"
+                  fill="#fff"
+                  stroke="#f39237"
+                  stroke-width="1"
+                  stroke-dasharray="41 32"
+                >
+                  <ellipse
+                    cx="69.5"
+                    cy="68.5"
+                    rx="69.5"
+                    ry="68.5"
+                    stroke="none"
+                  />
+                  <ellipse cx="69.5" cy="68.5" rx="69" ry="68" fill="none" />
+                </g>
+                <text
+                  id=""
+                  transform="matrix(1, 0.017, -0.017, 1, 109.504, 140.83)"
+                  fill="#f39237"
+                  font-size="117"
+                  font-family="MonotypeCorsiva, Monotype Corsiva"
+                >
+                  <tspan x="-37.448" y="0">V</tspan>
+                </text>
+                <text
+                  id="C"
+                  transform="matrix(1, 0.017, -0.017, 1, 140.503, 186.9)"
+                  fill="#26bfbf"
+                  font-size="117"
+                  font-family="MonotypeCorsiva, Monotype Corsiva"
+                >
+                  <tspan x="-30.421" y="0">C</tspan>
+                </text>
+              </g>
+            </svg>
+          </a>
+        </div>
+
+        <button
+          class="navbar-toggler me-4"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end me-4 bg-white"
+          id="navbarSupportedContent"
+        >
+          <div class="navbar-nav text-center">
+            <a class="nav-link" href="/feed/index.html">Feed</a>
+            <a class="nav-link active" aria-current="page" href="#"
+              >Profile</a
+            >
+            <a class="nav-link" aria-current="page" href="/index.html"
+              >Sign out</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="main-margin-feed-page">
+      <div class="container">
+        <div class="row">
+          <div class="d-flex flex-column align-items-center mt-5">
+            <!-- Profile image -->
+            <img class="profile-img z-3" src="../images/IMG_5076.jpeg" alt="" />
+            <div class="d-flex flex-column align-items-center">
+              <!-- Username -->
+              <h2 class="username">Pablo Garza</h2>
+              <!-- List of user posts -->
+              <p>Spreading positivity through connections</p>
+            </div>
+            <!-- Follow button -->
+            <button class="btn btn-outline-secondary follow-btn">Follow</button>
+          </div>
+
+          <!-- Area to display following/followers -->
+          <div class="container border-bottom border-top border-2 mt-5 pb-3">
+            <div class="row">
+              <div
+                class="col-md-4 d-flex flex-column justify-content-center align-items-center"
+              >
+                <p class="post-title">Posts</p>
+                <p class="post-number">34</p>
+              </div>
+              <div
+                class="col-md-4 d-flex flex-column justify-content-center align-items-center"
+              >
+                <p class="following-title">Following</p>
+                <p class="followers-number">245</p>
+              </div>
+              <div
+                class="col-md-4 d-flex flex-column justify-content-center align-items-center"
+              >
+                <p class="followers-title">Followers</p>
+                <p class="following-number">63.736</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row align-items-center flex-md-row flex-column">
+            <div class="col-12">
+                <h2 class="pt-5 username pe-5">Friends</h2>
+            </div>
+            <div class="col-2 p-2">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/IMG_3180 (1).PNG" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+            </div>
+            <div class="col-2 p-2 ">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/yoda-quotes-star-wars.webp" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+            </div>
+            <div class="col-2 p-2 ">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/young modesto.jpg" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+            </div>
+            
+            
+            <div class="col-2 p-2 d-none d-md-block">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/IMG_5076.jpeg" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+            </div>
+            <div class="col-2 p-2 d-none d-md-block">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/headshot (1).jpg" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+                
+            </div>
+            <div class="col-2 p-2 d-none d-md-block">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/20151210_063853000_iOS.jpg" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+            </div>
+            <div class="col-2 p-2 d-none d-md-block">
+              <div class="d-flex justify-content-center column-gap-4">
+                <img class="post-img" src="/images/20170320_180122000_iOS.jpg" alt="">
+                <button class="h-25">Follow</button>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- Area to display user posts -->
+      <div class="container d-flex flex-column justify-content-center mt-5">
+        <h2 class="my-vibes-title">My Vibes</h2>
+        <img
+          class="post-img"
+          src="../images/IMG_5076.jpeg"
+          alt="profile image"
+        />
+        <div
+          class="my-posts-container d-flex flex-column justify-content-center align-items-end rounded-5 z-n1 p-4"
+        >
+          <p>
+            Great suffering leads to compassion. Great compassion makes a
+            peaceful heart. A peaceful person makes a peaceful family. a
+            peaceful family makes a peaceful community. A peaceful community
+            makes a peaceful nation. A peaceful nation makes a peaceful world.
+          </p>
+          <p class="fst-italic text-black-50">1 hour ago</p>
+        </div>
+      </div>
+      <!-- Area to display user replies -->
+      <div
+        class="container d-flex flex-column align-items-end justify-content-end me-5 reply-post  pb-5"
+      >
+        <img
+          class="reply-img"
+          src="../images/IMG_3180 (1).PNG"
+          alt="follower profile image"
+        />
+        <div
+          class="my-reply-container d-flex flex-column align-items-end rounded-5 z-n1 p-4"
+        >
+          <p>
+            Thích Nhất Hạnh was such an amazing person! Sending all my positive
+            vibes towards you!
+          </p>
+          <p class="fst-italic text-black-50">30 min ago</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="fixed-bottom pb-2 pt-2 footer-border bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i
+              class="fa-solid fa-magnifying-glass"
+              style="color: #f39237"
+            ></i>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-house" style="color: #f39237"></i>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-envelope" style="color: #f39237"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed</title>
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comforter&family=Poppins&family=Sail&display=swap"
+      rel="stylesheet"
+    />
+    
+    <script
+      src="https://kit.fontawesome.com/a6b44b4960.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  
+  <body class="container-fluid ">
+    <header>
+      <nav
+        class="navbar navbar-expand-sm z-3 fixed-top nav-bottom-border bg-white"
+        data-bs-theme="light"
+      >
+        <!-- SVG LOGO -->
+        <div class="pt-4 p-md-4 d-flex">
+            <a href="/profile/index.html">
+                <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="5rem"
+            height="5rem"
+            viewBox="0 0 139 183.627"
+          >
+            <g id="Group_5" data-name="Group 5" transform="translate(-57 -39)">
+              <g
+                id="Ellipse_1"
+                data-name="Ellipse 1"
+                transform="translate(57 39)"
+                fill="#fff"
+                stroke="#f39237"
+                stroke-width="1"
+                stroke-dasharray="41 32"
+              >
+                <ellipse
+                  cx="69.5"
+                  cy="68.5"
+                  rx="69.5"
+                  ry="68.5"
+                  stroke="none"
+                />
+                <ellipse cx="69.5" cy="68.5" rx="69" ry="68" fill="none" />
+              </g>
+              <text
+                id=""
+                transform="matrix(1, 0.017, -0.017, 1, 109.504, 140.83)"
+                fill="#f39237"
+                font-size="117"
+                font-family="MonotypeCorsiva, Monotype Corsiva"
+              >
+                <tspan x="-37.448" y="0">V</tspan>
+              </text>
+              <text
+                id="C"
+                transform="matrix(1, 0.017, -0.017, 1, 140.503, 186.9)"
+                fill="#26bfbf"
+                font-size="117"
+                font-family="MonotypeCorsiva, Monotype Corsiva"
+              >
+                <tspan x="-30.421" y="0">C</tspan>
+              </text>
+            </g>
+          </svg>
+            </a>
+          
+        </div>
+
+        <button
+          class="navbar-toggler me-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end me-4 w-100 bg-white"
+          id="navbarSupportedContent"
+        >
+          <div class="navbar-nav d-flex align-items-center ">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="/feed/index.html"
+              >Feed</a
+            >
+            <a class="nav-link z-3" href="/profile/index.html">Profile</a>
+            <a class="nav-link text-center" aria-current="page" href="/index.html"
+            >Sign out</a>
+        </div>
+            <select class="form-select w-50 d-block d-sm-none text-center border-0" aria-label="post selection">
+              
+              <option selected value="1">Recent post</option>
+              <option value="2">Last week</option>
+              <option value="3">All post</option>
+            </select>
+            <input
+          class="form-control mt-2 d-block d-sm-none w-25 text-center"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn h-50 d-block d-sm-none" type="submit">
+          <i class="fa-solid fa-magnifying-glass search-border p-2 "></i>
+        </button>
+          </div>
+          
+        </div>
+        <input
+          class="form-control me-2 d-none d-md-block w-25"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn h-50 d-none d-md-block" type="submit">
+          <i class="fa-solid fa-magnifying-glass search-border p-2 "></i>
+        </button>
+        
+      </nav>
+    </header>
+    <main class="main-margin-feed-page">
+
+        <!-- Area to create new posts -->
+        <div class="container text-center">
+          <div class="row ">
+            <div class="col">
+              <div class="form-floating h-100">
+                <textarea class="form-control fw-medium h-100" placeholder="Write you vibe post here" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Whats your vibe today?</label>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-outline-secondary follow-btn mt-2">Post</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+        <!-- Area to create new posts -->
+      <div class="container d-flex flex-column justify-content-center mt-5">
+        <h2 class="my-vibes-title d-none d-md-block">My Vibes</h2>
+        <div class="d-inline-flex justify-content-between flex-row align-items-center">
+          <h2 class="">Most recent</h2>
+          <select class="form-select w-25 me-4 d-none d-sm-block" aria-label="post selection">
+            <option selected>Vibe Menu</option>
+            <option value="1">Recent post</option>
+            <option value="2">Last week</option>
+            <option value="3">All post</option>
+          </select>
+        </div>
+        <img
+          class="post-img"
+          src="../images/IMG_5076.jpeg"
+          alt="profile image"
+        />
+        <div
+          class="my-posts-container d-flex flex-column justify-content-center align-items-end rounded-5 z-n1 p-4"
+        >
+          <p>
+            Great suffering leads to compassion. Great compassion makes a
+            peaceful heart. A peaceful person makes a peaceful family. a
+            peaceful family makes a peaceful community. A peaceful community
+            makes a peaceful nation. A peaceful nation makes a peaceful world.
+          </p>
+          <p class="fst-italic text-black-50">1 hour ago</p>
+        </div>
+
+      <!-- Area to display user posts -->
+      <div>
+        <div class="container d-flex flex-column justify-content-center">
+          
+          <img
+            class="post-img"
+            src="../images/IMG_5076.jpeg"
+            alt="profile image"
+          />
+          <div
+            class="my-posts-container d-flex flex-column justify-content-center align-items-end rounded-5 z-n1 p-4"
+          >
+            <p>
+              Great suffering leads to compassion. Great compassion makes a
+              peaceful heart. A peaceful person makes a peaceful family. a
+              peaceful family makes a peaceful community. A peaceful community
+              makes a peaceful nation. A peaceful nation makes a peaceful world.
+            </p>
+            <p class="fst-italic text-black-50">1 hour ago</p>
+          </div>
+        </div>
+        <!-- Area to display user replies -->
+        <div
+          class="container d-flex flex-column align-items-end justify-content-end me-5 reply-post w"
+        >
+          <img
+            class="reply-img"
+            src="../images/IMG_3180 (1).PNG"
+            alt="follower profile image"
+          />
+          <div
+            class="my-reply-container d-flex flex-column align-items-end rounded-5 z-n1 p-4"
+          >
+            <p>
+              Thích Nhất Hạnh was such an amazing person! Sending all my
+              positive vibes towards you!
+            </p>
+            <img class="w-100" src="/images/tnh-profile-main.jpg" alt="">
+            <p class="fst-italic text-black-50">30 min ago</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="container d-flex flex-column justify-content-center">
+          <img
+            class="post-img"
+            src="../images/IMG_5076.jpeg"
+            alt="profile image"
+          />
+          <div
+            class="my-posts-container d-flex flex-column justify-content-center align-items-end rounded-5 z-n1 p-4"
+          >
+            <p>
+              You think Yoda stops teaching, just because his student does not
+              want to hear? A teacher Yoda is. Yoda teaches like drunkards
+              drink, like killers kill
+            </p>
+            <p class="fst-italic text-black-50">5 hours ago</p>
+          </div>
+        </div>
+        <!-- Area to display user replies -->
+        <div
+        class="container d-flex flex-column align-items-end justify-content-end me-5 reply-post w"
+      >
+        <img
+          class="reply-img"
+          src="../images/yoda-quotes-star-wars.webp"
+          alt="follower profile image"
+        />
+        <div
+          class="my-reply-container d-flex flex-column align-items-end rounded-5 z-n1 p-4"
+        >
+          <p>
+            Said that did I. Yes!
+          </p>
+          <p class="fst-italic text-black-50"> 6 hours ago</p>
+        </div>
+      </div>
+        <div
+          class="container d-flex flex-column align-items-end justify-content-end me-5 reply-post pb-5"
+        >
+          <img
+            class="reply-img"
+            src="../images/IMG_3180 (1).PNG"
+            alt="follower profile image"
+          />
+          <div
+            class="my-reply-container d-flex flex-column align-items-end rounded-5 z-n1 p-4"
+          >
+            <p>
+              Did Master Yoda really say that! Awesome sauce! I love Star Wars!
+            </p>
+            <p class="fst-italic text-black-50"> 6 hours ago</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-2 fixed-bottom footer-border bg-white pb-2 pt-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i
+              class="fa-solid fa-magnifying-glass"
+              style="color: #f39237"
+            ></i>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-house" style="color: #f39237"></i>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-envelope" style="color: #f39237"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

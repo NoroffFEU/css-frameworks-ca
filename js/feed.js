@@ -4,7 +4,6 @@ let currentFilter = 'newest'; // Default filter
 
 window.getAuthHeader = function() {
     const token = localStorage.getItem('accessToken');
-    console.log('Token:', token); // Log the token to check its value
     return {
         Authorization: `Bearer ${token}`,
     };
@@ -38,6 +37,11 @@ async function fetchPosts() {
         } else if (currentFilter === 'popular') {
             queryParams.push('sort=likes');
             queryParams.push('sortOrder=desc');
+        }
+        
+        let tagFilter = document.getElementById('tagFilter').value;
+        if (tagFilter) {
+            queryParams.push(`_tag=${tagFilter}`);
         }
 
         if (queryParams.length > 0) {
@@ -136,6 +140,12 @@ document.getElementById('sortPopular').addEventListener('click', () => {
     currentFilter = 'popular';
     fetchPosts();
 });
+
+document.getElementById('tagFilter').addEventListener('change', () => {
+    currentOffset = 0; // Reset the offset when filter changes
+    fetchPosts();
+});
+
 
 
 // Call the fetchPosts function when the page loads

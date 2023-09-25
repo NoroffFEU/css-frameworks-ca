@@ -11,10 +11,24 @@ footer{
 }
 
 .logo-title {
-  font-family: $font-familie-logo;
+  font-family: $font-karla;
   font-size: 2rem;
+  color: $font-colour;
+}
+.logo-title:hover{
+  color: $font-colour;
 }
 
 .content-font{
   font-family: $font-karla;
 }
+
+
+.login-signup-text{
+  color: black;
+  text-decoration: none;
+}
+.login-signup-text:hover{
+  color: black;
+}
+

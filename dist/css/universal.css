@@ -10717,12 +10717,26 @@ footer {
 }
 
 .logo-title {
-  font-family: "Ms Madi", cursive;
+  font-family: "Karla", sans-serif;
   font-size: 2rem;
+  color: #4d584d;
+}
+
+.logo-title:hover {
+  color: #4d584d;
 }
 
 .content-font {
   font-family: "Karla", sans-serif;
+}
+
+.login-signup-text {
+  color: black;
+  text-decoration: none;
+}
+
+.login-signup-text:hover {
+  color: black;
 }
 
 /*# sourceMappingURL=universal.css.map */

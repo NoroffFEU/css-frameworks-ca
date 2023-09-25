@@ -10708,10 +10708,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.background-img {
-  background-image: url(/img/posts.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+body {
+  background-color: rgba(203, 226, 201, 0.6274509804);
 }
 
 .feed {
@@ -10729,6 +10727,26 @@ textarea.form-control-lg {
 
 .btn-primary:hover {
   background-color: rgba(84, 112, 81, 0.678);
+}
+
+.custom-delete-btn {
+  color: rgba(157, 0, 0, 0.4078431373);
+  background-color: rgba(203, 226, 201, 0.6274509804);
+  border-radius: 3px;
+}
+
+.custom-delete-btn:hover {
+  color: #9d0000;
+}
+
+.custom-update-btn {
+  color: #4d584d;
+  background-color: rgba(203, 226, 201, 0.6274509804);
+  border-radius: 3px;
+}
+
+.custom-viewmore-btn {
+  color: #4d584d;
 }
 
 /*# sourceMappingURL=feed.css.map */

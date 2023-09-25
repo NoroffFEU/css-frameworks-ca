@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="log in and register">
     <title>Authentication</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -59,18 +59,22 @@
                         <input type="password" class="form-control" id="password" name="password" minlength="8" required>
                         <div class="form-text">Password must be at least 8 characters long.</div>
                     </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="isRegistering" onchange="updateButtonText()">
+                        <label class="form-check-label" for="isRegistering">Register</label>
+                    </div>
                     <div id="error-message" class="text-danger text-center"></div>                    
-                    <button type="submit" class="btn w-100">Login and Submit</button>
+                    <button type="submit" class="btn w-100" id="submitButton">Login</button>
                 </form>
                 <p class="text-center mt-3">Not a member? <a href="#" class="custom-link">Register now</a></p>
             </div>
         </div>
     </div>
-
+    
     <footer class="text-center mt-5">
         <p>&copy; 2023 Socially. All rights reserved.</p>
     </footer>
-<script src="js/auth.js"></script>
+<script type="module" src="js/auth.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -49,6 +49,11 @@ body {
         line-height: 20px;
     }
 }
+#nextPage, #prevPage {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
 .custom-btn {
     @extend .btn;
     border-radius: 5px;

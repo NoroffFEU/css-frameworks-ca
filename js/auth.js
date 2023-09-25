@@ -1,4 +1,6 @@
-const API_BASE_URL = 'https://api.noroff.dev/api/v1';
+import { API_BASE_URL } from '../js/constants.js';
+
+
 
 async function registerUser(name, email, password) {
     try {
@@ -36,9 +38,6 @@ async function registerUser(name, email, password) {
     }
 }
 
-
-
-
 async function loginUser(email, password) {
     try {
         const response = await fetch(`${API_BASE_URL}/social/auth/login`, {
@@ -61,6 +60,10 @@ async function loginUser(email, password) {
 
         // Store the access token in localStorage
         localStorage.setItem('accessToken', data.accessToken);
+        
+         // Redirect to the profile or home page
+         window.location.href = '/profile/index.html';
+
     } catch (error) {
         console.error('Error:', error);
     }
@@ -79,7 +82,23 @@ document.getElementById('authForm').addEventListener('submit', async (event) => 
     const username = event.target.username.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
+    const submitButton = document.getElementById('submitButton');
+    const isRegistering = submitButton.textContent === 'Register';
 
-       // Call your registerUser or loginUser function here
-    registerUser(username, email, password);
+    if (isRegistering) {
+        registerUser(username, email, password);
+    } else {
+        loginUser(email, password);
+    }
+});
+
+function updateButtonText() {
+    const isRegistering = document.getElementById('isRegistering').checked;
+    const submitButton = document.getElementById('submitButton');
+    submitButton.textContent = isRegistering ? 'Register' : 'Login';
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('isRegistering').addEventListener('change', updateButtonText);
+
+    updateButtonText();
 });

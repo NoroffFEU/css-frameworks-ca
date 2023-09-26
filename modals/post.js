@@ -34,6 +34,7 @@ async function createNewPost(postTitle, postContent, accessToken) {
 
     if (response.ok) {
       const newPost = await response.json();
+      alert(`Apost has been made (ID ${newPost.id})`);
       return newPost;
     } else {
       return null;

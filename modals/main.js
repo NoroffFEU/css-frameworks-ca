@@ -4,6 +4,7 @@ import { filterAndSort } from './filterAndSort.js';
 
 
 
+
 const ApiUrl = 'https://api.noroff.dev';
 
 fetchWithToken(ApiUrl + '/api/v1/social/posts');

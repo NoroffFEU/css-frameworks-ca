@@ -34,13 +34,14 @@ export async function fetchWithToken(url) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       },
     };
     const response = await fetch(url, getData);
     const json = await response.json();
 
     
+    /////////////////////////////////////////////html for posts/////////////////////////////////////////
 
     const postContainer = document.getElementById('postContainer');
 
@@ -58,150 +59,62 @@ export async function fetchWithToken(url) {
         postContent.textContent = post.body;
         postContent.classList.add("card-text", "content-font");
 
-        const buttonContainer = document.createElement('div');
-        buttonContainer.classList.add("button-container");
-
-        const updateButton = document.createElement('button');
-        updateButton.textContent = 'Update';
-        updateButton.classList.add('btn', 'content-font', 'position-absolute', 'top-0', 'end-0', 'mt-2', 'me-2', 'custom-update-btn');
-        updateButton.addEventListener('click', () => {
-          showUpdateModal(post);
-        });
-
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('btn', 'content-font', 'position-absolute', 'top-0', 'mt-2', 'me-2', 'custom-delete-btn');
-        deleteButton.addEventListener('click', () => {
-          deletePost(post.id);
-        });
 
 
-//////////////////////////////Delete post////////////////
+//////view more - Update and Delete buttons//////////////////
+
+const buttonRow = document.createElement('div');
+buttonRow.classList.add('row', 'mt-2');
+
+const viewMoreColumn = document.createElement('div');
+viewMoreColumn.classList.add('col-6');
+
+const viewMoreButton = document.createElement('button');
+viewMoreButton.textContent = 'View More';
+viewMoreButton.classList.add('btn', 'content-font', 'view-more-button', 'custom-viewmore-btn');
+viewMoreButton.addEventListener('click', () => {
+  showMoreInfo(post);
+});
+
+viewMoreColumn.appendChild(viewMoreButton);
+buttonRow.appendChild(viewMoreColumn);
 
 
-        async function deletePost(postId) {
-          try {
-            const token = localStorage.getItem('accessToken');
-            const deleteData = {
-              method: 'DELETE',
-              headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-              },
-            };
-            const response = await fetch(`${ApiUrl}/api/v1/social/posts/${postId}`, deleteData);
-        
-            if (response.status === 204 || response.status === 200) {
-              alert(`The post (ID ${postId}) was successfully deleted.`);
-              
-            } else {
-              alert(`Sorry, you don't have permission to delete this post (ID ${postId}). Only the owner can delete it.`); 
-            }
-          } catch (error) {
-            alert(`Something went wrong, pleas try agin later!`);
-          }
-        }
+const actionsColumn = document.createElement('div');
+actionsColumn.classList.add('col-6', 'd-flex', 'align-items-end', 'justify-content-end');
 
+const updateButton = document.createElement('button');
+updateButton.textContent = 'Update';
+updateButton.classList.add('btn', 'content-font', 'btn-sm', 'me-2', 'custom-update-btn');
+updateButton.addEventListener('click', () => {
+  showUpdateModal(post);
+});
 
+const deleteButton = document.createElement('button');
+deleteButton.textContent = 'Delete';
+deleteButton.classList.add('btn', 'content-font', 'btn-sm', 'custom-delete-btn');
+deleteButton.addEventListener('click', () => {
+  deletePost(post.id);
+});
 
-        buttonContainer.appendChild(updateButton);
-        buttonContainer.appendChild(deleteButton);
+actionsColumn.appendChild(updateButton);
+actionsColumn.appendChild(deleteButton);
+buttonRow.appendChild(actionsColumn);
 
-        ////////////////view more html//////////
-
-        const buttonRow = document.createElement('div');
-        buttonRow.classList.add("row");
-
-        const viewMoreColumn = document.createElement('div');
-        viewMoreColumn.classList.add("col-6");
-
-        const viewMoreButton = document.createElement('button');
-        viewMoreButton.textContent = 'View More';
-        viewMoreButton.classList.add('btn', 'content-font', 'view-more-button', 'custom-viewmore-btn');
-        viewMoreButton.addEventListener('click', () => {
-          showMoreInfo(post);
-        });
-
-        
-
-        viewMoreColumn.appendChild(viewMoreButton);
-        buttonRow.appendChild(viewMoreColumn);
-
-        postDiv.appendChild(postTitle);
-        postDiv.appendChild(postContent);
-        postDiv.appendChild(buttonContainer);
-        postDiv.appendChild(buttonRow);
-        postContainer.appendChild(postDiv);
-      }
+postDiv.appendChild(postTitle);
+postDiv.appendChild(postContent);
+postDiv.appendChild(buttonRow);
+postContainer.appendChild(postDiv);
+  }
     });
   } catch (error) {
     console.log(error);
   }
 }
 
-///////////////////////////////////modalen - update post///////////////////////////////
-
-/**
- * Displays a modal for updating a post.
- * @param {object} post - The post object to update.
- */
-function showUpdateModal(post) {
-
-  const modalContainer = document.createElement('div');
-  modalContainer.classList.add('modal-container');
-
-  const updateModal = document.createElement('div');
-  updateModal.classList.add('modal-update');
-
-  const updateTitleLabel = document.createElement('label');
-  updateTitleLabel.textContent = 'Update Title:';
-  updateModal.appendChild(updateTitleLabel);
-
-  const updateTitleInput = document.createElement('input');
-  updateTitleInput.type = 'text';
-  updateTitleInput.value = post.title;
-  updateModal.appendChild(updateTitleInput);
-
-  const updateBodyLabel = document.createElement('label');
-  updateBodyLabel.textContent = 'Update Body:';
-  updateModal.appendChild(updateBodyLabel);
-
-  const updateBodyInput = document.createElement('textarea');
-  updateBodyInput.value = post.body;
-  updateModal.appendChild(updateBodyInput);
 
 
-
-  ///////////update button in modal
-
-  const updateButton = document.createElement('button');
-  updateButton.textContent = 'Update Post';
-  updateButton.classList.add('btn', 'btn-primary', 'content-font');
-  updateButton.addEventListener('click', async () => {
-    await updatePost(post.id, updateTitleInput.value, updateBodyInput.value);
-    modalContainer.remove();
-  });
-  updateModal.appendChild(updateButton);
-
-  ///////////button closing modal
-
-  const closeButton = document.createElement('button');
-  closeButton.textContent = 'Close';
-  closeButton.classList.add('btn', 'btn-secondary', 'content-font');
-  closeButton.addEventListener('click', () => {
-    modalContainer.remove();
-  });
-  updateModal.appendChild(closeButton);
-
-  modalContainer.appendChild(updateModal);
-  document.body.appendChild(modalContainer);
-}
-
-
-
-
-
-//////////////////////////updating post////////////////////////
+/////////////////////////////////////////////////////////////updating post//////////////////////////////////////////////////////////////////////
 
 /**
  * Updates a post on the server with the specified data.
@@ -243,12 +156,45 @@ async function updatePost(postId, updatedTitle, updatedBody) {
   }
 }
 
+//////////////////////////////////////////////Delete post//////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * Deletes a post using a DELETE request to the API.
+ *
+ * @param {number} postId - The ID of the post to be deleted.
+ * @returns {Promise<void>} A Promise that resolves if the deletion is successful, or rejects with an error.
+ *
+ * @throws {Error} If an error occurs during the deletion process, an error message is thrown.
+ */
+
+async function deletePost(postId) {
+  try {
+    const token = localStorage.getItem('accessToken');
+    const deleteData = {
+          method: 'DELETE',
+          headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+          },
+  };
+  const response = await fetch(`${ApiUrl}/api/v1/social/posts/${postId}`, deleteData);
+      
+    if (response.status === 204 || response.status === 200) {
+        alert(`The post (ID ${postId}) was successfully deleted.`);
+            
+    } else {
+      alert(`Sorry, you don't have permission to delete this post (ID ${postId}). Only the owner can delete it.`); 
+    }
+     } catch (error) {
+          alert(`Something went wrong, pleas try agin later!`);
+        }
+      }
 
 
 
 
 
-/////////////view more function///////////////////////////
+////////////////////////////////////////////////////////view more function/////////////////////////////////////////////////////////////////////
 
 
 /**
@@ -290,4 +236,61 @@ async function updatePost(postId, updatedTitle, updatedBody) {
   document.body.appendChild(modalContainer);
 }
 
+/////////////////////////////////////////////////////view more/modal//////////////////////////////////////////////////////////////////////////7
 
+
+/**
+ * Displays a modal for updating a post.
+ * @param {object} post - The post object to update.
+ */
+function showUpdateModal(post) {
+
+  const modalContainer = document.createElement('div');
+  modalContainer.classList.add('modal-container');
+
+  const updateModal = document.createElement('div');
+  updateModal.classList.add('modal-update');
+
+  const updateTitleLabel = document.createElement('label');
+  updateTitleLabel.textContent = 'Update Title:';
+  updateModal.appendChild(updateTitleLabel);
+
+  const updateTitleInput = document.createElement('input');
+  updateTitleInput.type = 'text';
+  updateTitleInput.value = post.title;
+  updateModal.appendChild(updateTitleInput);
+
+  const updateBodyLabel = document.createElement('label');
+  updateBodyLabel.textContent = 'Update Body:';
+  updateModal.appendChild(updateBodyLabel);
+
+  const updateBodyInput = document.createElement('textarea');
+  updateBodyInput.value = post.body;
+  updateModal.appendChild(updateBodyInput);
+
+
+
+  ///////////update button in modal///////////////////////////
+
+  const updateButton = document.createElement('button');
+  updateButton.textContent = 'Update Post';
+  updateButton.classList.add('btn', 'btn-primary', 'content-font');
+  updateButton.addEventListener('click', async () => {
+    await updatePost(post.id, updateTitleInput.value, updateBodyInput.value);
+    modalContainer.remove();
+  });
+  updateModal.appendChild(updateButton);
+
+  ///////////button closing modal//////////////
+
+  const closeButton = document.createElement('button');
+  closeButton.textContent = 'Close';
+  closeButton.classList.add('btn', 'btn-secondary', 'content-font');
+  closeButton.addEventListener('click', () => {
+    modalContainer.remove();
+  });
+  updateModal.appendChild(closeButton);
+
+  modalContainer.appendChild(updateModal);
+  document.body.appendChild(modalContainer);
+}

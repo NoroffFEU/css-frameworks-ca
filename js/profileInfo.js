@@ -20,6 +20,6 @@ async function createProfile(url) {
     console.log(error);
   }
 }
-const profileInfo = `${API_BASE_URL}social/profiles`;
+const profileInfo = `${API_BASE_URL}social/profiles/{bulba}`;
 
 createProfile(profileInfo);

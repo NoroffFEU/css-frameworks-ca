@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMA</title>
+
+    <link rel="stylesheet" href="dist/css/index.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-3" href="/index.html"
+          >Social Media Application</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <ul class="nav nav-pills me-3 gap-5">
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                aria-disabled="true"
+                href="/profile/index.html"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                aria-disabled="true"
+                href="/feed/index.html"
+                >Feed</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/index.html"
+                >Log in</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="mt-5">
+      <div class="container mt-3 mb-5">
+        <form action="/profile/index.html" class="row g-4 needs-validation">
+          <div class="col-12 text-center"><h2>Login</h2></div>
+          <div class="col-xs-12 col-sm-4">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              placeholder="Password (Min. 8 Characters)"
+              pattern=".{8,}"
+              required
+            />
+          </div>
+          <div class="col-xs-12 col-sm-3">
+            <button type="submit" class="btn btn-primary">Log in</button>
+          </div>
+        </form>
+        <form
+          action="/profile/index.html"
+          class="row g-4 mt-5 needs-validation"
+        >
+          <div class="col-12 text-center"><h2>Create account</h2></div>
+          <div class="col-12">
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom01"
+              placeholder="First name"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom02"
+              placeholder="Last name"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustomUsername"
+                aria-describedby="inputGroupPrepend"
+                placeholder="Username"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword2"
+              placeholder="Password (Min. 8 Characters)"
+              required
+              pattern=".{8,}"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom03"
+              placeholder="City"
+              required
+            />
+          </div>
+          <div class="col-md-3">
+            <select class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">State</option>
+              <option>Agder</option>
+              <option>Akershus</option>
+              <option>Buskerud</option>
+              <option>Finnmark</option>
+              <option>Hedmark</option>
+              <option>Innlandet</option>
+              <option>Møre og Romsdal</option>
+              <option>Nordland</option>
+              <option>Oslo</option>
+              <option>Rogaland</option>
+              <option>Sogn og Fjordane</option>
+              <option>Telemark</option>
+              <option>Troms</option>
+              <option>Vestfold</option>
+              <option>Østfold</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustom05"
+              placeholder="Zip"
+              required
+            />
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="invalidCheck"
+                required
+              />
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">
+              Create Account
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

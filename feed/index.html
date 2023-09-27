@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,22 +15,27 @@
     />
     <link href="/dist/css/universal.css" rel="stylesheet" />
     <link href="/dist/css/feed.css" rel="stylesheet" />
-    <link href="../dist/postFetch.css" rel="stylesheet"/>
-    <link href="/dist/css/universalCss.css"/>
+    <link href="../dist/postFetch.css" rel="stylesheet" />
+    <link href="/dist/css/universalCss.css" />
     <title>SocialNet</title>
   </head>
   <body>
-    <div class="color-overlay">
-    </div>
+    <div class="color-overlay"></div>
     <nav class="navbar navbar-expand navbar-light">
       <div class="container">
-        <a  href="/index.html" class="text-center mt-3 mb-3 logo-title text-decoration-none">SocialNet</a>
+        <a
+          href="/index.html"
+          class="text-center mt-3 mb-3 logo-title text-decoration-none"
+          >SocialNet</a
+        >
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link content-font" href="../index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link content-font" href="/profile/index.html">Profile</a>
+            <a class="nav-link content-font" href="/profile/index.html"
+              >Profile</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link content-font" href="/feed/index.html">Feed</a>
@@ -47,39 +51,54 @@
           <h1 class="content-font">Create a New Post</h1>
           <form id="postForm">
             <div class="form-group mb-3">
-              <label for="postTitle" class="content-font" >Title</label>
-              <input type="text" class="form-control" id="postTitle" required>
+              <label for="postTitle" class="content-font">Title</label>
+              <input type="text" class="form-control" id="postTitle" required />
             </div>
             <div class="form-group mb-3">
-              <label for="postContent" class="content-font" >Content</label>
-              <textarea class="form-control" id="postContent" rows="7" required></textarea>
+              <label for="postContent" class="content-font">Content</label>
+              <textarea
+                class="form-control"
+                id="postContent"
+                rows="7"
+                required
+              ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary content-font">Post</button>
+            <button type="submit" class="btn btn-primary content-font">
+              Post
+            </button>
           </form>
         </div>
-    
+
         <div class="col-md-7 bg rounded-4 mt-3">
           <div class="row mb-3">
             <div class="col-md-6 mt-3">
-              <input type="text" class="form-control form-control-sm" id="searchInput" placeholder="Search">
+              <input
+                type="text"
+                class="form-control form-control-sm"
+                id="searchInput"
+                placeholder="Search"
+              />
             </div>
             <div class="col-md-6 mt-3">
-              <select class="form-select form-select-sm content-font" id="sortSelect" aria-label="Sort">
+              <select
+                class="form-select form-select-sm content-font"
+                id="sortSelect"
+                aria-label="Sort"
+              >
                 <option selected>Sort by...</option>
-            <!--<option value="date">Date</option>-->
+
                 <option value="title">Title</option>
               </select>
             </div>
           </div>
           <h2 class="content-font">Recent Posts</h2>
-          <div id="postContainer">
-          </div>
+          <div id="postContainer"></div>
+          <button id="loadMoreButton" class="btn btn-primary content-font mt-3">
+            Last inn flere
+          </button>
         </div>
       </div>
     </div>
-    <script type="module" src="../modals/main.js"></script>
-    <script type="module" src="../modals/postFetch.js"></script>
-    </body>
     <footer class="footer py-3 text-center pb-4 mt-5">
       <div class="container">
         <p>&copy; 2023 SocialNet. All rights reserved.</p>
@@ -88,7 +107,7 @@
         Brought to life 💻 <cite title="Source Title">by Line Nilsen</cite>
       </figcaption>
     </footer>
-
-    </div>
-
+    <script type="module" src="../modals/main.js"></script>
+    <script type="module" src="../modals/postFetch.js"></script>
+  </body>
 </html>

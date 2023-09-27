@@ -27,6 +27,7 @@
 
 const ApiUrl = 'https://api.noroff.dev';
 
+
 export async function fetchWithToken(url) {
   try {
     const token = localStorage.getItem('accessToken');
@@ -236,7 +237,8 @@ async function deletePost(postId) {
   document.body.appendChild(modalContainer);
 }
 
-/////////////////////////////////////////////////////view more/modal//////////////////////////////////////////////////////////////////////////7
+/////////////////////////////////////////////////////view more-update/modal//////////////////////////////////////////////////////////////////////////7
+
 
 
 /**
@@ -253,6 +255,8 @@ function showUpdateModal(post) {
 
   const updateTitleLabel = document.createElement('label');
   updateTitleLabel.textContent = 'Update Title:';
+  updateTitleLabel.classList.add('text-white', 'm-5');
+  updateTitleLabel.style.fontWeight = 'bold';
   updateModal.appendChild(updateTitleLabel);
 
   const updateTitleInput = document.createElement('input');
@@ -260,8 +264,13 @@ function showUpdateModal(post) {
   updateTitleInput.value = post.title;
   updateModal.appendChild(updateTitleInput);
 
+  const lineBreak = document.createElement('br');
+  updateModal.appendChild(lineBreak);
+
   const updateBodyLabel = document.createElement('label');
   updateBodyLabel.textContent = 'Update Body:';
+  updateBodyLabel.classList.add('text-white', 'm-5');
+  updateBodyLabel.style.fontWeight = 'bold';
   updateModal.appendChild(updateBodyLabel);
 
   const updateBodyInput = document.createElement('textarea');
@@ -272,14 +281,18 @@ function showUpdateModal(post) {
 
   ///////////update button in modal///////////////////////////
 
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('d-flex', 'justify-content-between', 'mt-4');
+
   const updateButton = document.createElement('button');
   updateButton.textContent = 'Update Post';
-  updateButton.classList.add('btn', 'btn-primary', 'content-font');
+  updateButton.classList.add('btn', 'btn-primary', 'content-font', 'ms-5');
+  updateButton.style.backgroundColor = ' rgb(89, 96, 102)';
   updateButton.addEventListener('click', async () => {
     await updatePost(post.id, updateTitleInput.value, updateBodyInput.value);
     modalContainer.remove();
   });
-  updateModal.appendChild(updateButton);
+  buttonContainer.appendChild(updateButton);
 
   ///////////button closing modal//////////////
 
@@ -289,7 +302,9 @@ function showUpdateModal(post) {
   closeButton.addEventListener('click', () => {
     modalContainer.remove();
   });
-  updateModal.appendChild(closeButton);
+  buttonContainer.appendChild(closeButton);
+
+  updateModal.appendChild(buttonContainer);
 
   modalContainer.appendChild(updateModal);
   document.body.appendChild(modalContainer);

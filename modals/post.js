@@ -1,5 +1,5 @@
 /**
- * Oppretter en ny post ved å sende data til API-en.
+ * Creating a new post by sending data to the API
  *
  * @param {string} postTitle - Title of the post.
  * @param {string} postContent - Content of the post.

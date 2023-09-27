@@ -1,0 +1,8 @@
+$colors: (
+    primary: #a4dfbc,
+    secondary: #e2e230,
+    tertiary: #000000,
+);
+
+$primary: map-get($colors, primary);
+$secondary: map-get($colors, secondary);

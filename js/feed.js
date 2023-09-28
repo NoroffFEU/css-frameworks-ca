@@ -99,6 +99,7 @@ async function fetchPosts() {
 document.getElementById('searchBar').addEventListener('input', (event) => {
     event.preventDefault();
     searchQuery = event.target.value;
+    window.history.pushState(null, '', `?searchQuery=${searchQuery}`);
     fetchPosts();
 });
 /**

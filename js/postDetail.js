@@ -6,16 +6,13 @@ import { API_BASE_URL } from '../js/constants.js';
  */
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get('searchQuery');
-    if (searchQuery) {
-        // Use the searchQuery to filter and fetch the posts
-        fetchPosts(searchQuery);
-    } else {
-        // Fetch all posts if there is no searchQuery
-        fetchPosts();
+    const postId = urlParams.get('id');
+    if (postId) {
+        fetchPostById(postId);
     }
+    console.log(urlParams);
+    console.log(postId);
 });
-
 /**
  * Fetches a post by its ID.
  * @async

@@ -12,18 +12,28 @@ const endpoint = endpointObject("Jarle");
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
 const searchInput = document.querySelector("#search--feed");
-/*sortOrder.addEventListener("input", () => {
-  endpoint.sortAfter() = endpoint.sortOrder(
-    endpoint.sortAfter(sortInput.value),
-    sortOrder.value
-  );
-  endpoint.sortAfter();
+const searchButton = document.querySelector("#search--button");
+searchButton.addEventListener("click", () => {
+    callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), (data) => {
+        if (searchInput.value) {
+            if (searchApi(data, sortInput.value, searchInput.value)) {
+                renderPosts(postContainer, searchApi(data, sortInput.value, searchInput.value));
+            }
+            else if (data.length === 1) {
+                renderPosts(postContainer, data[0]);
+            }
+        }
+        else {
+            data.forEach((element) => renderPosts(postContainer, element));
+            console.log("else route");
+        }
+        const observedObj = document.querySelectorAll("[data-observed]");
+        const target = observedObj[observedObj.length - 1];
+        console.log(observedObj, target);
+        setTarget();
+        isObserving(true, intersectionObserver);
+    }, postOption);
 });
-
-sortInput.addEventListener("input", () => {
-  console.log(sortInput.value);
-});
-*/
 function observerTargetClosure() {
     let target;
     function setTarget() {
@@ -85,7 +95,20 @@ function optionFactory(method, body) {
 const postOption = optionFactory("GET", {});
 console.log(postOption);
 callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), (data) => {
-    data.forEach((element) => renderPosts(postContainer, element));
+    console.log(data);
+    if (searchInput.value) {
+        if (searchApi(data, sortInput.value, searchInput.value)) {
+            renderPosts(postContainer, searchApi(data, sortInput.value, searchInput.value));
+        }
+        else if (data.length === 1) {
+            renderPosts(postContainer, data[0]);
+        }
+    }
+    else {
+        data.forEach((element) => renderPosts(postContainer, element));
+        console.log("else route");
+    }
+    //console.log(data);
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -153,7 +176,11 @@ searchButton?.addEventListener("click", () => {
 const intersectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (entry.isIntersecting) {
         callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), (data) => {
-            data.forEach((element) => renderPosts(postContainer, element));
+            if (data.length === 1) {
+                renderPosts(postContainer, data[0]);
+            }
+            else
+                data.forEach((element) => renderPosts(postContainer, element));
             isObserving(false, intersectionObserver);
             setTarget();
             isObserving(true, intersectionObserver);
@@ -166,3 +193,40 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
             };
     }
 }));
+function searchApi(array, category, searchWord) {
+    if (!searchWord || !category) {
+        console.log("returned early");
+        return;
+    }
+    console.log("category=", category, searchWord);
+    let searchedItem = array.find((object) => { var _a; return (_a = object[category]) === null || _a === void 0 ? void 0 : _a.includes(searchWord); });
+    console.log(searchedItem, "11111111111111111111111111111");
+    if (searchedItem) {
+        return searchedItem;
+    }
+    else {
+        console.log("fail");
+        callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), (data) => {
+            if (searchInput.value)
+                searchedItem = array.find((object) => { var _a; return (_a = object[category]) === null || _a === void 0 ? void 0 : _a.includes(searchWord); });
+            console.log(searchedItem, "11111111111111111111111111111");
+            if (searchedItem) {
+                renderPosts(postContainer, searchedItem);
+            }
+            else if (data.length === 1) {
+                renderPosts(postContainer, data[0]);
+            }
+            else {
+                data.forEach((element) => renderPosts(postContainer, element));
+            }
+            const observedObj = document.querySelectorAll("[data-observed]");
+            const target = observedObj[observedObj.length - 1];
+            console.log(observedObj, target);
+            setTarget();
+            isObserving(true, intersectionObserver);
+        }, postOption);
+    }
+}
+if (searchInput.value) {
+    console.log("TESTerewrewrewr");
+}

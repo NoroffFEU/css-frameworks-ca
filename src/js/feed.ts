@@ -5,19 +5,40 @@ const endpoint = endpointObject("Jarle");
 const sortInput = document.querySelector("#sort--feed") as HTMLSelectElement;
 const sortOrder = document.querySelector("#sort--order") as HTMLInputElement;
 const searchInput = document.querySelector("#search--feed") as HTMLInputElement;
+const searchButton = document.querySelector(
+  "#search--button"
+) as HTMLButtonElement;
 
-/*sortOrder.addEventListener("input", () => {
-  endpoint.sortAfter() = endpoint.sortOrder(
-    endpoint.sortAfter(sortInput.value),
-    sortOrder.value
+searchButton.addEventListener("click", () => {
+  callApi(
+    endpoint.sortAndPaginate.setString(
+      endpoint.generatePaginate(sortInput.value, sortOrder.value)
+    ),
+    (data: post[]) => {
+      if (searchInput.value) {
+        if (searchApi(data, sortInput.value, searchInput.value)) {
+          renderPosts(
+            postContainer,
+            searchApi(data, sortInput.value, searchInput.value)
+          );
+        } else if (data.length === 1) {
+          renderPosts(postContainer, data[0]);
+        }
+      } else {
+        data.forEach((element: post) => renderPosts(postContainer, element));
+        console.log("else route");
+      }
+
+      const observedObj = document.querySelectorAll("[data-observed]");
+      const target = observedObj[observedObj.length - 1];
+      console.log(observedObj, target);
+      setTarget();
+      isObserving(true, intersectionObserver);
+    },
+    postOption
   );
-  endpoint.sortAfter();
 });
 
-sortInput.addEventListener("input", () => {
-  console.log(sortInput.value);
-});
-*/
 function observerTargetClosure() {
   let target: Element;
   function setTarget() {
@@ -112,8 +133,21 @@ callApi(
     endpoint.generatePaginate(sortInput.value, sortOrder.value)
   ),
   (data: post[]) => {
-    data.forEach((element: post) => renderPosts(postContainer, element));
-
+    console.log(data);
+    if (searchInput.value) {
+      if (searchApi(data, sortInput.value, searchInput.value)) {
+        renderPosts(
+          postContainer,
+          searchApi(data, sortInput.value, searchInput.value)
+        );
+      } else if (data.length === 1) {
+        renderPosts(postContainer, data[0]);
+      }
+    } else {
+      data.forEach((element: post) => renderPosts(postContainer, element));
+      console.log("else route");
+    }
+    //console.log(data);
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -212,7 +246,12 @@ const intersectionObserver = new IntersectionObserver((entries) =>
           endpoint.generatePaginate(sortInput.value, sortOrder.value)
         ),
         (data: post[]) => {
-          data.forEach((element: post) => renderPosts(postContainer, element));
+          if (data.length === 1) {
+            renderPosts(postContainer, data[0]);
+          } else
+            data.forEach((element: post) =>
+              renderPosts(postContainer, element)
+            );
           isObserving(false, intersectionObserver);
           setTarget();
           isObserving(true, intersectionObserver);
@@ -232,3 +271,50 @@ const intersectionObserver = new IntersectionObserver((entries) =>
     }
   })
 );
+
+function searchApi(array: {}[], category: string, searchWord: string) {
+  if (!searchWord || !category) {
+    console.log("returned early");
+    return;
+  }
+  console.log("category=", category, searchWord);
+  let searchedItem = array.find((object) =>
+    object[category]?.includes(searchWord)
+  );
+  console.log(searchedItem, "11111111111111111111111111111");
+  if (searchedItem) {
+    return searchedItem;
+  } else {
+    console.log("fail");
+    callApi(
+      endpoint.sortAndPaginate.setString(
+        endpoint.generatePaginate(sortInput.value, sortOrder.value)
+      ),
+      (data: post[]) => {
+        if (searchInput.value)
+          searchedItem = array.find((object) =>
+            object[category]?.includes(searchWord)
+          );
+        console.log(searchedItem, "11111111111111111111111111111");
+        if (searchedItem) {
+          renderPosts(postContainer, searchedItem);
+        } else if (data.length === 1) {
+          renderPosts(postContainer, data[0]);
+        } else {
+          data.forEach((element: post) => renderPosts(postContainer, element));
+        }
+
+        const observedObj = document.querySelectorAll("[data-observed]");
+        const target = observedObj[observedObj.length - 1];
+        console.log(observedObj, target);
+        setTarget();
+        isObserving(true, intersectionObserver);
+      },
+      postOption
+    );
+  }
+}
+
+if (searchInput.value) {
+  console.log("TESTerewrewrewr");
+}

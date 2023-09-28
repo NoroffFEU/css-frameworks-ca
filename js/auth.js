@@ -90,10 +90,14 @@ export async function loginUser(email, password) {
  */
 export function getAuthHeader() {
     const token = localStorage.getItem('accessToken');
+    if (!token) {
+        throw new Error('No access token found in local storage');
+    }
     return {
         Authorization: `Bearer ${token}`,
     };
 }
+
 /**
  * Event listener for window onload to handle form submission and checkbox change.
  * @listens window:onload

@@ -28,8 +28,7 @@
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+                    <button class="btn btn-outline-light" type="button">Search</button>                </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/index.html">Login</a>
@@ -66,8 +65,7 @@
                     <div id="error-message" class="text-danger text-center"></div>                    
                     <button type="submit" class="btn w-100" id="submitButton">Login</button>
                 </form>
-                <p class="text-center mt-3">Not a member? <a href="#" class="custom-link">Register now</a></p>
-            </div>
+                <p class="text-center mt-3">Not a member? <a href="#" class="custom-link" onclick="document.getElementById('isRegistering').checked = true; updateButtonText();">Register now</a></p></div>
         </div>
     </div>
     

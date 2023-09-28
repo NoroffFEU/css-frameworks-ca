@@ -51,8 +51,3 @@ function displayPostDetails(post) {
         </div>
     `;
 }
-console.log(window.location.href);
-
-
-
-

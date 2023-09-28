@@ -31,10 +31,7 @@
                         <option value="">All Tags</option>
                     </select>
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
-                    <button class="btn btn-outline-light" type="submit">
-                        <span class="visually-hidden">Submit Search</span>
-                        Search
-                    </button>
+                    <button class="btn btn-outline-light" type="button">Search</button>
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -78,7 +75,7 @@
             </div>
         </form>
         <div class="spinner-border" role="status" id="loading" style="display: none;">
-            <span class="sr-only"></span>
+            <span class="sr-only">Loading...</span>
         </div>
         <div id="postsContainer" class="posts-container"></div>
         <button id="nextPage" class="btn btn-primary custom-btn">Next Page</button>

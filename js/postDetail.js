@@ -10,8 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (postId) {
         fetchPostById(postId);
     }
-    console.log(urlParams);
-    console.log(postId);
 });
 /**
  * Fetches a post by its ID.

@@ -136,12 +136,12 @@ document.getElementById('prevPage').addEventListener('click', () => {
             postCard.classList.add('card', 'mb-4');
 
             const postImage = document.createElement('img');
-            postImage.src = post.media || '/img/panda.jpg'; // Use post media if available, otherwise use a default image
+            postImage.src = post.media;
             postImage.onerror = () => {
-                postImage.src = '/img/panda.jpg'; // Set to a default image if the original image fails to load
-            };
+                postImage.src = '/img/panda.jpg';
+                };
             postImage.classList.add('card-img-top');
-            postImage.alt = 'Post Image';
+            postImage.alt = '';
             postCard.appendChild(postImage);
 
             const postBody = document.createElement('div');

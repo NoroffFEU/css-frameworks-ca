@@ -1,8 +1,13 @@
 import { API_BASE_URL } from '../js/constants.js';
-
-let currentFilter = 'newest'; // Default filter
+import { getAuthHeader } from './auth.js';
+let currentFilter = 'newest';
 let searchQuery = '';
-
+/**
+ * Retrieves the authorization header from local storage.
+ * @function
+ * @throws Will throw an error if no access token is found in local storage.
+ * @returns {Object} Returns an object with the Authorization header.
+ */
 window.getAuthHeader = function() {
     const token = localStorage.getItem('accessToken');
     if (!token) {
@@ -12,11 +17,15 @@ window.getAuthHeader = function() {
         Authorization: `Bearer ${token}`,
     };
 };
-
-
-let currentOffset = 0; // Start from the first result
-const limit = 10; // Number of results per page
-
+let currentOffset = 0;
+const limit = 10;
+/**
+ * Fetches posts based on the current filter, search query, and pagination offset.
+ * @async
+ * @function
+ * @throws Will throw an error if the network response is not ok or other miscellaneous errors.
+ * @returns {Promise<void>} No return value.
+ */
 async function fetchPosts() {
     const loading = document.getElementById('loading');
     try {
@@ -82,25 +91,40 @@ async function fetchPosts() {
         }
     }
 }
-
-
+/**
+ * Event listener for search bar input.
+ * Updates the search query and fetches posts based on the input value.
+ * @listens searchBar:input
+ */
 document.getElementById('searchBar').addEventListener('input', (event) => {
     event.preventDefault();
     searchQuery = event.target.value;
     fetchPosts();
 });
-
+/**
+ * Event listener for next page button click.
+ * Increments the current offset by the limit and fetches posts.
+ * @listens nextPage:click
+ */
 document.getElementById('nextPage').addEventListener('click', () => {
     currentOffset += limit;
     fetchPosts();
   });
-  
-  document.getElementById('prevPage').addEventListener('click', () => {
+/**
+ * Event listener for previous page button click.
+ * Decrements the current offset by the limit and fetches posts.
+ * Ensures offset is not negative.
+ * @listens prevPage:click
+ */
+document.getElementById('prevPage').addEventListener('click', () => {
     currentOffset = Math.max(0, currentOffset - limit); // Ensure offset is not negative
     fetchPosts();
   });
-  
-
+/**
+ * Displays an array of posts on the page.
+ * @function
+ * @param {Array} posts - An array of post objects to display.
+ */
   function displayPosts(posts) {
     const postsContainer = document.getElementById('postsContainer');
     if (postsContainer) {
@@ -138,6 +162,18 @@ document.getElementById('nextPage').addEventListener('click', () => {
             readMoreButton.textContent = 'Read More';
             postBody.appendChild(readMoreButton);
 
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.classList.add('btn', 'btn-warning', 'me-2');
+            editButton.onclick = () => editPost(post.id); // Add this function
+            postBody.appendChild(editButton);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.classList.add('btn', 'btn-danger');
+            deleteButton.onclick = () => deletePost(post.id);
+            postBody.appendChild(deleteButton);
+
             postCard.appendChild(postBody);
             postsContainer.appendChild(postCard);
         });
@@ -145,33 +181,133 @@ document.getElementById('nextPage').addEventListener('click', () => {
         console.error('Container element not found');
     }
 }
+/**
+ * Handles the editing of a post by prompting the user for new title and content.
+ * @function
+ * @param {string} id - The ID of the post to edit.
+ */
+function editPost(id) {
+    const title = prompt('Enter the new title:');
+    const content = prompt('Enter the new content:');
+    if (title && content) {
+        const updatedPost = {
+            title: title,
+            body: content,
+        };
+        updatePost(id, updatedPost);
+    }
+}
+/**
+ * Sends a request to update a post with new data.
+ * @async
+ * @function
+ * @param {string} id - The ID of the post to update.
+ * @param {Object} updatedPost - An object containing the updated post data.
+ * @throws Will throw an error if the request fails.
+ */
+async function updatePost(id, updatedPost) {
+    try {
+        const options = {
+            method: 'PUT',
+            headers: {
+                ...getAuthHeader(),
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedPost),
+        };
 
+        const response = await fetch(`${API_BASE_URL}/social/posts/${id}`, options);
+
+        if (!response.ok) {
+            throw new Error('Failed to update post');
+        }
+
+        console.log('Post updated successfully');
+        fetchPosts(); // Refresh the posts
+
+    } catch (error) {
+        console.error('Error updating post:', error);
+    }
+}
+/**
+ * Sends a request to delete a post by ID.
+ * @async
+ * @function
+ * @param {string} id - The ID of the post to delete.
+ * @throws Will throw an error if the request fails.
+ */
+async function deletePost(id) {
+    try {
+        const confirmation = confirm('Are you sure you want to delete this post?');
+        if (!confirmation) return;
+
+        const options = {
+            method: 'DELETE',
+            headers: getAuthHeader(),
+        };
+
+        const response = await fetch(`${API_BASE_URL}/social/posts/${id}`, options);
+
+        if (!response.ok) {
+            throw new Error('Failed to delete post');
+        }
+
+        console.log('Post deleted successfully');
+        fetchPosts(); // Refresh the posts
+
+    } catch (error) {
+        console.error('Error deleting post:', error);
+    }
+}
+/**
+ * Event listener for sort newest button click.
+ * Sets the current filter to 'newest' and fetches posts.
+ * @listens sortNewest:click
+ */
 document.getElementById('sortNewest').addEventListener('click', () => {
     currentFilter = 'newest';
     fetchPosts();
 });
-
+/**
+ * Event listener for sort oldest button click.
+ * Sets the current filter to 'oldest' and fetches posts.
+ * @listens sortOldest:click
+ */
 document.getElementById('sortOldest').addEventListener('click', () => {
     currentFilter = 'oldest';
     fetchPosts();
 });
-
+/**
+ * Event listener for sort popular button click.
+ * Sets the current filter to 'popular' and fetches posts.
+ * @listens sortPopular:click
+ */
 document.getElementById('sortPopular').addEventListener('click', () => {
     currentFilter = 'popular';
     fetchPosts();
 });
-
+/**
+ * Event listener for tag filter change.
+ * Resets the current offset and fetches posts based on the selected tag.
+ * @listens tagFilter:change
+ */
 document.getElementById('tagFilter').addEventListener('change', () => {
     currentOffset = 0; // Reset the offset when filter changes
     fetchPosts();
 });
-
-
-
-// Call the fetchPosts function when the page loads
+/**
+ * Event listener for document DOMContentLoaded.
+ * Calls the fetchPosts function when the page loads.
+ * @listens document:DOMContentLoaded
+ */
 document.addEventListener('DOMContentLoaded', fetchPosts);
-
-        
+/**
+ * Handles the creation of a new post.
+ * @async
+ * @function
+ * @param {Event} event - The event object from the form submission.
+ * @throws Will throw an error if the request fails.
+ */       
 async function createPost(event) {
     event.preventDefault();
 
@@ -230,10 +366,18 @@ async function createPost(event) {
         console.error('Error creating post:', error);
     }
 }
-
-// Add event listener to the form
+/**
+ * Event listener for post form submit.
+ * Calls the createPost function when the form is submitted.
+ * @listens postForm:submit
+ */
 document.getElementById('postForm').addEventListener('submit', createPost);
-
+/**
+ * Fetches all unique tags from all posts and populates the tag filter dropdown.
+ * @async
+ * @function
+ * @throws Will throw an error if the request to fetch posts fails.
+ */
 async function fetchAllTags() {
     const url = `${API_BASE_URL}/social/posts`;
     const options = {
@@ -257,14 +401,12 @@ async function fetchAllTags() {
         tagFilterDropdown.appendChild(option);
     });
 }
-
-// Call this function when the page loads
+/**
+ * Event listener for document DOMContentLoaded.
+ * Calls the fetchAllTags and fetchPosts functions when the page loads.
+ * @listens document:DOMContentLoaded
+ */
 document.addEventListener('DOMContentLoaded', () => {
     fetchAllTags();
-    fetchPosts(); // Your existing fetchPosts function call
+    fetchPosts();
 });
-document.addEventListener('DOMContentLoaded', () => {
-    const postId = window.location.pathname.split('/').pop();
-    fetchPostById(postId);
-  });
- 

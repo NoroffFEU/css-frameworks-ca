@@ -29,7 +29,6 @@
                 <form class="d-flex">
                     <select class="form-select me-2" id="tagFilter">
                         <option value="">All Tags</option>
-                        <!-- Add options for other tags here -->
                     </select>
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
                     <button class="btn btn-outline-light" type="submit">
@@ -37,7 +36,6 @@
                         Search
                     </button>
                 </form>
-                             
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/index.html">Login</a>
@@ -80,17 +78,17 @@
             </div>
         </form>
         <div class="spinner-border" role="status" id="loading" style="display: none;">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only"></span>
         </div>
         <div id="postsContainer" class="posts-container"></div>
         <button id="nextPage" class="btn btn-primary custom-btn">Next Page</button>
         <button id="prevPage" class="btn btn-secondary custom-btn">Previous Page</button>
     </div>
-
     <footer class="text-center mt-5">
         <p>&copy; 2023 Socially. All rights reserved.</p>
     </footer>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/js/feed.js" defer></script>
+    <script type="module" src="/js/postDetail.js" defer></script>
 </body>
 </html>

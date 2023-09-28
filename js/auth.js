@@ -1,8 +1,15 @@
 import { API_BASE_URL } from '../js/constants.js';
-
-
-
-async function registerUser(name, email, password) {
+/**
+ * Registers a new user.
+ * @async
+ * @function
+ * @param {string} name - The name of the user.
+ * @param {string} email - The email of the user.
+ * @param {string} password - The password of the user.
+ * @throws Will throw an error if registration fails.
+ * @returns {Promise<void>} No return value.
+ */
+export async function registerUser(name, email, password) {
     try {
         const response = await fetch(`${API_BASE_URL}/social/auth/register`, {
             method: 'POST',
@@ -37,8 +44,16 @@ async function registerUser(name, email, password) {
         console.error('Error:', error);
     }
 }
-
-async function loginUser(email, password) {
+/**
+ * Logs in a user.
+ * @async
+ * @function
+ * @param {string} email - The email of the user.
+ * @param {string} password - The password of the user.
+ * @throws Will throw an error if login fails.
+ * @returns {Promise<void>} No return value.
+ */
+export async function loginUser(email, password) {
     try {
         const response = await fetch(`${API_BASE_URL}/social/auth/login`, {
             method: 'POST',
@@ -68,37 +83,53 @@ async function loginUser(email, password) {
         console.error('Error:', error);
     }
 }
-
-function getAuthHeader() {
+/**
+ * Retrieves the authorization header.
+ * @function
+ * @returns {Object} The authorization header object.
+ */
+export function getAuthHeader() {
     const token = localStorage.getItem('accessToken');
     return {
         Authorization: `Bearer ${token}`,
     };
 }
+/**
+ * Event listener for window onload to handle form submission and checkbox change.
+ * @listens window:onload
+ */
+window.onload = function() {
+    const authForm = document.getElementById('authForm');
+    if (authForm) {
+        authForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-document.getElementById('authForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
+            const username = event.target.username.value;
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            const submitButton = document.getElementById('submitButton');
+            const isRegistering = submitButton.textContent === 'Register';
 
-    const username = event.target.username.value;
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-    const submitButton = document.getElementById('submitButton');
-    const isRegistering = submitButton.textContent === 'Register';
-
-    if (isRegistering) {
-        registerUser(username, email, password);
-    } else {
-        loginUser(email, password);
+            if (isRegistering) {
+                registerUser(username, email, password);
+            } else {
+                loginUser(email, password);
+            }
+        });
     }
-});
 
+    const isRegisteringCheckbox = document.getElementById('isRegistering');
+    if (isRegisteringCheckbox) {
+        isRegisteringCheckbox.addEventListener('change', updateButtonText);
+        updateButtonText();
+    }
+};
+/**
+ * Updates the text of the submit button based on the checkbox state.
+ * @function
+ */
 function updateButtonText() {
     const isRegistering = document.getElementById('isRegistering').checked;
     const submitButton = document.getElementById('submitButton');
     submitButton.textContent = isRegistering ? 'Register' : 'Login';
 }
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('isRegistering').addEventListener('change', updateButtonText);
-
-    updateButtonText();
-});

@@ -23,6 +23,7 @@ async function gatherUserPosts(url) {
 
     json.forEach((post) => {
       const titleElement = document.createElement("div");
+      titleElement.classList.add("text-center", "rounded", "p-3");
       titleElement.textContent = post.title;
       profilePosts.appendChild(titleElement);
     });

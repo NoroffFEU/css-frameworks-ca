@@ -1,22 +1,32 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/";
-const userName = localStorage.getItem("userName");
-const userEmail = localStorage.getItem("userEmail");
+const API_Profiles_URL = "https://api.noroff.dev/api/v1/social/profiles";
 
-async function createProfile(url) {
+const userName = localStorage.getItem("userName");
+
+async function gatherUserPosts(url) {
   try {
     console.log(url);
     const token = localStorage.getItem("accessToken");
-    console.log(token);
-    const fetchProfileInfo = {
+    const fetchUserPosts = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await fetch(url, fetchProfileInfo);
-    console.log(response);
+    const response = await fetch(url, fetchUserPosts);
+    // console.log(response);
     const json = await response.json();
+
+    //Adding posts.
+    const profilePosts = document.querySelector(".profilePosts");
+
+    profilePosts.innerHTML = "";
+
+    json.forEach((post) => {
+      const titleElement = document.createElement("div");
+      titleElement.textContent = post.title;
+      profilePosts.appendChild(titleElement);
+    });
 
     console.log(json);
   } catch (error) {
@@ -24,6 +34,6 @@ async function createProfile(url) {
   }
 }
 
-const profileInfo = `${API_BASE_URL}social/profiles/${userName}`;
+const userPosts = `${API_Profiles_URL}/${userName}/posts`;
 
-createProfile(profileInfo);
+gatherUserPosts(userPosts);

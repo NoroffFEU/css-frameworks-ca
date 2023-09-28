@@ -26,7 +26,10 @@ async function loginUser(url, userData) {
       const json = await response.json();
       console.log(json);
       const accessToken = json.accessToken;
+      const userName = json.name;
       localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("userName", userName);
+      localStorage.setItem("userEmail", userEmail);
 
       // Redirect to the profile page
       window.location.href = "profile/index.html";

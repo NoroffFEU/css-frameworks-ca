@@ -1,4 +1,6 @@
 const API_BASE_URL = "https://api.noroff.dev/api/v1/";
+const userName = localStorage.getItem("userName");
+const userEmail = localStorage.getItem("userEmail");
 
 async function createProfile(url) {
   try {
@@ -20,6 +22,6 @@ async function createProfile(url) {
     console.log(error);
   }
 }
-const profileInfo = `${API_BASE_URL}social/profiles/{bulba}`;
+const profileInfo = `${API_BASE_URL}social/profiles/${userName}`;
 
 createProfile(profileInfo);

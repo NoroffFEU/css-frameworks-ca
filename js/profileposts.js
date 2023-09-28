@@ -1,6 +1,5 @@
 const API_Profiles_URL = "https://api.noroff.dev/api/v1/social/profiles";
-
-const userName = localStorage.getItem("userName");
+// const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
   try {

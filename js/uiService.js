@@ -1,6 +1,5 @@
 import { fetchPosts, updatePost, deletePost, createPost } from './postService.js';
 import { fetchAllTags } from './postService.js';
-
 /**
  * Sets up event listeners for various UI elements.
  * @function
@@ -12,7 +11,6 @@ export function setupEventListeners(state) {
     const prevPage = document.getElementById('prevPage');
     const sortNewest = document.getElementById('sortNewest');
     const sortOldest = document.getElementById('sortOldest');
-    const sortPopular = document.getElementById('sortPopular');
     const tagFilter = document.getElementById('tagFilter');
     const postForm = document.getElementById('postForm');
 
@@ -55,8 +53,9 @@ export function setupEventListeners(state) {
     }
     if (tagFilter) {
         tagFilter.addEventListener('change', () => {
+            const selectedTag = tagFilter.value; // Get the selected tag
             state.currentOffset = 0;
-            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter, selectedTag);
         });
     }
 

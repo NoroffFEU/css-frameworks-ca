@@ -1,6 +1,5 @@
 import { setupEventListeners } from './uiService.js';
 import { fetchPosts, fetchAllTags } from './postService.js';
-
 export let state = {
     currentFilter: 'newest',
     searchQuery: '',
@@ -8,7 +7,6 @@ export let state = {
     limit: 10
 };
 setupEventListeners(state);
-
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners(state);
     fetchAllTags();

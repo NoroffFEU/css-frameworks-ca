@@ -113,7 +113,6 @@ form {
     .btn {
         background-color: $primary;
         color: $background-color;
-
         &:hover {
             background-color: darken($primary, 8%);
         }

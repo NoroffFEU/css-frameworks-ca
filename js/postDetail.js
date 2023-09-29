@@ -42,6 +42,7 @@ export async function fetchPostById(id) {
  */
 export function displayPostDetails(post) {
     const postDetailsDiv = document.getElementById('postDetails');
+    console.log(postDetailsDiv);
     postDetailsDiv.innerHTML = `
         <div class="card">
             <img src="${post.media || '/img/panda.jpg'}" class="card-img-top" alt="Post Image">

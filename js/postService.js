@@ -1,7 +1,6 @@
 import { getAuthHeader } from './auth.js';
 import { API_BASE_URL } from '../js/constants.js';
 import { state } from './main.js';
-
 /**
  * Fetches posts based on the current filter, search query, and pagination offset.
  * ...
@@ -19,45 +18,31 @@ export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagF
     const loading = document.getElementById('loading');
     try {
         if (loading) {
-            // Show the loading indicator
             loading.style.display = 'block';
         }
         const options = {
             headers: getAuthHeader(),
         };
-
-        // Constructing URL using URL and URLSearchParams
         let url = new URL(`${API_BASE_URL}/social/posts`);
         let params = new URLSearchParams({
             limit: limit,
             offset: offset
         });
-
         if (searchQuery) {
-            params.append('q', searchQuery);
+            params.append('search', searchQuery);
         }
-
         if (currentFilter === 'newest') {
             params.append('sort', 'created');
             params.append('sortOrder', 'desc');
         } else if (currentFilter === 'oldest') {
             params.append('sort', 'created');
             params.append('sortOrder', 'asc');
-        } else if (currentFilter === 'popular') {
-            params.append('sort', 'likes');
-            params.append('sortOrder', 'desc');
         }
-
         if (tagFilter) {
             params.append('_tag', tagFilter);
             params.append('_active', 'true');
-            params.append('_author', 'true');
-            params.append('_comments', 'true');
-            params.append('_reactions', 'true');
         }
-
         url.search = params.toString();
-
         const response = await fetch(url.toString(), options);
         if (!response.ok) {
             console.error('Error Response:', await response.json());
@@ -73,7 +58,6 @@ export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagF
         }
     }
 }
-
 /**
  * Sends a request to update a post with new data.
  * @async
@@ -132,7 +116,6 @@ export async function deletePost(id) {
         console.error('Error deleting post:', error);
     }
 }
-
 /**
  * Handles the creation of a new post.
  * @async
@@ -191,7 +174,6 @@ export async function createPost(event) {
         console.error('Error creating post:', error);
     }
 }
-
 /**
  * Fetches all unique tags from all posts and populates the tag filter dropdown.
  * @async
@@ -279,7 +261,6 @@ export function displayPosts(posts) {
  * @function
  * @param {string} id - The ID of the post to edit.
  */
-
 export function editPost(id) {
     const title = prompt('Enter the new title:');
     if (title === null) {

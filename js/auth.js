@@ -39,6 +39,7 @@ export async function registerUser(name, email, password) {
             errorMessageDiv.textContent = 'User registered successfully!'; // Display a success message
             errorMessageDiv.classList.remove('text-danger');
             errorMessageDiv.classList.add('text-success');
+            window.location.href = '/profile/index.html';
         }
     } catch (error) {
         console.error('Error:', error);
@@ -97,7 +98,6 @@ export function getAuthHeader() {
         Authorization: `Bearer ${token}`,
     };
 }
-
 /**
  * Event listener for window onload to handle form submission and checkbox change.
  * @listens window:onload

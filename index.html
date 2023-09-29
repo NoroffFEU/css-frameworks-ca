@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="log in and register">
+    <meta name="description" content="log in or register">
     <title>Authentication</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -68,15 +68,11 @@
                 <p class="text-center mt-3">Not a member? <a href="#" class="custom-link" onclick="document.getElementById('isRegistering').checked = true; updateButtonText();">Register now</a></p></div>
         </div>
     </div>
-    
     <footer class="text-center mt-5">
         <p>&copy; 2023 Socially. All rights reserved.</p>
     </footer>
-<script type="module" src="/js/auth.js"></script>
+<script type="module" src="/js/auth.js" defer></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
-<script type="module" src="/js/uiService.js" defer></script>
-<script type="module" src="/js/postDetail.js" defer></script>
-<script type="module" src="/js/main.js" defer></script>
 </body>
 </html>
 

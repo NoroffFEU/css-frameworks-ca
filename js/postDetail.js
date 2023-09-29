@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * @throws Will throw an error if the response is not ok.
  * @returns {Promise<void>} No return value.
  */
-async function fetchPostById(id) {
+export async function fetchPostById(id) {
     const url = `${API_BASE_URL}/social/posts/${id}`;
     const options = {
         headers: getAuthHeader(), // make sure getAuthHeader is imported or available in this file
@@ -40,7 +40,7 @@ async function fetchPostById(id) {
  * @param {string} post.title - The title of the post.
  * @param {string} post.body - The body content of the post.
  */
-function displayPostDetails(post) {
+export function displayPostDetails(post) {
     const postDetailsDiv = document.getElementById('postDetails');
     postDetailsDiv.innerHTML = `
         <div class="card">

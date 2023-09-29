@@ -1,12 +1,13 @@
 import { setupEventListeners } from './uiService.js';
 import { fetchPosts, fetchAllTags } from './postService.js';
 
-let state = {
+export let state = {
     currentFilter: 'newest',
     searchQuery: '',
     currentOffset: 0,
     limit: 10
 };
+setupEventListeners(state);
 
 document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners(state);

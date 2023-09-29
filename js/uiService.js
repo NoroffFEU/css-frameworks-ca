@@ -1,4 +1,6 @@
 import { fetchPosts, updatePost, deletePost, createPost } from './postService.js';
+import { fetchAllTags } from './postService.js';
+
 /**
  * Sets up event listeners for various UI elements.
  * @function
@@ -17,55 +19,48 @@ export function setupEventListeners(state) {
     if (searchBar) {
         searchBar.addEventListener('input', (event) => {
             event.preventDefault();
-            searchQuery = event.target.value;
-            window.history.pushState(null, '', `?searchQuery=${searchQuery}`);
-            fetchPosts();
+            state.searchQuery = event.target.value;
+            window.history.pushState(null, '', `?searchQuery=${state.searchQuery}`);
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
         });
     }
 
     if (nextPage) {
         nextPage.addEventListener('click', () => {
-            currentOffset += limit;
-            fetchPosts();
+            state.currentOffset += state.limit;
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
         });
     }
 
     if (prevPage) {
         prevPage.addEventListener('click', () => {
-            currentOffset = Math.max(0, currentOffset - limit);
-            fetchPosts();
+            state.currentOffset = Math.max(0, state.currentOffset - state.limit);
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
         });
     }
 
     if (sortNewest) {
         sortNewest.addEventListener('click', () => {
-            currentFilter = 'newest';
-            fetchPosts();
+            state.currentFilter = 'newest';
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
         });
     }
+
 
     if (sortOldest) {
         sortOldest.addEventListener('click', () => {
-            currentFilter = 'oldest';
-            fetchPosts();
+            state.currentFilter = 'oldest';
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
         });
     }
-
-    if (sortPopular) {
-        sortPopular.addEventListener('click', () => {
-            currentFilter = 'popular';
-            fetchPosts();
-        });
-    }
-
     if (tagFilter) {
         tagFilter.addEventListener('change', () => {
-            currentOffset = 0;
-            fetchPosts();
+            state.currentOffset = 0;
+            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
         });
     }
 
-    document.addEventListener('DOMContentLoaded', fetchPosts);
+    document.addEventListener('DOMContentLoaded', () => fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter));
 
     if (postForm) {
         postForm.addEventListener('submit', createPost);
@@ -73,7 +68,7 @@ export function setupEventListeners(state) {
 
     document.addEventListener('DOMContentLoaded', () => {
         fetchAllTags();
-        fetchPosts();
+        fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
     });
 }
 

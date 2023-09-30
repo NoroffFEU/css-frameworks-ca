@@ -24,6 +24,12 @@ body {
   background-position: center;
 }
 
+.post-container {
+  border: 1px solid #ccc; /* Add border style here */
+  padding: 10px; /* Add padding for spacing */
+  margin-bottom: 20px; /* Add spacing between posts */
+}
+
 .profile img {
   width: 200px;
 }

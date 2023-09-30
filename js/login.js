@@ -22,16 +22,19 @@ async function loginUser(url, userData) {
     console.log(response);
 
     if (response.ok) {
-      // Check if the response is successful (status code 200-299)
+      // Check if the response is successful
       const json = await response.json();
       console.log(json);
       const accessToken = json.accessToken;
+      const userName = json.name;
       localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("userName", userName);
+      localStorage.setItem("userEmail", userEmail);
 
       // Redirect to the profile page
       window.location.href = "profile/index.html";
     } else {
-      // Handle unsuccessful login here (e.g., display an error message)
+      // Handle unsuccessful login here
       console.log("Login failed");
     }
   } catch (error) {

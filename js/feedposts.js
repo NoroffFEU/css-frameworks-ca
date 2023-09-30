@@ -20,7 +20,6 @@ async function fetchAllUserPosts(url) {
     postWallContainer.innerHTML = "";
 
     json.forEach((post) => {
-      // Check if post.title or post.body exists and are not empty
       if (!post.title || !post.body) {
         return;
       }
@@ -84,11 +83,32 @@ async function fetchAllUserPosts(url) {
       postCard.appendChild(postTitle);
       postCard.appendChild(postBody);
 
+      if (post.media && post.media.trim() !== "") {
+        const postMedia = document.createElement("img");
+        postMedia.classList.add("img-fluid", "align-self-center", "m-5");
+        postMedia.src = post.media;
+        postMedia.style.width = "200px";
+        postCard.appendChild(postMedia);
+      }
+
+      const iconContainer = document.createElement("div");
+      iconContainer.classList.add(
+        "icon-container",
+        "d-flex",
+        "justify-content-end"
+      );
+
+      const heartIcon = document.createElement("i");
+      heartIcon.classList.add("far", "fa-heart");
+      heartIcon.style.fontSize = "25px";
+      heartIcon.style.color = "red";
+
+      iconContainer.appendChild(heartIcon);
+
       // Append the postCard to the postContainer
       postContainer.appendChild(postCard);
 
       // Append each postContainer to the postsWall
-      const postWallContainer = document.querySelector(".postsWall");
       postWallContainer.appendChild(postContainer);
     });
 

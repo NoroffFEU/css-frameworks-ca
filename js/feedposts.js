@@ -69,9 +69,6 @@ async function fetchAllUserPosts(url) {
       postCardBody.appendChild(postAuthor);
       postCardBody.appendChild(postDate);
 
-      // Append the postCardBody to the postCard
-      postCard.appendChild(postCardBody);
-
       const postTitle = document.createElement("p");
       postTitle.classList.add("fw-bolder", "fs-3", "m-2");
       postTitle.textContent = post.title;
@@ -80,14 +77,23 @@ async function fetchAllUserPosts(url) {
       postBody.classList.add("fs-4", "m-2");
       postBody.textContent = post.body;
 
+      // Append the postCardBody to the postCard
+      postCard.appendChild(postCardBody);
+
       postCard.appendChild(postTitle);
       postCard.appendChild(postBody);
 
       if (post.media && post.media.trim() !== "") {
         const postMedia = document.createElement("img");
-        postMedia.classList.add("img-fluid", "align-self-center", "m-5");
+        postMedia.classList.add(
+          "img-fluid",
+          "align-self-center",
+          "m-5",
+          "object-fit-contain",
+          "rounded"
+        );
         postMedia.src = post.media;
-        postMedia.style.width = "200px";
+        // postMedia.style.width = "200px";
         postCard.appendChild(postMedia);
       }
 
@@ -99,17 +105,17 @@ async function fetchAllUserPosts(url) {
       );
 
       const heartIcon = document.createElement("i");
-      heartIcon.classList.add("far", "fa-heart");
-      heartIcon.style.fontSize = "25px";
+      heartIcon.classList.add("far", "fa-heart", "m-3");
+      heartIcon.style.fontSize = "40px";
       heartIcon.style.color = "red";
 
       iconContainer.appendChild(heartIcon);
 
       // Append the postCard to the postContainer
-      postContainer.appendChild(postCard);
+      postCard.appendChild(iconContainer);
 
       // Append each postContainer to the postsWall
-      postWallContainer.appendChild(postContainer);
+      postWallContainer.appendChild(postCard);
     });
 
     console.log(json);

@@ -91,14 +91,6 @@ async function gatherUserPosts(url) {
         postMedia.style.width = "100px";
         postContainer.appendChild(postMedia);
       }
-      //added an else statement so i could style the content if it found anything.
-      else {
-        // const postMedia = document.createElement("img");
-        // postMedia.classList.add("img-fluid", "align-self-center");
-        // postMedia.src = "/images/backgroundimage.jpg"; // Set the default image source
-        // postMedia.style.width = "200px";
-        // postContainer.appendChild(postMedia);
-      }
 
       const iconContainer = document.createElement("div");
       iconContainer.classList.add(

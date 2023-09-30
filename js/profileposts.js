@@ -90,13 +90,32 @@ async function gatherUserPosts(url) {
         postMedia.src = post.media;
         postMedia.style.width = "100px";
         postContainer.appendChild(postMedia);
-      } else {
+      }
+      //added an else statement so i could style the content if it found anything.
+      else {
         // const postMedia = document.createElement("img");
         // postMedia.classList.add("img-fluid", "align-self-center");
         // postMedia.src = "/images/backgroundimage.jpg"; // Set the default image source
         // postMedia.style.width = "200px";
         // postContainer.appendChild(postMedia);
       }
+
+      const iconContainer = document.createElement("div");
+      iconContainer.classList.add(
+        "icon-container",
+        "d-flex",
+        "justify-content-end"
+      );
+
+      const heartIcon = document.createElement("i");
+      heartIcon.classList.add("fa-regular", "fa-heart");
+      heartIcon.style.fontSize = "25px";
+      heartIcon.style.color = "red";
+
+      iconContainer.appendChild(heartIcon);
+
+      // Append the icon container to the post container
+      postContainer.appendChild(iconContainer);
 
       // Append the main postContainer to profilePosts
       profilePosts.appendChild(postContainer);

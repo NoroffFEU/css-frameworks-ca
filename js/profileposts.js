@@ -26,7 +26,8 @@ async function gatherUserPosts(url) {
       postContainer.classList.add(
         "post-container",
         "border",
-        "mb-1",
+        "border-black",
+        "mb-2",
         "p-3",
         "d-flex",
         "flex-column"
@@ -86,9 +87,12 @@ async function gatherUserPosts(url) {
 
       if (post.media && post.media.trim() !== "") {
         const postMedia = document.createElement("img");
-        postMedia.classList.add("img-fluid", "align-self-center");
+        postMedia.classList.add(
+          "img-fluid",
+          "align-self-center",
+          "object-fit-contain"
+        );
         postMedia.src = post.media;
-        postMedia.style.width = "100px";
         postContainer.appendChild(postMedia);
       }
 

@@ -93,7 +93,6 @@ async function fetchAllUserPosts(url) {
           "rounded"
         );
         postMedia.src = post.media;
-        // postMedia.style.width = "200px";
         postCard.appendChild(postMedia);
       }
 

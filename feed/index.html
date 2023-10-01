@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"> -->
     <link rel="stylesheet" href="../dist/css/index.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>Ecology Society | Feed</title>
@@ -12,11 +12,15 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand justify-content-center" href="#">Ecology Society</a>
+            <form class="d-flex ml-2" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0  w-75 flex-row-reverse">
                 <li class="nav-item">
                     <a class="nav-link p-2 mt-2 mb-2 active" aria-current="page" href="/profile/index.html">Profile</a>
                 </li>
@@ -25,10 +29,6 @@
                 </li>
             </ul>
         </div>
-        <form class="d-flex ml-2" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>       
       </nav>    
 
@@ -40,9 +40,9 @@
                 <div class="row">
                     <form class="d-flex justify-content-center align-items-center flex-column" action="">
                         <h2 class="h3"><u>Add a post:</u></h2>
-                        <div class="form-outline">
+                        <div class="form-outline col-6">
                             <fieldset>
-                                <textarea class="form-control write-post" id="form4Example3" placeholder="Say something clever about the environment, minimum  25 characters, max 250" minlength="25" maxlength="250"></textarea>
+                                <textarea class="form-control" id="form4Example3" rows="7" placeholder="Say something clever about the environment, minimum  25 characters, max 250" minlength="25" maxlength="250"></textarea>
                                 <label class="form-label" for="form4Example3"></label>
                             </fieldset>
                           </div>

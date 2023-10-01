@@ -6,16 +6,10 @@ nav, footer{
     footer{
         min-height: 150px
     }
-    
-    .navbar-nav{
-        align-items: flex-end;
-    }
 
     .nav-link{
         max-height: 50px;
         border-radius: 15px;
-        align-self: center;
-        justify-self: center;
     }
 
     .nav-link:hover{
@@ -25,17 +19,5 @@ nav, footer{
     .disabled{
         color: map-get($map: variables.$colors, $key: blue-dark);
         background-color: map-get($map: variables.$colors, $key: green-background);
-    }
-}
-
-
-@media (min-width: 600px){
-    .navbar-nav{
-        width: 75%;
-        flex-direction: row-reverse !important;
-    }
-    .container-fluid{
-        width: 80%;
-        height: 50px;
     }
 }

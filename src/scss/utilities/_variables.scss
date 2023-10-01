@@ -1,7 +1,17 @@
 $colors: (
-    "green-background": #C7F9CC,
+//    "green-background": #C7F9CC,
     "green-header-footer": #80ED99,
     "green-accents": #57CC99,
     "blue-light": #38A3A5,
     "blue-dark": #22577A 
 );
+
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+$primary: #C7F9CC;
+
+$theme-colors: map-merge($theme-colors, (
+  "primary": $primary
+));

@@ -4,33 +4,17 @@ nav, footer {
 nav footer, footer footer {
   min-height: 150px;
 }
-nav .navbar-nav, footer .navbar-nav {
-  align-items: flex-end;
-}
 nav .nav-link, footer .nav-link {
   max-height: 50px;
   border-radius: 15px;
-  align-self: center;
-  justify-self: center;
 }
 nav .nav-link:hover, footer .nav-link:hover {
   background-color: #38A3A5;
 }
 nav .disabled, footer .disabled {
   color: #22577A;
-  background-color: #C7F9CC;
 }
 
-@media (min-width: 600px) {
-  .navbar-nav {
-    width: 75%;
-    flex-direction: row-reverse !important;
-  }
-  .container-fluid {
-    width: 80%;
-    height: 50px;
-  }
-}
 .the-box {
   height: 40vh;
 }
@@ -54,21 +38,6 @@ nav .disabled, footer .disabled {
   font-size: 1.2rem;
 }
 
-@media (min-width: 600px) {
-  .profile-summary {
-    border: 2px solid #22577A;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 400px;
-  }
-  .profile-summary .profile-name {
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-  .profile-summary .profile-pic {
-    height: 150px;
-  }
-}
 .profile-pic-tiny {
   height: 50px;
 }
@@ -87,20 +56,6 @@ nav .disabled, footer .disabled {
 .all-user-posts p {
   font-size: 0.8rem;
   font-weight: 400;
-}
-
-@media (width: 600px) {
-  .all-user-posts .custom-border {
-    border-radius: 15px;
-  }
-  .profile-name-post {
-    font-size: 1rem;
-  }
-}
-.write-post {
-  width: 75vw;
-  max-width: 500px;
-  height: 150px;
 }
 
 body {

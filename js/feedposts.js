@@ -72,11 +72,11 @@ async function fetchAllUserPosts(url) {
       postCardBody.appendChild(postDate);
 
       const postTitle = document.createElement("p");
-      postTitle.classList.add("fw-bolder", "fs-3", "m-2");
+      postTitle.classList.add("postTitle", "fw-bolder", "fs-3", "m-2");
       postTitle.textContent = post.title;
 
       const postBody = document.createElement("p");
-      postBody.classList.add("fs-4", "m-2");
+      postBody.classList.add("postBody", "fs-4", "m-2");
       postBody.textContent = post.body;
 
       // Append the postCardBody to the postCard

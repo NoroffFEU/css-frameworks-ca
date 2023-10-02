@@ -1,4 +1,6 @@
-const API_FEED_URL = "https://api.noroff.dev/api/v1/";
+import { API_BASE_URL } from "./const.mjs";
+
+// const API_FEED_URL = "https://api.noroff.dev/api/v1/";
 
 async function fetchAllUserPosts(url) {
   try {
@@ -123,6 +125,6 @@ async function fetchAllUserPosts(url) {
   }
 }
 
-const allPosts = `${API_FEED_URL}social/posts?_author=true`;
+const allPosts = `${API_BASE_URL}social/posts?_author=true`;
 
-fetchAllUserPosts(allPosts);
+export { fetchAllUserPosts, allPosts };

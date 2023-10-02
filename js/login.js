@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/";
+import { API_BASE_URL } from "./const.mjs";
 
 //API endpoints
 //Login = social/auth/login

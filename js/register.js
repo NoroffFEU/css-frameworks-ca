@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://api.noroff.dev";
+import { API_BASE_URL } from "./const.mjs";
 
 //API endpoints
 //Register = /api/v1/social/auth/register
@@ -36,6 +36,6 @@ document
       password: userPassword,
     };
 
-    const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
+    const registerUrl = `${API_BASE_URL}social/auth/register`;
     await registerUser(registerUrl, userData);
   });

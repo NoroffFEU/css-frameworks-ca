@@ -19,22 +19,39 @@ export default function endpointObject(userId: string | null) {
   }
 
   function sortUrl() {
-    let url: string | null = null;
+    let url: string | URL;
     let count = 0;
 
-    function setString(newUrl: string, offset: number = 10) {
-      console.log("URL", url, "----------------" + "NEWURL", newUrl);
+    function setString(
+      newUrl: string,
+      offset: number = 10,
+      limit: number = 10
+    ) {
+      /*if (limit) {
+        let urlWithLimit = new URL(newUrl);
+        let params = new URLSearchParams(urlWithLimit);
+        params.set("limit", limit.toString());
+        urlWithLimit.search = params.toString();
+        newUrl = urlWithLimit.toString();
+      }
+*/
+      let urlObject = new URL(newUrl);
+      let incrementedUrl = new URLSearchParams(urlObject.search);
+      if (limit) {
+        incrementedUrl.set("limit", limit.toString());
+        urlObject.search = incrementedUrl.toString();
+        newUrl = urlObject.toString();
+      }
+
       if (newUrl + count === url) {
         count += offset;
-        let urlObject = new URL(url);
-        let incrementedUrl = new URLSearchParams(urlObject.search);
         incrementedUrl.set("offset", count.toString());
         urlObject.search = incrementedUrl.toString();
         url = urlObject.toString();
-        console.log(url, "det funka");
       } else {
         count = 0;
         url = newUrl + count;
+        console.log("elseRoute");
       }
       return url;
     }
@@ -44,8 +61,11 @@ export default function endpointObject(userId: string | null) {
     function getCount() {
       return count;
     }
+    function setCount(number: number) {
+      count = number;
+    }
 
-    return { setString, getString, getCount };
+    return { setString, getString, getCount, setCount };
   }
 
   const countTen = closureCount();
@@ -87,7 +107,7 @@ export default function endpointObject(userId: string | null) {
     },
     sortAndPaginate: sortUrl(),
     generatePaginate: function (sort: string, order: string) {
-      return `https://api.noroff.dev/api/v1/social/posts?limit=1&_author=true&_comments=true&_reactions=true&sort=${sort}&sortOrder=${order}&offset=`;
+      return `https://api.noroff.dev/api/v1/social/posts?limit=10&_author=true&_comments=true&_reactions=true&sort=${sort}&sortOrder=${order}&offset=`;
     },
   };
 }

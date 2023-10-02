@@ -1,4 +1,5 @@
 import endpointObject from "./endpoints.js";
+import callApi from "./callApi.js";
 
 const endpoint = endpointObject("Jarle");
 
@@ -8,35 +9,79 @@ const searchInput = document.querySelector("#search--feed") as HTMLInputElement;
 const searchButton = document.querySelector(
   "#search--button"
 ) as HTMLButtonElement;
+const createMessageTitle = document.querySelector(
+  "#title--feed"
+) as HTMLInputElement;
+const createMessageMessage = document.querySelector(
+  "#text-body--feed"
+) as HTMLInputElement;
+const createMessageMedia = document.querySelector(
+  "#media--feed"
+) as HTMLInputElement;
+const createMessageTags = document.querySelector(
+  "#tags--feed"
+) as HTMLInputElement;
+const postButton = document.querySelector("#post--button") as HTMLButtonElement;
+const postContainer = document.querySelector(
+  "#feed--container"
+) as HTMLDivElement;
 
-searchButton.addEventListener("click", () => {
-  callApi(
-    endpoint.sortAndPaginate.setString(
-      endpoint.generatePaginate(sortInput.value, sortOrder.value)
-    ),
-    (data: post[]) => {
-      if (searchInput.value) {
-        if (searchApi(data, sortInput.value, searchInput.value)) {
-          renderPosts(
-            postContainer,
-            searchApi(data, sortInput.value, searchInput.value)
-          );
-        } else if (data.length === 1) {
-          renderPosts(postContainer, data[0]);
-        }
-      } else {
-        data.forEach((element: post) => renderPosts(postContainer, element));
-        console.log("else route");
-      }
+createMessageMedia?.addEventListener("input", () => {
+  messageObject.media = createMessageMedia.value;
+});
+createMessageTitle?.addEventListener("input", () => {
+  messageObject.title = createMessageTitle.value;
+});
+createMessageMessage?.addEventListener("input", () => {
+  messageObject.body = createMessageMessage.value;
+});
+createMessageTags?.addEventListener("input", () => {
+  const tagArr = createMessageTags.value.split("#");
+  messageObject.tags = tagArr;
+});
 
-      const observedObj = document.querySelectorAll("[data-observed]");
-      const target = observedObj[observedObj.length - 1];
-      console.log(observedObj, target);
-      setTarget();
-      isObserving(true, intersectionObserver);
-    },
-    postOption
-  );
+searchButton.addEventListener("click", async () => {
+  const data: post[] = !searchInput.value
+    ? await callApi(
+        endpoint.sortAndPaginate.setString(
+          endpoint.generatePaginate(sortInput.value, sortOrder.value)
+        ),
+        postOption
+      )
+    : await callApi(
+        endpoint.sortAndPaginate.setString(
+          endpoint.generatePaginate(sortInput.value, sortOrder.value),
+          100,
+          100
+        ),
+        postOption
+      );
+  console.log(data, searchInput.value);
+  if (endpoint.sortAndPaginate.getCount() == 0) {
+    postContainer.innerHTML = "";
+  }
+  if (searchInput.value) {
+    let foundItem: post | undefined = await searchApi(
+      data,
+      sortInput.value,
+      0,
+      searchInput.value
+    );
+    console.log(foundItem ? "true" : "false");
+    if (foundItem) {
+      renderPosts(postContainer, foundItem);
+    } else if (data.length === 1) {
+      renderPosts(postContainer, data[0]);
+    }
+  } else {
+    data.forEach((element: post) => renderPosts(postContainer, element));
+    console.log("else route");
+    const observedObj = document.querySelectorAll("[data-observed]");
+    const target = observedObj[observedObj.length - 1];
+    console.log(observedObj, target);
+    setTarget();
+    isObserving(true, intersectionObserver);
+  }
 });
 
 function observerTargetClosure() {
@@ -58,12 +103,6 @@ const [setTarget, isObserving] = observerTargetClosure();
 
 type htmlMethod = "POST" | "GET" | "PATCH" | "PUT" | "DELETE";
 
-async function callApi(endpoint: string, callBack: Function, options: {}) {
-  const response = await fetch(endpoint, options);
-  const data = await response.json();
-  callBack(data);
-}
-
 interface post {
   id: number;
   title: string;
@@ -82,12 +121,14 @@ function renderPosts(
 ) {
   domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
     <div class="row">
-      <a href="/src/profile/index.html?user=${author.name}" class="col-4">
+      <a href="/src/profile/index.html?user=${
+        author.name ? author.name : ""
+      }" class="col-4">
         <img 
           class="rounded-circle w-25"
-          src=${author.avatar}
+          src=${author.avatar ? author.avatar : ""}
           alt="Profile picture of Thistle" />
-        <span class="text-primay fs-6">${author.name}</span>
+        <span class="text-primay fs-6">${author.name ? author.name : ""}</span>
       </a>
       <div class="col-8">
       <h3>${title}</h3>
@@ -128,67 +169,25 @@ const postOption = optionFactory("GET", {});
 
 console.log(postOption);
 
-callApi(
-  endpoint.sortAndPaginate.setString(
-    endpoint.generatePaginate(sortInput.value, sortOrder.value)
-  ),
-  (data: post[]) => {
-    console.log(data);
-    if (searchInput.value) {
-      if (searchApi(data, sortInput.value, searchInput.value)) {
-        renderPosts(
-          postContainer,
-          searchApi(data, sortInput.value, searchInput.value)
-        );
-      } else if (data.length === 1) {
-        renderPosts(postContainer, data[0]);
-      }
-    } else {
-      data.forEach((element: post) => renderPosts(postContainer, element));
-      console.log("else route");
-    }
-    //console.log(data);
-    const observedObj = document.querySelectorAll("[data-observed]");
-    const target = observedObj[observedObj.length - 1];
-    console.log(observedObj, target);
-    setTarget();
-    isObserving(true, intersectionObserver);
-  },
-  postOption
-);
+(async () => {
+  const data: post[] = await callApi(
+    endpoint.sortAndPaginate.setString(
+      endpoint.generatePaginate(sortInput.value, sortOrder.value)
+    ),
+    postOption
+  );
 
-const createMessageTitle = document.querySelector(
-  "#title--feed"
-) as HTMLInputElement;
-const createMessageMessage = document.querySelector(
-  "#text-body--feed"
-) as HTMLInputElement;
-const createMessageMedia = document.querySelector(
-  "#media--feed"
-) as HTMLInputElement;
-const createMessageTags = document.querySelector(
-  "#tags--feed"
-) as HTMLInputElement;
-const postButton = document.querySelector("#post--button") as HTMLButtonElement;
-const postContainer = document.querySelector(
-  "#feed--container"
-) as HTMLDivElement;
-
-createMessageMedia?.addEventListener("input", () => {
-  messageObject.media = createMessageMedia.value;
-});
-createMessageTitle?.addEventListener("input", () => {
-  messageObject.title = createMessageTitle.value;
-});
-createMessageMessage?.addEventListener("input", () => {
-  messageObject.body = createMessageMessage.value;
-  console.log(messageObject);
-});
-createMessageTags?.addEventListener("input", () => {
-  const tagArr = createMessageTags.value.split("#");
-  messageObject.tags = tagArr;
-  console.log(messageObject);
-});
+  if (data.length === 1) {
+    renderPosts(postContainer, data[0]);
+  } else {
+    data.forEach((element: post) => renderPosts(postContainer, element));
+  }
+  const observedObj = document.querySelectorAll("[data-observed]");
+  const target = observedObj[observedObj.length - 1];
+  console.log(observedObj, target);
+  setTarget();
+  isObserving(true, intersectionObserver);
+})();
 
 const messageObject: {
   title: string;
@@ -212,109 +211,71 @@ postButton?.addEventListener("click", () => {
     message
   );
 });
-/*
-const options = optionFactory("GET", {}, endpoint);
-const searchSelect = document.querySelector(
-  "#select--search--feed"
-) as HTMLSelectElement;
-const sortInput = document.querySelector("#search--feed") as HTMLInputElement;
-const searchButton = document.querySelector(
-  "#search--button"
-) as HTMLButtonElement;
 
-type searchCategory = "user" | "created" | "title" | "tags";
-
-searchButton?.addEventListener("click", () => {
-  const category: searchCategory = searchSelect.value;
-  const query: string = searchInput.value;
-  console.log(endpoint.searchFor(category, query));
-  callApi(
-    endpoint.searchFor(category, query),
-    (data) => {
-      console.log(data);
-    },
-    options
-  );
-});
-*/
-
-const intersectionObserver = new IntersectionObserver((entries) =>
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      callApi(
-        endpoint.sortAndPaginate.setString(
-          endpoint.generatePaginate(sortInput.value, sortOrder.value)
-        ),
-        (data: post[]) => {
-          if (data.length === 1) {
-            renderPosts(postContainer, data[0]);
-          } else
-            data.forEach((element: post) =>
-              renderPosts(postContainer, element)
-            );
-          isObserving(false, intersectionObserver);
-          setTarget();
-          isObserving(true, intersectionObserver);
-          console.log(
-            "string=" + endpoint.sortAndPaginate.getString(),
-            "count=" + endpoint.sortAndPaginate.getCount(),
-            data
-          );
-        },
-        postOption
-      ),
-        {
-          root: null,
-          rootMargin: "0px",
-          threshold: 1,
-        };
-    }
-  })
-);
-
-function searchApi(array: {}[], category: string, searchWord: string) {
-  if (!searchWord || !category) {
-    console.log("returned early");
-    return;
-  }
-  console.log("category=", category, searchWord);
-  let searchedItem = array.find((object) =>
-    object[category]?.includes(searchWord)
-  );
-  console.log(searchedItem, "11111111111111111111111111111");
-  if (searchedItem) {
-    return searchedItem;
-  } else {
-    console.log("fail");
-    callApi(
-      endpoint.sortAndPaginate.setString(
-        endpoint.generatePaginate(sortInput.value, sortOrder.value)
-      ),
-      (data: post[]) => {
-        if (searchInput.value)
-          searchedItem = array.find((object) =>
-            object[category]?.includes(searchWord)
-          );
-        console.log(searchedItem, "11111111111111111111111111111");
-        if (searchedItem) {
-          renderPosts(postContainer, searchedItem);
-        } else if (data.length === 1) {
-          renderPosts(postContainer, data[0]);
-        } else {
-          data.forEach((element: post) => renderPosts(postContainer, element));
+const intersectionObserver = new IntersectionObserver(
+  (entries) =>
+    entries.forEach(async (entry) => {
+      if (entry.isIntersecting) {
+        const data = await callApi(
+          endpoint.sortAndPaginate.setString(
+            endpoint.generatePaginate(sortInput.value, sortOrder.value)
+          ),
+          postOption
+        );
+        if (endpoint.sortAndPaginate.getCount() == 0) {
+          postContainer.innerHTML = "";
         }
-
-        const observedObj = document.querySelectorAll("[data-observed]");
-        const target = observedObj[observedObj.length - 1];
-        console.log(observedObj, target);
+        if (data.length === 1) {
+          renderPosts(postContainer, data[0]);
+        } else
+          data.forEach((element: post) => renderPosts(postContainer, element));
+        isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);
-      },
-      postOption
-    );
+      }
+    }),
+  {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
   }
-}
+);
 
-if (searchInput.value) {
-  console.log("TESTerewrewrewr");
+async function searchApi(
+  array: post[],
+  category: string,
+  count: number = 0,
+  searchWord: string | null = null
+): Promise<post | undefined> {
+  if (!searchWord || count > 10) {
+    return;
+  }
+
+  const foundWord = array.find((string) =>
+    string[category].toLowerCase().includes(searchWord?.toLowerCase())
+  );
+
+  if (foundWord) {
+    return foundWord;
+  } else {
+    try {
+      const data: post[] = await callApi(
+        endpoint.sortAndPaginate.setString(
+          endpoint.generatePaginate(sortInput.value, sortOrder.value),
+          100,
+          100
+        ),
+        postOption
+      );
+      console.log(
+        endpoint.sortAndPaginate.getString(),
+        endpoint.sortAndPaginate.getCount()
+      );
+      if (data && data.length > 1) {
+        return searchApi(data, category, count + 1, searchWord);
+      }
+    } catch (error) {
+      throw error;
+    }
+  }
 }

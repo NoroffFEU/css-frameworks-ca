@@ -16,22 +16,34 @@ export default function endpointObject(userId) {
         return increment;
     }
     function sortUrl() {
-        let url = null;
+        let url;
         let count = 0;
-        function setString(newUrl, offset = 10) {
-            console.log("URL", url, "----------------" + "NEWURL", newUrl);
+        function setString(newUrl, offset = 10, limit = 10) {
+            /*if (limit) {
+              let urlWithLimit = new URL(newUrl);
+              let params = new URLSearchParams(urlWithLimit);
+              params.set("limit", limit.toString());
+              urlWithLimit.search = params.toString();
+              newUrl = urlWithLimit.toString();
+            }
+      */
+            let urlObject = new URL(newUrl);
+            let incrementedUrl = new URLSearchParams(urlObject.search);
+            if (limit) {
+                incrementedUrl.set("limit", limit.toString());
+                urlObject.search = incrementedUrl.toString();
+                newUrl = urlObject.toString();
+            }
             if (newUrl + count === url) {
                 count += offset;
-                let urlObject = new URL(url);
-                let incrementedUrl = new URLSearchParams(urlObject.search);
                 incrementedUrl.set("offset", count.toString());
                 urlObject.search = incrementedUrl.toString();
                 url = urlObject.toString();
-                console.log(url, "det funka");
             }
             else {
                 count = 0;
                 url = newUrl + count;
+                console.log("elseRoute");
             }
             return url;
         }
@@ -41,7 +53,10 @@ export default function endpointObject(userId) {
         function getCount() {
             return count;
         }
-        return { setString, getString, getCount };
+        function setCount(number) {
+            count = number;
+        }
+        return { setString, getString, getCount, setCount };
     }
     const countTen = closureCount();
     const countTenFollowed = closureCount();
@@ -77,7 +92,7 @@ export default function endpointObject(userId) {
         },
         sortAndPaginate: sortUrl(),
         generatePaginate: function (sort, order) {
-            return `https://api.noroff.dev/api/v1/social/posts?limit=1&_author=true&_comments=true&_reactions=true&sort=${sort}&sortOrder=${order}&offset=`;
+            return `https://api.noroff.dev/api/v1/social/posts?limit=10&_author=true&_comments=true&_reactions=true&sort=${sort}&sortOrder=${order}&offset=`;
         },
     };
 }

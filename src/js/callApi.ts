@@ -1,9 +1,13 @@
 export default async function callApi(
   endpoint: string,
-  callBack: Function,
   options: {}
-) {
+): Promise<[]> {
   const response = await fetch(endpoint, options);
   const data = await response.json();
-  callBack(data);
+  console.log(data, "author????");
+  if (data.length > 0 && data) {
+    return data;
+  } else {
+    throw new Error("there was an error");
+  }
 }

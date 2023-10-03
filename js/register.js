@@ -1,7 +1,4 @@
-import { API_BASE_URL } from "./const.mjs";
-
-//API endpoints
-//Register = /api/v1/social/auth/register
+const API_BASE_URL = "https://api.noroff.dev/api/v1/";
 
 async function registerUser(url, userData) {
   try {

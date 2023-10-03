@@ -1,5 +1,5 @@
 import { API_BASE_URL } from "./const.mjs";
-// const API_Profiles_URL = "https://api.noroff.dev/api/v1/social/profiles";
+const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
   try {
@@ -123,7 +123,7 @@ async function gatherUserPosts(url) {
     console.log(error);
   }
 }
-//added a limit of 10 posts just so the page did not get flooded
-const userPosts = `${API_BASE_URL}/${userName}/posts?_author=true&_sort=created&_limit=10`;
+//
+const userPosts = `${API_BASE_URL}social/profiles/${userName}/posts?_author=true`;
 
 gatherUserPosts(userPosts);

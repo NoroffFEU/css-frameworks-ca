@@ -1,7 +1,5 @@
 import { API_BASE_URL } from "./const.mjs";
 
-// const API_FEED_URL = "https://api.noroff.dev/api/v1/";
-
 async function fetchAllUserPosts(url) {
   try {
     console.log(url);
@@ -29,7 +27,7 @@ async function fetchAllUserPosts(url) {
       postContainer.classList.add("col-md-12", "mb-3");
 
       const postCard = document.createElement("div");
-      postCard.classList.add("card", "border", "rounded");
+      postCard.classList.add("card", "border", "rounded", "mb-2");
 
       const postCardBody = document.createElement("div");
       postCardBody.classList.add(
@@ -46,7 +44,6 @@ async function fetchAllUserPosts(url) {
       postAvatar.classList.add("img-fluid", "rounded-circle");
       postAvatar.style.width = "60px";
 
-      // Assuming post.author has an avatar property
       if (
         post.author &&
         post.author.avatar &&
@@ -79,7 +76,6 @@ async function fetchAllUserPosts(url) {
       postBody.classList.add("postBody", "fs-4", "m-2");
       postBody.textContent = post.body;
 
-      // Append the postCardBody to the postCard
       postCard.appendChild(postCardBody);
 
       postCard.appendChild(postTitle);
@@ -94,6 +90,9 @@ async function fetchAllUserPosts(url) {
           "object-fit-contain",
           "rounded"
         );
+
+        postMedia.style.maxWidth = "500px";
+        postMedia.style.maxHeight = "300px";
         postMedia.src = post.media;
         postCard.appendChild(postMedia);
       }
@@ -119,12 +118,16 @@ async function fetchAllUserPosts(url) {
       postWallContainer.appendChild(postCard);
     });
 
-    console.log(json);
+    // console.log(json);
+    allPostsResult = json;
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
-const allPosts = `${API_BASE_URL}/social/posts?_author=true`;
+const allPosts = `${API_BASE_URL}social/posts?_author=true&_reactions=true`;
+let allPostsResult = "";
 
-export { fetchAllUserPosts, allPosts };
+export { fetchAllUserPosts, allPosts, allPostsResult };
+
+// fetchAllUserPosts(allPosts);

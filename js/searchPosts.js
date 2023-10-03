@@ -12,20 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function searchPosts() {
-  //   console.log("Search input event triggered");
   const searchInput = document.getElementById("searchBar").value.toLowerCase();
-  //   console.log("Search input:", searchInput);
   const postCards = document.querySelectorAll(".card");
 
   postCards.forEach((postCard) => {
     const postTitleElement = postCard.querySelector(".postTitle");
     const postBodyElement = postCard.querySelector(".postBody");
+    const postAuthorElement = postCard.querySelector("postAuthor");
 
-    if (postTitleElement && postBodyElement) {
+    if (postTitleElement && postBodyElement && postAuthorElement) {
       const postTitle = postTitleElement.textContent.toLowerCase();
       const postBody = postBodyElement.textContent.toLowerCase();
+      const postAuthor = postAuthorElement.textContent.toLowerCase(); // Get author's name
 
-      if (postTitle.includes(searchInput) || postBody.includes(searchInput)) {
+      if (
+        postTitle.includes(searchInput) ||
+        postBody.includes(searchInput) ||
+        postAuthor.includes(searchInput) // Check if the author's name matches the search input
+      ) {
         postCard.style.display = "block";
       } else {
         postCard.style.display = "none";

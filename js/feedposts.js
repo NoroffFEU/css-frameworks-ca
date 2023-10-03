@@ -58,7 +58,7 @@ async function fetchAllUserPosts(url) {
       }
 
       const postAuthor = document.createElement("p");
-      postAuthor.classList.add("card-text", "fw-bold");
+      postAuthor.classList.add("postAuthor", "card-text", "fw-bold");
       postAuthor.textContent = post.author.name;
 
       const createdDate = new Date(post.created);
@@ -125,6 +125,6 @@ async function fetchAllUserPosts(url) {
   }
 }
 
-const allPosts = `${API_BASE_URL}social/posts?_author=true`;
+const allPosts = `${API_BASE_URL}/social/posts?_author=true`;
 
 export { fetchAllUserPosts, allPosts };

@@ -18,6 +18,7 @@ export default function endpointObject(userId) {
     function sortUrl() {
         let url;
         let count = 0;
+        let previousSearch;
         function setString(newUrl, offset = 10, limit = 10) {
             /*if (limit) {
               let urlWithLimit = new URL(newUrl);
@@ -34,6 +35,7 @@ export default function endpointObject(userId) {
                 urlObject.search = incrementedUrl.toString();
                 newUrl = urlObject.toString();
             }
+            console.log(newUrl + count, "___", url);
             if (newUrl + count === url) {
                 count += offset;
                 incrementedUrl.set("offset", count.toString());
@@ -56,7 +58,14 @@ export default function endpointObject(userId) {
         function setCount(number) {
             count = number;
         }
-        return { setString, getString, getCount, setCount };
+        function setSearch(searchWord) {
+            if (searchWord !== previousSearch)
+                setCount(0);
+        }
+        function getSearch() {
+            return previousSearch;
+        }
+        return { setString, getString, getCount, setCount, setSearch, getSearch };
     }
     const countTen = closureCount();
     const countTenFollowed = closureCount();

@@ -21,7 +21,7 @@ export default function endpointObject(userId: string | null) {
   function sortUrl() {
     let url: string | URL;
     let count = 0;
-
+    let previousSearch: string;
     function setString(
       newUrl: string,
       offset: number = 10,
@@ -42,7 +42,7 @@ export default function endpointObject(userId: string | null) {
         urlObject.search = incrementedUrl.toString();
         newUrl = urlObject.toString();
       }
-
+      console.log(newUrl + count, "___", url);
       if (newUrl + count === url) {
         count += offset;
         incrementedUrl.set("offset", count.toString());
@@ -64,8 +64,14 @@ export default function endpointObject(userId: string | null) {
     function setCount(number: number) {
       count = number;
     }
+    function setSearch(searchWord: string) {
+      if (searchWord !== previousSearch) setCount(0);
+    }
+    function getSearch() {
+      return previousSearch;
+    }
 
-    return { setString, getString, getCount, setCount };
+    return { setString, getString, getCount, setCount, setSearch, getSearch };
   }
 
   const countTen = closureCount();

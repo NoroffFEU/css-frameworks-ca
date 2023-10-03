@@ -33,6 +33,11 @@ createMessageTags === null || createMessageTags === void 0 ? void 0 : createMess
     const tagArr = createMessageTags.value.split("#");
     messageObject.tags = tagArr;
 });
+searchInput.addEventListener("input", () => {
+    console.log(endpoint.sortAndPaginate.getSearch());
+    endpoint.sortAndPaginate.setSearch(searchInput.value);
+    console.log(endpoint.sortAndPaginate.getSearch());
+});
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
         ? yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption)

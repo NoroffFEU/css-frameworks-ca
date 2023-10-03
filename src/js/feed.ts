@@ -40,6 +40,10 @@ createMessageTags?.addEventListener("input", () => {
   messageObject.tags = tagArr;
 });
 
+searchInput.addEventListener("input", () => {
+  endpoint.sortAndPaginate.setSearch(searchInput.value);
+});
+
 searchButton.addEventListener("click", async () => {
   const data: post[] = !searchInput.value
     ? await callApi(

@@ -317,9 +317,18 @@ h6 {
     }
 }
 
+
 .card-body {
     background-color: $color-primary-light;
     max-height: 200px;
+}
+
+.card-title {
+    background-color: $color-primary-light;
+    color: $color-font;
+margin: 0;
+padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+text-align: left;
 }
 
 .card-text {

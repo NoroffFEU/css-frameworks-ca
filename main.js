@@ -3,15 +3,12 @@ const registerUrl = `${mainApiUrl}/social/auth/register`;
 const logInUrl = `${mainApiUrl}/social/auth/login`;
 const formReg = document.getElementById("formRegister");
 const formLogin = document.getElementById("formLogin");
+const getPostsUrl = `${mainApiUrl}/social/posts`;
 
 
-/*
-* 1. Hente user input fra form nå button register er klikket
-* 2. Vi treger å sette den data vi ha hentet i json objekt
-* 3. Da skal vi sende det med fetch() med method POST til api
-*/
 
-// formReg.addEventListener("submit", registerUser(registerUrl, userToRegister));
+
+
 
 
 // When the user has typed their name, mail and password, they submit by clicking on the button. This function gets the elements and filter their value, and activates  
@@ -91,6 +88,8 @@ function userToLogInFunksjon(email, password) {
     return userToLogIn;
 }
 
+
+// fetching token and storing it in localStorage
 async function logInUser(url, userData) {
     try {
         const postData = {
@@ -109,20 +108,5 @@ async function logInUser(url, userData) {
         console.log(error)
     }
 }
-
-// var nameReg = formReg.elements[0];
-// var mailReg = formReg.elements[1];
-// var passwordReg = formReg.elements[2];
-
-// var userName = nameReg.value;
-// var userEmail = mailReg.value;
-// var userPassword = passwordReg.value;
-
-
-// const userToRegister = {
-//     "name": userName,
-//     "email": userEmail,
-//     "password": userPassword
-// }
 
 

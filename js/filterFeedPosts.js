@@ -1,6 +1,4 @@
 import { allPostsResult } from "./feedposts.js";
-// var tmp = document.getElementById("reactionPosts");
-// console.log(tmp);
 
 document.getElementById("reactionPosts").addEventListener("click", async () => {
   let result = allPostsResult.sort((a, b) => {

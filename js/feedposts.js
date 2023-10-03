@@ -94,6 +94,7 @@ async function fetchAllUserPosts(url) {
         postMedia.style.maxWidth = "500px";
         postMedia.style.maxHeight = "300px";
         postMedia.src = post.media;
+        postMedia.alt = "Profile-image";
         postCard.appendChild(postMedia);
       }
 

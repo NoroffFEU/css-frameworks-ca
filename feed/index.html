@@ -82,6 +82,25 @@
           </div>
           <div class="row justify-content-around align-items-center p-3">
             <h3 class="text-center">Feed</h3>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
             <form class="col-md-4 d-flex mb-3">
               <input
                 id="searchBar"
@@ -92,9 +111,8 @@
               />
             </form>
             <div class="filter-search col-md-4 mb-3">
-                <!-- <div class="text-start">Sort</div> -->
-             <button type="button"  aria-labelledby="filterpostsReaction" class="btn btn-primary btn-sm" id="reactionPosts">By Date</button>
-              <button type="button"   aria-labelledby="filterpostsByDate" class="btn btn-primary btn-sm" id="datePosts">By Reactions</button>
+              <button type="button"  aria-label ="filterPostsReaction" class="btn btn-primary btn-sm" id="reactionPosts">By Date</button>
+              <button type="button"   aria-label="filterPostsByDate" class="btn btn-primary btn-sm" id="datePosts">By Reactions</button>
             </div>
           </div>
           <div class="container">

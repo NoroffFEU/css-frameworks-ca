@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Social media for food lovers who are looking for recipes and willing to share their own" />
+    <title>Signup Page | Food is Love</title>
+    <script src="/scripts/signup-page.mjs" type="module"></script>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section id="signup-container" class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card-group mb-0">
+            <div class="card p-4">
+              <div class="col d-flex justify-content-center">
+                <a href="/feed/index.html" class="p-2 bg-orange mb-5">
+                  <img src="/images/logo.png" class="logo" />
+                </a>
+              </div>
+              <div class="card-body">
+                <form id="user-form">
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        placeholder="Username"
+                        value="HenrikEkengren"
+                        required />
+                      <label for="first-name" class="form-label"
+                        >Username</label
+                      >
+                    </div>
+                    <div class="invalid-feedback">
+                      Please write your username.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email"
+                        value="henrikekengren123@stud.noroff.no"
+                        required />
+                      <label for="email" class="form-label">Email</label>
+                    </div>
+                    <div class="invalid-feedback">
+                      Please choose a valid email.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-floating">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        value="12345678"
+                        required
+                        minlength="8" />
+                      <label for="password" class="form-label">Password</label>
+                      <div class="invalid-feedback">
+                        Password must be at lest 8 characters long
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 d-grid">
+                      <button
+                        type="submit"
+                        class="btn btn-primary border border-dark">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="card text-white py-5 d-md-down-none card-signUp">
+              <div class="card-body text-center">
+                <div>
+                  <h1 class="text-dark pb-4 text-uppercase">"Food is Love"</h1>
+                  <h2>Sign up</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a href="profile/index.html">
+                    <button type="button" class="btn btn-primary mt-3">
+                      Register Now!
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

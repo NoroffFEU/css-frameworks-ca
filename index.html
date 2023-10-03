@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>B.creative main site</title>
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="dist/css/index.css">
@@ -34,17 +34,18 @@
                     </ul>
                     <div class="d-flex">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                            <li class="nav-item">
+                            <li class="nav-item nav-link">
                                 <form role="search" class="me-3">
                                     <input class="form-control" type="search" placeholder="Search" aria-label="Search">
                                 </form>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item nav-link">
                                 <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">Login</button>
                             </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-primary me-2">Sign up</button>
+                            <li class="nav-item nav-link">
+                                <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal2">Sign up</button>
                             </li>
                         </ul>
 
@@ -53,7 +54,7 @@
             </div>
         </nav>
 
-        <!-- MODAL -->
+        <!-- MODAL SIGN IN-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -61,20 +62,20 @@
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Please sign in</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="feed/index.html" class="needs-validation">
+                    <form action="feed/index.html" id="formLogin" class="needs-validation">
                         <div class="modal-body">
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp" value="Annnna@noroff.no" required>
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" minlength="8"
-                                    required>
+                                    value="Annnnnnnnnna" required>
                                 <!-- <div id="passwordHelpBlock" class="form-text" >
                                     Your password must be 8-20 characters long, contain letters and numbers, and must
                                     not
@@ -85,7 +86,56 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn1">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- MODAL REGISTER-->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel2">Please sign up</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form name="form" id="formRegister" method="post" class="needs-validation">
+                        <div class="modal-body">
+
+
+                            <div class="mb-3">
+                                <label for="InputName2" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="InputName2" aria-describedby="emailHelp"
+                                    value="Annna" required>
+                                <!-- <div id="emailHelp" class="form-text">
+                                        </div> -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputEmail2" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="InputEmail2" aria-describedby="emailHelp"
+                                    value="Annnna@noroff.no" required>
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputPassword2" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="InputPassword2" minlength="8"
+                                    value="Annnnnnnnnna" required>
+                                <!-- <div id="passwordHelpBlock" class="form-text" >
+                                            Your password must be 8-20 characters long, contain letters and numbers, and must
+                                            not
+                                            contain spaces, special characters, or emoji.
+                                        </div> -->
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn2">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -109,8 +159,9 @@
                         <div class="container">
                             <div class="carousel-caption text-start">
                                 <h1>Explore and share your creativity</h1>
-                                <button type="button" class="btn btn-lg btn-primary"><a href="#">Join us
-                                        today</a></button>
+                                <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal2">Join us
+                                    today</button>
                             </div>
                         </div>
                     </div>
@@ -195,7 +246,8 @@
                             <div class="carousel-caption text-start">
                                 <h1>Color theory in pratice</h1>
                                 <p>We share and discuss color combos - in theory as well as in pratice. </p>
-                                <button type="button" class="btn btn-lg btn-primary"><a href="#">Join us</a></button>
+                                <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Join us</button>
                             </div>
                         </div>
                     </div>
@@ -209,7 +261,8 @@
                                 <p>This group is only for paper addicts - because we believe that others won't
                                     understand.
                                     Come and check what all this fuss is about.</p>
-                                <button type="button" class="btn btn-lg btn-primary"><a href="#">Join us</a></button>
+                                <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Join us</button>
                             </div>
                         </div>
                     </div>
@@ -221,7 +274,8 @@
                             <div class="carousel-caption text-start">
                                 <h1>Street photo meets Edward Hopper</h1>
                                 <p>If you suffer from insomnia and loneliness in big cites, you belong here</p>
-                                <button type="button" class="btn btn-lg btn-primary"><a href="#">Join us</a></button>
+                                <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Join us</button>
                             </div>
                         </div>
                     </div>
@@ -316,7 +370,7 @@
     </section>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script src="../main.js" type="module"></script>
 </body>
 
 </html>

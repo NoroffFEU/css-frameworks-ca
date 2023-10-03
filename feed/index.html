@@ -5,41 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="Food is Love"
-      content="Home page for Food is Love. People sharing delicious recepies"
-    />
+      name="description"
+      content="Home page for Food is Love. People sharing delicious recipes" />
     <script
       src="https://kit.fontawesome.com/ad1493ca4b.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Food is Love | Home Page</title>
+      crossorigin="anonymous"></script>
+    <title>Home Page | Food is Love</title>
     <link rel="stylesheet" href="/dist/css/index.css" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
       integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
       <nav
         class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body"
-        data-bs-theme="dark"
-      >
-        <div class="container">
-          <div class="col-1">
+        data-bs-theme="dark">
+        <section id="nav-container" class="container">
+          <section id="logo" class="col-1">
             <a href="/feed/index.html">
               <img src="/images/logo.png" class="logo logo-nav" />
             </a>
-          </div>
-          <div class="col-1 text-center text-light">
+          </section>
+          <section id="user-icon" class="col-1 text-center text-light">
             <a href="/profile/index.html">
               <i
-                class="fa-sharp fa-solid fa-user text-light fs-2 user-icon"
-              ></i>
+                class="fa-sharp fa-solid fa-user text-light fs-2 user-icon"></i>
             </a>
-          </div>
+          </section>
           <button
             class="navbar-toggler"
             type="button"
@@ -47,11 +42,10 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <section class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item dropdown">
                 <a
@@ -59,8 +53,7 @@
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                  aria-expanded="false">
                   Recipes
                 </a>
                 <ul class="dropdown-menu">
@@ -76,62 +69,57 @@
                 class="form-control me-2"
                 type="search"
                 placeholder="Search"
-                aria-label="Search"
-              />
+                aria-label="Search" />
               <button
                 class="btn btn-outline-success bg-primary border border-0"
-                type="submit"
-              >
+                type="submit">
                 Search
               </button>
             </form>
-          </div>
-        </div>
+          </section>
+        </section>
       </nav>
     </header>
     <main class="mx-4">
-      <div class="container">
+      <section id="feed-container" class="container">
         <div class="container text-center">
           <div class="row">
-            <div class="col">
+            <section id="user-info-card" class="col">
               <div class="col bg-primary p-4 m-3 card">
                 <a href="/profile/index.html">
                   <img
                     src="/images/profile-picture.jpg"
                     alt=""
-                    class="img-fluid float-start img-profile"
-                  />
+                    class="img-fluid float-start img-profile" />
                   <h3 class="text-dark">Henrik</h3>
                   <p class="text-dark">
                     Food lover. Happy to share some recipes<3
                   </p>
                 </a>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row">
+            </section>
+            <section id="posts-container" class="col-md-6">
+              <section id="new-post" class="row">
                 <form>
                   <div class="fs-2 fw-bold text-center">
-                    <label for="newPost">New Recipe</label>
+                    <h1 for="newPost">New Recipe</h1>
                   </div>
                   <textarea
                     name="newPost"
                     id="newPost"
                     cols="30"
                     rows="5"
-                    class="form-control"
-                  >
+                    class="form-control">
                   </textarea>
                   <div class="d-grid col-3 mx-auto">
                     <button
                       type="submit"
-                      class="btn btn-primary mt-3 fw-bold text-uppercase"
-                    >
+                      class="btn btn-primary mt-3 fw-bold text-uppercase">
                       New Post
                     </button>
                   </div>
                 </form>
-              </div>
+              </section>
               <div class="row post my-5 py-3 bg-secondary card">
                 <div class="post-header d-flex align-items-center py-3">
                   <div class="d-flex col-3 align-items-center">
@@ -150,8 +138,7 @@
                 <img
                   src="/images/food1.jpg"
                   alt=""
-                  class="img-thumbnail bg-secondary border border-0"
-                />
+                  class="img-thumbnail bg-secondary border border-0" />
                 <p class="mt-4">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo harum blanditiis repellendus, corporis possimus
@@ -185,8 +172,7 @@
                 <img
                   src="/images/food2.jpg"
                   alt=""
-                  class="img-thumbnail bg-secondary border border-0"
-                />
+                  class="img-thumbnail bg-secondary border border-0" />
                 <p class="mt-4">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo harum blanditiis repellendus, corporis possimus
@@ -220,8 +206,7 @@
                 <img
                   src="/images/food3.jpg"
                   alt=""
-                  class="img-thumbnail bg-secondary border border-0"
-                />
+                  class="img-thumbnail bg-secondary border border-0" />
                 <p class="mt-4">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo harum blanditiis repellendus, corporis possimus
@@ -255,8 +240,7 @@
                 <img
                   src="/images/food4.jpg"
                   alt=""
-                  class="img-thumbnail bg-secondary border border-0"
-                />
+                  class="img-thumbnail bg-secondary border border-0" />
                 <p class="mt-4">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo harum blanditiis repellendus, corporis possimus
@@ -290,8 +274,7 @@
                 <img
                   src="/images/food5.jpg"
                   alt=""
-                  class="img-thumbnail bg-secondary border border-0"
-                />
+                  class="img-thumbnail bg-secondary border border-0" />
                 <p class="mt-4">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo harum blanditiis repellendus, corporis possimus
@@ -325,8 +308,7 @@
                 <img
                   src="/images/food6.jpg"
                   alt=""
-                  class="img-thumbnail bg-secondary border border-0"
-                />
+                  class="img-thumbnail bg-secondary border border-0" />
                 <p class="mt-4">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Explicabo harum blanditiis repellendus, corporis possimus
@@ -342,20 +324,19 @@
                   <div class="col"><i class="fa-solid fa-share"></i></div>
                 </div>
               </div>
-            </div>
-            <div class="col">
+            </section>
+            <section id="quote-container" class="col">
               <div
-                class="col bg-tertiary p-4 m-3 card pb-5 quote-container text-light fs-4"
-              >
+                class="col bg-tertiary p-4 m-3 card pb-5 quote-container text-light fs-4">
                 <p>
                   “Cooking is a bit like cinema. It's the emotion that counts.”
                 </p>
                 <p>Anne-Sophie Pic</p>
               </div>
-            </div>
+            </section>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>

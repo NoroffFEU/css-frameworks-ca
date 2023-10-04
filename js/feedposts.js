@@ -26,8 +26,16 @@ async function fetchAllUserPosts(url) {
       const postContainer = document.createElement("div");
       postContainer.classList.add("col-md-12", "mb-3");
 
-      const postCard = document.createElement("div");
-      postCard.classList.add("card", "border", "rounded", "mb-2");
+      const postCard = document.createElement("a");
+      postCard.href = `/feed/postSpecific.html?id=${post.id}`;
+      postCard.classList.add(
+        "card",
+        "border",
+        "rounded",
+        "mb-2",
+        "text-decoration-none",
+        "text-center"
+      );
 
       const postCardBody = document.createElement("div");
       postCardBody.classList.add(
@@ -37,12 +45,14 @@ async function fetchAllUserPosts(url) {
         "justify-content-md-between",
         "justify-content-sm-evenly",
         "align-items-center",
-        "mb-3"
+        "mb-3",
+        "fs-2",
+        "fw-bold"
       );
 
       const postAvatar = document.createElement("img");
       postAvatar.classList.add("img-fluid", "rounded-circle");
-      postAvatar.style.width = "60px";
+      postAvatar.style.width = "100px";
 
       if (
         post.author &&
@@ -50,12 +60,13 @@ async function fetchAllUserPosts(url) {
         post.author.avatar.trim() !== ""
       ) {
         postAvatar.src = post.author.avatar;
+        // postAvatar.alt = "Profile-image";
       } else {
         postAvatar.src = "/images/profile.jpg";
       }
 
       const postAuthor = document.createElement("p");
-      postAuthor.classList.add("postAuthor", "card-text", "fw-bold");
+      postAuthor.classList.add("postAuthor", "card-text");
       postAuthor.textContent = post.author.name;
 
       const createdDate = new Date(post.created);
@@ -69,11 +80,17 @@ async function fetchAllUserPosts(url) {
       postCardBody.appendChild(postDate);
 
       const postTitle = document.createElement("p");
-      postTitle.classList.add("postTitle", "fw-bolder", "fs-3", "m-2");
+      postTitle.classList.add(
+        "postTitle",
+        "fw-bolder",
+        "fs-3",
+        "text-center",
+        "m-2"
+      );
       postTitle.textContent = post.title;
 
       const postBody = document.createElement("p");
-      postBody.classList.add("postBody", "fs-4", "m-2");
+      postBody.classList.add("postBody", "fs-5", "m-2");
       postBody.textContent = post.body;
 
       postCard.appendChild(postCardBody);
@@ -86,15 +103,14 @@ async function fetchAllUserPosts(url) {
         postMedia.classList.add(
           "img-fluid",
           "align-self-center",
-          "m-5",
           "object-fit-contain",
+          "p-5",
           "rounded"
         );
 
-        postMedia.style.maxWidth = "500px";
-        postMedia.style.maxHeight = "300px";
+        // postMedia.style.maxWidth = "500px";
+        postMedia.style.maxHeight = "500px";
         postMedia.src = post.media;
-        postMedia.alt = "Profile-image";
         postCard.appendChild(postMedia);
       }
 
@@ -102,14 +118,21 @@ async function fetchAllUserPosts(url) {
       iconContainer.classList.add(
         "icon-container",
         "d-flex",
-        "justify-content-end"
+        "justify-content-between"
       );
 
+      const comments = document.createElement("p");
+      comments.classList.add("ms-5");
+      comments.textContent = "comments:  " + post.comments.length;
+      comments.style.fontSize = "25px";
+      comments.style.color = "blue";
+
       const heartIcon = document.createElement("i");
-      heartIcon.classList.add("far", "fa-heart", "m-3");
+      heartIcon.classList.add("far", "fa-heart", "me-5");
       heartIcon.style.fontSize = "40px";
       heartIcon.style.color = "red";
 
+      iconContainer.appendChild(comments);
       iconContainer.appendChild(heartIcon);
 
       // Append the postCard to the postContainer
@@ -119,7 +142,7 @@ async function fetchAllUserPosts(url) {
       postWallContainer.appendChild(postCard);
     });
 
-    // console.log(json);
+    console.log(json);
     allPostsResult = json;
   } catch (error) {
     console.error("Error:", error);

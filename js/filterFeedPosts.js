@@ -8,7 +8,7 @@ document.getElementById("reactionPosts").addEventListener("click", async () => {
     return element._count.reactions > 0;
   });
 
-  //   console.log(result);
+  console.log(result);
 });
 
 document.getElementById("datePosts").addEventListener("click", async () => {
@@ -19,5 +19,5 @@ document.getElementById("datePosts").addEventListener("click", async () => {
   });
 
   result = result.reverse();
-  //   console.log(result);
+  console.log(result);
 });

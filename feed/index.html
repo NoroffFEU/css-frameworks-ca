@@ -16,7 +16,6 @@
     <script src="/js/feedposts.js" type="module"></script>
     <script src="/js/searchPosts.js" type="module"></script>
     <script src="/js/filterFeedPosts.js" type="module"></script>
-    <!-- <script src="profileInfo.js" type="module"></script> -->
   </head>
   <body>
     <header class="navbar navbar-expand-lg sticky-top">
@@ -63,7 +62,6 @@
               alt="profile-image"
               class="img-fluid rounded-circle mb-3 mt-2"
             />
-          
           </div>
           <div
             class="col-md-8 border text-center border-primary border-opacity-50 rounded-end-1"
@@ -99,25 +97,38 @@
                     <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
                 </div>
-              </div>
-            </div> -->
-            <form class="col-md-4 d-flex mb-3">
-              <input
-                id="searchBar"
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="search"
-              />
-            </form>
-            <div class="filter-search col-md-4 mb-3">
-              <button type="button"  aria-label ="filterPostsReaction" class="btn btn-primary btn-sm" id="reactionPosts">By Date</button>
-              <button type="button"   aria-label="filterPostsByDate" class="btn btn-primary btn-sm" id="datePosts">By Reactions</button>
-            </div>
+              </div> -->
           </div>
-          <div class="container">
-            <div class="postsWall">
+          <form class="col-md-4 d-flex mb-3">
+            <input
+              id="searchBar"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="search"
+            />
+          </form>
+          <div class="filter-search col-md-4 mb-3">
+            <button
+              type="button"
+              aria-label="filterPostsReaction"
+              class="btn btn-primary btn-sm"
+              id="reactionPosts"
+            >
+              By Date
+            </button>
+            <button
+              type="button"
+              aria-label="filterPostsByDate"
+              class="btn btn-primary btn-sm"
+              id="datePosts"
+            >
+              By Reactions
+            </button>
           </div>
+        </div>
+        <div class="container">
+          <div class="postsWall"></div>
         </div>
       </div>
     </main>

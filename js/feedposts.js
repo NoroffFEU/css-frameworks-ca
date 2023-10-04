@@ -42,12 +42,11 @@ async function fetchAllUserPosts(url) {
       postCardBody.classList.add(
         "card-body",
         "d-flex",
+        "flex-column-sm",
         "justify-content-start",
-        "justify-content-md-between",
-        "justify-content-sm-evenly",
+        "justify-content-lg-around",
         "align-items-center",
         "mb-3",
-        "fs-2",
         "fw-bold"
       );
 
@@ -67,7 +66,7 @@ async function fetchAllUserPosts(url) {
       }
 
       const postAuthor = document.createElement("p");
-      postAuthor.classList.add("postAuthor", "card-text");
+      postAuthor.classList.add("postAuthor", "card-text", "text-sm");
       postAuthor.textContent = post.author.name;
 
       const createdDate = new Date(post.created);
@@ -92,7 +91,7 @@ async function fetchAllUserPosts(url) {
       postTitle.textContent = post.title;
 
       const postBody = document.createElement("p");
-      postBody.classList.add("postBody", "fs-5", "m-2");
+      postBody.classList.add("postBody", "m-2", "text-sm");
       postBody.textContent = post.body;
 
       postCard.appendChild(postCardBody);

@@ -9,7 +9,7 @@ function scrollToTop() {
 }
 
 function toggleTopButton() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
     document.getElementById("back-to-up").classList.remove("d-none");
   } else {
     document.getElementById("back-to-up").classList.add("d-none");

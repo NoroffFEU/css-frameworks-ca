@@ -27,24 +27,21 @@ async function getPostsWithToken(url) {
 
 // showing posts
 
-let containerHTMLCard = document.getElementById("singleCard");
-
+var containerHTMLCard = document.getElementById("singleCard");
 
 async function getPosts() {
     var getPost = await getPostsWithToken(getPostsUrl);
     var setImg = "";
     for (var i = 0; i < getPost.length; i++) {
-
-        // var postTitle = getPost[i].title;
-        // var postBody = getPost[i].body;
-        // var postMedia = getPost[i].media;
-        if (getPost[i].media === null || getPost[i].media == "") {
+        if (getPost[i].media === null ||
+            getPost[i].media == "" ||
+            getPost[i].media.includes(".jpg") === false ||
+            getPost[i].media.includes(".jpeg") === false ||
+            getPost[i].media.includes(".png") === false) {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         } else {
             setImg = getPost[i].media;
         }
-        //  var postUpdated = getPost[i].updated;
-
 
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10">
@@ -65,19 +62,8 @@ async function getPosts() {
         </div>        
         `;
     }
-
-
-
-
-
-
-
-    // document.getElementById("cardTitle").innerHTML = postTitle;
-    // document.getElementById("cardBody").innerHTML = postBody; 
-    // if (postMedia !== null || postMedia !== "") {
-    //     document.getElementById("cardPicture").src = postMedia; 
-    // }
-    // document.getElementById("cardUpdated").innerHTML = postUpdated;  
 }
 
 window.onload = getPosts();
+
+// filter comments and reactions

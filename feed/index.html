@@ -16,8 +16,10 @@
     <script src="/js/feedposts.js" type="module"></script>
     <script src="/js/searchPosts.js" type="module"></script>
     <script src="/js/filterFeedPosts.js" type="module"></script>
+    <!-- <script src="/js/backToTopButton.js" type="module"></script> -->
   </head>
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#goTop">
+    <div id="topbar"></div>
     <header class="navbar navbar-expand-lg sticky-top">
       <div class="bg-primary container">
         <a href="#" class="navbar-brand d-flex align-items-center"
@@ -53,7 +55,7 @@
     <main>
       <h1 class="visually-hidden">Feed</h1>
       <div class="container">
-        <div class="row mt-2">
+        <div class="row mt-2 align-items-center justify-content-center">
           <div
             class="col-md-2 profile text-center text-white p-3 bg-dark rounded-start-1"
           >
@@ -78,26 +80,8 @@
               </button>
             </div>
           </div>
-          <div class="row justify-content-around align-items-center p-3">
+          <div class="row justify-content-center align-items-center p-3">
             <h3 class="text-center">Feed</h3>
-            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            </button>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div> -->
           </div>
           <form class="col-md-4 d-flex mb-3">
             <input
@@ -115,7 +99,7 @@
               class="btn btn-primary btn-sm"
               id="reactionPosts"
             >
-              By Date
+              By Reactions
             </button>
             <button
               type="button"
@@ -123,11 +107,18 @@
               class="btn btn-primary btn-sm"
               id="datePosts"
             >
-              By Reactions
+              By Date
             </button>
           </div>
         </div>
         <div class="container">
+          <!-- <button
+            type="button"
+            class="btn btn-danger btn-floating btn-lg"
+            id="btn-back-to-top"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button> -->
           <div class="postsWall"></div>
         </div>
       </div>

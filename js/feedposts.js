@@ -31,6 +31,7 @@ async function fetchAllUserPosts(url) {
       postCard.classList.add(
         "card",
         "border",
+        "border-secondary",
         "rounded",
         "mb-2",
         "text-decoration-none",
@@ -87,6 +88,7 @@ async function fetchAllUserPosts(url) {
         "text-center",
         "m-2"
       );
+
       postTitle.textContent = post.title;
 
       const postBody = document.createElement("p");
@@ -108,7 +110,6 @@ async function fetchAllUserPosts(url) {
           "rounded"
         );
 
-        // postMedia.style.maxWidth = "500px";
         postMedia.style.maxHeight = "500px";
         postMedia.src = post.media;
         postCard.appendChild(postMedia);
@@ -122,27 +123,25 @@ async function fetchAllUserPosts(url) {
       );
 
       const comments = document.createElement("p");
-      comments.classList.add("ms-5");
-      comments.textContent = "comments:  " + post.comments.length;
-      comments.style.fontSize = "25px";
-      comments.style.color = "blue";
+      comments.classList.add("ms-5", "text-primary");
+      comments.textContent = "Comments:  " + post.comments.length;
+      comments.style.fontSize = "20px";
 
       const heartIcon = document.createElement("i");
-      heartIcon.classList.add("far", "fa-heart", "me-5");
-      heartIcon.style.fontSize = "40px";
+      heartIcon.classList.add("far", "fa-heart", "me-5", "p-1");
+      heartIcon.textContent = " " + post.reactions.length;
+      heartIcon.style.fontSize = "20px";
       heartIcon.style.color = "red";
 
       iconContainer.appendChild(comments);
       iconContainer.appendChild(heartIcon);
 
-      // Append the postCard to the postContainer
       postCard.appendChild(iconContainer);
 
-      // Append each postContainer to the postsWall
       postWallContainer.appendChild(postCard);
     });
 
-    console.log(json);
+    // console.log(json);
     allPostsResult = json;
   } catch (error) {
     console.error("Error:", error);

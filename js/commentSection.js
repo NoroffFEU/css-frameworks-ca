@@ -34,7 +34,7 @@ async function singlePost() {
 
     document.title = specificPost.title;
 
-    const container = document.querySelector(".specificPostContainer");
+    const container = document.querySelector(".commentSection");
     container.innerHTML = "";
 
     const postContainer = document.createElement("div");

@@ -34,9 +34,7 @@ createMessageTags === null || createMessageTags === void 0 ? void 0 : createMess
     messageObject.tags = tagArr;
 });
 searchInput.addEventListener("input", () => {
-    console.log(endpoint.sortAndPaginate.getSearch());
     endpoint.sortAndPaginate.setSearch(searchInput.value);
-    console.log(endpoint.sortAndPaginate.getSearch());
 });
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
@@ -141,9 +139,7 @@ const messageObject = {
 };
 postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => {
     const message = optionFactory("POST", messageObject);
-    callApi(endpoint.createPost, (data) => {
-        console.log(data);
-    }, message);
+    callApi(endpoint.createPost, message);
 });
 const intersectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => __awaiter(void 0, void 0, void 0, function* () {
     if (entry.isIntersecting) {
@@ -170,7 +166,18 @@ function searchApi(array, category, count = 0, searchWord = null) {
         if (!searchWord || count > 10) {
             return;
         }
-        const foundWord = array.find((string) => string[category].toLowerCase().includes(searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase()));
+        let foundWord;
+        console.log(array[0][category].name.toLowerCase());
+        if (array[0][category].name) {
+            console.log("author");
+            foundWord = array.find((post) => post[category].name.toLowerCase() === searchWord.toLowerCase());
+        }
+        else if (Array.isArray(array[0][category])) {
+            foundWord = array.find((post) => post.tags.some((element) => element.toLowerCase() === searchWord.toLowerCase()));
+        }
+        else {
+            foundWord = array.find((post) => post[category].toLowerCase().includes(searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase()));
+        }
         if (foundWord) {
             return foundWord;
         }

@@ -5,7 +5,7 @@ export default async function callApi(
   try {
     const response = await fetch(endpoint, options);
     const data = await response.json();
-    console.log(data, "author????");
+    console.log(data);
     if (data.length > 0 && data) {
       return data;
     }

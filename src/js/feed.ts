@@ -209,9 +209,7 @@ postButton?.addEventListener("click", () => {
   const message = optionFactory("POST", messageObject);
   callApi(
     endpoint.createPost,
-    (data: {}[]) => {
-      console.log(data);
-    },
+
     message
   );
 });
@@ -245,19 +243,35 @@ const intersectionObserver = new IntersectionObserver(
   }
 );
 
+type category = "title" | "updated" | "tags" | "body" | "author";
+
 async function searchApi(
   array: post[],
-  category: string,
+  category: category,
   count: number = 0,
   searchWord: string | null = null
 ): Promise<post | undefined> {
   if (!searchWord || count > 10) {
     return;
   }
-
-  const foundWord = array.find((string) =>
-    string[category].toLowerCase().includes(searchWord?.toLowerCase())
-  );
+  let foundWord;
+  console.log(array[0][category].name.toLowerCase());
+  if (array[0][category].name) {
+    console.log("author");
+    foundWord = array.find(
+      (post) => post[category].name.toLowerCase() === searchWord.toLowerCase()
+    );
+  } else if (Array.isArray(array[0][category])) {
+    foundWord = array.find((post) =>
+      post.tags.some(
+        (element) => element.toLowerCase() === searchWord.toLowerCase()
+      )
+    );
+  } else {
+    foundWord = array.find((post) =>
+      post[category].toLowerCase().includes(searchWord?.toLowerCase())
+    );
+  }
 
   if (foundWord) {
     return foundWord;

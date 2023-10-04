@@ -12,7 +12,7 @@ export default function callApi(endpoint, options) {
         try {
             const response = yield fetch(endpoint, options);
             const data = yield response.json();
-            console.log(data, "author????");
+            console.log(data);
             if (data.length > 0 && data) {
                 return data;
             }

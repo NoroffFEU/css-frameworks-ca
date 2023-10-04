@@ -113,6 +113,10 @@ export default function endpointObject(userId: string | null) {
     },
     sortAndPaginate: sortUrl(),
     generatePaginate: function (sort: string, order: string) {
+      const validCategories = ["title", "tags", "created", "body"];
+      sort = validCategories.some((element) => element === sort)
+        ? sort
+        : "updated";
       return `https://api.noroff.dev/api/v1/social/posts?limit=10&_author=true&_comments=true&_reactions=true&sort=${sort}&sortOrder=${order}&offset=`;
     },
   };

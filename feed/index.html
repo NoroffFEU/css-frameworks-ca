@@ -16,7 +16,7 @@
     <script src="/js/feedposts.js" type="module"></script>
     <script src="/js/searchPosts.js" type="module"></script>
     <script src="/js/filterFeedPosts.js" type="module"></script>
-    <!-- <script src="/js/backToTopButton.js" type="module"></script> -->
+    <script src="/js/backToTopButton.js" type="module"></script>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#goTop">
     <div id="topbar"></div>
@@ -55,7 +55,7 @@
     <main>
       <h1 class="visually-hidden">Feed</h1>
       <div class="container">
-        <div class="row mt-2 align-items-center justify-content-center">
+        <div class="row mt-2 justify-content-center">
           <div
             class="col-md-2 profile text-center text-white p-3 bg-dark rounded-start-1"
           >
@@ -112,17 +112,16 @@
           </div>
         </div>
         <div class="container">
-          <!-- <button
-            type="button"
-            class="btn btn-danger btn-floating btn-lg"
-            id="btn-back-to-top"
-          >
-            <i class="fas fa-arrow-up"></i>
-          </button> -->
           <div class="postsWall"></div>
         </div>
       </div>
     </main>
+    <button
+      class="btn btn-lg btn-primary rounded-circle position-fixed bottom-0 end-0 translate-middle d-none"
+      id="back-to-up"
+    >
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <footer>
       <div class="card bg-dark rounded-0">
         <div class="card-body text-center text-white fw-bold">

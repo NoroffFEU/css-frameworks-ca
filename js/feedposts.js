@@ -60,9 +60,9 @@ async function fetchAllUserPosts(url) {
         post.author.avatar.trim() !== ""
       ) {
         postAvatar.src = post.author.avatar;
-        // postAvatar.alt = "Profile-image";
+        postAvatar.alt = "Profile-image";
       } else {
-        postAvatar.src = "/images/profile.jpg";
+        postAvatar.src = "/images/profile-image-2.jpg";
       }
 
       const postAuthor = document.createElement("p");
@@ -140,7 +140,7 @@ async function fetchAllUserPosts(url) {
       postWallContainer.appendChild(postCard);
     });
 
-    // console.log(json);
+    console.log(json);
     allPostsResult = json;
   } catch (error) {
     console.error("Error:", error);

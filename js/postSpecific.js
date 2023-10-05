@@ -21,7 +21,6 @@ async function singlePost() {
     const response = await fetch(specificPostUrl, fetchSpecificPost);
 
     if (!response.ok) {
-      // Handle the case when the post with the given ID is not found or other errors
       console.error(
         `Error fetching post with ID ${postId}: ${response.statusText}`
       );
@@ -38,16 +37,15 @@ async function singlePost() {
     container.innerHTML = "";
 
     const postContainer = document.createElement("div");
-    postContainer.classList.add("col-md-12", "mb-3", "p-5");
+    postContainer.classList.add("p-3");
 
     // Create and append the postCard element
     const postCard = document.createElement("div");
-    postCard.classList.add("mb-2");
+    postCard.classList.add("mb-2", "border");
     postContainer.appendChild(postCard);
 
     const postCardBody = document.createElement("div");
     postCardBody.classList.add(
-      "card-body",
       "d-flex",
       "justify-content-around",
       "align-items-center",
@@ -69,7 +67,7 @@ async function singlePost() {
       postAvatar.src = specificPost.author.avatar;
       postAvatar.alt = "Profile-image";
     } else {
-      postAvatar.src = "/images/profile.jpg";
+      postAvatar.src = "/images/profile-image-2.jpg";
     }
 
     const postAuthor = document.createElement("p");
@@ -91,7 +89,7 @@ async function singlePost() {
     postTitle.textContent = specificPost.title;
 
     const postBody = document.createElement("p");
-    postBody.classList.add("postBody", "fs-4", "m-2", "text-start");
+    postBody.classList.add("postBody", "fs-4", "m-2", "text-center");
     postBody.textContent = specificPost.body;
 
     postCard.appendChild(postCardBody);
@@ -111,32 +109,80 @@ async function singlePost() {
         "d-block"
       );
 
-      //   postMedia.style.maxWidth = "500px";
       postMedia.style.maxHeight = "400px";
       postMedia.src = specificPost.media;
       postCard.appendChild(postMedia);
     }
 
-    // const commentSection = document.createElement("div");
-    // commentSection.classList.add(
-    //   "bg.primary",
-    //   "d-flex",
-    //   "justify-content-between"
-    // );
-
-    // const comments = document.createElement("p");
-    // comments.classList.add("ms-5");
-    // comments.textContent = post.comments.body;
-    // comments.style.fontSize = "25px";
-    // comments.style.color = "blue";
-
-    // postCard.appendChild(commentSection);
-
-    // Add more elements as needed
-
     container.appendChild(postContainer);
 
-    // Add more elements as needed
+    const commentsContainer = document.querySelector(".commentSection");
+    commentsContainer.innerHTML = "";
+
+    const commentsSection = document.createElement("div");
+    commentsSection.classList.add("p-2");
+
+    specificPost.comments.forEach((comment) => {
+      const commentCard = document.createElement("div");
+      commentCard.classList.add("mb-2", "border");
+      commentsSection.appendChild(commentCard);
+
+      const commentCardBody = document.createElement("div");
+      commentCardBody.classList.add(
+        "card-body",
+        "d-flex",
+        "justify-content-around",
+        "align-items-center",
+        "mb-3",
+        "mt-3",
+        "mb-3"
+      );
+
+      const commentAvatar = document.createElement("img");
+      commentAvatar.classList.add("img-fluid", "rounded-circle");
+      commentAvatar.style.width = "100px";
+
+      if (
+        comment.author &&
+        comment.author.avatar &&
+        comment.author.avatar.trim() !== ""
+      ) {
+        commentAvatar.src = comment.author.avatar;
+        commentAvatar.alt = "Profile-Image";
+      } else {
+        commentAvatar.src = "/images/profile-image-template.jpg";
+      }
+
+      const commentAuthor = document.createElement("p");
+      commentAuthor.classList.add("card-text", "fw-bold", "fs-4");
+      commentAuthor.textContent = comment.author.name;
+
+      const createdDate = new Date(comment.created);
+      const formattedDate = createdDate.toLocaleDateString();
+      const commentDate = document.createElement("p");
+      commentDate.classList.add(
+        "card-text",
+        "fst-italic",
+        "fs-5",
+        "d-none",
+        "d-sm-block"
+      );
+      commentDate.textContent = formattedDate;
+
+      commentCardBody.appendChild(commentAvatar);
+      commentCardBody.appendChild(commentAuthor);
+      commentCardBody.appendChild(commentDate);
+
+      commentCard.appendChild(commentCardBody);
+
+      const commentText = document.createElement("p");
+      commentText.classList.add("fs-5", "m-2", "text-center");
+      commentText.textContent = comment.body;
+
+      commentCard.appendChild(commentText);
+    });
+
+    commentsContainer.appendChild(commentsSection);
   } catch (error) {
     console.error("Error:", error);
   }

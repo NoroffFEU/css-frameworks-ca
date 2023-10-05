@@ -162,21 +162,27 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
     threshold: 1,
 });
 function searchApi(array, category, count = 0, searchWord = null) {
+    var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
         if (!searchWord || count > 10) {
             return;
         }
         let foundWord;
-        console.log(array[0][category].name.toLowerCase());
-        if (array[0][category].name) {
+        if ((_b = (_a = array[0]) === null || _a === void 0 ? void 0 : _a[category]) === null || _b === void 0 ? void 0 : _b.name) {
             console.log("author");
             foundWord = array.find((post) => post[category].name.toLowerCase() === searchWord.toLowerCase());
         }
-        else if (Array.isArray(array[0][category])) {
+        else if (Array.isArray((_c = array[0]) === null || _c === void 0 ? void 0 : _c[category])) {
             foundWord = array.find((post) => post.tags.some((element) => element.toLowerCase() === searchWord.toLowerCase()));
         }
         else {
-            foundWord = array.find((post) => post[category].toLowerCase().includes(searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase()));
+            foundWord = array.find((post) => {
+                var _a;
+                //if (post === null) {
+                //return false;
+                // }
+                (_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase().includes(searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase());
+            });
         }
         if (foundWord) {
             return foundWord;
@@ -190,7 +196,7 @@ function searchApi(array, category, count = 0, searchWord = null) {
                 }
             }
             catch (error) {
-                throw error;
+                console.log(error);
             }
         }
     });

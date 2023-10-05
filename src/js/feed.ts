@@ -255,22 +255,25 @@ async function searchApi(
     return;
   }
   let foundWord;
-  console.log(array[0][category].name.toLowerCase());
-  if (array[0][category].name) {
+
+  if (array[0]?.[category]?.name) {
     console.log("author");
     foundWord = array.find(
       (post) => post[category].name.toLowerCase() === searchWord.toLowerCase()
     );
-  } else if (Array.isArray(array[0][category])) {
+  } else if (Array.isArray(array[0]?.[category])) {
     foundWord = array.find((post) =>
       post.tags.some(
         (element) => element.toLowerCase() === searchWord.toLowerCase()
       )
     );
   } else {
-    foundWord = array.find((post) =>
-      post[category].toLowerCase().includes(searchWord?.toLowerCase())
-    );
+    foundWord = array.find((post) => {
+      //if (post === null) {
+      //return false;
+      // }
+      post[category]?.toLowerCase().includes(searchWord?.toLowerCase());
+    });
   }
 
   if (foundWord) {
@@ -293,7 +296,7 @@ async function searchApi(
         return searchApi(data, category, count + 1, searchWord);
       }
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   }
 }

@@ -16,7 +16,9 @@ export default function callApi(endpoint, options) {
             if (data.length > 0 && data) {
                 return data;
             }
-            // else throw new Error
+            else {
+                throw new Error("response is empty, or not what expected");
+            }
         }
         catch (err) {
             console.log(err.message);

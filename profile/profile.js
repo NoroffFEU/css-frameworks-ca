@@ -1,11 +1,13 @@
+const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";
-const PostsUrl = `${mainApiUrl}/social/posts`;
+//const getMyPosts = `${mainApiUrl}/social/profiles/:name/posts`;
+const myName = localStorage.getItem("name");
+const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
+const myPostsUrl = `${mainApiUrl}/social/posts`;
 
-// using token to fetch the posts
 
 async function getPostsWithToken(url) {
     try {
-        const token = localStorage.getItem("accessToken");
         const getData = {
             method: "GET",
             headers: {
@@ -23,14 +25,13 @@ async function getPostsWithToken(url) {
 
 }
 
-
-
-// showing posts
-
-var containerHTMLCard = document.getElementById("singleCard");
-
+// showing my posts
 async function getPosts() {
-    var getPost = await getPostsWithToken(PostsUrl);
+    var containerHTMLCard = document.getElementById("singleCardProfile");
+    //Clear the page
+    containerHTMLCard.innerHTML = "";
+
+    var getPost = await getPostsWithToken(getMyPosts);
     var setImg = "";
     for (var i = 0; i < getPost.length; i++) {
         if (getPost[i].media === null ||
@@ -55,7 +56,8 @@ async function getPosts() {
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
                             
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
-                           
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${getPost[i].id}">Edit</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${getPost[i].id}" data-postid="${getPost[i].id}">Delete</button>
                         </div>
                         <small class="text-muted" id="cardUpdated">${getPost[i].updated}</small>
                         
@@ -66,65 +68,41 @@ async function getPosts() {
             </div>
         </div>        
         `;
+
+    }
+
+    //https://stackoverflow.com/questions/44162581/use-wildcard-to-find-specific-id-using-javascript
+    //https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
+
+    for (let i = 0; i < deleteBtns.length; i++) {
+        const deleteBtn = deleteBtns[i];
+        deleteBtn.addEventListener("click", async function () {
+            const postId = deleteBtn.dataset.postid;
+            await deletePost(postId);
+        });
     }
 
 }
 
 window.onload = getPosts();
 
-// filter comments and reactions
-
-// hente comments and reactions
-// addeventlistener - when the btn is activated, it shows comments or / and reactions
-// if there are no comments/reactions, btn is nit active
 
 
-
-// new post
-
-const formPost = document.getElementById("formPost");
-
-
-document.getElementById("postBtn").addEventListener("click", (event) => {
-    event.preventDefault();
-
-    const titlePost = formPost.elements[0];
-    const messagePost = formPost.elements[1];
-    const mediaPost = formPost.elements[2];
-
-    const userTitlePost = titlePost.value;
-    const userMessagePost = messagePost.value;
-    const userMediaPost = mediaPost.value;
-
-    const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-    newPostToApiFunksjon(PostsUrl, newPost);
-});
-
-function newPostValuesToObject(title, message, media) {
-    const postToApi = {
-        "title": title,
-        "body": message,
-        "media": media
+// delete post
+async function deletePost(id) {
+    const deletePost = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+        },
     };
-    return postToApi;
-}
-
-async function newPostToApiFunksjon(url, post) {
     try {
-        const token = localStorage.getItem("accessToken");
-        const postData = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(post),
-        };
-        const response = await fetch(url, postData);
-        const json = await response.json();
-
-        //return json;
+        await fetch(`${myPostsUrl}/${id}`, deletePost);
+        await getPosts();
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
+
 }

@@ -323,7 +323,9 @@ h6 {
     max-height: 200px;
 }
 
-.card-title {
+.card-title, 
+#showComments,
+#showReactions {
     background-color: $color-primary-light;
     color: $color-font;
 margin: 0;

@@ -103,6 +103,7 @@ async function logInUser(url, userData) {
         const json = await response.json();
         const accessToken = json.accessToken;
         localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("name", json.name);
         window.location.href = "./feed/index.html";
     } catch (error) {
         console.log(error)

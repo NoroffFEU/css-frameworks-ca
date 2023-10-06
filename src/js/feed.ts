@@ -1,5 +1,6 @@
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
+import renderPosts from "./renderPost.js";
 
 const endpoint = endpointObject("Jarle");
 
@@ -119,7 +120,7 @@ interface post {
   author: { name: string; email: string; avatar: string; media: string };
 }
 
-function renderPosts(
+/*function renderPosts(
   domEl: HTMLDivElement,
   { id, title, body, tags, media, created, updated, _count, author }: post
 ) {
@@ -149,7 +150,7 @@ function renderPosts(
       </div>
     </div>
   </div>`;
-}
+}*/
 
 function optionFactory(method: htmlMethod, body: {}) {
   const newObject: {

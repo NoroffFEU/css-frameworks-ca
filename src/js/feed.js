@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
+import renderPosts from "./renderPost.js";
 const endpoint = endpointObject("Jarle");
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
@@ -79,11 +80,16 @@ function observerTargetClosure() {
     return [setTarget, isObserving];
 }
 const [setTarget, isObserving] = observerTargetClosure();
-function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author }) {
-    domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
+/*function renderPosts(
+  domEl: HTMLDivElement,
+  { id, title, body, tags, media, created, updated, _count, author }: post
+) {
+  domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
     <div class="row">
-      <a href="/src/profile/index.html?user=${author.name ? author.name : ""}" class="col-4">
-        <img 
+      <a href="/src/profile/index.html?user=${
+        author.name ? author.name : ""
+      }" class="col-4">
+        <img
           class="rounded-circle w-25"
           src=${author.avatar ? author.avatar : ""}
           alt="Profile picture of Thistle" />
@@ -95,13 +101,16 @@ function renderPosts(domEl, { id, title, body, tags, media, created, updated, _c
           ${body}${media && media}
         </p>
         ${tags
-        .map((element) => `<span class="badge text-bg-primary m-1">${element}</span>`)
-        .join("")}
+          .map(
+            (element) =>
+              `<span class="badge text-bg-primary m-1">${element}</span>`
+          )
+          .join("")}
           <span class="fs-6">${created}</span>
       </div>
     </div>
   </div>`;
-}
+}*/
 function optionFactory(method, body) {
     const newObject = {
         method: method,

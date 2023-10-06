@@ -1,11 +1,13 @@
 import { API_BASE_URL } from "./const.mjs";
+const token = localStorage.getItem("accessToken");
 
-async function loginUser(url, newPost) {
+async function createPost(url, newPost) {
   try {
     const postData = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(newPost),
     };
@@ -13,18 +15,11 @@ async function loginUser(url, newPost) {
     console.log(response);
 
     if (response.ok) {
-      // Check if the response is successful
       const json = await response.json();
-      console.log(json);
-      const accessToken = json.accessToken;
-      const userName = json.name;
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("userName", userName);
+      // console.log(json);
 
-      // Redirect to the profile page
-      window.location.href = "feed/index.html";
+      window.location.reload();
     } else {
-      // Handle unsuccessful login here
       console.log("Could not upload new post");
     }
   } catch (error) {
@@ -45,7 +40,7 @@ document
       body: postBody,
     };
 
-    const newPostURL = `${API_BASE_URL}posts`;
+    const newPostURL = `${API_BASE_URL}social/posts`;
 
-    loginUser(newPostURL, newPost);
+    createPost(newPostURL, newPost);
   });

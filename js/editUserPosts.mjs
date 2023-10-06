@@ -1,5 +1,14 @@
 import { API_BASE_URL } from "./const.mjs";
 
+const modal = document.getElementById("myModal");
+const postTitleInput = modal.querySelector("#postTitle");
+const postBodyTextarea = modal.querySelector("#postBodyArea");
+const postMediaInput = modal.querySelector("#postMedia");
+const editButton = modal.querySelector("#editPostButton");
+const deleteButton = document.getElementById("deletePostButton"); // Updated button ID
+
+// Add imports for saveButton and gatherUserPosts if needed
+
 async function editPost(postId, postTitle, postBody, postMedia) {
   const token = localStorage.getItem("accessToken");
   const url = `${API_BASE_URL}social/posts/${postId}`;
@@ -24,6 +33,7 @@ async function editPost(postId, postTitle, postBody, postMedia) {
       modal.classList.remove("show");
       modal.style.display = "none";
 
+      // Assuming userPosts is a valid array of user posts
       gatherUserPosts(userPosts);
     } else {
       // Handle errors, e.g., display an error message to the user
@@ -34,4 +44,12 @@ async function editPost(postId, postTitle, postBody, postMedia) {
   }
 }
 
-export { editPost };
+editButton.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent form submission
+  const editedTitle = postTitleInput.value;
+  const editedBody = postBodyTextarea.value;
+  const editedMedia = postMediaInput.value;
+
+  // Replace post.id with the actual postId
+  editPost(post.id, editedTitle, editedBody, editedMedia);
+});

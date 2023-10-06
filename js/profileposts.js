@@ -1,5 +1,5 @@
 import { API_BASE_URL } from "./const.mjs";
-import { editPost } from "./editUserPosts.mjs";
+// import { editPost } from "./editUserPosts.mjs";
 const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
@@ -126,7 +126,6 @@ async function gatherUserPosts(url) {
       const editButtonId = `openModalBtn_${post.id}`;
       editButton.id = editButtonId;
       editButton.classList.add("btn", "btn-primary", "btn-sm");
-      editButton.style.width = "100%";
       editButton.textContent = "Edit";
 
       const modal = document.getElementById("myModal");
@@ -156,16 +155,6 @@ async function gatherUserPosts(url) {
           closeModal.classList.remove("show");
           closeModal.style.display = "none";
         }
-
-        const saveButton = modal.querySelector("#editPostButton");
-        saveButton.addEventListener("click", () => {
-          const editedTitle = postTitleInput.value;
-          const editedBody = postBodyTextarea.value;
-          const editedMedia = postMediaInput.value;
-
-          // Call the editPost function with the edited data
-          editPost(post.id, editedTitle, editedBody, editedMedia);
-        });
       });
 
       iconContainer.appendChild(comments);

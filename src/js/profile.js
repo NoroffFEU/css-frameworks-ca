@@ -110,8 +110,8 @@ function renderUserPosts({ body, created, tags, title, owner, id, }) {
     <div>
       <h3 id="title${id}">${title}</h3>
       <div>
-      <button id="button--${id}" class="btn btn-success">delete</button>
-      <button data-id=${id} id="button--edit--${id}" btn btn-outline-success>update</button>
+      <button id="button--${id}" class="${currentUser === userId ? "" : "hide"} btn btn-success">delete</button>
+      <button  data-id=${id} id="button--edit--${id}" class="${currentUser === userId ? "" : "hide"} btn btn-outline-primary">update</button>
       </div>
       </div>  
       <p id="body${id}" class="card-text text-black">

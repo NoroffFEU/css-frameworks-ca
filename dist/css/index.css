@@ -11890,4 +11890,8 @@ textarea.form-control-lg {
   z-index: 3000;
 }
 
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=index.css.map */

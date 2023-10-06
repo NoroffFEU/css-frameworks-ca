@@ -7,10 +7,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export default function callApi(endpoint, callBack, options) {
+export default function callApi(endpoint, options) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(endpoint, options);
-        const data = yield response.json();
-        callBack(data);
+        try {
+            const response = yield fetch(endpoint, options);
+            const data = yield response.json();
+            console.log(data);
+            if (data.length > 0 && data) {
+                return data;
+            }
+            else {
+                throw new Error("response is empty, or not what expected");
+            }
+        }
+        catch (err) {
+            console.log(err.message);
+        }
     });
 }

@@ -5,13 +5,12 @@ const postTitleInput = modal.querySelector("#postTitle");
 const postBodyTextarea = modal.querySelector("#postBodyArea");
 const postMediaInput = modal.querySelector("#postMedia");
 const editButton = modal.querySelector("#editPostButton");
-const deleteButton = document.getElementById("deletePostButton"); // Updated button ID
-
-// Add imports for saveButton and gatherUserPosts if needed
+// const deleteButton = document.getElementById("deletePostButton");
 
 async function editPost(postId, postTitle, postBody, postMedia) {
   const token = localStorage.getItem("accessToken");
   const url = `${API_BASE_URL}social/posts/${postId}`;
+  console.log(url);
 
   try {
     const response = await fetch(url, {
@@ -24,6 +23,7 @@ async function editPost(postId, postTitle, postBody, postMedia) {
         title: postTitle,
         body: postBody,
         media: postMedia,
+        id: postId,
       }),
     });
 

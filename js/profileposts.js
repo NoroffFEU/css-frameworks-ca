@@ -129,11 +129,10 @@ async function gatherUserPosts(url) {
       editButton.textContent = "Edit";
 
       const modal = document.getElementById("myModal");
-      // Add an event listener to the Edit button
+
       editButton.addEventListener("click", (e) => {
         e.preventDefault();
-        // Populate modal fields with post data
-        // const modal = document.getElementById("myModal");
+
         const postTitleInput = modal.querySelector("#postTitle");
         const postBodyTextarea = modal.querySelector("#postBodyArea");
         const postMediaInput = modal.querySelector("#postMedia");

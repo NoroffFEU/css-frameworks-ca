@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./const.mjs";
+import { editPost } from "./editUserPosts.mjs";
 const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
@@ -128,11 +129,12 @@ async function gatherUserPosts(url) {
       editButton.style.width = "100%";
       editButton.textContent = "Edit";
 
+      const modal = document.getElementById("myModal");
       // Add an event listener to the Edit button
       editButton.addEventListener("click", (e) => {
         e.preventDefault();
         // Populate modal fields with post data
-        const modal = document.getElementById("myModal");
+        // const modal = document.getElementById("myModal");
         const postTitleInput = modal.querySelector("#postTitle");
         const postBodyTextarea = modal.querySelector("#postBodyArea");
         const postMediaInput = modal.querySelector("#postMedia");
@@ -154,6 +156,16 @@ async function gatherUserPosts(url) {
           closeModal.classList.remove("show");
           closeModal.style.display = "none";
         }
+
+        const saveButton = modal.querySelector("#editPostButton");
+        saveButton.addEventListener("click", () => {
+          const editedTitle = postTitleInput.value;
+          const editedBody = postBodyTextarea.value;
+          const editedMedia = postMediaInput.value;
+
+          // Call the editPost function with the edited data
+          editPost(post.id, editedTitle, editedBody, editedMedia);
+        });
       });
 
       iconContainer.appendChild(comments);

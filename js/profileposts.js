@@ -22,8 +22,8 @@ async function gatherUserPosts(url) {
     profilePosts.innerHTML = "";
 
     json.forEach((post) => {
-      // Create a main container for each post with border
-      const postContainer = document.createElement("div");
+      const postContainer = document.createElement("a");
+      postContainer.href = `/feed/postSpecific.html?id=${post.id}`;
       postContainer.classList.add(
         "post-container",
         "border",
@@ -31,11 +31,14 @@ async function gatherUserPosts(url) {
         "mb-2",
         "p-3",
         "d-flex",
-        "flex-column"
+        "flex-column",
+        "text-decoration-none",
+        "text-secondary"
       );
 
       // Create a container for the post content (image, name, date)
       const posterInfo = document.createElement("div");
+      posterInfo.href = `/feed/postSpecific.html?id=${post.id}`;
       posterInfo.classList.add(
         "d-flex",
         "justify-content-start",
@@ -91,7 +94,8 @@ async function gatherUserPosts(url) {
         postMedia.classList.add(
           "img-fluid",
           "align-self-center",
-          "object-fit-contain"
+          "object-fit-contain",
+          "mb-2"
         );
         postMedia.src = post.media;
         postContainer.appendChild(postMedia);
@@ -101,29 +105,75 @@ async function gatherUserPosts(url) {
       iconContainer.classList.add(
         "icon-container",
         "d-flex",
-        "justify-content-end"
+        "justify-content-evenly",
+        "align-items-center",
+        "flex-shrink"
       );
+
+      const comments = document.createElement("p");
+      comments.classList.add("ms-5", "text-primary", "margin-unset");
+      comments.textContent = "Comments:  " + post.comments.length;
+      comments.style.fontSize = "20px";
 
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("fa-regular", "fa-heart");
-      heartIcon.style.fontSize = "25px";
+      heartIcon.textContent = " " + post.reactions.length;
+      heartIcon.style.fontSize = "20px";
       heartIcon.style.color = "red";
 
+      const editButton = document.createElement("button");
+      const editButtonId = `openModalBtn_${post.id}`;
+      editButton.id = editButtonId;
+      editButton.classList.add("btn", "btn-primary", "btn-sm");
+      editButton.style.width = "100%";
+      editButton.textContent = "Edit";
+
+      // Add an event listener to the Edit button
+      editButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Populate modal fields with post data
+        const modal = document.getElementById("myModal");
+        const postTitleInput = modal.querySelector("#postTitle");
+        const postBodyTextarea = modal.querySelector("#postBodyArea");
+        const postMediaInput = modal.querySelector("#postMedia");
+
+        postTitleInput.value = post.title;
+        postBodyTextarea.value = post.body;
+        postMediaInput.value = post.media;
+
+        modal.classList.add("show");
+        modal.style.display = "block";
+      });
+
+      const closeModal = document.getElementById("myModal");
+      closeModal.addEventListener("click", (e) => {
+        if (
+          e.target === closeModal ||
+          e.target.classList.contains("btn-close")
+        ) {
+          closeModal.classList.remove("show");
+          closeModal.style.display = "none";
+        }
+      });
+
+      iconContainer.appendChild(comments);
       iconContainer.appendChild(heartIcon);
+      // iconContainer.appendChild(editButton);
 
       // Append the icon container to the post container
       postContainer.appendChild(iconContainer);
+      postContainer.appendChild(editButton);
 
       // Append the main postContainer to profilePosts
       profilePosts.appendChild(postContainer);
     });
 
-    console.log(json);
+    // console.log(json);
   } catch (error) {
     console.log(error);
   }
 }
-//
-const userPosts = `${API_BASE_URL}social/profiles/${userName}/posts?_author=true`;
+
+const userPosts = `${API_BASE_URL}social/profiles/${userName}/posts?_author=true&_reactions=true&_comments=true`;
 
 gatherUserPosts(userPosts);

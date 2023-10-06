@@ -16,9 +16,9 @@
     <script src="/js/feedposts.js" type="module"></script>
     <script src="/js/searchPosts.js" type="module"></script>
     <script src="/js/filterFeedPosts.js" type="module"></script>
-    <!-- <script src="/js/backToTopButton.js" type="module"></script> -->
+    <script src="/js/backToTopButton.js" type="module"></script>
     <script src="/js/createPost.js" type="module"></script>
-    <!-- <script src="/js/populateFeed.js" type="module"></script> -->
+    <script src="/js/populateFeed.js" type="module"></script>
   </head>
   <body>
     <div id="topbar"></div>
@@ -55,7 +55,6 @@
       </div>
     </header>
     <main>
-      <h1 class="visually-hidden">Feed</h1>
       <div class="container">
         <div class="row no-gutters mt-2 justify-content-center">
           <div class="col-md-3 profileBox"></div>
@@ -65,7 +64,7 @@
                 <label for="postTitle" class="form-label text-start"
                   >Create New post</label
                 >
-                <div class="commentTitle">
+                <div class="postTitle">
                   <input
                     type="text"
                     class="form-control"
@@ -76,23 +75,35 @@
                   />
                 </div>
                 <textarea
-                  class="form-control mt-1"
+                  class="form-control mt-1 mb-1"
                   placeholder="Add post"
                   id="postBodyArea"
                   type="text"
                   name="body"
+                  required
                   rows="3"
                 ></textarea>
-                <div class="d-flex justify-content-end p-3">
-                  <button type="submit" class="btn btn-primary btn-lg">
-                    Post
-                  </button>
+                <div class="postMedia">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="postMedia"
+                    name="media"
+                    placeholder="Add image URL if you want to"
+                  />
                 </div>
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="btn btn-primary btn-lg mt-2 ml-auto"
+                >
+                  Post
+                </button>
               </form>
             </div>
           </div>
           <div class="row justify-content-center align-items-center p-3">
-            <h3 class="text-center">Feed</h3>
+            <h1 class="text-center">Feed</h1>
           </div>
           <form class="col-md-4 d-flex mb-3">
             <input

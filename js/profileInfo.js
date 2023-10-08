@@ -15,7 +15,6 @@ async function createProfile(url) {
       },
     };
     const response = await fetch(url, fetchProfileInfo);
-    console.log(response);
     const json = await response.json();
 
     //Populating the profile
@@ -98,7 +97,7 @@ async function createProfile(url) {
 
     profileBox.append(profileContainer);
 
-    console.log(json);
+    // console.log(json);
   } catch (error) {
     console.log(error);
   }

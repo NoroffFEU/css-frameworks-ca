@@ -1,4 +1,6 @@
-const API_Profiles_URL = "https://api.noroff.dev/api/v1/social/profiles";
+import { API_BASE_URL } from "./const.mjs";
+// import { editPost } from "./editUserPosts.mjs";
+const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
   try {
@@ -21,19 +23,23 @@ async function gatherUserPosts(url) {
     profilePosts.innerHTML = "";
 
     json.forEach((post) => {
-      // Create a main container for each post with border
-      const postContainer = document.createElement("div");
+      const postContainer = document.createElement("a");
+      postContainer.href = `/feed/postSpecific.html?id=${post.id}`;
       postContainer.classList.add(
         "post-container",
         "border",
-        "mb-1",
+        "border-black",
+        "mb-2",
         "p-3",
         "d-flex",
-        "flex-column"
+        "flex-column",
+        "text-decoration-none",
+        "text-secondary"
       );
 
       // Create a container for the post content (image, name, date)
       const posterInfo = document.createElement("div");
+      posterInfo.href = `/feed/postSpecific.html?id=${post.id}`;
       posterInfo.classList.add(
         "d-flex",
         "justify-content-start",
@@ -86,47 +92,86 @@ async function gatherUserPosts(url) {
 
       if (post.media && post.media.trim() !== "") {
         const postMedia = document.createElement("img");
-        postMedia.classList.add("img-fluid", "align-self-center");
+        postMedia.classList.add(
+          "img-fluid",
+          "align-self-center",
+          "object-fit-contain",
+          "mb-2"
+        );
         postMedia.src = post.media;
-        postMedia.style.width = "100px";
         postContainer.appendChild(postMedia);
-      }
-      //added an else statement so i could style the content if it found anything.
-      else {
-        // const postMedia = document.createElement("img");
-        // postMedia.classList.add("img-fluid", "align-self-center");
-        // postMedia.src = "/images/backgroundimage.jpg"; // Set the default image source
-        // postMedia.style.width = "200px";
-        // postContainer.appendChild(postMedia);
       }
 
       const iconContainer = document.createElement("div");
       iconContainer.classList.add(
         "icon-container",
         "d-flex",
-        "justify-content-end"
+        "justify-content-evenly",
+        "align-items-center",
+        "flex-shrink"
       );
+
+      const comments = document.createElement("p");
+      comments.classList.add("ms-5", "text-primary", "margin-unset");
+      comments.textContent = "Comments:  " + post.comments.length;
+      comments.style.fontSize = "20px";
 
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("fa-regular", "fa-heart");
-      heartIcon.style.fontSize = "25px";
+      heartIcon.textContent = " " + post.reactions.length;
+      heartIcon.style.fontSize = "20px";
       heartIcon.style.color = "red";
 
+      const openModal = document.createElement("button");
+      openModal.id = post.id;
+      openModal.classList.add("btn", "btn-primary", "btn-sm");
+      openModal.textContent = "Edit";
+
+      const modal = document.getElementById("myModal");
+
+      openModal.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const postTitleInput = modal.querySelector("#postTitle");
+        const postBodyTextarea = modal.querySelector("#postBodyArea");
+        const postMediaInput = modal.querySelector("#postMedia");
+
+        postTitleInput.value = post.title;
+        postBodyTextarea.value = post.body;
+        postMediaInput.value = post.media;
+
+        modal.setAttribute("data-post-id", post.id);
+
+        modal.classList.add("show");
+        modal.style.display = "block";
+      });
+
+      const closeModal = document.getElementById("myModal");
+      closeModal.addEventListener("click", (e) => {
+        if (
+          e.target === closeModal ||
+          e.target.classList.contains("btn-close")
+        ) {
+          closeModal.classList.remove("show");
+          closeModal.style.display = "none";
+        }
+      });
+
+      iconContainer.appendChild(comments);
       iconContainer.appendChild(heartIcon);
 
-      // Append the icon container to the post container
       postContainer.appendChild(iconContainer);
+      postContainer.appendChild(openModal);
 
-      // Append the main postContainer to profilePosts
       profilePosts.appendChild(postContainer);
     });
 
-    console.log(json);
+    // console.log(json);
   } catch (error) {
     console.log(error);
   }
 }
-//added a limit of 10 posts just so the page did not get flooded
-const userPosts = `${API_Profiles_URL}/${userName}/posts?_author=true&_sort=created&_limit=10`;
+
+const userPosts = `${API_BASE_URL}social/profiles/${userName}/posts?_author=true&_reactions=true&_comments=true`;
 
 gatherUserPosts(userPosts);

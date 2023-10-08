@@ -1,7 +1,4 @@
-const API_BASE_URL = "https://api.noroff.dev";
-
-//API endpoints
-//Register = /api/v1/social/auth/register
+const API_BASE_URL = "https://api.noroff.dev/api/v1/";
 
 async function registerUser(url, userData) {
   try {
@@ -36,6 +33,6 @@ document
       password: userPassword,
     };
 
-    const registerUrl = `${API_BASE_URL}/api/v1/social/auth/register`;
+    const registerUrl = `${API_BASE_URL}social/auth/register`;
     await registerUser(registerUrl, userData);
   });

@@ -1,47 +1,28 @@
+import { getData } from "../mjs/getData.mjs";
+import { isMediaValid } from "../mjs/helpers.mjs";
+
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const PostsUrl = `${mainApiUrl}/social/posts`;
 
-// using token to fetch the posts
-
-async function getPostsWithToken(url) {
-    try {
-        const token = localStorage.getItem("accessToken");
-        const getData = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        };
-        const response = await fetch(url, getData);
-        console.log(response);
-        const json = await response.json();
-        return json;
-    } catch (error) {
-        console.log(error);
-    }
-
-}
+const token = localStorage.getItem("accessToken");
 
 
 
 // showing posts
-
 var containerHTMLCard = document.getElementById("singleCard");
 
 async function getPosts() {
-    var getPost = await getPostsWithToken(PostsUrl);
+    var getPost = await getData(PostsUrl);
     var setImg = "";
+
     for (var i = 0; i < getPost.length; i++) {
-        if (getPost[i].media === null ||
-            getPost[i].media == "" ||
-            getPost[i].media.includes(".jpg") === false ||
-            getPost[i].media.includes(".jpeg") === false ||
-            getPost[i].media.includes(".png") === false) {
-            setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
-        } else {
+
+        if (isMediaValid(getPost[i].media)) {
             setImg = getPost[i].media;
+        } else {
+            setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
+
 
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10">
@@ -72,11 +53,7 @@ async function getPosts() {
 
 window.onload = getPosts();
 
-// filter comments and reactions
 
-// hente comments and reactions
-// addeventlistener - when the btn is activated, it shows comments or / and reactions
-// if there are no comments/reactions, btn is nit active
 
 
 
@@ -128,3 +105,7 @@ async function newPostToApiFunksjon(url, post) {
         console.log(error)
     }
 }
+
+
+
+

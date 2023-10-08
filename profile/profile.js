@@ -1,29 +1,14 @@
+import { getData } from "../mjs/getData.mjs";
+import { isMediaValid } from "../mjs/helpers.mjs";
+
 const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 //const getMyPosts = `${mainApiUrl}/social/profiles/:name/posts`;
 const myName = localStorage.getItem("name");
 const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
 const myPostsUrl = `${mainApiUrl}/social/posts`;
+const profilePosts = undefined;
 
-
-async function getPostsWithToken(url) {
-    try {
-        const getData = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        };
-        const response = await fetch(url, getData);
-        console.log(response);
-        const json = await response.json();
-        return json;
-    } catch (error) {
-        console.log(error);
-    }
-
-}
 
 // showing my posts
 async function getPosts() {
@@ -31,17 +16,14 @@ async function getPosts() {
     //Clear the page
     containerHTMLCard.innerHTML = "";
 
-    var getPost = await getPostsWithToken(getMyPosts);
+    var getPost = await getData(getMyPosts);
     var setImg = "";
     for (var i = 0; i < getPost.length; i++) {
-        if (getPost[i].media === null ||
-            getPost[i].media == "" ||
-            getPost[i].media.includes(".jpg") === false ||
-            getPost[i].media.includes(".jpeg") === false ||
-            getPost[i].media.includes(".png") === false) {
-            setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
-        } else {
+
+        if (isMediaValid(getPost[i].media)) {
             setImg = getPost[i].media;
+        } else {
+            setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
 
         containerHTMLCard.innerHTML += `
@@ -56,7 +38,7 @@ async function getPosts() {
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
                             
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${getPost[i].id}">Edit</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${getPost[i].id}" data-postid="${getPost[i].id}">Edit</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${getPost[i].id}" data-postid="${getPost[i].id}">Delete</button>
                         </div>
                         <small class="text-muted" id="cardUpdated">${getPost[i].updated}</small>
@@ -83,6 +65,20 @@ async function getPosts() {
         });
     }
 
+    //getting edit post id
+    const editBtns = document.querySelectorAll('[id^="btnEdit"]');
+
+    for (let i = 0; i < editBtns.length; i++) {
+        const editBtn = editBtns[i];
+        editBtn.addEventListener("click", async function () {
+
+            const postId = editBtn.dataset.postid;
+            editPost(postId);
+        });
+    }
+
+
+
 }
 
 window.onload = getPosts();
@@ -106,3 +102,75 @@ async function deletePost(id) {
     }
 
 }
+
+
+// edit post
+
+//showing the form with the text
+
+
+
+
+function editPost(id) {
+    //need to get the form with the values
+    const exampleModal = document.getElementById("exampleModal");
+    var myModal = new bootstrap.Modal(exampleModal, {
+        backdrop: 'static', // You can set the backdrop behavior (static or true/false)
+        keyboard: false,    // You can control whether the modal can be closed with the keyboard
+        focus: true
+    })
+    myModal.show();
+}
+
+
+
+// document.getElementById("postBtn").addEventListener("click", (event) => {
+//     event.preventDefault();
+
+//     const titlePost = formPost.elements[0];
+//     const messagePost = formPost.elements[1];
+//     const mediaPost = formPost.elements[2];
+
+//     const userTitlePost = titlePost.value;
+//     const userMessagePost = messagePost.value;
+//     const userMediaPost = mediaPost.value;
+
+//     const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
+//     editedPostToApiFunksjon(PostsUrl, newPost);
+// });
+
+// function newPostValuesToObject(title, message, media) {
+//     const postToApi = {
+//         "title": title,
+//         "body": message,
+//         "media": media
+//     };
+//     return postToApi;
+// }
+
+// async function editedPostToApiFunksjon(url, post) {
+//     try {
+//         const token = localStorage.getItem("accessToken");
+//         const postData = {
+//             method: "PUT",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Authorization: `Bearer ${token}`,
+//             },
+//             body: JSON.stringify(post),
+//         };
+//         const response = await fetch(url, postData);
+//         const json = await response.json();
+
+//         //return json;
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+
+
+// fetching all posts, but only mine would be possible to edit or delate = buttons visible
+//1. like in delete - on click you activate a editing of a certain post
+// 2. showing modal with the title and text of the chosen post
+// 3. fixing the post and sending it back to API with PUT method

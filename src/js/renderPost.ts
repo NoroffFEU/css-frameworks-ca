@@ -44,7 +44,10 @@ export default function renderPosts(
     "fs-6"
   );
   const divCol8 = createElementFactory("div", "", row, {}, "col-8");
-  const header = createElementFactory("h3", title, divCol8, {});
+  const postLink = createElementFactory("a", "", divCol8, {
+    href: `/src/post/index.html?id=${id}`,
+  });
+  const header = createElementFactory("h3", title, postLink, {});
   const paragraph = createElementFactory(
     "p",
     body,
@@ -54,7 +57,11 @@ export default function renderPosts(
     "text-black"
   );
 
-  tags.forEach((tag) =>
+  const picturePost = media
+    ? createElementFactory("img", "", divCol8, { src: media }, "w-100", "h-50")
+    : "";
+
+  tags?.forEach((tag) =>
     createElementFactory(
       "span",
       tag,

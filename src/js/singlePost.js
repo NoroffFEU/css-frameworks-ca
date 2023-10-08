@@ -7,24 +7,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export default function callApi(endpoint, options) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield fetch(endpoint, options);
-            const data = yield response.json();
-            console.log(data);
-            if (data.length > 0 && data) {
-                return data;
-            }
-            else if (data.title) {
-                return data;
-            }
-            else {
-                throw new Error("response is empty, or not what expected");
-            }
-        }
-        catch (err) {
-            console.log(err.message);
-        }
-    });
-}
+import callApi from "./callApi.js";
+import endpointObject from "./endpoints.js";
+import optionFactory from "./optionFactory.js";
+import renderPosts from "./renderPost.js";
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const endpoint = endpointObject("Jarle");
+const getId = optionFactory("GET", {}, endpoint);
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    const data = yield callApi(endpoint.getId(id), getId);
+    console.log("data:", data);
+    renderPosts(document.querySelector("#postContainer"), data);
+}))();

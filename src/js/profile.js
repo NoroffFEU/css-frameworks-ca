@@ -212,7 +212,5 @@ modalTags.addEventListener("input", () => {
 const updateButton = document.querySelector("#post__modal--edit");
 updateButton === null || updateButton === void 0 ? void 0 : updateButton.addEventListener("click", () => {
     const editOption = optionFactory("PUT", editObject, endpoint);
-    callApi(endpoint.getId(editObject.id), (data) => {
-        console.log(data);
-    }, editOption);
+    callApi(endpoint.getId(editObject.id), editOption);
 });

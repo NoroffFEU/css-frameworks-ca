@@ -8,8 +8,14 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     }, "rounded-circle", "w-25");
     const spanName = createElementFactory("span", author.name ? author.name : "", anker, {}, "text-primay", "fs-6");
     const divCol8 = createElementFactory("div", "", row, {}, "col-8");
-    const header = createElementFactory("h3", title, divCol8, {});
+    const postLink = createElementFactory("a", "", divCol8, {
+        href: `/src/post/index.html?id=${id}`,
+    });
+    const header = createElementFactory("h3", title, postLink, {});
     const paragraph = createElementFactory("p", body, divCol8, {}, "card-text", "text-black");
-    tags.forEach((tag) => createElementFactory("span", tag, divCol8, {}, "badge", "text-bg-primary", "m-1"));
+    const picturePost = media
+        ? createElementFactory("img", "", divCol8, { src: media }, "w-100", "h-50")
+        : "";
+    tags === null || tags === void 0 ? void 0 : tags.forEach((tag) => createElementFactory("span", tag, divCol8, {}, "badge", "text-bg-primary", "m-1"));
     const dateSpan = createElementFactory("span", created, divCol8, {}, "fs-6");
 }

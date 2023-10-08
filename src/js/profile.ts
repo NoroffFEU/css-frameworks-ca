@@ -294,11 +294,5 @@ const updateButton = document.querySelector("#post__modal--edit");
 
 updateButton?.addEventListener("click", () => {
   const editOption = optionFactory("PUT", editObject, endpoint);
-  callApi(
-    endpoint.getId(editObject.id),
-    (data) => {
-      console.log(data);
-    },
-    editOption
-  );
+  callApi(endpoint.getId(editObject.id), editOption);
 });

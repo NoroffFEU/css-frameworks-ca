@@ -109,7 +109,7 @@ export default function endpointObject(userId: string | null) {
     createPost: `https://api.noroff.dev/api/v1/social/posts`,
     paginatedPosts: `https://api.noroff.dev/api/v1/social/posts?limit=10&offset=${countTen()}&_author=true&_comments=true&_reactions=true&sort=updated`,
     getId: function (id: number) {
-      return `https://api.noroff.dev/api/v1/social/posts/${id}`;
+      return `https://api.noroff.dev/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true`;
     },
     react: function (symbol: string) {
       return `https://api.noroff.dev/api/v1/social/posts/<id>/react/${symbol}`;

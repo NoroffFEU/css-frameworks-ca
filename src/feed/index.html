@@ -99,26 +99,27 @@
                 filter
               </button>
             </div>
-
-            <select
-              class="form-select w-25 mb-2"
-              name="sort--feed"
-              id="sort--feed">
-              <option selected value="updated">sort by</option>
-              <option value="author">user</option>
-              <option value="created">date</option>
-              <option value="title">title</option>
-              <option value="tags">tags</option>
-              <option value="body">post body</option>
-            </select>
-            <select
-              class="form-select w-25 mb-2"
-              name="sort--order"
-              id="sort--order">
-              <option selected value="desc">sort order</option>
-              <option value="desc">descending</option>
-              <option value="asc">ascending</option>
-            </select>
+            <div class="d-flex gap-2">
+              <select
+                class="form-select w-25 mb-2"
+                name="sort--feed"
+                id="sort--feed">
+                <option selected value="updated">sort by</option>
+                <option value="author">user</option>
+                <option value="created">date</option>
+                <option value="title">title</option>
+                <option value="tags">tags</option>
+                <option value="body">post body</option>
+              </select>
+              <select
+                class="form-select w-25 mb-2"
+                name="sort--order"
+                id="sort--order">
+                <option selected value="desc">sort order</option>
+                <option value="desc">descending</option>
+                <option value="asc">ascending</option>
+              </select>
+            </div>
           </form>
           <button
             class="btn btn-success mb-2 d-lg-none"

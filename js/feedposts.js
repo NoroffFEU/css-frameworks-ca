@@ -151,5 +151,3 @@ const allPosts = `${API_BASE_URL}social/posts?_author=true&_reactions=true`;
 let allPostsResult = "";
 
 export { fetchAllUserPosts, allPosts, allPostsResult };
-
-// fetchAllUserPosts(allPosts);

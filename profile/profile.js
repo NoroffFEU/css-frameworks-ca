@@ -7,8 +7,9 @@ const mainApiUrl = "https://api.noroff.dev/api/v1";
 const myName = localStorage.getItem("name");
 const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
 const myPostsUrl = `${mainApiUrl}/social/posts`;
-const profilePosts = undefined;
+let profilePosts = undefined;
 
+window.onload = getPosts();
 
 // showing my posts
 async function getPosts() {
@@ -16,12 +17,13 @@ async function getPosts() {
     //Clear the page
     containerHTMLCard.innerHTML = "";
 
-    var getPost = await getData(getMyPosts);
-    var setImg = "";
-    for (var i = 0; i < getPost.length; i++) {
+    profilePosts = await getData(getMyPosts);
+    let setImg = "";
 
-        if (isMediaValid(getPost[i].media)) {
-            setImg = getPost[i].media;
+    for (var i = 0; i < profilePosts.length; i++) {
+
+        if (isMediaValid(profilePosts[i].media)) {
+            setImg = profilePosts[i].media;
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
@@ -30,18 +32,18 @@ async function getPosts() {
         <div class="my-2 col col-lg-10">
             <div class="card shadow-sm"> 
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
-                <h5 class="card-title" id="cardTitle">${getPost[i].title}</h5>
+                <h5 class="card-title" id="cardTitle">${profilePosts[i].title}</h5>
                 <div class="card-body">
-                    <p class="card-text text-start" id="cardBody">${getPost[i].body}</p>
+                    <p class="card-text text-start" id="cardBody">${profilePosts[i].body}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
                             
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${getPost[i].id}" data-postid="${getPost[i].id}">Edit</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${getPost[i].id}" data-postid="${getPost[i].id}">Delete</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Edit</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Delete</button>
                         </div>
-                        <small class="text-muted" id="cardUpdated">${getPost[i].updated}</small>
+                        <small class="text-muted" id="cardUpdated">${profilePosts[i].updated}</small>
                         
                     </div>
                 </div>
@@ -81,7 +83,6 @@ async function getPosts() {
 
 }
 
-window.onload = getPosts();
 
 
 

@@ -40,12 +40,14 @@ searchInput.addEventListener("input", () => {
     endpoint.filterUrl.resetCount();
     endpoint.sortAndPaginate.setSearch(searchInput.value);
 });
-filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEventListener("click", () => {
+filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(endpoint.filterUrl.getCount());
     endpoint.filterUrl.resetCount();
     console.log(endpoint.filterUrl.getCount());
-    renderPosts(postContainer, filterPosts(searchInput.value, sortInput.value));
-});
+    postContainer.innerHTML = "";
+    const allPosts = yield filterPosts(searchInput.value, sortInput.value);
+    allPosts.forEach((post) => renderPosts(postContainer, post));
+}));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
         ? yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption)

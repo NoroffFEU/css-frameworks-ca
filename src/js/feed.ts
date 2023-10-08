@@ -48,13 +48,14 @@ searchInput.addEventListener("input", () => {
   endpoint.sortAndPaginate.setSearch(searchInput.value);
 });
 
-filterButton?.addEventListener("click", () => {
+filterButton?.addEventListener("click", async () => {
   console.log(endpoint.filterUrl.getCount());
   endpoint.filterUrl.resetCount();
   console.log(endpoint.filterUrl.getCount());
-  renderPosts(postContainer, filterPosts(searchInput.value, sortInput.value));
+  postContainer.innerHTML = "";
+  const allPosts = await filterPosts(searchInput.value, sortInput.value);
+  allPosts.forEach((post) => renderPosts(postContainer, post));
 });
-
 searchButton.addEventListener("click", async () => {
   const data: post[] = !searchInput.value
     ? await callApi(
@@ -311,4 +312,3 @@ async function searchApi(
     }
   }
 }
-

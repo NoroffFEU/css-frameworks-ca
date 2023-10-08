@@ -1,3 +1,3 @@
 export async function getPosts() {}
 
-export async function getPost() {}
+export async function getPost(id) {}

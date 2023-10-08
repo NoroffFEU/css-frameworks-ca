@@ -9,6 +9,9 @@
 
 import { setRegisterFormListener } from "./handlers/register.js";
 import { setLoginFormListener } from "./handlers/login.js";
+import { createPost } from "./api/posts/create.js";
+
+// import * as posts from "./api/posts/index.js";
 
 const path = location.pathname;
 
@@ -17,3 +20,8 @@ if (path === "/") {
 } else if (path === "/profile/register/") {
     setRegisterFormListener();
 }
+
+createPost({
+    title: "Example post",
+    body: "Also an example",
+});

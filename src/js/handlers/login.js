@@ -1,9 +1,9 @@
-import { register } from "../api/auth/register.js";
+import { login } from "../api/auth/login.js";
 
 //use this as a teemplate to write other eventlisteners
 
-export function setRegisterFormListener() {
-    const form = document.querySelector("#registerForm");
+export function setLoginFormListener() {
+    const form = document.querySelector("#loginForm");
     // console.log(form);
 
     // const password = document.querySelector("input[name=password]");
@@ -30,7 +30,7 @@ export function setRegisterFormListener() {
 
             //but since we want an object, not an array, we can say
             const profile = Object.fromEntries(formData.entries());
-            console.log("This is the users profile info when register", profile);
+            console.log("This is the users profile info when logging in", profile);
 
             //Now we have collected the profile data.
             // Now we want to send it to the API. This task should be handled on its own. In a new function for instance.
@@ -42,7 +42,7 @@ export function setRegisterFormListener() {
             //creating a folder in the API folder called auth.
 
             //Send it to the API
-            register(profile);
+            login(profile);
         });
     }
 }

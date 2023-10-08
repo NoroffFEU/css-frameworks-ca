@@ -8,5 +8,12 @@
 // console.log("heipådeg");
 
 import { setRegisterFormListener } from "./handlers/register.js";
+import { setLoginFormListener } from "./handlers/login.js";
 
-setRegisterFormListener();
+const path = location.pathname;
+
+if (path === "/") {
+    setLoginFormListener();
+} else if (path === "/profile/register/") {
+    setRegisterFormListener();
+}

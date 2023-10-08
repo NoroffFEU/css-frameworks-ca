@@ -2,7 +2,7 @@ import createElementFactory from "./createElementFactory.js";
 export default function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author }) {
     const container = createElementFactory("div", "", domEl, { "data-observed": "" }, "card", "mb-3", "bg-secondary", "p-2", "w-percentage--95");
     const row = createElementFactory("div", "", container, {}, "row");
-    const anker = createElementFactory("a", "", row, { href: `/src/profile/index.html?user=${author.name ? author.name : ""}` }, "col-4");
+    const anker = createElementFactory("a", "", row, { href: `/src/profile/index.html?user=${author === null || author === void 0 ? void 0 : author.name}` }, "col-4");
     const image = createElementFactory("img", "", anker, {
         src: author.avatar ? author.avatar : "",
     }, "rounded-circle", "w-25");

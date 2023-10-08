@@ -122,26 +122,24 @@ async function gatherUserPosts(url) {
       heartIcon.style.fontSize = "20px";
       heartIcon.style.color = "red";
 
-      const editButton = document.createElement("button");
-      const editButtonId = `openModalBtn_${post.id}`;
-      editButton.id = editButtonId;
-      editButton.classList.add("btn", "btn-primary", "btn-sm");
-      editButton.textContent = "Edit";
+      const openModal = document.createElement("button");
+      openModal.id = post.id;
+      openModal.classList.add("btn", "btn-primary", "btn-sm");
+      openModal.textContent = "Edit";
 
       const modal = document.getElementById("myModal");
 
-      editButton.addEventListener("click", (e) => {
+      openModal.addEventListener("click", (e) => {
         e.preventDefault();
 
         const postTitleInput = modal.querySelector("#postTitle");
         const postBodyTextarea = modal.querySelector("#postBodyArea");
         const postMediaInput = modal.querySelector("#postMedia");
-        // const postModalId = modal.querySelector("#myModal");
 
         postTitleInput.value = post.title;
         postBodyTextarea.value = post.body;
         postMediaInput.value = post.media;
-        // postModalId.value = `${post.id};`;
+
         modal.setAttribute("data-post-id", post.id);
 
         modal.classList.add("show");
@@ -163,7 +161,7 @@ async function gatherUserPosts(url) {
       iconContainer.appendChild(heartIcon);
 
       postContainer.appendChild(iconContainer);
-      postContainer.appendChild(editButton);
+      postContainer.appendChild(openModal);
 
       profilePosts.appendChild(postContainer);
     });

@@ -1,28 +1,21 @@
 import { API_BASE_URL } from "./const.mjs";
 
 const modal = document.getElementById("myModal");
-const postTitleInput = modal.querySelector("#postTitle");
-const postBodyTextarea = modal.querySelector("#postBodyArea");
-const postMediaInput = modal.querySelector("#postMedia");
-const modalForm = modal.querySelector("#createNewPost");
 const deleteButton = document.getElementById("deletePostButton");
 
-async function editPost(postId, postTitle, postBody, postMedia) {
+async function deletePost(postId) {
   const token = localStorage.getItem("accessToken");
   const url = `${API_BASE_URL}social/posts/${postId}`;
   // console.log(url);
 
   try {
     const response = await fetch(url, {
-      method: "PUT",
+      method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        title: postTitle,
-        body: postBody,
-        media: postMedia,
         id: postId,
       }),
     });
@@ -41,14 +34,11 @@ async function editPost(postId, postTitle, postBody, postMedia) {
   }
 }
 
-modalForm.addEventListener("submit", async (e) => {
+deleteButton.addEventListener("click", async (e) => {
   e.preventDefault();
-  const editedTitle = postTitleInput.value;
-  const editedBody = postBodyTextarea.value;
-  const editedMedia = postMediaInput.value;
 
   const postId = modal.getAttribute("data-post-id");
   console.log("Post ID:", postId);
 
-  await editPost(postId, editedTitle, editedBody, editedMedia);
+  await deletePost(postId);
 });

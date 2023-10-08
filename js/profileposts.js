@@ -136,10 +136,13 @@ async function gatherUserPosts(url) {
         const postTitleInput = modal.querySelector("#postTitle");
         const postBodyTextarea = modal.querySelector("#postBodyArea");
         const postMediaInput = modal.querySelector("#postMedia");
+        // const postModalId = modal.querySelector("#myModal");
 
         postTitleInput.value = post.title;
         postBodyTextarea.value = post.body;
         postMediaInput.value = post.media;
+        // postModalId.value = `${post.id};`;
+        modal.setAttribute("data-post-id", post.id);
 
         modal.classList.add("show");
         modal.style.display = "block";
@@ -158,13 +161,10 @@ async function gatherUserPosts(url) {
 
       iconContainer.appendChild(comments);
       iconContainer.appendChild(heartIcon);
-      // iconContainer.appendChild(editButton);
 
-      // Append the icon container to the post container
       postContainer.appendChild(iconContainer);
       postContainer.appendChild(editButton);
 
-      // Append the main postContainer to profilePosts
       profilePosts.appendChild(postContainer);
     });
 

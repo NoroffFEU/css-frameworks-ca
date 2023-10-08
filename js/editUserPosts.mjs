@@ -7,10 +7,10 @@ const postMediaInput = modal.querySelector("#postMedia");
 const editButton = modal.querySelector("#editPostButton");
 // const deleteButton = document.getElementById("deletePostButton");
 
-async function editPost(postId, postTitle, postBody, postMedia) {
+async function editPost(postId, postTitle, postBody, postMedia, userPosts) {
   const token = localStorage.getItem("accessToken");
   const url = `${API_BASE_URL}social/posts/${postId}`;
-  console.log(url);
+  // console.log(url);
 
   try {
     const response = await fetch(url, {
@@ -28,15 +28,12 @@ async function editPost(postId, postTitle, postBody, postMedia) {
     });
 
     if (response.ok) {
-      // Handle success, e.g., close the modal and update the post list
       const modal = document.getElementById("myModal");
       modal.classList.remove("show");
       modal.style.display = "none";
 
-      // Assuming userPosts is a valid array of user posts
       gatherUserPosts(userPosts);
     } else {
-      // Handle errors, e.g., display an error message to the user
       console.error("Failed to edit the post.");
     }
   } catch (error) {
@@ -50,6 +47,7 @@ editButton.addEventListener("click", (e) => {
   const editedBody = postBodyTextarea.value;
   const editedMedia = postMediaInput.value;
 
-  // Replace post.id with the actual postId
-  editPost(post.id, editedTitle, editedBody, editedMedia);
+  const postId = modal.getAttribute("data-post-id");
+
+  editPost(postId, editedTitle, editedBody, editedMedia, userPosts);
 });

@@ -3,9 +3,8 @@ import { fetchAllUserPosts } from "./feedposts.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("searchBar");
-  // console.log("DOMContentLoaded event listener added");
+
   searchBar.addEventListener("input", searchPosts);
-  // console.log("Input event listener added");
 
   const allPosts = `${API_BASE_URL}social/posts?&_comments=true&_author=true&_reactions=true&_count=true`;
   fetchAllUserPosts(allPosts);

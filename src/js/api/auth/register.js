@@ -19,4 +19,6 @@ export async function register(profile) {
 
     const result = await response.json();
     console.log("This is a new user registered, with an ID", result);
+    alert("You are now registered");
+    return result;
 }

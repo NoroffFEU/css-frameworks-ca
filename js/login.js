@@ -1,13 +1,4 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/";
-
-//API endpoints
-//Login = social/auth/login
-
-// Example user
-// const userData = {
-//   email: "bulba@noroff.no",
-//   password: "goldsilver",
-// };
+import { API_BASE_URL } from "./const.mjs";
 
 async function loginUser(url, userData) {
   try {
@@ -22,19 +13,16 @@ async function loginUser(url, userData) {
     console.log(response);
 
     if (response.ok) {
-      // Check if the response is successful
       const json = await response.json();
-      console.log(json);
+      // console.log(json);
       const accessToken = json.accessToken;
       const userName = json.name;
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("userName", userName);
       localStorage.setItem("userEmail", userEmail);
 
-      // Redirect to the profile page
       window.location.href = "profile/index.html";
     } else {
-      // Handle unsuccessful login here
       console.log("Login failed");
     }
   } catch (error) {

@@ -8,6 +8,7 @@ const myName = localStorage.getItem("name");
 const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
 const myPostsUrl = `${mainApiUrl}/social/posts`;
 let profilePosts = undefined;
+let postIdEdit = undefined;
 
 window.onload = getPosts();
 
@@ -120,54 +121,63 @@ function editPost(id) {
         keyboard: false,    // You can control whether the modal can be closed with the keyboard
         focus: true
     })
+
+    const tmp = profilePosts.find(x => x.id == id);
+
+    document.getElementById("exampleFormControlTextarea1").value = tmp.title;
+    document.getElementById("exampleFormControlTextarea2").value = tmp.body;
+    postIdEdit = id;
     myModal.show();
 }
 
 
 
-// document.getElementById("postBtn").addEventListener("click", (event) => {
-//     event.preventDefault();
+document.getElementById("postBtn").addEventListener("click", async (event) => {
 
-//     const titlePost = formPost.elements[0];
-//     const messagePost = formPost.elements[1];
-//     const mediaPost = formPost.elements[2];
+    event.preventDefault();
 
-//     const userTitlePost = titlePost.value;
-//     const userMessagePost = messagePost.value;
-//     const userMediaPost = mediaPost.value;
+    const titlePost = formPost.elements[0];
+    const messagePost = formPost.elements[1];
+    const mediaPost = formPost.elements[2];
 
-//     const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-//     editedPostToApiFunksjon(PostsUrl, newPost);
-// });
+    const userTitlePost = titlePost.value;
+    const userMessagePost = messagePost.value;
+    const userMediaPost = mediaPost.value;
 
-// function newPostValuesToObject(title, message, media) {
-//     const postToApi = {
-//         "title": title,
-//         "body": message,
-//         "media": media
-//     };
-//     return postToApi;
-// }
+    const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
+    await editedPostToApiFunksjon(`${myPostsUrl}/${postIdEdit}`, newPost);
+    postIdEdit = undefined;
+    await getPosts();
+});
 
-// async function editedPostToApiFunksjon(url, post) {
-//     try {
-//         const token = localStorage.getItem("accessToken");
-//         const postData = {
-//             method: "PUT",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 Authorization: `Bearer ${token}`,
-//             },
-//             body: JSON.stringify(post),
-//         };
-//         const response = await fetch(url, postData);
-//         const json = await response.json();
+function newPostValuesToObject(title, message, media) {
+    const postToApi = {
+        "title": title,
+        "body": message,
+        "media": media
+    };
+    return postToApi;
+}
 
-//         //return json;
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
+async function editedPostToApiFunksjon(url, post) {
+    try {
+        const token = localStorage.getItem("accessToken");
+        const postData = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(post),
+        };
+        const response = await fetch(url, postData);
+        const json = await response.json();
+
+        //return json;
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 
 

@@ -10,10 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts from "./renderPost.js";
+import filterPosts from "./filter.js";
 const endpoint = endpointObject("Jarle");
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
 const searchInput = document.querySelector("#search--feed");
+const filterButton = document.querySelector("#filter--button");
 const searchButton = document.querySelector("#search--button");
 const createMessageTitle = document.querySelector("#title--feed");
 const createMessageMessage = document.querySelector("#text-body--feed");
@@ -35,7 +37,14 @@ createMessageTags === null || createMessageTags === void 0 ? void 0 : createMess
     messageObject.tags = tagArr;
 });
 searchInput.addEventListener("input", () => {
+    endpoint.filterUrl.resetCount();
     endpoint.sortAndPaginate.setSearch(searchInput.value);
+});
+filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEventListener("click", () => {
+    console.log(endpoint.filterUrl.getCount());
+    endpoint.filterUrl.resetCount();
+    console.log(endpoint.filterUrl.getCount());
+    renderPosts(postContainer, filterPosts(searchInput.value, sortInput.value));
 });
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value

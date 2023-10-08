@@ -15,6 +15,20 @@ export default function endpointObject(userId) {
         };
         return increment;
     }
+    function allPostPaginatedby100() {
+        let count = -100;
+        function incrementUrl() {
+            count += 100;
+            return `https://api.noroff.dev/api/v1/social/posts?limit=100&offset=${count}&_author=true&_comments=true&_reactions=true`;
+        }
+        function resetCount() {
+            count = -100;
+        }
+        function getCount() {
+            return count;
+        }
+        return { resetCount, incrementUrl, getCount };
+    }
     function sortUrl() {
         let url;
         let count = 0;
@@ -107,5 +121,6 @@ export default function endpointObject(userId) {
                 : "updated";
             return `https://api.noroff.dev/api/v1/social/posts?limit=10&_author=true&_comments=true&_reactions=true&sort=${sort}&sortOrder=${order}&offset=`;
         },
+        filterUrl: allPostPaginatedby100(),
     };
 }

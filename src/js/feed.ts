@@ -1,12 +1,14 @@
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts from "./renderPost.js";
+import filterPosts from "./filter.js";
 
 const endpoint = endpointObject("Jarle");
 
 const sortInput = document.querySelector("#sort--feed") as HTMLSelectElement;
 const sortOrder = document.querySelector("#sort--order") as HTMLInputElement;
 const searchInput = document.querySelector("#search--feed") as HTMLInputElement;
+const filterButton = document.querySelector("#filter--button");
 const searchButton = document.querySelector(
   "#search--button"
 ) as HTMLButtonElement;
@@ -42,7 +44,15 @@ createMessageTags?.addEventListener("input", () => {
 });
 
 searchInput.addEventListener("input", () => {
+  endpoint.filterUrl.resetCount();
   endpoint.sortAndPaginate.setSearch(searchInput.value);
+});
+
+filterButton?.addEventListener("click", () => {
+  console.log(endpoint.filterUrl.getCount());
+  endpoint.filterUrl.resetCount();
+  console.log(endpoint.filterUrl.getCount());
+  renderPosts(postContainer, filterPosts(searchInput.value, sortInput.value));
 });
 
 searchButton.addEventListener("click", async () => {
@@ -301,3 +311,4 @@ async function searchApi(
     }
   }
 }
+

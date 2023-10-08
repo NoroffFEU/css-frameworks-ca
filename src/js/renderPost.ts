@@ -21,7 +21,7 @@ export default function renderPosts(
     "a",
     "",
     row,
-    { href: `/src/profile/index.html?user=${author.name ? author.name : ""}` },
+    { href: `/src/profile/index.html?user=${author?.name}` },
     "col-4"
   );
 

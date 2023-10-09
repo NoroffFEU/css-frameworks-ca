@@ -9,6 +9,7 @@
 
 import { setRegisterFormListener } from "./handlers/register.js";
 import { setLoginFormListener } from "./handlers/login.js";
+// import { createPost } from "./api/posts/create.js";
 import { createPost } from "./api/posts/create.js";
 
 // import * as posts from "./api/posts/index.js";

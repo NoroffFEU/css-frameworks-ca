@@ -9,7 +9,9 @@
 
 import { setRegisterFormListener } from "./handlers/register.js";
 import { setLoginFormListener } from "./handlers/login.js";
-import * as post from "./api/posts/index.js";
+import * as templates from "./templates/index.js";
+import * as postMethods from "./api/posts/index.js";
+import { renderPostTemplate } from "./templates/index.js";
 
 // import * as posts from "./api/posts/index.js";
 
@@ -20,6 +22,16 @@ if (path === "/") {
 } else if (path === "/profile/register/") {
     setRegisterFormListener();
 }
+
+// Testing templates post
+async function testTemplate() {
+    const posts = await postMethods.getPosts();
+    const post = posts[45];
+    const container = document.querySelector("#post");
+    renderPostTemplate(post, container);
+}
+
+testTemplate();
 
 // post.createPost();
 // post.updatePost();

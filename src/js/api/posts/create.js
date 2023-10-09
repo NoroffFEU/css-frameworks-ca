@@ -12,6 +12,12 @@ export async function createPost(postData) {
         body: JSON.stringify(postData),
     });
 
-    const post = await response.json();
-    console.log(post);
+    // const post = await response.json();
+    // console.log(post);
+    // return post
+
+    return await response.json();
 }
+
+// Maybe you want to set a default image or default tag if they did not provide that to the post?
+//The code above is sending only the code that the user povides.

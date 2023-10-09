@@ -6,7 +6,7 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     const image = createElementFactory("img", "", anker, {
         src: author.avatar ? author.avatar : "",
     }, "rounded-circle", "w-25");
-    const spanName = createElementFactory("span", author.name ? author.name : "", anker, {}, "text-primay", "fs-6");
+    const spanName = createElementFactory("p", author.name ? author.name : "", anker, {}, "text-primay", "fs-6");
     const divCol8 = createElementFactory("div", "", row, {}, "col-8");
     const postLink = createElementFactory("a", "", divCol8, {
         href: `/src/post/index.html?id=${id}`,
@@ -17,5 +17,5 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
         ? createElementFactory("img", "", divCol8, { src: media }, "w-100", "h-50")
         : "";
     tags === null || tags === void 0 ? void 0 : tags.forEach((tag) => createElementFactory("span", tag, divCol8, {}, "badge", "text-bg-primary", "m-1"));
-    const dateSpan = createElementFactory("span", created, divCol8, {}, "fs-6");
+    const dateSpan = createElementFactory("p", created.split("T")[0], anker, {}, "fs-6");
 }

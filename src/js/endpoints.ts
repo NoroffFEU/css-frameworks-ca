@@ -111,8 +111,8 @@ export default function endpointObject(userId: string | null) {
     getId: function (id: number) {
       return `https://api.noroff.dev/api/v1/social/posts/${id}?_author=true&_comments=true&_reactions=true`;
     },
-    react: function (symbol: string) {
-      return `https://api.noroff.dev/api/v1/social/posts/<id>/react/${symbol}`;
+    react: function (symbol: string, id: string) {
+      return `https://api.noroff.dev/api/v1/social/posts/${id}/react/${symbol}`;
     },
     getToken: function () {
       return JSON.parse(localStorage.getItem("token") || "");

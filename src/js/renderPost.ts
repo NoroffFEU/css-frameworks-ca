@@ -36,7 +36,7 @@ export default function renderPosts(
     "w-25"
   );
   const spanName = createElementFactory(
-    "span",
+    "p",
     author.name ? author.name : "",
     anker,
     {},
@@ -72,5 +72,11 @@ export default function renderPosts(
       "m-1"
     )
   );
-  const dateSpan = createElementFactory("span", created, divCol8, {}, "fs-6");
+  const dateSpan = createElementFactory(
+    "p",
+    created.split("T")[0],
+    anker,
+    {},
+    "fs-6"
+  );
 }

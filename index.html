@@ -9,26 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Boaters Social</title>
     <link rel="stylesheet" href="dist/css/styles.css">
-    <script src=""></script>
+    <script src="js/login.js"></script>
 </head>
 <body>
-<div class="card position-absolute top-50 start-50 translate-middle">
-    <div class="card-body text-center">
-        <h5 class="card-title">Boaters Social</h5>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Login</h6>
-        <form id="login-form">
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" required>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" required>
-            </div>
-            <button type="submit" class="btn btn-outline-success">Login</button>
-            <button type="button" class="btn btn-outline-success" id="register-btn">Register</button>
-        </form>
+    <div class="card position-absolute top-50 start-50 translate-middle col-10 col-md-4">
+        <div class="card-body text-center">
+            <h5 class="card-title">Boaters Social</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Login</h6>
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" minlength="8" required>
+                </div>
+                <div id="login-error-message" class="alert alert-danger d-none" role="alert"></div>
+                <button type="submit" class="btn btn-outline-success" id="login-btn">Login</button>
+                <a href="registration.html" class="btn btn-outline-success">Register</a>
+            </form>
+        </div>
     </div>
-</div>
 </body>
 </html>

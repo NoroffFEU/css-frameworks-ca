@@ -115,6 +115,7 @@ function observerTargetClosure() {
     if (document.querySelectorAll("[data-observed]")) {
       const observedObj = document.querySelectorAll("[data-observed]");
       target = observedObj[observedObj.length - 1];
+      console.log(target);
     }
   }
   function isObserving(bool: boolean, obs) {
@@ -139,38 +140,6 @@ interface post {
   _count: { comments: number; reactions: number };
   author: { name: string; email: string; avatar: string; media: string };
 }
-
-/*function renderPosts(
-  domEl: HTMLDivElement,
-  { id, title, body, tags, media, created, updated, _count, author }: post
-) {
-  domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
-    <div class="row">
-      <a href="/src/profile/index.html?user=${
-        author.name ? author.name : ""
-      }" class="col-4">
-        <img 
-          class="rounded-circle w-25"
-          src=${author.avatar ? author.avatar : ""}
-          alt="Profile picture of Thistle" />
-        <span class="text-primay fs-6">${author.name ? author.name : ""}</span>
-      </a>
-      <div class="col-8">
-      <h3>${title}</h3>
-        <p class="card-text text-black">
-          ${body}${media && media}
-        </p>
-        ${tags
-          .map(
-            (element) =>
-              `<span class="badge text-bg-primary m-1">${element}</span>`
-          )
-          .join("")}
-          <span class="fs-6">${created}</span>
-      </div>
-    </div>
-  </div>`;
-}*/
 
 function optionFactory(method: htmlMethod, body: {}) {
   const newObject: {
@@ -240,7 +209,7 @@ const intersectionObserver = new IntersectionObserver(
   {
     root: null,
     rootMargin: "0px",
-    threshold: 1,
+    threshold: 0.2,
   }
 );
 

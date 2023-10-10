@@ -1,5 +1,5 @@
 import createElementFactory from "./createElementFactory.js";
-export default function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author }) {
+export default function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author, comments }) {
     const container = createElementFactory("div", "", domEl, { "data-observed": "" }, "card", "mb-3", "bg-secondary", "p-2", "w-percentage--95");
     const row = createElementFactory("div", "", container, {}, "row");
     const anker = createElementFactory("a", "", row, { href: `/src/profile/index.html?user=${author === null || author === void 0 ? void 0 : author.name}` }, "col-4");
@@ -22,4 +22,19 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
         "data-id": id,
     }, "btn", "btn-outline-primary");
     const dateSpan = createElementFactory("p", created.split("T")[0], anker, {}, "fs-6");
+    if (comments[0]) {
+        const commentContainer = createElementFactory("div", "", container, {}, "container");
+        const commentHeader = createElementFactory("h3", "Comments", commentContainer, {});
+        const commentRow = createElementFactory("div", "", commentContainer, {}, "row");
+        comments.forEach((comment) => renderComments(commentRow, comment.body, comment.created, comment.author));
+    }
+}
+function renderComments(commentRow, body, created, { name, avatar }) {
+    const commentFirstCol = createElementFactory("div", "", commentRow, {}, "col-4");
+    const commentSecondCol = createElementFactory("div", "", commentRow, {}, "col-8");
+    const commenterImg = createElementFactory("img", "", commentFirstCol, {
+        src: avatar,
+    }, "rounded-circle", "w-25");
+    const commenterBody = createElementFactory("p", body, commentSecondCol, {});
+    const commenterName = createElementFactory("p", name, commentFirstCol, {});
 }

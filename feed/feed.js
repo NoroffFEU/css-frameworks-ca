@@ -4,24 +4,36 @@ import { isMediaValid } from "../mjs/helpers.mjs";
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const postsUrl = `${mainApiUrl}/social/posts`;
 const requestParam = {
-    _author: true
+    _author: true,
+    offset: 100
 };
 const queryString = new URLSearchParams(requestParam).toString();
 
 const token = localStorage.getItem("accessToken");
 let feedPosts = undefined;
+let isShowingTodaysPosts = false;
 
 
 
-let formattedDate = ""
+
 
 const todaysPostsBtn = document.getElementById("todaysPosts");
-todaysPostsBtn.addEventListener("click", async function (formattedDate) {
-    debugger;
-    const date = new Date();
-    const dateToday = date.toLocaleString();
-    if (dateToday === formattedDate) {
-        await showPosts();
+todaysPostsBtn.addEventListener("click", function () {
+    if (isShowingTodaysPosts === false) {
+        const date = new Date();
+        const dateToday = date.toLocaleDateString();
+        const todaysPosts = feedPosts.filter((post) => {
+            if (new Date(post.updated).toLocaleDateString() === dateToday) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        showPosts(todaysPosts);
+        isShowingTodaysPosts = true;
+    } else {
+        showPosts(feedPosts);
+        isShowingTodaysPosts = false;
     }
 });
 
@@ -37,8 +49,9 @@ async function fetchPostsFromApi() {
 function showPosts(posts) {
     //var posts = await getData(`${postsUrl}?${queryString}`);
     var setImg = "";
+    containerHTMLCard.innerHTML = "";
     for (var i = 0; i < posts.length; i++) {
-        formattedDate = new Date(posts[i].updated).toLocaleDateString();
+        let formattedDate = new Date(posts[i].updated).toLocaleDateString();
         let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
         if (isMediaValid(posts[i].media)) {
             setImg = posts[i].media;

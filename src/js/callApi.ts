@@ -8,6 +8,8 @@ export default async function callApi(
     console.log(data);
     if (data.length > 0 && data) {
       return data;
+    } else if (data.title) {
+      return data;
     } else {
       throw new Error("response is empty, or not what expected");
     }

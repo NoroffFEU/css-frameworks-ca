@@ -178,13 +178,7 @@ const deleteOption = optionFactory("DELETE", {}, endpoint);
 
 function buttonDeleteListener(button: HTMLButtonElement, id: number) {
   button.addEventListener("click", () => {
-    callApi(
-      endpoint.getId(id),
-      (data) => {
-        console.log(data, "deleted");
-      },
-      deleteOption
-    );
+    callApi(endpoint.getId(id), deleteOption);
     document.querySelector(`#div${id}`).style.display = "none";
   });
 }
@@ -294,11 +288,5 @@ const updateButton = document.querySelector("#post__modal--edit");
 
 updateButton?.addEventListener("click", () => {
   const editOption = optionFactory("PUT", editObject, endpoint);
-  callApi(
-    endpoint.getId(editObject.id),
-    (data) => {
-      console.log(data);
-    },
-    editOption
-  );
+  callApi(endpoint.getId(editObject.id), editOption);
 });

@@ -2,8 +2,17 @@ import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts from "./renderPost.js";
 import filterPosts from "./filter.js";
+import createSmileyPicker from "./emoji.js";
+import reactToPost from "./reactToPost.js";
 
 const endpoint = endpointObject("Jarle");
+const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
+
+let modal = document.querySelector("#modal");
+const closeModal = document.querySelector("[data-closeButton]");
+closeModal?.addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
 const sortInput = document.querySelector("#sort--feed") as HTMLSelectElement;
 const sortOrder = document.querySelector("#sort--order") as HTMLInputElement;
@@ -55,6 +64,7 @@ filterButton?.addEventListener("click", async () => {
   postContainer.innerHTML = "";
   const allPosts = await filterPosts(searchInput.value, sortInput.value);
   allPosts.forEach((post) => renderPosts(postContainer, post));
+  emojiReactButton();
 });
 searchButton.addEventListener("click", async () => {
   const data: post[] = !searchInput.value
@@ -92,6 +102,7 @@ searchButton.addEventListener("click", async () => {
   } else {
     data.forEach((element: post) => renderPosts(postContainer, element));
     console.log("else route");
+    emojiReactButton();
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -106,6 +117,7 @@ function observerTargetClosure() {
     if (document.querySelectorAll("[data-observed]")) {
       const observedObj = document.querySelectorAll("[data-observed]");
       target = observedObj[observedObj.length - 1];
+      console.log(target);
     }
   }
   function isObserving(bool: boolean, obs) {
@@ -131,38 +143,6 @@ interface post {
   author: { name: string; email: string; avatar: string; media: string };
 }
 
-/*function renderPosts(
-  domEl: HTMLDivElement,
-  { id, title, body, tags, media, created, updated, _count, author }: post
-) {
-  domEl.innerHTML += ` <div data-observed  class=" card mb-3 bg-secondary p-2 w-percentage--95">
-    <div class="row">
-      <a href="/src/profile/index.html?user=${
-        author.name ? author.name : ""
-      }" class="col-4">
-        <img 
-          class="rounded-circle w-25"
-          src=${author.avatar ? author.avatar : ""}
-          alt="Profile picture of Thistle" />
-        <span class="text-primay fs-6">${author.name ? author.name : ""}</span>
-      </a>
-      <div class="col-8">
-      <h3>${title}</h3>
-        <p class="card-text text-black">
-          ${body}${media && media}
-        </p>
-        ${tags
-          .map(
-            (element) =>
-              `<span class="badge text-bg-primary m-1">${element}</span>`
-          )
-          .join("")}
-          <span class="fs-6">${created}</span>
-      </div>
-    </div>
-  </div>`;
-}*/
-
 function optionFactory(method: htmlMethod, body: {}) {
   const newObject: {
     method: htmlMethod;
@@ -184,26 +164,6 @@ function optionFactory(method: htmlMethod, body: {}) {
 const postOption = optionFactory("GET", {});
 
 console.log(postOption);
-
-(async () => {
-  const data: post[] = await callApi(
-    endpoint.sortAndPaginate.setString(
-      endpoint.generatePaginate(sortInput.value, sortOrder.value)
-    ),
-    postOption
-  );
-
-  if (data.length === 1) {
-    renderPosts(postContainer, data[0]);
-  } else {
-    data.forEach((element: post) => renderPosts(postContainer, element));
-  }
-  const observedObj = document.querySelectorAll("[data-observed]");
-  const target = observedObj[observedObj.length - 1];
-  console.log(observedObj, target);
-  setTarget();
-  isObserving(true, intersectionObserver);
-})();
 
 const messageObject: {
   title: string;
@@ -243,6 +203,8 @@ const intersectionObserver = new IntersectionObserver(
           renderPosts(postContainer, data[0]);
         } else
           data.forEach((element: post) => renderPosts(postContainer, element));
+        emojiReactButton();
+
         isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);
@@ -251,7 +213,7 @@ const intersectionObserver = new IntersectionObserver(
   {
     root: null,
     rootMargin: "0px",
-    threshold: 1,
+    threshold: 0.2,
   }
 );
 
@@ -311,4 +273,51 @@ async function searchApi(
       console.log(error);
     }
   }
+}
+
+(async () => {
+  const data: post[] = await callApi(
+    endpoint.sortAndPaginate.setString(
+      endpoint.generatePaginate(sortInput.value, sortOrder.value)
+    ),
+    postOption
+  );
+
+  if (data.length === 1) {
+    renderPosts(postContainer, data[0]);
+  } else {
+    data.forEach((element: post) => renderPosts(postContainer, element));
+  }
+  emojiReactButton();
+  const observedObj = document.querySelectorAll("[data-observed]");
+  const target = observedObj[observedObj.length - 1];
+  console.log(observedObj, target);
+  setTarget();
+  isObserving(true, intersectionObserver);
+})();
+
+document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
+  button.addEventListener("click", () => {
+    setSmiley(button.textContent);
+    const smiley = getSmiley();
+    const smileyId = getId();
+    if (smiley && smileyId) {
+      reactToPost(smiley, smileyId);
+    }
+  });
+});
+
+function emojiReactButton() {
+  document.querySelectorAll("[data-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("clicked");
+      let buttonRect = button.getBoundingClientRect();
+
+      modal.style.top = buttonRect.top + "px";
+      modal.style.left = buttonRect.left + "px";
+      modal.style.display = "grid";
+      setId(button.dataset.id);
+      console.log(getId());
+    });
+  });
 }

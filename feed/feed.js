@@ -29,15 +29,14 @@ todaysPostsBtn.addEventListener("click", async function (formattedDate) {
 // showing posts
 var containerHTMLCard = document.getElementById("singleCard");
 
-async function showPosts() {
-    var posts = await getData(`${postsUrl}?${queryString}`);
+async function fetchPostsFromApi() {
+    feedPosts = await getData(`${postsUrl}?${queryString}`);
+    showPosts(feedPosts);
+}
 
-
-
+function showPosts(posts) {
+    //var posts = await getData(`${postsUrl}?${queryString}`);
     var setImg = "";
-
-
-
     for (var i = 0; i < posts.length; i++) {
         formattedDate = new Date(posts[i].updated).toLocaleDateString();
         let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
@@ -46,8 +45,6 @@ async function showPosts() {
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
-
-
 
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10">
@@ -77,7 +74,7 @@ async function showPosts() {
 
 }
 
-window.onload = showPosts();
+window.onload = fetchPostsFromApi();
 
 
 

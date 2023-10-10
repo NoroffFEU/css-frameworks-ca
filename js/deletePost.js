@@ -15,9 +15,7 @@ async function deletePost(postId) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        id: postId,
-      }),
+      body: JSON.stringify({}),
     });
 
     if (response.ok) {

@@ -178,13 +178,7 @@ const deleteOption = optionFactory("DELETE", {}, endpoint);
 
 function buttonDeleteListener(button: HTMLButtonElement, id: number) {
   button.addEventListener("click", () => {
-    callApi(
-      endpoint.getId(id),
-      (data) => {
-        console.log(data, "deleted");
-      },
-      deleteOption
-    );
+    callApi(endpoint.getId(id), deleteOption);
     document.querySelector(`#div${id}`).style.display = "none";
   });
 }

@@ -8,6 +8,10 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     }, "rounded-circle", "w-25");
     const spanName = createElementFactory("p", author.name ? author.name : "", anker, {}, "text-primay", "fs-6");
     const divCol8 = createElementFactory("div", "", row, {}, "col-8");
+    const reactButton = createElementFactory("button", "React", divCol8, {
+        type: "button",
+        "data-id": id,
+    }, "btn", "btn-outline-primary");
     const postLink = createElementFactory("a", "", divCol8, {
         href: `/src/post/index.html?id=${id}`,
     });

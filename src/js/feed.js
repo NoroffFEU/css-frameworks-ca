@@ -11,7 +11,15 @@ import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts from "./renderPost.js";
 import filterPosts from "./filter.js";
+import createSmileyPicker from "./emoji.js";
+import reactToPost from "./reactToPost.js";
 const endpoint = endpointObject("Jarle");
+const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
+let modal = document.querySelector("#modal");
+const closeModal = document.querySelector("[data-closeButton]");
+closeModal === null || closeModal === void 0 ? void 0 : closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
 const searchInput = document.querySelector("#search--feed");
@@ -137,20 +145,6 @@ function optionFactory(method, body) {
 }
 const postOption = optionFactory("GET", {});
 console.log(postOption);
-(() => __awaiter(void 0, void 0, void 0, function* () {
-    const data = yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption);
-    if (data.length === 1) {
-        renderPosts(postContainer, data[0]);
-    }
-    else {
-        data.forEach((element) => renderPosts(postContainer, element));
-    }
-    const observedObj = document.querySelectorAll("[data-observed]");
-    const target = observedObj[observedObj.length - 1];
-    console.log(observedObj, target);
-    setTarget();
-    isObserving(true, intersectionObserver);
-}))();
 const messageObject = {
     title: "",
     body: "",
@@ -221,3 +215,39 @@ function searchApi(array, category, count = 0, searchWord = null) {
         }
     });
 }
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    const data = yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption);
+    if (data.length === 1) {
+        renderPosts(postContainer, data[0]);
+    }
+    else {
+        data.forEach((element) => renderPosts(postContainer, element));
+    }
+    document.querySelectorAll("[data-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+            console.log("clicked");
+            let buttonRect = button.getBoundingClientRect();
+            console.log(buttonRect.top, buttonRect.top + postContainer.scrollTop + "px");
+            modal.style.top = buttonRect.top + "px";
+            modal.style.left = buttonRect.left + postContainer.scrollLeft + "px";
+            modal.style.display = "grid";
+            setId(button.dataset.id);
+            console.log(getId());
+        });
+    });
+    const observedObj = document.querySelectorAll("[data-observed]");
+    const target = observedObj[observedObj.length - 1];
+    console.log(observedObj, target);
+    setTarget();
+    isObserving(true, intersectionObserver);
+}))();
+document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
+    button.addEventListener("click", () => {
+        setSmiley(button.textContent);
+        const smiley = getSmiley();
+        const smileyId = getId();
+        if (smiley && smileyId) {
+            reactToPost(smiley, smileyId);
+        }
+    });
+});

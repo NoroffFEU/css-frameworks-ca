@@ -1,6 +1,8 @@
 import createElementFactory from "./createElementFactory.js";
 
-function createSmileyPicker(parentElement = document.querySelector("main")) {
+export default function createSmileyPicker(
+  parentElement = document.querySelector("main")
+) {
   const emojiList = [
     { emoji: "😀", altText: "Grinning Face" },
     { emoji: "😃", altText: "Grinning Face with Big Eyes" },
@@ -29,21 +31,42 @@ function createSmileyPicker(parentElement = document.querySelector("main")) {
     "",
     parentElement,
     { id: "modal" },
-    "hide"
+    "hide",
+    "emoji-grid"
+  );
+
+  const closeButton = createElementFactory(
+    "button",
+    "X",
+    container,
+    {
+      "data-closeButton": "",
+    },
+    "bg-primary",
+    "text-success",
+    "badge"
   );
 
   emojiList.forEach((emoji) =>
-    createElementFactory("button", emoji.emoji, container, {
-      type: "button",
-      "aria-label": emoji.altText,
-    })
+    createElementFactory(
+      "button",
+      emoji.emoji,
+      container,
+      {
+        type: "button",
+        "aria-label": emoji.altText,
+        "data-buttonSelector": "",
+      },
+      "bg-primary",
+      "badge"
+    )
   );
 
   const emojiFunctions = emojiClosure();
 
   function emojiClosure() {
     let currentEmoji = "";
-    let id = "";
+    let id = "test";
 
     function setEmoji(emoji: string) {
       currentEmoji = emoji;
@@ -52,14 +75,14 @@ function createSmileyPicker(parentElement = document.querySelector("main")) {
     function getEmoji() {
       return currentEmoji;
     }
-    function setId(id: string) {
-      id = id;
+    function setId(newId: string) {
+      id = newId;
     }
 
     function getId() {
       return id;
     }
-    return [setEmoji, setId];
+    return [setEmoji, setId, getEmoji, getId];
   }
   return emojiFunctions;
 }

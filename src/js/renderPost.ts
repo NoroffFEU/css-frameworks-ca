@@ -44,21 +44,11 @@ export default function renderPosts(
     "fs-6"
   );
   const divCol8 = createElementFactory("div", "", row, {}, "col-8");
-  const reactButton = createElementFactory(
-    "button",
-    "React",
-    divCol8,
-    {
-      type: "button",
-      "data-id": id,
-    },
-    "btn",
-    "btn-outline-primary"
-  );
   const postLink = createElementFactory("a", "", divCol8, {
     href: `/src/post/index.html?id=${id}`,
   });
   const header = createElementFactory("h3", title, postLink, {});
+
   const paragraph = createElementFactory(
     "p",
     body,
@@ -83,6 +73,18 @@ export default function renderPosts(
       "m-1"
     )
   );
+  const reactButton = createElementFactory(
+    "button",
+    "React",
+    divCol8,
+    {
+      type: "button",
+      "data-id": id,
+    },
+    "btn",
+    "btn-outline-primary"
+  );
+
   const dateSpan = createElementFactory(
     "p",
     created.split("T")[0],

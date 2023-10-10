@@ -1,2 +1,2 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+This is my CSS Fremeworks CA. I'am not sure that ive done it right but here it is anyways

@@ -1,0 +1,11 @@
+@import "overrides";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.btn-custom {
+  @extend .btn-warning;
+
+  &:hover {
+    @extend .btn-danger;
+  }
+}

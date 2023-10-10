@@ -15,14 +15,19 @@ Built with:
     SCSS
     Bootstrap
     java script
+    JSDocs
+    Noroff API (School's API for this assignment)
 
-Getting started
-Installing
+Getting started:
 
-    Clone the repo:
+    Clone the repo::
 
 Git clone https://github.com/LineNil/css-frameworks-ca/tree/js2
 
     install dependencies
     npm run watch
+
+    or open live site: 
+
+    https://js2courseassignment.netlify.app/
 

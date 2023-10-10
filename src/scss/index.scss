@@ -1,1 +1,26 @@
+// Importer Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+// Importer dine egendefinerte variabler
+@import "variables";
+
+
+
+body{
+  background-image: url(/img/login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg{
+  background-color:$background;
+  }
+
+
+  .btn-primary{
+    background-color: $button;
+    border: none;
+  }
+  .btn-primary:hover{
+    background-color:$button-hover ;
+  }

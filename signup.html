@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&family=Ms+Madi&display=swap"
+      rel="stylesheet"
+    />
+    <link href="dist/css/universal.css" rel="stylesheet" />
+    <link href="dist/css/index.css" rel="stylesheet" />
+
+    <title>Sign up</title>
+  </head>
+  <body class="background-img">
+    <nav class="navbar navbar-expand navbar-light">
+      <div class="container">
+        <a
+          href="/index.html"
+          class="text-center mt-2 mb-3 logo-title text-decoration-none"
+          >SocialNet</a
+        >
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-5 mx-auto text-center bg mt-md-0 mt-4">
+          <h2 class="card-title text-center mb-5 mt-5 content-font">Sign up</h2>
+          <a class="content-font hover login-signup-text" href="index.html">
+            Have an account? Log in</a
+          >
+
+          <form action="/profile/index.html" id="registrationForm" class="pb-5">
+            <div class="mb-4 col-md-9 mx-auto text-start">
+              <label for="name" class="form-label content-font">name</label>
+              <input
+                type="name"
+                class="form-control"
+                id="name"
+                name="name"
+                required
+                placeholder="Line"
+              />
+            </div>
+            <div class="mb-4 col-md-9 mx-auto text-start">
+              <label for="email" class="form-label content-font">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+                placeholder="example@example.com"
+              />
+              <div class="invalid-feedback content-font">
+                Please enter a valid email.
+              </div>
+              <div
+                id="emailError"
+                class="alert alert-danger"
+                style="display: none"
+              >
+                Please enter a valid Noroff email.
+              </div>
+            </div>
+            <div class="mb-4 col-md-9 mx-auto text-start">
+              <label for="password" class="form-label content-font"
+                >Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                minlength="8"
+                required
+                placeholder="********"
+              />
+              <div class="invalid-feedback content-font">
+                Password must be at least 8 characters long.
+              </div>
+            </div>
+            <div class="mb-4 col-md-9 mx-auto text-start">
+              <label for="confirmPassword" class="form-label content-font"
+                >Confirm Password</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="Password"
+                name="confirmPassword"
+                required
+                placeholder="********"
+              />
+              <div class="invalid-feedback content-font">
+                Please confirm your password.
+              </div>
+            </div>
+            <div class="d-grid mx-auto col-md-5">
+              <button type="submit" class="btn btn-primary content-font">
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer py-3 text-center pb-4 mt-5">
+      <div class="container">
+        <p>&copy; 2023 SocialNet. All rights reserved.</p>
+      </div>
+      <figcaption class="blockquote-footer">
+        Brought to life 💻 <cite title="Source Title">by Line Nilsen</cite>
+      </figcaption>
+    </footer>
+    <script type="module" src="./JSmodals/signup.js"></script>
+  </body>
+</html>

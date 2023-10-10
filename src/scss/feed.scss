@@ -1,0 +1,44 @@
+// Importer Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Importer dine egendefinerte variabler
+@import "variables";
+
+
+body{
+ background-color: $body-colour;
+}
+
+.feed{
+  background-color: $feedbackground;
+}
+.bg{
+  background-color:$feedbackground-two;
+  }
+
+.btn-primary{
+  background-color: $button;
+  border: none;
+}
+.btn-primary:hover{
+  background-color:$button-hover ;
+}
+
+.custom-delete-btn{
+color:$delete-btn-colour-text;
+background-color:$delete-update-btn-colour;
+border-radius: 3px;
+}
+.custom-delete-btn:hover{
+color: $delete-btn-colour-text-hover;
+}
+
+.custom-update-btn{
+  color:$viewmore-update-btn-colour-text;
+  background-color:$delete-update-btn-colour;
+  border-radius: 3px;
+}
+
+.custom-viewmore-btn{
+  color: $viewmore-update-btn-colour-text;
+}

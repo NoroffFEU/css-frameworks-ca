@@ -172,7 +172,6 @@ h1 {
 
 .btn {
     a {
-
         &:hover,
         &:focus,
         &:active,
@@ -182,7 +181,13 @@ h1 {
             border-color: $color-font;
         }
     }
+    
 }
+
+#todaysPosts {
+color: $color-font;
+}
+
 
 
 #myCarousel1 {
@@ -275,7 +280,6 @@ h2,
 
 
 a {
-
     &:link,
     &:visited,
     &:hover,

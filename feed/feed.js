@@ -9,20 +9,40 @@ const requestParam = {
 const queryString = new URLSearchParams(requestParam).toString();
 
 const token = localStorage.getItem("accessToken");
+let feedPosts = undefined;
 
+
+
+let formattedDate = ""
+
+const todaysPostsBtn = document.getElementById("todaysPosts");
+todaysPostsBtn.addEventListener("click", async function (formattedDate) {
+    debugger;
+    const date = new Date();
+    const dateToday = date.toLocaleString();
+    if (dateToday === formattedDate) {
+        await showPosts();
+    }
+});
 
 
 // showing posts
 var containerHTMLCard = document.getElementById("singleCard");
 
-async function getPosts() {
-    var getPost = await getData(`${postsUrl}?${queryString}`);
+async function showPosts() {
+    var posts = await getData(`${postsUrl}?${queryString}`);
+
+
+
     var setImg = "";
 
-    for (var i = 0; i < getPost.length; i++) {
 
-        if (isMediaValid(getPost[i].media)) {
-            setImg = getPost[i].media;
+
+    for (var i = 0; i < posts.length; i++) {
+        formattedDate = new Date(posts[i].updated).toLocaleDateString();
+        let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
+        if (isMediaValid(posts[i].media)) {
+            setImg = posts[i].media;
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
@@ -33,18 +53,18 @@ async function getPosts() {
         <div class="my-2 col col-lg-10">
             <div class="card shadow-sm"> 
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
-                <h5 class="card-title" id="cardTitle">${getPost[i].title}</h5>
+                <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
-                    <p class="card-text text-start" id="cardBody">${getPost[i].body}</p>
+                    <p class="card-text text-start" id="cardBody">${posts[i].body}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${getPost[i].author.name}</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
                             
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
                            
                         </div>
-                        <small class="text-muted" id="cardUpdated">${getPost[i].updated}</small>
+                        <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                         
                     </div>
                 </div>
@@ -57,7 +77,7 @@ async function getPosts() {
 
 }
 
-window.onload = getPosts();
+window.onload = showPosts();
 
 
 

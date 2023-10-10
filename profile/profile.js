@@ -12,6 +12,9 @@ let postIdEdit = undefined;
 
 window.onload = getPosts();
 
+
+
+
 // showing my posts
 async function getPosts() {
     var containerHTMLCard = document.getElementById("singleCardProfile");
@@ -107,11 +110,6 @@ async function deletePost(id) {
 
 
 // edit post
-
-//showing the form with the text
-
-
-
 
 function editPost(id) {
     //need to get the form with the values

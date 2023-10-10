@@ -2,7 +2,11 @@ import { getData } from "../mjs/getData.mjs";
 import { isMediaValid } from "../mjs/helpers.mjs";
 
 const mainApiUrl = "https://api.noroff.dev/api/v1";
-const PostsUrl = `${mainApiUrl}/social/posts`;
+const postsUrl = `${mainApiUrl}/social/posts`;
+const requestParam = {
+    _author: true
+};
+const queryString = new URLSearchParams(requestParam).toString();
 
 const token = localStorage.getItem("accessToken");
 
@@ -12,7 +16,7 @@ const token = localStorage.getItem("accessToken");
 var containerHTMLCard = document.getElementById("singleCard");
 
 async function getPosts() {
-    var getPost = await getData(PostsUrl);
+    var getPost = await getData(`${postsUrl}?${queryString}`);
     var setImg = "";
 
     for (var i = 0; i < getPost.length; i++) {
@@ -24,6 +28,7 @@ async function getPosts() {
         }
 
 
+
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10">
             <div class="card shadow-sm"> 
@@ -33,6 +38,7 @@ async function getPosts() {
                     <p class="card-text text-start" id="cardBody">${getPost[i].body}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${getPost[i].author.name}</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
                             
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>

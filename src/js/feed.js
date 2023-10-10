@@ -55,6 +55,7 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     postContainer.innerHTML = "";
     const allPosts = yield filterPosts(searchInput.value, sortInput.value);
     allPosts.forEach((post) => renderPosts(postContainer, post));
+    emojiReactButton();
 }));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
@@ -77,6 +78,7 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
     else {
         data.forEach((element) => renderPosts(postContainer, element));
         console.log("else route");
+        emojiReactButton();
         const observedObj = document.querySelectorAll("[data-observed]");
         const target = observedObj[observedObj.length - 1];
         console.log(observedObj, target);
@@ -136,6 +138,7 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
         }
         else
             data.forEach((element) => renderPosts(postContainer, element));
+        emojiReactButton();
         isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);
@@ -193,18 +196,7 @@ function searchApi(array, category, count = 0, searchWord = null) {
     else {
         data.forEach((element) => renderPosts(postContainer, element));
     }
-    document.querySelectorAll("[data-id]").forEach((button) => {
-        button.addEventListener("click", () => {
-            console.log("clicked");
-            let buttonRect = button.getBoundingClientRect();
-            console.log(buttonRect.top, buttonRect.top + postContainer.scrollTop + "px");
-            modal.style.top = buttonRect.top + "px";
-            modal.style.left = buttonRect.left + postContainer.scrollLeft + "px";
-            modal.style.display = "grid";
-            setId(button.dataset.id);
-            console.log(getId());
-        });
-    });
+    emojiReactButton();
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -221,3 +213,16 @@ document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
         }
     });
 });
+function emojiReactButton() {
+    document.querySelectorAll("[data-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+            console.log("clicked");
+            let buttonRect = button.getBoundingClientRect();
+            modal.style.top = buttonRect.top + "px";
+            modal.style.left = buttonRect.left + "px";
+            modal.style.display = "grid";
+            setId(button.dataset.id);
+            console.log(getId());
+        });
+    });
+}

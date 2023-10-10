@@ -64,6 +64,7 @@ filterButton?.addEventListener("click", async () => {
   postContainer.innerHTML = "";
   const allPosts = await filterPosts(searchInput.value, sortInput.value);
   allPosts.forEach((post) => renderPosts(postContainer, post));
+  emojiReactButton();
 });
 searchButton.addEventListener("click", async () => {
   const data: post[] = !searchInput.value
@@ -101,6 +102,7 @@ searchButton.addEventListener("click", async () => {
   } else {
     data.forEach((element: post) => renderPosts(postContainer, element));
     console.log("else route");
+    emojiReactButton();
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -201,6 +203,8 @@ const intersectionObserver = new IntersectionObserver(
           renderPosts(postContainer, data[0]);
         } else
           data.forEach((element: post) => renderPosts(postContainer, element));
+        emojiReactButton();
+
         isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);
@@ -284,22 +288,7 @@ async function searchApi(
   } else {
     data.forEach((element: post) => renderPosts(postContainer, element));
   }
-  document.querySelectorAll("[data-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      console.log("clicked");
-      let buttonRect = button.getBoundingClientRect();
-      console.log(
-        buttonRect.top,
-        buttonRect.top + postContainer.scrollTop + "px"
-      );
-
-      modal.style.top = buttonRect.top + "px";
-      modal.style.left = buttonRect.left + postContainer.scrollLeft + "px";
-      modal.style.display = "grid";
-      setId(button.dataset.id);
-      console.log(getId());
-    });
-  });
+  emojiReactButton();
   const observedObj = document.querySelectorAll("[data-observed]");
   const target = observedObj[observedObj.length - 1];
   console.log(observedObj, target);
@@ -317,3 +306,18 @@ document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
     }
   });
 });
+
+function emojiReactButton() {
+  document.querySelectorAll("[data-id]").forEach((button) => {
+    button.addEventListener("click", () => {
+      console.log("clicked");
+      let buttonRect = button.getBoundingClientRect();
+
+      modal.style.top = buttonRect.top + "px";
+      modal.style.left = buttonRect.left + "px";
+      modal.style.display = "grid";
+      setId(button.dataset.id);
+      console.log(getId());
+    });
+  });
+}

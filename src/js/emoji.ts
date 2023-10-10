@@ -86,3 +86,5 @@ export default function createSmileyPicker(
   }
   return emojiFunctions;
 }
+
+

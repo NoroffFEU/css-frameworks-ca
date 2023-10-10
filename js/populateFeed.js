@@ -53,8 +53,6 @@ async function populateFeed(url) {
     profileInfoContainer.append(profileAvatar);
 
     profileInfoBox.append(profileInfoContainer);
-
-    // console.log(json);
   } catch (error) {
     console.log(error);
   }

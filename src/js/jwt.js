@@ -74,6 +74,7 @@ function login({ email, password }) {
         console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));
         localStorage.setItem("currentUser", JSON.stringify(data.name));
+        localStorage.setItem("avatar", JSON.stringify(data.avatar));
         changePage(data.name);
     });
 }

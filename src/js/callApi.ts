@@ -3,6 +3,7 @@ export default async function callApi(
   options: {}
 ): Promise<[]> {
   try {
+    document.querySelector(".spinner-border")?.style.display = "block";
     const response = await fetch(endpoint, options);
     const data = await response.json();
     console.log(data);
@@ -15,5 +16,7 @@ export default async function callApi(
     }
   } catch (err) {
     console.log(err.message);
+  } finally {
+    document.querySelector(".spinner-border")?.style.display = "none";
   }
 }

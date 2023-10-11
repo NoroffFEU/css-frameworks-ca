@@ -2,7 +2,7 @@ import createElementFactory from "./createElementFactory.js";
 
 export default function renderPosts(
   domEl: HTMLDivElement,
-  { id, title, body, tags, media, created, updated, _count, author }
+  { id, title, body, tags, media, created, updated, _count, author, comments }
 ) {
   const container = createElementFactory(
     "div",
@@ -92,4 +92,90 @@ export default function renderPosts(
     {},
     "fs-6"
   );
+
+  const inputGroupContainer = createElementFactory(
+    "div",
+    "",
+    container,
+    {},
+    "input-group"
+  );
+
+  const commentInput = createElementFactory(
+    "textArea",
+    "",
+    inputGroupContainer,
+    {
+      placeholder: "Write your comment here",
+      ariaDescribedby: "commentButton",
+      id: `commentInput${id}`,
+    },
+    "form-control"
+  );
+
+  const commentButton = createElementFactory(
+    "button",
+    "Post Comment",
+    inputGroupContainer,
+    { type: "button", id: "commentButton", "data-comment-id": id },
+    "btn",
+    "btn-primary"
+  );
+
+  const commentContainer = createElementFactory(
+    "div",
+    "",
+    container,
+    {},
+    "container"
+  );
+  const commentHeader = createElementFactory(
+    "h3",
+    "Comments",
+    commentContainer,
+    {}
+  );
+  const commentRow = createElementFactory(
+    "div",
+    "",
+    commentContainer,
+    { id: `comment-row--${id}` },
+    "row",
+    "overflow-y-auto",
+    "h-px--150"
+  );
+
+  comments.forEach((comment) =>
+    renderComments(commentRow, comment.body, comment.created, comment.author)
+  );
+}
+
+export function renderComments(commentRow, body, created, { name, avatar }) {
+  const commentFirstCol = createElementFactory(
+    "div",
+    "",
+    commentRow,
+    {},
+    "col-4"
+  );
+  const commentSecondCol = createElementFactory(
+    "div",
+    "",
+    commentRow,
+    {},
+    "col-8"
+  );
+  const commenterImg = createElementFactory(
+    "img",
+    "",
+    commentFirstCol,
+    {
+      src: avatar,
+    },
+    "rounded-circle",
+    "w-25"
+  );
+  const commenterBody = createElementFactory("p", body, commentSecondCol, {});
+
+  const commenterName = createElementFactory("p", name, commentFirstCol, {});
 }

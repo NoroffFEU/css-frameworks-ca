@@ -8,8 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 export default function callApi(endpoint, options) {
+    var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {
         try {
+            (_a = document.querySelector(".spinner-border")) === null || _a === void 0 ? void 0 : _a.style.display = "block";
             const response = yield fetch(endpoint, options);
             const data = yield response.json();
             console.log(data);
@@ -25,6 +27,9 @@ export default function callApi(endpoint, options) {
         }
         catch (err) {
             console.log(err.message);
+        }
+        finally {
+            (_b = document.querySelector(".spinner-border")) === null || _b === void 0 ? void 0 : _b.style.display = "none";
         }
     });
 }

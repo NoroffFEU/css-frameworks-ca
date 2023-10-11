@@ -24,6 +24,10 @@
   height: 400px;
 }
 
+.h-px--150 {
+  height: 150px;
+}
+
 .w-px--max--110 {
   max-width: 100px;
 }
@@ -40,6 +44,13 @@
 
 .hide {
   display: none;
+}
+
+.spinnerUniqueClassName {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5000;
 }
 
 .emoji-grid {

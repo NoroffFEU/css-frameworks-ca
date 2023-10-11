@@ -9,10 +9,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
-import renderPosts from "./renderPost.js";
+import renderPosts, { renderComments } from "./renderPost.js";
 import filterPosts from "./filter.js";
 import createSmileyPicker from "./emoji.js";
 import reactToPost from "./reactToPost.js";
+import commentPost from "./commentPost.js";
 const endpoint = endpointObject("Jarle");
 const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
 let modal = document.querySelector("#modal");
@@ -56,6 +57,7 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     const allPosts = yield filterPosts(searchInput.value, sortInput.value);
     allPosts.forEach((post) => renderPosts(postContainer, post));
     emojiReactButton();
+    commentButton();
 }));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
@@ -79,6 +81,7 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         data.forEach((element) => renderPosts(postContainer, element));
         console.log("else route");
         emojiReactButton();
+        commentButton();
         const observedObj = document.querySelectorAll("[data-observed]");
         const target = observedObj[observedObj.length - 1];
         console.log(observedObj, target);
@@ -139,6 +142,7 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
         else
             data.forEach((element) => renderPosts(postContainer, element));
         emojiReactButton();
+        commentButton();
         isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);
@@ -163,13 +167,8 @@ function searchApi(array, category, count = 0, searchWord = null) {
             foundWord = array.find((post) => post.tags.some((element) => element.toLowerCase() === searchWord.toLowerCase()));
         }
         else {
-            foundWord = array.find((post) => {
-                var _a;
-                //if (post === null) {
-                //return false;
-                // }
-                (_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase().includes(searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase());
-            });
+            console.log("conventional route");
+            foundWord = array.find((post) => { var _a; return ((_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === (searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase()); });
         }
         if (foundWord) {
             return foundWord;
@@ -197,6 +196,7 @@ function searchApi(array, category, count = 0, searchWord = null) {
         data.forEach((element) => renderPosts(postContainer, element));
     }
     emojiReactButton();
+    commentButton();
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -225,4 +225,16 @@ function emojiReactButton() {
             console.log(getId());
         });
     });
+}
+function commentButton() {
+    document.querySelectorAll("[data-comment-id]").forEach((button) => button.addEventListener("click", () => {
+        const id = button.dataset.commentId;
+        console.log(id);
+        const message = document.querySelector(`#commentInput${id}`).value;
+        commentPost(message, id);
+        renderComments(document.querySelector(`#comment-row--${id}`), message, "", {
+            name: JSON.parse(localStorage.getItem("currentUser")),
+            avatar: JSON.parse(localStorage.getItem("avatar")),
+        });
+    }));
 }

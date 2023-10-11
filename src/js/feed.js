@@ -7,7 +7,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var _a;
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts, { renderComments } from "./renderPost.js";
@@ -239,7 +238,8 @@ function commentButton() {
         });
     }));
 }
-(_a = document.querySelector("[data-userName]")) === null || _a === void 0 ? void 0 : _a.textContent = JSON.parse(localStorage.getItem("currentUser"));
 (function renderUserSpecific() {
+    var _a;
+    (_a = document.querySelector("[data-userName]")) === null || _a === void 0 ? void 0 : _a.textContent = JSON.parse(localStorage.getItem("currentUser"));
     document.querySelector("[data-userImg]").src = JSON.parse(localStorage.getItem("avatar"));
 })();

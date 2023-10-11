@@ -345,11 +345,10 @@ function commentButton() {
   );
 }
 
-document.querySelector("[data-userName]")?.textContent = JSON.parse(
-  localStorage.getItem("currentUser")
-);
-
 (function renderUserSpecific() {
+  document.querySelector("[data-userName]")?.textContent = JSON.parse(
+    localStorage.getItem("currentUser")
+  );
   document.querySelector("[data-userImg]").src = JSON.parse(
     localStorage.getItem("avatar")
   );

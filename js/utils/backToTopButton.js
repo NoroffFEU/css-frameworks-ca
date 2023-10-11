@@ -15,3 +15,9 @@ function toggleTopButton() {
     document.getElementById("back-to-up").classList.add("d-none");
   }
 }
+
+function clearLocalStorage() {
+  localStorage.removeItem("userName");
+  localStorage.removeItem("accessToken");
+}
+document.getElementById("logOut").addEventListener("click", clearLocalStorage);

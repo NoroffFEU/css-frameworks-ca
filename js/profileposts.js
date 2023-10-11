@@ -1,10 +1,9 @@
 import { API_BASE_URL } from "./const.mjs";
-// import { editPost } from "./editUserPosts.mjs";
 const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
   try {
-    console.log(url);
+    // console.log(url);
     const token = localStorage.getItem("accessToken");
     const fetchUserPosts = {
       method: "GET",

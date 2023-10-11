@@ -17,6 +17,8 @@
     <script src="/js/profileposts.js" type="module" defer></script>
     <script src="/js/editUserPosts.mjs" type="module" defer></script>
     <script src="/js/deletePost.js" type="module" defer></script>
+    <script src="/js/utils/backToTopButton.js" type="module" defer></script>
+    <script src="/js/updateProfileMedia.js" type="module" defer></script>
   </head>
   </head>
   <body>
@@ -46,7 +48,7 @@
               <a class="nav-link" href="/feed/index.html">Feed</a>
             </li>
             <li class="nav-item rounded">
-              <a class="nav-link" href="/index.html">Log Out</a>
+              <a id="logOut" class="nav-link" href="/index.html">Log Out</a>
             </li>
           </ul>
         </div>
@@ -154,10 +156,16 @@
         </div>
       </div>
     </main>
-    <div class="modal fade modal-lg" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header mb-3" id="modal-header">
+    <button
+    class="btn btn-lg btn-primary rounded-circle position-fixed bottom-0 end-0 translate-middle d-none"
+    id="back-to-up"
+  >
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
+    <div class="modal fade modal-lg bg-dark bg-opacity-50" id="myModal">
+      <div class="modal-dialog ">
+        <div class="modal-content border border-secondary">
+          <div class="modal-header" id="modal-header">
             <h4 class="modal-title">Edit or delete post</h4>
             <button
               type="button"
@@ -180,7 +188,6 @@
                   required
                 />
               </div>
-
               <textarea
                 class="form-control mt-1 mb-3"
                 placeholder="Update post"
@@ -213,6 +220,39 @@
                   class="btn btn-danger btn-lg mt-2 ml-auto"
                 >
                   Delete
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade bg-dark bg-opacity-50 modal-sm modal-fullscreen-sm-down" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border border-secondary">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="editProfileImage">Edit Profile Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="updateProfileMediaForm">
+              <label for="UpdateProfileMedia" class="form-label text-start"></label>
+              <div class="UpdateProfileMediaprofileMedia">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="updateProfileMedia"
+                  name="avatar"
+                  placeholder="New image url"
+                />
+              </div>
+              <div class="modal-footer justify-content-around">
+                <button
+                  type="submit"
+                  id="editProfileMedia"
+                  class="btn btn-info btn-lg mt-2 ml-auto btn-dark"
+                >
+                  Update
                 </button>
               </div>
             </form>

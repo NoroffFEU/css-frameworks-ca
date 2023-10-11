@@ -6,7 +6,6 @@ const deleteButton = document.getElementById("deletePostButton");
 async function deletePost(postId) {
   const token = localStorage.getItem("accessToken");
   const url = `${API_BASE_URL}social/posts/${postId}`;
-  // console.log(url);
 
   try {
     const response = await fetch(url, {

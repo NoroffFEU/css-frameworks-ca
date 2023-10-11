@@ -2,7 +2,7 @@ import { API_BASE_URL } from "./const.mjs";
 
 async function fetchAllUserPosts(url) {
   try {
-    console.log(url);
+    // console.log(url);
     const token = localStorage.getItem("accessToken");
     const fetchAllUserPostsOptions = {
       method: "GET",

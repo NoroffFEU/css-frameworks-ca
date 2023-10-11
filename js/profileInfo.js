@@ -4,9 +4,8 @@ const userEmail = localStorage.getItem("userEmail");
 
 async function createProfile(url) {
   try {
-    console.log(url);
     const token = localStorage.getItem("accessToken");
-    console.log(token);
+    // console.log(token);
     const fetchProfileInfo = {
       method: "GET",
       headers: {
@@ -56,7 +55,7 @@ async function createProfile(url) {
 
     const li2 = document.createElement("li");
     const a2 = document.createElement("a");
-    a2.href = "#";
+
     a2.classList.add(
       "mt-5",
       "text-decoration-none",
@@ -65,6 +64,27 @@ async function createProfile(url) {
       "link-danger"
     );
     a2.innerText = "Edit Profile";
+
+    const editModal = document.getElementById("editModal");
+
+    a2.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      editModal.classList.add("show");
+      editModal.style.display = "block";
+    });
+
+    const closeEditModal = document.getElementById("editModal");
+    closeEditModal.addEventListener("click", (e) => {
+      if (
+        e.target === closeEditModal ||
+        e.target.classList.contains("btn-close")
+      ) {
+        closeEditModal.classList.remove("show");
+        closeEditModal.style.display = "none";
+      }
+    });
+
     li2.appendChild(a2);
 
     ul.appendChild(li1);

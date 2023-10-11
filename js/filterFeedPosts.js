@@ -1,8 +1,9 @@
-import { allPostsResult } from "./feedposts.js";
+import { allPosts, allPostsResult } from "./feedposts.js";
 import { setUpHTML } from "./const.mjs";
 import { API_BASE_URL } from "./const.mjs";
 import { fetchAllUserPosts } from "./feedposts.js";
 
+//Filter by number of reactions
 document.getElementById("reactionPosts").addEventListener("click", async () => {
   try {
     let result = allPostsResult.sort((a, b) => {
@@ -22,13 +23,12 @@ document.getElementById("reactionPosts").addEventListener("click", async () => {
       }
       setUpHTML(post, postWallContainer);
     });
-
-    // console.log(result);
   } catch (error) {
     console.error("Error:", error);
   }
 });
 
+//Filter by oldest date
 document.getElementById("datePosts").addEventListener("click", async () => {
   let result = allPostsResult.sort(function (a, b) {
     const c = new Date(a.created);
@@ -47,6 +47,12 @@ document.getElementById("datePosts").addEventListener("click", async () => {
   });
 });
 
+//By Default button
+document.getElementById("defaultPosts").addEventListener("click", () => {
+  window.location.reload();
+});
+
+//Search Bar Function
 document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("searchBar");
 

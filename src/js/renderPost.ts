@@ -92,6 +92,35 @@ export default function renderPosts(
     {},
     "fs-6"
   );
+
+  const inputGroupContainer = createElementFactory(
+    "div",
+    "",
+    container,
+    {},
+    "input-group"
+  );
+
+  const commentInput = createElementFactory(
+    "textArea",
+    "",
+    inputGroupContainer,
+    {
+      placeholder: "Write your comment here",
+      ariaDescribedby: "commentButton",
+    },
+    "form-control"
+  );
+
+  const commentButton = createElementFactory(
+    "button",
+    "Post Comment",
+    inputGroupContainer,
+    { type: "button", id: "commentButton" },
+    "btn",
+    "btn-primary"
+  );
+
   if (comments[0]) {
     const commentContainer = createElementFactory(
       "div",

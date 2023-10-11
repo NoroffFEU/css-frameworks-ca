@@ -22,6 +22,12 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
         "data-id": id,
     }, "btn", "btn-outline-primary");
     const dateSpan = createElementFactory("p", created.split("T")[0], anker, {}, "fs-6");
+    const inputGroupContainer = createElementFactory("div", "", container, {}, "input-group");
+    const commentInput = createElementFactory("textArea", "", inputGroupContainer, {
+        placeholder: "Write your comment here",
+        ariaDescribedby: "commentButton",
+    }, "form-control");
+    const commentButton = createElementFactory("button", "Post Comment", inputGroupContainer, { type: "button", id: "commentButton" }, "btn", "btn-primary");
     if (comments[0]) {
         const commentContainer = createElementFactory("div", "", container, {}, "container");
         const commentHeader = createElementFactory("h3", "Comments", commentContainer, {});

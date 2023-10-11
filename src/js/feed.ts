@@ -66,6 +66,7 @@ filterButton?.addEventListener("click", async () => {
   const allPosts = await filterPosts(searchInput.value, sortInput.value);
   allPosts.forEach((post) => renderPosts(postContainer, post));
   emojiReactButton();
+  commentButton();
 });
 searchButton.addEventListener("click", async () => {
   const data: post[] = !searchInput.value

@@ -57,6 +57,7 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     const allPosts = yield filterPosts(searchInput.value, sortInput.value);
     allPosts.forEach((post) => renderPosts(postContainer, post));
     emojiReactButton();
+    commentButton();
 }));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value

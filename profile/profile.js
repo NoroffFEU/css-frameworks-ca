@@ -124,6 +124,7 @@ function editPost(id) {
 
     document.getElementById("exampleFormControlTextarea1").value = tmp.title;
     document.getElementById("exampleFormControlTextarea2").value = tmp.body;
+    document.getElementById("exampleFormControlTextarea3").value = tmp.media;
     postIdEdit = id;
     myModal.show();
 }

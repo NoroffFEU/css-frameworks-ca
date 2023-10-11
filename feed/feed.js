@@ -7,17 +7,45 @@ const requestParam = {
     _author: true,
     // offset: 100
 };
+
+
 const queryString = new URLSearchParams(requestParam).toString();
 
 const token = localStorage.getItem("accessToken");
 let feedPosts = undefined;
 let isShowingTodaysPosts = false;
 
+// reset page to all posts
+document.getElementById("homeBtn").addEventListener("click", () => {
+    isShowingTodaysPosts = false;
+    searchField.value = "";
+    showPosts(feedPosts);
+});
+
+// search
+
+const searchField = document.getElementById("searchInput");
+
+searchField.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        const result = searchElement(feedPosts, searchField.value);
+        // debugger;
+        showPosts(result);
+    }
+});
 
 
+function searchElement(postsArray, searchText) {
+    return postsArray.filter((post) =>
+        post.title.includes(searchText) || post.body.includes(searchText)
+    );
+}
 
+
+// showing today's posts
 
 const todaysPostsBtn = document.getElementById("todaysPosts");
+
 todaysPostsBtn.addEventListener("click", function () {
     if (isShowingTodaysPosts === false) {
         const date = new Date();

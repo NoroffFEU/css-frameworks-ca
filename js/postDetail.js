@@ -9,8 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const postId = urlParams.get('id');
     if (postId) {
         fetchPostById(postId);
+    } else {
+        const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        errorModal.show();
     }
 });
+
 /**
  * Fetches a post by its ID.
  * @async
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 export async function fetchPostById(id) {
     const url = `${API_BASE_URL}/social/posts/${id}`;
     const options = {
-        headers: getAuthHeader(), // make sure getAuthHeader is imported or available in this file
+        headers: getAuthHeader(),
     };
     const response = await fetch(url, options);
     if (!response.ok) {
@@ -42,7 +46,6 @@ export async function fetchPostById(id) {
  */
 export function displayPostDetails(post) {
     const postDetailsDiv = document.getElementById('postDetails');
-    console.log(postDetailsDiv);
     postDetailsDiv.innerHTML = `
         <div class="card">
             <img src="${post.media || '/img/panda.jpg'}" class="card-img-top" alt="Post Image">

@@ -11,7 +11,7 @@ import { API_BASE_URL } from '../js/constants.js';
  */
 export async function registerUser(name, email, password) {
     try {
-        const response = await fetch(`${API_BASE_URL}/social/auth/register`, {
+        let response = await fetch(`${API_BASE_URL}/social/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -22,9 +22,7 @@ export async function registerUser(name, email, password) {
                 password,
             }),
         });
-
         const errorMessageDiv = document.getElementById('error-message');
-
         if (!response.ok) {
             const errorData = await response.json();
             if (errorData.errors && errorData.errors[0].message === 'Profile already exists') {
@@ -34,17 +32,31 @@ export async function registerUser(name, email, password) {
                 throw new Error('Registration failed');
             }
         } else {
-            const data = await response.json();
-            console.log('User registered successfully:', data);
-            errorMessageDiv.textContent = 'User registered successfully!'; // Display a success message
-            errorMessageDiv.classList.remove('text-danger');
-            errorMessageDiv.classList.add('text-success');
-            window.location.href = '/profile/index.html';
+            // Automatically log the user in after successful registration
+            response = await fetch(`${API_BASE_URL}/social/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    password,
+                }),
+            });
+            if (response.ok) {
+                const data = await response.json();
+                // Store the token, e.g., in local storage
+                localStorage.setItem('authToken', data.token);
+                window.location.href = '/profile/index.html';
+            } else {
+                errorMessageDiv.textContent = 'Login after registration failed. Please try logging in again.';
+            }
         }
     } catch (error) {
         console.error('Error:', error);
     }
 }
+
 /**
  * Logs in a user.
  * @async
@@ -68,7 +80,7 @@ export async function loginUser(email, password) {
         });
 
         if (!response.ok) {
-            throw new Error('Login failed');
+            throw new Error('Login failed. Please, register as a new user!');
         }
 
         const data = await response.json();

@@ -245,12 +245,10 @@ async function searchApi(
       )
     );
   } else {
-    foundWord = array.find((post) => {
-      //if (post === null) {
-      //return false;
-      // }
-      post[category]?.toLowerCase().includes(searchWord?.toLowerCase());
-    });
+    console.log("conventional route");
+    foundWord = array.find(
+      (post) => post[category]?.toLowerCase() === searchWord?.toLowerCase()
+    );
   }
 
   if (foundWord) {

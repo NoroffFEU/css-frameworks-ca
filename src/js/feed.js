@@ -166,13 +166,8 @@ function searchApi(array, category, count = 0, searchWord = null) {
             foundWord = array.find((post) => post.tags.some((element) => element.toLowerCase() === searchWord.toLowerCase()));
         }
         else {
-            foundWord = array.find((post) => {
-                var _a;
-                //if (post === null) {
-                //return false;
-                // }
-                (_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase().includes(searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase());
-            });
+            console.log("conventional route");
+            foundWord = array.find((post) => { var _a; return ((_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === (searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase()); });
         }
         if (foundWord) {
             return foundWord;

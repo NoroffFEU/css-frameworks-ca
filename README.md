@@ -1,7 +1,8 @@
 # Socially
 
+![Screenshot 2023-10-11 at 12 07 31](https://github.com/RamtinMoshtagh/css-frameworks-ca/assets/95631899/b880fb25-f66c-4b52-8596-d3bc172aa96c)
 
-![Screenshot 2023-09-03 at 10 52 54](https://github.com/RamtinMoshtagh/css-frameworks-ca/assets/95631899/8c615206-61a6-49a3-baee-83c14be534b8)
+
 
 
 
@@ -13,6 +14,7 @@ Purpose of this website is for you to socialize, welcome to Socially!
 - Bootstrap
 - SASS/SCSS
 - HTML
+- JS
 
 ## Contact
 - Work: ramtin@zen-math.no

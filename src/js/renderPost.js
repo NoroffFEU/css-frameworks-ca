@@ -25,7 +25,7 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     if (comments[0]) {
         const commentContainer = createElementFactory("div", "", container, {}, "container");
         const commentHeader = createElementFactory("h3", "Comments", commentContainer, {});
-        const commentRow = createElementFactory("div", "", commentContainer, {}, "row");
+        const commentRow = createElementFactory("div", "", commentContainer, {}, "row", "overflow-y-auto", "h-px--150");
         comments.forEach((comment) => renderComments(commentRow, comment.body, comment.created, comment.author));
     }
 }

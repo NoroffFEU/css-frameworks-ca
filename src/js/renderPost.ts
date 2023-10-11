@@ -111,7 +111,9 @@ export default function renderPosts(
       "",
       commentContainer,
       {},
-      "row"
+      "row",
+      "overflow-y-auto",
+      "h-px--150"
     );
 
     comments.forEach((comment) =>

@@ -93,12 +93,27 @@ export default function renderPosts(
     "fs-6"
   );
 
-  const inputGroupContainer = createElementFactory(
+  const commentContainer = createElementFactory(
     "div",
     "",
     container,
     {},
-    "input-group"
+    "container"
+  );
+  const commentHeader = createElementFactory(
+    "h3",
+    "Comments",
+    commentContainer,
+    {}
+  );
+
+  const inputGroupContainer = createElementFactory(
+    "div",
+    "",
+    commentContainer,
+    {},
+    "input-group",
+    "mb-4"
   );
 
   const commentInput = createElementFactory(
@@ -120,20 +135,6 @@ export default function renderPosts(
     { type: "button", id: "commentButton", "data-comment-id": id },
     "btn",
     "btn-primary"
-  );
-
-  const commentContainer = createElementFactory(
-    "div",
-    "",
-    container,
-    {},
-    "container"
-  );
-  const commentHeader = createElementFactory(
-    "h3",
-    "Comments",
-    commentContainer,
-    {}
   );
   const commentRow = createElementFactory(
     "div",

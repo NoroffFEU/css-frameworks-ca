@@ -114,39 +114,42 @@
               alt="Profile picture of Thistle"
               id="profile--picture" />
           </div>
-          <div class="input-group my-2">
-            <input
-              class="form-control"
-              name="change-picture--profile"
-              id="change-picture--profile"
-              type="text"
-              required
-              minlength="1"
-              placeholder="img url here" />
-            <button
-              id="change-picture--profile--button"
-              type="button"
-              class="btn btn-secondary"
-              data-mediaSelector>
-              Change picture
-            </button>
-          </div>
-          <div class="input-group my-2">
-            <input
-              class="form-control"
-              name="change-picture--banner"
-              id="change-picture--banner"
-              type="text"
-              required
-              minlength="1"
-              placeholder="banner url here" />
-            <button
-              id="change-picture--banner--button"
-              type="button"
-              data-mediaSelector
-              class="btn btn-secondary">
-              Change banner
-            </button>
+          <div data-custom-input-Container class="hide">
+            <div class="input-group my-2">
+              <input
+                class="form-control"
+                name="change-picture--profile"
+                id="change-picture--profile"
+                type="text"
+                required
+                minlength="1"
+                placeholder="img url here" />
+              <button
+                id="change-picture--profile--button"
+                type="button"
+                class="btn btn-secondary"
+                data-mediaSelector>
+                Change picture
+              </button>
+            </div>
+
+            <div class="input-group my-2">
+              <input
+                class="form-control"
+                name="change-picture--banner"
+                id="change-picture--banner"
+                type="text"
+                required
+                minlength="1"
+                placeholder="banner url here" />
+              <button
+                id="change-picture--banner--button"
+                type="button"
+                data-mediaSelector
+                class="btn btn-secondary">
+                Change banner
+              </button>
+            </div>
           </div>
           <button id="follow--button" class="btn btn-success my-3">
             Follow

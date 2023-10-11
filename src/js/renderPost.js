@@ -22,15 +22,15 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
         "data-id": id,
     }, "btn", "btn-outline-primary");
     const dateSpan = createElementFactory("p", created.split("T")[0], anker, {}, "fs-6");
-    const inputGroupContainer = createElementFactory("div", "", container, {}, "input-group");
+    const commentContainer = createElementFactory("div", "", container, {}, "container");
+    const commentHeader = createElementFactory("h3", "Comments", commentContainer, {});
+    const inputGroupContainer = createElementFactory("div", "", commentContainer, {}, "input-group", "mb-4");
     const commentInput = createElementFactory("textArea", "", inputGroupContainer, {
         placeholder: "Write your comment here",
         ariaDescribedby: "commentButton",
         id: `commentInput${id}`,
     }, "form-control");
     const commentButton = createElementFactory("button", "Post Comment", inputGroupContainer, { type: "button", id: "commentButton", "data-comment-id": id }, "btn", "btn-primary");
-    const commentContainer = createElementFactory("div", "", container, {}, "container");
-    const commentHeader = createElementFactory("h3", "Comments", commentContainer, {});
     const commentRow = createElementFactory("div", "", commentContainer, { id: `comment-row--${id}` }, "row", "overflow-y-auto", "h-px--150");
     comments.forEach((comment) => renderComments(commentRow, comment.body, comment.created, comment.author));
 }

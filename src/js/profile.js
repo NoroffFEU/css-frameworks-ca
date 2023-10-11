@@ -132,6 +132,11 @@ function buttonDeleteListener(button, id) {
         document.querySelector(`#div${id}`).style.display = "none";
     });
 }
+if (currentUser === userId) {
+    document.querySelector("#follow--button").style.display = "none";
+    document.querySelector("[data-custom-input-Container]").style.display =
+        "block";
+}
 function followUnfollow(followers) {
     const button = document.querySelector("#follow--button");
     console.log(followers.some((element) => element.name === currentUser), followers);

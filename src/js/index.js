@@ -11,7 +11,7 @@ import { setRegisterFormListener } from "./handlers/register.js";
 import { setLoginFormListener } from "./handlers/login.js";
 import * as templates from "./templates/index.js";
 import * as postMethods from "./api/posts/index.js";
-import { renderPostTemplate } from "./templates/index.js";
+// import { renderPostTemplate } from "./templates/index.js";
 
 // import * as posts from "./api/posts/index.js";
 
@@ -24,14 +24,25 @@ if (path === "/") {
 }
 
 // Testing templates post
-async function testTemplate() {
+async function renderPosts() {
     const posts = await postMethods.getPosts();
-    const post = posts[45];
-    const container = document.querySelector("#post");
-    renderPostTemplate(post, container);
+    console.log(posts);
+    // const post = posts[24];
+    const container = document.querySelector("#postList");
+    templates.renderPostTemplates(posts, container);
 }
 
-testTemplate();
+renderPosts();
+
+// async function testTemplate() {
+//     const posts = await postMethods.getPosts();
+//     console.log(posts);
+//     // const post = posts[24];
+//     const container = document.querySelector("#post");
+//     templates.renderPostTemplates(posts, container);
+// }
+
+// testTemplate();
 
 // post.createPost();
 // post.updatePost();

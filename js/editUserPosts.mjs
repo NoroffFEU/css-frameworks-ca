@@ -5,7 +5,7 @@ const postTitleInput = modal.querySelector("#postTitle");
 const postBodyTextarea = modal.querySelector("#postBodyArea");
 const postMediaInput = modal.querySelector("#postMedia");
 const modalForm = modal.querySelector("#createNewPost");
-const deleteButton = document.getElementById("deletePostButton");
+// const deleteButton = document.getElementById("deletePostButton");
 
 async function editPost(postId, postTitle, postBody, postMedia) {
   const token = localStorage.getItem("accessToken");

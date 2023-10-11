@@ -5,7 +5,7 @@ const mainApiUrl = "https://api.noroff.dev/api/v1";
 const postsUrl = `${mainApiUrl}/social/posts`;
 const requestParam = {
     _author: true,
-    offset: 100
+    // offset: 100
 };
 const queryString = new URLSearchParams(requestParam).toString();
 
@@ -110,7 +110,7 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
     const userMediaPost = mediaPost.value;
 
     const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-    newPostToApiFunksjon(PostsUrl, newPost);
+    newPostToApiFunksjon(postsUrl, newPost);
 });
 
 function newPostValuesToObject(title, message, media) {

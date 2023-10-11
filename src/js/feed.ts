@@ -1,9 +1,10 @@
 import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
-import renderPosts from "./renderPost.js";
+import renderPosts, { renderComments } from "./renderPost.js";
 import filterPosts from "./filter.js";
 import createSmileyPicker from "./emoji.js";
 import reactToPost from "./reactToPost.js";
+import commentPost from "./commentPost.js";
 
 const endpoint = endpointObject("Jarle");
 const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
@@ -103,6 +104,7 @@ searchButton.addEventListener("click", async () => {
     data.forEach((element: post) => renderPosts(postContainer, element));
     console.log("else route");
     emojiReactButton();
+    commentButton();
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);
@@ -204,6 +206,7 @@ const intersectionObserver = new IntersectionObserver(
         } else
           data.forEach((element: post) => renderPosts(postContainer, element));
         emojiReactButton();
+        commentButton();
 
         isObserving(false, intersectionObserver);
         setTarget();
@@ -289,6 +292,7 @@ async function searchApi(
     data.forEach((element: post) => renderPosts(postContainer, element));
   }
   emojiReactButton();
+  commentButton();
   const observedObj = document.querySelectorAll("[data-observed]");
   const target = observedObj[observedObj.length - 1];
   console.log(observedObj, target);
@@ -320,4 +324,24 @@ function emojiReactButton() {
       console.log(getId());
     });
   });
+}
+
+function commentButton() {
+  document.querySelectorAll("[data-comment-id]").forEach((button) =>
+    button.addEventListener("click", () => {
+      const id = button.dataset.commentId;
+      console.log(id);
+      const message = document.querySelector(`#commentInput${id}`).value;
+      commentPost(message, id);
+      renderComments(
+        document.querySelector(`#comment-row--${id}`),
+        message,
+        "",
+        {
+          name: JSON.parse(localStorage.getItem("currentUser")),
+          avatar: JSON.parse(localStorage.getItem("avatar")),
+        }
+      );
+    })
+  );
 }

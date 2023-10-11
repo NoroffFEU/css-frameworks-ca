@@ -108,6 +108,7 @@ export default function renderPosts(
     {
       placeholder: "Write your comment here",
       ariaDescribedby: "commentButton",
+      id: `commentInput${id}`,
     },
     "form-control"
   );
@@ -116,42 +117,40 @@ export default function renderPosts(
     "button",
     "Post Comment",
     inputGroupContainer,
-    { type: "button", id: "commentButton" },
+    { type: "button", id: "commentButton", "data-comment-id": id },
     "btn",
     "btn-primary"
   );
 
-  if (comments[0]) {
-    const commentContainer = createElementFactory(
-      "div",
-      "",
-      container,
-      {},
-      "container"
-    );
-    const commentHeader = createElementFactory(
-      "h3",
-      "Comments",
-      commentContainer,
-      {}
-    );
-    const commentRow = createElementFactory(
-      "div",
-      "",
-      commentContainer,
-      {},
-      "row",
-      "overflow-y-auto",
-      "h-px--150"
-    );
+  const commentContainer = createElementFactory(
+    "div",
+    "",
+    container,
+    {},
+    "container"
+  );
+  const commentHeader = createElementFactory(
+    "h3",
+    "Comments",
+    commentContainer,
+    {}
+  );
+  const commentRow = createElementFactory(
+    "div",
+    "",
+    commentContainer,
+    { id: `comment-row--${id}` },
+    "row",
+    "overflow-y-auto",
+    "h-px--150"
+  );
 
-    comments.forEach((comment) =>
-      renderComments(commentRow, comment.body, comment.created, comment.author)
-    );
-  }
+  comments.forEach((comment) =>
+    renderComments(commentRow, comment.body, comment.created, comment.author)
+  );
 }
 
-function renderComments(commentRow, body, created, { name, avatar }) {
+export function renderComments(commentRow, body, created, { name, avatar }) {
   const commentFirstCol = createElementFactory(
     "div",
     "",

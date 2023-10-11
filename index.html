@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <!-- <script defer src="./src/scripts/index.js"></script> -->
+    <script defer type="module" src="./src/scripts/index.js"></script>
     <link rel="stylesheet" href="./dist/css/index.css">
     <title>Z | Sign In</title>
 </head>
@@ -19,22 +19,26 @@
       </div>
       <div class="col-md-6">
         <h3 class="text-white">Welcome Back</h3>
-        <form action="/profile.html" class="w-100 d-flex flex-column">
+        <form class="w-100 d-flex flex-column" id="sign-in-form">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" placeholder="Type your username" id="email" required>
+            <input type="email" name="email" class="form-control" placeholder="Type your username" id="email" required>
             <label for="email" class="form-label">
               <i class="bi bi-person"></i>
               Email
             </label>
+            
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" placeholder="Type your password" id="password" minlength="8" required>
+            <input type="password" name="password" class="form-control" placeholder="Type your password" id="password" minlength="8" required>
             <label for="password" class="form-label">
               <i class="bi bi-lock"></i>
               Password
             </label>
           </div>
-          <button class="custom-btn-large text-center m-auto">Sign In</button>
+          <ul class="list-group w-100 mb-2" id="sign-in-feedback">
+                    
+          </ul>
+          <button class="custom-btn-large text-center m-auto" id="sign-in-button">Sign In</button>
         </form>
         <div class="row mt-5 pt-4 border-top">
           <div class="col d-flex flex-column">
@@ -47,25 +51,38 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h4>Register</h4>
-                <button class="btn-close" data-bs-dismiss="modal"></button>
+                <button class="btn-close" data-bs-dismiss="modal" id="signup-close-btn"></button>
               </div>
               <div class="modal-body">
-                <form action="/profile.html" class="d-flex flex-column align-items-center">
-                  <div class="form-floating mb-3 w-100">
-                    <input type="email" class="form-control" placeholder="Type your email" required>
+                <form action="/profile.html" class="d-flex flex-column align-items-center" id="signup-form" novalidate>
+                  <ul class="list-group w-100" id="signup-form-feedback">
+                    
+                  </ul>
+                  <div class="form-floating mb-3 w-100 input-container">
+                    <input name="email" type="email" id="new-user-email" class="form-control" placeholder="Type your email" required>
                     <label for="new-user-email" class="form-label">
                       <i class="bi bi-person"></i>
                       Your Email Address
                     </label>
+                    <div class="error-message text-danger text-secondary small mt-1"></div>
                   </div>
-                  <div class="form-floating mb-3 w-100">
-                    <input type="password" class="form-control" placeholder="Choose a password" minlength="8" required>
+                  <div class="form-floating mb-3 w-100 input-container">
+                    <input type="text" name="name" id="new-user-name" class="form-control" placeholder="Type your username" required>
+                    <label for="new-user-name" class="form-label">
+                      <i class="bi bi-person-add"></i>
+                      Choose a Username
+                    </label>
+                    <div class="error-message text-danger text-secondary small mt-1"></div>
+                  </div>
+                  <div class="form-floating mb-3 w-100 input-container">
+                    <input type="password" name="password" id="new-user-password" class="form-control" placeholder="Choose a password" minlength="8" required>
                     <label for="new-user-password" class="form-label">
                       <i class="bi bi-lock"></i>
-                      Choose a password
+                      Choose a Password
                     </label>
+                    <div class="error-message text-danger text-secondary small mt-1"></div>
                   </div>
-                  <button class="custom-btn-large">Sign Up</button>
+                  <button class="custom-btn-large" id="signup-button" disabled >Sign Up</button>
                 </form>
               </div>
             </div>

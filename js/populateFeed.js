@@ -4,9 +4,8 @@ const userName = localStorage.getItem("userName");
 
 async function populateFeed(url) {
   try {
-    console.log(url);
     const token = localStorage.getItem("accessToken");
-    console.log(token);
+
     const fetchProfileInfo = {
       method: "GET",
       headers: {

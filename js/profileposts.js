@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./const.mjs";
+import { likeHeartFunction } from "./const.mjs";
 const userName = localStorage.getItem("userName");
 
 async function gatherUserPosts(url) {
@@ -118,6 +119,8 @@ async function gatherUserPosts(url) {
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("fa-regular", "fa-heart");
       heartIcon.textContent = " " + post.reactions.length;
+      const UniqueHeartIconId = "likeHeart_" + post.id;
+      heartIcon.setAttribute("id", UniqueHeartIconId);
       heartIcon.style.fontSize = "20px";
       heartIcon.style.color = "red";
 
@@ -163,6 +166,8 @@ async function gatherUserPosts(url) {
       postContainer.appendChild(openModal);
 
       profilePosts.appendChild(postContainer);
+
+      likeHeartFunction(UniqueHeartIconId, post.id, token);
     });
 
     // console.log(json);

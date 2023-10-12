@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./const.mjs";
+import { likeHeartFunction } from "./const.mjs";
 
 async function fetchAllUserPosts(url) {
   try {
@@ -122,14 +123,16 @@ async function fetchAllUserPosts(url) {
       );
 
       const comments = document.createElement("p");
-      comments.classList.add("ms-5", "text-primary");
+      comments.classList.add("ms-5", "text-secondary");
       comments.textContent = "Comments:  " + post.comments.length;
       comments.style.fontSize = "20px";
 
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("far", "fa-heart", "me-5", "p-1");
       heartIcon.textContent = " " + post.reactions.length;
-      heartIcon.style.fontSize = "20px";
+      const UniqueHeartIconId = "likeHeart_" + post.id;
+      heartIcon.setAttribute("id", UniqueHeartIconId);
+      heartIcon.style.fontSize = "25px";
       heartIcon.style.color = "red";
 
       iconContainer.appendChild(comments);
@@ -138,9 +141,11 @@ async function fetchAllUserPosts(url) {
       postCard.appendChild(iconContainer);
 
       postWallContainer.appendChild(postCard);
+
+      likeHeartFunction(UniqueHeartIconId, post.id, token);
     });
 
-    console.log(json);
+    // console.log(json);
     allPostsResult = json;
   } catch (error) {
     console.error("Error:", error);

@@ -1,4 +1,5 @@
 export const API_BASE_URL = "https://api.noroff.dev/api/v1/";
+export const token = localStorage.getItem("accessToken");
 
 export function setUpHTML(post, postWallContainer) {
   const postContainer = document.createElement("div");
@@ -112,4 +113,47 @@ export function setUpHTML(post, postWallContainer) {
   postCard.appendChild(iconContainer);
 
   postWallContainer.appendChild(postCard);
+}
+
+export function likeHeartFunction(iconId, postId, token) {
+  const heartIcon = document.getElementById(iconId);
+
+  if (heartIcon) {
+    heartIcon.addEventListener("click", function (e) {
+      e.preventDefault();
+      // console.log("Heart clicked");
+
+      if (heartIcon.classList.contains("far")) {
+        heartIcon.classList.remove("far", "fa-heart");
+        heartIcon.classList.add("fas", "fa-heart");
+
+        const ReactionURL = `${API_BASE_URL}social/posts/${postId}/react/❤️`;
+        const sendReaction = {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({}),
+        };
+
+        fetch(ReactionURL, sendReaction)
+          .then((response) => {
+            if (response.ok) {
+              window.location.reload();
+              return response.json();
+            } else {
+              throw new Error("PUT request failed");
+            }
+          })
+          .then((data) => {})
+          .catch((error) => {
+            console.error(error);
+          });
+      } else {
+        heartIcon.classList.remove("fas", "fa-heart");
+        heartIcon.classList.add("far", "fa-heart");
+      }
+    });
+  }
 }

@@ -11888,6 +11888,10 @@ textarea.form-control-lg {
   min-width: 400px;
 }
 
+.max-widht-85 {
+  max-width: 85px;
+}
+
 #modal {
   position: fixed;
   display: none;

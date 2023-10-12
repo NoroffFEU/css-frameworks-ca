@@ -18,11 +18,21 @@ export default function renderPosts(
   const row = createElementFactory("div", "", container, {}, "row", "mb-4");
 
   const anker = createElementFactory(
-    "a",
+    "div",
     "",
     row,
-    { href: `/src/profile/index.html?user=${author?.name}` },
-    "col-4"
+    {},
+    "col-4",
+    "d-flex",
+    "flex-column"
+  );
+
+  const dateSpan = createElementFactory(
+    "p",
+    created.split("T")[0],
+    anker,
+    {},
+    "fs-6"
   );
 
   const image = createElementFactory(
@@ -32,14 +42,14 @@ export default function renderPosts(
     {
       src: author.avatar ? author.avatar : "",
     },
-    "rounded-circle",
-    "w-25"
+    "rounded-3",
+    "max-widht-85"
   );
   const spanName = createElementFactory(
-    "p",
+    "a",
     author.name ? author.name : "",
     anker,
-    {},
+    { href: `/src/profile/index.html?user=${author?.name}` },
     "text-primay",
     "fs-6"
   );
@@ -66,7 +76,7 @@ export default function renderPosts(
     createElementFactory(
       "span",
       tag,
-      divCol8,
+      anker,
       {},
       "badge",
       "text-bg-primary",
@@ -76,21 +86,13 @@ export default function renderPosts(
   const reactButton = createElementFactory(
     "button",
     "React",
-    divCol8,
+    anker,
     {
       type: "button",
       "data-id": id,
     },
     "btn",
     "btn-outline-primary"
-  );
-
-  const dateSpan = createElementFactory(
-    "p",
-    created.split("T")[0],
-    anker,
-    {},
-    "fs-6"
   );
 
   const commentContainer = createElementFactory(

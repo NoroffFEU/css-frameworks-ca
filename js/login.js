@@ -10,7 +10,7 @@ async function loginUser(url, userData) {
       body: JSON.stringify(userData),
     };
     const response = await fetch(url, postData);
-    console.log(response);
+    // console.log(response);
 
     if (response.ok) {
       const json = await response.json();
@@ -21,7 +21,7 @@ async function loginUser(url, userData) {
       localStorage.setItem("userName", userName);
       localStorage.setItem("userEmail", userEmail);
 
-      window.location.href = "profile/index.html";
+      window.location.href = "/profile/index.html";
     } else {
       console.log("Login failed");
     }

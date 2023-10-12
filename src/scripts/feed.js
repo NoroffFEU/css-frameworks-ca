@@ -88,11 +88,25 @@ const main = ()=>{
                     if(post.body === null){
                         return
                     } else{
-                        return post.body.includes(searchString) || post.id == searchString
+                        return post.body.toLowerCase().includes(searchString) || post.body.includes(searchString) || post.id == searchString
                     }
                 })
-                posts.renderPosts('#profile_post-container', filteredResponse)
-                searchInput.value = ""
+                if(filteredResponse.length === 0){
+                    console.log("no found")
+                    const error = document.createElement("p");
+                    error.textContent = "No Posts Found"
+                    document.querySelector("#profile_post-container").append(error)
+                    setTimeout(() => {
+                        
+                        posts.renderPosts("#profile_post-container", response)
+                        error.remove()
+                    }, 1000);
+                    
+                } else{
+                    posts.renderPosts('#profile_post-container', filteredResponse)
+                    searchInput.value = ""
+                }
+
             })
     })
 

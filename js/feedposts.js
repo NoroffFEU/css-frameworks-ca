@@ -127,22 +127,38 @@ async function fetchAllUserPosts(url) {
       comments.textContent = "Comments:  " + post.comments.length;
       comments.style.fontSize = "20px";
 
+      const followUser = document.createElement("p");
+      followUser.classList.add("Text-info", "text-info", "fw-bold");
+      followUser.textContent = "Follow";
+      const uniqueFollowerId = "followUser_" + post.author.name;
+      followUser.setAttribute("id", uniqueFollowerId);
+      followUser.style.fontSize = "20px";
+
+      const unFollowUser = document.createElement("p");
+      unFollowUser.classList.add("Text-info", "text-danger", "fw-bold");
+      unFollowUser.textContent = "Unfollow";
+      const uniqueUnfollowerId = "followUser_" + post.author.name;
+      unFollowUser.setAttribute("id", uniqueUnfollowerId);
+      unFollowUser.style.fontSize = "20px";
+
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("far", "fa-heart", "me-5", "p-1");
       heartIcon.textContent = " " + post.reactions.length;
-      const UniqueHeartIconId = "likeHeart_" + post.id;
-      heartIcon.setAttribute("id", UniqueHeartIconId);
+      const uniqueHeartIconId = "likeHeart_" + post.id;
+      heartIcon.setAttribute("id", uniqueHeartIconId);
       heartIcon.style.fontSize = "25px";
       heartIcon.style.color = "red";
 
       iconContainer.appendChild(comments);
+      iconContainer.appendChild(followUser);
+      iconContainer.appendChild(unFollowUser);
       iconContainer.appendChild(heartIcon);
 
       postCard.appendChild(iconContainer);
 
       postWallContainer.appendChild(postCard);
 
-      likeHeartFunction(UniqueHeartIconId, post.id, token);
+      likeHeartFunction(uniqueHeartIconId, post.id, token);
     });
 
     // console.log(json);

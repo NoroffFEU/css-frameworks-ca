@@ -5,13 +5,14 @@ const mainApiUrl = "https://api.noroff.dev/api/v1";
 const postsUrl = `${mainApiUrl}/social/posts`;
 const requestParam = {
     _author: true,
+    _comments: true,
+    _reactions: true
     // offset: 100
 };
 
 
 const queryString = new URLSearchParams(requestParam).toString();
 
-const token = localStorage.getItem("accessToken");
 let feedPosts = undefined;
 let isShowingTodaysPosts = false;
 
@@ -81,7 +82,7 @@ function showPosts(posts) {
     //var posts = await getData(`${postsUrl}?${queryString}`);
     var setImg = "";
     containerHTMLCard.innerHTML = "";
-    for (var i = 0; i < posts.length; i++) {
+    for (let i = 0; i < posts.length; i++) {
         let formattedDate = new Date(posts[i].updated).toLocaleDateString();
         let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
         if (isMediaValid(posts[i].media)) {
@@ -109,7 +110,8 @@ function showPosts(posts) {
                         
                     </div>
                 </div>
-                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">${posts[i]._count.comments}</div>
+                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">
+                ${processCommentsForPost(posts[i].comments)}</div>
                 <div class="showReactions" style="display:none;">reactions go here</div>
             </div>
         </div>        
@@ -118,7 +120,20 @@ function showPosts(posts) {
     showComments();
 }
 
+function processCommentsForPost(comments) {
+    if (comments.length === 0) {
+        return;
+    }
 
+    let commentsHtml = "";
+
+    for (let i = 0; i < comments.length; i++) {
+        commentsHtml += `
+        <div>${comments[i].body}</div>
+        `;
+    }
+    return commentsHtml;
+}
 
 
 

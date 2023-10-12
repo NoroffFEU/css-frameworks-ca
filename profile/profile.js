@@ -25,7 +25,6 @@ async function getPosts() {
     let setImg = "";
 
     for (var i = 0; i < profilePosts.length; i++) {
-
         if (isMediaValid(profilePosts[i].media)) {
             setImg = profilePosts[i].media;
         } else {
@@ -56,7 +55,6 @@ async function getPosts() {
             </div>
         </div>        
         `;
-
     }
 
     //https://stackoverflow.com/questions/44162581/use-wildcard-to-find-specific-id-using-javascript
@@ -76,18 +74,13 @@ async function getPosts() {
 
     for (let i = 0; i < editBtns.length; i++) {
         const editBtn = editBtns[i];
-        editBtn.addEventListener("click", async function () {
+        editBtn.addEventListener("click", function () {
 
             const postId = editBtn.dataset.postid;
             editPost(postId);
         });
     }
-
-
-
 }
-
-
 
 
 // delete post
@@ -105,12 +98,10 @@ async function deletePost(id) {
     } catch (error) {
         console.log(error);
     }
-
 }
 
 
 // edit post
-
 function editPost(id) {
     //need to get the form with the values
     const exampleModal = document.getElementById("exampleModal");
@@ -170,9 +161,7 @@ async function editedPostToApiFunksjon(url, post) {
             body: JSON.stringify(post),
         };
         const response = await fetch(url, postData);
-        const json = await response.json();
-
-        //return json;
+        await response.json();
     } catch (error) {
         console.log(error)
     }
@@ -180,7 +169,3 @@ async function editedPostToApiFunksjon(url, post) {
 
 
 
-// fetching all posts, but only mine would be possible to edit or delate = buttons visible
-//1. like in delete - on click you activate a editing of a certain post
-// 2. showing modal with the title and text of the chosen post
-// 3. fixing the post and sending it back to API with PUT method

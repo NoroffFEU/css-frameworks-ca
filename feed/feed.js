@@ -15,6 +15,9 @@ const token = localStorage.getItem("accessToken");
 let feedPosts = undefined;
 let isShowingTodaysPosts = false;
 
+window.onload = fetchPostsFromApi();
+
+
 // reset page to all posts
 document.getElementById("homeBtn").addEventListener("click", () => {
     isShowingTodaysPosts = false;
@@ -97,7 +100,7 @@ function showPosts(posts) {
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
                             
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
                            
@@ -106,16 +109,14 @@ function showPosts(posts) {
                         
                     </div>
                 </div>
-                <div id="showComments" style="display:none;">comments go here</div>
-                <div id="showReactions" style="display:none;">reactions go here</div>
+                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">${posts[i]._count.comments}</div>
+                <div class="showReactions" style="display:none;">reactions go here</div>
             </div>
         </div>        
         `;
     }
-
+    showComments();
 }
-
-window.onload = fetchPostsFromApi();
 
 
 
@@ -124,7 +125,6 @@ window.onload = fetchPostsFromApi();
 // new post
 
 const formPost = document.getElementById("formPost");
-
 
 document.getElementById("postBtn").addEventListener("click", (event) => {
     event.preventDefault();
@@ -171,5 +171,14 @@ async function newPostToApiFunksjon(url, post) {
 }
 
 
+// show comments
 
+function showComments() {
+    const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
 
+    commentBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}

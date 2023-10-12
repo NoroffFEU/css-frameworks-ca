@@ -4,6 +4,7 @@ export default function renderPosts(
   domEl: HTMLDivElement,
   { id, title, body, tags, media, created, updated, _count, author, comments }
 ) {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const container = createElementFactory(
     "div",
     "",
@@ -43,7 +44,7 @@ export default function renderPosts(
       src: author.avatar ? author.avatar : "",
     },
     "rounded-3",
-    "max-widht-85"
+    "max-width-85"
   );
   const spanName = createElementFactory(
     "a",
@@ -66,6 +67,26 @@ export default function renderPosts(
     {},
     "card-text",
     "text-black"
+  );
+
+  const deleteButton = createElementFactory(
+    "button",
+    "delete",
+    divCol8,
+    { id: `button--${id}` },
+    currentUser !== author.name && "hide",
+    "btn",
+    "btn-success"
+  );
+
+  const updateButton = createElementFactory(
+    "button",
+    "update",
+    divCol8,
+    { "data-id": id, id: `button--edit--${id}` },
+    currentUser !== author.name && "hide",
+    "btn",
+    "btn-outline-primary"
   );
 
   const picturePost = media
@@ -147,10 +168,11 @@ export default function renderPosts(
     "overflow-y-auto",
     "h-px--150"
   );
-
-  comments.forEach((comment) =>
-    renderComments(commentRow, comment.body, comment.created, comment.author)
-  );
+  if (comments) {
+    comments.forEach((comment) =>
+      renderComments(commentRow, comment.body, comment.created, comment.author)
+    );
+  }
 }
 
 export function renderComments(commentRow, body, created, { name, avatar }) {

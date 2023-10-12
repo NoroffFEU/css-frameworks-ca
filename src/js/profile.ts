@@ -1,6 +1,8 @@
 import endpoints from "./endpoints.js";
 import callApi from "./callApi.js";
 import optionFactory from "./optionFactory.js";
+import createElementFactory from "./createElementFactory.js";
+import renderPosts from "./renderPost.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
@@ -12,6 +14,9 @@ const profileElements = {
   img: document.querySelector("#profile--picture") as HTMLImageElement,
   background: document.querySelector("#profile--header") as HTMLElement,
 };
+
+const postContainer = document.querySelector("#container--posts");
+
 const changeAvatarinput = document.querySelector(
   "#change-picture--profile"
 ) as HTMLInputElement;
@@ -84,7 +89,11 @@ async function fetchPosts(url: string) {
   });
   const data = await response.json();
   updateProfile(data);
-  data.posts.forEach((element: postObject) => renderUserPosts(element));
+  data.posts
+    .map((post) => {
+      return { ...post, author: { name: post.name } };
+    })
+    .forEach((post: postObject) => renderPosts(postContainer, post));
   data.posts.forEach((element: postObject) => {
     buttonDeleteListener(
       document.querySelector(`#button--${element.id}`),

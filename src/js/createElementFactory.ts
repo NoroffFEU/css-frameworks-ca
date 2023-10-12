@@ -13,6 +13,6 @@ export default function createElementFactory(
   Object.keys(object).forEach((key) => {
     element.setAttribute(key, object[key]);
   });
-  classNames.forEach((classname) => element.classList.add(classname.trim()));
+  classNames.forEach((classname) => element.classList.add(classname));
   return element;
 }

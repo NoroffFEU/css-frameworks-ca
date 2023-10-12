@@ -11,6 +11,7 @@ var _a;
 import endpoints from "./endpoints.js";
 import callApi from "./callApi.js";
 import optionFactory from "./optionFactory.js";
+import renderPosts from "./renderPost.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -21,6 +22,7 @@ const profileElements = {
     img: document.querySelector("#profile--picture"),
     background: document.querySelector("#profile--header"),
 };
+const postContainer = document.querySelector("#container--posts");
 const changeAvatarinput = document.querySelector("#change-picture--profile");
 const changeAvatarButton = document.querySelector("#change-picture--profile--button");
 const changeBannerinput = document.querySelector("#change-picture--banner");
@@ -68,7 +70,11 @@ function fetchPosts(url) {
         });
         const data = yield response.json();
         updateProfile(data);
-        data.posts.forEach((element) => renderUserPosts(element));
+        data.posts
+            .map((post) => {
+            return Object.assign(Object.assign({}, post), { author: { name: post.name } });
+        })
+            .forEach((post) => renderPosts(postContainer, post));
         data.posts.forEach((element) => {
             var _a;
             buttonDeleteListener(document.querySelector(`#button--${element.id}`), element.id);

@@ -12,6 +12,7 @@ import endpoints from "./endpoints.js";
 import callApi from "./callApi.js";
 import optionFactory from "./optionFactory.js";
 import renderPosts from "./renderPost.js";
+import commentButton from "./commentOnClick.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -75,6 +76,7 @@ function fetchPosts(url) {
             return Object.assign(Object.assign({}, post), { author: { name: post.name } });
         })
             .forEach((post) => renderPosts(postContainer, post));
+        commentButton();
         data.posts.forEach((element) => {
             var _a;
             buttonDeleteListener(document.querySelector(`#button--${element.id}`), element.id);

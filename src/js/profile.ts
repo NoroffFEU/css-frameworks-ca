@@ -3,6 +3,7 @@ import callApi from "./callApi.js";
 import optionFactory from "./optionFactory.js";
 import createElementFactory from "./createElementFactory.js";
 import renderPosts from "./renderPost.js";
+import commentButton from "./commentOnClick.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
@@ -94,6 +95,7 @@ async function fetchPosts(url: string) {
       return { ...post, author: { name: post.name } };
     })
     .forEach((post: postObject) => renderPosts(postContainer, post));
+    commentButton()
   data.posts.forEach((element: postObject) => {
     buttonDeleteListener(
       document.querySelector(`#button--${element.id}`),

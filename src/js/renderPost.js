@@ -13,7 +13,7 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     const postLink = createElementFactory("a", "", divCol8, {
         href: `/src/post/index.html?id=${id}`,
     });
-    const header = createElementFactory("h3", title, postLink, {});
+    const header = createElementFactory("h2", title, postLink, {});
     const paragraph = createElementFactory("p", body, divCol8, {}, "card-text", "text-black");
     const deleteButton = createElementFactory("button", "delete", divCol8, { id: `button--${id}` }, currentUser !== author.name && "hide", "btn", "btn-success");
     const updateButton = createElementFactory("button", "update", divCol8, { "data-id": id, id: `button--edit--${id}` }, currentUser !== author.name && "hide", "btn", "btn-outline-primary");

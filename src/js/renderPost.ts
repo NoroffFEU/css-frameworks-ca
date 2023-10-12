@@ -58,7 +58,7 @@ export default function renderPosts(
   const postLink = createElementFactory("a", "", divCol8, {
     href: `/src/post/index.html?id=${id}`,
   });
-  const header = createElementFactory("h3", title, postLink, {});
+  const header = createElementFactory("h2", title, postLink, {});
 
   const paragraph = createElementFactory(
     "p",

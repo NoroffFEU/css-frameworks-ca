@@ -157,3 +157,105 @@ export function likeHeartFunction(iconId, postId, token) {
     });
   }
 }
+
+// export function starFunction(iconId, postId, token, userName) {
+//   const starIcon = document.getElementById(iconId);
+//   console.log(starIcon); // Add this line
+
+//   if (starIcon) {
+//     starIcon.addEventListener("click", function (e) {
+//       e.preventDefault();
+
+//       if (starIcon.classList.contains("fa-regular")) {
+//         starIcon.classList.remove("fa-regular");
+//         starIcon.classList.add("fa-solid");
+
+//         const LikeURL = `${API_BASE_URL}social/posts/${postId}/like`;
+//         const sendLikeRequest = {
+//           method: "PUT",
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${token}`,
+//           },
+//           body: JSON.stringify({}),
+//         };
+
+//         fetch(LikeURL, sendLikeRequest)
+//           .then((response) => {
+//             if (response.ok) {
+//               // Update the UI or perform any necessary actions
+//               return response.json();
+//             } else {
+//               throw new Error("Like request failed");
+//             }
+//           })
+//           .then((data) => {
+//             // Handle the response data as needed
+//           })
+//           .catch((error) => {
+//             console.error(error);
+//           });
+//       } else {
+//         // If the star icon is solid (fa-solid), change it to outlined (fa-regular)
+//         starIcon.classList.remove("fa-solid");
+//         starIcon.classList.add("fa-regular");
+
+//         const unFollowURL = `${API_BASE_URL}social/profiles/${userName}/unfollow`;
+//         const sendFollowRequest = {
+//           method: "PUT",
+//           headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${token}`,
+//           },
+//           body: JSON.stringify({}),
+//         };
+
+//         fetch(unFollowURL, sendFollowRequest)
+//           .then((response) => {
+//             if (response.ok) {
+//               return response.json();
+//             } else {
+//               throw new Error("Follow request failed");
+//             }
+//           })
+//           .then((data) => {
+//             // Handle the response data as needed
+//           })
+//           .catch((error) => {
+//             console.error(error);
+//           });
+//       }
+//     });
+//   }
+// }
+
+export async function fetchFriends(friendsURL) {
+  try {
+    const token = localStorage.getItem("accessToken");
+    const friendsURL = `${API_BASE_URL}social/posts/following`;
+    const fetchAllFriends = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const response = await fetch(friendsURL, fetchAllFriends);
+    const json = await response.json();
+
+    const friendsBox = document.querySelector(".friendsBox");
+    friendsBox.innerHTML = "";
+
+    json.forEach((friend) => {
+      const friendsContainer = document.createElement("div");
+      friendsContainer.classList.add("row", "text-center");
+      friendsContainer.id = friend.id;
+      friendsBox.append(friendsContainer);
+    });
+
+    allPostsResult = json;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}

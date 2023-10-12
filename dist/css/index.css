@@ -11857,6 +11857,12 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+.postAuthor a:hover {
+  color: red; /* Change the text color to red when the link is hovered */
+  text-decoration: underline; /* Underline the link text when it's hovered */
+  font-weight: bold; /* Make the text bold when it's hovered */
+}
+
 a {
   text-decoration: none;
 }

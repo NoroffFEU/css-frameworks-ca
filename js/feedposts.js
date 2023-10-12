@@ -66,14 +66,14 @@ async function fetchAllUserPosts(url) {
         postAvatar.src = "/images/profile-image-2.jpg";
       }
 
-      const postAuthor = document.createElement("p");
-      postAuthor.classList.add("postAuthor", "card-text", "text-sm");
+      const postAuthor = document.createElement("h2");
+      postAuthor.classList.add("postAuthor", "fw-bold", "ms-2");
       postAuthor.textContent = post.author.name;
 
       const createdDate = new Date(post.created);
       const formattedDate = createdDate.toLocaleDateString();
       const postDate = document.createElement("p");
-      postDate.classList.add("card-text", "fst-italic", "d-none", "d-sm-block");
+      postDate.classList.add("card-text", "fst-italic", "d-none", "d-lg-block");
       postDate.textContent = formattedDate;
 
       postCardBody.appendChild(postAvatar);

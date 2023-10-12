@@ -117,6 +117,14 @@ async function createProfile(url) {
 
     profileBox.append(profileContainer);
 
+    const friendsBox = document.querySelector(".friendsBox");
+
+    const friendsContainer = document.createElement("div");
+    friendsContainer.classList.add("row", "text-center");
+    friendsContainer.id = createProfile.id;
+
+    friendsBox.append(friendsContainer);
+
     // console.log(json);
   } catch (error) {
     console.log(error);

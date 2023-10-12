@@ -1,5 +1,5 @@
 import createElementFactory from "./createElementFactory.js";
-export default function fadeText(message = "Success!", parentElement = document.querySelector("main")) {
+export default function fadeText(message = "Success✅!", parentElement = document.querySelector("main")) {
     const successMessage = document.querySelector("#statusText");
     if (!successMessage) {
         createElementFactory("p", message, parentElement, { id: "statusText" }, "start-animation");

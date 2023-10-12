@@ -11917,7 +11917,7 @@ textarea.form-control-lg {
 
 #statusText {
   position: fixed;
-  top: 0;
+  top: -100%;
   left: 50%;
   color: green;
   font-size: 2rem;

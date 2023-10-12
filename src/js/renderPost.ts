@@ -11,11 +11,11 @@ export default function renderPosts(
     { "data-observed": "" },
     "card",
     "mb-3",
-    "bg-secondary",
+    "bg-white",
     "p-2",
     "w-percentage--95"
   );
-  const row = createElementFactory("div", "", container, {}, "row");
+  const row = createElementFactory("div", "", container, {}, "row", "mb-4");
 
   const anker = createElementFactory(
     "a",

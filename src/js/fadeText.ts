@@ -1,7 +1,7 @@
 import createElementFactory from "./createElementFactory.js";
 
 export default function fadeText(
-  message: string = "Success!",
+  message: string = "Success✅!",
   parentElement = document.querySelector("main")
 ) {
   const successMessage = document.querySelector("#statusText");

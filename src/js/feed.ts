@@ -5,6 +5,7 @@ import filterPosts from "./filter.js";
 import createSmileyPicker from "./emoji.js";
 import reactToPost from "./reactToPost.js";
 import commentPost from "./commentPost.js";
+import fadeText from "./fadeText.js";
 
 const endpoint = endpointObject("Jarle");
 const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
@@ -306,6 +307,8 @@ document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
     const smileyId = getId();
     if (smiley && smileyId) {
       reactToPost(smiley, smileyId);
+      fadeText();
+      modal?.style.display = "none";
     }
   });
 });

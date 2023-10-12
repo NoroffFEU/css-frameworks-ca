@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./dist/css/index.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/scripts/common/constant.mjs" type="module"></script>
-    <script src="/scripts/login/login.mjs" type="module"></script>
+    <script src="/scripts/login/register.mjs" type="module"></script>
     <title>Login/Register</title>
 </head>
 <body>
@@ -38,24 +38,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
-                <h1 class="text-center mt-5">Welcome to break.</h1>
-                <h2 class="text-center">Fact: life happens outside of work.</h2>
-                <p class="text-center">Here at break we value people not for what they do, but who they are. It doesn´t matter how many likes you can collect or how much $ you make - here we keep the likes private and the community free of judgement. Share your real breaks from the hustle.</p>
-                <form class="py-3" id="login-form">
+                <h1 class="text-center mt-5">Register to break</h1>
+                <form class="py-3" id="register-form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email:</label>
-                        <input type="text" class="form-control" id="email" name="email" required>
+                        <input type="text" class="form-control" id="email" name="email" required pattern="^[a-zA-Z0-9._%+\-]+@(noroff\.no|stud\.noroff\.no)$" placeholder="@noroff.no or @stud.noroff.no" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password:</label>
                         <input type="password" class="form-control" id="password" name="password" minlength="8" required>
                     </div>
                     <div class="text-center py-3">
-                        <button type="submit" class="btn btn-secondary text-light" name="login">Login</button>
+                        <button type="submit" class="btn btn-secondary text-light" name="register">Register user</button>
                     </div>
                 </form>
                 <div justify-content-center mb-3>
-                    <a class="link-primary text-center nav-link" href="/register.html">Not a member? Register here.</a>
+                    <a class="link-primary text-center nav-link" href="/index.html">Cancel</a>
                 </div>
             </div>
         </div>

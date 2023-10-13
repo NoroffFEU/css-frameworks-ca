@@ -61,6 +61,8 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     allPosts.forEach((post) => renderPosts(postContainer, post));
     emojiReactButton();
     commentButton();
+    deletePost();
+    updatePost();
 }));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
@@ -75,9 +77,17 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         console.log(foundItem ? "true" : "false");
         if (foundItem) {
             renderPosts(postContainer, foundItem);
+            emojiReactButton();
+            commentButton();
+            deletePost();
+            updatePost();
         }
         else if (data.length === 1) {
             renderPosts(postContainer, data[0]);
+            emojiReactButton();
+            commentButton();
+            deletePost();
+            updatePost();
         }
     }
     else {
@@ -85,6 +95,8 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         console.log("else route");
         emojiReactButton();
         commentButton();
+        deletePost();
+        updatePost();
         const observedObj = document.querySelectorAll("[data-observed]");
         const target = observedObj[observedObj.length - 1];
         console.log(observedObj, target);
@@ -146,6 +158,8 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
             data.forEach((element) => renderPosts(postContainer, element));
         emojiReactButton();
         commentButton();
+        deletePost();
+        updatePost();
         isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);

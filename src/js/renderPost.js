@@ -1,7 +1,7 @@
 import createElementFactory from "./createElementFactory.js";
 export default function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author, comments }) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const container = createElementFactory("div", "", domEl, { "data-observed": "" }, "card", "mb-3", "bg-white", "p-2", "w-percentage--95");
+    const container = createElementFactory("div", "", domEl, { "data-observed": "", id: `div${id}` }, "card", "mb-3", "bg-white", "p-2", "w-percentage--95");
     const row = createElementFactory("div", "", container, {}, "row", "mb-4");
     const anker = createElementFactory("div", "", row, {}, "col-4", "d-flex", "flex-column");
     const dateSpan = createElementFactory("p", created.split("T")[0], anker, {}, "fs-6");
@@ -13,14 +13,16 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     const postLink = createElementFactory("a", "", divCol8, {
         href: `/src/post/index.html?id=${id}`,
     });
-    const header = createElementFactory("h2", title, postLink, {});
-    const paragraph = createElementFactory("p", body, divCol8, {}, "card-text", "text-black");
-    const deleteButton = createElementFactory("button", "delete", divCol8, { id: `button--${id}` }, currentUser !== author.name && "hide", "btn", "btn-success");
-    const updateButton = createElementFactory("button", "update", divCol8, { "data-id": id, id: `button--edit--${id}` }, currentUser !== author.name && "hide", "btn", "btn-outline-primary");
+    const header = createElementFactory("h2", title, postLink, {
+        id: `title${id}`,
+    });
+    const paragraph = createElementFactory("p", body, divCol8, { id: `body${id}` }, "card-text", "text-black");
+    const deleteButton = createElementFactory("button", "delete", divCol8, { id: `button--${id}`, "data-delete-id": id }, currentUser !== author.name && "hide", "btn", "btn-success");
+    const updateButton = createElementFactory("button", "update", divCol8, { "data-update-id": id, id: `button--edit--${id}` }, currentUser !== author.name && "hide", "btn", "btn-outline-primary");
     const picturePost = media
         ? createElementFactory("img", "", divCol8, { src: media }, "w-100", "h-50")
         : "";
-    tags === null || tags === void 0 ? void 0 : tags.forEach((tag) => createElementFactory("span", tag, anker, {}, "badge", "text-bg-primary", "m-1"));
+    tags === null || tags === void 0 ? void 0 : tags.forEach((tag) => createElementFactory("span", tag, anker, {}, "badge", "text-bg-primary", "m-1", `tag${id}`));
     const reactButton = createElementFactory("button", "React", anker, {
         type: "button",
         "data-id": id,

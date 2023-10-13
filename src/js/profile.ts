@@ -92,10 +92,10 @@ async function fetchPosts(url: string) {
   updateProfile(data);
   data.posts
     .map((post) => {
-      return { ...post, author: { name: post.name } };
+      return { ...post, author: { name: post.owner } };
     })
     .forEach((post: postObject) => renderPosts(postContainer, post));
-    commentButton()
+  commentButton();
   data.posts.forEach((element: postObject) => {
     buttonDeleteListener(
       document.querySelector(`#button--${element.id}`),
@@ -142,52 +142,9 @@ interface postObject {
   owner: string;
 }
 
-function renderUserPosts({
-  body,
-  created,
-  tags,
-  title,
-  owner,
-  id,
-}: postObject) {
-  const postContainer = document.querySelector("#container--posts");
-
-  if (postContainer) {
-    postContainer.innerHTML += `<div id="div${id}" class="card bg-secondary p-2 w-percentage--95">
-    <div class="row">
-      <div class="col-3">
-        <span class="text-primary fs-6">${owner}</span>
-      </div>
-      <div class="col-9">
-    <div>
-      <h3 id="title${id}">${title}</h3>
-      <div>
-      <button id="button--${id}" class="${
-      currentUser === userId ? "" : "hide"
-    } btn btn-success">delete</button>
-      <button  data-id=${id} id="button--edit--${id}" class="${
-      currentUser === userId ? "" : "hide"
-    } btn btn-outline-primary">update</button>
-      </div>
-      </div>  
-      <p id="body${id}" class="card-text text-black">
-${body}
-        </p>${tags
-          .map(
-            (tag) =>
-              `<span class="badge text-bg-primary m-1 tag${id}">${tag}</span>`
-          )
-          .join("")}
-      </div>
-    </div>
-  </div>
-    `;
-  }
-}
-
-const deleteOption = optionFactory("DELETE", {}, endpoint);
-
 function buttonDeleteListener(button: HTMLButtonElement, id: number) {
+  const deleteOption = optionFactory("DELETE", {}, endpoint);
+
   button.addEventListener("click", () => {
     callApi(endpoint.getId(id), deleteOption);
     document.querySelector(`#div${id}`).style.display = "none";

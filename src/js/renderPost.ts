@@ -9,7 +9,7 @@ export default function renderPosts(
     "div",
     "",
     domEl,
-    { "data-observed": "" },
+    { "data-observed": "", id: `div${id}` },
     "card",
     "mb-3",
     "bg-white",
@@ -58,13 +58,15 @@ export default function renderPosts(
   const postLink = createElementFactory("a", "", divCol8, {
     href: `/src/post/index.html?id=${id}`,
   });
-  const header = createElementFactory("h2", title, postLink, {});
+  const header = createElementFactory("h2", title, postLink, {
+    id: `title${id}`,
+  });
 
   const paragraph = createElementFactory(
     "p",
     body,
     divCol8,
-    {},
+    { id: `body${id}` },
     "card-text",
     "text-black"
   );
@@ -73,7 +75,7 @@ export default function renderPosts(
     "button",
     "delete",
     divCol8,
-    { id: `button--${id}` },
+    { id: `button--${id}`, "data-delete-id": id },
     currentUser !== author.name && "hide",
     "btn",
     "btn-success"
@@ -83,7 +85,7 @@ export default function renderPosts(
     "button",
     "update",
     divCol8,
-    { "data-id": id, id: `button--edit--${id}` },
+    { "data-update-id": id, id: `button--edit--${id}` },
     currentUser !== author.name && "hide",
     "btn",
     "btn-outline-primary"
@@ -101,7 +103,8 @@ export default function renderPosts(
       {},
       "badge",
       "text-bg-primary",
-      "m-1"
+      "m-1",
+      `tag${id}`
     )
   );
   const reactButton = createElementFactory(

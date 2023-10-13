@@ -15,6 +15,8 @@ import createSmileyPicker from "./emoji.js";
 import reactToPost from "./reactToPost.js";
 import fadeText from "./fadeText.js";
 import commentButton from "./commentOnClick.js";
+import deletePost from "./deleteOnClick.js";
+import updatePost from "./updateOnClick.js";
 const endpoint = endpointObject("Jarle");
 const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
 let modal = document.querySelector("#modal");
@@ -198,6 +200,8 @@ function searchApi(array, category, count = 0, searchWord = null) {
     }
     emojiReactButton();
     commentButton();
+    deletePost();
+    updatePost(data);
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);

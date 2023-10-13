@@ -5,6 +5,7 @@ export default function fadeText(message = "Success✅!", parentElement = docume
         createElementFactory("p", message, parentElement, { id: "statusText" }, "start-animation");
     }
     else {
+        successMessage.textContent = message;
         successMessage.classList.remove("start-animation");
         void successMessage.offsetHeight; // This line forces a reflow and i got it from chat-gpt
         successMessage.classList.add("start-animation");

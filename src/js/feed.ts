@@ -7,6 +7,9 @@ import reactToPost from "./reactToPost.js";
 import commentPost from "./commentPost.js";
 import fadeText from "./fadeText.js";
 import commentButton from "./commentOnClick.js";
+import deletePost from "./deleteOnClick.js";
+import updatePost from "./updateOnClick.js";
+import renderModal from "./renderModal.js";
 
 const endpoint = endpointObject("Jarle");
 const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
@@ -294,6 +297,8 @@ async function searchApi(
   }
   emojiReactButton();
   commentButton();
+  deletePost();
+  updatePost(data);
   const observedObj = document.querySelectorAll("[data-observed]");
   const target = observedObj[observedObj.length - 1];
   console.log(observedObj, target);

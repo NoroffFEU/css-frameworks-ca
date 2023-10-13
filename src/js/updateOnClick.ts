@@ -3,6 +3,7 @@ import optionFactory from "./optionFactory.js";
 import callApi from "./callApi.js";
 import renderModal from "./renderModal.js";
 import fadeText from "./fadeText.js";
+import renderTempPost from "./renderTempPost.js";
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
 );
@@ -71,7 +72,7 @@ function getPostText(id) {
   console.log(tagArr);
 }
 
-export default async function updatePost() {
+export default async function updatePost(parentHtml) {
   const test = await renderModal(1);
   document.querySelectorAll("[data-update-id]").forEach((button) =>
     button.addEventListener("click", () => {
@@ -87,11 +88,12 @@ export default async function updatePost() {
   });
 
   const postButton = document.querySelector("#modal-post-button");
-  postButton?.addEventListener("click", () => {
+  postButton?.addEventListener("click", async () => {
     const editOption = optionFactory("PUT", editObject, endpoint);
     const id = editObject.id;
     console.log(id);
-    callApi(endpoint.getId(id), editOption);
+    const data = await callApi(endpoint.getId(id), editOption);
+    renderTempPost(parentHtml, data);
     document.querySelector("#modalEdit").style.display = "none";
     fadeText("update successfull!:D");
   });

@@ -12,6 +12,7 @@ import renderPosts from "./renderPost.js";
 import commentButton from "./commentOnClick.js";
 import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
+import reactToPostTwo from "./reactToPost.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -78,6 +79,7 @@ function fetchPosts(url) {
         commentButton();
         deletePost();
         updatePost();
+        reactToPostTwo();
         followUnfollow(data.followers);
         console.log(data, data.followers);
     });

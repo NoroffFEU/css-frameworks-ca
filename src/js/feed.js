@@ -11,19 +11,11 @@ import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts from "./renderPost.js";
 import filterPosts from "./filter.js";
-import createSmileyPicker from "./emoji.js";
-import reactToPost from "./reactToPost.js";
-import fadeText from "./fadeText.js";
 import commentButton from "./commentOnClick.js";
 import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
+import reactToPostTwo from "./reactToPost.js";
 const endpoint = endpointObject("Jarle");
-const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
-let modal = document.querySelector("#modal");
-const closeModal = document.querySelector("[data-closeButton]");
-closeModal === null || closeModal === void 0 ? void 0 : closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-});
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
 const searchInput = document.querySelector("#search--feed");
@@ -59,7 +51,7 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     postContainer.innerHTML = "";
     const allPosts = yield filterPosts(searchInput.value, sortInput.value);
     allPosts.forEach((post) => renderPosts(postContainer, post));
-    emojiReactButton();
+    reactToPostTwo();
     commentButton();
     deletePost();
     updatePost();
@@ -77,14 +69,14 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         console.log(foundItem ? "true" : "false");
         if (foundItem) {
             renderPosts(postContainer, foundItem);
-            emojiReactButton();
+            reactToPostTwo();
             commentButton();
             deletePost();
             updatePost();
         }
         else if (data.length === 1) {
             renderPosts(postContainer, data[0]);
-            emojiReactButton();
+            reactToPostTwo();
             commentButton();
             deletePost();
             updatePost();
@@ -93,7 +85,7 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
     else {
         data.forEach((element) => renderPosts(postContainer, element));
         console.log("else route");
-        emojiReactButton();
+        reactToPostTwo();
         commentButton();
         deletePost();
         updatePost();
@@ -156,7 +148,7 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
         }
         else
             data.forEach((element) => renderPosts(postContainer, element));
-        emojiReactButton();
+        reactToPostTwo();
         commentButton();
         deletePost();
         updatePost();
@@ -212,7 +204,7 @@ function searchApi(array, category, count = 0, searchWord = null) {
     else {
         data.forEach((element) => renderPosts(postContainer, element));
     }
-    emojiReactButton();
+    reactToPostTwo();
     commentButton();
     deletePost();
     updatePost();
@@ -222,31 +214,6 @@ function searchApi(array, category, count = 0, searchWord = null) {
     setTarget();
     isObserving(true, intersectionObserver);
 }))();
-document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
-    button.addEventListener("click", () => {
-        setSmiley(button.textContent);
-        const smiley = getSmiley();
-        const smileyId = getId();
-        if (smiley && smileyId) {
-            reactToPost(smiley, smileyId);
-            fadeText();
-            modal === null || modal === void 0 ? void 0 : modal.style.display = "none";
-        }
-    });
-});
-function emojiReactButton() {
-    document.querySelectorAll("[data-id]").forEach((button) => {
-        button.addEventListener("click", () => {
-            console.log("clicked");
-            let buttonRect = button.getBoundingClientRect();
-            modal.style.top = buttonRect.top + "px";
-            modal.style.left = buttonRect.left + "px";
-            modal.style.display = "grid";
-            setId(button.dataset.id);
-            console.log(getId());
-        });
-    });
-}
 (function renderUserSpecific() {
     var _a;
     (_a = document.querySelector("[data-userName]")) === null || _a === void 0 ? void 0 : _a.textContent = JSON.parse(localStorage.getItem("currentUser"));

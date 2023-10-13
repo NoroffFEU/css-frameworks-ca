@@ -1,11 +1,9 @@
 import endpoints from "./endpoints.js";
-import callApi from "./callApi.js";
-import optionFactory from "./optionFactory.js";
-import createElementFactory from "./createElementFactory.js";
 import renderPosts from "./renderPost.js";
 import commentButton from "./commentOnClick.js";
 import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
+import reactToPostTwo from "./reactToPost.js";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
@@ -100,6 +98,7 @@ async function fetchPosts(url: string) {
   commentButton();
   deletePost();
   updatePost();
+  reactToPostTwo();
   followUnfollow(data.followers);
   console.log(data, data.followers);
 }

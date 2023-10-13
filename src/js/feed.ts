@@ -2,23 +2,12 @@ import endpointObject from "./endpoints.js";
 import callApi from "./callApi.js";
 import renderPosts, { renderComments } from "./renderPost.js";
 import filterPosts from "./filter.js";
-import createSmileyPicker from "./emoji.js";
-import reactToPost from "./reactToPost.js";
-import commentPost from "./commentPost.js";
-import fadeText from "./fadeText.js";
 import commentButton from "./commentOnClick.js";
 import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
-import renderModal from "./renderModal.js";
+import reactToPostTwo from "./reactToPost.js";
 
 const endpoint = endpointObject("Jarle");
-const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
-
-let modal = document.querySelector("#modal");
-const closeModal = document.querySelector("[data-closeButton]");
-closeModal?.addEventListener("click", () => {
-  modal.style.display = "none";
-});
 
 const sortInput = document.querySelector("#sort--feed") as HTMLSelectElement;
 const sortOrder = document.querySelector("#sort--order") as HTMLInputElement;
@@ -70,7 +59,7 @@ filterButton?.addEventListener("click", async () => {
   postContainer.innerHTML = "";
   const allPosts = await filterPosts(searchInput.value, sortInput.value);
   allPosts.forEach((post) => renderPosts(postContainer, post));
-  emojiReactButton();
+  reactToPostTwo();
   commentButton();
   deletePost();
   updatePost();
@@ -105,13 +94,13 @@ searchButton.addEventListener("click", async () => {
     console.log(foundItem ? "true" : "false");
     if (foundItem) {
       renderPosts(postContainer, foundItem);
-      emojiReactButton();
+      reactToPostTwo();
       commentButton();
       deletePost();
       updatePost();
     } else if (data.length === 1) {
       renderPosts(postContainer, data[0]);
-      emojiReactButton();
+      reactToPostTwo();
       commentButton();
       deletePost();
       updatePost();
@@ -120,7 +109,7 @@ searchButton.addEventListener("click", async () => {
     data.forEach((element: post) => renderPosts(postContainer, element));
 
     console.log("else route");
-    emojiReactButton();
+    reactToPostTwo();
     commentButton();
     deletePost();
     updatePost();
@@ -224,7 +213,7 @@ const intersectionObserver = new IntersectionObserver(
           renderPosts(postContainer, data[0]);
         } else
           data.forEach((element: post) => renderPosts(postContainer, element));
-        emojiReactButton();
+        reactToPostTwo();
         commentButton();
         deletePost();
         updatePost();
@@ -309,7 +298,7 @@ async function searchApi(
   } else {
     data.forEach((element: post) => renderPosts(postContainer, element));
   }
-  emojiReactButton();
+  reactToPostTwo();
   commentButton();
   deletePost();
   updatePost();
@@ -319,34 +308,6 @@ async function searchApi(
   setTarget();
   isObserving(true, intersectionObserver);
 })();
-
-document.querySelectorAll("[data-buttonSelector]").forEach((button) => {
-  button.addEventListener("click", () => {
-    setSmiley(button.textContent);
-    const smiley = getSmiley();
-    const smileyId = getId();
-    if (smiley && smileyId) {
-      reactToPost(smiley, smileyId);
-      fadeText();
-      modal?.style.display = "none";
-    }
-  });
-});
-
-function emojiReactButton() {
-  document.querySelectorAll("[data-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      console.log("clicked");
-      let buttonRect = button.getBoundingClientRect();
-
-      modal.style.top = buttonRect.top + "px";
-      modal.style.left = buttonRect.left + "px";
-      modal.style.display = "grid";
-      setId(button.dataset.id);
-      console.log(getId());
-    });
-  });
-}
 
 (function renderUserSpecific() {
   document.querySelector("[data-userName]")?.textContent = JSON.parse(

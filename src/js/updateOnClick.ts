@@ -71,7 +71,7 @@ function getPostText(id) {
   console.log(tagArr);
 }
 
-export default async function updatePost(posts) {
+export default async function updatePost() {
   const test = await renderModal(1);
   document.querySelectorAll("[data-update-id]").forEach((button) =>
     button.addEventListener("click", () => {

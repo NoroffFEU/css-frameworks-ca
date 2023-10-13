@@ -201,7 +201,7 @@ function searchApi(array, category, count = 0, searchWord = null) {
     emojiReactButton();
     commentButton();
     deletePost();
-    updatePost(data);
+    updatePost();
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);

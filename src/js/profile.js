@@ -7,12 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var _a;
 import endpoints from "./endpoints.js";
-import callApi from "./callApi.js";
-import optionFactory from "./optionFactory.js";
 import renderPosts from "./renderPost.js";
 import commentButton from "./commentOnClick.js";
+import deletePost from "./deleteOnClick.js";
+import updatePost from "./updateOnClick.js";
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -77,16 +76,8 @@ function fetchPosts(url) {
         })
             .forEach((post) => renderPosts(postContainer, post));
         commentButton();
-        data.posts.forEach((element) => {
-            var _a;
-            buttonDeleteListener(document.querySelector(`#button--${element.id}`), element.id);
-            (_a = document
-                .querySelector(`#button--edit--${element.id}`)) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
-                showModal();
-                editObject.id = element.id;
-                getPostText(element.id);
-            });
-        });
+        deletePost();
+        updatePost();
         followUnfollow(data.followers);
         console.log(data, data.followers);
     });
@@ -104,13 +95,6 @@ function changeMedia({ avatar, banner, }) {
         });
         const data = yield response.json();
         console.log(data);
-    });
-}
-function buttonDeleteListener(button, id) {
-    const deleteOption = optionFactory("DELETE", {}, endpoint);
-    button.addEventListener("click", () => {
-        callApi(endpoint.getId(id), deleteOption);
-        document.querySelector(`#div${id}`).style.display = "none";
     });
 }
 if (currentUser === userId) {
@@ -148,53 +132,3 @@ function follow(button) {
         }
     });
 }
-function showModal() {
-    document.querySelector("#modal").style.display = "block";
-}
-(_a = document.querySelector("#close-modal")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
-    document.querySelector("#modal").style.display = "none";
-});
-const modalTitle = document.querySelector("#title__modal--edit");
-const modalBody = document.querySelector("#body__modal--edit");
-const modalTags = document.querySelector("#tags__modal--edit");
-function getPostText(id) {
-    var _a, _b, _c, _d;
-    modalTitle.value = (_a = document.querySelector(`#title${id}`)) === null || _a === void 0 ? void 0 : _a.innerText;
-    modalBody.value = (_b = document.querySelector(`#body${id}`)) === null || _b === void 0 ? void 0 : _b.innerText;
-    const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
-    modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
-    editObject.setAll((_c = document.querySelector(`#body${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#title${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText));
-    console.log(tagArr);
-}
-const editObject = {
-    body: "",
-    title: "",
-    tags: [],
-    media: "",
-    id: 0,
-    setAll: function (title, body, tags, media) {
-        if (body)
-            this.body = body;
-        if (title)
-            this.title = title;
-        if (tags.length > 0)
-            this.tags = tags;
-        if (media)
-            this.media = media;
-    },
-};
-modalBody.addEventListener("input", () => {
-    editObject.body = modalBody.value;
-    console.log(editObject);
-});
-modalTitle.addEventListener("input", () => {
-    editObject.title = modalTitle.value;
-});
-modalTags.addEventListener("input", () => {
-    editObject.tags = modalBody.value.split("#");
-});
-const updateButton = document.querySelector("#post__modal--edit");
-updateButton === null || updateButton === void 0 ? void 0 : updateButton.addEventListener("click", () => {
-    const editOption = optionFactory("PUT", editObject, endpoint);
-    callApi(endpoint.getId(editObject.id), editOption);
-});

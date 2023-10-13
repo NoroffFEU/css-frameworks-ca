@@ -103,30 +103,30 @@ function showPosts(posts) {
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
                             
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
                            
                         </div>
                         <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                         
                     </div>
                 </div>
-                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">
-                ${processCommentsForPost(posts[i].comments)}</div>
-                <div class="showReactions" style="display:none;">reactions go here</div>
+                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">${processCommentsForPost(posts[i].comments)}</div>
+                <div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">${processReactionsForPost(posts[i].reactions)}</div>
             </div>
         </div>        
         `;
     }
     showComments();
+    showReactions();
 }
 
 function processCommentsForPost(comments) {
-    if (comments.length === 0) {
-        return;
-    }
-
     let commentsHtml = "";
-
+    if (comments.length === 0) {
+        commentsHtml = `
+        <div>There are no comments</div>
+         `;
+    }
     for (let i = 0; i < comments.length; i++) {
         commentsHtml += `
         <div>${comments[i].body}</div>
@@ -134,6 +134,24 @@ function processCommentsForPost(comments) {
     }
     return commentsHtml;
 }
+
+
+function processReactionsForPost(reactions) {
+    let reactionsHtml = "";
+    if (reactions.length === 0) {
+        reactionsHtml = `
+        <div>There are no reactions</div>
+         `;
+    }
+
+    for (let i = 0; i < reactions.length; i++) {
+        reactionsHtml += `
+        <div>${reactions[i].body}</div>
+        `;
+    }
+    return reactionsHtml;
+}
+
 
 
 
@@ -194,6 +212,17 @@ function showComments() {
     commentBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}
+
+// show reactions
+function showReactions() {
+    const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
+
+    reactionsBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
         })
     })
 }

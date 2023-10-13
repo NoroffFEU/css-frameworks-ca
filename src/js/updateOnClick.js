@@ -55,7 +55,7 @@ function getPostText(id) {
     editObject.setAll((_c = document.querySelector(`#body${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#title${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText));
     console.log(tagArr);
 }
-export default function updatePost(posts) {
+export default function updatePost() {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const test = yield renderModal(1);

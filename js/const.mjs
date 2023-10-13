@@ -159,6 +159,10 @@ export function likeHeartFunction(iconId, postId, token) {
   }
 }
 
+export function followProfile() {
+  const followUser = document.getElementById(postId);
+}
+
 export async function fetchFriends(friendsURL) {
   try {
     let allPostsResult = [];

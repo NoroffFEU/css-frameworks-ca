@@ -63,9 +63,10 @@ async function singlePost() {
       specificPost.author.avatar.trim() !== ""
     ) {
       postAvatar.src = specificPost.author.avatar;
-      postAvatar.alt = "Profile-image";
+      postAvatar.alt = "Profile-image of " + specificPost.author;
     } else {
       postAvatar.src = "/images/profile-image-2.jpg";
+      postAvatar.alt = "Profile-image of " + specificPost.author;
     }
 
     const postAuthor = document.createElement("p");

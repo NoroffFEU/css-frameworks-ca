@@ -12,6 +12,7 @@ import optionFactory from "./optionFactory.js";
 import callApi from "./callApi.js";
 import renderModal from "./renderModal.js";
 import fadeText from "./fadeText.js";
+import renderTempPost from "./renderTempPost.js";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 function showModal() {
     document.querySelector("#modalEdit").style.display = "block";
@@ -55,7 +56,7 @@ function getPostText(id) {
     editObject.setAll((_c = document.querySelector(`#body${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#title${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText));
     console.log(tagArr);
 }
-export default function updatePost() {
+export default function updatePost(parentHtml) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const test = yield renderModal(1);
@@ -69,13 +70,14 @@ export default function updatePost() {
             document.querySelector("#modalEdit").style.display = "none";
         });
         const postButton = document.querySelector("#modal-post-button");
-        postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => {
+        postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
             const editOption = optionFactory("PUT", editObject, endpoint);
             const id = editObject.id;
             console.log(id);
-            callApi(endpoint.getId(id), editOption);
+            const data = yield callApi(endpoint.getId(id), editOption);
+            renderTempPost(parentHtml, data);
             document.querySelector("#modalEdit").style.display = "none";
             fadeText("update successfull!:D");
-        });
+        }));
     });
 }

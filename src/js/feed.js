@@ -15,6 +15,7 @@ import commentButton from "./commentOnClick.js";
 import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
+import renderTempPost from "./renderTempPost.js";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
@@ -51,10 +52,10 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     postContainer.innerHTML = "";
     const allPosts = yield filterPosts(searchInput.value, sortInput.value);
     allPosts.forEach((post) => renderPosts(postContainer, post));
+    updatePost(postContainer);
     reactToPostTwo();
     commentButton();
     deletePost();
-    updatePost();
 }));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const data = !searchInput.value
@@ -69,17 +70,17 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         console.log(foundItem ? "true" : "false");
         if (foundItem) {
             renderPosts(postContainer, foundItem);
+            updatePost(postContainer);
             reactToPostTwo();
             commentButton();
             deletePost();
-            updatePost();
         }
         else if (data.length === 1) {
             renderPosts(postContainer, data[0]);
+            updatePost(postContainer);
             reactToPostTwo();
             commentButton();
             deletePost();
-            updatePost();
         }
     }
     else {
@@ -88,7 +89,7 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         reactToPostTwo();
         commentButton();
         deletePost();
-        updatePost();
+        updatePost(postContainer);
         const observedObj = document.querySelectorAll("[data-observed]");
         const target = observedObj[observedObj.length - 1];
         console.log(observedObj, target);
@@ -133,10 +134,15 @@ const messageObject = {
     media: "",
     tags: [],
 };
-postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => {
+postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     const message = optionFactory("POST", messageObject);
-    callApi(endpoint.createPost, message);
-});
+    const data = yield callApi(endpoint.createPost, message);
+    renderTempPost(postContainer, data);
+    reactToPostTwo();
+    commentButton();
+    deletePost();
+    updatePost(postContainer);
+}));
 const intersectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => __awaiter(void 0, void 0, void 0, function* () {
     if (entry.isIntersecting) {
         const data = yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption);
@@ -148,10 +154,10 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
         }
         else
             data.forEach((element) => renderPosts(postContainer, element));
+        updatePost(postContainer);
         reactToPostTwo();
         commentButton();
         deletePost();
-        updatePost();
         isObserving(false, intersectionObserver);
         setTarget();
         isObserving(true, intersectionObserver);
@@ -207,7 +213,7 @@ function searchApi(array, category = "body", count = 0, searchWord = null) {
     reactToPostTwo();
     commentButton();
     deletePost();
-    updatePost();
+    updatePost(postContainer);
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
     console.log(observedObj, target);

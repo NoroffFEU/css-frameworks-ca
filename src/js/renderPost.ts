@@ -2,7 +2,19 @@ import createElementFactory from "./createElementFactory.js";
 
 export default function renderPosts(
   domEl: HTMLDivElement,
-  { id, title, body, tags, media, created, updated, _count, author, comments }
+  {
+    id,
+    title,
+    body,
+    tags,
+    media,
+    created,
+    updated,
+    _count,
+    author,
+    comments,
+    reactions = [""],
+  }
 ) {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const container = createElementFactory(
@@ -70,6 +82,7 @@ export default function renderPosts(
     "card-text",
     "text-black"
   );
+  const reactionContainer = createElementFactory("div", "", divCol8, {});
 
   const deleteButton = createElementFactory(
     "button",
@@ -95,11 +108,13 @@ export default function renderPosts(
     ? createElementFactory("img", "", divCol8, { src: media }, "w-100", "h-50")
     : "";
 
+  const tagContainer = createElementFactory("div", "", anker, {});
+
   tags?.forEach((tag) =>
     createElementFactory(
       "span",
       tag,
-      anker,
+      tagContainer,
       {},
       "badge",
       "text-bg-primary",
@@ -107,6 +122,21 @@ export default function renderPosts(
       `tag${id}`
     )
   );
+
+  if (reactions[0]) {
+    reactions.forEach((emoji) =>
+      createElementFactory(
+        "span",
+        emoji.symbol + `(${emoji.count})`,
+        reactionContainer,
+        {},
+        "badge",
+        "text-bg-primary",
+        "m-1"
+      )
+    );
+  }
+
   const reactButton = createElementFactory(
     "button",
     "React",
@@ -119,6 +149,26 @@ export default function renderPosts(
     "btn-outline-primary"
   );
 
+  if (_count) {
+    const countContainer = createElementFactory("div", "", anker, {});
+
+    const commentCount = createElementFactory(
+      "span",
+      `💬comments(${_count.comments})`,
+      countContainer,
+      {},
+      "badge",
+      "text-bg-primary"
+    );
+    const reactionCount = createElementFactory(
+      "span",
+      `😊😡reactions(${_count.reactions})`,
+      countContainer,
+      {},
+      "badge",
+      "text-bg-primary"
+    );
+  }
   const commentContainer = createElementFactory(
     "div",
     "",

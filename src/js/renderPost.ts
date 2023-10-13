@@ -25,8 +25,7 @@ export default function renderPosts(
     "card",
     "mb-3",
     "bg-white",
-    "p-2",
-    "w-percentage--95"
+    "p-2"
   );
   const row = createElementFactory("div", "", container, {}, "row", "mb-4");
 

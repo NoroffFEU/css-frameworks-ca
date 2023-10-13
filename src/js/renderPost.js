@@ -1,7 +1,7 @@
 import createElementFactory from "./createElementFactory.js";
 export default function renderPosts(domEl, { id, title, body, tags, media, created, updated, _count, author, comments, reactions = [""], }) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const container = createElementFactory("div", "", domEl, { "data-observed": "", id: `div${id}` }, "card", "mb-3", "bg-white", "p-1");
+    const container = createElementFactory("div", "", domEl, { "data-observed": "", id: `div${id}` }, "card", "mb-3", "bg-white", "p-1", "card--shadow");
     const row = createElementFactory("div", "", container, {}, "row", "mb-4");
     const anker = createElementFactory("div", "", row, {}, "col-lg-4", "d-flex", "flex-column", "mb-2", "flex-column");
     const reactionContainer = createElementFactory("div", "", anker, {});

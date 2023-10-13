@@ -12,6 +12,9 @@ async function registerUser(url, userData) {
     const response = await fetch(url, postData);
     // console.log(response);
     const json = await response.json();
+    if (response.ok) {
+      window.location.href = "index.html";
+    }
     // console.log(json);
   } catch (error) {
     console.log(error);

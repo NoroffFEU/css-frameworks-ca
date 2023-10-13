@@ -1,8 +1,8 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/";
+import { API_BASE_URL, fetchFriends } from "./const.mjs";
 const userName = localStorage.getItem("userName");
 const userEmail = localStorage.getItem("userEmail");
 
-async function createProfile(url) {
+async function createProfile(url, fetchFriendsCall) {
   try {
     const token = localStorage.getItem("accessToken");
     // console.log(token);
@@ -33,8 +33,10 @@ async function createProfile(url) {
 
     if (json.avatar && json.avatar.trim() !== "") {
       profileAvatar.src = json.avatar;
+      profileAvatar.alt = "Profile image of " + json.name;
     } else {
       profileAvatar.src = "/images/profile.jpg";
+      profileAvatar.alt = "Profile image of " + json.name;
     }
     profileContainer.append(profileAvatar);
 
@@ -117,13 +119,7 @@ async function createProfile(url) {
 
     profileBox.append(profileContainer);
 
-    const friendsBox = document.querySelector(".friendsBox");
-
-    const friendsContainer = document.createElement("div");
-    friendsContainer.classList.add("row", "text-center");
-    friendsContainer.id = createProfile.id;
-
-    friendsBox.append(friendsContainer);
+    fetchFriendsCall(friendsURL);
 
     // console.log(json);
   } catch (error) {
@@ -132,5 +128,6 @@ async function createProfile(url) {
 }
 
 const profileInfo = `${API_BASE_URL}social/profiles/${userName}`;
+const friendsURL = `${API_BASE_URL}social/profiles/${userName}?_following=true`;
 
-createProfile(profileInfo);
+createProfile(profileInfo, fetchFriends);

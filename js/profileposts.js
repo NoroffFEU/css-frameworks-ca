@@ -56,8 +56,10 @@ async function gatherUserPosts(url) {
 
       if (json.avatar && json.avatar.trim() !== "") {
         postAvatar.src = json.avatar;
+        postAvatar.alt = "profile image of " + post.author.name;
       } else {
         postAvatar.src = "/images/profile.jpg";
+        postAvatar.alt = "profile image of " + post.author.name;
       }
 
       const postAuthor = document.createElement("p");
@@ -99,6 +101,7 @@ async function gatherUserPosts(url) {
           "mb-2"
         );
         postMedia.src = post.media;
+        postMedia.alt = "Uploaded image, read post for context";
         postContainer.appendChild(postMedia);
       }
 
@@ -108,11 +111,12 @@ async function gatherUserPosts(url) {
         "d-flex",
         "justify-content-evenly",
         "align-items-center",
-        "flex-shrink"
+        "flex-shrink",
+        "mb-1"
       );
 
       const comments = document.createElement("p");
-      comments.classList.add("ms-5", "text-primary", "margin-unset");
+      comments.classList.add("ms-5", "text-secondary", "margin-unset");
       comments.textContent = "Comments:  " + post.comments.length;
       comments.style.fontSize = "20px";
 
@@ -122,12 +126,14 @@ async function gatherUserPosts(url) {
       const UniqueHeartIconId = "likeHeart_" + post.id;
       heartIcon.setAttribute("id", UniqueHeartIconId);
       heartIcon.style.fontSize = "20px";
-      heartIcon.style.color = "red";
+      heartIcon.style.color = "black";
 
       const openModal = document.createElement("button");
       openModal.id = post.id;
-      openModal.classList.add("btn", "btn-primary", "btn-sm");
+      openModal.classList.add("btn", "btn-primary", "btn-sm", "text-center");
       openModal.textContent = "Edit";
+      openModal.style.width = "100px";
+      openModal.style.fontSize = "16px";
 
       const modal = document.getElementById("myModal");
 

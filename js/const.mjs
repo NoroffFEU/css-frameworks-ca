@@ -126,6 +126,7 @@ export function likeHeartFunction(iconId, postId, token) {
       if (heartIcon.classList.contains("far")) {
         heartIcon.classList.remove("far", "fa-heart");
         heartIcon.classList.add("fas", "fa-heart");
+        heartIcon.style.color = "red";
 
         const ReactionURL = `${API_BASE_URL}social/posts/${postId}/react/❤️`;
         const sendReaction = {
@@ -158,103 +159,73 @@ export function likeHeartFunction(iconId, postId, token) {
   }
 }
 
-// export function starFunction(iconId, postId, token, userName) {
-//   const starIcon = document.getElementById(iconId);
-//   console.log(starIcon); // Add this line
-
-//   if (starIcon) {
-//     starIcon.addEventListener("click", function (e) {
-//       e.preventDefault();
-
-//       if (starIcon.classList.contains("fa-regular")) {
-//         starIcon.classList.remove("fa-regular");
-//         starIcon.classList.add("fa-solid");
-
-//         const LikeURL = `${API_BASE_URL}social/posts/${postId}/like`;
-//         const sendLikeRequest = {
-//           method: "PUT",
-//           headers: {
-//             "Content-Type": "application/json",
-//             Authorization: `Bearer ${token}`,
-//           },
-//           body: JSON.stringify({}),
-//         };
-
-//         fetch(LikeURL, sendLikeRequest)
-//           .then((response) => {
-//             if (response.ok) {
-//               // Update the UI or perform any necessary actions
-//               return response.json();
-//             } else {
-//               throw new Error("Like request failed");
-//             }
-//           })
-//           .then((data) => {
-//             // Handle the response data as needed
-//           })
-//           .catch((error) => {
-//             console.error(error);
-//           });
-//       } else {
-//         // If the star icon is solid (fa-solid), change it to outlined (fa-regular)
-//         starIcon.classList.remove("fa-solid");
-//         starIcon.classList.add("fa-regular");
-
-//         const unFollowURL = `${API_BASE_URL}social/profiles/${userName}/unfollow`;
-//         const sendFollowRequest = {
-//           method: "PUT",
-//           headers: {
-//             "Content-Type": "application/json",
-//             Authorization: `Bearer ${token}`,
-//           },
-//           body: JSON.stringify({}),
-//         };
-
-//         fetch(unFollowURL, sendFollowRequest)
-//           .then((response) => {
-//             if (response.ok) {
-//               return response.json();
-//             } else {
-//               throw new Error("Follow request failed");
-//             }
-//           })
-//           .then((data) => {
-//             // Handle the response data as needed
-//           })
-//           .catch((error) => {
-//             console.error(error);
-//           });
-//       }
-//     });
-//   }
-// }
-
 export async function fetchFriends(friendsURL) {
   try {
+    let allPostsResult = [];
     const token = localStorage.getItem("accessToken");
-    const friendsURL = `${API_BASE_URL}social/posts/following`;
-    const fetchAllFriends = {
+    const userName = localStorage.getItem("userName");
+    const friendsURL = `${API_BASE_URL}social/profiles/${userName}?_following=true`;
+    const fetchAllFollowing = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
+    const response = await fetch(friendsURL, fetchAllFollowing);
 
-    const response = await fetch(friendsURL, fetchAllFriends);
     const json = await response.json();
 
     const friendsBox = document.querySelector(".friendsBox");
     friendsBox.innerHTML = "";
+    friendsBox.classList.add(
+      "bg-primary",
+      "rounded",
+      "justify-content-center",
+      "fs-2",
+      "p-1"
+    );
+    friendsBox.textContent = "Friends";
 
-    json.forEach((friend) => {
+    json.following.forEach((friend) => {
       const friendsContainer = document.createElement("div");
-      friendsContainer.classList.add("row", "text-center");
+      friendsContainer.classList.add("col-md-12", "mb-3");
       friendsContainer.id = friend.id;
+
+      const friendCardBody = document.createElement("div");
+      friendCardBody.classList.add(
+        "card-body",
+        "d-flex",
+        "align-items-center",
+        "p-1"
+      );
+
+      const friendAvatar = document.createElement("img");
+      friendAvatar.classList.add("img-fluid", "rounded-circle", "m-1");
+      friendAvatar.style.width = "40px";
+
+      if (friend.avatar && friend.avatar.trim() !== "") {
+        friendAvatar.src = friend.avatar;
+        friendAvatar.alt = "Profile image of " + friend.name;
+      } else {
+        friendAvatar.src = "/images/profile-image-2.jpg";
+        friendAvatar.alt = "Default Profile Image " + friend.name;
+      }
+
+      const friendName = document.createElement("p");
+      friendName.classList.add("fw-bold", "margin-unset", "fs-5");
+      friendName.textContent = friend.name;
+
+      friendCardBody.appendChild(friendAvatar);
+      friendCardBody.appendChild(friendName);
+
+      friendsContainer.appendChild(friendCardBody);
+
       friendsBox.append(friendsContainer);
     });
 
-    allPostsResult = json;
+    allPostsResult = json.following;
+    console.log(allPostsResult);
   } catch (error) {
     console.error("Error:", error);
   }

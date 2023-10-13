@@ -44,8 +44,10 @@ async function populateFeed(url) {
 
     if (json.avatar && json.avatar.trim() !== "") {
       profileAvatar.src = json.avatar;
+      profileAvatar.alt = "Profile image of " + json.name;
     } else {
       profileAvatar.src = "/images/profile.jpg";
+      profileAvatar.alt = "Profile image of " + json.name;
     }
 
     profileInfoContainer.append(profileName);

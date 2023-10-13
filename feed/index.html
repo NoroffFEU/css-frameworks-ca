@@ -37,6 +37,7 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target=".navbar-collapse"
+          aria-label="Toggle Navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -77,6 +78,9 @@
                     required
                   />
                 </div>
+                <label for="postBodyArea" class="form-label text-start"
+                  >Body</label
+                >
                 <textarea
                   class="form-control mt-1 mb-1"
                   placeholder="Add post"
@@ -86,6 +90,9 @@
                   required
                   rows="3"
                 ></textarea>
+                <label for="postMedia" class="form-label text-start"
+                  >Image URL</label
+                >
                 <div class="postMedia">
                   <input
                     type="text"

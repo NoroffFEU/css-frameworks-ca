@@ -1,6 +1,5 @@
-import { API_BASE_URL } from "./const.mjs";
+import { API_BASE_URL, setUpHTML } from "./const.mjs";
 
-// Obtain the post ID from the query string
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const postId = urlParams.get("id");
@@ -29,7 +28,7 @@ async function singlePost() {
 
     const specificPost = await response.json();
 
-    console.log(specificPost);
+    // console.log(specificPost);
 
     document.title = specificPost.title;
 
@@ -39,7 +38,6 @@ async function singlePost() {
     const postContainer = document.createElement("div");
     postContainer.classList.add("p-3");
 
-    // Create and append the postCard element
     const postCard = document.createElement("div");
     postCard.classList.add("mb-2", "border");
     postContainer.appendChild(postCard);
@@ -65,9 +63,10 @@ async function singlePost() {
       specificPost.author.avatar.trim() !== ""
     ) {
       postAvatar.src = specificPost.author.avatar;
-      postAvatar.alt = "Profile-image";
+      postAvatar.alt = "Profile-image of " + specificPost.author;
     } else {
       postAvatar.src = "/images/profile-image-2.jpg";
+      postAvatar.alt = "Profile-image of " + specificPost.author;
     }
 
     const postAuthor = document.createElement("p");
@@ -191,9 +190,7 @@ async function singlePost() {
 async function main() {
   try {
     await singlePost();
-  } catch (error) {
-    // Handle any errors here
-  }
+  } catch (error) {}
 }
 
 main();

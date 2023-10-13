@@ -1,16 +1,34 @@
-import { allPostsResult } from "./feedposts.js";
+import { allPosts, allPostsResult } from "./feedposts.js";
+import { setUpHTML } from "./const.mjs";
+import { API_BASE_URL } from "./const.mjs";
+import { fetchAllUserPosts } from "./feedposts.js";
 
+//Filter by number of reactions
 document.getElementById("reactionPosts").addEventListener("click", async () => {
-  let result = allPostsResult.sort((a, b) => {
-    return b._count.reactions - a._count.reactions;
-  });
-  result = allPostsResult.filter((element) => {
-    return element._count.reactions > 0;
-  });
+  try {
+    let result = allPostsResult.sort((a, b) => {
+      return b._count.reactions - a._count.reactions;
+    });
 
-  console.log(result);
+    result = result.filter((element) => {
+      return element._count.reactions > 0;
+    });
+
+    const postWallContainer = document.querySelector(".postsWall");
+    postWallContainer.innerHTML = "";
+
+    result.forEach((post) => {
+      if (!post.title || !post.body) {
+        return;
+      }
+      setUpHTML(post, postWallContainer);
+    });
+  } catch (error) {
+    console.error("Error:", error);
+  }
 });
 
+//Filter by oldest date
 document.getElementById("datePosts").addEventListener("click", async () => {
   let result = allPostsResult.sort(function (a, b) {
     const c = new Date(a.created);
@@ -18,6 +36,55 @@ document.getElementById("datePosts").addEventListener("click", async () => {
     return c - d;
   });
 
-  result = result.reverse();
-  console.log(result);
+  const postWallContainer = document.querySelector(".postsWall");
+  postWallContainer.innerHTML = "";
+
+  result.forEach((post) => {
+    if (!post.title || !post.body) {
+      return;
+    }
+    setUpHTML(post, postWallContainer);
+  });
 });
+
+//By Default button
+document.getElementById("defaultPosts").addEventListener("click", () => {
+  window.location.reload();
+});
+
+//Search Bar Function
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBar = document.getElementById("searchBar");
+
+  searchBar.addEventListener("input", searchPosts);
+
+  const allPosts = `${API_BASE_URL}social/posts?&_comments=true&_author=true&_reactions=true&_count=true`;
+  fetchAllUserPosts(allPosts);
+});
+
+async function searchPosts() {
+  const searchInput = document.getElementById("searchBar").value.toLowerCase();
+  const postCards = document.querySelectorAll(".card");
+
+  postCards.forEach((postCard) => {
+    const postTitleElement = postCard.querySelector(".postTitle");
+    const postBodyElement = postCard.querySelector(".postBody");
+    const postAuthorElement = postCard.querySelector(".postAuthor");
+
+    if (postTitleElement && postBodyElement && postAuthorElement) {
+      const postTitle = postTitleElement.textContent.toLowerCase();
+      const postBody = postBodyElement.textContent.toLowerCase();
+      const postAuthor = postAuthorElement.textContent.toLowerCase();
+
+      if (
+        postTitle.includes(searchInput) ||
+        postBody.includes(searchInput) ||
+        postAuthor.includes(searchInput)
+      ) {
+        postCard.style.display = "block";
+      } else {
+        postCard.style.display = "none";
+      }
+    }
+  });
+}

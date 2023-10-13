@@ -17,12 +17,14 @@
     <script src="/js/profileposts.js" type="module" defer></script>
     <script src="/js/editUserPosts.mjs" type="module" defer></script>
     <script src="/js/deletePost.js" type="module" defer></script>
+    <script src="/js/utils/backToTopButton.js" type="module" defer></script>
+    <script src="/js/updateProfileMedia.js" type="module" defer></script>
   </head>
   </head>
   <body>
     <header class="navbar navbar-expand-lg sticky-top">
       <div class="container bg-primary">
-        <a href="#" class="navbar-brand d-flex align-items-center"
+        <a href="/profile/index.html" class="navbar-brand d-flex align-items-center"
           ><img
             src="/images/Logo.jpg"
             alt="Pokétown Logo"
@@ -34,19 +36,20 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target=".navbar-collapse"
+          aria-label="Toggle Navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="/profile/index.html">Profile</a>
+              <a class="nav-link fw-bolder active" href="/profile/index.html">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/feed/index.html">Feed</a>
             </li>
             <li class="nav-item rounded">
-              <a class="nav-link" href="/index.html">Log Out</a>
+              <a id="logOut" class="nav-link" href="/index.html">Log Out</a>
             </li>
           </ul>
         </div>
@@ -57,66 +60,7 @@
         <div class="row">
           <div class="col-md-3">
             <div class="profileBox"></div>
-            <div class="row text-center mt-4">
-              <h2>Followers</h2>
-            </div>
-            <div
-              class="row-sm-10 p-1 align-items-center d-flex justify-content-evenly mx-auto"
-            >
-              <div class="col-md-3">
-                <div class="followers rounded">
-                  <img
-                    src="/images/profile.jpg"
-                    alt="profile-image"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-              </div>
-              <div class="col-md-4 fw-bolder">Gary Oak</div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-sm btn-success">
-                  Following
-                </button>
-              </div>
-            </div>
-            <div
-              class="row-sm-10 p-1 align-items-center d-flex justify-content-evenly mx-auto"
-            >
-              <div class="col-md-3">
-                <div class="followers rounded">
-                  <img
-                    src="/images/profile.jpg"
-                    alt="profile-image"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-              </div>
-              <div class="col-md-4 fw-bolder">Gary Oak</div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-sm btn-success">
-                  Following
-                </button>
-              </div>
-            </div>
-            <div
-              class="row-sm-10 p-1 align-items-center d-flex justify-content-evenly mx-auto"
-            >
-              <div class="col-md-3">
-                <div class="followers rounded">
-                  <img
-                    src="/images/profile.jpg"
-                    alt="profile-image"
-                    class="img-fluid rounded-circle"
-                  />
-                </div>
-              </div>
-              <div class="col-md-4 fw-bolder">Gary Oak</div>
-              <div class="col-md-4">
-                <button type="button" class="btn btn-sm btn-success">
-                  Following
-                </button>
-              </div>
-            </div>
+            <div class=" friendsBox text-center mt-4"></div>
           </div>
           <div class="col-md-4">
             <div class="details">
@@ -154,10 +98,16 @@
         </div>
       </div>
     </main>
-    <div class="modal fade modal-lg" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header mb-3" id="modal-header">
+    <button
+    class="btn btn-lg btn-primary rounded-circle position-fixed bottom-0 end-0 translate-middle d-none"
+    id="back-to-up"
+  >
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+  </button>
+    <div class="modal fade modal-lg bg-dark bg-opacity-50" id="myModal">
+      <div class="modal-dialog ">
+        <div class="modal-content border border-secondary">
+          <div class="modal-header" id="modal-header">
             <h4 class="modal-title">Edit or delete post</h4>
             <button
               type="button"
@@ -169,7 +119,7 @@
           </div>
           <div class="modal-body">
             <form id="createNewPost">
-              <label for="postTitle" class="form-label text-start"></label>
+              <label for="postTitle" class="form-label text-start">Title</label>
               <div class="postTitle">
                 <input
                   type="text"
@@ -180,7 +130,7 @@
                   required
                 />
               </div>
-
+              <label for="postBodyArea" class="form-label text-start">Body:</label>
               <textarea
                 class="form-control mt-1 mb-3"
                 placeholder="Update post"
@@ -190,6 +140,7 @@
                 required
                 rows="3"
               ></textarea>
+              <label for="postMedia" class="form-label text-start">Image URL:</label>
               <div class="postMedia">
                 <input
                   type="text"
@@ -213,6 +164,39 @@
                   class="btn btn-danger btn-lg mt-2 ml-auto"
                 >
                   Delete
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade bg-dark bg-opacity-50 modal-sm modal-fullscreen-sm-down" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border border-secondary">Hello
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="editProfileImage">Edit Profile Image</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="updateProfileMediaForm">
+              <label for="UpdateProfileMedia" class="form-label text-start">Edit Avatar</label>
+              <div class="UpdateProfileMedia">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="updateProfileMedia"
+                  name="avatar"
+                  placeholder="New image url"
+                />
+              </div>
+              <div class="modal-footer justify-content-around">
+                <button
+                  type="submit"
+                  id="editProfileMedia"
+                  class="btn btn-info btn-lg mt-2 ml-auto btn-dark"
+                >
+                  Update
                 </button>
               </div>
             </form>

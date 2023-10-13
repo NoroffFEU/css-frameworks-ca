@@ -1,12 +1,11 @@
-const API_BASE_URL = "https://api.noroff.dev/api/v1/";
+import { API_BASE_URL, fetchFriends } from "./const.mjs";
 const userName = localStorage.getItem("userName");
 const userEmail = localStorage.getItem("userEmail");
 
-async function createProfile(url) {
+async function createProfile(url, fetchFriendsCall) {
   try {
-    console.log(url);
     const token = localStorage.getItem("accessToken");
-    console.log(token);
+    // console.log(token);
     const fetchProfileInfo = {
       method: "GET",
       headers: {
@@ -34,8 +33,10 @@ async function createProfile(url) {
 
     if (json.avatar && json.avatar.trim() !== "") {
       profileAvatar.src = json.avatar;
+      profileAvatar.alt = "Profile image of " + json.name;
     } else {
       profileAvatar.src = "/images/profile.jpg";
+      profileAvatar.alt = "Profile image of " + json.name;
     }
     profileContainer.append(profileAvatar);
 
@@ -56,7 +57,7 @@ async function createProfile(url) {
 
     const li2 = document.createElement("li");
     const a2 = document.createElement("a");
-    a2.href = "#";
+
     a2.classList.add(
       "mt-5",
       "text-decoration-none",
@@ -65,6 +66,27 @@ async function createProfile(url) {
       "link-danger"
     );
     a2.innerText = "Edit Profile";
+
+    const editModal = document.getElementById("editModal");
+
+    a2.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      editModal.classList.add("show");
+      editModal.style.display = "block";
+    });
+
+    const closeEditModal = document.getElementById("editModal");
+    closeEditModal.addEventListener("click", (e) => {
+      if (
+        e.target === closeEditModal ||
+        e.target.classList.contains("btn-close")
+      ) {
+        closeEditModal.classList.remove("show");
+        closeEditModal.style.display = "none";
+      }
+    });
+
     li2.appendChild(a2);
 
     ul.appendChild(li1);
@@ -97,6 +119,8 @@ async function createProfile(url) {
 
     profileBox.append(profileContainer);
 
+    fetchFriendsCall(friendsURL);
+
     // console.log(json);
   } catch (error) {
     console.log(error);
@@ -104,5 +128,6 @@ async function createProfile(url) {
 }
 
 const profileInfo = `${API_BASE_URL}social/profiles/${userName}`;
+const friendsURL = `${API_BASE_URL}social/profiles/${userName}?_following=true`;
 
-createProfile(profileInfo);
+createProfile(profileInfo, fetchFriends);

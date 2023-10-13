@@ -5,11 +5,11 @@ import renderPosts from "./renderPost.js";
 import commentButton from "./commentOnClick.js";
 import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
+import reactToPostTwo from "./reactToPost.js";
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const endpoint = endpointObject("Jarle");
 const getId = optionFactory("GET", {}, endpoint);
-
 (async () => {
   const data = await callApi(endpoint.getId(id), getId);
   console.log("data:", data);
@@ -17,4 +17,5 @@ const getId = optionFactory("GET", {}, endpoint);
   commentButton();
   deletePost();
   updatePost();
+  reactToPostTwo();
 })();

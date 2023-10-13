@@ -3,6 +3,9 @@ import createElementFactory from "./createElementFactory.js";
 export default function createSmileyPicker(
   parentElement = document.querySelector("main")
 ) {
+  if (document.querySelector("#modal")) {
+    return;
+  }
   const emojiList = [
     { emoji: "😀", altText: "Grinning Face" },
     { emoji: "😃", altText: "Grinning Face with Big Eyes" },
@@ -86,5 +89,3 @@ export default function createSmileyPicker(
   }
   return emojiFunctions;
 }
-
-

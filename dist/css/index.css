@@ -11963,5 +11963,8 @@ textarea.form-control-lg {
     display: none;
   }
 }
+.left-col--background {
+  background: linear-gradient(45deg, #706543, #3d3c37);
+}
 
 /*# sourceMappingURL=index.css.map */

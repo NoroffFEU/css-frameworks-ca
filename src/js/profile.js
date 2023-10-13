@@ -78,7 +78,7 @@ function fetchPosts(url) {
             .forEach((post) => renderPosts(postContainer, post));
         commentButton();
         deletePost();
-        updatePost();
+        updatePost(document.querySelector("#container--posts"));
         reactToPostTwo();
         followUnfollow(data.followers);
         console.log(data, data.followers);

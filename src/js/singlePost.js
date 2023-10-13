@@ -17,7 +17,7 @@ import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-const endpoint = endpointObject("Jarle");
+const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 const getId = optionFactory("GET", {}, endpoint);
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield callApi(endpoint.getId(id), getId);

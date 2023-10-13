@@ -12,7 +12,7 @@ export default async function callApi(
     } else if (data.title) {
       return data;
     } else {
-      throw new Error("response is empty, or not what expected");
+      console.log("response is empty, or not what expected");
     }
   } catch (err) {
     console.log(err.message);

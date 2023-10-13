@@ -7,7 +7,9 @@ import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
 
-const endpoint = endpointObject("Jarle");
+const endpoint = endpointObject(
+  JSON.parse(localStorage.getItem("currentUser"))
+);
 
 const sortInput = document.querySelector("#sort--feed") as HTMLSelectElement;
 const sortOrder = document.querySelector("#sort--order") as HTMLInputElement;

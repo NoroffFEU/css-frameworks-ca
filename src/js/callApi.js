@@ -22,7 +22,7 @@ export default function callApi(endpoint, options) {
                 return data;
             }
             else {
-                throw new Error("response is empty, or not what expected");
+                console.log("response is empty, or not what expected");
             }
         }
         catch (err) {

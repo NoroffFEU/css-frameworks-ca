@@ -235,11 +235,11 @@ type category = "title" | "updated" | "tags" | "body" | "author";
 
 async function searchApi(
   array: post[],
-  category: category,
+  category: category = "body",
   count: number = 0,
   searchWord: string | null = null
 ): Promise<post | undefined> {
-  if (!searchWord || count > 10) {
+  if (!searchWord || count > 20) {
     return;
   }
   let foundWord;

@@ -161,10 +161,10 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
     rootMargin: "0px",
     threshold: 0.2,
 });
-function searchApi(array, category, count = 0, searchWord = null) {
+function searchApi(array, category = "body", count = 0, searchWord = null) {
     var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
-        if (!searchWord || count > 10) {
+        if (!searchWord || count > 20) {
             return;
         }
         let foundWord;

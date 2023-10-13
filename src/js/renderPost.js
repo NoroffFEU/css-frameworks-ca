@@ -3,13 +3,13 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const container = createElementFactory("div", "", domEl, { "data-observed": "", id: `div${id}` }, "card", "mb-3", "bg-white", "p-2");
     const row = createElementFactory("div", "", container, {}, "row", "mb-4");
-    const anker = createElementFactory("div", "", row, {}, "col-4", "d-flex", "flex-column");
+    const anker = createElementFactory("div", "", row, {}, "col-lg-4", "d-flex", "flex-column", "mb-2", "gap-4", "flex-column");
     const dateSpan = createElementFactory("p", created.split("T")[0], anker, {}, "fs-6");
     const image = createElementFactory("img", "", anker, {
         src: author.avatar ? author.avatar : "",
     }, "rounded-3", "max-width-85");
     const spanName = createElementFactory("a", author.name ? author.name : "", anker, { href: `/src/profile/index.html?user=${author === null || author === void 0 ? void 0 : author.name}` }, "text-primay", "fs-6");
-    const divCol8 = createElementFactory("div", "", row, {}, "col-8");
+    const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
     const postLink = createElementFactory("a", "", divCol8, {
         href: `/src/post/index.html?id=${id}`,
     });

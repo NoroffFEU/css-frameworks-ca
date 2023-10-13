@@ -34,8 +34,11 @@ export default function renderPosts(
     "",
     row,
     {},
-    "col-4",
+    "col-lg-4",
     "d-flex",
+    "flex-column",
+    "mb-2",
+    "gap-4",
     "flex-column"
   );
 
@@ -65,7 +68,7 @@ export default function renderPosts(
     "text-primay",
     "fs-6"
   );
-  const divCol8 = createElementFactory("div", "", row, {}, "col-8");
+  const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
   const postLink = createElementFactory("a", "", divCol8, {
     href: `/src/post/index.html?id=${id}`,
   });

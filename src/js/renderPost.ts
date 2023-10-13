@@ -38,9 +38,9 @@ export default function renderPosts(
     "d-flex",
     "flex-column",
     "mb-2",
-    "gap-4",
     "flex-column"
   );
+  const reactionContainer = createElementFactory("div", "", anker, {});
 
   const dateSpan = createElementFactory(
     "p",
@@ -69,6 +69,8 @@ export default function renderPosts(
     "fs-6"
   );
   const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
+  const tagContainer = createElementFactory("div", "", divCol8, {});
+
   const postLink = createElementFactory("a", "", divCol8, {
     href: `/src/post/index.html?id=${id}`,
   });
@@ -84,7 +86,6 @@ export default function renderPosts(
     "card-text",
     "text-black"
   );
-  const reactionContainer = createElementFactory("div", "", divCol8, {});
 
   const deleteButton = createElementFactory(
     "button",
@@ -107,23 +108,8 @@ export default function renderPosts(
   );
 
   const picturePost = media
-    ? createElementFactory("img", "", divCol8, { src: media }, "w-100", "h-50")
+    ? createElementFactory("img", "", divCol8, { src: media }, "postImage")
     : "";
-
-  const tagContainer = createElementFactory("div", "", anker, {});
-
-  tags?.forEach((tag) =>
-    createElementFactory(
-      "span",
-      tag,
-      tagContainer,
-      {},
-      "badge",
-      "text-bg-primary",
-      "m-1",
-      `tag${id}`
-    )
-  );
 
   if (reactions[0]) {
     reactions.forEach((emoji) =>
@@ -139,10 +125,23 @@ export default function renderPosts(
     );
   }
 
+  tags?.forEach((tag) =>
+    createElementFactory(
+      "span",
+      tag,
+      tagContainer,
+      {},
+      "badge",
+      "text-bg-primary",
+      "m-1",
+      `tag${id}`
+    )
+  );
+
   const reactButton = createElementFactory(
     "button",
     "React",
-    anker,
+    divCol8,
     {
       type: "button",
       "data-id": id,
@@ -151,26 +150,6 @@ export default function renderPosts(
     "btn-outline-primary"
   );
 
-  if (_count) {
-    const countContainer = createElementFactory("div", "", anker, {});
-
-    const commentCount = createElementFactory(
-      "span",
-      `💬comments(${_count.comments})`,
-      countContainer,
-      {},
-      "badge",
-      "text-bg-primary"
-    );
-    const reactionCount = createElementFactory(
-      "span",
-      `😊😡reactions(${_count.reactions})`,
-      countContainer,
-      {},
-      "badge",
-      "text-bg-primary"
-    );
-  }
   const commentContainer = createElementFactory(
     "div",
     "",
@@ -180,9 +159,10 @@ export default function renderPosts(
   );
   const commentHeader = createElementFactory(
     "h3",
-    "Comments",
+    `${_count ? `comments(${_count.comments})` : "comments"}`,
     commentContainer,
-    {}
+    {},
+    "fs-6"
   );
 
   const inputGroupContainer = createElementFactory(
@@ -190,7 +170,8 @@ export default function renderPosts(
     "",
     commentContainer,
     {},
-    "input-group",
+    "d-flex",
+    "flex-column",
     "mb-4"
   );
 

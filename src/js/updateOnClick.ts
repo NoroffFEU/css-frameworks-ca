@@ -2,6 +2,7 @@ import endpointObject from "./endpoints.js";
 import optionFactory from "./optionFactory.js";
 import callApi from "./callApi.js";
 import renderModal from "./renderModal.js";
+import fadeText from "./fadeText.js";
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
 );
@@ -91,5 +92,7 @@ export default async function updatePost(posts) {
     const id = editObject.id;
     console.log(id);
     callApi(endpoint.getId(id), editOption);
+    document.querySelector("#modalEdit").style.display = "none";
+    fadeText("update successfull!:D");
   });
 }

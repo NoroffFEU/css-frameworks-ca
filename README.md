@@ -1,5 +1,6 @@
 # Socially
-![Screenshot 2023-10-11 at 12 07 31](https://github.com/RamtinMoshtagh/css-frameworks-ca/assets/95631899/b880fb25-f66c-4b52-8596-d3bc172aa96c)
+![Screenshot 2023-10-15 at 00 20 46](https://github.com/RamtinMoshtagh/css-frameworks-ca/assets/95631899/8c8348a1-1409-40bf-978c-620f6e91587b)
+
 
 ## Description
 Purpose of this website is for you to socialize, welcome to Socially!

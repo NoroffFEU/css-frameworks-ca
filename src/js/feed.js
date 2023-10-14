@@ -18,6 +18,7 @@ import reactToPostTwo from "./reactToPost.js";
 import renderTempPost from "./renderTempPost.js";
 import validateSelect from "./formValidation.js";
 import observerTargetClosure from "./observerClosure.js";
+import clearForm from "./clearForm.js";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
@@ -135,6 +136,7 @@ postButton === null || postButton === void 0 ? void 0 : postButton.addEventListe
     commentButton();
     deletePost();
     updatePost(postContainer);
+    clearForm();
 }));
 const intersectionObserver = new IntersectionObserver((entries) => entries.forEach((entry) => __awaiter(void 0, void 0, void 0, function* () {
     if (entry.isIntersecting) {

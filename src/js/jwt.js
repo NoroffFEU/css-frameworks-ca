@@ -165,6 +165,17 @@ function login({ email, password }) {
 function changePage(name) {
     window.location.href = `/src/profile/index.html?user=${name}&current=${name}`;
 }
+/**
+ * Function to redirect logged-in users to the profile page.
+ * It checks the local storage for the current user, and if found,
+ * it changes the location to the user's profile page.
+ *
+ * @param {void}
+ * @example
+ * ```js
+ * redirectLoggedInUsers();
+ * ```
+ */
 (function redirectLoggedInUsers() {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (user) {

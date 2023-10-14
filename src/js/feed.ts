@@ -9,6 +9,7 @@ import reactToPostTwo from "./reactToPost.js";
 import renderTempPost from "./renderTempPost.js";
 import validateSelect from "./formValidation.js";
 import observerTargetClosure from "./observerClosure.js";
+import clearForm from "./clearForm.js";
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
 );
@@ -194,6 +195,7 @@ postButton?.addEventListener("click", async () => {
   commentButton();
   deletePost();
   updatePost(postContainer);
+  clearForm();
 });
 
 const intersectionObserver = new IntersectionObserver(
@@ -231,7 +233,6 @@ const intersectionObserver = new IntersectionObserver(
 
 type category = "title" | "updated" | "tags" | "body" | "author";
 
-
 /**
  * Recursively searches a given array of posts to find a post matching a specific search word in a given category.
  * If the post isn't found in the initial array, makes an API call to fetch more data and continues the search.
@@ -242,16 +243,16 @@ type category = "title" | "updated" | "tags" | "body" | "author";
  * @param {category} [category="body"] - Category of the post to match against (e.g. 'body', 'title', etc).
  * @param {number} [count=0] - Counter to limit the recursive depth (stops after 20 recursions).
  * @param {string|null} [searchWord=null] - The word to search for in the given category.
- * 
+ *
  * @returns {Promise<post|undefined>} A promise that resolves to a post object if a match is found, otherwise undefined.
  *
  * @example
- * 
+ *
  * const postsArray = [ ... ];  // Some array of posts.
- * 
+ *
  * // Search for a specific word in the 'body' category of the posts.
  * const foundPost = await searchApi(postsArray, "body", 0, "exampleWord");
- * 
+ *
  * if (foundPost) {
  *   console.log("Found post:", foundPost);
  * } else {

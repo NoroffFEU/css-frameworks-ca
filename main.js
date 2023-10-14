@@ -1,4 +1,3 @@
-import bootstrap from 'bootstrap'
 
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const registerUrl = `${mainApiUrl}/social/auth/register`;

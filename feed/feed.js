@@ -1,5 +1,5 @@
 import { getData } from "../mjs/getData.mjs";
-import { isMediaValid } from "../mjs/helpers.mjs";
+import { isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
 
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const postsUrl = `${mainApiUrl}/social/posts`;
@@ -9,7 +9,6 @@ const requestParam = {
     _reactions: true
     // offset: 100
 };
-
 
 const queryString = new URLSearchParams(requestParam).toString();
 
@@ -120,35 +119,7 @@ function showPosts(posts) {
     showReactions();
 }
 
-function processCommentsForPost(comments) {
-    let commentsHtml = "";
-    if (comments.length === 0) {
-        commentsHtml = `
-        <div>There are no comments</div>
-         `;
-    }
-    for (let i = 0; i < comments.length; i++) {
-        commentsHtml += `
-        <div>${comments[i].body}</div>
-        `;
-    }
-    return commentsHtml;
-}
 
-function processReactionsForPost(reactions) {
-    let reactionsHtml = "";
-    if (reactions.length === 0) {
-        reactionsHtml = `
-        <div>There are no reactions</div>
-         `;
-    }
-    for (let i = 0; i < reactions.length; i++) {
-        reactionsHtml += `
-        <div>${reactions[i].symbol}</div>
-        `;
-    }
-    return reactionsHtml;
-}
 
 
 

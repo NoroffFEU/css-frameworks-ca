@@ -1,5 +1,5 @@
 import { getData } from "../mjs/getData.mjs";
-import { isMediaValid } from "../mjs/helpers.mjs";
+import { isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
 
 const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";
@@ -9,6 +9,18 @@ const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
 const myPostsUrl = `${mainApiUrl}/social/posts`;
 let profilePosts = undefined;
 let postIdEdit = undefined;
+
+const requestParam = {
+    _author: true,
+    _comments: true,
+    _reactions: true
+    // offset: 100
+};
+
+
+const queryString = new URLSearchParams(requestParam).toString();
+
+
 
 window.onload = getPosts();
 
@@ -21,7 +33,8 @@ async function getPosts() {
     //Clear the page
     containerHTMLCard.innerHTML = "";
 
-    profilePosts = await getData(getMyPosts);
+    //profilePosts = await getData(getMyPosts);
+    profilePosts = await getData(`${getMyPosts}?${queryString}`);
     let setImg = "";
 
     for (var i = 0; i < profilePosts.length; i++) {
@@ -42,23 +55,23 @@ async function getPosts() {
                     <p class="card-text text-start" id="cardBody">${profilePosts[i].body}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments">Comments</button>
-                            
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions">Reactions</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Comments</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Reactions</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Edit</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Delete</button>
                         </div>
-                        <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small>
-                        
+                        <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small> 
                     </div>
                 </div>
-                <div id="showComments" style="display:none;">comments go here</div>
-                <div id="showReactions" style="display:none;">reactions go here</div>
+                <div class="showComments" id="showComments${profilePosts[i].id}" style="display:none;">${processCommentsForPost(profilePosts[i].comments)}</div>
+                <div class="showReactions" id="showReactions${profilePosts[i].id}" style="display:none;">${processReactionsForPost(profilePosts[i].reactions)}</div>
             </div>
         </div>        
         `;
-    }
 
+    }
+    showComments();
+    showReactions();
     //https://stackoverflow.com/questions/44162581/use-wildcard-to-find-specific-id-using-javascript
     //https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
     const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
@@ -82,6 +95,7 @@ async function getPosts() {
             editPost(postId);
         });
     }
+
 }
 
 
@@ -169,5 +183,26 @@ async function editedPostToApiFunksjon(url, post) {
     }
 }
 
+// show comments
 
+function showComments() {
+    const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
+    debugger;
+    commentBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}
+
+// show reactions
+function showReactions() {
+    const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
+
+    reactionsBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}
 

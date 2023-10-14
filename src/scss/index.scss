@@ -15,19 +15,15 @@ $border-color: #D9E4E7;
 .navbar {
     background-color: $primary !important;
     border-bottom: 3px solid $secondary;
-
     .navbar-brand, .nav-link {
         color: $background-color;
-
         &:hover, &:focus {
             color: $secondary;
         }
     }
-
     .btn {
         background-color: $secondary;
         color: $primary;
-
         &:hover, &:focus {
             background-color: darken($secondary, 10%);
         }
@@ -37,7 +33,6 @@ $border-color: #D9E4E7;
     input[type="search"].form-control {
         height: 36px;
     }
-
     button.btn {
         height: 36px;
         line-height: 20px;
@@ -47,7 +42,6 @@ $border-color: #D9E4E7;
     display: block !important;
     visibility: visible !important;
   }
-  
 .custom-btn {
     @extend .btn;
     border-radius: 5px;
@@ -62,23 +56,19 @@ $border-color: #D9E4E7;
     background-color: $primary;
     border: none;
     color: white;
-
     &:hover {
         background-color: darken($primary, 8%);
     }
 }
 .input-group, .dropdown {
     margin-bottom: 20px;
-
     .form-control {
         border-radius: 0;
         border: 1px solid $border-color;
     }
-
     .btn, .input-group-text, button {
         background-color: $primary;
         color: $background-color;
-
         &:hover {
             background-color: darken($primary, 10%);
         }
@@ -91,11 +81,9 @@ form {
     .form-control, textarea {
         border: 1px solid $border-color;
     }
-
     button[type="submit"] {
         background-color: $primary;
-        color: $background-color;
-        
+        color: $background-color; 
         &:hover {
             background-color: darken($primary, 8%);
         }
@@ -104,15 +92,12 @@ form {
 .card {
     margin-bottom: 20px;
     border: 1px solid $border-color;
-
     .card-title {
         font-size: 1.5rem;
     }
-
     .card-text {
         color: lighten($font-color, 10%);
     }
-
     .btn {
         background-color: $primary;
         color: $background-color;

@@ -71,6 +71,7 @@ export function displayPostDetails(post) {
                 <div class="card-body">
                     <h1 class="card-title">${post.title}</h1>
                     <p class="card-text">${post.body}</p>
+                    <p class="post-id">Post ID: ${post.id}</p>
                 </div>
             </div>
         `;

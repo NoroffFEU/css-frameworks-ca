@@ -183,10 +183,12 @@ export async function createPost(event) {
     }
 }
 /**
- * Fetches all unique tags from all posts and populates the tag filter dropdown.
+ * Fetches all unique tags from all posts, logs the first three unique tags using array destructuring, 
+ * and populates the tag filter dropdown.
  * @async
  * @function
- * @throws Will throw an error if the request to fetch posts fails.
+ * @throws {Error} Will throw an error if the request to fetch posts fails.
+ * @returns {Promise<void>} No return value.
  */
 export async function fetchAllTags() {
     const url = `${API_BASE_URL}/social/posts`;
@@ -198,12 +200,11 @@ export async function fetchAllTags() {
         throw new Error('Failed to fetch posts');
     }
     const posts = await response.json();
-    // Extract all tags from all posts, flatten the array, and remove duplicates
     const allTags = posts.flatMap(post => post.tags);
     const uniqueTags = [...new Set(allTags)];
-
-    // Get the tagFilter dropdown and populate it with the unique tags
-    const tagFilterDropdown = document.getElementById('tagFilter');
+/*     const [firstTag, secondTag, thirdTag] = uniqueTags;
+    console.log("First three unique tags:", firstTag, secondTag, thirdTag);
+ */    const tagFilterDropdown = document.getElementById('tagFilter');
     uniqueTags.forEach(tag => {
         const option = document.createElement('option');
         option.value = tag;

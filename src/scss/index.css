@@ -7,7 +7,6 @@
 .container .row {
   margin: 0;
 }
-
 .navbar {
   background-color: #364F6B !important;
   border-bottom: 3px solid #3FC1C9;
@@ -25,7 +24,6 @@
 .navbar .btn:hover, .navbar .custom-btn:hover, .navbar .btn:focus, .navbar .custom-btn:focus {
   background-color: #2f9fa6;
 }
-
 .navbar form input[type=search].form-control {
   height: 36px;
 }
@@ -33,21 +31,17 @@
   height: 36px;
   line-height: 20px;
 }
-
 #nextPage, #prevPage {
   display: block !important;
   visibility: visible !important;
 }
-
 .custom-btn {
   border-radius: 5px;
 }
-
 .form-control:focus {
   border-color: #3FC1C9;
   box-shadow: none;
 }
-
 .btn, .custom-btn {
   background-color: #364F6B;
   border: none;
@@ -56,7 +50,6 @@
 .btn:hover, .custom-btn:hover {
   background-color: #283b50;
 }
-
 .input-group, .dropdown {
   margin-bottom: 20px;
 }
@@ -71,7 +64,6 @@
 .input-group .btn:hover, .input-group .custom-btn:hover, .input-group .input-group-text:hover, .input-group button:hover, .dropdown .btn:hover, .dropdown .custom-btn:hover, .dropdown .input-group-text:hover, .dropdown button:hover {
   background-color: #253649;
 }
-
 form .form-control, form textarea {
   border: 1px solid #D9E4E7;
 }
@@ -82,7 +74,6 @@ form button[type=submit] {
 form button[type=submit]:hover {
   background-color: #283b50;
 }
-
 .card {
   margin-bottom: 20px;
   border: 1px solid #D9E4E7;
@@ -100,7 +91,6 @@ form button[type=submit]:hover {
 .card .btn:hover, .card .custom-btn:hover {
   background-color: #283b50;
 }
-
 .profile-image {
   width: 150px;
   height: 150px;
@@ -108,11 +98,9 @@ form button[type=submit]:hover {
   background-color: #8fdbdf;
   border: 3px solid #364F6B;
 }
-
 .username {
   color: #364F6B;
 }
-
 .follow-button {
   background-color: #3FC1C9;
   text-transform: uppercase;
@@ -121,7 +109,6 @@ form button[type=submit]:hover {
 .follow-button:hover {
   background-color: #2f9fa6;
 }
-
 .heading {
   font-size: 1.5rem;
 }

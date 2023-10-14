@@ -3,7 +3,7 @@ import optionFactory from "./optionFactory.js";
 import callApi from "./callApi.js";
 import renderModal from "./renderModal.js";
 import fadeText from "./fadeText.js";
-import renderTempPost from "./renderTempPost.js";
+import createElementFactory from "./createElementFactory.js";
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
 );
@@ -60,6 +60,9 @@ function getPostText(id) {
   const modalTags = document.querySelector(
     "#tags__modal--edit"
   ) as HTMLInputElement;
+  const modalMedia = document.querySelector(
+    "#media__modal--edit"
+  ) as HTMLInputElement;
 
   modalBody.addEventListener("input", () => {
     editObject.body = modalBody.value;
@@ -69,20 +72,28 @@ function getPostText(id) {
     editObject.title = modalTitle.value;
   });
   modalTags.addEventListener("input", () => {
-    editObject.tags = modalBody.value.split("#");
+    editObject.tags = modalTags.value.split("#");
+  });
+
+  modalMedia.addEventListener("input", () => {
+    editObject.media = modalMedia.value;
   });
 
   modalTitle.value = document.querySelector(`#title${id}`)?.innerText;
   modalBody.value = document.querySelector(`#body${id}`)?.innerText;
+  if (document.querySelector(`#image${id}`) !== null) {
+    modalMedia.value = document.querySelector(`#image${id}`).src;
+  }
   const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
-
+  console.log(tagArr);
   modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
   editObject.setAll(
-    document.querySelector(`#body${id}`)?.innerText,
     document.querySelector(`#title${id}`)?.innerText,
-    tagArr.map((element) => element.innerText)
+    document.querySelector(`#body${id}`)?.innerText,
+    tagArr.map((element) => element.innerText),
+    document.querySelector(`#image${id}`)?.src
   );
-  console.log(tagArr);
+  console.log(editObject);
 }
 
 /**
@@ -122,8 +133,63 @@ export default async function updatePost(parentHtml) {
     const id = editObject.id;
     console.log(id);
     const data = await callApi(endpoint.getId(id), editOption);
-    renderTempPost(parentHtml, data);
     document.querySelector("#modalEdit").style.display = "none";
+    renderEdit(id);
     fadeText("update successfull!:D");
   });
+}
+
+function renderEdit(id) {
+  const modalTitle = document.querySelector(
+    "#title__modal--edit"
+  ) as HTMLInputElement;
+  const modalBody = document.querySelector(
+    "#body__modal--edit"
+  ) as HTMLInputElement;
+  const modalTags = document.querySelector(
+    "#tags__modal--edit"
+  ) as HTMLInputElement;
+  const modalMedia = document.querySelector(
+    "#media__modal--edit"
+  ) as HTMLInputElement;
+
+  document.querySelector(`#title${id}`)?.innerText = modalTitle.value;
+  document.querySelector(`#body${id}`)?.innerText = modalBody.value;
+  if (document.querySelector(`#image${id}`)) {
+    document.querySelector(`#image${id}`).src = modalMedia.value;
+  }
+
+  if (!document.querySelector(`#image${id}`) && modalMedia.value) {
+    const picturePost = createElementFactory(
+      "img",
+      "",
+      document.querySelector(`#postCard${id}`),
+      { id: `image${id}`, src: modalMedia.value },
+      "postImage"
+    );
+    document.querySelector(`#tag-container${id}`)?.after(picturePost);
+  }
+
+  if (!modalMedia.value && document.querySelector(`#image${id}`)) {
+    document.querySelector(`#image${id}`)?.remove();
+  }
+
+  console.log(modalTags.value);
+
+  document.querySelector(`#tag-container${id}`)?.innerHTML = "";
+
+  modalTags.value
+    .split("#")
+    .forEach((tag) =>
+      createElementFactory(
+        "span",
+        tag,
+        document.querySelector(`#tag-container${id}`),
+        {},
+        "badge",
+        "text-bg-primary",
+        "m-1",
+        `tag${id}`
+      )
+    );
 }

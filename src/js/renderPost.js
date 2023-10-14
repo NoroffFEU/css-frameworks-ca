@@ -28,7 +28,7 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
     const image = createElementFactory("img", "", anker, {
         src: author.avatar ? author.avatar : "/src/assets/placeholder.png",
     }, "rounded-3", "max-width-85");
-    const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
+    const divCol8 = createElementFactory("div", "", row, { id: `postCard${id}` }, "col-lg-8");
     const postLink = createElementFactory("a", "", divCol8, {
         href: `/src/post/index.html?id=${id}`,
     }, "text-decoration-none", "mt-3");
@@ -36,11 +36,11 @@ export default function renderPosts(domEl, { id, title, body, tags, media, creat
         id: `title${id}`,
     }, "fs-6", "fw-bold");
     const paragraph = createElementFactory("p", body, divCol8, { id: `body${id}` }, "card-text", "text-black");
-    const tagContainer = createElementFactory("div", "", divCol8, {}, "d-flex", "flex-wrap");
+    const tagContainer = createElementFactory("div", "", divCol8, { id: `tag-container${id}` }, "d-flex", "flex-wrap");
     const deleteButton = createElementFactory("button", "delete", divCol8, { id: `button--${id}`, "data-delete-id": id }, currentUser !== author.name && "hide", "btn", "btn-success");
     const updateButton = createElementFactory("button", "update", divCol8, { "data-update-id": id, id: `button--edit--${id}` }, currentUser !== author.name && "hide", "btn", "btn-outline-primary");
     const picturePost = media
-        ? createElementFactory("img", "", divCol8, { src: media }, "postImage")
+        ? createElementFactory("img", "", divCol8, { id: `image${id}`, src: media }, "postImage")
         : "";
     const reactionContainer = createElementFactory("div", "", divCol8, {});
     if (reactions[0]) {

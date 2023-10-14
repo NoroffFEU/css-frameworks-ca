@@ -1,7 +1,5 @@
 import createElementFactory from "./createElementFactory.js";
 
-
-
 /**
  * Renders posts on the given DOM element.
  *
@@ -90,7 +88,13 @@ export default function renderPosts(
     "max-width-85"
   );
 
-  const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
+  const divCol8 = createElementFactory(
+    "div",
+    "",
+    row,
+    { id: `postCard${id}` },
+    "col-lg-8"
+  );
 
   const postLink = createElementFactory(
     "a",
@@ -125,7 +129,7 @@ export default function renderPosts(
     "div",
     "",
     divCol8,
-    {},
+    { id: `tag-container${id}` },
     "d-flex",
     "flex-wrap"
   );
@@ -150,7 +154,13 @@ export default function renderPosts(
   );
 
   const picturePost = media
-    ? createElementFactory("img", "", divCol8, { src: media }, "postImage")
+    ? createElementFactory(
+        "img",
+        "",
+        divCol8,
+        { id: `image${id}`, src: media },
+        "postImage"
+      )
     : "";
 
   const reactionContainer = createElementFactory("div", "", divCol8, {});
@@ -255,7 +265,6 @@ export default function renderPosts(
     );
   }
 }
-
 
 /**
  * Renders comments for a specific post.

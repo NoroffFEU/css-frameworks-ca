@@ -1,6 +1,6 @@
-// //Example A
+// // Example A
 // export function postTemplateA(postData) {
-//     return `<div class="post">
+//     return `<div class="post" id=${postData.id}>
 //     ${postData.title}
 //     <button>Log post to console</button>
 //     </div>`;
@@ -20,30 +20,30 @@ export function postTemplate(postData) {
     const postWrap = document.createElement("div");
     postWrap.classList.add("postWrap", "col-11", "mx-auto", "pt-3");
     post.appendChild(postWrap);
-    //
-    // const postHeaderBox = document.createElement("div");
-    // postHeaderBox.classList.add("postHeaderBox", "d-flex");
-    // postWrap.appendChild(postHeaderBox);
-    //
-    // const postUserImgBox = document.createElement("div");
-    // postUserImgBox.classList.add("postUserImgBox");
-    // postHeaderBox.appendChild(postUserImgBox);
-
-    //
-    // const postTitleBox = document.createElement("div");
-    // postTitleBox.classList.add("postTitleBox", "ms-2");
-    // postHeaderBox.appendChild(postTitleBox);
-
-    // const postUserName = document.createElement("h1");
-    // postUserName.classList.add("feed-heading", "feed-name", "mb-0", "fs-3");
-    // postTitleBox.appendChild(postUserName);
-    // postUserName.innerText += "User Name";
-
-    // const postTitle = document.createElement("p");
-    // postTitle.classList.add("feed-heading", "feed-title", "fs-2", "lh-1");
-    // postTitleBox.appendChild(postTitle);
-    // postTitle.innerText += postData.title;
     // //
+    const postHeaderBox = document.createElement("div");
+    postHeaderBox.classList.add("postHeaderBox", "d-flex");
+    postWrap.appendChild(postHeaderBox);
+    // //
+    const postUserImgBox = document.createElement("div");
+    postUserImgBox.classList.add("postUserImgBox");
+    postHeaderBox.appendChild(postUserImgBox);
+
+    // //
+    const postTitleBox = document.createElement("div");
+    postTitleBox.classList.add("postTitleBox", "ms-2");
+    postHeaderBox.appendChild(postTitleBox);
+
+    const postUserName = document.createElement("h1");
+    postUserName.classList.add("feed-heading", "feed-name", "mb-0", "fs-3");
+    postTitleBox.appendChild(postUserName);
+    postUserName.innerText += "User Name";
+
+    const postTitle = document.createElement("p");
+    postTitle.classList.add("feed-heading", "feed-title", "fs-2", "lh-1");
+    postTitleBox.appendChild(postTitle);
+    postTitle.innerText += postData.title;
+    // // //
     // const postMainBox = document.createElement("div");
     // postMainBox.classList.add("postMainBox", "card", "shadow-sm", "bg-light");
     // postWrap.appendChild(postMainBox);

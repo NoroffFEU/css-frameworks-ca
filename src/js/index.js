@@ -1,6 +1,8 @@
 import * as listeners from "./handlers/index.js";
 import * as templates from "./templates/index.js";
 import * as postMethods from "./api/posts/index.js";
+//
+// import * as posts from "./api/posts/index.js";
 
 // import * as constants from "./api/constants.js";
 
@@ -18,8 +20,6 @@ import * as postMethods from "./api/posts/index.js";
 // import { setUpdatePostListener } from "./handlers/updatePost.js";
 // import { renderPostTemplate } from "./templates/index.js";
 
-// import * as posts from "./api/posts/index.js";
-
 const path = location.pathname;
 
 if (path === "/") {
@@ -32,26 +32,29 @@ if (path === "/") {
     listeners.setUpdatePostListener;
 }
 
-// // Testing templates post
-// async function renderPosts() {
+//--------------------------------------------------------------
+// Testing templates for rendering/showing POST and POSTS
+async function renderPosts() {
+    const posts = await postMethods.getPosts();
+    console.log(posts);
+    const post = posts[24];
+    const container = document.querySelector("#postList");
+    templates.renderPostTemplates(posts, container);
+}
+
+renderPosts();
+
+// async function renderPost() {
 //     const posts = await postMethods.getPosts();
 //     console.log(posts);
-//     // const post = posts[24];
-//     const container = document.querySelector("#postList");
-//     templates.renderPostTemplates(posts, container);
-// }
-
-// renderPosts();
-
-// async function testTemplate() {
-//     const posts = await postMethods.getPosts();
-//     console.log(posts);
-//     // const post = posts[24];
+//     const post = posts[14];
 //     const container = document.querySelector("#post");
-//     templates.renderPostTemplates(posts, container);
+//     templates.renderPostTemplate(post, container);
 // }
 
-// testTemplate();
+// renderPost();
+
+//--------------------------------------------------------------------------
 
 // postMethods.createPost();
 // post.updatePost();

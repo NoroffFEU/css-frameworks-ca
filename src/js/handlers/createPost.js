@@ -1,4 +1,5 @@
-import { createPost } from "../api/posts/create.js";
+// import { createPost } from "../api/posts/create.js";
+import { createPost } from "../api/posts/index.js";
 
 //use this as a teemplate to write other eventlisteners
 

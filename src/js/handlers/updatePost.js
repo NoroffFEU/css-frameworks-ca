@@ -1,4 +1,5 @@
-import { updatePost } from "../api/posts/update.js";
+// import { updatePost } from "../api/posts/update.js";
+import { updatePost } from "../api/posts/index.js";
 
 //use this as a teemplate to write other eventlisteners
 

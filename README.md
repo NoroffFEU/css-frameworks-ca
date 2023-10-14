@@ -1,5 +1,5 @@
 # Socially
-![Screenshot 2023-10-15 at 00 20 46](https://github.com/RamtinMoshtagh/css-frameworks-ca/assets/95631899/8c8348a1-1409-40bf-978c-620f6e91587b)
+![Screenshot 2023-10-15 at 00 22 42](https://github.com/RamtinMoshtagh/css-frameworks-ca/assets/95631899/a5950af0-1087-4c52-89fd-e351a24ddf56)
 
 
 ## Description

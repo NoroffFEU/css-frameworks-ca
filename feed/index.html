@@ -10,36 +10,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">Socially</a>
+            <a class="navbar-brand" href="">Socially</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/feed/index.html">Feed</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/profile/index.html">Profile</a>
                     </li>
-                </ul>
-                <form class="d-flex">
-                    <select class="form-select me-2" id="tagFilter">
-                        <option value="">All Tags</option>
-                    </select>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
-                    <button class="btn btn-outline-light" type="button">Search</button>
-                </form>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Register</a>
-                    </li>
+                    <button id="signOutButton" class="btn btn-secondary">Sign Out</button>
+
                 </ul>
             </div>
         </div>
@@ -71,8 +55,15 @@
             <div class="mb-3">
                 <label for="postTags" class="form-label">Tags</label>
                 <input type="text" class="form-control" id="postTags" placeholder="Enter tags separated by commas">
-            </div>
+            </div>   
         </form>
+        <form class="d-flex" id="searchForm">
+            <select class="form-select me-2" id="tagFilter">
+                <option value="">All Tags</option>
+            </select>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+        </form> 
         <div class="spinner-border" role="status" id="loading" style="display: none;">
             <span class="sr-only">Loading...</span>
         </div>

@@ -13,16 +13,23 @@ export function setupEventListeners(state) {
     const sortOldest = document.getElementById('sortOldest');
     const tagFilter = document.getElementById('tagFilter');
     const postForm = document.getElementById('postForm');
+    const searchForm = document.getElementById('searchForm');
 
-    if (searchBar) {
-        searchBar.addEventListener('input', (event) => {
-            event.preventDefault();
-            state.searchQuery = event.target.value;
-            window.history.pushState(null, '', `?searchQuery=${state.searchQuery}`);
-            fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
+    if (searchForm) {
+        searchForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            const searchBar = document.getElementById('searchBar');
+            const trimmedSearchQuery = searchBar.value.trim();
+            console.log("Search form submitted. Query:", trimmedSearchQuery); // Log the search query
+            if (trimmedSearchQuery) {
+                state.searchQuery = trimmedSearchQuery;
+                window.history.pushState(null, '', `?searchQuery=${state.searchQuery}`);
+                fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
+            } else {
+                console.log("Search input is empty."); // Log if the search input is empty
+            }
         });
     }
-
     if (nextPage) {
         nextPage.addEventListener('click', () => {
             state.currentOffset += state.limit;
@@ -70,4 +77,3 @@ export function setupEventListeners(state) {
         fetchPosts(state.limit, state.currentOffset, state.searchQuery, state.currentFilter);
     });
 }
-

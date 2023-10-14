@@ -14,44 +14,20 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/feed/index.html">Feed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/profile/index.html">Profile</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
-                    <button class="btn btn-outline-light" type="button">Search</button>                </form>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Register</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <h2 class="text-center mb-4 heading">Login or Register</h2>
+                <h2 class="text-center mb-4 heading">Login</h2>
                 <form id="authForm">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required autocomplete="email">
                     </div>
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" required autocomplete="username">
+                        <label for="name" class="form-label">name</label>
+                        <input type="text" class="form-control" id="name" name="name" required autocomplete="name">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -65,7 +41,6 @@
                     <div id="error-message" class="text-danger text-center"></div>                    
                     <button type="submit" class="btn w-100" id="submitButton">Login</button>
                 </form>
-                <p class="text-center mt-3">Not a member? <a href="#" class="custom-link" onclick="document.getElementById('isRegistering').checked = true; updateButtonText();">Register now</a></p></div>
         </div>
     </div>
     <footer class="text-center mt-5">

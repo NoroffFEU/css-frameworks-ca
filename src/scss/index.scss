@@ -84,6 +84,9 @@ $border-color: #D9E4E7;
         }
     }
 }
+#email {
+    display: none;
+}
 form {
     .form-control, textarea {
         border: 1px solid $border-color;

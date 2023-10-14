@@ -14,7 +14,7 @@ import { state } from './main.js';
  * @throws Will throw an error if the network response is not ok or other miscellaneous errors.
  * @returns {Promise<void>} No return value.
  */
-export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagFilter) {
+export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagFilter, returnOnly = false) {
     const loading = document.getElementById('loading');
     try {
         if (loading) {
@@ -28,9 +28,7 @@ export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagF
             limit: limit,
             offset: offset
         });
-        if (searchQuery) {
-            params.append('search', searchQuery);
-        }
+        params.append('_author', 'true');
         if (currentFilter === 'newest') {
             params.append('sort', 'created');
             params.append('sortOrder', 'desc');
@@ -48,7 +46,15 @@ export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagF
             console.error('Error Response:', await response.json());
             throw new Error('Network response was not ok');
         }
-        const data = await response.json();
+        let data = await response.json();
+
+        // If there's a search query, filter the posts
+        if (searchQuery) {
+            data = data.filter(post => 
+                post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                (post.author && post.author.name.toLowerCase().includes(searchQuery.toLowerCase()))
+            );
+        }
         displayPosts(data);
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
@@ -58,6 +64,8 @@ export async function fetchPosts(limit, offset, searchQuery, currentFilter, tagF
         }
     }
 }
+
+
 /**
  * Sends a request to update a post with new data.
  * @async
@@ -204,56 +212,98 @@ export async function fetchAllTags() {
     });
 }
 /**
- * Displays an array of posts on the page.
- * @function
- * @param {Array} posts - An array of post objects to display.
+ * Renders a list of posts into the DOM.
+ * @param {Array} posts - An array of post objects to be displayed.
  */
 export function displayPosts(posts) {
     const postsContainer = document.getElementById('postsContainer');
-    if (postsContainer) {
-        postsContainer.innerHTML = '';
-        posts.forEach(post => {
-            const postCard = document.createElement('div');
-            postCard.classList.add('card', 'mb-4');
-            const postImage = document.createElement('img');
-            postImage.src = post.media || '/img/panda.jpg';
-            postImage.onerror = () => {
-                postImage.src = '/img/panda.jpg';
-            };
-            postImage.classList.add('card-img-top');
-            postImage.alt = '';
-            postCard.appendChild(postImage);
-            const postBody = document.createElement('div');
-            postBody.classList.add('card-body');
-            const postTitle = document.createElement('h5');
-            postTitle.classList.add('card-title');
-            postTitle.textContent = post.title;
-            postBody.appendChild(postTitle);
-            const postContent = document.createElement('p');
-            postContent.classList.add('card-text');
-            postContent.textContent = post.body;
-            postBody.appendChild(postContent);
-            const readMoreButton = document.createElement('a');
-            readMoreButton.href = `/postDetail/index.html?id=${post.id}`;
-            readMoreButton.classList.add('btn', 'btn-primary');
-            readMoreButton.textContent = 'Read More';
-            postBody.appendChild(readMoreButton);
-            const editButton = document.createElement('button');
-            editButton.textContent = 'Edit';
-            editButton.classList.add('btn', 'btn-warning', 'me-2');
-            editButton.onclick = () => editPost(post.id);
-            postBody.appendChild(editButton);
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.classList.add('btn', 'btn-danger');
-            deleteButton.onclick = () => deletePost(post.id);
-            postBody.appendChild(deleteButton);
-            postCard.appendChild(postBody);
-            postsContainer.appendChild(postCard);
-        });
-    } else {
+    if (!postsContainer) {
         console.error('Container element not found');
+        return;
     }
+
+    postsContainer.innerHTML = '';
+
+    posts.forEach(post => {
+        const postCard = createPostCard(post);
+        postsContainer.appendChild(postCard);
+    });
+}
+/**
+ * Creates and returns a post card element.
+ * @param {Object} post - The post object containing details to be displayed.
+ * @returns {HTMLElement} - The post card element.
+ */
+function createPostCard(post) {
+    const postCard = document.createElement('div');
+    postCard.classList.add('card', 'mb-4');
+
+    const postImage = createPostImage(post.media);
+    postCard.appendChild(postImage);
+
+    const postBody = createPostBody(post);
+    postCard.appendChild(postBody);
+
+    return postCard;
+}
+/**
+ * Creates and returns an image element for the post.
+ * @param {string} mediaUrl - The URL of the media to be displayed.
+ * @returns {HTMLElement} - The post image element.
+ */
+function createPostImage(mediaUrl) {
+    const postImage = document.createElement('img');
+    postImage.src = mediaUrl || '/img/panda.jpg';
+    postImage.onerror = () => {
+        postImage.src = '/img/panda.jpg';
+    };
+    postImage.classList.add('card-img-top');
+    postImage.alt = 'Post Image';
+
+    return postImage;
+}
+/**
+ * Creates and returns the body content of the post card.
+ * @param {Object} post - The post object containing details to be displayed.
+ * @returns {HTMLElement} - The post body element.
+ */
+function createPostBody(post) {
+    const postBody = document.createElement('div');
+    postBody.classList.add('card-body');
+
+    if (post.title) {
+        const postTitle = document.createElement('h5');
+        postTitle.classList.add('card-title');
+        postTitle.textContent = post.title;
+        postBody.appendChild(postTitle);
+    }
+
+    if (post.body) {
+        const postContent = document.createElement('p');
+        postContent.classList.add('card-text');
+        postContent.textContent = post.body;
+        postBody.appendChild(postContent);
+    }
+
+    const readMoreButton = document.createElement('a');
+    readMoreButton.href = `/postDetail/index.html?id=${post.id}`;
+    readMoreButton.classList.add('btn', 'btn-primary');
+    readMoreButton.textContent = 'Read More';
+    postBody.appendChild(readMoreButton);
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Edit';
+    editButton.classList.add('btn', 'btn-warning', 'me-2');
+    editButton.onclick = () => editPost(post.id);
+    postBody.appendChild(editButton);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.classList.add('btn', 'btn-danger');
+    deleteButton.onclick = () => deletePost(post.id);
+    postBody.appendChild(deleteButton);
+
+    return postBody;
 }
 /**
  * Handles the editing of a post by prompting the user for a new title and content.

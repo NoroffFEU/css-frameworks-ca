@@ -12,7 +12,7 @@ import optionFactory from "./optionFactory.js";
 import callApi from "./callApi.js";
 import renderModal from "./renderModal.js";
 import fadeText from "./fadeText.js";
-import renderTempPost from "./renderTempPost.js";
+import createElementFactory from "./createElementFactory.js";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 function showModal() {
     document.querySelector("#modalEdit").style.display = "block";
@@ -48,10 +48,11 @@ const editObject = {
  * @param {string} id - The ID of the post to get values from.
  */
 function getPostText(id) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     const modalTitle = document.querySelector("#title__modal--edit");
     const modalBody = document.querySelector("#body__modal--edit");
     const modalTags = document.querySelector("#tags__modal--edit");
+    const modalMedia = document.querySelector("#media__modal--edit");
     modalBody.addEventListener("input", () => {
         editObject.body = modalBody.value;
         console.log(editObject);
@@ -60,14 +61,21 @@ function getPostText(id) {
         editObject.title = modalTitle.value;
     });
     modalTags.addEventListener("input", () => {
-        editObject.tags = modalBody.value.split("#");
+        editObject.tags = modalTags.value.split("#");
+    });
+    modalMedia.addEventListener("input", () => {
+        editObject.media = modalMedia.value;
     });
     modalTitle.value = (_a = document.querySelector(`#title${id}`)) === null || _a === void 0 ? void 0 : _a.innerText;
     modalBody.value = (_b = document.querySelector(`#body${id}`)) === null || _b === void 0 ? void 0 : _b.innerText;
+    if (document.querySelector(`#image${id}`) !== null) {
+        modalMedia.value = document.querySelector(`#image${id}`).src;
+    }
     const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
-    modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
-    editObject.setAll((_c = document.querySelector(`#body${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#title${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText));
     console.log(tagArr);
+    modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
+    editObject.setAll((_c = document.querySelector(`#title${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#body${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText), (_e = document.querySelector(`#image${id}`)) === null || _e === void 0 ? void 0 : _e.src);
+    console.log(editObject);
 }
 /**
  * Prepares and manages the update of a post using a modal UI.
@@ -103,9 +111,33 @@ export default function updatePost(parentHtml) {
             const id = editObject.id;
             console.log(id);
             const data = yield callApi(endpoint.getId(id), editOption);
-            renderTempPost(parentHtml, data);
             document.querySelector("#modalEdit").style.display = "none";
+            renderEdit(id);
             fadeText("update successfull!:D");
         }));
     });
+}
+function renderEdit(id) {
+    var _a, _b, _c, _d, _e;
+    const modalTitle = document.querySelector("#title__modal--edit");
+    const modalBody = document.querySelector("#body__modal--edit");
+    const modalTags = document.querySelector("#tags__modal--edit");
+    const modalMedia = document.querySelector("#media__modal--edit");
+    (_a = document.querySelector(`#title${id}`)) === null || _a === void 0 ? void 0 : _a.innerText = modalTitle.value;
+    (_b = document.querySelector(`#body${id}`)) === null || _b === void 0 ? void 0 : _b.innerText = modalBody.value;
+    if (document.querySelector(`#image${id}`)) {
+        document.querySelector(`#image${id}`).src = modalMedia.value;
+    }
+    if (!document.querySelector(`#image${id}`) && modalMedia.value) {
+        const picturePost = createElementFactory("img", "", document.querySelector(`#postCard${id}`), { id: `image${id}`, src: modalMedia.value }, "postImage");
+        (_c = document.querySelector(`#tag-container${id}`)) === null || _c === void 0 ? void 0 : _c.after(picturePost);
+    }
+    if (!modalMedia.value && document.querySelector(`#image${id}`)) {
+        (_d = document.querySelector(`#image${id}`)) === null || _d === void 0 ? void 0 : _d.remove();
+    }
+    console.log(modalTags.value);
+    (_e = document.querySelector(`#tag-container${id}`)) === null || _e === void 0 ? void 0 : _e.innerHTML = "";
+    modalTags.value
+        .split("#")
+        .forEach((tag) => createElementFactory("span", tag, document.querySelector(`#tag-container${id}`), {}, "badge", "text-bg-primary", "m-1", `tag${id}`));
 }

@@ -1,21 +1,19 @@
 import { API_ALL_POSTS } from "../common/constant.mjs";
 
 const postContainer = document.querySelector("#post-container");
+const searchInput = document.getElementById("search");
+const searchButton = document.getElementById("search-button");
+
+let data = [];
 
 async function getPosts(url) {
     try {
         const token = localStorage.getItem('accessToken');
 
         if (!token) {
-            console.log('Access token is missing. Redirect to login page.');
+            console.log('Access token is missing. Redirect to the login page.');
             return;
         }
-
-        const queryParams = new URLSearchParams({
-            _author: true,
-        });
-
-        const fullUrl = `${url}?${queryParams.toString()}`;
 
         const getOptions = {
             method: 'GET',
@@ -25,13 +23,11 @@ async function getPosts(url) {
             },
         };
 
-        const response = await fetch(fullUrl, getOptions);
+        const response = await fetch(API_ALL_POSTS, getOptions);
 
         if (response.ok) {
-            const json = await response.json();
-            console.log(json);
-
-            displayPosts(json);
+            data = await response.json();
+            displayPosts(data);
         } else {
             console.log('Error response:', response.status, await response.json());
         }
@@ -120,4 +116,38 @@ function displayPosts(postsToDisplay) {
 
     postContainer.innerHTML = '';
     postContainer.append(fragment);
+}
+
+async function filterPosts() {
+    const filterNewest = document.getElementById("newest");
+    const filterOldest = document.getElementById("oldest");
+
+    filterNewest.addEventListener("click", (e) => {
+        const postsAsc = data.sort(
+            (a, b) => new Date(b.created) - new Date(a.created)
+        );
+        displayPosts(postsAsc);
+    });
+
+    filterOldest.addEventListener("click", (e) => {
+        const postsDesc = data.sort(
+            (a, b) => new Date(a.created) - new Date(b.created)
+        );
+        displayPosts(postsDesc);
+    });
+}
+
+filterPosts();
+
+searchButton.addEventListener("click", performSearch);
+
+function performSearch() {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    if (searchTerm === "") {
+        displayPosts(data); 
+    } else {
+        const filteredPosts = data.filter(post => post.body.toLowerCase().includes(searchTerm));
+        displayPosts(filteredPosts);
+    }
 }

@@ -34,6 +34,19 @@ const editObject = {
             this.media = media;
     },
 };
+/**
+ * Populates a modal form's fields with the current post values, and sets up event listeners
+ * to update the `editObject` with any changes the user makes in the form.
+ *
+ * How it works:
+ * 1. Gets the current values of a post by its ID from the page.
+ * 2. Sets the values to corresponding input fields in the modal form.
+ * 3. Listens to input events on the modal form fields to update the `editObject`.
+ * 4. The `editObject` will then be used to submit the updated post to the server.
+ *
+ * @function
+ * @param {string} id - The ID of the post to get values from.
+ */
 function getPostText(id) {
     var _a, _b, _c, _d;
     const modalTitle = document.querySelector("#title__modal--edit");
@@ -56,6 +69,20 @@ function getPostText(id) {
     editObject.setAll((_c = document.querySelector(`#body${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#title${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText));
     console.log(tagArr);
 }
+/**
+ * Prepares and manages the update of a post using a modal UI.
+ *
+ * 1. Presents a modal that provides fields for editing a post.
+ * 2. Captures user input and updates an internal `editObject` with the user's changes.
+ * 3. Allows the user to send their updated post to the backend.
+ * 4. Renders the updated post using `renderTempPost`.
+ * 5. Provides feedback to the user indicating the success of their update.
+ *
+ * @function
+ * @export
+ * @async
+ * @param {HTMLElement} parentHtml - The root element in which updated posts will be rendered.
+ */
 export default function updatePost(parentHtml) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {

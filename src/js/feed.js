@@ -160,6 +160,32 @@ const intersectionObserver = new IntersectionObserver((entries) => entries.forEa
     rootMargin: "0px",
     threshold: 0.2,
 });
+/**
+ * Recursively searches a given array of posts to find a post matching a specific search word in a given category.
+ * If the post isn't found in the initial array, makes an API call to fetch more data and continues the search.
+ *
+ * @async
+ * @function
+ * @param {post[]} array - Array of posts to search in.
+ * @param {category} [category="body"] - Category of the post to match against (e.g. 'body', 'title', etc).
+ * @param {number} [count=0] - Counter to limit the recursive depth (stops after 20 recursions).
+ * @param {string|null} [searchWord=null] - The word to search for in the given category.
+ *
+ * @returns {Promise<post|undefined>} A promise that resolves to a post object if a match is found, otherwise undefined.
+ *
+ * @example
+ *
+ * const postsArray = [ ... ];  // Some array of posts.
+ *
+ * // Search for a specific word in the 'body' category of the posts.
+ * const foundPost = await searchApi(postsArray, "body", 0, "exampleWord");
+ *
+ * if (foundPost) {
+ *   console.log("Found post:", foundPost);
+ * } else {
+ *   console.log("Post not found.");
+ * }
+ */
 function searchApi(array, category = "body", count = 0, searchWord = null) {
     var _a, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {

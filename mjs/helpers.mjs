@@ -1,22 +1,11 @@
-// new post
 
-// const formPost = document.getElementById("formPost");
-
-// document.getElementById("postBtn").addEventListener("click", (event) => {
-//     event.preventDefault();
-
-//     const titlePost = formPost.elements[0];
-//     const messagePost = formPost.elements[1];
-//     const mediaPost = formPost.elements[2];
-
-//     const userTitlePost = titlePost.value;
-//     const userMessagePost = messagePost.value;
-//     const userMediaPost = mediaPost.value;
-
-//     const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-//     newPostToApiFunksjon(postsUrl, newPost);
-// });
-
+/** This function puts the values of a title, message(body) and media in an object
+ * 
+ * @param {string} title 
+ * @param {string} message 
+ * @param {string} media 
+ * @returns {object} object with key-value pairs of title, message(body) and media
+ */
 function newPostValuesToObject(title, message, media) {
     const postToApi = {
         "title": title,
@@ -26,6 +15,11 @@ function newPostValuesToObject(title, message, media) {
     return postToApi;
 }
 
+/** This function sends a created object (and assigned token) to API 
+ * 
+ * @param {string} url 
+ * @param {object} post 
+ */
 async function newPostToApiFunksjon(url, post) {
     try {
         const token = localStorage.getItem("accessToken");
@@ -38,29 +32,30 @@ async function newPostToApiFunksjon(url, post) {
             body: JSON.stringify(post),
         };
         const response = await fetch(url, postData);
-        const json = await response.json();
+        await response.json();
     } catch (error) {
         console.log(error)
     }
 }
 
 
-
-
-
-
-
-
-
-
+/** This function checks if the post includes a right format of media(img)
+ * 
+ * @param {string} media 
+ * @returns {}
+ */
 function isMediaValid(media) {
     if (media === null || media === "") {
         return false;
     }
-
     return (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png"));
 }
 
+/** This functions checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
+ * 
+ * @param {array} comments 
+ * @returns {array} array with comments and puts them in Html, if there are none it creates the message that there are no comments
+ */
 function processCommentsForPost(comments) {
     let commentsHtml = "";
     if (comments.length === 0) {
@@ -76,6 +71,12 @@ function processCommentsForPost(comments) {
     return commentsHtml;
 }
 
+
+/** This functions checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
+ * 
+ * @param {array} reactions 
+ * @returns {array} array with reactions and puts them in Html, if there are none it creates the message that there are no reactions
+ */
 function processReactionsForPost(reactions) {
     let reactionsHtml = "";
     if (reactions.length === 0) {
@@ -91,27 +92,5 @@ function processReactionsForPost(reactions) {
     return reactionsHtml;
 }
 
-// // show comments
-
-// function showComments() {
-//     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
-
-//     commentBtns.forEach((btn) => {
-//         btn.addEventListener("click", function () {
-//             document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
-//         })
-//     })
-// }
-
-// // show reactions
-// function showReactions() {
-//     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
-
-//     reactionsBtns.forEach((btn) => {
-//         btn.addEventListener("click", function () {
-//             document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
-//         })
-//     })
-// }
 
 export { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost };

@@ -4,6 +4,7 @@ import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processComme
 const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 //const getMyPosts = `${mainApiUrl}/social/profiles/:name/posts`;
+const postsUrl = `${mainApiUrl}/social/posts`;
 const myName = localStorage.getItem("name");
 const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
 const myPostsUrl = `${mainApiUrl}/social/posts`;
@@ -17,16 +18,13 @@ const requestParam = {
     // offset: 100
 };
 
-
 const queryString = new URLSearchParams(requestParam).toString();
-
-
 
 window.onload = getPosts();
 
-//new post
-const formPost = document.getElementById("formPost");
 
+//This event listener open the module that enables to write a new post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
+const formPost = document.getElementById("formPost");
 document.getElementById("postBtn").addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -43,16 +41,15 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
 });
 
 
-// showing my posts
+/**This function gets and shows my posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
+ */
 async function getPosts() {
     var containerHTMLCard = document.getElementById("singleCardProfile");
     //Clear the page
     containerHTMLCard.innerHTML = "";
-
     //profilePosts = await getData(getMyPosts);
     profilePosts = await getData(`${getMyPosts}?${queryString}`);
     let setImg = "";
-
     for (var i = 0; i < profilePosts.length; i++) {
         let formattedDate = new Date(profilePosts[i].updated).toLocaleDateString();
         let formattedTime = new Date(profilePosts[i].updated).toLocaleTimeString();
@@ -90,8 +87,9 @@ async function getPosts() {
     showReactions();
     //https://stackoverflow.com/questions/44162581/use-wildcard-to-find-specific-id-using-javascript
     //https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
-    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
 
+    // This for-loop gets the id of the post that user wants to delete and starts the function that does it when the button is pressed
+    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
     for (let i = 0; i < deleteBtns.length; i++) {
         const deleteBtn = deleteBtns[i];
         deleteBtn.addEventListener("click", async function () {
@@ -100,22 +98,22 @@ async function getPosts() {
         });
     }
 
-    //getting edit post id
+    // This for-loop gets the id of the post that user wants to edit and starts the function that does it when the button is pressed
     const editBtns = document.querySelectorAll('[id^="btnEdit"]');
-
     for (let i = 0; i < editBtns.length; i++) {
         const editBtn = editBtns[i];
         editBtn.addEventListener("click", function () {
-
             const postId = editBtn.dataset.postid;
             editPost(postId);
         });
     }
-
 }
 
 
-// delete post
+/**This function deletes the post
+ * 
+ * @param {number} id 
+ */
 async function deletePost(id) {
     const deletePost = {
         method: "DELETE",
@@ -133,18 +131,18 @@ async function deletePost(id) {
 }
 
 
-// edit post
+/**This function edits the post
+ * 
+ * @param {number} id 
+ */
 function editPost(id) {
-    //need to get the form with the values
     const editPostModal = document.getElementById("editPostModal");
     var myModal = new bootstrap.Modal(editPostModal, {
         backdrop: 'static', // You can set the backdrop behavior (static or true/false)
         keyboard: false,    // You can control whether the modal can be closed with the keyboard
         focus: true
     })
-
     const tmp = profilePosts.find(x => x.id == id);
-
     document.getElementById("exampleFormControlTextarea6").value = tmp.title;
     document.getElementById("exampleFormControlTextarea7").value = tmp.body;
     document.getElementById("exampleFormControlTextarea8").value = tmp.media;
@@ -153,9 +151,8 @@ function editPost(id) {
 }
 
 
-
+//This event listener open the module that enables to edit a post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
 document.getElementById("editPostBtn").addEventListener("click", async (event) => {
-
     event.preventDefault();
 
     const titlePost = formPost.elements[0];
@@ -166,13 +163,21 @@ document.getElementById("editPostBtn").addEventListener("click", async (event) =
     const userMessagePost = messagePost.value;
     const userMediaPost = mediaPost.value;
 
-    const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-    await editedPostToApiFunksjon(`${myPostsUrl}/${postIdEdit}`, newPost);
+    const editedPost = editedPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
+    await editedPostToApiFunksjon(`${myPostsUrl}/${postIdEdit}`, editedPost);
     postIdEdit = undefined;
     await getPosts();
 });
 
-function newPostValuesToObject(title, message, media) {
+
+/** This function puts the values of a title, message(body) and media in an object
+ * 
+ * @param {string} title 
+ * @param {string} message 
+ * @param {string} media 
+ * @returns {object} object with key-value pairs of title, message(body) and media
+ */
+function editedPostValuesToObject(title, message, media) {
     const postToApi = {
         "title": title,
         "body": message,
@@ -181,6 +186,12 @@ function newPostValuesToObject(title, message, media) {
     return postToApi;
 }
 
+
+/** This function sends a created object (and assigned token) to API and replace the old one
+ * 
+ * @param {string} url 
+ * @param {object} post 
+ */
 async function editedPostToApiFunksjon(url, post) {
     try {
         const token = localStorage.getItem("accessToken");
@@ -199,8 +210,9 @@ async function editedPostToApiFunksjon(url, post) {
     }
 }
 
-// show comments
 
+/** This functions shows the post's comments or a message that there are none after the button is pressed
+ */
 function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
     commentBtns.forEach((btn) => {
@@ -210,7 +222,8 @@ function showComments() {
     })
 }
 
-// show reactions
+/** This functions shows the post's reactions or a message that there are none after the button is pressed
+ */
 function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
     reactionsBtns.forEach((btn) => {

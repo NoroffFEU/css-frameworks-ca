@@ -11,33 +11,36 @@ const requestParam = {
 };
 
 const queryString = new URLSearchParams(requestParam).toString();
-
 let feedPosts = undefined;
 let isShowingTodaysPosts = false;
 
 window.onload = fetchPostsFromApi();
 
 
-// reset page to all posts
+
+// This event listener resets page and shows again to all the posts (after the button "Today's Post" was pressed) 
 document.getElementById("homeBtn").addEventListener("click", () => {
     isShowingTodaysPosts = false;
     searchField.value = "";
     showPosts(feedPosts);
 });
 
-// search
 
+// This event listener sends search value from search field when Enter is pressed to a function that will check it
 const searchField = document.getElementById("searchInput");
-
 searchField.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         const result = searchElement(feedPosts, searchField.value);
-        // debugger;
         showPosts(result);
     }
 });
 
-
+/** This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
+ * 
+ * @param {array} postsArray 
+ * @param {string} searchText 
+ * @returns {array} returns array that includes posts with searched word in their title or body(message)
+ */
 function searchElement(postsArray, searchText) {
     return postsArray.filter((post) =>
         post.title.includes(searchText) || post.body.includes(searchText)
@@ -45,10 +48,8 @@ function searchElement(postsArray, searchText) {
 }
 
 
-// showing today's posts
-
+// This event listener checks and change the format of date and time of posts and starts function that shows only today's posts
 const todaysPostsBtn = document.getElementById("todaysPosts");
-
 todaysPostsBtn.addEventListener("click", function () {
     if (isShowingTodaysPosts === false) {
         const date = new Date();
@@ -69,14 +70,21 @@ todaysPostsBtn.addEventListener("click", function () {
 });
 
 
-// showing posts
-var containerHTMLCard = document.getElementById("singleCard");
 
+var containerHTMLCard = document.getElementById("singleCard");
+/** This function gets posts from API and send them to next function that shows them on the site
+*/
 async function fetchPostsFromApi() {
     feedPosts = await getData(`${postsUrl}?${queryString}`);
     showPosts(feedPosts);
 }
 
+
+/** This function shows the posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
+ * 
+ * @param {array} posts 
+ * @returns {array} array with all the posts and shows them on the site
+ */
 function showPosts(posts) {
     //var posts = await getData(`${postsUrl}?${queryString}`);
     var setImg = "";
@@ -120,14 +128,8 @@ function showPosts(posts) {
 }
 
 
-
-
-
-
-// new post
-
+//This event listener open the module that enables to write a new post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
 const formPost = document.getElementById("formPost");
-
 document.getElementById("postBtn").addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -143,39 +145,11 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
     newPostToApiFunksjon(postsUrl, newPost);
 });
 
-// function newPostValuesToObject(title, message, media) {
-//     const postToApi = {
-//         "title": title,
-//         "body": message,
-//         "media": media
-//     };
-//     return postToApi;
-// }
 
-// async function newPostToApiFunksjon(url, post) {
-//     try {
-//         const token = localStorage.getItem("accessToken");
-//         const postData = {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 Authorization: `Bearer ${token}`,
-//             },
-//             body: JSON.stringify(post),
-//         };
-//         const response = await fetch(url, postData);
-//         const json = await response.json();
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
-
-
-// show comments
-
+/** This functions shows the post's comments or a message that there are none after the button is pressed
+ */
 function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
-
     commentBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
@@ -183,10 +157,11 @@ function showComments() {
     })
 }
 
-// show reactions
+
+/** This functions shows the post's reactions or a message that there are none after the button is pressed
+ */
 function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
-
     reactionsBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";

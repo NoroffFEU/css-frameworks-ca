@@ -136,8 +136,8 @@ async function deletePost(id) {
 // edit post
 function editPost(id) {
     //need to get the form with the values
-    const exampleModal = document.getElementById("exampleModal");
-    var myModal = new bootstrap.Modal(exampleModal, {
+    const editPostModal = document.getElementById("editPostModal");
+    var myModal = new bootstrap.Modal(editPostModal, {
         backdrop: 'static', // You can set the backdrop behavior (static or true/false)
         keyboard: false,    // You can control whether the modal can be closed with the keyboard
         focus: true
@@ -145,16 +145,16 @@ function editPost(id) {
 
     const tmp = profilePosts.find(x => x.id == id);
 
-    document.getElementById("exampleFormControlTextarea1").value = tmp.title;
-    document.getElementById("exampleFormControlTextarea2").value = tmp.body;
-    document.getElementById("exampleFormControlTextarea3").value = tmp.media;
+    document.getElementById("exampleFormControlTextarea6").value = tmp.title;
+    document.getElementById("exampleFormControlTextarea7").value = tmp.body;
+    document.getElementById("exampleFormControlTextarea8").value = tmp.media;
     postIdEdit = id;
     myModal.show();
 }
 
 
 
-document.getElementById("postBtn").addEventListener("click", async (event) => {
+document.getElementById("editPostBtn").addEventListener("click", async (event) => {
 
     event.preventDefault();
 

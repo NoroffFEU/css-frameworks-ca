@@ -1,5 +1,5 @@
 import { getData } from "../mjs/getData.mjs";
-import { isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
+import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
 
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const postsUrl = `${mainApiUrl}/social/posts`;
@@ -143,34 +143,32 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
     newPostToApiFunksjon(postsUrl, newPost);
 });
 
-function newPostValuesToObject(title, message, media) {
-    const postToApi = {
-        "title": title,
-        "body": message,
-        "media": media
-    };
-    return postToApi;
-}
+// function newPostValuesToObject(title, message, media) {
+//     const postToApi = {
+//         "title": title,
+//         "body": message,
+//         "media": media
+//     };
+//     return postToApi;
+// }
 
-async function newPostToApiFunksjon(url, post) {
-    try {
-        const token = localStorage.getItem("accessToken");
-        const postData = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(post),
-        };
-        const response = await fetch(url, postData);
-        const json = await response.json();
-
-        //return json;
-    } catch (error) {
-        console.log(error)
-    }
-}
+// async function newPostToApiFunksjon(url, post) {
+//     try {
+//         const token = localStorage.getItem("accessToken");
+//         const postData = {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Authorization: `Bearer ${token}`,
+//             },
+//             body: JSON.stringify(post),
+//         };
+//         const response = await fetch(url, postData);
+//         const json = await response.json();
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
 
 // show comments

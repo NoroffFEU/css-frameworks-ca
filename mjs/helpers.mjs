@@ -1,3 +1,58 @@
+// new post
+
+// const formPost = document.getElementById("formPost");
+
+// document.getElementById("postBtn").addEventListener("click", (event) => {
+//     event.preventDefault();
+
+//     const titlePost = formPost.elements[0];
+//     const messagePost = formPost.elements[1];
+//     const mediaPost = formPost.elements[2];
+
+//     const userTitlePost = titlePost.value;
+//     const userMessagePost = messagePost.value;
+//     const userMediaPost = mediaPost.value;
+
+//     const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
+//     newPostToApiFunksjon(postsUrl, newPost);
+// });
+
+function newPostValuesToObject(title, message, media) {
+    const postToApi = {
+        "title": title,
+        "body": message,
+        "media": media
+    };
+    return postToApi;
+}
+
+async function newPostToApiFunksjon(url, post) {
+    try {
+        const token = localStorage.getItem("accessToken");
+        const postData = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(post),
+        };
+        const response = await fetch(url, postData);
+        const json = await response.json();
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+
+
+
+
+
+
+
 function isMediaValid(media) {
     if (media === null || media === "") {
         return false;
@@ -59,4 +114,4 @@ function processReactionsForPost(reactions) {
 //     })
 // }
 
-export { isMediaValid, processCommentsForPost, processReactionsForPost };
+export { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost };

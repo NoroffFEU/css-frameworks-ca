@@ -1,5 +1,5 @@
 import { getData } from "../mjs/getData.mjs";
-import { isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
+import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
 
 const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";
@@ -24,7 +24,23 @@ const queryString = new URLSearchParams(requestParam).toString();
 
 window.onload = getPosts();
 
+//new post
+const formPost = document.getElementById("formPost");
 
+document.getElementById("postBtn").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const titlePost = formPost.elements[0];
+    const messagePost = formPost.elements[1];
+    const mediaPost = formPost.elements[2];
+
+    const userTitlePost = titlePost.value;
+    const userMessagePost = messagePost.value;
+    const userMediaPost = mediaPost.value;
+
+    const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
+    newPostToApiFunksjon(postsUrl, newPost);
+});
 
 
 // showing my posts

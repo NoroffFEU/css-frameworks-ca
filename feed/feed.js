@@ -92,7 +92,7 @@ function showPosts(posts) {
         }
 
         containerHTMLCard.innerHTML += `
-        <div class="my-2 col col-lg-10">
+        <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
                 <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
@@ -106,7 +106,7 @@ function showPosts(posts) {
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
                            
                         </div>
-                        <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small>
+                        <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                         
                     </div>
                 </div>
@@ -135,7 +135,6 @@ function processCommentsForPost(comments) {
     return commentsHtml;
 }
 
-
 function processReactionsForPost(reactions) {
     let reactionsHtml = "";
     if (reactions.length === 0) {
@@ -143,10 +142,9 @@ function processReactionsForPost(reactions) {
         <div>There are no reactions</div>
          `;
     }
-
     for (let i = 0; i < reactions.length; i++) {
         reactionsHtml += `
-        <div>${reactions[i].body}</div>
+        <div>${reactions[i].symbol}</div>
         `;
     }
     return reactionsHtml;

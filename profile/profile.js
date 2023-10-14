@@ -25,6 +25,8 @@ async function getPosts() {
     let setImg = "";
 
     for (var i = 0; i < profilePosts.length; i++) {
+        let formattedDate = new Date(profilePosts[i].updated).toLocaleDateString();
+        let formattedTime = new Date(profilePosts[i].updated).toLocaleTimeString();
         if (isMediaValid(profilePosts[i].media)) {
             setImg = profilePosts[i].media;
         } else {
@@ -32,7 +34,7 @@ async function getPosts() {
         }
 
         containerHTMLCard.innerHTML += `
-        <div class="my-2 col col-lg-10">
+        <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
                 <h5 class="card-title" id="cardTitle">${profilePosts[i].title}</h5>
@@ -46,7 +48,7 @@ async function getPosts() {
                             <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Edit</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Delete</button>
                         </div>
-                        <small class="text-muted" id="cardUpdated">${profilePosts[i].updated}</small>
+                        <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                         
                     </div>
                 </div>

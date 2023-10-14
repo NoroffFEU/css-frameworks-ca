@@ -7,6 +7,8 @@ import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
 import renderTempPost from "./renderTempPost.js";
+import validateForm from "./formValidation.js";
+import validateSelect from "./formValidation.js";
 
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
@@ -56,6 +58,9 @@ searchInput.addEventListener("input", () => {
 });
 
 filterButton?.addEventListener("click", async () => {
+  if (!validateSelect(sortInput) || !validateSelect(searchInput)) {
+    return;
+  }
   console.log(endpoint.filterUrl.getCount());
   endpoint.filterUrl.resetCount();
   console.log(endpoint.filterUrl.getCount());
@@ -68,6 +73,10 @@ filterButton?.addEventListener("click", async () => {
   deletePost();
 });
 searchButton.addEventListener("click", async () => {
+  if (!validateSelect(sortInput)) {
+    return;
+  }
+
   const data: post[] = !searchInput.value
     ? await callApi(
         endpoint.sortAndPaginate.setString(

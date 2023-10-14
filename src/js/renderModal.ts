@@ -1,5 +1,19 @@
 import createElementFactory from "./createElementFactory.js";
 
+
+/**
+ * Renders a modal for editing posts.
+ *
+ * The modal provides a UI for users to edit their posts. It includes fields for the post's title,
+ * body content, media URL, and tags. If the modal with id "modalEdit" already exists, it won't 
+ * be recreated. If the modal fails to render (e.g., due to a rendering delay), it will attempt 
+ * to re-render up to 5 times, with a 5-second interval between attempts.
+ *
+ * @function
+ * @export
+ * @param {number} count - A counter to keep track of how many render attempts have been made.
+ * @returns {Promise<void>} A promise that resolves when the modal has successfully rendered.
+ */
 export default function renderModal(count: number) {
   if (count > 5) return;
   if (document.querySelector("#modalEdit")) {

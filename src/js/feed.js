@@ -17,6 +17,7 @@ import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
 import renderTempPost from "./renderTempPost.js";
 import validateSelect from "./formValidation.js";
+import observerTargetClosure from "./observerClosure.js";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
@@ -104,21 +105,6 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
         isObserving(true, intersectionObserver);
     }
 }));
-function observerTargetClosure() {
-    let target;
-    function setTarget() {
-        if (document.querySelectorAll("[data-observed]")) {
-            const observedObj = document.querySelectorAll("[data-observed]");
-            target = observedObj[observedObj.length - 1];
-            console.log(target);
-        }
-    }
-    function isObserving(bool, obs) {
-        console.log(target);
-        bool ? obs.observe(target) : obs.unobserve(target);
-    }
-    return [setTarget, isObserving];
-}
 const [setTarget, isObserving] = observerTargetClosure();
 function optionFactory(method, body) {
     const newObject = {

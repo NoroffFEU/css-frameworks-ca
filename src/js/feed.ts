@@ -7,9 +7,8 @@ import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
 import renderTempPost from "./renderTempPost.js";
-import validateForm from "./formValidation.js";
 import validateSelect from "./formValidation.js";
-
+import observerTargetClosure from "./observerClosure.js";
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
 );
@@ -133,22 +132,6 @@ searchButton.addEventListener("click", async () => {
   }
 });
 
-function observerTargetClosure() {
-  let target: Element;
-  function setTarget() {
-    if (document.querySelectorAll("[data-observed]")) {
-      const observedObj = document.querySelectorAll("[data-observed]");
-      target = observedObj[observedObj.length - 1];
-      console.log(target);
-    }
-  }
-  function isObserving(bool: boolean, obs) {
-    console.log(target);
-    bool ? obs.observe(target) : obs.unobserve(target);
-  }
-
-  return [setTarget, isObserving];
-}
 const [setTarget, isObserving] = observerTargetClosure();
 
 type htmlMethod = "POST" | "GET" | "PATCH" | "PUT" | "DELETE";
@@ -248,6 +231,33 @@ const intersectionObserver = new IntersectionObserver(
 
 type category = "title" | "updated" | "tags" | "body" | "author";
 
+
+/**
+ * Recursively searches a given array of posts to find a post matching a specific search word in a given category.
+ * If the post isn't found in the initial array, makes an API call to fetch more data and continues the search.
+ *
+ * @async
+ * @function
+ * @param {post[]} array - Array of posts to search in.
+ * @param {category} [category="body"] - Category of the post to match against (e.g. 'body', 'title', etc).
+ * @param {number} [count=0] - Counter to limit the recursive depth (stops after 20 recursions).
+ * @param {string|null} [searchWord=null] - The word to search for in the given category.
+ * 
+ * @returns {Promise<post|undefined>} A promise that resolves to a post object if a match is found, otherwise undefined.
+ *
+ * @example
+ * 
+ * const postsArray = [ ... ];  // Some array of posts.
+ * 
+ * // Search for a specific word in the 'body' category of the posts.
+ * const foundPost = await searchApi(postsArray, "body", 0, "exampleWord");
+ * 
+ * if (foundPost) {
+ *   console.log("Found post:", foundPost);
+ * } else {
+ *   console.log("Post not found.");
+ * }
+ */
 async function searchApi(
   array: post[],
   category: category = "body",

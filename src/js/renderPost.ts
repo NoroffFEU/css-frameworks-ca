@@ -1,5 +1,26 @@
 import createElementFactory from "./createElementFactory.js";
 
+
+
+/**
+ * Renders posts on the given DOM element.
+ *
+ * @function
+ * @export
+ * @param {HTMLDivElement} domEl - The target DOM element where the post should be rendered.
+ * @param {Object} post - The post data to be rendered.
+ * @param {string} post.id - The post's unique identifier.
+ * @param {string} post.title - The title of the post.
+ * @param {string} post.body - The content/body of the post.
+ * @param {string[]} post.tags - An array of tags associated with the post.
+ * @param {string} post.media - The media associated with the post (usually an image URL).
+ * @param {string} post.created - The creation date of the post.
+ * @param {string} post.updated - The last update date of the post.
+ * @param {Object} post._count - An object with count-related data.
+ * @param {Object} post.author - The author's data.
+ * @param {Object[]} post.comments - An array of comments on the post.
+ * @param {Object[]} post.reactions - An array of reactions (e.g., emojis) to the post.
+ */
 export default function renderPosts(
   domEl: HTMLDivElement,
   {
@@ -235,6 +256,19 @@ export default function renderPosts(
   }
 }
 
+
+/**
+ * Renders comments for a specific post.
+ *
+ * @function
+ * @export
+ * @param {HTMLDivElement} commentRow - The target DOM element where the comment should be rendered.
+ * @param {string} body - The body/content of the comment.
+ * @param {string} created - The creation date of the comment.
+ * @param {Object} author - The author's data of the comment.
+ * @param {string} author.name - The name of the author of the comment.
+ * @param {string} author.avatar - The avatar image URL of the author.
+ */
 export function renderComments(commentRow, body, created, { name, avatar }) {
   const commentFirstCol = createElementFactory(
     "div",

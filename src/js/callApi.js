@@ -7,6 +7,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+/**
+ * Makes an asynchronous API call and processes the response.
+ * Displays a spinner while the request is in progress.
+ *
+ * @function
+ * @async
+ * @param {string} endpoint - The URL endpoint to call.
+ * @param {Object} options - Configuration options for the fetch request.
+ * @returns {Promise<Array|Object>} A promise that resolves to the API response data.
+ *    If the data is an array and it has elements, it returns the array.
+ *    If the data is an object with a title property, it returns the object.
+ *    Otherwise, it logs a message and does not explicitly return anything.
+ *
+ * @example
+ *
+ * const data = await callApi('https://api.example.com/data', { method: 'GET' });
+ */
 export default function callApi(endpoint, options) {
     var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {

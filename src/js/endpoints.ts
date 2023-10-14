@@ -7,6 +7,18 @@ export const endpoints = {
   postsByOneUser: "/social/profiles/<name>/posts",
 };
 
+/**
+ * Generates dynamic API endpoints based on a provided user ID and offers several utility functions for API URL management.
+ *
+ * @function
+ * @param {string|null} userId - The user ID which will be used in constructing specific API endpoints.
+ * @returns {Object} - A collection of dynamically generated endpoints and utility methods for managing URLs.
+ *
+ * @example
+ *
+ * const apiUtils = endpointObject("12345");
+ * console.log(apiUtils.profileOneUser); // Outputs: "https://api.noroff.dev/api/v1/social/profiles/12345"
+ */
 export default function endpointObject(userId: string | null) {
   function closureCount() {
     let _count: number = -10;
@@ -44,14 +56,6 @@ export default function endpointObject(userId: string | null) {
       offset: number = 10,
       limit: number = 10
     ) {
-      /*if (limit) {
-        let urlWithLimit = new URL(newUrl);
-        let params = new URLSearchParams(urlWithLimit);
-        params.set("limit", limit.toString());
-        urlWithLimit.search = params.toString();
-        newUrl = urlWithLimit.toString();
-      }
-*/
       let urlObject = new URL(newUrl);
       let incrementedUrl = new URLSearchParams(urlObject.search);
       if (limit) {

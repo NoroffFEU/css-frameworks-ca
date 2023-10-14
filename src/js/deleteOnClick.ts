@@ -1,6 +1,27 @@
 import endpointObject from "./endpoints.js";
 import optionFactory from "./optionFactory.js";
 import callApi from "./callApi.js";
+
+/**
+ * Adds event listeners to buttons for deleting posts. When a button is clicked, the post is deleted
+ * from the backend and hidden from the UI.
+ *
+ * @function
+ *
+ * @remarks
+ * The function uses the 'currentUser' from the localStorage to create an endpoint object.
+ * It then sets up a DELETE request using the optionFactory and removes the post from the frontend by setting its display to 'none'.
+ *
+ * @requires module:endpoints.js
+ * @requires module:optionFactory.js
+ * @requires module:callApi.js
+ *
+ * @example
+ *
+ * // Assuming you have elements with the [data-delete-id] attribute in your HTML
+ * // Once this function is invoked, clicking on these elements will trigger the delete post functionality
+ * deletePost();
+ */
 export default function deletePost() {
   const endpoint = endpointObject(
     JSON.parse(localStorage.getItem("currentUser"))

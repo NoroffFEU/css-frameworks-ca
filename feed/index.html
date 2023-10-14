@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="feed page for socially post">
+    <title>Feed</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Socially</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/feed/index.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile/index.html">Profile</a>
+                    </li>
+                    <button id="signOutButton" class="btn btn-secondary">Sign Out</button>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div class="dropdown mb-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort By
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                <li><a class="dropdown-item" href="#" id="sortNewest">Newest</a></li>
+                <li><a class="dropdown-item" href="#" id="sortOldest">Oldest</a></li>
+            </ul>
+        </div>
+        <form class="mb-5" id="postForm">
+            <div class="mb-3">
+                <label for="postTitle" class="form-label">Post Title</label>
+                <input type="text" class="form-control" id="postTitle" required>
+            </div>
+            <div class="mb-3">
+                <label for="postContent" class="form-label">Post Content</label>
+                <textarea class="form-control" id="postContent" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Upload Image (optional)</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Post</button>
+            <div class="mb-3">
+                <label for="postTags" class="form-label">Tags</label>
+                <input type="text" class="form-control" id="postTags" placeholder="Enter tags separated by commas">
+            </div>   
+        </form>
+        <form class="d-flex" id="searchForm">
+            <select class="form-select me-2" id="tagFilter">
+                <option value="">All Tags</option>
+            </select>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchBar" name="searchQuery">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+        </form> 
+        <div class="spinner-border" role="status" id="loading" style="display: none;">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div id="postsContainer" class="posts-container"></div>
+        <button id="nextPage" class="btn btn-primary custom-btn">Next Page</button>
+        <button id="prevPage" class="btn btn-secondary custom-btn">Previous Page</button>
+    </div>
+    <footer class="text-center mt-5">
+        <p>&copy; 2023 Socially. All rights reserved.</p>
+    </footer>
+    <script src="/js/bootstrap.bundle.min.js" defer></script>
+    <script type="module" src="/js/postDetail.js" defer></script>
+    <script type="module" src="/js/uiService.js" defer></script>
+    <script type="module" src="/js/main.js" defer></script>
+</body>
+</html>

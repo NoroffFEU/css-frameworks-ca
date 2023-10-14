@@ -41,25 +41,13 @@ export default function renderPosts(
     "mb-2",
     "flex-column"
   );
-  const reactionContainer = createElementFactory("div", "", anker, {});
 
   const dateSpan = createElementFactory(
     "p",
     created.split("T")[0],
     anker,
     {},
-    "fs-6"
-  );
-
-  const image = createElementFactory(
-    "img",
-    "",
-    anker,
-    {
-      src: author.avatar ? author.avatar : "",
-    },
-    "rounded-3",
-    "max-width-85"
+    "size-7px"
   );
   const spanName = createElementFactory(
     "a",
@@ -69,15 +57,40 @@ export default function renderPosts(
     "text-primay",
     "fs-6"
   );
-  const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
-  const tagContainer = createElementFactory("div", "", divCol8, {});
 
-  const postLink = createElementFactory("a", "", divCol8, {
-    href: `/src/post/index.html?id=${id}`,
-  });
-  const header = createElementFactory("h2", title, postLink, {
-    id: `title${id}`,
-  });
+  const image = createElementFactory(
+    "img",
+    "",
+    anker,
+    {
+      src: author.avatar ? author.avatar : "/src/assets/placeholder.png",
+    },
+    "rounded-3",
+    "max-width-85"
+  );
+
+  const divCol8 = createElementFactory("div", "", row, {}, "col-lg-8");
+
+  const postLink = createElementFactory(
+    "a",
+    "",
+    divCol8,
+    {
+      href: `/src/post/index.html?id=${id}`,
+    },
+    "text-decoration-none",
+    "mt-3"
+  );
+  const header = createElementFactory(
+    "h2",
+    title,
+    postLink,
+    {
+      id: `title${id}`,
+    },
+    "fs-6",
+    "fw-bold"
+  );
 
   const paragraph = createElementFactory(
     "p",
@@ -87,7 +100,14 @@ export default function renderPosts(
     "card-text",
     "text-black"
   );
-
+  const tagContainer = createElementFactory(
+    "div",
+    "",
+    divCol8,
+    {},
+    "d-flex",
+    "flex-wrap"
+  );
   const deleteButton = createElementFactory(
     "button",
     "delete",
@@ -112,6 +132,8 @@ export default function renderPosts(
     ? createElementFactory("img", "", divCol8, { src: media }, "postImage")
     : "";
 
+  const reactionContainer = createElementFactory("div", "", divCol8, {});
+
   if (reactions[0]) {
     reactions.forEach((emoji) =>
       createElementFactory(
@@ -120,8 +142,8 @@ export default function renderPosts(
         reactionContainer,
         {},
         "badge",
-        "text-bg-primary",
-        "m-1"
+        "rounded-pill",
+        "text-bg-primary"
       )
     );
   }
@@ -148,7 +170,8 @@ export default function renderPosts(
       "data-id": id,
     },
     "btn",
-    "btn-outline-primary"
+    "btn-outline-primary",
+    "mt-2"
   );
 
   const commentContainer = createElementFactory(

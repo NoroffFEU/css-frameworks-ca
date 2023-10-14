@@ -1,13 +1,11 @@
+import bootstrap from 'bootstrap'
+
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const registerUrl = `${mainApiUrl}/social/auth/register`;
 const logInUrl = `${mainApiUrl}/social/auth/login`;
 const formReg = document.getElementById("formRegister");
 const formLogin = document.getElementById("formLogin");
 const getPostsUrl = `${mainApiUrl}/social/posts`;
-
-
-
-
 
 
 

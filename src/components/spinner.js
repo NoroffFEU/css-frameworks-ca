@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {string} parentNode 
+ */
 const spinner = (parentNode)=>{
     const spinnerContainer = document.createElement('div');
     spinnerContainer.classList.add('d-flex', 'justify-content-center');

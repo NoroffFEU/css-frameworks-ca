@@ -38,21 +38,8 @@ const main = ()=>{
         .then(response => {
             profileComponent('#profile-container', response)
             settingsComponent('#user-settings-image', response)
-            FollowCard('#following-container', response.following, ()=>{
-                return {
-                    type: ['bi', 'bi-person-dash', 'icon-medium'],
-
-                }
-            })
-            FollowCard('#followers-container', response.followers, ()=>{
-                return {
-                    type: ['bi', 'bi-person-dash', 'icon-medium'],
-                    event: (event)=>{
-                        console.log("click");
-                        console.log(event.target);
-                    }
-                }
-            })
+            FollowCard('#following-container', response.following)
+            FollowCard('#followers-container', response.followers)
         })
     APICLIENT.fetchProfilePosts(usernameQueryParam)
         .then(spinner('#profile_post-container'))

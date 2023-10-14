@@ -7,6 +7,12 @@ export default  class apiClient{
         this.GET_USERS_URL = '/api/v1/social/profiles',
         this.GET_POSTS = '/api/v1/social/posts'
     }
+
+    /**
+     * 
+     * @param {object} payload 
+     * @param {callback} callback 
+     */
     async registerUser(payload, callback){
         
         try{
@@ -33,7 +39,11 @@ export default  class apiClient{
             console.log(error)
         }
     };
-
+    /**
+     * 
+     * @param {object} payload 
+     * @param {callback} callback 
+     */
     async login(payload, callback){
         try{
             const postData = {
@@ -58,7 +68,11 @@ export default  class apiClient{
             console.log(error);
         }
     };
-
+    /**
+     * 
+     * @param {object} payload 
+     * @returns {Array}
+     */
     async fetchProfile(payload){
         try{
             const accessToken = localStorage.getItem('accessToken');
@@ -77,7 +91,11 @@ export default  class apiClient{
             console.log(error)
         }
     }
-
+    /**
+     * 
+     * @param {object} payload 
+     * @returns {Array}
+     */
     async fetchProfilePosts(payload){
         try{
             const accessToken = localStorage.getItem('accessToken');
@@ -96,7 +114,10 @@ export default  class apiClient{
             console.log(error)
         }
     }
-
+    /**
+     * 
+     * @returns {Array}
+     */
     async fetchPosts(){
         
         try{
@@ -121,6 +142,12 @@ export default  class apiClient{
 
     }
 
+    /**
+     * 
+     * @param {object} payload 
+     * @returns {Array}
+     */
+
     async newPost(payload){
         console.log(payload);
         try{
@@ -141,7 +168,11 @@ export default  class apiClient{
             console.log(error)
         }
     }
-
+    /**
+     * 
+     * @param {string} appliedFilter 
+     * @returns {Array}
+     */
     async sortPosts(appliedFilter){
         try{
             const accessToken = localStorage.getItem('accessToken');
@@ -164,7 +195,11 @@ export default  class apiClient{
         }
 
     }
-
+    /**
+     * 
+     * @param {string} username 
+     * @returns {Array}
+     */
     async followUser(username){
         try{
             const accessToken = localStorage.getItem('accessToken');
@@ -185,7 +220,11 @@ export default  class apiClient{
             console.log(error)
         }
     }
-
+    /**
+     * 
+     * @param {string} username 
+     * @returns {Array}
+     */
     async unFollowUser(username){
         try{
             const accessToken = localStorage.getItem('accessToken');
@@ -206,6 +245,13 @@ export default  class apiClient{
             console.log(error)
         }
     }
+
+    /**
+     * 
+     * @param {number} id 
+     * @param {object} payload 
+     * @returns {Array}
+     */
 
     async editPost(id, payload){
         
@@ -229,6 +275,11 @@ export default  class apiClient{
         }
     }
 
+    /**
+     * 
+     * @param {number} id 
+     * @returns {Array}
+     */
     async deletePost(id){
         try{
             const accessToken = localStorage.getItem("accessToken")
@@ -247,6 +298,13 @@ export default  class apiClient{
             console.log(error)
         }
     }
+
+    /**
+     * 
+     * @param {Number} id 
+     * @param {Object} payload 
+     * @returns {Array}
+     */
 
     async postComment(id, payload){
         try{
@@ -268,6 +326,12 @@ export default  class apiClient{
         }
     }
 
+    /**
+     * 
+     * @param {Number} id 
+     * @returns {Array}
+     */
+
     async likeComment(id){
         try{
             const accessToken = localStorage.getItem("accessToken")
@@ -285,6 +349,12 @@ export default  class apiClient{
         }
     }
 
+    /**
+     * 
+     * @param {String} name 
+     * @param {Object} payload 
+     * @returns {Array}
+     */
     async updateAvatar(name, payload){
         try{
             const accessToken = localStorage.getItem("accessToken")

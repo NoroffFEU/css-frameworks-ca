@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {String} dateString 
+ * @returns {String}
+ */
+
 const convertDate = (dateString)=>{
     const options = {
         year: "numeric",

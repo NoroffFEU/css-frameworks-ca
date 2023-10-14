@@ -1,3 +1,7 @@
+/**
+ * @param {string} selector - HTML element, ie id, class name or HTML element.
+ */
+
 export default class Navbar{
     constructor(selector){
         this.navbar = document.querySelector(selector)

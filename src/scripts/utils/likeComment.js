@@ -1,5 +1,8 @@
 import apiClient from "../services/noroffAPI.js";
-
+/**
+ * 
+ * @param {Number} postID 
+ */
 const likeComment = (postID)=>{
     const APICLIENT = new apiClient()
     APICLIENT.likeComment(postID)

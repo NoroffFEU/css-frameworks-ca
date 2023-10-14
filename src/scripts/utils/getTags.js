@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {Array} tags 
+ */
 const getTags = (tags)=>{
     const counter = {
     }

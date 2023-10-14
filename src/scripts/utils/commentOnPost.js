@@ -1,5 +1,9 @@
 import apiClient from "../services/noroffAPI.js";
-
+/**
+ * 
+ * @param {string} input 
+ * @param {Number} postID 
+ */
 const commentOnPost = (input, postID)=>{
     const APICLIENT = new apiClient()
     console.log(input, postID)

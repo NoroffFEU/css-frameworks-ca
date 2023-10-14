@@ -7,11 +7,22 @@ import commentOnPost from "../scripts/utils/commentOnPost.js";
 import likeComment from "../scripts/utils/likeComment.js";
 
 export default class PostsComponent{
+    /**
+     * 
+     * @returns HTML component
+     */
     postCard(){
         const card = document.createElement('div');
         card.classList.add('post', 'mb-4');
         return card;
     }
+
+    /**
+     * 
+     * @param {string} author 
+     * @param {number} postID 
+     * @returns null || HTML component
+     */
 
     postHeader(author, postID){
         const {name, avatar} = author;
@@ -36,6 +47,12 @@ export default class PostsComponent{
         name === user && header.append(this.postOptions(postID))
         return header;
     }
+
+    /**
+     * 
+     * @param {number} postID 
+     * @returns HTML component
+     */
 
     postOptions(postID){
         
@@ -81,6 +98,12 @@ export default class PostsComponent{
         return dropDown;
     }
 
+    /**
+     * 
+     * @param {string} src 
+     * @returns HTML component
+     */
+
     postProfileImage(src){
         const circle = document.createElement('div');
         circle.classList.add('postCard-image');
@@ -91,6 +114,12 @@ export default class PostsComponent{
         return circle;
     }
 
+    /**
+     * 
+     * @param {string} name 
+     * @returns HTML component
+     */
+
     postProfileDefaultImage(name){
         const circle = document.createElement('div');
         circle.classList.add('circle');
@@ -100,6 +129,16 @@ export default class PostsComponent{
         circle.append(profileDefaultImage)
         return circle;
     }
+
+    /**
+     * 
+     * @param {string} content 
+     * @param {Array} tags 
+     * @param {string} media 
+     * @param {number} date 
+     * @param {number} postID 
+     * @returns HTML component
+     */
 
     postBody(content, tags, media, date, postID){
         const body = document.createElement('div');
@@ -119,6 +158,12 @@ export default class PostsComponent{
         return body;
     }
 
+    /**
+     * 
+     * @param {string} src 
+     * @returns HTML component
+     */
+
     postMedia(src){
         const image = document.createElement('img');
         image.classList.add('card-img-top', 'img-thumbnail', 'post-image', 'mb-3');
@@ -127,6 +172,12 @@ export default class PostsComponent{
         image.addEventListener('click', ()=>console.log(src))
         return image;
     }
+
+    /**
+     * 
+     * @param {Array} tags 
+     * @returns HTML component
+     */
 
     postTags(tags){
         const tagsContainer = document.createElement('div');
@@ -142,6 +193,14 @@ export default class PostsComponent{
         })
         return tagsContainer;
     }
+
+    /**
+     * 
+     * @param {number} postID 
+     * @param {object} _count 
+     * @param {number} comments 
+     * @returns HTML component
+     */
 
     postFooter(postID, _count, comments){
         const {comments: commentCount, reactions: reactionCount} = _count;
@@ -182,6 +241,12 @@ export default class PostsComponent{
         
     }
 
+    /**
+     * 
+     * @param {number} postID 
+     * @returns HTML component
+     */
+
     commentForm(postID){
         const form = document.createElement('form');
         form.classList.add('w-100', 'mb-4', 'pb-4', 'border-bottom');
@@ -219,6 +284,12 @@ export default class PostsComponent{
         return form;
     }
 
+    /**
+     * 
+     * @param {Array} comments 
+     * @returns HTML component
+     */
+
     postComments(comments){
         const commentsContainer = document.createElement('div');
         comments.forEach(comment => {
@@ -251,7 +322,11 @@ export default class PostsComponent{
     }
 
 
-
+    /**
+     * 
+     * @param {string} selector 
+     * @param {Array} data 
+     */
 
     renderPosts(selector, data){
         const parentNode = document.querySelector(selector);

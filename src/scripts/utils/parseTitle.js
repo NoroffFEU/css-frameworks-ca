@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {String} messageString 
+ * @returns {String}
+ */
 const parseTitle = (messageString)=>{
     const string = messageString.split(' ')[0]
     if(string.startsWith('!')){

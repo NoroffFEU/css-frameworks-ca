@@ -1,5 +1,9 @@
 import apiClient from "../services/noroffAPI.js";
 
+/**
+ * 
+ * @param {Number} id 
+ */
 const deletePost = (id)=>{
     const fetchAPI = new apiClient()
     fetchAPI.deletePost(id)

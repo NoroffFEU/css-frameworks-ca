@@ -1,5 +1,9 @@
 import ImagePlaceholder from "./ImagePlaceholder.js";
-
+/**
+ * 
+ * @param {string} selector 
+ * @param {object} userData 
+ */
 const profileComponent = (selector, userData)=>{
     const {avatar: image, name, _count:{posts,following: followingCount, followers: followersCount}} = userData
     const parentNode = document.querySelector(selector);

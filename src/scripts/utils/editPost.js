@@ -1,5 +1,8 @@
 import apiClient from "../services/noroffAPI.js";
-
+/**
+ * 
+ * @param {Event} e 
+ */
 const editPost = (e)=>{
     const fetchAPI = new apiClient()
     console.log(e.target.closest('.post').querySelector('.post-content'));

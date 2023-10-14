@@ -1,6 +1,10 @@
 import apiClient from "../scripts/services/noroffAPI.js";
 import ImagePlaceholder from "./ImagePlaceholder.js";
-
+/**
+ * 
+ * @param {string} selector 
+ * @param {object} data 
+ */
 const settingsComponent = (selector, data)=>{
     const imageContainer = document.querySelector(selector);
     const avatarInput = document.querySelector('#avatar-input');
@@ -33,6 +37,8 @@ const settingsComponent = (selector, data)=>{
             .then(res => {
                 if(res.statusCode === 400){
                     alert("Invalid image URL, user avatar cannot be updated.")
+                } else {
+                    window.location.reload()
                 }
             })
     })

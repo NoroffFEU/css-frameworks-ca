@@ -1,6 +1,13 @@
 import ImagePlaceholder from "./ImagePlaceholder.js";
 
-const FollowCard = (selector, data, callback)=>{
+/**
+ * 
+ * @param {string} selector HTML element, ie id, class name or HTML element
+ * @param {array} data 
+ * @returns HTML component
+ */
+
+const FollowCard = (selector, data)=>{
 
     if(data.length === 0){
         return
@@ -31,9 +38,6 @@ const FollowCard = (selector, data, callback)=>{
         contactDetails.append(profileUsername);
 
         // CREATES ICON BASED ON CALLBACK FUNCTION
-        const {type} = callback();
-        const icon = document.createElement('i');
-        type.forEach(item => icon.classList.add(item));
 
         card.append(contactDetails);
         card.addEventListener("click", ()=>{

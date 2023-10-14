@@ -169,7 +169,6 @@ export default class PostsComponent{
         image.classList.add('card-img-top', 'img-thumbnail', 'post-image', 'mb-3');
         image.src = src;
         image.alt = 'Post Image';
-        image.addEventListener('click', ()=>console.log(src))
         return image;
     }
 

@@ -6,7 +6,7 @@ const searchButton = document.getElementById("search-button");
 
 let data = [];
 
-async function getPosts(url) {
+export async function getPosts(url) {
     try {
         const token = localStorage.getItem('accessToken');
 

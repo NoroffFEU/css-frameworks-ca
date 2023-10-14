@@ -187,7 +187,6 @@ async function editedPostToApiFunksjon(url, post) {
 
 function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
-    debugger;
     commentBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
@@ -198,7 +197,6 @@ function showComments() {
 // show reactions
 function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
-
     reactionsBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";

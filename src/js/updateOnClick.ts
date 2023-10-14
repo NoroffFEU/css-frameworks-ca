@@ -110,9 +110,11 @@ export default async function updatePost(parentHtml) {
     })
   );
 
-  document.querySelector("#close-modal")?.addEventListener("click", () => {
-    document.querySelector("#modalEdit").style.display = "none";
-  });
+  document
+    .querySelector("#close-modal--edit")
+    ?.addEventListener("click", () => {
+      document.querySelector("#modalEdit").style.display = "none";
+    });
 
   const postButton = document.querySelector("#modal-post-button");
   postButton?.addEventListener("click", async () => {

@@ -93,7 +93,8 @@ export default function updatePost(parentHtml) {
             getPostText(id);
             showModal();
         }));
-        (_a = document.querySelector("#close-modal")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
+        (_a = document
+            .querySelector("#close-modal--edit")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
             document.querySelector("#modalEdit").style.display = "none";
         });
         const postButton = document.querySelector("#modal-post-button");

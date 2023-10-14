@@ -11880,6 +11880,10 @@ textarea.form-control-lg {
   font-size: 12px;
 }
 
+.h-vh-90 {
+  height: 90vh;
+}
+
 .h-px--150 {
   height: 150px;
 }

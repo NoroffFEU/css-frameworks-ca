@@ -1,3 +1,7 @@
+import * as listeners from "./handlers/index.js";
+import * as templates from "./templates/index.js";
+import * as postMethods from "./api/posts/index.js";
+
 // import * as constants from "./api/constants.js";
 
 // // console.log(constants.API_HOST_URL);
@@ -7,10 +11,11 @@
 
 // console.log("heipådeg");
 
-import { setRegisterFormListener } from "./handlers/register.js";
-import { setLoginFormListener } from "./handlers/login.js";
-import * as templates from "./templates/index.js";
-import * as postMethods from "./api/posts/index.js";
+// import { setRegisterFormListener } from "./handlers/register.js";
+// import { setLoginFormListener } from "./handlers/login.js";
+
+// import { setCreatePostListener } from "./handlers/createPost.js";
+// import { setUpdatePostListener } from "./handlers/updatePost.js";
 // import { renderPostTemplate } from "./templates/index.js";
 
 // import * as posts from "./api/posts/index.js";
@@ -18,21 +23,25 @@ import * as postMethods from "./api/posts/index.js";
 const path = location.pathname;
 
 if (path === "/") {
-    setLoginFormListener();
+    listeners.setLoginFormListener();
 } else if (path === "/profile/register/") {
-    setRegisterFormListener();
+    listeners.setRegisterFormListener();
+} else if (path === "/post/create") {
+    listeners.setCreatePostListener();
+} else if (path === "/post/edit/") {
+    listeners.setUpdatePostListener;
 }
 
-// Testing templates post
-async function renderPosts() {
-    const posts = await postMethods.getPosts();
-    console.log(posts);
-    // const post = posts[24];
-    const container = document.querySelector("#postList");
-    templates.renderPostTemplates(posts, container);
-}
+// // Testing templates post
+// async function renderPosts() {
+//     const posts = await postMethods.getPosts();
+//     console.log(posts);
+//     // const post = posts[24];
+//     const container = document.querySelector("#postList");
+//     templates.renderPostTemplates(posts, container);
+// }
 
-renderPosts();
+// renderPosts();
 
 // async function testTemplate() {
 //     const posts = await postMethods.getPosts();
@@ -44,12 +53,19 @@ renderPosts();
 
 // testTemplate();
 
-// post.createPost();
+// postMethods.createPost();
 // post.updatePost();
 // post.removePost();
-// post.getPost();
-// post.getPosts().then(console.log);
-// post.getPost(3725).then(console.log);
+// postMethods.getPost();
+// postMethods.getPosts().then(console.log);
+// postMethods.getPost(3725).then(console.log);
+
+// postMethods.createPost({
+//     title: "Create post title",
+//     body: "CreatePost body",
+//     tags: "ThisIsATag",
+//     },
+// });
 
 // updatePost({
 //     id: 3719,

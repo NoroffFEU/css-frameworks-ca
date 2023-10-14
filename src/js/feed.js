@@ -16,6 +16,7 @@ import deletePost from "./deleteOnClick.js";
 import updatePost from "./updateOnClick.js";
 import reactToPostTwo from "./reactToPost.js";
 import renderTempPost from "./renderTempPost.js";
+import validateSelect from "./formValidation.js";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 const sortInput = document.querySelector("#sort--feed");
 const sortOrder = document.querySelector("#sort--order");
@@ -46,6 +47,9 @@ searchInput.addEventListener("input", () => {
     endpoint.sortAndPaginate.setSearch(searchInput.value);
 });
 filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+    if (!validateSelect(sortInput) || !validateSelect(searchInput)) {
+        return;
+    }
     console.log(endpoint.filterUrl.getCount());
     endpoint.filterUrl.resetCount();
     console.log(endpoint.filterUrl.getCount());
@@ -58,6 +62,9 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     deletePost();
 }));
 searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
+    if (!validateSelect(sortInput)) {
+        return;
+    }
     const data = !searchInput.value
         ? yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption)
         : yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value), 100, 100), postOption);

@@ -104,7 +104,7 @@
                 class="form-select w-25 mb-2"
                 name="sort--feed"
                 id="sort--feed">
-                <option selected value="updated">sort by</option>
+                <option selected value="">sort by</option>
                 <option value="author">user</option>
                 <option value="created">date</option>
                 <option value="title">title</option>
@@ -183,7 +183,12 @@
                 type="text" />
               <label for="tags--feed">tags seperated by #</label>
             </div>
-            <button id="post--button" type="button" class="btn btn-secondary">
+            <button
+              id="post--button"
+              type="button"
+              data-bs-dismiss="offcanvas"
+              data-bs-target="#offcanvas--new-post"
+              class="btn btn-secondary">
               Post
             </button>
           </form>

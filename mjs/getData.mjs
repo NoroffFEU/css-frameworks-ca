@@ -11,7 +11,6 @@ export async function getData(url) {
             },
         };
         const response = await fetch(url, getData);
-        console.log(response);
         const json = await response.json();
         return json;
     } catch (error) {

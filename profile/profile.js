@@ -131,7 +131,8 @@ async function deletePost(id) {
 }
 
 
-/**This function edits the post
+/**
+ * This function shows the modal and fills the modal post with post's details
  * 
  * @param {number} id 
  */
@@ -155,9 +156,9 @@ function editPost(id) {
 document.getElementById("editPostBtn").addEventListener("click", async (event) => {
     event.preventDefault();
 
-    const titlePost = formPost.elements[0];
-    const messagePost = formPost.elements[1];
-    const mediaPost = formPost.elements[2];
+    const titlePost = formEditPost.elements[0];
+    const messagePost = formEditPost.elements[1];
+    const mediaPost = formEditPost.elements[2];
 
     const userTitlePost = titlePost.value;
     const userMessagePost = messagePost.value;
@@ -203,7 +204,7 @@ async function editedPostToApiFunksjon(url, post) {
             },
             body: JSON.stringify(post),
         };
-        const response = await fetch(url, postData);
+        let response = await fetch(url, postData);
         await response.json();
     } catch (error) {
         console.log(error)

@@ -48,7 +48,7 @@ function isMediaValid(media) {
     if (media === null || media === "") {
         return false;
     }
-    return (media.includes(".jpg") || media.includes(".jpeg") || media.includes(".png"));
+    return (media.toLowerCase().includes(".jpg") || media.toLowerCase().includes(".jpeg") || media.toLowerCase().includes(".png"));
 }
 
 /** This functions checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments

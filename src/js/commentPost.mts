@@ -1,6 +1,6 @@
-import callApi from "./callApi.js";
-import endpointObject from "./endpoints.js";
-import optionFactory from "./optionFactory.js";
+import callApi from "./callApi.mjs";
+import endpointObject from "./endpoints.mjs";
+import optionFactory from "./optionFactory.mjs";
 const endpoint = endpointObject("Jarle");
 
 /**

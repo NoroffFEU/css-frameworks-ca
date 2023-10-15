@@ -1,6 +1,6 @@
-import endpointObject from "./endpoints.js";
-import optionFactory from "./optionFactory.js";
-import callApi from "./callApi.js";
+import endpointObject from "./endpoints.mjs";
+import optionFactory from "./optionFactory.mjs";
+import callApi from "./callApi.mjs";
 /**
  * Adds event listeners to buttons for deleting posts. When a button is clicked, the post is deleted
  * from the backend and hidden from the UI.

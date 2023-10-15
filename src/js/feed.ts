@@ -1,15 +1,15 @@
-import endpointObject from "./endpoints.js";
-import callApi from "./callApi.js";
-import renderPosts, { renderComments } from "./renderPost.js";
-import filterPosts from "./filter.js";
-import commentButton from "./commentOnClick.js";
-import deletePost from "./deleteOnClick.js";
-import updatePost from "./updateOnClick.js";
-import reactToPostTwo from "./reactToPost.js";
-import renderTempPost from "./renderTempPost.js";
-import validateSelect from "./formValidation.js";
-import observerTargetClosure from "./observerClosure.js";
-import clearForm from "./clearForm.js";
+import endpointObject from "./endpoints.mjs";
+import callApi from "./callApi.mjs";
+import renderPosts, { renderComments } from "./renderPost.mjs";
+import filterPosts from "./filter.mjs";
+import commentButton from "./commentOnClick.mjs";
+import deletePost from "./deleteOnClick.mjs";
+import updatePost from "./updateOnClick.mjs";
+import reactToPostTwo from "./reactToPost.mjs";
+import renderTempPost from "./renderTempPost.mjs";
+import validateSelect from "./formValidation.mjs";
+import observerTargetClosure from "./observerClosure.mjs";
+import clearForm from "./clearForm.mjs";
 const endpoint = endpointObject(
   JSON.parse(localStorage.getItem("currentUser"))
 );

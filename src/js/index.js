@@ -1,58 +1,42 @@
 import * as listeners from "./handlers/index.js";
-import * as templates from "./templates/index.js";
-import * as postMethods from "./api/posts/index.js";
-//
-// import * as posts from "./api/posts/index.js";
+// import * as templates from "./templates/index.js";
+// import * as postMethods from "./api/posts/index.js";
 
-// import * as constants from "./api/constants.js";
-
-// // console.log(constants.API_HOST_URL);
-// // console.log(constants.API_BASE);
-// // console.log(constants.API_SOCIAL_BASE);
-// console.log(constants.API_SOCIAL_URL);
-
-// console.log("heipådeg");
-
-// import { setRegisterFormListener } from "./handlers/register.js";
-// import { setLoginFormListener } from "./handlers/login.js";
-
-// import { setCreatePostListener } from "./handlers/createPost.js";
-// import { setUpdatePostListener } from "./handlers/updatePost.js";
-// import { renderPostTemplate } from "./templates/index.js";
-
+//-------------------------------------------------------
+// Routing behaviour to make sure the wrong scripts are not running
 const path = location.pathname;
 
 if (path === "/") {
     listeners.setLoginFormListener();
 } else if (path === "/profile/register/") {
     listeners.setRegisterFormListener();
-} else if (path === "/post/create") {
-    listeners.setCreatePostListener();
-} else if (path === "/post/edit/") {
-    listeners.setUpdatePostListener;
 }
+// } else if (path === "/post/create") {
+//     listeners.setCreatePostListener();
+// } else if (path === "/post/edit/") {
+//     listeners.setUpdatePostListener;
+// }
 
 //--------------------------------------------------------------
 // Testing templates for rendering/showing POST and POSTS
-async function renderPosts() {
-    const posts = await postMethods.getPosts();
-    console.log(posts);
-    const post = posts[24];
-    const container = document.querySelector("#postList");
-    templates.renderPostTemplates(posts, container);
-}
-
-renderPosts();
-
 // async function renderPost() {
 //     const posts = await postMethods.getPosts();
 //     console.log(posts);
 //     const post = posts[14];
-//     const container = document.querySelector("#post");
+//     const container = document.querySelector("#postContainer");
 //     templates.renderPostTemplate(post, container);
 // }
 
 // renderPost();
+
+// async function renderPosts() {
+//     const posts = await postMethods.getPosts();
+//     console.log(posts);
+//     const container = document.querySelector("#postList");
+//     templates.renderPostTemplates(posts, container);
+// }
+
+// renderPosts();
 
 //--------------------------------------------------------------------------
 

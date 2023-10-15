@@ -9,6 +9,7 @@ export function setRegisterFormListener() {
     // const password = document.querySelector("input[name=password]");
 
     if (form) {
+        //this says: do not proceed if there is no form/proceed if there is a form. If it fails to find the registerform it won't do anything
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             const form = event.target;

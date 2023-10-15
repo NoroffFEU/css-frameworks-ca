@@ -1,6 +1,6 @@
 import * as listeners from "./handlers/index.js";
 // import * as templates from "./templates/index.js";
-// import * as postMethods from "./api/posts/index.js";
+import * as postMethods from "./api/posts/index.js";
 
 //-------------------------------------------------------
 // Routing behaviour to make sure the wrong scripts are not running
@@ -28,14 +28,12 @@ if (path === "/") {
 // }
 
 // renderPost();
-
 // async function renderPosts() {
 //     const posts = await postMethods.getPosts();
 //     console.log(posts);
-//     const container = document.querySelector("#postList");
-//     templates.renderPostTemplates(posts, container);
+// const container = document.querySelector("#postList");
+// templates.renderPostTemplates(posts, container);
 // }
-
 // renderPosts();
 
 //--------------------------------------------------------------------------

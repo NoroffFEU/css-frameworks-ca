@@ -277,7 +277,9 @@ function showDelete() {
 // This event listener sends search value from search field when Enter is pressed to a function that will check it
 const searchField = document.getElementById("searchInput");
 searchField.addEventListener("keydown", (event) => {
+
     if (event.key === "Enter") {
+
         const result = searchElement(profilePosts, searchField.value);
         renderPage(result);
     }

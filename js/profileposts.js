@@ -113,23 +113,24 @@ async function gatherUserPosts(url) {
       iconContainer.classList.add(
         "icon-container",
         "d-flex",
-        "justify-content-evenly",
+        "flex-wrap",
+        "justify-content-around",
         "align-items-center",
-        "flex-shrink",
+        // "flex-shrink",
         "mb-1"
       );
 
       const comments = document.createElement("p");
       comments.classList.add("ms-5", "text-secondary", "margin-unset");
       comments.textContent = "Comments:  " + post.comments.length;
-      comments.style.fontSize = "20px";
+      comments.style.fontSize = "18px";
 
       const heartIcon = document.createElement("i");
       heartIcon.classList.add("fa-regular", "fa-heart");
       heartIcon.textContent = " " + post.reactions.length;
       const UniqueHeartIconId = "likeHeart_" + post.id;
       heartIcon.setAttribute("id", UniqueHeartIconId);
-      heartIcon.style.fontSize = "20px";
+      heartIcon.style.fontSize = "18px";
       heartIcon.style.color = "black";
 
       const openModal = document.createElement("button");

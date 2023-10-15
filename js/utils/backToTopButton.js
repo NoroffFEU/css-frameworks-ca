@@ -19,5 +19,6 @@ function toggleTopButton() {
 function clearLocalStorage() {
   localStorage.removeItem("userName");
   localStorage.removeItem("accessToken");
+  localStorage.removeItem("userEmail");
 }
 document.getElementById("logOut").addEventListener("click", clearLocalStorage);

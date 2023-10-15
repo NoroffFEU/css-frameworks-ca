@@ -1,5 +1,5 @@
 import { getData } from "../mjs/getData.mjs";
-import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
+import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost, searchElement } from "../mjs/helpers.mjs";
 
 const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";

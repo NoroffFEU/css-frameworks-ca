@@ -92,5 +92,19 @@ function processReactionsForPost(reactions) {
     return reactionsHtml;
 }
 
+// /** 
+//  * This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
+//  * @param {array} postsArray 
+//  * @param {string} searchText 
+//  * @returns {array} returns array that includes posts with searched word in their title or body(message)
+//  */
+// function searchElement(postsArray, searchText) {
+//     return postsArray.filter((post) =>
+//         post.title.includes(searchText) || post.body.includes(searchText)
+//     );
+// }
+
+
+
 
 export { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost };

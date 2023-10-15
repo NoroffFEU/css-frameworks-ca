@@ -22,7 +22,7 @@ window.onload = fetchPostsFromApi();
 document.getElementById("homeBtn").addEventListener("click", () => {
     isShowingTodaysPosts = false;
     searchField.value = "";
-    showPosts(feedPosts);
+    renderPage(feedPosts);
 });
 
 
@@ -31,21 +31,29 @@ const searchField = document.getElementById("searchInput");
 searchField.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         const result = searchElement(feedPosts, searchField.value);
-        showPosts(result);
+        renderPage(result);
     }
 });
 
-/** This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
- * 
+/** 
+ * This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
  * @param {array} postsArray 
  * @param {string} searchText 
  * @returns {array} returns array that includes posts with searched word in their title or body(message)
  */
 function searchElement(postsArray, searchText) {
-    return postsArray.filter((post) =>
+    const test = postsArray.filter((post) =>
         post.title.includes(searchText) || post.body.includes(searchText)
     );
+    return test;
 }
+
+function renderPage(posts) {
+    showPosts(posts);
+    showComments();
+    showReactions();
+}
+
 
 
 // This event listener checks and change the format of date and time of posts and starts function that shows only today's posts
@@ -61,10 +69,10 @@ todaysPostsBtn.addEventListener("click", function () {
                 return false;
             }
         });
-        showPosts(todaysPosts);
+        renderPage(todaysPosts);
         isShowingTodaysPosts = true;
     } else {
-        showPosts(feedPosts);
+        renderPage(feedPosts);
         isShowingTodaysPosts = false;
     }
 });
@@ -76,7 +84,7 @@ var containerHTMLCard = document.getElementById("singleCard");
 */
 async function fetchPostsFromApi() {
     feedPosts = await getData(`${postsUrl}?${queryString}`);
-    showPosts(feedPosts);
+    renderPage(feedPosts);
 }
 
 
@@ -123,8 +131,8 @@ function showPosts(posts) {
         </div>        
         `;
     }
-    showComments();
-    showReactions();
+    // showComments();
+    // showReactions();
 }
 
 

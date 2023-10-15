@@ -23,7 +23,6 @@ export default function endpointObject(userId: string | null) {
   function closureCount() {
     let _count: number = -10;
     const increment: Function = () => {
-      console.log(_count + 10);
       return (_count += 10);
     };
 
@@ -63,7 +62,6 @@ export default function endpointObject(userId: string | null) {
         urlObject.search = incrementedUrl.toString();
         newUrl = urlObject.toString();
       }
-      console.log(newUrl + count, "___", url);
       if (newUrl + count === url) {
         count += offset;
         incrementedUrl.set("offset", count.toString());
@@ -72,7 +70,6 @@ export default function endpointObject(userId: string | null) {
       } else {
         count = 0;
         url = newUrl + count;
-        console.log("elseRoute");
       }
       return url;
     }

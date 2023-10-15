@@ -52,9 +52,7 @@ filterButton === null || filterButton === void 0 ? void 0 : filterButton.addEven
     if (!validateSelect(sortInput) || !validateSelect(searchInput)) {
         return;
     }
-    console.log(endpoint.filterUrl.getCount());
     endpoint.filterUrl.resetCount();
-    console.log(endpoint.filterUrl.getCount());
     postContainer.innerHTML = "";
     const allPosts = yield filterPosts(searchInput.value, sortInput.value);
     allPosts.forEach((post) => renderPosts(postContainer, post));
@@ -70,13 +68,11 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
     const data = !searchInput.value
         ? yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value)), postOption)
         : yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value), 100, 100), postOption);
-    console.log(data, searchInput.value);
     if (endpoint.sortAndPaginate.getCount() == 0) {
         postContainer.innerHTML = "";
     }
     if (searchInput.value) {
         let foundItem = yield searchApi(data, sortInput.value, 0, searchInput.value);
-        console.log(foundItem ? "true" : "false");
         if (foundItem) {
             renderPosts(postContainer, foundItem);
             updatePost(postContainer);
@@ -94,14 +90,12 @@ searchButton.addEventListener("click", () => __awaiter(void 0, void 0, void 0, f
     }
     else {
         data.forEach((element) => renderPosts(postContainer, element));
-        console.log("else route");
         reactToPostTwo();
         commentButton();
         deletePost();
         updatePost(postContainer);
         const observedObj = document.querySelectorAll("[data-observed]");
         const target = observedObj[observedObj.length - 1];
-        console.log(observedObj, target);
         setTarget();
         isObserving(true, intersectionObserver);
     }
@@ -121,7 +115,6 @@ function optionFactory(method, body) {
     return newObject;
 }
 const postOption = optionFactory("GET", {});
-console.log(postOption);
 const messageObject = {
     title: "",
     body: "",
@@ -196,14 +189,12 @@ function searchApi(array, category = "body", count = 0, searchWord = null) {
         }
         let foundWord;
         if ((_b = (_a = array[0]) === null || _a === void 0 ? void 0 : _a[category]) === null || _b === void 0 ? void 0 : _b.name) {
-            console.log("author");
             foundWord = array.find((post) => post[category].name.toLowerCase() === searchWord.toLowerCase());
         }
         else if (Array.isArray((_c = array[0]) === null || _c === void 0 ? void 0 : _c[category])) {
             foundWord = array.find((post) => post.tags.some((element) => element.toLowerCase() === searchWord.toLowerCase()));
         }
         else {
-            console.log("conventional route");
             foundWord = array.find((post) => { var _a; return ((_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === (searchWord === null || searchWord === void 0 ? void 0 : searchWord.toLowerCase()); });
         }
         if (foundWord) {
@@ -212,7 +203,6 @@ function searchApi(array, category = "body", count = 0, searchWord = null) {
         else {
             try {
                 const data = yield callApi(endpoint.sortAndPaginate.setString(endpoint.generatePaginate(sortInput.value, sortOrder.value), 100, 100), postOption);
-                console.log(endpoint.sortAndPaginate.getString(), endpoint.sortAndPaginate.getCount());
                 if (data && data.length > 1) {
                     return searchApi(data, category, count + 1, searchWord);
                 }
@@ -237,7 +227,6 @@ function searchApi(array, category = "body", count = 0, searchWord = null) {
     updatePost(postContainer);
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
-    console.log(observedObj, target);
     setTarget();
     isObserving(true, intersectionObserver);
 }))();

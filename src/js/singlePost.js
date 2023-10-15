@@ -21,7 +21,6 @@ const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")))
 const getId = optionFactory("GET", {}, endpoint);
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield callApi(endpoint.getId(id), getId);
-    console.log("data:", data);
     renderPosts(document.querySelector("#postContainer"), data);
     commentButton();
     deletePost();

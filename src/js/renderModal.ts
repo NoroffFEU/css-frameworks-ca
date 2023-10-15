@@ -1,12 +1,11 @@
 import createElementFactory from "./createElementFactory.js";
 
-
 /**
  * Renders a modal for editing posts.
  *
  * The modal provides a UI for users to edit their posts. It includes fields for the post's title,
- * body content, media URL, and tags. If the modal with id "modalEdit" already exists, it won't 
- * be recreated. If the modal fails to render (e.g., due to a rendering delay), it will attempt 
+ * body content, media URL, and tags. If the modal with id "modalEdit" already exists, it won't
+ * be recreated. If the modal fails to render (e.g., due to a rendering delay), it will attempt
  * to re-render up to 5 times, with a 5-second interval between attempts.
  *
  * @function

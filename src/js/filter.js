@@ -36,13 +36,10 @@ const getOption = optionFactory("GET", {}, endpoint);
 export default function filterPosts(searchword, category) {
     return __awaiter(this, void 0, void 0, function* () {
         endpoint.filterUrl.resetCount();
-        console.log(searchword, category);
         const data = yield callApi(endpoint.filterUrl.incrementUrl(), getOption);
         const allPosts = yield recursiveFilter(data);
-        console.log(allPosts);
         let filteredPost;
         if (Array.isArray(allPosts[0][category])) {
-            console.log("tags ROUTE TAKEN");
             filteredPost = allPosts.filter((post) => {
                 var _a;
                 return (_a = post[category]) === null || _a === void 0 ? void 0 : _a.some((element) => (element === null || element === void 0 ? void 0 : element.toLowerCase()) === (searchword === null || searchword === void 0 ? void 0 : searchword.toLowerCase()));
@@ -52,10 +49,8 @@ export default function filterPosts(searchword, category) {
             filteredPost = allPosts.filter((post) => { var _a; return ((_a = post[category]) === null || _a === void 0 ? void 0 : _a.name.toLowerCase()) === (searchword === null || searchword === void 0 ? void 0 : searchword.toLowerCase()); });
         }
         else {
-            console.log(allPosts[0][category]);
             filteredPost = allPosts.filter((post) => { var _a; return ((_a = post[category]) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === (searchword === null || searchword === void 0 ? void 0 : searchword.toLowerCase()); });
         }
-        console.log(filteredPost);
         return filteredPost;
     });
 }

@@ -28,11 +28,9 @@ const loginObject = {
 };
 loginPassword.addEventListener("input", () => {
     loginObject.password = loginPassword.value;
-    console.log(loginObject);
 });
 loginUserName.addEventListener("input", () => {
     loginObject.email = loginUserName.value;
-    console.log(loginObject);
 });
 /**
  * Listens for an 'input' event on a given HTML input element and updates a global `registerObject`
@@ -54,7 +52,6 @@ function collectInput(input, inputName) {
     input.addEventListener("input", () => {
         if (input.value) {
             registerObject[inputName] = input.value;
-            console.log({ registerObject });
         }
         return;
     });
@@ -144,7 +141,6 @@ function login({ email, password }) {
             body: JSON.stringify({ email, password }),
         });
         const data = yield response.json();
-        console.log(data);
         localStorage.setItem("token", JSON.stringify(data.accessToken));
         localStorage.setItem("currentUser", JSON.stringify(data.name));
         localStorage.setItem("avatar", JSON.stringify(data.avatar));

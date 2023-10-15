@@ -32,7 +32,6 @@ const changeMediaObject = {
     avatar: changeAvatarinput.value,
     banner: changeAvatarinput.value,
 };
-console.log(userId, currentUser);
 /**
  * Attaches an input event listener to the given input element. This function populates
  * a global `changeMediaObject` based on whether the input corresponds to avatar or banner changes.
@@ -53,7 +52,6 @@ function attachListenerMedia(input) {
                 ? (changeMediaObject.avatar = input.value)
                 : (changeMediaObject.banner = input.value);
         }
-        console.log(changeMediaObject);
     });
 }
 document.querySelectorAll("button[data-mediaSelector]").forEach((button) => {
@@ -132,7 +130,6 @@ function fetchPosts(url) {
         updatePost(document.querySelector("#container--posts"));
         reactToPostTwo();
         followUnfollow(data.followers);
-        console.log(data, data.followers);
     });
 }
 fetchPosts(endpoint.profileOneUserAllEnabled);
@@ -169,7 +166,6 @@ function changeMedia({ avatar, banner, }) {
             },
         });
         const data = yield response.json();
-        console.log(data);
     });
 }
 if (currentUser === userId) {
@@ -194,11 +190,9 @@ if (currentUser === userId) {
  */
 function followUnfollow(followers) {
     const button = document.querySelector("#follow--button");
-    console.log(followers.some((element) => element.name === currentUser), followers);
     button.textContent = followers.some((element) => element.name === currentUser)
         ? "unfollow"
         : "follow";
-    console.log(button.textContent);
     button.addEventListener("click", () => {
         follow(button);
     });
@@ -227,7 +221,6 @@ function follow(button) {
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         if (button.textContent && button.textContent in endpoint) {
-            console.log(endpoint[button.textContent]);
             const response = yield fetch(endpoint[(_a = button.textContent) === null || _a === void 0 ? void 0 : _a.trim()], {
                 method: "PUT",
                 headers: {
@@ -238,7 +231,6 @@ function follow(button) {
             button.textContent === "follow"
                 ? (button.textContent = "unfollow")
                 : (button.textContent = "follow");
-            console.log(data);
         }
     });
 }

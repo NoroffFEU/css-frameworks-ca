@@ -61,9 +61,7 @@ filterButton?.addEventListener("click", async () => {
   if (!validateSelect(sortInput) || !validateSelect(searchInput)) {
     return;
   }
-  console.log(endpoint.filterUrl.getCount());
   endpoint.filterUrl.resetCount();
-  console.log(endpoint.filterUrl.getCount());
   postContainer.innerHTML = "";
   const allPosts = await filterPosts(searchInput.value, sortInput.value);
   allPosts.forEach((post) => renderPosts(postContainer, post));
@@ -92,7 +90,6 @@ searchButton.addEventListener("click", async () => {
         ),
         postOption
       );
-  console.log(data, searchInput.value);
   if (endpoint.sortAndPaginate.getCount() == 0) {
     postContainer.innerHTML = "";
   }
@@ -103,7 +100,6 @@ searchButton.addEventListener("click", async () => {
       0,
       searchInput.value
     );
-    console.log(foundItem ? "true" : "false");
     if (foundItem) {
       renderPosts(postContainer, foundItem);
       updatePost(postContainer);
@@ -120,14 +116,12 @@ searchButton.addEventListener("click", async () => {
   } else {
     data.forEach((element: post) => renderPosts(postContainer, element));
 
-    console.log("else route");
     reactToPostTwo();
     commentButton();
     deletePost();
     updatePost(postContainer);
     const observedObj = document.querySelectorAll("[data-observed]");
     const target = observedObj[observedObj.length - 1];
-    console.log(observedObj, target);
     setTarget();
     isObserving(true, intersectionObserver);
   }
@@ -168,8 +162,6 @@ function optionFactory(method: htmlMethod, body: {}) {
 }
 
 const postOption = optionFactory("GET", {});
-
-console.log(postOption);
 
 const messageObject: {
   title: string;
@@ -271,7 +263,6 @@ async function searchApi(
   let foundWord;
 
   if (array[0]?.[category]?.name) {
-    console.log("author");
     foundWord = array.find(
       (post) => post[category].name.toLowerCase() === searchWord.toLowerCase()
     );
@@ -282,7 +273,6 @@ async function searchApi(
       )
     );
   } else {
-    console.log("conventional route");
     foundWord = array.find(
       (post) => post[category]?.toLowerCase() === searchWord?.toLowerCase()
     );
@@ -300,10 +290,7 @@ async function searchApi(
         ),
         postOption
       );
-      console.log(
-        endpoint.sortAndPaginate.getString(),
-        endpoint.sortAndPaginate.getCount()
-      );
+
       if (data && data.length > 1) {
         return searchApi(data, category, count + 1, searchWord);
       }
@@ -332,7 +319,6 @@ async function searchApi(
   updatePost(postContainer);
   const observedObj = document.querySelectorAll("[data-observed]");
   const target = observedObj[observedObj.length - 1];
-  console.log(observedObj, target);
   setTarget();
   isObserving(true, intersectionObserver);
 })();

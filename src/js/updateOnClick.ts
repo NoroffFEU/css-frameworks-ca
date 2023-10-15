@@ -46,7 +46,7 @@ const editObject: {
  * 2. Sets the values to corresponding input fields in the modal form.
  * 3. Listens to input events on the modal form fields to update the `editObject`.
  * 4. The `editObject` will then be used to submit the updated post to the server.
- *
+ * 5. Using renderEdit() updates the exisiting post with the new values
  * @function
  * @param {string} id - The ID of the post to get values from.
  */
@@ -66,7 +66,6 @@ function getPostText(id) {
 
   modalBody.addEventListener("input", () => {
     editObject.body = modalBody.value;
-    console.log(editObject);
   });
   modalTitle.addEventListener("input", () => {
     editObject.title = modalTitle.value;
@@ -85,7 +84,6 @@ function getPostText(id) {
     modalMedia.value = document.querySelector(`#image${id}`).src;
   }
   const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
-  console.log(tagArr);
   modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
   editObject.setAll(
     document.querySelector(`#title${id}`)?.innerText,
@@ -93,7 +91,6 @@ function getPostText(id) {
     tagArr.map((element) => element.innerText),
     document.querySelector(`#image${id}`)?.src
   );
-  console.log(editObject);
 }
 
 /**
@@ -131,7 +128,6 @@ export default async function updatePost(parentHtml) {
   postButton?.addEventListener("click", async () => {
     const editOption = optionFactory("PUT", editObject, endpoint);
     const id = editObject.id;
-    console.log(id);
     const data = await callApi(endpoint.getId(id), editOption);
     document.querySelector("#modalEdit").style.display = "none";
     renderEdit(id);
@@ -139,6 +135,22 @@ export default async function updatePost(parentHtml) {
   });
 }
 
+/**
+ * Renders the edited content of a post onto the page.
+ *
+ * This function does the following:
+ * 1. Fetches the values from the modal form fields.
+ * 2. Updates the post on the page with these values.
+ * 3. If there's a new image URL in the modal form but no corresponding image in the post, it creates an image element.
+ * 4. If the image URL in the modal form is cleared, it removes the corresponding image from the post.
+ * 5. Updates the tags of the post based on the modal form.
+ *
+ * @function
+ * @param {string} id - The ID of the post to update.
+ * @example
+ *
+ * renderEdit("123");  // updates the post with id '123' using the values from the modal form.
+ */
 function renderEdit(id) {
   const modalTitle = document.querySelector(
     "#title__modal--edit"
@@ -173,8 +185,6 @@ function renderEdit(id) {
   if (!modalMedia.value && document.querySelector(`#image${id}`)) {
     document.querySelector(`#image${id}`)?.remove();
   }
-
-  console.log(modalTags.value);
 
   document.querySelector(`#tag-container${id}`)?.innerHTML = "";
 

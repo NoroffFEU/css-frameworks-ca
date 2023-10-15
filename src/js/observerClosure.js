@@ -34,7 +34,6 @@ export default function observerTargetClosure() {
         }
     }
     function isObserving(bool, obs) {
-        console.log(target);
         bool ? obs.observe(target) : obs.unobserve(target);
     }
     return [setTarget, isObserving];

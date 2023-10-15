@@ -14,7 +14,6 @@ const endpoint = endpointObject(
 const getId = optionFactory("GET", {}, endpoint);
 (async () => {
   const data = await callApi(endpoint.getId(id), getId);
-  console.log("data:", data);
   renderPosts(document.querySelector("#postContainer"), data);
   commentButton();
   deletePost();

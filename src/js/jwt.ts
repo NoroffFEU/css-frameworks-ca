@@ -43,11 +43,9 @@ const loginObject: { email: string; password: string } = {
 
 loginPassword.addEventListener("input", () => {
   loginObject.password = loginPassword.value;
-  console.log(loginObject);
 });
 loginUserName.addEventListener("input", () => {
   loginObject.email = loginUserName.value;
-  console.log(loginObject);
 });
 
 /**
@@ -70,7 +68,6 @@ function collectInput(input: HTMLInputElement, inputName: registerProp) {
   input.addEventListener("input", () => {
     if (input.value) {
       registerObject[inputName] = input.value;
-      console.log({ registerObject });
     }
     return;
   });
@@ -165,7 +162,6 @@ async function login({ email, password }: typeof loginObject) {
     body: JSON.stringify({ email, password }),
   });
   const data = await response.json();
-  console.log(data);
   localStorage.setItem("token", JSON.stringify(data.accessToken));
   localStorage.setItem("currentUser", JSON.stringify(data.name));
   localStorage.setItem("avatar", JSON.stringify(data.avatar));

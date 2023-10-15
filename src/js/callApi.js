@@ -31,7 +31,6 @@ export default function callApi(endpoint, options) {
             (_a = document.querySelector(".spinner-border")) === null || _a === void 0 ? void 0 : _a.style.display = "block";
             const response = yield fetch(endpoint, options);
             const data = yield response.json();
-            console.log(data);
             if (data.length > 0 && data) {
                 return data;
             }

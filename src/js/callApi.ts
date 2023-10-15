@@ -23,7 +23,6 @@ export default async function callApi(
     document.querySelector(".spinner-border")?.style.display = "block";
     const response = await fetch(endpoint, options);
     const data = await response.json();
-    console.log(data);
     if (data.length > 0 && data) {
       return data;
     } else if (data.title) {

@@ -29,7 +29,6 @@ const put = optionFactory("PUT", { body: "test" }, endpoint);
 function reactToPost(symbol, id) {
     return __awaiter(this, void 0, void 0, function* () {
         const data = yield callApi(endpoint.react(symbol, id), put);
-        console.log(data);
     });
 }
 const [setSmiley, setId, getSmiley, getId] = createSmileyPicker();
@@ -68,13 +67,11 @@ export default function reactToPostTwo() {
     (function emojiReactButton() {
         document.querySelectorAll("[data-id]").forEach((button) => {
             button.addEventListener("click", () => {
-                console.log("clicked");
                 let buttonRect = button.getBoundingClientRect();
                 modal.style.top = buttonRect.top + "px";
                 modal.style.left = buttonRect.left + "px";
                 modal.style.display = "grid";
                 setId(button.dataset.id);
-                console.log(getId());
             });
         });
     })();

@@ -31,13 +31,10 @@ export default async function filterPosts(
   category: string
 ) {
   endpoint.filterUrl.resetCount();
-  console.log(searchword, category);
   const data = await callApi(endpoint.filterUrl.incrementUrl(), getOption);
   const allPosts = await recursiveFilter(data);
-  console.log(allPosts);
   let filteredPost;
   if (Array.isArray(allPosts[0][category])) {
-    console.log("tags ROUTE TAKEN");
     filteredPost = allPosts.filter((post) =>
       post[category]?.some(
         (element) => element?.toLowerCase() === searchword?.toLowerCase()
@@ -48,12 +45,10 @@ export default async function filterPosts(
       (post) => post[category]?.name.toLowerCase() === searchword?.toLowerCase()
     );
   } else {
-    console.log(allPosts[0][category]);
     filteredPost = allPosts.filter(
       (post) => post[category]?.toLowerCase() === searchword?.toLowerCase()
     );
   }
-  console.log(filteredPost);
   return filteredPost;
 }
 

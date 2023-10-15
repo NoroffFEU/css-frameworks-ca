@@ -43,7 +43,7 @@ const editObject = {
  * 2. Sets the values to corresponding input fields in the modal form.
  * 3. Listens to input events on the modal form fields to update the `editObject`.
  * 4. The `editObject` will then be used to submit the updated post to the server.
- *
+ * 5. Using renderEdit() updates the exisiting post with the new values
  * @function
  * @param {string} id - The ID of the post to get values from.
  */
@@ -55,7 +55,6 @@ function getPostText(id) {
     const modalMedia = document.querySelector("#media__modal--edit");
     modalBody.addEventListener("input", () => {
         editObject.body = modalBody.value;
-        console.log(editObject);
     });
     modalTitle.addEventListener("input", () => {
         editObject.title = modalTitle.value;
@@ -72,10 +71,8 @@ function getPostText(id) {
         modalMedia.value = document.querySelector(`#image${id}`).src;
     }
     const tagArr = Array.from(document.querySelectorAll(`.tag${id}`));
-    console.log(tagArr);
     modalTags.value = tagArr.map((tag) => tag.innerText).join("#");
     editObject.setAll((_c = document.querySelector(`#title${id}`)) === null || _c === void 0 ? void 0 : _c.innerText, (_d = document.querySelector(`#body${id}`)) === null || _d === void 0 ? void 0 : _d.innerText, tagArr.map((element) => element.innerText), (_e = document.querySelector(`#image${id}`)) === null || _e === void 0 ? void 0 : _e.src);
-    console.log(editObject);
 }
 /**
  * Prepares and manages the update of a post using a modal UI.
@@ -109,7 +106,6 @@ export default function updatePost(parentHtml) {
         postButton === null || postButton === void 0 ? void 0 : postButton.addEventListener("click", () => __awaiter(this, void 0, void 0, function* () {
             const editOption = optionFactory("PUT", editObject, endpoint);
             const id = editObject.id;
-            console.log(id);
             const data = yield callApi(endpoint.getId(id), editOption);
             document.querySelector("#modalEdit").style.display = "none";
             renderEdit(id);
@@ -117,6 +113,22 @@ export default function updatePost(parentHtml) {
         }));
     });
 }
+/**
+ * Renders the edited content of a post onto the page.
+ *
+ * This function does the following:
+ * 1. Fetches the values from the modal form fields.
+ * 2. Updates the post on the page with these values.
+ * 3. If there's a new image URL in the modal form but no corresponding image in the post, it creates an image element.
+ * 4. If the image URL in the modal form is cleared, it removes the corresponding image from the post.
+ * 5. Updates the tags of the post based on the modal form.
+ *
+ * @function
+ * @param {string} id - The ID of the post to update.
+ * @example
+ *
+ * renderEdit("123");  // updates the post with id '123' using the values from the modal form.
+ */
 function renderEdit(id) {
     var _a, _b, _c, _d, _e;
     const modalTitle = document.querySelector("#title__modal--edit");
@@ -135,7 +147,6 @@ function renderEdit(id) {
     if (!modalMedia.value && document.querySelector(`#image${id}`)) {
         (_d = document.querySelector(`#image${id}`)) === null || _d === void 0 ? void 0 : _d.remove();
     }
-    console.log(modalTags.value);
     (_e = document.querySelector(`#tag-container${id}`)) === null || _e === void 0 ? void 0 : _e.innerHTML = "";
     modalTags.value
         .split("#")

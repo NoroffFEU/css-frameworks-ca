@@ -35,7 +35,6 @@ const changeMediaObject: { avatar: string; banner: string } = {
   banner: changeAvatarinput.value,
 };
 
-console.log(userId, currentUser);
 /**
  * Attaches an input event listener to the given input element. This function populates
  * a global `changeMediaObject` based on whether the input corresponds to avatar or banner changes.
@@ -56,7 +55,6 @@ function attachListenerMedia(input: HTMLInputElement) {
         ? (changeMediaObject.avatar = input.value)
         : (changeMediaObject.banner = input.value);
     }
-    console.log(changeMediaObject);
   });
 }
 
@@ -149,7 +147,6 @@ async function fetchPosts(url: string) {
   updatePost(document.querySelector("#container--posts"));
   reactToPostTwo();
   followUnfollow(data.followers);
-  console.log(data, data.followers);
 }
 fetchPosts(endpoint.profileOneUserAllEnabled);
 
@@ -191,7 +188,6 @@ async function changeMedia({
     },
   });
   const data = await response.json();
-  console.log(data);
 }
 
 interface postObject {
@@ -226,14 +222,9 @@ if (currentUser === userId) {
  */
 function followUnfollow(followers: { name: string }[]) {
   const button = document.querySelector("#follow--button") as HTMLButtonElement;
-  console.log(
-    followers.some((element) => element.name === currentUser),
-    followers
-  );
   button.textContent = followers.some((element) => element.name === currentUser)
     ? "unfollow"
     : "follow";
-  console.log(button.textContent);
   button.addEventListener("click", () => {
     follow(button);
   });
@@ -260,7 +251,6 @@ function followUnfollow(followers: { name: string }[]) {
  */
 async function follow(button: HTMLButtonElement) {
   if (button.textContent && button.textContent in endpoint) {
-    console.log(endpoint[button.textContent]);
     const response = await fetch(endpoint[button.textContent?.trim()], {
       method: "PUT",
       headers: {
@@ -271,6 +261,5 @@ async function follow(button: HTMLButtonElement) {
     button.textContent === "follow"
       ? (button.textContent = "unfollow")
       : (button.textContent = "follow");
-    console.log(data);
   }
 }

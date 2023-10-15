@@ -1,6 +1,12 @@
 import { API_BASE_URL } from "./const.mjs";
 import { likeHeartFunction } from "./const.mjs";
 
+/**
+ * Fetches and displays all users posts from the specified URL.
+ *
+ * @param {string} url - The URL to fetch user posts from.
+ * @returns {void}
+ */
 async function fetchAllUserPosts(url) {
   try {
     // console.log(url);
@@ -43,6 +49,7 @@ async function fetchAllUserPosts(url) {
       postCardBody.classList.add(
         "card-body",
         "d-flex",
+        "flex-wrap",
         "flex-column-sm",
         "justify-content-start",
         "justify-content-lg-around",
@@ -121,7 +128,8 @@ async function fetchAllUserPosts(url) {
       iconContainer.classList.add(
         "icon-container",
         "d-flex",
-        "justify-content-between",
+        "justify-content-evenly",
+        "flex-wrap",
         "mt-3",
         "align-items-center"
       );

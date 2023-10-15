@@ -4,6 +4,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const postId = urlParams.get("id");
 
+/**
+ * Fetches and displays a specific post based on the provided post ID.
+ *
+ * @returns {void}
+ */
 async function singlePost() {
   try {
     const token = localStorage.getItem("accessToken");

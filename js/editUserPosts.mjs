@@ -6,6 +6,14 @@ const postBodyTextarea = modal.querySelector("#postBodyArea");
 const postMediaInput = modal.querySelector("#postMedia");
 const modalForm = modal.querySelector("#createNewPost");
 
+/**
+ * Edit a post.
+ *
+ * @param {string} postId - The ID of the post to edit.
+ * @param {string} postTitle - The edited title of the post.
+ * @param {string} postBody - The edited body of the post.
+ * @param {string} postMedia - The edited media of the post.
+ */
 
 async function editPost(postId, postTitle, postBody, postMedia) {
   const token = localStorage.getItem("accessToken");

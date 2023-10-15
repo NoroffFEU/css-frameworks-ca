@@ -1,7 +1,12 @@
-import { API_BASE_URL, fetchFriends } from "./const.mjs";
-const userName = localStorage.getItem("userName");
-const userEmail = localStorage.getItem("userEmail");
+import { API_BASE_URL, fetchFriends, userEmail, userName } from "./const.mjs";
 
+/**
+ * Creates and populates the user's profile based on the provided URL and friends fetching function.
+ *
+ * @param {string} url - The URL to fetch user profile information from.
+ * @param {Function} fetchFriendsCall - The function used to fetch friends.
+ * @returns {void}
+ */
 async function createProfile(url, fetchFriendsCall) {
   try {
     const token = localStorage.getItem("accessToken");

@@ -1,5 +1,7 @@
 export const API_BASE_URL = "https://api.noroff.dev/api/v1/";
 export const token = localStorage.getItem("accessToken");
+export const userName = localStorage.getItem("userName");
+export const userEmail = localStorage.getItem("userEmail");
 
 export function setUpHTML(post, postWallContainer) {
   const postContainer = document.createElement("div");

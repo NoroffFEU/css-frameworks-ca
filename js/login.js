@@ -1,5 +1,16 @@
-import { API_BASE_URL } from "./const.mjs";
+import { API_BASE_URL, token, userName } from "./const.mjs";
 
+if (userName && token) {
+  window.location.href = "profile/index.html";
+}
+
+/**
+ * Logs in a user by sending a POST request to the specified URL with user data.
+ *
+ * @param {string} url - The URL to send the login request to.
+ * @param {object} userData - The user data including email and password.
+ * @returns {void}
+ */
 async function loginUser(url, userData) {
   try {
     const postData = {

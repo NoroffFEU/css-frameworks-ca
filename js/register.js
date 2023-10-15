@@ -1,5 +1,13 @@
 import { API_BASE_URL } from "./const.mjs";
 
+/**
+ * Registers a new user by sending a POST request to the specified URL with user data.
+ *
+ * @param {string} url - The URL to send the registration request to.
+ * @param {object} userData - The user data including name, email, and password.
+ * @returns {void}
+ */
+
 async function registerUser(url, userData) {
   try {
     const postData = {

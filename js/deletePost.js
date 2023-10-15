@@ -1,8 +1,12 @@
 import { API_BASE_URL } from "./const.mjs";
-
 const modal = document.getElementById("myModal");
 const deleteButton = document.getElementById("deletePostButton");
 
+/**
+ * Delete a post.
+ *
+ * @param {string} postId - The ID of the post to delete.
+ */
 async function deletePost(postId) {
   const token = localStorage.getItem("accessToken");
   const url = `${API_BASE_URL}social/posts/${postId}`;

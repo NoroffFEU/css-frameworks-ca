@@ -1,7 +1,11 @@
-import { API_BASE_URL } from "./const.mjs";
-import { likeHeartFunction } from "./const.mjs";
-const userName = localStorage.getItem("userName");
+import { API_BASE_URL, userName, likeHeartFunction } from "./const.mjs";
 
+/**
+ * Gathers and displays posts of the current user from the specified URL.
+ *
+ * @param {string} url - The URL to fetch user posts from.
+ * @returns {void}
+ */
 async function gatherUserPosts(url) {
   try {
     // console.log(url);

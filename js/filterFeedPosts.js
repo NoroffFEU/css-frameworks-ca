@@ -1,9 +1,9 @@
-import { allPosts, allPostsResult } from "./feedposts.js";
-import { setUpHTML } from "./const.mjs";
-import { API_BASE_URL } from "./const.mjs";
-import { fetchAllUserPosts } from "./feedposts.js";
+import { allPosts, allPostsResult, fetchAllUserPosts } from "./feedposts.js";
+import { API_BASE_URL, setUpHTML } from "./const.mjs";
 
-//Filter by number of reactions
+/**
+ * Sort and filter posts by the number of reactions.
+ */
 document.getElementById("reactionPosts").addEventListener("click", async () => {
   try {
     let result = allPostsResult.sort((a, b) => {
@@ -28,7 +28,9 @@ document.getElementById("reactionPosts").addEventListener("click", async () => {
   }
 });
 
-//Filter by oldest date
+/**
+ * Sort posts by oldest date.
+ */
 document.getElementById("datePosts").addEventListener("click", async () => {
   let result = allPostsResult.sort(function (a, b) {
     const c = new Date(a.created);
@@ -47,12 +49,16 @@ document.getElementById("datePosts").addEventListener("click", async () => {
   });
 });
 
-//By Default button
+/**
+ * Reset to the default view.
+ */
 document.getElementById("defaultPosts").addEventListener("click", () => {
   window.location.reload();
 });
 
-//Search Bar Function
+/**
+ * Search for posts based on user input.
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const searchBar = document.getElementById("searchBar");
 
@@ -62,6 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchAllUserPosts(allPosts);
 });
 
+/**
+ * Search posts based on the search input.
+ */
 async function searchPosts() {
   const searchInput = document.getElementById("searchBar").value.toLowerCase();
   const postCards = document.querySelectorAll(".card");

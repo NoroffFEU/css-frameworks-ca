@@ -1,5 +1,9 @@
 import { API_BASE_URL } from "./const.mjs";
 
+/**
+ * Initializes the document and adds an event listener to update the users profile media.
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
   // Select the form and input elements
   const profileMediaForm = document.getElementById("updateProfileMediaForm");

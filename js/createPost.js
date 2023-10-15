@@ -1,6 +1,12 @@
 import { API_BASE_URL } from "./const.mjs";
 const token = localStorage.getItem("accessToken");
 
+/**
+ * Create a new post.
+ *
+ * @param {string} url - The URL to create a new post.
+ * @param {Object} newPost - The new post data, including title, body, and media.
+ */
 async function createPost(url, newPost) {
   try {
     const postData = {

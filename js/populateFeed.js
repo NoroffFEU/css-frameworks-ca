@@ -1,6 +1,12 @@
 import { API_BASE_URL } from "./const.mjs";
 const userName = localStorage.getItem("userName");
-// const userEmail = localStorage.getItem("userEmail");
+
+/**
+ * Populates the user's profile information in the feed based on the provided URL.
+ *
+ * @param {string} url - The URL to fetch user profile information from.
+ * @returns {void}
+ */
 
 async function populateFeed(url) {
   try {

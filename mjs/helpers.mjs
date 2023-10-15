@@ -1,5 +1,5 @@
-
-/** This function puts the values of a title, message(body) and media in an object
+/** 
+ * This function puts the values of a title, message(body) and media in an object
  * 
  * @param {string} title 
  * @param {string} message 
@@ -15,7 +15,9 @@ function newPostValuesToObject(title, message, media) {
     return postToApi;
 }
 
-/** This function sends a created object (and assigned token) to API 
+
+/** 
+ * This function sends a created object (and assigned token) to API 
  * 
  * @param {string} url 
  * @param {object} post 
@@ -39,7 +41,8 @@ async function newPostToApiFunksjon(url, post) {
 }
 
 
-/** This function checks if the post includes a right format of media(img)
+/** 
+ * This function checks if the post includes a right format of media(img)
  * 
  * @param {string} media 
  * @returns {}
@@ -51,7 +54,9 @@ function isMediaValid(media) {
     return (media.toLowerCase().includes(".jpg") || media.toLowerCase().includes(".jpeg") || media.toLowerCase().includes(".png"));
 }
 
-/** This functions checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
+
+/** 
+ * This functions checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
  * 
  * @param {array} comments 
  * @returns {array} array with comments and puts them in Html, if there are none it creates the message that there are no comments
@@ -72,7 +77,8 @@ function processCommentsForPost(comments) {
 }
 
 
-/** This functions checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
+/** 
+ * This functions checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
  * 
  * @param {array} reactions 
  * @returns {array} array with reactions and puts them in Html, if there are none it creates the message that there are no reactions
@@ -92,8 +98,10 @@ function processReactionsForPost(reactions) {
     return reactionsHtml;
 }
 
+
 /** 
  * This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
+ * 
  * @param {array} postsArray 
  * @param {string} searchText 
  * @returns {array} returns array that includes posts with searched word in their title or body(message)

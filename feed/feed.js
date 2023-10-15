@@ -35,25 +35,17 @@ searchField.addEventListener("keydown", (event) => {
     }
 });
 
-// /** 
-//  * This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
-//  * @param {array} postsArray 
-//  * @param {string} searchText 
-//  * @returns {array} returns array that includes posts with searched word in their title or body(message)
-//  */
-// function searchElement(postsArray, searchText) {
-//     const test = postsArray.filter((post) =>
-//         post.title.includes(searchText) || post.body.includes(searchText)
-//     );
-//     return test;
-// }
 
+/** 
+ * This function sets up other functions
+ * 
+ * @param {array} posts posts from API
+ */
 function renderPage(posts) {
     showPosts(posts);
     showComments();
     showReactions();
 }
-
 
 
 // This event listener checks and change the format of date and time of posts and starts function that shows only today's posts
@@ -78,8 +70,7 @@ todaysPostsBtn.addEventListener("click", function () {
 });
 
 
-
-var containerHTMLCard = document.getElementById("singleCard");
+let containerHTMLCard = document.getElementById("singleCard");
 /** 
 * This function gets posts from API and send them to next function that shows them on the site
 */
@@ -89,7 +80,8 @@ async function fetchPostsFromApi() {
 }
 
 
-/** This function shows the posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
+/** 
+ * This function shows the posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
  * 
  * @param {array} posts 
  * @returns {array} array with all the posts and shows them on the site
@@ -131,8 +123,6 @@ function showPosts(posts) {
         </div>        
         `;
     }
-    // showComments();
-    // showReactions();
 }
 
 
@@ -154,7 +144,8 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
 });
 
 
-/** This functions shows the post's comments or a message that there are none after the button is pressed
+/** 
+ * This functions shows the post's comments or a message that there are none after the button is pressed
  */
 function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
@@ -166,7 +157,8 @@ function showComments() {
 }
 
 
-/** This functions shows the post's reactions or a message that there are none after the button is pressed
+/** 
+ * This functions shows the post's reactions or a message that there are none after the button is pressed
  */
 function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');

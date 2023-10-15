@@ -23,8 +23,8 @@ document.getElementById("submitBtn2").addEventListener("click", (event) => {
 });
 
 
-//This function puts the values from the previous function to the object
 /**
+ * This function puts the values into the object
  * 
  * @param {string} name 
  * @param {string} email 
@@ -43,6 +43,7 @@ function userToRegisterFunksjon(name, email, password) {
 
 /**
  * This function sends object to the server or shows that something is wrong
+ * 
  * @param {string} url 
  * @param {object} userData 
  */

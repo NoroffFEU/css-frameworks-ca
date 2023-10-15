@@ -1,5 +1,5 @@
 import { getData } from "../mjs/getData.mjs";
-import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost } from "../mjs/helpers.mjs";
+import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost, searchElement } from "../mjs/helpers.mjs";
 
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 const postsUrl = `${mainApiUrl}/social/posts`;
@@ -35,18 +35,18 @@ searchField.addEventListener("keydown", (event) => {
     }
 });
 
-/** 
- * This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
- * @param {array} postsArray 
- * @param {string} searchText 
- * @returns {array} returns array that includes posts with searched word in their title or body(message)
- */
-function searchElement(postsArray, searchText) {
-    const test = postsArray.filter((post) =>
-        post.title.includes(searchText) || post.body.includes(searchText)
-    );
-    return test;
-}
+// /** 
+//  * This function gets parameters from an event listener and checks (filters) if any of posts includes the searched word in post's title or body
+//  * @param {array} postsArray 
+//  * @param {string} searchText 
+//  * @returns {array} returns array that includes posts with searched word in their title or body(message)
+//  */
+// function searchElement(postsArray, searchText) {
+//     const test = postsArray.filter((post) =>
+//         post.title.includes(searchText) || post.body.includes(searchText)
+//     );
+//     return test;
+// }
 
 function renderPage(posts) {
     showPosts(posts);
@@ -80,7 +80,8 @@ todaysPostsBtn.addEventListener("click", function () {
 
 
 var containerHTMLCard = document.getElementById("singleCard");
-/** This function gets posts from API and send them to next function that shows them on the site
+/** 
+* This function gets posts from API and send them to next function that shows them on the site
 */
 async function fetchPostsFromApi() {
     feedPosts = await getData(`${postsUrl}?${queryString}`);
@@ -94,8 +95,7 @@ async function fetchPostsFromApi() {
  * @returns {array} array with all the posts and shows them on the site
  */
 function showPosts(posts) {
-    //var posts = await getData(`${postsUrl}?${queryString}`);
-    var setImg = "";
+    let setImg = "";
     containerHTMLCard.innerHTML = "";
     for (let i = 0; i < posts.length; i++) {
         let formattedDate = new Date(posts[i].updated).toLocaleDateString();

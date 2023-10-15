@@ -4,7 +4,7 @@ import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processComme
 const token = localStorage.getItem("accessToken");
 const mainApiUrl = "https://api.noroff.dev/api/v1";
 //const getMyPosts = `${mainApiUrl}/social/profiles/:name/posts`;
-const postsUrl = `${mainApiUrl}/social/posts`;
+// const postsUrl = `${mainApiUrl}/social/posts`;
 const myName = localStorage.getItem("name");
 const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
 const myPostsUrl = `${mainApiUrl}/social/posts`;
@@ -20,8 +20,24 @@ const requestParam = {
 
 const queryString = new URLSearchParams(requestParam).toString();
 
-window.onload = getPosts();
+window.onload = fetchPostsFromApi();
 
+function renderPage(posts) {
+    showMyPosts(posts);
+    showComments();
+    showReactions();
+    showEdit();
+    showDelete();
+}
+
+
+/** 
+* This function gets posts from API and send them to next function that shows them on the site
+*/
+async function fetchPostsFromApi() {
+    profilePosts = await getData(`${getMyPosts}?${queryString}`);
+    renderPage(profilePosts);
+}
 
 //This event listener open the module that enables to write a new post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
 const formPost = document.getElementById("formPost");
@@ -43,18 +59,16 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
 
 /**This function gets and shows my posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
  */
-async function getPosts() {
-    var containerHTMLCard = document.getElementById("singleCardProfile");
+function showMyPosts(posts) {
+    let containerHTMLCard = document.getElementById("singleCardProfile");
     //Clear the page
     containerHTMLCard.innerHTML = "";
-    //profilePosts = await getData(getMyPosts);
-    profilePosts = await getData(`${getMyPosts}?${queryString}`);
     let setImg = "";
-    for (var i = 0; i < profilePosts.length; i++) {
-        let formattedDate = new Date(profilePosts[i].updated).toLocaleDateString();
-        let formattedTime = new Date(profilePosts[i].updated).toLocaleTimeString();
-        if (isMediaValid(profilePosts[i].media)) {
-            setImg = profilePosts[i].media;
+    for (var i = 0; i < posts.length; i++) {
+        let formattedDate = new Date(posts[i].updated).toLocaleDateString();
+        let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
+        if (isMediaValid(posts[i].media)) {
+            setImg = posts[i].media;
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
@@ -63,50 +77,50 @@ async function getPosts() {
         <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
-                <h5 class="card-title" id="cardTitle">${profilePosts[i].title}</h5>
+                <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
-                    <p class="card-text text-start" id="cardBody">${profilePosts[i].body}</p>
+                    <p class="card-text text-start" id="cardBody">${posts[i].body}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Comments</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Reactions</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Edit</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${profilePosts[i].id}" data-postid="${profilePosts[i].id}">Delete</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${posts[i].id}" data-postid="${posts[i].id}">Reactions</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${posts[i].id}" data-postid="${posts[i].id}">Edit</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${posts[i].id}" data-postid="${posts[i].id}">Delete</button>
                         </div>
                         <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small> 
                     </div>
                 </div>
-                <div class="showComments" id="showComments${profilePosts[i].id}" style="display:none;">${processCommentsForPost(profilePosts[i].comments)}</div>
-                <div class="showReactions" id="showReactions${profilePosts[i].id}" style="display:none;">${processReactionsForPost(profilePosts[i].reactions)}</div>
+                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">${processCommentsForPost(posts[i].comments)}</div>
+                <div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">${processReactionsForPost(posts[i].reactions)}</div>
             </div>
         </div>        
         `;
 
     }
-    showComments();
-    showReactions();
+    // showComments();
+    // showReactions();
     //https://stackoverflow.com/questions/44162581/use-wildcard-to-find-specific-id-using-javascript
     //https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
 
     // This for-loop gets the id of the post that user wants to delete and starts the function that does it when the button is pressed
-    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
-    for (let i = 0; i < deleteBtns.length; i++) {
-        const deleteBtn = deleteBtns[i];
-        deleteBtn.addEventListener("click", async function () {
-            const postId = deleteBtn.dataset.postid;
-            await deletePost(postId);
-        });
-    }
+    // const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
+    // for (let i = 0; i < deleteBtns.length; i++) {
+    //     const deleteBtn = deleteBtns[i];
+    //     deleteBtn.addEventListener("click", async function () {
+    //         const postId = deleteBtn.dataset.postid;
+    //         await deletePost(postId);
+    //     });
+    // }
 
-    // This for-loop gets the id of the post that user wants to edit and starts the function that does it when the button is pressed
-    const editBtns = document.querySelectorAll('[id^="btnEdit"]');
-    for (let i = 0; i < editBtns.length; i++) {
-        const editBtn = editBtns[i];
-        editBtn.addEventListener("click", function () {
-            const postId = editBtn.dataset.postid;
-            editPost(postId);
-        });
-    }
+    // // This for-loop gets the id of the post that user wants to edit and starts the function that does it when the button is pressed
+    // const editBtns = document.querySelectorAll('[id^="btnEdit"]');
+    // for (let i = 0; i < editBtns.length; i++) {
+    //     const editBtn = editBtns[i];
+    //     editBtn.addEventListener("click", function () {
+    //         const postId = editBtn.dataset.postid;
+    //         editPost(postId);
+    //     });
+    // }
 }
 
 
@@ -124,7 +138,6 @@ async function deletePost(id) {
     };
     try {
         await fetch(`${myPostsUrl}/${id}`, deletePost);
-        await getPosts();
     } catch (error) {
         console.log(error);
     }
@@ -167,7 +180,8 @@ document.getElementById("editPostBtn").addEventListener("click", async (event) =
     const editedPost = editedPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
     await editedPostToApiFunksjon(`${myPostsUrl}/${postIdEdit}`, editedPost);
     postIdEdit = undefined;
-    await getPosts();
+    await fetchPostsFromApi();
+    renderPage(profilePosts);
 });
 
 
@@ -212,7 +226,8 @@ async function editedPostToApiFunksjon(url, post) {
 }
 
 
-/** This functions shows the post's comments or a message that there are none after the button is pressed
+/** 
+ * This functions shows the post's comments or a message that there are none after the button is pressed
  */
 function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
@@ -223,7 +238,8 @@ function showComments() {
     })
 }
 
-/** This functions shows the post's reactions or a message that there are none after the button is pressed
+/** 
+ * This functions shows the post's reactions or a message that there are none after the button is pressed
  */
 function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
@@ -234,3 +250,35 @@ function showReactions() {
     })
 }
 
+function showEdit() {
+    const editBtns = document.querySelectorAll('[id^="btnEdit"]');
+    for (let i = 0; i < editBtns.length; i++) {
+        const editBtn = editBtns[i];
+        editBtn.addEventListener("click", function () {
+            const postId = editBtn.dataset.postid;
+            editPost(postId);
+        });
+    }
+}
+
+function showDelete() {
+    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
+    for (let i = 0; i < deleteBtns.length; i++) {
+        const deleteBtn = deleteBtns[i];
+        deleteBtn.addEventListener("click", async function () {
+            const postId = deleteBtn.dataset.postid;
+            await deletePost(postId);
+            await fetchPostsFromApi();
+            renderPage(profilePosts);
+        });
+    }
+}
+
+// This event listener sends search value from search field when Enter is pressed to a function that will check it
+const searchField = document.getElementById("searchInput");
+searchField.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        const result = searchElement(profilePosts, searchField.value);
+        renderPage(result);
+    }
+});

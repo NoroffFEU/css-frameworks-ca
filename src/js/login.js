@@ -7,7 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { endpoints } from "./endpoints.js";
+import { endpoints } from "./endpoints.mjs";
+import { validateForm } from "./formValidation.mjs";
 const registerObject = {
     email: "email",
     userName: "username",
@@ -100,9 +101,35 @@ function registerAccount({ email, userName, password, }) {
     });
 }
 buttonRegister === null || buttonRegister === void 0 ? void 0 : buttonRegister.addEventListener("click", () => {
+    if (!validateForm(inputEmail, "Please enter a valid email  example@noroff.no or example@stud.noroff.no", (value) => {
+        if ((value.split("@")[0].length > 0 &&
+            value.split("@")[1] === "noroff.no") ||
+            value.split("@")[1] === "stud.noroff.no") {
+            return true;
+        }
+        else
+            return false;
+    }) ||
+        !validateForm(inputPassword, "please input password min 8 characters", (value) => value.length > 7) ||
+        !validateForm(inputRpassword, "passwords dont match", (value) => value === inputPassword.value ||
+            !validateForm(inputUserName, "minimum one character", (value) => value.lengt > 0))) {
+        return;
+    }
     registerAccount(registerObject);
 });
 buttonLogin === null || buttonLogin === void 0 ? void 0 : buttonLogin.addEventListener("click", () => {
+    if (!validateForm(loginUserName, "Please enter a valid email  example@noroff.no or example@stud.noroff.no", (value) => {
+        if ((value.split("@")[0].length > 0 &&
+            value.split("@")[1] === "noroff.no") ||
+            value.split("@")[1] === "stud.noroff.no") {
+            return true;
+        }
+        else
+            return false;
+    }) ||
+        !validateForm(loginPassword, "please input password min 8 characters", (value) => value.length > 7)) {
+        return;
+    }
     login(loginObject);
 });
 /**

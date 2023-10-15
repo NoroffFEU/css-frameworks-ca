@@ -1,4 +1,4 @@
-import renderPosts from "./renderPost.js";
+import renderPosts from "./renderPost.mjs";
 
 /**
  * Renders a temporary post on the given DOM element.

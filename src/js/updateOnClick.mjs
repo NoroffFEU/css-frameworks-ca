@@ -7,12 +7,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import endpointObject from "./endpoints.js";
-import optionFactory from "./optionFactory.js";
-import callApi from "./callApi.js";
-import renderModal from "./renderModal.js";
-import fadeText from "./fadeText.js";
-import createElementFactory from "./createElementFactory.js";
+import endpointObject from "./endpoints.mjs";
+import optionFactory from "./optionFactory.mjs";
+import callApi from "./callApi.mjs";
+import renderModal from "./renderModal.mjs";
+import fadeText from "./fadeText.mjs";
+import createElementFactory from "./createElementFactory.mjs";
 const endpoint = endpointObject(JSON.parse(localStorage.getItem("currentUser")));
 function showModal() {
     document.querySelector("#modalEdit").style.display = "block";

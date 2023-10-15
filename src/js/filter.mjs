@@ -7,9 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import callApi from "./callApi.js";
-import endpointObject from "./endpoints.js";
-import optionFactory from "./optionFactory.js";
+import callApi from "./callApi.mjs";
+import endpointObject from "./endpoints.mjs";
+import optionFactory from "./optionFactory.mjs";
 const endpoint = endpointObject("Jarle");
 const getOption = optionFactory("GET", {}, endpoint);
 /**

@@ -1,4 +1,4 @@
-import createElementFactory from "./createElementFactory.js";
+import createElementFactory from "./createElementFactory.mjs";
 /**
  * Renders posts on the given DOM element.
  *

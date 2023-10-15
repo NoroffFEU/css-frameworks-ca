@@ -1,3 +1,4 @@
+import createElementFactory from "./createElementFactory.mjs";
 /**
  * Validates an HTML input element based on its value.
  * If the input element doesn't have a value, its border is set to red, indicating an invalid input.
@@ -26,4 +27,19 @@ export default function validateSelect(domEl) {
         domEl.style.border = "none";
         return true;
     }
+}
+export function validateForm(domEl, message, predicate) {
+    var _a;
+    if (!predicate(domEl.value)) {
+        if (document.querySelector(`#error${domEl.id}`)) {
+            return;
+        }
+        const errorMessage = createElementFactory("span", message, document.querySelector("body"), { id: "error" + domEl.id }, "text-danger");
+        domEl.after(errorMessage);
+        return false;
+    }
+    if (document.querySelector(`#error${domEl.id}`)) {
+        (_a = document.querySelector(`#error${domEl.id}`)) === null || _a === void 0 ? void 0 : _a.remove();
+    }
+    return true;
 }

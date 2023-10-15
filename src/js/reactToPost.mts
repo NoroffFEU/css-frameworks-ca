@@ -1,8 +1,8 @@
-import callApi from "./callApi.js";
-import createSmileyPicker from "./emoji.js";
-import endpointObject from "./endpoints.js";
-import fadeText from "./fadeText.js";
-import optionFactory from "./optionFactory.js";
+import callApi from "./callApi.mjs";
+import createSmileyPicker from "./emoji.mjs";
+import endpointObject from "./endpoints.mjs";
+import fadeText from "./fadeText.mjs";
+import optionFactory from "./optionFactory.mjs";
 
 const endpoint = endpointObject("Jarle");
 const put = optionFactory("PUT", { body: "test" }, endpoint);

@@ -1,4 +1,4 @@
-import createElementFactory from "./createElementFactory.js";
+import createElementFactory from "./createElementFactory.mjs";
 
 /**
  * Creates and appends an emoji picker modal to a specified parent element, or to the 'main' element by default.

@@ -1,9 +1,9 @@
-import endpoints from "./endpoints.js";
-import renderPosts from "./renderPost.js";
-import commentButton from "./commentOnClick.js";
-import deletePost from "./deleteOnClick.js";
-import updatePost from "./updateOnClick.js";
-import reactToPostTwo from "./reactToPost.js";
+import endpoints from "./endpoints.mjs";
+import renderPosts from "./renderPost.mjs";
+import commentButton from "./commentOnClick.mjs";
+import deletePost from "./deleteOnClick.mjs";
+import updatePost from "./updateOnClick.mjs";
+import reactToPostTwo from "./reactToPost.mjs";
 
 const queries = new URLSearchParams(window.location.search);
 const userId = queries.get("user");

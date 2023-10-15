@@ -1,5 +1,5 @@
-import commentPost from "./commentPost.js";
-import { renderComments } from "./renderPost.js";
+import commentPost from "./commentPost.mjs";
+import { renderComments } from "./renderPost.mjs";
 
 /**
  * Attaches event listeners to all buttons with a "data-comment-id" attribute.

@@ -1,26 +1,25 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "js2-ca by Iskander",
   "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
+  "description": "My assignment for creating Social media app with Javascript.",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NoroffFEU/css-frameworks-ca.git"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "keywords": [
     "CSS",
-    "CSS",
-    "Frameworks",
+    "Fontawesome",
     "Bootstrap",
     "SCSS",
     "SASS"
   ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "jquery": "^3.7.1",
+    "popper.js": "^1.16.1"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.66.1"
+  }
 }

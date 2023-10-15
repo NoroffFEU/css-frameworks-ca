@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore feeds from SocialVibe" />
+    <script src="https://kit.fontawesome.com/f2a49dcf34.js" crossorigin="anonymous"></script>
+    <script src="../script/feed.mjs" type="module" defer></script>
+    <link rel="stylesheet" href="../scss/styles.css" />
+    <title>SocialVibe | Feed</title>
+  </head>
+  <body>
+    <header class="mb-4">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">SocialVibe</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../profile/index.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Feed</a>
+              </li>
+            </ul>
+            <form class="d-flex form-inline m-2 my-lg-0 search-form">
+              <input class="form-control mr-sm-2" type="text" id="search" placeholder="Search" aria-label="Search" />
+              <button class="btn btn-outline-success my-2 my-sm-0" id="search-button" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html"> <i class="fas fa-sign-out-alt"></i> Logout </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="m-5">
+      <div class="d-flex flex-column justify-content-center bg-white p-2 m-5">
+        <div class="col-12 col-xl-2 col-md-3 d-none">
+          <div class="col-2 col-md-3">
+            <div class="custom-user"></div>
+          </div>
+          <h5 class="col-10 p-2 user-name"></h5>
+        </div>
+        <div class="d-flex col-md-9 col-xl-10 custom-background p-2 mt-3 custom-width">
+          <div class="loader text-center fs-3">Loading...</div>
+
+          <form class="create-post-form needs-validation col-xl-6 m-3 custom-width">
+            <h4>Create New Post</h4>
+            <div class="mb-3">
+              <input type="text" class="form-control" name="title" minlength="4" placeholder="Post title" aria-required="true" required />
+            </div>
+
+            <div class="mb-3">
+              <input type="text" class="form-control" name="body" minlength="10" placeholder="Post content" aria-required="true" />
+            </div>
+
+            <div class="mb-3"><input type="url" class="form-control" name="media" placeholder="Image-url" aria-required="true" /></div>
+
+            <div class="mb-3">
+              <input type="text" class="form-control" name="tags" placeholder="Tags" aria-required="true" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="create-post-button">Create Post</button>
+          </form>
+        </div>
+      </div>
+      <div class="d-flex flex-column justify-content-center bg-white p-2 m-5">
+        <div class="all-feeds"></div>
+        <div class="posts bg-light"></div>
+      </div>
+    </main>
+  </body>
+</html>

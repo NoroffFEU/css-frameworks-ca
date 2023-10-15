@@ -103,18 +103,50 @@ export function setUpHTML(post, postWallContainer) {
   comments.textContent = "Comments:  " + post.comments.length;
   comments.style.fontSize = "20px";
 
+  const followUser = document.createElement("p");
+  followUser.classList.add("text-info", "fw-bold", "bg-dark", "p-2", "rounded");
+  followUser.textContent = "Follow";
+  const uniqueFollowerId = "followUser_" + post.author.name;
+  followUser.setAttribute("id", uniqueFollowerId);
+  followUser.style.fontSize = "20px";
+  const starIcon = document.createElement("i");
+  starIcon.classList.add("fa-solid", "fa-star", "ms-1");
+  followUser.appendChild(starIcon);
+  const unFollowUser = document.createElement("p");
+  unFollowUser.classList.add(
+    "Text-info",
+    "text-danger",
+    "fw-bold",
+    "bg-dark",
+    "p-2",
+    "rounded"
+  );
+  unFollowUser.textContent = "Unfollow ";
+  const uniqueUnfollowerId = "followUser_" + post.author.name;
+  unFollowUser.setAttribute("id", uniqueUnfollowerId);
+  unFollowUser.style.fontSize = "20px";
+  const poopIcon = document.createElement("i");
+  poopIcon.classList.add("fa-solid", "fa-poop", "ms-1");
+  unFollowUser.appendChild(poopIcon);
+
   const heartIcon = document.createElement("i");
   heartIcon.classList.add("far", "fa-heart", "me-5", "p-1");
   heartIcon.textContent = " " + post.reactions.length;
-  heartIcon.style.fontSize = "20px";
-  heartIcon.style.color = "red";
+  const uniqueHeartIconId = "likeHeart_" + post.id;
+  heartIcon.setAttribute("id", uniqueHeartIconId);
+  heartIcon.style.fontSize = "25px";
+  heartIcon.style.color = "black";
 
   iconContainer.appendChild(comments);
+  iconContainer.appendChild(followUser);
+  iconContainer.appendChild(unFollowUser);
   iconContainer.appendChild(heartIcon);
 
   postCard.appendChild(iconContainer);
 
   postWallContainer.appendChild(postCard);
+
+  likeHeartFunction(uniqueHeartIconId, post.id, token);
 }
 
 export function likeHeartFunction(iconId, postId, token) {

@@ -44,7 +44,7 @@ async function fetchPostsFromApi() {
 
 //This event listener open the module that enables to write a new post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
 const formPost = document.getElementById("formPost");
-document.getElementById("postBtn").addEventListener("click", (event) => {
+document.getElementById("postBtn").addEventListener("click", async (event) => {
     event.preventDefault();
 
     const titlePost = formPost.elements[0];
@@ -56,7 +56,8 @@ document.getElementById("postBtn").addEventListener("click", (event) => {
     const userMediaPost = mediaPost.value;
 
     const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-    newPostToApiFunksjon(postsUrl, newPost);
+    await newPostToApiFunksjon(myPostsUrl, newPost);
+    await fetchPostsFromApi();
 });
 
 

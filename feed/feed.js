@@ -108,13 +108,10 @@ function showPosts(posts) {
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
-                            
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
-                           
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
                         </div>
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
-                        
                     </div>
                 </div>
                 <div class="showComments" id="showComments${posts[i].id}" style="display:none;">${processCommentsForPost(posts[i].comments)}</div>

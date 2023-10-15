@@ -3,41 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SocialVibe | log in</title>
+    <meta name="description" content="SocialVibe - landingpage for the customer" />
     <link rel="stylesheet" href="./scss/styles.css" />
+    <script src="https://kit.fontawesome.com/f2a49dcf34.js" crossorigin="anonymous"></script>
+    <script src="./script/login.mjs" type="module" defer></script>
+    <title>SocialVibe | Get started</title>
   </head>
   <body>
-    <div class="container--custom d-flex align-items-center full-height">
-      <div class="row justify-content-center w-100">
-        <h1 class="text-center mb-0 display-1">Social Vibe</h1>
-        <h4 class="text-center mb-5">Discover. Connect. Resonate.</h4>
-        <div class="col-md-6">
-          <h2>Login</h2>
-          <form action="./profile/index.html" >
-            <div class="mb-3">
-              <label for="loginEmail" class="form-label">Email:</label>
-              <input
-                type="email"
-                class="form-control"
-                id="loginEmail"
-                name="loginEmail"
-                required
-              />
-            </div>
-            <div class="mb-3">
-              <label for="loginPassword" class="form-label">Password:</label>
-              <input
-                type="password"
-                class="form-control"
-                id="loginPassword"
-                name="loginPassword"
-                required
-                minlength="8"
-              />
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
-        </div>
+    <div class="d-flex flex-column align-center justify-content-center p-5 custom-bg">
+      <div class="main-header-wrapper">
+        <h1 class="text-center mt-3 display-1">SocialVibe</h1>
+        <h2 class="text-center">Discover. Connect. Resonate.</h2>
       </div>
+      <div id="messageDiv" class="success-message d-none"></div>
+      <div class="form-switch d-flex flex-column col-sm-10 col-md-8 col-lg-6 col-xl-4 m-auto w-50 custom-form">
+        <h3 class="text-white p-2">Welcome back!</h3>
+        <div class="loader text-center fs-3"></div>
+        <form>
+          <div class="mb-3">
+            <label for="email-login" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email-login" id="email-login" aria-required="true" autocomplete="email" required />
+            <div class="invalid-feedback" id="emailLoginError">Please enter an valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="login-password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="login-password" id="login-password" aria-required="true" minlength="8" autocomplete="current-password" required />
+            <div class="invalid-feedback">Please enter correct password.</div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-5 mt-4 pt-2" id="login-btn">Log In</button>
+          <span class="d-flex flex-column justify-content-center">
+            <h4 class="text-center text-white">Not a member?</h4>
+            <div class="switch-create-acc btn btn-success w-50 m-auto">Create Account</div>
+          </span>
+        </form>
+      </div>
+      <div class="create-account-form d-flex flex-column col-sm-10 col-md-8 col-lg-6 col-xl-4 m-auto w-50 custom-form">
+        <h3 class="text-white p-2">Join the Community - Register Now</h3>
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="username" aria-required="true" autocomplete="username" required />
+            <div class="invalid-feedback" id="username_error">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Username should only include underscores (_) and no other punctuation symbols.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="register-email" aria-required="true" autocomplete="email" required />
+            <div class="invalid-feedback" id="email_error">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Registration is limited to email addresses with the domains stud.noroff.no or noroff.no
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="register-password" aria-required="true" minlength="8" autocomplete="new-password" required />
+            <div class="invalid-feedback" id="password_error">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Password must be a minimum of 8 characters.
+            </div>
+          </div>
+          <div id="message" class="hidden"></div>
+          <div class="text-center mb-5 mt-4 pt-2">
+            <button type="submit" class="btn btn-primary w-100" id="createAccountBtn">Create Acccount</button>
+          </div>
+          <span class="d-flex flex-column justify-content-center">
+            <h4 class="text-center text-white">Already a member?</h4>
+            <div class="switch-login-form btn btn-success w-50 m-auto">Log In</div>
+          </span>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

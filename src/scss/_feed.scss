@@ -1,0 +1,28 @@
+// profile image
+.custom-user-shape {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 25;
+  border: none;
+}
+.custom-user {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.custom-edit-icon {
+  top: 80%;
+  left: 90%;
+}
+5

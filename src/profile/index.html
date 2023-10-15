@@ -2,123 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My profile page for Social Vibe" />
+    <script src="https://kit.fontawesome.com/f2a49dcf34.js" crossorigin="anonymous"></script>
+    <script src="../script/feed.mjs" type="module" defer></script>
     <link rel="stylesheet" href="../scss/styles.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      rel="stylesheet"
-    />
-
-    <title>User Profile</title>
+    <title>SocialVibe | Profile</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">SocialVibe</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <a class="navbar-brand" href="./index.html">SocialVibe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Profile</a
-              >
+              <a class="nav-link active" aria-current="page" href="#">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../feed/index.html">Feed</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">FAQ</a>
-            </li>
           </ul>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="../index.html">
-                <i class="fas fa-sign-out-alt"></i> Logout
-              </a>
+              <a class="nav-link" href="../index.html"> <i class="fas fa-sign-out-alt"></i> Logout </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="container-fluid pt-5 bg-white">
-      <div class="row p-5 m-5">
-        <div class="col-md-4">
-          <div class="d-flex justify-content-center mb-4">
-            <img
-              src="../assets/profile-pic.jpg"
-              alt="User's Profile Image"
-              class="img-fluid rounded-circle"
-              style="width: 150px"
-            />
-          </div>
-
-          <h2 class="text-center mb-4">Iskander A</h2>
-
-          <div class="d-grid gap-2 mb-3">
-            <button class="btn btn-primary">Follow</button>
-          </div>
-
-          <div class="d-flex justify-content-center mb-3">
-            <span class="badge bg-primary me-3 p-2">
-              <strong>150</strong> Following
-            </span>
-            <span class="badge bg-info p-2">
-              <strong>200</strong> Followers
-            </span>
-          </div>
-        </div>
-
-        <div class="col-md-8">
-          <h3 class="mb-4">User Posts</h3>
-
-          <div class="card mb-3">
-            <div class="card-header">Post Title 1</div>
-            <div class="card-body">
-              <p class="card-text">
-                This is a sample post content. You can fetch the user's posts
-                from the backend and display them here.
-              </p>
+    <main>
+      <div class="container-fluid pt-5 bg-white f-flex flex-column align-items-center justify-content-center">
+        <div class="row px-5 mx-5 justify-content-center">
+          <div class="col-md-6">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="../assets/profile-pic.jpg" alt="User's Profile Image" class="img-fluid rounded-circle profile-pic-img" style="width: 150px" />
             </div>
-          </div>
-          <div class="card mb-3">
-            <div class="card-header">Post Title 2</div>
-            <div class="card-body">
-              <p class="card-text">
-                This is a sample post content. You can fetch the user's posts
-                from the backend and display them here.
-              </p>
+
+            <h2 class="text-center mb-4">Iskander A</h2>
+            <p class="text-center">Enthusiastic about sports, coding, and jiu-jitsu, I revel in embracing both physical and mental challenges. My time is balanced between tackling programming problems, practicing martial arts, and creating memorable moments with friends. Always exploring, always learning.</å>
+
+            <div class="d-grid gap-2 mb-3">
+              <button class="btn btn-primary">Follow</button>
             </div>
-          </div>
-          <div class="card mb-3">
-            <div class="card-header">Post Title 3</div>
-            <div class="card-body">
-              <p class="card-text">
-                This is a sample post content. You can fetch the user's posts
-                from the backend and display them here.
-              </p>
-            </div>
-          </div>
-          <div class="card mb-3">
-            <div class="card-header">Post Title 4</div>
-            <div class="card-body">
-              <p class="card-text">
-                This is a sample post content. You can fetch the user's posts
-                from the backend and display them here.
-              </p>
+
+            <div class="d-flex justify-content-center mb-3">
+              <span class="badge bg-primary me-3 p-2"> <strong>150</strong> Following </span>
+              <span class="badge bg-info p-2"> <strong>200</strong> Followers </span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

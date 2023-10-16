@@ -5,32 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Boaters Social</title>
     <link rel="stylesheet" href="../dist/css/styles.css">
 </head>
-<body class="bg-body-secondary">
+<body id="profile-page" class="bg-body-secondary">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand custom-blue-text" href="#">Boaters Social</a>
+            <a class="custom-blue-text text-decoration-none h1 me-4" href="index.html">Boaters Social</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="nav nav-pills me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/profile/index.html">Profile</a>
+                        <a class="nav-link active" aria-current="page" href="/profile/index.html"><div id="profileNameDisplay"></div></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/feed/index.html">Feed</a>
                     </li>
                 </ul>
             
-                <div class="search">
-                  <input type="text" class="form-control" id="searchInput" placeholder="Enter search text..." onkeydown="handleSearchEnter(event)">
-
-                </div>
+            
               
 
             </div>
@@ -40,35 +37,38 @@
         <div class="row justify-content-md-center column-gap-3">
             <div class="col-12 col-md-3 bg-white text-center h-25">
                 <img src="/images/profileimage.jpg" class="img-fluid img-thumbnail rounded-circle" alt="Profile picture of the user">
-                <h5>Kristian Nilsen</h5>
+                <div class="nameofuser fs-2" id="authorNameDisplay"></div>
                 <p>Contact info: Norway</p>
-                <a href="/index.html"><button class="btn btn-primary mb-4">Log out</button></a>
+                <a href="/index.html"><button id="logoutButton" class="btn btn-primary mb-4">Log out</button></a>
             </div>
             <div class="col-md-5">
                 <div class="row mb-3">
                     <div class="col-md-12 bg-white px-5 py-4">
-                        <h3 class="text-center text-primary-emphasis shadow-sm p-3 mb-5 bg-body-tertiary rounded">User posts</h3>
+                        <h3 class="text-center text-primary-emphasis shadow-sm p-3 mb-5 bg-body-tertiary rounded">Posts</h3>
                         <div class="mb-3">
-                          <form id="blog-post-form">
-                            <div class="mb-3">
-                                <label for="postTitle" class="form-label">Say something...</label>
-                                <textarea type="text" class="form-control" id="postTitle" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit Post</button>
-                        </form>  
+                            <form id="blog-post-form">
+                                <div class="mb-3">
+                                    <label for="postTitle" class="form-label"></label>
+                                    <textarea type="text" class="form-control" id="postTitle" rows="4" required placeholder="Post title..."></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="postBody" class="form-label"></label>
+                                    <textarea class="form-control" id="postBody" rows="4" required placeholder="Post content..."></textarea>
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="postMedia" class="form-label">Media Link (Image URL):</label>
+                                    <input type="text" class="form-control" id="postMedia" placeholder="Enter the media link (image URL)">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Post</button>
+                            </form>  
                         <hr>
-                        <label for="filterDate" class="form-label">Filter posts by Date</label>
-                        <input type="date" class="form-control" id="filterDate">
-                      </div>
-                      <button class="btn btn-outline-primary" id="filterButton">Apply Filter</button>
-                      <button id="clearDateButton" class="btn btn-secondary">Clear filter</button>
-                      
+
                       <div id="user-posts-container" class="w-100"></div>
 
                         
                     </div>
                 </div>
-            
+            </div>
               
             </div>
             <div class="col-md-3 bg-white">
@@ -91,7 +91,8 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Include the posts.js script -->
-    <script src="../js/posts.js"></script>
+
+    <script src="../js/feed.js"></script>
+    <script src="../js/profile.js"></script>
 </body>
 </html>

@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (json.accessToken) {
                 // Store the access token in local storage
                 localStorage.setItem('accessToken', json.accessToken);
+                if (json.name) {
+                    // Store the user's name in local storage
+                    localStorage.setItem('userName', json.name);
+                }
                 console.log('Login successful');
                 // Redirect to a dashboard or another page after successful login
                 window.location.href = 'profile/index.html';

@@ -60,7 +60,7 @@ export function postTemplate(postData) {
     const workoutImage = document.createElement("img");
     workoutImage.alt = "Workout image feed";
     workoutImage.title = "Workout image";
-    workoutImage.className = "bd-placeholder-img card-img-top max-height-300";
+    workoutImage.className = "bd-placeholder-img card-img-top ";
     workoutImage.width = "100%";
 
     if (postData.media) {

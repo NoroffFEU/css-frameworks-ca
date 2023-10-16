@@ -51,35 +51,24 @@ switch (location.pathname) {
 // renderPosts();
 
 //--------------------------------------------------------------------------
-
-// postMethods.createPost();
-// post.updatePost();
-// post.removePost();
-// postMethods.getPost();
-// postMethods.getPosts().then(console.log);
-// postMethods.getPost(3725).then(console.log);
+//Testing createPost, updatePost, removePost and getPost/getPosts function without a form
 
 // postMethods.createPost({
-//     title: "Create post title",
-//     body: "CreatePost body",
-//     tags: "ThisIsATag",
-//     },
+//     title: "No time for resting, here we go testing",
+//     body: "Test test test, No rest rest res",
+//     media: "https://images.freeimages.com/images/large-previews/5aa/spooky-chillin-1258602.jpg",
 // });
 
-// updatePost({
-//     id: 3719,
-//     title: "Example post UPDATED UPDATED",
-//     body: "Also an example UPDATED UPDATED",
+//Check for an id in network, choose the POST request and check response, add id in update
+
+// postMethods.updatePost({
+//     id: 7470,
+//     title: "Time to take a break",
+//     body: "Test test test, No rest rest res",
+//     media: "https://images.freeimages.com/images/large-previews/5aa/spooky-chillin-1258602.jpg",
 // });
 
-// removePost(3719);
-
-// {"title":"Example post",
-// "body":"Also an example",
-// "tags":[],
-// "media":null,
-// "created":
-// "2023-10-09T11:10:54.381Z",
-// "updated":"2023-10-09T11:10:54.381Z",
-// "id":3719,
-// "_count":{"comments":0,"reactions":0}}
+// postMethods.removePost(7470);
+// postMethods.getPosts().then(console.log);
+// postMethods.getPost(7470).then(console.log);
+//--------------------------------------------------------------------------------------

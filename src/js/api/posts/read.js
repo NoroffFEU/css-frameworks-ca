@@ -5,10 +5,11 @@ const action = "/posts";
 const method = "get"; //do not have to write this
 
 export async function getPosts() {
-    const updatePostURL = `${API_SOCIAL_URL}${action}`;
+    const getPostURL = `${API_SOCIAL_URL}${action}`;
 
-    const response = await authFetch(updatePostURL);
+    const response = await authFetch(getPostURL);
 
+    // console.log(await response.json());
     return await response.json();
 }
 
@@ -20,5 +21,6 @@ export async function getPost(id) {
 
     const response = await authFetch(getPostURL);
 
+    // console.log(await response.json());
     return await response.json();
 }

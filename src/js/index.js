@@ -5,17 +5,30 @@ import * as postMethods from "./api/posts/index.js";
 //-------------------------------------------------------
 // Routing behaviour to make sure the wrong scripts are not running
 const path = location.pathname;
+console.log(path);
 
-if (path === "/") {
-    listeners.setLoginFormListener();
-} else if (path === "/profile/register/") {
-    listeners.setRegisterFormListener();
-}
+// if (path === "/index.html") {
+//     listeners.setLoginFormListener();
+// } else if (path === "/profile/register/") {
+//     listeners.setRegisterFormListener();
+// }
 // } else if (path === "/post/create") {
 //     listeners.setCreatePostListener();
 // } else if (path === "/post/edit/") {
 //     listeners.setUpdatePostListener;
 // }
+
+switch (location.pathname) {
+    case "/":
+    case "/index.html":
+        listeners.setLoginFormListener();
+        break;
+    case "/profile/register/":
+    case "/profile/register/index.html":
+        listeners.setRegisterFormListener();
+        break;
+    default:
+}
 
 //--------------------------------------------------------------
 // Testing templates for rendering/showing POST and POSTS
@@ -28,6 +41,7 @@ if (path === "/") {
 // }
 
 // renderPost();
+
 // async function renderPosts() {
 //     const posts = await postMethods.getPosts();
 //     console.log(posts);

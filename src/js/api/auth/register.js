@@ -19,7 +19,10 @@ export async function register(profile) {
 
     const result = await response.json();
     console.log("register result:", result);
+
     alert("You are now registered");
+    window.location.href = "/index.html";
+
     // login(profile);
 }
 

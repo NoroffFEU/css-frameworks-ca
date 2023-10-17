@@ -9,7 +9,9 @@
     <script src="/scripts/common/constant.mjs" type="module"></script>
     <script src="../scripts/feed/fetch-posts.mjs" type="module"></script>
     <script src="../scripts/feed/create-post.mjs" type="module"></script>
+    <script src="../scripts/feed/edit-post.mjs" type="module"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
     <title>Discover Breaks</title>
 </head>
 <body>
@@ -75,6 +77,22 @@
                 <button id="viewMoreButton" class="btn btn-primary my-3">View More</button>
             </div>
         </div>
+        <div id="modal-overlay" class="modal-overlay"></div>
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Edit Post</h2>
+                <form id="editForm">
+                    <label for="editTitle">Title:</label>
+                    <input type="text" id="editTitle">
+                    <label for="editBody">Body:</label>
+                    <textarea id="editBody"></textarea>
+                    <label for="editMedia">Media URL:</label>
+                    <input type="text" id="editMedia">
+                    <button type="submit" id="saveEdit">Save</button>
+                </form>
+            </div>
+        </div>        
     </div>
     <footer class="py-3 mt-4 bg-primary">
         <p class="text-center text-white-50">© 2023 Christel Østerbøe</p>

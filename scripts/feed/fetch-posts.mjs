@@ -1,4 +1,5 @@
 import { API_ALL_POSTS } from "../common/constant.mjs";
+import { openEditModal } from "./edit-post.mjs";
 
 const postContainer = document.querySelector("#post-container");
 const searchInput = document.getElementById("search");
@@ -85,6 +86,11 @@ function createPostHTML(post) {
     cardBody.appendChild(dateContainer);
     cardBody.appendChild(cardText);
 
+    const editButton = document.createElement("button");
+    editButton.classList.add("btn", "btn-outline-secondary", "btn-block");
+    editButton.innerHTML = 'Edit Post';
+    editButton.addEventListener("click", () => openEditModal(post));
+
     if (media) {
         const imageContainer = document.createElement("div");
         imageContainer.classList.add("text-center", "post-image-container");
@@ -100,7 +106,9 @@ function createPostHTML(post) {
         cardBody.appendChild(imageContainer);
     }
 
+    cardBody.appendChild(editButton);
     card.appendChild(cardBody);
+    
 
     return card;
 }

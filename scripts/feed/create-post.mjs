@@ -20,7 +20,7 @@ postButton.addEventListener("click", async (e) => {
 });
 
 
-async function createNewPost(title, body, tags, media) {
+async function createNewPost(title, body) {
     try {
         const token = localStorage.getItem('accessToken');
 

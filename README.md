@@ -1,2 +1,5 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+This is my CA frameworks CA using bootstrap
+
+# JS2 CA branch
+This is my JS2 CA

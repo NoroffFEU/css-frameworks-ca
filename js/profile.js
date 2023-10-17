@@ -1,12 +1,11 @@
-// profile.js
 
-// Function to get the author's name from the URL
+// Function to get the post author/user name from the URL
 function getAuthorNameFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('authorName');
 }
 
-// Function to get the author's name from localStorage
+// Function to get the post author/user name from localStorage
 function getAuthorNameFromLocalStorage() {
     return localStorage.getItem('userName');
 }
@@ -16,20 +15,17 @@ const authorNameFromURL = getAuthorNameFromURL();
 const authorNameFromLocalStorage = getAuthorNameFromLocalStorage();
 const authorName = authorNameFromURL || authorNameFromLocalStorage;
 
-// Set the document title to the author's name
+// Set the document title
 document.title = authorName ? `BS - ${authorName}'s profile` : 'BS - My Profile';
 
-// Function to fetch posts of the specific author with the access token
-// Function to fetch posts of the specific author with a delay
+// Function to fetch posts of the specific author with the access token with a delay
 async function fetchAuthorPosts(authorName) {
-    // Add a shorter delay (100 milliseconds) for testing purposes
-    const delayInMilliseconds = 10;
+    const delayInMilliseconds = 50;
 
     try {
-        // Show a loading message while fetching
         document.getElementById('user-posts-container').innerHTML = 'Loading...';
 
-        // Introduce a delay using setTimeout
+        // delay
         setTimeout(async () => {
             const token = localStorage.getItem('accessToken');
             const fullUrl = `${API_BASE_URL}/api/v1/social/profiles/${authorName}/posts`;
@@ -74,13 +70,9 @@ async function fetchAuthorPosts(authorName) {
     }
 }
 
-
-
-// Function to display posts of the specific author
 function displayAuthorPosts(posts) {
     const userPostsContainer = document.querySelector('#user-posts-container');
 
-    // Clear the user posts container
     userPostsContainer.innerHTML = '';
 
     // Loop through the posts and create HTML elements for each post
@@ -136,7 +128,6 @@ function editPost(postId) {
             const updatedContent = prompt('Edit the post content:', postToEdit.body);
 
             if (updatedContent === null) {
-                // User canceled the edit
                 return;
             }
 
@@ -149,9 +140,6 @@ function editPost(postId) {
         alert('You can only edit your own posts.');
     }
 }
-
-
-
   
   // Function to update a post via a PUT request
   async function updatePost(postId, updatedContent) {
@@ -163,18 +151,15 @@ function editPost(postId) {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ body: updatedContent }), // Update the post's body
+        body: JSON.stringify({ body: updatedContent }),
       };
   
       const response = await fetch(`${API_BASE_URL}/api/v1/social/posts/${postId}`, putData);
   
       if (response.ok) {
-        // Post was successfully updated
         console.log('Post updated successfully');
-        // Call the fetchWithToken function to refresh the posts list
         fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
       } else {
-        // Handle error when post update fails
         console.error('Failed to update post');
       }
     } catch (error) {
@@ -187,11 +172,9 @@ function deletePost(postId) {
     const isProfilePage = window.location.pathname === '/profile/index.html';
 
     if (isProfilePage && window.location.search === '') {
-        // Prompt the user to confirm the deletion
         const confirmed = confirm('Are you sure you want to delete this post?');
 
         if (confirmed) {
-            // Call the function to send a DELETE request to delete the post
             deletePostRequest(postId);
         }
     } else {
@@ -214,12 +197,9 @@ async function deletePostRequest(postId) {
         const response = await fetch(`${API_BASE_URL}/api/v1/social/posts/${postId}`, deleteData);
 
         if (response.ok) {
-            // Post was successfully deleted
             console.log('Post deleted successfully');
-            // Call the fetchWithToken function to refresh the posts list or any other required action
             fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
         } else {
-            // Handle error when post deletion fails
             console.error('Failed to delete post');
         }
     } catch (error) {

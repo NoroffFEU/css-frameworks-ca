@@ -22,20 +22,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     localStorage.setItem('userName', json.name);
                 }
                 console.log('Login successful');
-                // Redirect to a dashboard or another page after successful login
+                // Redirect to profile page after successful login
                 window.location.href = 'profile/index.html';
             } else {
                 // Display the error message when login fails
                 const errorMessage = document.getElementById('login-error-message');
                 errorMessage.textContent = 'Login failed. Please check your credentials.';
-                errorMessage.classList.remove('d-none'); // Show the error message
+                errorMessage.classList.remove('d-none');
                 console.error('Login failed:', json.message);
             }
         } catch (error) {
             // Handle network or other errors
             const errorMessage = document.getElementById('login-error-message');
             errorMessage.textContent = 'An error occurred. Please try again later.';
-            errorMessage.classList.remove('d-none'); // Show the error message
+            errorMessage.classList.remove('d-none');
             console.error('Error:', error);
         }
     }

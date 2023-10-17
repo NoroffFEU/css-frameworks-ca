@@ -1,4 +1,4 @@
-// registration.js
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const API_BASE_URL = 'https://api.noroff.dev';

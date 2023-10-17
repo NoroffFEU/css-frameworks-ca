@@ -1,15 +1,11 @@
-// posts.js
 
-
-// Retrieve the username from localStorage
 const username = localStorage.getItem('userName');
-
-// Select the "nameofuser" <div> by class
 const nameofuserDiv = document.querySelector('.nameofuser');
 
-// Set the content of the "nameofuser" <div> to the username
-nameofuserDiv.textContent = username;
+// API base URL
+const API_BASE_URL = 'https://api.noroff.dev';
 
+nameofuserDiv.textContent = username;
 
 // Function to handle search when Enter key is pressed
 function handleSearchEnter(event) {
@@ -22,16 +18,14 @@ function handleSearchEnter(event) {
         const postTitle = post.title.toLowerCase();
         const postBody = post.body.toLowerCase();
         return postTitle.includes(searchTerm) || postBody.includes(searchTerm);
-
-        
       });
   
       // Display the filtered posts
       displayPosts(filteredPosts);
     }
-  }
+}
 
-// Function to format a date to the EU format (dd.mm.yyyy)
+// Function to format a date to the EU format (dd/mm/yyyy)
 function formatDate(dateString) {
     const date = new Date(dateString);
     const day = date.getUTCDate().toString().padStart(2, '0');
@@ -44,18 +38,13 @@ function formatDate(dateString) {
 // Define a variable to store the posts data
 let postsData = [];
 
-
-// API base URL
-const API_BASE_URL = 'https://api.noroff.dev';
-
 // Function to fetch posts with the access token
 async function fetchWithToken(url) {
   try {
       const token = localStorage.getItem('accessToken');
 
-      // Include the _author parameter with a value of true in the query string
+      // Include the author parameter with a value of true in the query string
       const fullUrl = `${url}?_author=true`;
-
       const getData = {
           method: 'GET',
           headers: {
@@ -73,7 +62,7 @@ async function fetchWithToken(url) {
           
           // Check if the author data is included in the response
           if (json && json.length > 0 && json[0]._author) {
-              // Log the author information for the first post
+
               const authorName = json[0]._author.name;
               console.log(`Author Name: ${authorName}`);
           }
@@ -81,7 +70,6 @@ async function fetchWithToken(url) {
           // Set the fetched posts to the postsData variable
           postsData = json;
 
-          // Call a function to display the posts
           displayPosts(json);
       } else {
           console.error('Failed to fetch posts');
@@ -91,9 +79,7 @@ async function fetchWithToken(url) {
   }
 }
 
-
-
-/// Function to display posts in the "User posts" section
+// Function to display posts in the "User posts" section
 function displayPosts(posts, filterDate) {
   const userPostsContainer = document.querySelector('#user-posts-container');
   const modalBackdrop = document.createElement('div');
@@ -101,12 +87,10 @@ function displayPosts(posts, filterDate) {
   modalBackdrop.classList.add('modal-backdrop');
   document.body.appendChild(modalBackdrop);
 
-  // Filter posts based on the provided date if a date is selected
   const filteredPosts = filterDate
     ? posts.filter((post) => post.created.startsWith(filterDate))
     : posts;
 
-  // Clear the user posts container
   userPostsContainer.innerHTML = '';
 
   // Loop through the filtered posts and create HTML elements for each post
@@ -114,7 +98,7 @@ function displayPosts(posts, filterDate) {
     const postElement = document.createElement('div');
     postElement.classList.add('row', 'mb-3');
 
-    // Replace backslashes with HTML line break tags
+    // Replace backslashes with HTML line break tags to get more lines if user posts more than one line
     const postTitleWithLineBreaks = post.title.replace(/\n/g, '<br>');
 
     // Include the author's name in the post
@@ -145,8 +129,6 @@ function displayPosts(posts, filterDate) {
 }
 
 
-
-  
 // Function to send a new post to the API
 async function sendNewPost(title, body, media) {
   try {
@@ -157,18 +139,15 @@ async function sendNewPost(title, body, media) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({ title, body, media }), // Include title, body, and media
+      body: JSON.stringify({ title, body, media }),
     };
 
     const response = await fetch(`${API_BASE_URL}/api/v1/social/posts`, postData);
 
     if (response.ok) {
-      // Post was successfully created
       console.log('Post created successfully');
-      // Call the fetchWithToken function to refresh the posts list
       fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
     } else {
-      // Handle error when post creation fails
       console.error('Failed to create post');
     }
   } catch (error) {
@@ -183,12 +162,10 @@ blogPostForm.addEventListener('submit', function (e) {
   e.preventDefault();
   const postTitle = document.getElementById('postTitle').value;
   const postBody = document.getElementById('postBody').value;
-  const postMedia = document.getElementById('postMedia').value; // Get the media link
+  const postMedia = document.getElementById('postMedia').value;
 
-  // Call the sendNewPost function to send the new post to the API
   sendNewPost(postTitle, postBody, postMedia);
 
-  // Clear the form fields after submission
   blogPostForm.reset();
 });
 
@@ -201,29 +178,22 @@ fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
 const sortOptions = document.querySelectorAll('input[name="sortOption"]');
 sortOptions.forEach((option) => {
   option.addEventListener('change', () => {
-    // Get the selected sorting option
+    
     const selectedOption = document.querySelector('input[name="sortOption"]:checked').value;
     
     // Sort the posts based on the selected option
     if (selectedOption === 'newest') {
-      // Sort by newest
       postsData.sort((a, b) => new Date(b.created) - new Date(a.created));
     } else if (selectedOption === 'oldest') {
-      // Sort by oldest
       postsData.sort((a, b) => new Date(a.created) - new Date(b.created));
     }
     
-    // Re-display the sorted posts
     displayPosts(postsData);
   });
 });
 
-
-
-
-
-
 function openUserProfile(authorName) {
+
   // Redirect to the user's profile page and pass the authorName as a query parameter
   window.location.href = `/profile/index.html?authorName=${authorName}`;
 }
@@ -273,7 +243,7 @@ function openPostModal(postId) {
     modalBackdrop.style.display = 'block';
     modal.style.display = 'block';
 
-    // Add a click event listener to the modal backdrop
+    // Click event listener to the modal backdrop
     modalBackdrop.addEventListener('click', function (event) {
       if (event.target === modalBackdrop) {
         closePostModal();
@@ -298,4 +268,3 @@ function closePostModal() {
     });
   }
 }
-

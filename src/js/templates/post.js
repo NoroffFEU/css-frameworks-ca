@@ -36,6 +36,7 @@ export function postTemplate(postData) {
     profileImageDiv.appendChild(profileImage);
 
     const nameAndTitleDiv = document.createElement("div");
+    nameAndTitleDiv.className = "nameAndTitleDiv";
 
     const nameHeading = document.createElement("h1");
     nameHeading.className = "feed-heading feed-name mb-0 fs-3";

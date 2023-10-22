@@ -3,7 +3,7 @@ import { createPost } from "../api/posts/index.js";
 
 //use this as a teemplate to write other eventlisteners
 
-export function setCreatePostListener() {
+export function setCreatePostFormListener() {
     const form = document.querySelector("#createPost");
     // console.log(form);
 

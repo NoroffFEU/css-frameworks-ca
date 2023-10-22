@@ -3,11 +3,11 @@ import { updatePost } from "../api/posts/index.js";
 
 //use this as a teemplate to write other eventlisteners
 
-export function setUpdatePostListener() {
+export function setUpdatePostFormListener() {
     const form = document.querySelector("#updatePost");
     // console.log(form);
 
-    url = new URL(location.href);
+    const url = new URL(location.href);
     const id = url.searchParams.get("id");
 
     if (form) {

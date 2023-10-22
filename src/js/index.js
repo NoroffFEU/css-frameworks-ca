@@ -28,29 +28,36 @@ switch (location.pathname) {
     case "/profile/register/index.html":
         listeners.setRegisterFormListener();
         break;
+    case "/post/create/":
+    case "/post/create/index.html":
+        listeners.setCreatePostFormListener();
+    case "/post/edit/":
+    case "/post/edit/index.html":
+        listeners.setUpdatePostFormListener();
     default:
 }
 
 //--------------------------------------------------------------
 // Testing templates for rendering/showing POST and POSTS
-async function renderPost() {
-    const posts = await postMethods.getPosts();
-    console.log(posts);
-    const post = posts[11]; //Pick number in array, not id
-    console.log(post);
-    const container = document.querySelector("#postContainer");
-    templates.renderPostTemplate(post, container);
-}
 
-renderPost();
+// async function renderPost() {
+//     const posts = await postMethods.getPosts();
+//     console.log(posts);
+//     const post = posts[11]; //Pick number in array, not id
+//     console.log(post);
+//     const container = document.querySelector("#postContainer");
+//     templates.renderPostTemplate(post, container);
+// }
 
-async function renderPosts() {
-    const posts = await postMethods.getPosts();
-    console.log(posts);
-    const container = document.querySelector("#postList");
-    templates.renderPostTemplates(posts, container);
-}
-renderPosts();
+// renderPost();
+
+// async function renderPosts() {
+//     const posts = await postMethods.getPosts();
+//     console.log(posts);
+//     const container = document.querySelector("#postList");
+//     templates.renderPostTemplates(posts, container);
+// }
+// renderPosts();
 
 //--------------------------------------------------------------------------
 //Testing createPost, updatePost, removePost and getPost/getPosts function without a form

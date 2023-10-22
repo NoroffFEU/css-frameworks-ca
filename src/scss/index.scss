@@ -1,25 +1,16 @@
-// Variables
-$primary-color: #3498db;
-$secondary-color: #2c3e50;
-$light-color: #ecf0f1;
-$dark-text: #34495e;
-$shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Global styles
-body, html {
-    height: 100%;
+// Global Styles
+body {
     font-family: 'Arial', sans-serif;
-    background-color: $light-color;
-    color: $dark-text;
+    background-color: $background-color;
+    color: $secondary-color;
 }
 
 .container {
     padding-top: 50px;
-    min-height: 80vh;
-    h2 {
-        color: $secondary-color;
-        margin-bottom: 30px;
-    }
+    padding-bottom: 50px;
 }
 
 .btn-primary {
@@ -30,85 +21,90 @@ body, html {
     }
 }
 
-.form-control, .form-select {
-    margin-top: 10px;
-    box-shadow: $shadow;
+.card {
+    box-shadow: $shadow-light;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $shadow-dark;
+    }
 }
 
-// Authentication Page
-.auth-form {
-    max-width: 400px;
-    margin: 50px auto;
+
+.auth-container {
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: $white-color;
     padding: 30px;
-    background-color: white;
-    box-shadow: $shadow;
     border-radius: 8px;
+    box-shadow: $shadow-light;
+    h2 {
+        margin-bottom: 20px;
+    }
 }
+
 
 // Feed Page
-.search-sort-container {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.post-form {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: $shadow;
-    textarea {
-        height: 100px;
+.feed-container {
+    .search-bar {
+        margin-bottom: 20px;
+        position: relative;
+        input {
+            padding-right: 40px;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            color: $secondary-color;
+        }
+    }
+    .post-card {
+        margin-bottom: 20px;
+        padding: 20px;
+        .post-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
     }
 }
 
-.post-thumbnail {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: $shadow;
-    margin-bottom: 20px;
-    img {
-        width: 100%;
-        border-radius: 5px;
-    }
-    p {
-        margin-top: 10px;
-    }
-}
 
 // Profile Page
-.profile-details {
+.profile-container {
     text-align: center;
+    margin-bottom: 50px;
     img {
         width: 150px;
-        border: 5px solid $primary-color;
-        margin-bottom: 15px;
+        border-radius: 50%;
+        border: 4px solid $primary-color;
+        margin-bottom: 20px;
     }
-
-    h3 {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-    }
-
-    .btn-primary {
-        background-image: linear-gradient(45deg, darken($primary-color, 5%), $primary-color, lighten($primary-color, 5%));
-        border: none;
-    }
-
-    .follow-stats {
+    .profile-info {
         display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
+        .btn-follow {
+            background-color: $primary-color;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: $white-color;
+            &:hover {
+                background-color: darken($primary-color, 10%);
+            }
+        }
+    }
+    .followers-info {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
-.user-posts {
-    margin-top: 30px;
-    .post-thumbnail {
-        border: 1px solid $secondary-color;
-        padding: 10px;
-        border-radius: 8px;
-    }
-}

@@ -6,9 +6,9 @@
     <title>Authentication</title>
     <link
       rel="stylesheet"
-      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="dist/css/index.css" />
+    <link rel="stylesheet" href="/dist/css/index.css" />
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -18,26 +18,33 @@
   </head>
   <body>
     <div class="container">
-      <h2>Profile</h2>
-
-      <!-- Profile details -->
-      <img src="path_to_profile_image" class="img-thumbnail" />
-      <h3>Username</h3>
-
-      <button class="btn btn-primary">Follow</button>
-
-      <!-- Following/Followers count -->
-      <div class="d-flex justify-content-between">
-        <p>Following: 100</p>
-        <p>Followers: 200</p>
+      <div class="profile-container card">
+        <img src="/Images/player-quote.jpg" alt="Profile Picture" />
+        <h3>Username</h3>
+        <div class="profile-info">
+          <div class="followers-info">
+            <div>
+              <strong>210</strong>
+              <p>Followers</p>
+            </div>
+            <div>
+              <strong>150</strong>
+              <p>Following</p>
+            </div>
+          </div>
+          <button class="btn-follow">Follow</button>
+        </div>
       </div>
-
-      <!-- List of user posts -->
-      <div class="post-thumbnail">
-        <img src="path_to_post_image" class="img-thumbnail" />
-        <p>Post description</p>
+      <div class="user-posts">
+        <div class="post-card card">
+          <div class="post-header">
+            <strong>Post Title</strong>
+            <span>Posted on date</span>
+          </div>
+          <p>Post content...</p>
+        </div>
+        <!-- Repeat .post-card for each user post -->
       </div>
-      <!-- Repeat similar blocks for other user posts -->
     </div>
   </body>
 </html>

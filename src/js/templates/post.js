@@ -59,7 +59,7 @@ export function postTemplate(postData) {
     cardDiv.className = "card shadow-sm bg-light";
 
     const workoutImage = document.createElement("img");
-    workoutImage.alt = "Workout image feed";
+    // workoutImage.alt = "Workout image feed";
     workoutImage.title = "Workout image";
     workoutImage.className = "bd-placeholder-img card-img-top ";
     workoutImage.width = "100%";
@@ -67,7 +67,8 @@ export function postTemplate(postData) {
     if (postData.media) {
         workoutImage.src = postData.media; // Use the API-provided image URL
     } else {
-        workoutImage.src = "../images/man-running-jenny-hill-mQVWb7kUoOE-unsplash.jpg"; // Use the default image URL
+        // workoutImage.src = "../images/man-running-jenny-hill-mQVWb7kUoOE-unsplash.jpg";
+        workoutImage.src = "https://picsum.photos/600/400"; // Use the default image URL
     }
 
     const cardBodyDiv = document.createElement("div");

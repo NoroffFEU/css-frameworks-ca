@@ -11,9 +11,18 @@ export function setCreatePostFormListener() {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             const form = event.target;
+            // const tags = form.tags;
+            // console.log(tags);
             const formData = new FormData(form); //provide the form data to this constructor
             const post = Object.fromEntries(formData.entries());
-            console.log("TThis is a post created", post);
+
+            const tagsInput = form.querySelector("input[name='tags']").value;
+            const tagsArray = tagsInput.split(",").map((tag) => tag.trim());
+            post.tags = tagsArray;
+
+            console.log("This is a post created", post);
+            // const tags = post.tags;
+            // console.log(tags);
             createPost(post);
         });
     }

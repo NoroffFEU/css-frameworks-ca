@@ -76,8 +76,9 @@ export function postTemplate(postData) {
 
     const cardTextParagraph = document.createElement("p");
     cardTextParagraph.className = "card-text";
-    cardTextParagraph.textContent =
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores doloribus consequuntur tenetur non sapiente culpa assumenda nobis totam in animi dignissimos corrupti.";
+    // cardTextParagraph.textContent =
+    //     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores doloribus consequuntur tenetur non sapiente culpa assumenda nobis totam in animi dignissimos corrupti.";
+    cardTextParagraph.textContent = postData.body;
 
     const buttonDiv = document.createElement("div");
     buttonDiv.className = "d-flex justify-content-between align-items-center mb-3";

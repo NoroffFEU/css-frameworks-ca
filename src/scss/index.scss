@@ -1,52 +1,36 @@
-$primary-color: #253c6b;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/_mixins.scss";
+@import "../../node_modules/bootstrap/scss/_buttons";
+
+$primary: #253c6b;
 $font-stack: Arial, sans-serif;
-$secondary-color: #dfdcdc;
-$fave-color: rgb(197, 123, 135);
-$bg-color: #dbe3f5b4;
+$secondary: #dfdcdc;
+$body-bg: #355194b4;
 $box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-$a-hover: #f8f8f8;
-$btn-secondary: #181414;
+$body-bg: #ebeced;
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+}
 
 
 body {
   height: 100vh;
-  background-color: $bg-color;
+}
 
-  ul {
-    list-style: none;
-    li {
-      display: inline-block;
+
+ul {
+  list-style: none;
+  li {
+    display: inline-block;
     }
   }
-
-  nav {
-    box-shadow: $box-shadow;
-  }
-}
-
-.navbar,
-footer {
-  background-color: $primary-color;
-
-  a {
-    color: $secondary-color;
-    text-decoration: none;
-    font-weight: 200;
-
-    &:hover {
-      color: $a-hover;
-    }
-  }
-
-  img {
-    width: 36px;
-  }
-}
-
-i {
-  color: $fave-color;
-  font-size: x-large;
-}
 
 .card {
   border: none;
@@ -61,28 +45,6 @@ main {
   margin: 50px;
 }
 
-.btn {
-  margin-top: 5px;
-
-  &.btn-primary {
-    background-color: $primary-color;
-    border: none;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
-  }
-
-  &.btn-secondary {
-    background-color: $secondary-color;
-    color: $btn-secondary;
-    border: none;
-
-    &:hover {
-      background-color: darken($secondary-color, 30%);
-    }
-  }
-}
 
 
 #post-list {

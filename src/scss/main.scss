@@ -1,1 +1,25 @@
 @import "index";
+
+.landing-page-bg {
+     background-image: linear-gradient(180deg, $secondary 0%, transparent 100%);
+}
+
+// .big-carousel {
+//      height: 200px;
+// }
+
+// // not responsive
+// $small-carousel: 10vh;
+
+.landing-page-main-carousel {
+     height: 55vh;
+}
+
+.user-data-input {
+     border: 2px solid $primary;
+}
+
+// .custom-next-icon {
+//      @extend .carousel-control-next-icon;
+
+// }

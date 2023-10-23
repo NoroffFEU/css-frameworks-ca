@@ -1,2 +1,33 @@
+$primary: rgba(66, 133, 140, 1);
+$secondary: rgba(140, 66, 133, 1);
+$third: rgba(0, 0, 0, 1);
+$fourth: rgba(255, 255, 255, 1);
+$carousel-control-color: black;
+
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Here the default bootstrap colors are changed to my own color scheme
+
+.btn-custom-lg {
+     @extend .btn;
+     @extend .btn-lg;
+     //  Using the @extend method lets me keep the defualt bootstrap styling, and override parts of underneath
+
+     color: $third;
+     background-color: $fourth;
+     border: 2px solid $primary;
+     border-radius: 30px;
+     box-shadow: $box-shadow;
+
+     //  &:focus,
+     //  &.focus {
+     //       box-shadow: 0 0 0 0.2rem rgba(90, 103, 216, 0.5); // Adjust this value to your liking
+     //  }
+
+     //  &:active,
+     //  &.active {
+     //       background-color: darken($btn-custom-hover-color, 10%);
+     //       border-color: darken($btn-custom-hover-color, 15%);
+     //  }
+}

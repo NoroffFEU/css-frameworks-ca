@@ -58,18 +58,19 @@ export function postTemplate(postData) {
     const cardDiv = document.createElement("div");
     cardDiv.className = "card shadow-sm bg-light";
 
-    const workoutImage = document.createElement("img");
-    // workoutImage.alt = "Workout image feed";
-    workoutImage.title = "Workout image";
-    workoutImage.className = "bd-placeholder-img card-img-top ";
-    workoutImage.width = "100%";
-
     if (postData.media) {
+        const workoutImage = document.createElement("img");
         workoutImage.src = postData.media; // Use the API-provided image URL
-    } else {
-        // workoutImage.src = "../images/man-running-jenny-hill-mQVWb7kUoOE-unsplash.jpg";
-        workoutImage.src = "https://picsum.photos/600/400"; // Use the default image URL
+        workoutImage.alt = `Image from post with title: ${postData.title}`;
+        workoutImage.title = "Workout post image";
+        workoutImage.className = "bd-placeholder-img card-img-top ";
+        workoutImage.width = "100%";
+        cardDiv.appendChild(workoutImage);
     }
+    // else {
+    //     // workoutImage.src = "../images/man-running-jenny-hill-mQVWb7kUoOE-unsplash.jpg";
+    //     workoutImage.src = "https://picsum.photos/600/400"; // Use the default image URL
+    // }
 
     const cardBodyDiv = document.createElement("div");
     cardBodyDiv.className = "card-body";
@@ -132,7 +133,7 @@ export function postTemplate(postData) {
     cardBodyDiv.appendChild(commentDiv);
     cardBodyDiv.appendChild(addCommentDiv);
 
-    cardDiv.appendChild(workoutImage);
+    // cardDiv.appendChild(workoutImage);
     cardDiv.appendChild(cardBodyDiv);
 
     innerDiv.appendChild(cardDiv);

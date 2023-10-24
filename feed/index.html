@@ -11,19 +11,47 @@
     <link rel="stylesheet" href="/dist/css/index.css" />
   </head>
   <body>
-    <div class="container feed-container">
-      <div class="search-bar">
-        <input type="text" class="form-control" placeholder="Search..." />
-        <button><i class="bi bi-search"></i></button>
-      </div>
-      <div class="post-card card">
-        <div class="post-header">
-          <strong>Username</strong>
-          <span>Posted on date</span>
+    <div class="container mt-5">
+      <h2>Feed</h2>
+      <!-- Search Bar -->
+      <input
+        type="text"
+        class="form-control mb-3"
+        placeholder="Search posts..."
+      />
+
+      <!-- Sort Options using Bootstrap Dropdown -->
+      <div class="dropdown mb-3">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="sortOptions"
+          data-toggle="dropdown"
+        >
+          Sort By
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Date</a>
+          <a class="dropdown-item" href="#">Popularity</a>
         </div>
-        <p>Post content here...</p>
       </div>
-      <!-- Repeat .post-card for each post -->
+
+      <!-- Form to Create New Post -->
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="postContent">New Post:</label>
+          <textarea class="form-control" id="postContent"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">Post</button>
+      </form>
+
+      <!-- List of Post Thumbnails -->
+      <!-- This can be iteratively created for each post -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <!-- Post content here -->
+        </div>
+      </div>
     </div>
 
     <script

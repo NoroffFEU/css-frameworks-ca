@@ -9,14 +9,20 @@ $carousel-control-color: black;
 
 // Here the default bootstrap colors are changed to my own color scheme
 
+.standard-border {
+     border: 2px solid $primary;
+     outline: none;
+}
+
 .btn-custom-lg {
      @extend .btn;
      @extend .btn-lg;
+     @extend .standard-border;
      //  Using the @extend method lets me keep the defualt bootstrap styling, and override parts of underneath
 
      color: $third;
      background-color: $fourth;
-     border: 2px solid $primary;
+
      border-radius: 30px;
      box-shadow: $box-shadow;
 
@@ -30,4 +36,34 @@ $carousel-control-color: black;
      //       background-color: darken($btn-custom-hover-color, 10%);
      //       border-color: darken($btn-custom-hover-color, 15%);
      //  }
+}
+
+.main-header {
+     background-image: linear-gradient(
+          180deg,
+          rgba($secondary, 0.6) 0%,
+          transparent 100%
+     );
+     border-bottom: 2px solid $primary;
+}
+
+.main-footer {
+     background-color: $primary;
+}
+
+.custom-header-input {
+     @extend .standard-border;
+
+     &.active {
+     }
+
+     &.focus {
+     }
+
+     &.focus {
+     }
+
+     &:hover {
+          border: 3px solid $primary;
+     }
 }

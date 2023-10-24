@@ -7,6 +7,523 @@
                content="width=device-width, initial-scale=1.0"
           />
           <title>Document</title>
+
+          <link rel="stylesheet" href="/dist/css/feedpage.css" />
+          <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
      </head>
-     <body></body>
+     <body>
+          <header class="main-header">
+               <nav class="navbar navbar-expand-md bg-body-tertiary">
+                    <div class="container-fluid">
+                         <a class="navbar-brand" href="/index.html"
+                              ><img
+                                   src="/img/logo-no-background.png"
+                                   height="80"
+                                   width="auto"
+                         /></a>
+
+                         <button
+                              class="navbar-toggler"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#navbarScroll"
+                              aria-controls="navbarScroll"
+                              aria-expanded="false"
+                              aria-label="Toggle navigation"
+                         >
+                              <span class="navbar-toggler-icon"></span>
+                         </button>
+                         <!-- This button is collapsed at md screens, and will only show on mobile devices -->
+
+                         <div
+                              class="collapse navbar-collapse"
+                              id="navbarScroll"
+                         >
+                              <ul
+                                   class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+                                   style="--bs-scroll-height: 100px"
+                              >
+                                   <li class="nav-item">
+                                        <a
+                                             class="nav-link active"
+                                             aria-current="page"
+                                             href=""
+                                             >Feed</a
+                                        >
+                                   </li>
+                                   <li class="nav-item">
+                                        <a class="nav-link" href="#"
+                                             >Learn more!</a
+                                        >
+                                   </li>
+
+                                   <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                   </li>
+                              </ul>
+                              <form class="d-flex" role="search">
+                                   <div class="input-group mb-3">
+                                        <input
+                                             type="text"
+                                             class="custom-header-input"
+                                             placeholder="Search"
+                                             aria-label="Recipient's username"
+                                             aria-describedby="button-addon2"
+                                        />
+                                   </div>
+                              </form>
+                         </div>
+                         <a href="/Profilepage/profilepage.html"
+                              ><img
+                                   src="/img/profilepicture.png"
+                                   height="60"
+                                   width="auto"
+                                   class=""
+                              />
+                         </a>
+                    </div>
+               </nav>
+          </header>
+          <main>
+               <div class="container text-center my-3">
+                    <div class="row mt-5">
+                         <div
+                              class="col-6 d-flex justify-content-center align-items-center"
+                         >
+                              <!-- Button trigger modal -->
+                              <button
+                                   type="button"
+                                   class="btn-custom-lg"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal"
+                              >
+                                   Post new memory
+                              </button>
+
+                              <!-- Modal -->
+                              <div
+                                   class="modal fade"
+                                   id="exampleModal"
+                                   tabindex="-1"
+                                   aria-labelledby="exampleModalLabel"
+                                   aria-hidden="true"
+                              >
+                                   <div class="modal-dialog">
+                                        <div class="modal-content">
+                                             <div class="modal-header">
+                                                  <h1
+                                                       class="modal-title fs-5"
+                                                       id="exampleModalLabel"
+                                                  >
+                                                       Modal title
+                                                  </h1>
+                                                  <button
+                                                       type="button"
+                                                       class="btn-close"
+                                                       data-bs-dismiss="modal"
+                                                       aria-label="Close"
+                                                  ></button>
+                                             </div>
+                                             <div class="modal-body">
+                                                  <div class="modal-body">
+                                                       <div
+                                                            class="container-fluid"
+                                                       >
+                                                            <div class="row">
+                                                                 <div
+                                                                      class="col-md-4"
+                                                                 >
+                                                                      .col-md-4
+                                                                 </div>
+                                                                 <div
+                                                                      class="col-md-4 ms-auto"
+                                                                 >
+                                                                      .col-md-4
+                                                                      .ms-auto
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                 <div
+                                                                      class="col-md-3 ms-auto"
+                                                                 >
+                                                                      .col-md-3
+                                                                      .ms-auto
+                                                                 </div>
+                                                                 <div
+                                                                      class="col-md-2 ms-auto"
+                                                                 >
+                                                                      .col-md-2
+                                                                      .ms-auto
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                 <div
+                                                                      class="col-md-6 ms-auto"
+                                                                 >
+                                                                      .col-md-6
+                                                                      .ms-auto
+                                                                 </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                 <div
+                                                                      class="col-sm-9"
+                                                                 >
+                                                                      Level 1:
+                                                                      .col-sm-9
+                                                                      <div
+                                                                           class="row"
+                                                                      >
+                                                                           <div
+                                                                                class="col-8 col-sm-6"
+                                                                           >
+                                                                                Level
+                                                                                2:
+                                                                                .col-8
+                                                                                .col-sm-6
+                                                                           </div>
+                                                                           <div
+                                                                                class="col-4 col-sm-6"
+                                                                           >
+                                                                                Level
+                                                                                2:
+                                                                                .col-4
+                                                                                .col-sm-6
+                                                                           </div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                             <div class="modal-footer">
+                                                  <button
+                                                       type="button"
+                                                       class="btn btn-secondary"
+                                                       data-bs-dismiss="modal"
+                                                  >
+                                                       Close
+                                                  </button>
+                                                  <button
+                                                       type="button"
+                                                       class="btn btn-primary"
+                                                  >
+                                                       Save changes
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div
+                              class="col-6 mt-2 mt-md-0 d-flex justify-content-center align-items-center"
+                         >
+                              <div
+                                   class="btn-group"
+                                   role="group"
+                                   aria-label="Basic radio toggle button group"
+                              >
+                                   <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio"
+                                        id="btnradio1"
+                                        autocomplete="off"
+                                        checked
+                                   />
+                                   <label
+                                        class="btn btn-outline-primary"
+                                        for="btnradio1"
+                                        >Friends</label
+                                   >
+
+                                   <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio"
+                                        id="btnradio2"
+                                        autocomplete="off"
+                                   />
+                                   <label
+                                        class="btn btn-outline-primary"
+                                        for="btnradio2"
+                                        >Explore</label
+                                   >
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Timeline -->
+               <div class="container text-center my-5">
+                    <div class="row">
+                         <div class="col-12">
+                              <label for="customRange2" class="form-label"
+                                   >Display timeline</label
+                              >
+                              <input
+                                   type="range"
+                                   class="form-range"
+                                   min="1900"
+                                   max="2023"
+                                   id="customRange2"
+                              />
+                         </div>
+                    </div>
+               </div>
+
+               <div class="container">
+                    <div class="row">
+                         <div class="col-12 col-md-6 mb-4">
+                              <div class="card">
+                                   <div class="card-body row">
+                                        <div class="col-4">
+                                             <img
+                                                  src="/img/Person 1.png"
+                                                  height="80"
+                                                  width="auto"
+                                                  alt="profilepicture"
+                                             />
+                                        </div>
+                                        <div class="col-8">
+                                             <h5 class="card-title">
+                                                  Hanna Green
+                                             </h5>
+                                             <h6 class="card-title">
+                                                  23.05.2011
+                                             </h6>
+                                             <h6 class="card-title">
+                                                  World travels of 2011
+                                             </h6>
+                                        </div>
+
+                                        <div>
+                                             <div
+                                                  id="myCarouselMain"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#myCarouselMain"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#myCarouselMain"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#myCarouselMain"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic1 (1).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="..."
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic1 (1).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="..."
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic1 (2).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="..."
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#myCarouselMain"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#myCarouselMain"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <div
+                              class="col-12 col-md-6 mb-4 d-flex justify-content-center align-items-center"
+                         >
+                              <div class="card">
+                                   <div class="card-body row">
+                                        <div
+                                             class="col-4 d-flex justify-content-center align-items-center"
+                                        >
+                                             <img
+                                                  src="/img/Person 3.png"
+                                                  height="80"
+                                                  width="auto"
+                                                  alt="profilepicture"
+                                             />
+                                        </div>
+                                        <div class="col-8">
+                                             <h5 class="card-title">
+                                                  Chris Sturgis
+                                             </h5>
+                                             <h6 class="card-title">
+                                                  23.05.2011
+                                             </h6>
+                                             <h6 class="card-title">
+                                                  From the coast to the
+                                                  mountains
+                                             </h6>
+                                        </div>
+                                        <div>
+                                             <div
+                                                  id="myCarouselMain2"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#myCarouselMain2"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#myCarouselMain2"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#myCarouselMain2"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic1 (2).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="..."
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic1 (3).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="..."
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic1 (4).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="..."
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#myCarouselMain2"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#myCarouselMain2"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Add more memories as needed -->
+                    </div>
+               </div>
+          </main>
+          <footer class="main-footer">
+               <div>
+                    <nav class="navbar bg-body-tertiary">
+                         <div class="container-fluid">
+                              <a class="navbar-brand mb-0 h1">About</a>
+                              <a class="navbar-brand mb-0 h1">Contact</a>
+                              <a class="navbar-brand mb-0 h1">Share</a>
+                         </div>
+                    </nav>
+               </div>
+          </footer>
+     </body>
 </html>

@@ -40,24 +40,60 @@ switch (location.pathname) {
 //--------------------------------------------------------------
 // Testing templates for rendering/showing POST and POSTS
 
-async function renderPost() {
-    const posts = await postMethods.getPosts();
-    console.log(posts);
-    const post = posts[11]; //Pick number in array, not id
-    // console.log(post);
-    const container = document.querySelector("#postContainer");
-    templates.renderPostTemplate(post, container);
-}
+// async function renderPosts() {
+//     const posts = await postMethods.getPosts();
+//     console.log(posts);
+//     const container = document.querySelector("#postList");
+//     templates.renderPostTemplates(posts, container);
+// }
+// renderPosts();
 
-renderPost();
+// async function renderPost(postId) {
+//     const posts = await postMethods.getPosts(postId);
+//     console.log(posts);
+//     // const post = posts[11]; //Pick number in array, not id
+//     // console.log(post);
+//     const container = document.querySelector("#postContainer");
+//     templates.renderPostTemplate(post, container);
+// }
 
-async function renderPosts() {
-    const posts = await postMethods.getPosts();
-    console.log(posts);
-    const container = document.querySelector("#postList");
-    templates.renderPostTemplates(posts, container);
+// renderPost();
+
+// async function renderPosts() {
+//     const posts = await postMethods.getPosts();
+//     const container = document.querySelector("#postList");
+//     templates.renderPostTemplates(posts, container);
+// }
+
+// renderPosts();
+
+//---------------------------------------------------------------------------
+// Code added to click on view more and see post details:
+
+if (location.pathname.includes("/post/index.html")) {
+    // This block executes when you are on the post detail page
+    const urlParams = new URLSearchParams(location.search);
+    const postId = urlParams.get("id");
+
+    async function renderPost() {
+        // Fetch the specific post by ID using the getPost method
+        const post = await postMethods.getPost(postId);
+        const container = document.querySelector("#postContainer");
+        templates.renderPostTemplate(post, container);
+    }
+
+    renderPost();
+} else {
+    // This block executes for the posts/index.html page
+    // Include your existing code for rendering the list of posts
+    async function renderPosts() {
+        const posts = await postMethods.getPosts();
+        const container = document.querySelector("#postList");
+        templates.renderPostTemplates(posts, container);
+    }
+
+    renderPosts();
 }
-renderPosts();
 
 //--------------------------------------------------------------------------
 //Testing createPost, updatePost, removePost and getPost/getPosts function without a form

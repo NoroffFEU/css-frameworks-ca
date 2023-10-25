@@ -11,11 +11,19 @@ export async function setUpdatePostFormListener() {
     const id = url.searchParams.get("id");
 
     if (form) {
+        //disable the form with the button before it is uploaded
+        const button = form.querySelector("button");
+        button.disabled = true;
+
+        //loading the form
         const postEdit = await getPost(id);
         form.title.value = postEdit.title;
         form.body.value = postEdit.body;
         form.tags.value = postEdit.tags;
         form.media.value = postEdit.media;
+
+        //Once we have loaded the form
+        button.disabled = false;
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();

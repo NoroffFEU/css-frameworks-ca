@@ -1,36 +1,70 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/bootstrap/scss/_mixins.scss";
 @import "../../node_modules/bootstrap/scss/_buttons";
+@import "../../node_modules/bootstrap/scss/variables";
 
 $primary: #253c6b;
 $font-stack: Arial, sans-serif;
-$secondary: #dfdcdc;
+$secondary: #7c9cb3;
 $body-bg: #355194b4;
 $box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 $body-bg: #ebeced;
 
-.btn-primary {
+nav {
+  box-shadow: $box-shadow;
   background-color: $primary;
-  border-color: $primary;
+  color: $body-bg;
+
+  a {
+    color: $body-bg;
+    &:hover {
+      color: lightblue;
+    }
+  }
+  .nav-link {
+    color: $body-bg;
+    &:hover {
+      color: lightblue;
+    }
+  }
 }
 
-.btn-secondary {
-  background-color: $secondary;
-  border-color: $secondary;
+.btn {
+  border: $primary 0.5px solid;
+  margin-bottom: 5px;
+ 
+  &:hover {
+    background-color: white;
+    color: $primary;
+    border: $primary 0.5px solid;
+  }
 }
+.btn-primary {
+    background-color: $primary;
+    color: $body-bg;
+}
+
+    .btn-secondary {
+      background-color: white;
+      color: $primary;
+     &:hover {
+      background-color: $primary;
+      color: white;
+     } 
+    }
+  
 
 
 body {
   height: 100vh;
 }
 
-
 ul {
   list-style: none;
   li {
     display: inline-block;
-    }
   }
+}
 
 .card {
   border: none;
@@ -39,13 +73,12 @@ ul {
 
 .form-control {
   margin-bottom: 1rem;
+  height: 50px;
 }
 
 main {
   margin: 50px;
 }
-
-
 
 #post-list {
   margin-top: 2rem;

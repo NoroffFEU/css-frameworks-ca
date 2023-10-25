@@ -1,9 +1,35 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+  }
+
+  .navbar {
+    background-color: $background-color;
+  
+    .navbar-brand,
+    .nav-link {
+      color: $navbar-link-color;
+      font-size: $navbar-link-font-size;
+      &:hover, &:focus {
+        color: darken($navbar-link-color, 10%);
+        text-decoration: underline;
+      }
+    }
+    .btn-outline-danger {
+        margin-left: .5rem;
+    
+        &:hover {
+          background-color: darken(#dc3545, 10%);
+          border-color: darken(#dc3545, 10%);
+          color: #fff;
+        }
+      }
+  }
 
 .container {
-    background-color: $container-bg-color; 
     padding: 30px; // Adding padding to the container
     border-radius: 8px; // Optional, for rounded corners
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); // Optional, for a subtle shadow
@@ -119,5 +145,16 @@
       &:hover {
         transform: scale(1.03);
       }
+    }
+  }
+
+  .footer {
+    background-color: $primary-color;
+  
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
     }
   }

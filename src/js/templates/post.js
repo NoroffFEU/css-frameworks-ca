@@ -217,13 +217,14 @@ export function postTemplateDetails(postData) {
     buttonDiv.className = "buttonDiv d-grid align-items-center mb-3";
 
     const updateButton = document.createElement("a");
-    updateButton.href = `/post/index.html?id=${postData.id}`;
+    updateButton.href = `/post/edit/?id=${postData.id}`;
     updateButton.className = "btn btn-sm btn-secondary";
     updateButton.innerHTML = '<i class="bi bi-pencil-square"></i> Update';
 
     const removeButton = document.createElement("a");
     removeButton.href = `/post/index.html?id=${postData.id}`;
     removeButton.className = "btn btn-sm btn-primary ms-2";
+    removeButton.id = "removePostLink";
     removeButton.innerHTML = '<i class="bi bi-trash-fill"></i> Remove';
 
     buttonDiv.appendChild(updateButton);

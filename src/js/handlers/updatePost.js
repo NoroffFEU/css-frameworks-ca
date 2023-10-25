@@ -5,6 +5,7 @@ import { getPost, updatePost } from "../api/posts/index.js";
 
 export async function setUpdatePostFormListener() {
     const form = document.querySelector("#editPost");
+    const container = document.querySelector("#editPostContainer");
     // console.log(form);
 
     const url = new URL(location.href);
@@ -40,6 +41,11 @@ export async function setUpdatePostFormListener() {
 
             // Send it to the API
             updatePost(post);
+
+            container.appendChild(form);
+
+            alert("You're post was successfully updated.");
+            location.href = `/post/index.html?id=${id}`;
         });
     }
 }

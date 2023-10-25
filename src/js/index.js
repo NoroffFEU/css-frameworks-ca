@@ -34,6 +34,8 @@ switch (location.pathname) {
     case "/post/edit/":
     case "/post/edit/index.html":
         listeners.setUpdatePostFormListener();
+        // listeners.setRemovePostFormListener();
+        break;
     default:
 }
 
@@ -94,6 +96,8 @@ if (location.pathname.includes("/post/index.html")) {
 
     renderPosts();
 }
+
+//--------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------
 //Testing createPost, updatePost, removePost and getPost/getPosts function without a form

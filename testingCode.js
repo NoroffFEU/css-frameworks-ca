@@ -731,3 +731,132 @@ if (location.pathname.includes("/post/index.html")) {
     renderPosts();
 }
 
+//---------------------------------------------
+
+//Button for removing post in /templates/post.js
+
+removeButton.id = "removePostLink";
+
+// The post is in the div with id="postContainer"
+
+// The div / post that will be deleted has this classnames
+post.className = "card feed-post col-12 mb-3 pb-3";
+
+// code from filepath posts/delete.js:
+import { API_SOCIAL_URL } from "../constants.js";
+import { authFetch } from "../authFetch.js";
+
+const action = "/posts";
+const method = "delete";
+
+export async function removePost(id) {
+    if (!id) {
+        throw new Error("Delete requires a postID");
+    }
+    const updatePostURL = `${API_SOCIAL_URL}${action}/${id}`;
+
+    const response = await authFetch(updatePostURL, {
+        method,
+    });
+
+    // const post = await response.json();
+    // console.log(post);
+    // return post
+
+    return await response.json();
+}
+
+// Created a setRemovePostFormListene() function to handle removal of post in handlers/deletePost.js
+import { removePost } from "../api/posts/index.js";
+
+// const removePostLink = document.querySelector("#removePostLink");
+
+//use this as a teemplate to write other eventlisteners
+
+export async function setRemovePostFormListener() {
+    const removePostLink = document.querySelector("#removePostLink");
+
+    if (removePostLink) {
+        removePostLink.addEventListener("click", async (event) => {
+            event.preventDefault();
+
+            const url = new URL(location.href);
+            const id = url.searchParams.get("id");
+
+            if (!postId) {
+                alert("Post ID not found.");
+                return;
+            }
+
+            try {
+                await removePost(postId);
+                // Redirect to the feed page (adjust the URL as needed)
+                window.location.href = "/posts/"; // Change to your feed URL
+            } catch (error) {
+                console.error("Error deleting post:", error);
+                alert("An error occurred while deleting the post.");
+            }
+        });
+    }
+}
+
+// code from index.js:
+import * as listeners from "./handlers/index.js";
+
+import * as templates from "./templates/index.js";
+import * as postMethods from "./api/posts/index.js";
+
+
+// Routing behaviour to make sure the wrong scripts are not running
+const path = location.pathname;
+console.log(path);
+
+switch (location.pathname) {
+    case "/":
+    case "/index.html":
+        listeners.setLoginFormListener();
+        break;
+    case "/profile/register/":
+    case "/profile/register/index.html":
+        listeners.setRegisterFormListener();
+        break;
+    case "/post/create/":
+    case "/post/create/index.html":
+        listeners.setCreatePostFormListener();
+    case "/post/edit/":
+    case "/post/edit/index.html":
+        listeners.setUpdatePostFormListener();
+        // listeners.setRemovePostFormListener();
+        break;
+    default:
+}
+
+// Code added to click on view more and see post details:
+
+if (location.pathname.includes("/post/index.html")) {
+    // This block executes when you are on the post detail page
+    const urlParams = new URLSearchParams(location.search);
+    const postId = urlParams.get("id");
+
+    async function renderPost() {
+        // Fetch the specific post by ID using the getPost method
+        const post = await postMethods.getPost(postId);
+        const container = document.querySelector("#postContainer");
+        templates.renderPostTemplate(post, container);
+    }
+
+    renderPost();
+} else {
+    // This block executes for the posts/index.html page
+    // Include your existing code for rendering the list of posts
+    async function renderPosts() {
+        const posts = await postMethods.getPosts();
+        const container = document.querySelector("#postList");
+        templates.renderPostTemplates(posts, container);
+    }
+
+    renderPosts();
+}
+
+
+

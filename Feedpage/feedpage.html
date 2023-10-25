@@ -14,73 +14,92 @@
      <body>
           <header class="main-header">
                <nav class="navbar navbar-expand-md bg-body-tertiary">
-                    <div class="container-fluid">
-                         <a class="navbar-brand" href="/index.html"
-                              ><img
+                    <div class="container-fluid me-4 ms-3">
+                         <a class="navbar-brand ms-md-4" href="/index.html">
+                              <img
                                    src="/img/logo-no-background.png"
                                    height="80"
                                    width="auto"
-                         /></a>
+                              />
+                         </a>
+                         <div class="d-flex gap-4">
+                              <button
+                                   class="navbar-toggler"
+                                   type="button"
+                                   data-bs-toggle="collapse"
+                                   data-bs-target="#navbarScroll"
+                                   aria-controls="navbarScroll"
+                                   aria-expanded="false"
+                                   aria-label="Toggle navigation"
+                              >
+                                   <span class="navbar-toggler-icon"></span>
+                              </button>
 
-                         <button
-                              class="navbar-toggler"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target="#navbarScroll"
-                              aria-controls="navbarScroll"
-                              aria-expanded="false"
-                              aria-label="Toggle navigation"
-                         >
-                              <span class="navbar-toggler-icon"></span>
-                         </button>
-                         <!-- This button is collapsed at md screens, and will only show on mobile devices -->
+                              <!-- Profile Image for Small Devices (Right of Button) -->
+                              <a
+                                   href="/Profilepage/profilepage.html"
+                                   class="d-flex d-md-none"
+                              >
+                                   <img
+                                        src="/img/profilepicture.png"
+                                        height="40"
+                                        width="auto"
+                                        class="custom-profile-img"
+                                   />
+                              </a>
+                         </div>
 
                          <div
                               class="collapse navbar-collapse"
                               id="navbarScroll"
                          >
                               <ul
-                                   class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-                                   style="--bs-scroll-height: 100px"
+                                   class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll gap-3"
                               >
-                                   <li class="nav-item">
+                                   <li class="nav-item ms-2">
                                         <a
-                                             class="nav-link active"
+                                             class="navbar-links active"
                                              aria-current="page"
                                              href=""
                                              >Feed</a
                                         >
                                    </li>
                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"
+                                        <a class="navbar-links" href="#"
                                              >Learn more!</a
                                         >
                                    </li>
-
                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contact</a>
+                                        <a class="" href="/index.html"
+                                             ><span
+                                                  class="navbar-links text-primary"
+                                                  >Sign out</span
+                                             ></a
+                                        >
                                    </li>
                               </ul>
                               <form class="d-flex" role="search">
-                                   <div class="input-group mb-3">
-                                        <input
-                                             type="text"
-                                             class="custom-header-input"
-                                             placeholder="Search"
-                                             aria-label="Recipient's username"
-                                             aria-describedby="button-addon2"
-                                        />
-                                   </div>
+                                   <input
+                                        class="custom-header-input me-2"
+                                        type="search"
+                                        placeholder="Search"
+                                        aria-label="Search"
+                                   />
                               </form>
+
+                              <!-- Profile Image for Medium Devices (Right of Input Field) -->
+                              <a
+                                   href="/Profilepage/profilepage.html"
+                                   class="d-none d-md-flex ms-2"
+                              >
+                                   <img
+                                        src="/img/profilepicture.png"
+                                        height="40"
+                                        width="auto"
+                                        class="custom-profile-img"
+                                   />
+                              </a>
                          </div>
-                         <a href="/Profilepage/profilepage.html"
-                              ><img
-                                   src="/img/profilepicture.png"
-                                   height="60"
-                                   width="auto"
-                                   class=""
-                              />
-                         </a>
                     </div>
                </nav>
           </header>
@@ -93,7 +112,7 @@
                               <!-- Button trigger modal -->
                               <button
                                    type="button"
-                                   class="btn-custom-lg"
+                                   class="btn-custom-lg title-font"
                                    data-bs-toggle="modal"
                                    data-bs-target="#exampleModal"
                               >
@@ -218,7 +237,7 @@
                               class="col-6 mt-2 mt-md-0 d-flex justify-content-center align-items-center"
                          >
                               <div
-                                   class="btn-group"
+                                   class="custom-toggle-btn title-font text-center"
                                    role="group"
                                    aria-label="Basic radio toggle button group"
                               >
@@ -231,7 +250,7 @@
                                         checked
                                    />
                                    <label
-                                        class="btn btn-outline-primary"
+                                        class="btn custom-toggle-btn"
                                         for="btnradio1"
                                         >Friends</label
                                    >
@@ -244,7 +263,7 @@
                                         autocomplete="off"
                                    />
                                    <label
-                                        class="btn btn-outline-primary"
+                                        class="btn custom-toggle-btn"
                                         for="btnradio2"
                                         >Explore</label
                                    >
@@ -517,10 +536,20 @@
           <footer class="main-footer">
                <div>
                     <nav class="navbar bg-body-tertiary">
-                         <div class="container-fluid">
-                              <a class="navbar-brand mb-0 h1">About</a>
-                              <a class="navbar-brand mb-0 h1">Contact</a>
-                              <a class="navbar-brand mb-0 h1">Share</a>
+                         <div class="container">
+                              <div class="d-flex gap-4">
+                                   <a href="" class="navbar-links mb-0"
+                                        >About</a
+                                   >
+                                   <a href="" class="navbar-links mb-0"
+                                        >Share</a
+                                   >
+                                   <a
+                                        href="/index.html"
+                                        class="navbar-links mb-0"
+                                        >Sign out</a
+                                   >
+                              </div>
                          </div>
                     </nav>
                </div>

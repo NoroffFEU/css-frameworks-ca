@@ -6,6 +6,7 @@ $carousel-control-color: black;
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
 
 // Here the default bootstrap colors are changed to my own color scheme
 
@@ -13,23 +14,34 @@ $carousel-control-color: black;
      border: 2px solid $primary;
      outline: none;
 }
+.title-font {
+     font-family: "Playfair Display", serif;
+}
+
+.para-font {
+     font-family: "Lato", sans-serif;
+}
 
 .btn-custom-lg {
      @extend .btn;
      @extend .btn-lg;
      @extend .standard-border;
      //  Using the @extend method lets me keep the defualt bootstrap styling, and override parts of underneath
-
+     font-size: 16px;
      color: $third;
      background-color: $fourth;
 
      border-radius: 30px;
-     box-shadow: $box-shadow;
+     box-shadow: $box-shadow-sm;
 
-     //  &:focus,
-     //  &.focus {
-     //       box-shadow: 0 0 0 0.2rem rgba(90, 103, 216, 0.5); // Adjust this value to your liking
-     //  }
+     &:hover {
+          @extend .standard-border;
+          box-shadow: $box-shadow;
+     }
+
+     &:focus {
+          @extend .standard-border;
+     }
 
      //  &:active,
      //  &.active {
@@ -37,6 +49,39 @@ $carousel-control-color: black;
      //       border-color: darken($btn-custom-hover-color, 15%);
      //  }
 }
+
+.custom-toggle-btn {
+     @extend .btn-group;
+     @extend .standard-border;
+     @extend .title-font;
+     border-radius: 30px;
+     background-color: $fourth;
+     outline: none;
+     width: 120%;
+     box-shadow: inset 0 0 3px rgba($third, 0.5);
+
+     .btn-check:checked + .btn {
+          @extend .standard-border;
+          background-color: rgba($primary, 0.6);
+          border: none;
+          outline: none;
+     }
+
+     .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+     }
+
+     &:hover {
+          @extend .standard-border;
+     }
+}
+
+// .custom-toggle-btn-checked {
+//      @extend .btn-check;
+//      color: red;
+// }
 
 .main-header {
      background-image: linear-gradient(
@@ -47,12 +92,22 @@ $carousel-control-color: black;
      border-bottom: 2px solid $primary;
 }
 
+.custom-container {
+     @extend .container-fluid;
+     margin-left: 5%;
+     margin-right: 10%;
+     column-gap: 10px;
+}
+
 .main-footer {
      background-color: $primary;
 }
 
 .custom-header-input {
      @extend .standard-border;
+     @extend .form-control;
+     @extend .title-font;
+     outline: none;
 
      &.active {
      }
@@ -60,10 +115,28 @@ $carousel-control-color: black;
      &.focus {
      }
 
-     &.focus {
+     &:hover {
+          box-shadow: $box-shadow-sm;
      }
+}
+
+.custom-profile-img {
+     border: 1px solid $primary;
+     border-radius: 100px;
 
      &:hover {
-          border: 3px solid $primary;
+          outline: 1px solid $primary;
+     }
+}
+
+.navbar-links {
+     @extend .title-font;
+     @extend .navbar-brand;
+
+     font-size: 14px;
+     color: rgba($third, 0.7);
+
+     &:hover {
+          color: $third;
      }
 }

@@ -50,39 +50,105 @@
         </div>
       </div>
     </nav>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-12 mb-3">
-          <input
-            type="search"
+    <div class="container my-4">
+      <!-- Search Bar -->
+      <form class="form-inline mb-4">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search posts"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+
+      <!-- Sort Options -->
+      <div class="mb-4">
+        <label for="sortOptions" class="mr-2">Sort by:</label>
+        <select class="custom-select w-auto" id="sortOptions">
+          <option selected>Latest</option>
+          <option value="1">Oldest</option>
+          <option value="2">Most Liked</option>
+        </select>
+      </div>
+
+      <!-- New Post Form -->
+      <form class="mb-4">
+        <div class="form-group">
+          <label for="postContent">Create a New Post</label>
+          <textarea
             class="form-control"
-            placeholder="Search posts..."
-          />
+            id="postContent"
+            rows="3"
+            placeholder="What's on your mind?"
+          ></textarea>
         </div>
-        <div class="col-12 mb-3">
-          <select class="form-select">
-            <option selected>Sort by</option>
-            <option value="1">Most Recent</option>
-            <option value="2">Popular</option>
-          </select>
-        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
 
-        <div class="col-12">
-          <form class="post-creation-form mb-3">
-            <!-- form inputs -->
-            <button type="submit" class="btn btn-primary">Post</button>
-          </form>
-        </div>
-
-        <div class="col-12">
-          <div class="row">
-            <!-- Dynamic list of posts -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4">
-              <div class="post-thumbnail">
-                <!-- Post Content -->
-              </div>
+      <!-- Posts Thumbnails -->
+      <div class="row">
+        <!-- Sample Post 1 -->
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img
+              src="/Images/player-quote.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
             </div>
-            <!-- Repeat other posts -->
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img
+              src="/Images/player-quote.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img
+              src="/Images/player-quote.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img
+              src="/Images/player-quote.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -30,9 +30,10 @@ body {
   }
 
 .container {
-    padding: 30px; // Adding padding to the container
-    border-radius: 8px; // Optional, for rounded corners
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); // Optional, for a subtle shadow
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
 }
 
 .auth-card {
@@ -62,29 +63,6 @@ body {
   .search-bar,
 .sort-select {
   margin-bottom: 1rem;
-}
-
-.post-creation-form {
-  margin-bottom: 2rem;
-  button {
-    background-color: $primary-color;
-    border: none;
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
-  }
-}
-
-.post-thumbnail {
-  border: 1px solid $secondary-color;
-  border-radius: 0.25rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  transition: transform 0.3s ease-in-out;
-
-  &:hover {
-    transform: scale(1.03);
-  }
 }
 
 .profile-header {
@@ -120,33 +98,26 @@ body {
     }
   }
   
-  .user-posts {
     .post-thumbnail {
-      border: 1px solid $secondary-color;
       border-radius: 0.25rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       padding: 1rem;
       transition: transform 0.3s ease-in-out;
       margin: 0 auto;
-      max-width: 300px;
   
       img {
-        max-width: 100%;
-        height: auto;
         border-radius: 0.25rem;
       }
   
       .post-title {
         margin-top: 0.5rem;
         text-align: center;
-        color: $primary-color;
       }
   
       &:hover {
         transform: scale(1.03);
       }
     }
-  }
 
   .footer {
     background-color: $primary-color;
@@ -156,5 +127,11 @@ body {
       justify-content: center;
       align-items: center;
       padding: 1rem;
+    }
+  }
+
+  .form-inline {
+    .form-control {
+      width: 100%;
     }
   }

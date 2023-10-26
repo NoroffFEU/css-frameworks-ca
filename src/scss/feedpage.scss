@@ -1,1 +1,13 @@
 @import "index";
+
+// This added carousel code wil ensure that the height does not change with different img-sizes.
+.thumbnail-carousel-max-height {
+     max-height: 40vh;
+     height: 60vw;
+}
+// This specific height setting makes the carousel img fit nicely for both vertical mobile screen and horizontal laptop screen.
+.thumbnail-carousel-max-height img {
+     height: 100%;
+     object-fit: fill;
+     width: 100%;
+}

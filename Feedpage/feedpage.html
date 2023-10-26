@@ -11,7 +11,7 @@
           <link rel="stylesheet" href="/dist/css/feedpage.css" />
           <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
      </head>
-     <body>
+     <body class="custom-w-g-bg">
           <header class="main-header">
                <nav class="navbar navbar-expand-md bg-body-tertiary">
                     <div class="container-fluid me-4 ms-3">
@@ -134,8 +134,9 @@
                                                        class="modal-title fs-5"
                                                        id="exampleModalLabel"
                                                   >
-                                                       Modal title
+                                                       Post your memory
                                                   </h1>
+
                                                   <button
                                                        type="button"
                                                        class="btn-close"
@@ -144,75 +145,142 @@
                                                   ></button>
                                              </div>
                                              <div class="modal-body">
-                                                  <div class="modal-body">
+                                                  <form
+                                                       class="row g-3 needs-validation"
+                                                       novalidate
+                                                  >
+                                                       <div class="col-2">
+                                                            <a
+                                                                 href="/Profilepage/profilepage.html"
+                                                            >
+                                                                 <img
+                                                                      src="/img/profilepicture.png"
+                                                                      height="40"
+                                                                      width="auto"
+                                                                      class="custom-profile-img"
+                                                                 />
+                                                            </a>
+                                                       </div>
+                                                       <div class="col-8">
+                                                            <input
+                                                                 type="date"
+                                                                 class="form-control"
+                                                                 id="exampleDate"
+                                                                 name="date"
+                                                                 required
+                                                            />
+                                                            <div
+                                                                 class="invalid-feedback"
+                                                            >
+                                                                 Please select a
+                                                                 date.
+                                                            </div>
+                                                       </div>
                                                        <div
-                                                            class="container-fluid"
+                                                            class="col-12 h-100"
                                                        >
-                                                            <div class="row">
-                                                                 <div
-                                                                      class="col-md-4"
-                                                                 >
-                                                                      .col-md-4
-                                                                 </div>
-                                                                 <div
-                                                                      class="col-md-4 ms-auto"
-                                                                 >
-                                                                      .col-md-4
-                                                                      .ms-auto
-                                                                 </div>
+                                                            <textarea
+                                                                 class="form-control"
+                                                                 id="validationTextarea"
+                                                                 placeholder="Required example textarea"
+                                                                 required
+                                                            ></textarea>
+                                                            <div
+                                                                 class="invalid-feedback"
+                                                            >
+                                                                 Please enter a
+                                                                 message in the
+                                                                 textarea.
                                                             </div>
-                                                            <div class="row">
-                                                                 <div
-                                                                      class="col-md-3 ms-auto"
+                                                       </div>
+                                                       <div class="col-md-4">
+                                                            <label
+                                                                 for="validationCustomUsername"
+                                                                 class="form-label"
+                                                                 >Tag Your
+                                                                 friends</label
+                                                            >
+                                                            <div
+                                                                 class="input-group has-validation"
+                                                            >
+                                                                 <span
+                                                                      class="input-group-text"
+                                                                      id="inputGroupPrepend"
+                                                                      >@</span
                                                                  >
-                                                                      .col-md-3
-                                                                      .ms-auto
-                                                                 </div>
+                                                                 <input
+                                                                      type="text"
+                                                                      class="form-control"
+                                                                      id="validationCustomUsername"
+                                                                      aria-describedby="inputGroupPrepend"
+                                                                      required
+                                                                 />
                                                                  <div
-                                                                      class="col-md-2 ms-auto"
+                                                                      class="invalid-feedback"
                                                                  >
-                                                                      .col-md-2
-                                                                      .ms-auto
-                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                 <div
-                                                                      class="col-md-6 ms-auto"
-                                                                 >
-                                                                      .col-md-6
-                                                                      .ms-auto
-                                                                 </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                 <div
-                                                                      class="col-sm-9"
-                                                                 >
-                                                                      Level 1:
-                                                                      .col-sm-9
-                                                                      <div
-                                                                           class="row"
-                                                                      >
-                                                                           <div
-                                                                                class="col-8 col-sm-6"
-                                                                           >
-                                                                                Level
-                                                                                2:
-                                                                                .col-8
-                                                                                .col-sm-6
-                                                                           </div>
-                                                                           <div
-                                                                                class="col-4 col-sm-6"
-                                                                           >
-                                                                                Level
-                                                                                2:
-                                                                                .col-4
-                                                                                .col-sm-6
-                                                                           </div>
-                                                                      </div>
+                                                                      Please
+                                                                      choose a
+                                                                      username.
                                                                  </div>
                                                             </div>
                                                        </div>
-                                                  </div>
+                                                       <div class="col-md-6">
+                                                            <label
+                                                                 for="validationCustom03"
+                                                                 class="form-label"
+                                                                 >City</label
+                                                            >
+                                                            <input
+                                                                 type="text"
+                                                                 class="form-control"
+                                                                 id="validationCustom03"
+                                                                 required
+                                                            />
+                                                            <div
+                                                                 class="invalid-feedback"
+                                                            >
+                                                                 Please provide
+                                                                 a valid city.
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-12">
+                                                            <div
+                                                                 class="form-check"
+                                                            >
+                                                                 <input
+                                                                      class="form-check-input"
+                                                                      type="checkbox"
+                                                                      value=""
+                                                                      id="invalidCheck"
+                                                                      required
+                                                                 />
+                                                                 <label
+                                                                      class="form-check-label"
+                                                                      for="invalidCheck"
+                                                                 >
+                                                                      Agree to
+                                                                      terms and
+                                                                      conditions
+                                                                 </label>
+                                                                 <div
+                                                                      class="invalid-feedback"
+                                                                 >
+                                                                      You must
+                                                                      agree
+                                                                      before
+                                                                      submitting.
+                                                                 </div>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-12">
+                                                            <button
+                                                                 class="btn btn-primary"
+                                                                 type="submit"
+                                                            >
+                                                                 Submit form
+                                                            </button>
+                                                       </div>
+                                                  </form>
                                              </div>
                                              <div class="modal-footer">
                                                   <button
@@ -234,7 +302,7 @@
                               </div>
                          </div>
                          <div
-                              class="col-6 mt-2 mt-md-0 d-flex justify-content-center align-items-center"
+                              class="col-6 mt-md-0 d-flex justify-content-center align-items-center"
                          >
                               <div
                                    class="custom-toggle-btn title-font text-center"
@@ -273,19 +341,32 @@
                </div>
 
                <!-- Timeline -->
-               <div class="container text-center my-5">
+               <div class="container text-center my-4">
                     <div class="row">
                          <div class="col-12">
-                              <label for="customRange2" class="form-label"
+                              <label
+                                   for="customRange2"
+                                   class="form-label d-flex justify-content-center"
                                    >Display timeline</label
                               >
-                              <input
-                                   type="range"
-                                   class="form-range"
-                                   min="1900"
-                                   max="2023"
-                                   id="customRange2"
-                              />
+
+                              <div
+                                   class="d-flex align-items-center justify-content-center"
+                              >
+                                   <label for="customRange2" class="me-2"
+                                        >1900</label
+                                   >
+                                   <input
+                                        type="range"
+                                        class="custom-form-range"
+                                        min="1900"
+                                        max="2023"
+                                        id="customRange2"
+                                   />
+                                   <label for="customRange2" class="ms-2"
+                                        >2023</label
+                                   >
+                              </div>
                          </div>
                     </div>
                </div>
@@ -293,35 +374,161 @@
                <div class="container">
                     <div class="row">
                          <div class="col-12 col-md-6 mb-4">
-                              <div class="card">
-                                   <div class="card-body row">
-                                        <div class="col-4">
+                              <div class="thumbnail-card-big">
+                                   <div
+                                        class="card-body d-flex justify-content-center"
+                                   >
+                                        <div class="">
                                              <img
                                                   src="/img/Person 1.png"
                                                   height="80"
                                                   width="auto"
                                                   alt="profilepicture"
+                                                  class="resize-at-300"
                                              />
                                         </div>
-                                        <div class="col-8">
-                                             <h5 class="card-title">
-                                                  Hanna Green
-                                             </h5>
-                                             <h6 class="card-title">
+                                        <div class="mx-3">
+                                             <div class="d-flex gap-3">
+                                                  <h5
+                                                       class="card-title remove-at-300 w-100"
+                                                  >
+                                                       Hanna Green
+                                                  </h5>
+                                                  <div class="ml-auto">
+                                                       <svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="24"
+                                                            height="24"
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                       >
+                                                            <mask
+                                                                 id="mask0_18_130"
+                                                                 style="
+                                                                      mask-type: alpha;
+                                                                 "
+                                                                 maskUnits="userSpaceOnUse"
+                                                                 x="0"
+                                                                 y="0"
+                                                                 width="24"
+                                                                 height="24"
+                                                            >
+                                                                 <rect
+                                                                      width="24"
+                                                                      height="24"
+                                                                      fill="#8C4285"
+                                                                 />
+                                                            </mask>
+                                                            <g
+                                                                 mask="url(#mask0_18_130)"
+                                                            >
+                                                                 <path
+                                                                      d="M12 21L10.55 19.7C8.86667 18.1833 7.475 16.875 6.375 15.775C5.275 14.675 4.4 13.6875 3.75 12.8125C3.1 11.9375 2.64583 11.1333 2.3875 10.4C2.12917 9.66667 2 8.91667 2 8.15C2 6.58333 2.525 5.275 3.575 4.225C4.625 3.175 5.93333 2.65 7.5 2.65C8.36667 2.65 9.19167 2.83333 9.975 3.2C10.7583 3.56667 11.4333 4.08333 12 4.75C12.5667 4.08333 13.2417 3.56667 14.025 3.2C14.8083 2.83333 15.6333 2.65 16.5 2.65C18.0667 2.65 19.375 3.175 20.425 4.225C21.475 5.275 22 6.58333 22 8.15C22 8.91667 21.8708 9.66667 21.6125 10.4C21.3542 11.1333 20.9 11.9375 20.25 12.8125C19.6 13.6875 18.725 14.675 17.625 15.775C16.525 16.875 15.1333 18.1833 13.45 19.7L12 21ZM12 18.3C13.6 16.8667 14.9167 15.6375 15.95 14.6125C16.9833 13.5875 17.8 12.6958 18.4 11.9375C19 11.1792 19.4167 10.5042 19.65 9.9125C19.8833 9.32084 20 8.73334 20 8.15C20 7.15 19.6667 6.31667 19 5.65C18.3333 4.98333 17.5 4.65 16.5 4.65C15.7167 4.65 14.9917 4.87084 14.325 5.3125C13.6583 5.75417 13.2 6.31667 12.95 7H11.05C10.8 6.31667 10.3417 5.75417 9.675 5.3125C9.00833 4.87084 8.28333 4.65 7.5 4.65C6.5 4.65 5.66667 4.98333 5 5.65C4.33333 6.31667 4 7.15 4 8.15C4 8.73334 4.11667 9.32084 4.35 9.9125C4.58333 10.5042 5 11.1792 5.6 11.9375C6.2 12.6958 7.01667 13.5875 8.05 14.6125C9.08333 15.6375 10.4 16.8667 12 18.3Z"
+                                                                      fill="#8C4285"
+                                                                 />
+                                                            </g>
+                                                       </svg>
+                                                  </div>
+                                             </div>
+
+                                             <h6
+                                                  class="card-title remove-at-300"
+                                             >
                                                   23.05.2011
                                              </h6>
-                                             <h6 class="card-title">
-                                                  World travels of 2011
-                                             </h6>
-                                        </div>
+                                             <div
+                                                  class="card-title remove-at-300"
+                                             >
+                                                  <div
+                                                       class="collapse show"
+                                                       id="shortTextDiv"
+                                                  >
+                                                       <button
+                                                            class="custom-thumbnail-text-btn"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#fullTextDiv,#shortTextDiv"
+                                                            aria-expanded="false"
+                                                            aria-controls="fullTextDiv"
+                                                       >
+                                                            <span
+                                                                 class="d-flex"
+                                                            >
+                                                                 World
+                                                                 travels...
+                                                                 <svg
+                                                                      xmlns="http://www.w3.org/2000/svg"
+                                                                      width="24"
+                                                                      height="24"
+                                                                      viewBox="0 0 24 24"
+                                                                      fill="none"
+                                                                 >
+                                                                      <mask
+                                                                           id="mask0_69_29"
+                                                                           style="
+                                                                                mask-type: alpha;
+                                                                           "
+                                                                           maskUnits="userSpaceOnUse"
+                                                                           x="0"
+                                                                           y="0"
+                                                                           width="24"
+                                                                           height="24"
+                                                                      >
+                                                                           <rect
+                                                                                width="24"
+                                                                                height="24"
+                                                                                fill="#D9D9D9"
+                                                                           />
+                                                                      </mask>
+                                                                      <g
+                                                                           mask="url(#mask0_69_29)"
+                                                                      >
+                                                                           <path
+                                                                                d="M12 21L7.5 16.5L8.95 15.05L12 18.1L15.05 15.05L16.5 16.5L12 21ZM8.95 9.04998L7.5 7.59998L12 3.09998L16.5 7.59998L15.05 9.04998L12 5.99998L8.95 9.04998Z"
+                                                                                fill="#1C1B1F"
+                                                                           />
+                                                                      </g>
+                                                                 </svg>
+                                                            </span>
+                                                       </button>
+                                                  </div>
 
-                                        <div>
+                                                  <div
+                                                       class="collapse w-100"
+                                                       id="fullTextDiv"
+                                                  >
+                                                       World travels of 2011
+                                                       where we ate at a bar and
+                                                       drank at a restaurant and
+                                                       did many more exciting
+                                                       things during our
+                                                       journey.
+                                                       <button
+                                                            class="custom-thumbnail-text-btn"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#fullTextDiv,#shortTextDiv"
+                                                            aria-expanded="true"
+                                                            aria-controls="shortTextDiv"
+                                                       >
+                                                            <span
+                                                                 class="text-primary my-1"
+                                                                 >Read
+                                                                 Less</span
+                                                            >
+                                                       </button>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                                   <div>
+                                        <div class="p-2">
                                              <div
                                                   id="myCarouselMain"
                                                   class="carousel slide"
                                              >
                                                   <div
-                                                       class="carousel-indicators"
+                                                       class="carousel-indicators m-0 p-0"
                                                   >
                                                        <button
                                                             type="button"
@@ -346,7 +553,7 @@
                                                   </div>
                                                   <div class="carousel-inner">
                                                        <div
-                                                            class="carousel-item active"
+                                                            class="carousel-item active thumbnail-carousel-max-height"
                                                        >
                                                             <img
                                                                  src="/img/randompic1 (1).jpeg"
@@ -355,7 +562,7 @@
                                                             />
                                                        </div>
                                                        <div
-                                                            class="carousel-item"
+                                                            class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
                                                                  src="/img/randompic1 (1).jpg"
@@ -364,7 +571,7 @@
                                                             />
                                                        </div>
                                                        <div
-                                                            class="carousel-item"
+                                                            class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
                                                                  src="/img/randompic1 (2).jpeg"
@@ -406,8 +613,13 @@
                                              </div>
                                         </div>
                                    </div>
+                                   <div class="bottom-bar">
+                                        <div class="left-bar"></div>
+                                        <div class="right-bar"></div>
+                                   </div>
                               </div>
                          </div>
+
                          <div
                               class="col-12 col-md-6 mb-4 d-flex justify-content-center align-items-center"
                          >
@@ -435,6 +647,7 @@
                                                   mountains
                                              </h6>
                                         </div>
+
                                         <div>
                                              <div
                                                   id="myCarouselMain2"
@@ -554,5 +767,6 @@
                     </nav>
                </div>
           </footer>
+          <div></div>
      </body>
 </html>

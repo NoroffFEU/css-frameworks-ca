@@ -12,11 +12,18 @@
 // $small-carousel: 10vh;
 
 .landing-page-main-carousel {
-     height: 55vh;
+     height: 60vh;
 }
 
 .user-data-input {
      border: 2px solid $primary;
+     border-radius: 30px;
+     width: 100%;
+}
+
+.login-carousel-max-width {
+     max-width: 70vw;
+     width: 80vh;
 }
 
 // .custom-next-icon {

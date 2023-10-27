@@ -103,9 +103,9 @@
                </nav>
           </header>
           <main>
-               <div class="container text-center my-3">
-                    <div class="row pt-5">
-                         <div class="col-12 bg-fo">
+               <div class="container my-3">
+                    <div class="row pt-2 remove-at-300">
+                         <div class="col-12">
                               <div class="row">
                                    <div class="col-3">
                                         <img
@@ -116,13 +116,11 @@
                                              class="custom-profile-img"
                                         />
                                    </div>
-                                   <div class="col-6">
-                                        <h5 class="card-title">
-                                             Chris Sturgis
-                                        </h5>
-                                        <h6 class="card-title">23.05.2011</h6>
-                                        <h6 class="card-title">
-                                             From the coast to the mountains
+                                   <div class="col-7 title-font ms-3">
+                                        <h5 class="">Chris Sturgis</h5>
+                                        <h6 class="">23.05.2011</h6>
+                                        <h6 class="">
+                                             Here to share my life with you!
                                         </h6>
                                    </div>
                                    <div class="col-1">
@@ -146,24 +144,21 @@
                          </div>
 
                          <div
-                              class="col-12 mt-2 mt-md-0 d-flex justify-content-center align-items-center"
+                              class="col-12 mt-2 mt-4 d-flex justify-content-center align-items-center remove-at-300"
                          >
                               <div
-                                   class="btn-group"
+                                   class="btn-group title-font"
                                    role="group"
                                    aria-label="Button group with nested dropdown"
                               >
-                                   <button
-                                        type="button"
-                                        class="btn btn-primary"
-                                   >
-                                        PostBTN
+                                   <button type="button" class="btn-custom-lg">
+                                        Post new memory
                                    </button>
 
                                    <div class="btn-group" role="group">
                                         <button
                                              type="button"
-                                             class="btn btn-primary dropdown-toggle"
+                                             class="btn-custom-lg dropdown-toggle"
                                              data-bs-toggle="dropdown"
                                              aria-expanded="false"
                                         >
@@ -193,7 +188,7 @@
                                    <div class="btn-group" role="group">
                                         <button
                                              type="button"
-                                             class="btn btn-primary dropdown-toggle"
+                                             class="btn-custom-lg dropdown-toggle"
                                              data-bs-toggle="dropdown"
                                              aria-expanded="false"
                                         >
@@ -216,175 +211,123 @@
                </div>
 
                <!-- Timeline -->
-               <div class="container text-center my-5">
+               <div class="container text-center my-4">
                     <div class="row">
                          <div class="col-12">
-                              <label for="customRange2" class="form-label"
-                                   >Your timeline</label
+                              <label
+                                   for="customRange2"
+                                   class="form-label d-flex justify-content-center"
+                                   >Display timeline</label
                               >
-                              <input
-                                   type="range"
-                                   class="form-range"
-                                   min="1900"
-                                   max="2023"
-                                   id="customRange2"
-                              />
+
+                              <div
+                                   class="d-flex align-items-center justify-content-center"
+                              >
+                                   <label for="customRange2" class="me-2"
+                                        >1900</label
+                                   >
+                                   <input
+                                        type="range"
+                                        class="custom-form-range"
+                                        min="1900"
+                                        max="2023"
+                                        id="customRange2"
+                                   />
+                                   <label for="customRange2" class="ms-2"
+                                        >2023</label
+                                   >
+                              </div>
                          </div>
                     </div>
                </div>
 
                <div class="container">
                     <div class="row">
-                         <div class="col-12 col-md-6 mb-4">
-                              <div class="thumbnail-card-big">
-                                   <div
-                                        class="card-body d-flex justify-content-center"
-                                   >
-                                        <div class="">
-                                             <img
-                                                  src="/img/Person 1.png"
-                                                  height="80"
-                                                  width="auto"
-                                                  alt="profilepicture"
-                                                  class="resize-at-300"
-                                             />
-                                        </div>
-                                        <div class="mx-3">
-                                             <div class="d-flex gap-3">
-                                                  <h5
-                                                       class="card-title remove-at-300 w-100"
-                                                  >
-                                                       Hanna Green
-                                                  </h5>
-                                                  <div class="ml-auto">
-                                                       <svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="24"
-                                                            height="24"
-                                                            viewBox="0 0 24 24"
-                                                            fill="none"
-                                                       >
-                                                            <mask
-                                                                 id="mask0_18_130"
-                                                                 style="
-                                                                      mask-type: alpha;
-                                                                 "
-                                                                 maskUnits="userSpaceOnUse"
-                                                                 x="0"
-                                                                 y="0"
-                                                                 width="24"
-                                                                 height="24"
-                                                            >
-                                                                 <rect
-                                                                      width="24"
-                                                                      height="24"
-                                                                      fill="#8C4285"
-                                                                 />
-                                                            </mask>
-                                                            <g
-                                                                 mask="url(#mask0_18_130)"
-                                                            >
-                                                                 <path
-                                                                      d="M12 21L10.55 19.7C8.86667 18.1833 7.475 16.875 6.375 15.775C5.275 14.675 4.4 13.6875 3.75 12.8125C3.1 11.9375 2.64583 11.1333 2.3875 10.4C2.12917 9.66667 2 8.91667 2 8.15C2 6.58333 2.525 5.275 3.575 4.225C4.625 3.175 5.93333 2.65 7.5 2.65C8.36667 2.65 9.19167 2.83333 9.975 3.2C10.7583 3.56667 11.4333 4.08333 12 4.75C12.5667 4.08333 13.2417 3.56667 14.025 3.2C14.8083 2.83333 15.6333 2.65 16.5 2.65C18.0667 2.65 19.375 3.175 20.425 4.225C21.475 5.275 22 6.58333 22 8.15C22 8.91667 21.8708 9.66667 21.6125 10.4C21.3542 11.1333 20.9 11.9375 20.25 12.8125C19.6 13.6875 18.725 14.675 17.625 15.775C16.525 16.875 15.1333 18.1833 13.45 19.7L12 21ZM12 18.3C13.6 16.8667 14.9167 15.6375 15.95 14.6125C16.9833 13.5875 17.8 12.6958 18.4 11.9375C19 11.1792 19.4167 10.5042 19.65 9.9125C19.8833 9.32084 20 8.73334 20 8.15C20 7.15 19.6667 6.31667 19 5.65C18.3333 4.98333 17.5 4.65 16.5 4.65C15.7167 4.65 14.9917 4.87084 14.325 5.3125C13.6583 5.75417 13.2 6.31667 12.95 7H11.05C10.8 6.31667 10.3417 5.75417 9.675 5.3125C9.00833 4.87084 8.28333 4.65 7.5 4.65C6.5 4.65 5.66667 4.98333 5 5.65C4.33333 6.31667 4 7.15 4 8.15C4 8.73334 4.11667 9.32084 4.35 9.9125C4.58333 10.5042 5 11.1792 5.6 11.9375C6.2 12.6958 7.01667 13.5875 8.05 14.6125C9.08333 15.6375 10.4 16.8667 12 18.3Z"
-                                                                      fill="#8C4285"
-                                                                 />
-                                                            </g>
-                                                       </svg>
-                                                  </div>
-                                             </div>
-
-                                             <h6
-                                                  class="card-title remove-at-300"
-                                             >
-                                                  23.05.2011
-                                             </h6>
+                         <div class="col-4 col-md-4 mb-4 mt-3">
+                              <button
+                                   type="button"
+                                   class="thumbnail-card-small"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#exampleModal"
+                              >
+                                   <div class="">
+                                        <div class="card-body p-0 mt-1">
                                              <div
-                                                  class="card-title remove-at-300"
+                                                  class="mx-0 position-relative text-center"
                                              >
-                                                  <div
-                                                       class="collapse show"
-                                                       id="shortTextDiv"
+                                                  <!-- SVG positioned in top right corner -->
+                                                  <svg
+                                                       xmlns="http://www.w3.org/2000/svg"
+                                                       width="14"
+                                                       height="14"
+                                                       viewBox="0 0 16 16"
+                                                       fill="none"
+                                                       class="position-absolute top-0 end-0 ps-1 ps-md-0"
                                                   >
-                                                       <button
-                                                            class="custom-thumbnail-text-btn"
-                                                            type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#fullTextDiv,#shortTextDiv"
-                                                            aria-expanded="false"
-                                                            aria-controls="fullTextDiv"
-                                                       >
-                                                            <span
-                                                                 class="d-flex"
-                                                            >
-                                                                 World
-                                                                 travels...
-                                                                 <svg
-                                                                      xmlns="http://www.w3.org/2000/svg"
-                                                                      width="24"
-                                                                      height="24"
-                                                                      viewBox="0 0 24 24"
-                                                                      fill="none"
-                                                                 >
-                                                                      <mask
-                                                                           id="mask0_69_29"
-                                                                           style="
-                                                                                mask-type: alpha;
-                                                                           "
-                                                                           maskUnits="userSpaceOnUse"
-                                                                           x="0"
-                                                                           y="0"
-                                                                           width="24"
-                                                                           height="24"
-                                                                      >
-                                                                           <rect
-                                                                                width="24"
-                                                                                height="24"
-                                                                                fill="#D9D9D9"
-                                                                           />
-                                                                      </mask>
-                                                                      <g
-                                                                           mask="url(#mask0_69_29)"
-                                                                      >
-                                                                           <path
-                                                                                d="M12 21L7.5 16.5L8.95 15.05L12 18.1L15.05 15.05L16.5 16.5L12 21ZM8.95 9.04998L7.5 7.59998L12 3.09998L16.5 7.59998L15.05 9.04998L12 5.99998L8.95 9.04998Z"
-                                                                                fill="#1C1B1F"
-                                                                           />
-                                                                      </g>
-                                                                 </svg>
-                                                            </span>
-                                                       </button>
-                                                  </div>
-
-                                                  <div
-                                                       class="collapse w-100"
-                                                       id="fullTextDiv"
+                                                       <path
+                                                            d="M0.5 8C0.5 7.5875 0.646874 7.23438 0.940624 6.94063C1.23438 6.64688 1.5875 6.5 2 6.5L8 6.5C8.4125 6.5 8.76562 6.64688 9.05937 6.94063C9.35312 7.23438 9.5 7.5875 9.5 8V14C9.5 14.4125 9.35312 14.7656 9.05937 15.0594C8.76562 15.3531 8.4125 15.5 8 15.5H2C1.5875 15.5 1.23438 15.3531 0.940624 15.0594C0.646874 14.7656 0.5 14.4125 0.5 14V8ZM2 8V14H8V8H2ZM3.5 3.5L11 3.5C11.4125 3.5 11.7656 3.64688 12.0594 3.94063C12.3531 4.23438 12.5 4.5875 12.5 5V12.5H11V5L3.5 5V3.5ZM6.5 0.5L14 0.5C14.4125 0.5 14.7656 0.646875 15.0594 0.940625C15.3531 1.23438 15.5 1.5875 15.5 2V9.5H14V2L6.5 2V0.5Z"
+                                                            fill="#8C4285"
+                                                       />
+                                                  </svg>
+                                                  <!-- h6 tags centered and above each other -->
+                                                  <h6
+                                                       class="remove-at-300 p-0 m-0 title-font"
                                                   >
-                                                       World travels of 2011
-                                                       where we ate at a bar and
-                                                       drank at a restaurant and
-                                                       did many more exciting
-                                                       things during our
-                                                       journey.
-                                                       <button
-                                                            class="custom-thumbnail-text-btn"
-                                                            type="button"
-                                                            data-bs-toggle="collapse"
-                                                            data-bs-target="#fullTextDiv,#shortTextDiv"
-                                                            aria-expanded="true"
-                                                            aria-controls="shortTextDiv"
-                                                       >
-                                                            <span
-                                                                 class="text-primary my-1"
-                                                                 >Read
-                                                                 Less</span
-                                                            >
-                                                       </button>
-                                                  </div>
+                                                       Post title
+                                                  </h6>
+                                                  <h6
+                                                       class="card-title remove-at-300 title-font"
+                                                  >
+                                                       23.05.2011
+                                                  </h6>
                                              </div>
+                                             <div class="p-1 mb-1">
+                                                  <img
+                                                       src="/img/randompic1 (1).jpeg"
+                                                       class="d-block w-100"
+                                                       alt="..."
+                                                  />
+                                             </div>
+                                        </div>
+
+                                        <div class="bottom-bar">
+                                             <div class="left-bar"></div>
+                                             <div class="right-bar"></div>
                                         </div>
                                    </div>
-                                   <div>
-                                        <div class="p-2">
+                              </button>
+                         </div>
+
+                         <div
+                              class="modal fade"
+                              id="exampleModal"
+                              tabindex="-1"
+                              aria-labelledby="exampleModalLabel"
+                              aria-hidden="true"
+                         >
+                              <div class="modal-dialog modal-dialog-centered">
+                                   <div class="modal-content">
+                                        <div class="modal-header vh-5">
+                                             <h5 class="title-font">
+                                                  23.05.2011
+                                             </h5>
+                                             <button
+                                                  type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"
+                                             ></button>
+                                        </div>
+                                        <div
+                                             class="d-flex justify-content-center m-3"
+                                        >
+                                             <span class="para-font">
+                                                  Throwback to sunnier days and
+                                                  endless adventures. 🌍✈️
+                                             </span>
+                                        </div>
+
+                                        <div class="modal-body p-2">
                                              <div
                                                   id="myCarouselMain"
                                                   class="carousel slide"
@@ -475,14 +418,891 @@
                                              </div>
                                         </div>
                                    </div>
-                                   <div class="bottom-bar">
-                                        <div class="left-bar"></div>
-                                        <div class="right-bar"></div>
+                              </div>
+                         </div>
+                         <!-- Thumbnail for Modal 2 -->
+                         <div class="col-4 col-md-4 mb-4 mt-3">
+                              <button
+                                   type="button"
+                                   class="thumbnail-card-small"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#modalTwo"
+                              >
+                                   <div class="">
+                                        <div class="card-body p-0 mt-1">
+                                             <div
+                                                  class="mx-0 position-relative text-center"
+                                             >
+                                                  <!-- SVG positioned in top right corner -->
+                                                  <svg
+                                                       xmlns="http://www.w3.org/2000/svg"
+                                                       width="14"
+                                                       height="14"
+                                                       viewBox="0 0 16 16"
+                                                       fill="none"
+                                                       class="position-absolute top-0 end-0 ps-1 ps-md-0"
+                                                  >
+                                                       <!-- SVG path remains the same -->
+                                                  </svg>
+                                                  <!-- h6 tags centered and above each other -->
+                                                  <h6
+                                                       class="remove-at-300 p-0 m-0 title-font"
+                                                  >
+                                                       Mountain Echoes
+                                                  </h6>
+                                                  <h6
+                                                       class="card-title remove-at-300 title-font"
+                                                  >
+                                                       07.11.2015
+                                                  </h6>
+                                             </div>
+                                             <div class="p-1 mb-1">
+                                                  <img
+                                                       src="/img/randompic3 (1).jpeg"
+                                                       class="d-block w-100"
+                                                       alt="Mountain View"
+                                                  />
+                                             </div>
+                                        </div>
+
+                                        <div class="bottom-bar">
+                                             <div class="left-bar"></div>
+                                             <div class="right-bar"></div>
+                                        </div>
+                                   </div>
+                              </button>
+                         </div>
+
+                         <!-- Modal structure for Modal 2 -->
+                         <div
+                              class="modal fade"
+                              id="modalTwo"
+                              tabindex="-1"
+                              aria-labelledby="modalLabelTwo"
+                              aria-hidden="true"
+                         >
+                              <div class="modal-dialog modal-dialog-centered">
+                                   <div class="modal-content">
+                                        <div class="modal-header vh-5">
+                                             <h5 class="title-font">
+                                                  07.11.2015
+                                             </h5>
+                                             <button
+                                                  type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"
+                                             ></button>
+                                        </div>
+                                        <div
+                                             class="d-flex justify-content-center m-3"
+                                        >
+                                             <span class="para-font"
+                                                  >Majestic mountains calling
+                                                  out to the adventurer.
+                                                  ⛰️🌌</span
+                                             >
+                                        </div>
+
+                                        <div class="modal-body p-2">
+                                             <div
+                                                  id="carouselTwo"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators m-0 p-0"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselTwo"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselTwo"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselTwo"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic3 (1).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Mountain View 1"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic3 (2).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="Mountain View 2"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic3 (3).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Mountain View 3"
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#carouselTwo"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#carouselTwo"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
                                    </div>
                               </div>
                          </div>
+                         <!-- Thumbnail for Modal 3 -->
+                         <div class="col-4 col-md-4 mb-4 mt-3">
+                              <button
+                                   type="button"
+                                   class="thumbnail-card-small"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#modalThree"
+                              >
+                                   <div class="">
+                                        <div class="card-body p-0 mt-1">
+                                             <div
+                                                  class="mx-0 position-relative text-center"
+                                             >
+                                                  <!-- SVG positioned in top right corner -->
+                                                  <svg
+                                                       xmlns="http://www.w3.org/2000/svg"
+                                                       width="14"
+                                                       height="14"
+                                                       viewBox="0 0 16 16"
+                                                       fill="none"
+                                                       class="position-absolute top-0 end-0 ps-1 ps-md-0"
+                                                  >
+                                                       <!-- SVG path remains the same -->
+                                                  </svg>
+                                                  <!-- h6 tags centered and above each other -->
+                                                  <h6
+                                                       class="remove-at-300 p-0 m-0 title-font"
+                                                  >
+                                                       Desert Mirage
+                                                  </h6>
+                                                  <h6
+                                                       class="card-title remove-at-300 title-font"
+                                                  >
+                                                       15.02.2016
+                                                  </h6>
+                                             </div>
+                                             <div class="p-1 mb-1">
+                                                  <img
+                                                       src="/img/randompic4.jpeg"
+                                                       class="d-block w-100"
+                                                       alt="Desert View"
+                                                  />
+                                             </div>
+                                        </div>
 
-                         <!-- Add more memories as needed -->
+                                        <div class="bottom-bar">
+                                             <div class="left-bar"></div>
+                                             <div class="right-bar"></div>
+                                        </div>
+                                   </div>
+                              </button>
+                         </div>
+
+                         <!-- Modal structure for Modal 3 -->
+                         <div
+                              class="modal fade"
+                              id="modalThree"
+                              tabindex="-1"
+                              aria-labelledby="modalLabelThree"
+                              aria-hidden="true"
+                         >
+                              <div class="modal-dialog modal-dialog-centered">
+                                   <div class="modal-content">
+                                        <div class="modal-header vh-5">
+                                             <h5 class="title-font">
+                                                  15.02.2016
+                                             </h5>
+                                             <button
+                                                  type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"
+                                             ></button>
+                                        </div>
+                                        <div
+                                             class="d-flex justify-content-center m-3"
+                                        >
+                                             <span class="para-font"
+                                                  >Endless sands stretching far
+                                                  and wide. 🏜️🌞</span
+                                             >
+                                        </div>
+
+                                        <div class="modal-body p-2">
+                                             <div
+                                                  id="carouselThree"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators m-0 p-0"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselThree"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselThree"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselThree"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic4 (1).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Desert View 1"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic4 (2).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="Desert View 2"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic4 (3).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Desert View 3"
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#carouselThree"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#carouselThree"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <!-- Thumbnail for Modal 4 -->
+                         <div class="col-4 col-md-4 mb-4 mt-3">
+                              <button
+                                   type="button"
+                                   class="thumbnail-card-small"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#modalFour"
+                              >
+                                   <div class="">
+                                        <div class="card-body p-0 mt-1">
+                                             <div
+                                                  class="mx-0 position-relative text-center"
+                                             >
+                                                  <!-- SVG positioned in top right corner -->
+                                                  <svg
+                                                       xmlns="http://www.w3.org/2000/svg"
+                                                       width="14"
+                                                       height="14"
+                                                       viewBox="0 0 16 16"
+                                                       fill="none"
+                                                       class="position-absolute top-0 end-0 ps-1 ps-md-0"
+                                                  >
+                                                       <!-- SVG path remains the same -->
+                                                  </svg>
+                                                  <!-- h6 tags centered and above each other -->
+                                                  <h6
+                                                       class="remove-at-300 p-0 m-0 title-font"
+                                                  >
+                                                       Winter Wonderland
+                                                  </h6>
+                                                  <h6
+                                                       class="card-title remove-at-300 title-font"
+                                                  >
+                                                       20.12.2017
+                                                  </h6>
+                                             </div>
+                                             <div class="p-1 mb-1">
+                                                  <img
+                                                       src="/img/randompic5.jpeg"
+                                                       class="d-block w-100"
+                                                       alt="Winter View"
+                                                  />
+                                             </div>
+                                        </div>
+
+                                        <div class="bottom-bar">
+                                             <div class="left-bar"></div>
+                                             <div class="right-bar"></div>
+                                        </div>
+                                   </div>
+                              </button>
+                         </div>
+
+                         <!-- Modal structure for Modal 4 -->
+                         <div
+                              class="modal fade"
+                              id="modalFour"
+                              tabindex="-1"
+                              aria-labelledby="modalLabelFour"
+                              aria-hidden="true"
+                         >
+                              <div class="modal-dialog modal-dialog-centered">
+                                   <div class="modal-content">
+                                        <div class="modal-header vh-5">
+                                             <h5 class="title-font">
+                                                  20.12.2017
+                                             </h5>
+                                             <button
+                                                  type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"
+                                             ></button>
+                                        </div>
+                                        <div
+                                             class="d-flex justify-content-center m-3"
+                                        >
+                                             <span class="para-font"
+                                                  >Blankets of snow covering the
+                                                  serene landscape. ❄️⛄</span
+                                             >
+                                        </div>
+
+                                        <div class="modal-body p-2">
+                                             <div
+                                                  id="carouselFour"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators m-0 p-0"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselFour"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselFour"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselFour"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic5 (1).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Winter View 1"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic5 (2).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="Winter View 2"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic5 (3).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Winter View 3"
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#carouselFour"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#carouselFour"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <!-- Thumbnail for Modal 5 -->
+                         <div class="col-4 col-md-4 mb-4 mt-3">
+                              <button
+                                   type="button"
+                                   class="thumbnail-card-small"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#modalFive"
+                              >
+                                   <div class="">
+                                        <div class="card-body p-0 mt-1">
+                                             <div
+                                                  class="mx-0 position-relative text-center"
+                                             >
+                                                  <!-- SVG positioned in top right corner -->
+                                                  <svg
+                                                       xmlns="http://www.w3.org/2000/svg"
+                                                       width="14"
+                                                       height="14"
+                                                       viewBox="0 0 16 16"
+                                                       fill="none"
+                                                       class="position-absolute top-0 end-0 ps-1 ps-md-0"
+                                                  >
+                                                       <!-- SVG path remains the same -->
+                                                  </svg>
+                                                  <!-- h6 tags centered and above each other -->
+                                                  <h6
+                                                       class="remove-at-300 p-0 m-0 title-font"
+                                                  >
+                                                       Tropical Paradise
+                                                  </h6>
+                                                  <h6
+                                                       class="card-title remove-at-300 title-font"
+                                                  >
+                                                       05.07.2018
+                                                  </h6>
+                                             </div>
+                                             <div class="p-1 mb-1">
+                                                  <img
+                                                       src="/img/randompic6.jpeg"
+                                                       class="d-block w-100"
+                                                       alt="Tropical Beach"
+                                                  />
+                                             </div>
+                                        </div>
+
+                                        <div class="bottom-bar">
+                                             <div class="left-bar"></div>
+                                             <div class="right-bar"></div>
+                                        </div>
+                                   </div>
+                              </button>
+                         </div>
+
+                         <!-- Modal structure for Modal 5 -->
+                         <div
+                              class="modal fade"
+                              id="modalFive"
+                              tabindex="-1"
+                              aria-labelledby="modalLabelFive"
+                              aria-hidden="true"
+                         >
+                              <div class="modal-dialog modal-dialog-centered">
+                                   <div class="modal-content">
+                                        <div class="modal-header vh-5">
+                                             <h5 class="title-font">
+                                                  05.07.2018
+                                             </h5>
+                                             <button
+                                                  type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"
+                                             ></button>
+                                        </div>
+                                        <div
+                                             class="d-flex justify-content-center m-3"
+                                        >
+                                             <span class="para-font"
+                                                  >Crystal clear waters, golden
+                                                  sands, and palm trees swaying
+                                                  in the breeze. 🌴🌊</span
+                                             >
+                                        </div>
+
+                                        <div class="modal-body p-2">
+                                             <div
+                                                  id="carouselFive"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators m-0 p-0"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselFive"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselFive"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselFive"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic6 (1).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Tropical Beach 1"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic6 (2).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="Tropical Beach 2"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic6 (3).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Tropical Beach 3"
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#carouselFive"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#carouselFive"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                         <!-- Thumbnail for Modal 6 -->
+                         <div class="col-4 col-md-4 mb-4 mt-3">
+                              <button
+                                   type="button"
+                                   class="thumbnail-card-small"
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#modalSix"
+                              >
+                                   <div class="">
+                                        <div class="card-body p-0 mt-1">
+                                             <div
+                                                  class="mx-0 position-relative text-center"
+                                             >
+                                                  <!-- SVG positioned in top right corner -->
+                                                  <svg
+                                                       xmlns="http://www.w3.org/2000/svg"
+                                                       width="14"
+                                                       height="14"
+                                                       viewBox="0 0 16 16"
+                                                       fill="none"
+                                                       class="position-absolute top-0 end-0 ps-1 ps-md-0"
+                                                  >
+                                                       <!-- SVG path remains the same -->
+                                                  </svg>
+                                                  <!-- h6 tags centered and above each other -->
+                                                  <h6
+                                                       class="remove-at-300 p-0 m-0 title-font"
+                                                  >
+                                                       Majestic Mountains
+                                                  </h6>
+                                                  <h6
+                                                       class="card-title remove-at-300 title-font"
+                                                  >
+                                                       15.10.2018
+                                                  </h6>
+                                             </div>
+                                             <div class="p-1 mb-1">
+                                                  <img
+                                                       src="/img/randompic7.jpeg"
+                                                       class="d-block w-100"
+                                                       alt="Mountain View"
+                                                  />
+                                             </div>
+                                        </div>
+
+                                        <div class="bottom-bar">
+                                             <div class="left-bar"></div>
+                                             <div class="right-bar"></div>
+                                        </div>
+                                   </div>
+                              </button>
+                         </div>
+
+                         <!-- Modal structure for Modal 6 -->
+                         <div
+                              class="modal fade"
+                              id="modalSix"
+                              tabindex="-1"
+                              aria-labelledby="modalLabelSix"
+                              aria-hidden="true"
+                         >
+                              <div class="modal-dialog modal-dialog-centered">
+                                   <div class="modal-content">
+                                        <div class="modal-header vh-5">
+                                             <h5 class="title-font">
+                                                  15.10.2018
+                                             </h5>
+                                             <button
+                                                  type="button"
+                                                  class="btn-close"
+                                                  data-bs-dismiss="modal"
+                                                  aria-label="Close"
+                                             ></button>
+                                        </div>
+                                        <div
+                                             class="d-flex justify-content-center m-3"
+                                        >
+                                             <span class="para-font"
+                                                  >Soaring peaks, serene
+                                                  valleys, and the raw beauty of
+                                                  nature. ⛰️</span
+                                             >
+                                        </div>
+
+                                        <div class="modal-body p-2">
+                                             <div
+                                                  id="carouselSix"
+                                                  class="carousel slide"
+                                             >
+                                                  <div
+                                                       class="carousel-indicators m-0 p-0"
+                                                  >
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselSix"
+                                                            data-bs-slide-to="0"
+                                                            class="active"
+                                                            aria-current="true"
+                                                            aria-label="Slide 1"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselSix"
+                                                            data-bs-slide-to="1"
+                                                            aria-label="Slide 2"
+                                                       ></button>
+                                                       <button
+                                                            type="button"
+                                                            data-bs-target="#carouselSix"
+                                                            data-bs-slide-to="2"
+                                                            aria-label="Slide 3"
+                                                       ></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                       <div
+                                                            class="carousel-item active thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic7 (1).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Mountain View 1"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic7 (2).jpg"
+                                                                 class="d-block w-100"
+                                                                 alt="Mountain View 2"
+                                                            />
+                                                       </div>
+                                                       <div
+                                                            class="carousel-item thumbnail-carousel-max-height"
+                                                       >
+                                                            <img
+                                                                 src="/img/randompic7 (3).jpeg"
+                                                                 class="d-block w-100"
+                                                                 alt="Mountain View 3"
+                                                            />
+                                                       </div>
+                                                  </div>
+                                                  <button
+                                                       class="carousel-control-prev"
+                                                       type="button"
+                                                       data-bs-target="#carouselSix"
+                                                       data-bs-slide="prev"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-prev-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Previous</span
+                                                       >
+                                                  </button>
+                                                  <button
+                                                       class="carousel-control-next"
+                                                       type="button"
+                                                       data-bs-target="#carouselSix"
+                                                       data-bs-slide="next"
+                                                  >
+                                                       <span
+                                                            class="carousel-control-next-icon"
+                                                            aria-hidden="true"
+                                                       ></span>
+                                                       <span
+                                                            class="visually-hidden"
+                                                            >Next</span
+                                                       >
+                                                  </button>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
                     </div>
                </div>
           </main>

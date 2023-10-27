@@ -22,13 +22,24 @@ $carousel-indicator-active-bg: $primary;
 $carousel-indicator-active-opacity: 1;
 $carousel-indicator-transition: opacity 0.6s ease;
 
-$carousel-transition-duration: 0.2s;
+$carousel-transition-duration: 0.1s;
+$carousel-transition-duration-slow: 0.8s;
+
 $carousel-transition: transform $carousel-transition-duration ease-in-out;
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
 
+.carousel-item {
+     transition: transform $carousel-transition-duration ease-in-out;
+
+     .carousel.slow-slide & {
+          transition: transform $carousel-transition-duration-slow ease-in-out;
+     }
+}
+// This code will add another transition time with the custom made variable
+// and add it to the existing bootstrap carousel class
 .standard-border {
      border: 2px solid $primary;
      outline: none;
@@ -200,6 +211,7 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
 }
 
 .thumbnail-card-small {
+     @extend .thumbnail-card-big;
 }
 
 .main-header {

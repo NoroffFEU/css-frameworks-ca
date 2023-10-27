@@ -6,6 +6,11 @@ body {
     font-size: $font-size-base;
   }
 
+.background {
+    background: url('/Images/background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
   .navbar {
     background-color: $background-color;
   
@@ -54,6 +59,7 @@ body {
     .btn-primary {
       background-color: $primary-color;
       border: none;
+      margin-bottom: 10px;
       &:hover {
         background-color: darken($primary-color, 10%);
       }
@@ -132,6 +138,16 @@ body {
 
   .form-inline {
     .form-control {
+        margin-bottom: 10px;
       width: 100%;
     }
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .card-img-top {
+    max-height: 600px;
+    object-fit: cover;
   }

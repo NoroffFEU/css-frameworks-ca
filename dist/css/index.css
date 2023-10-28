@@ -19,6 +19,9 @@ nav .disabled, footer .disabled {
 .the-box {
   height: 40vh;
 }
+.the-box form {
+  max-width: 500px;
+}
 
 .profile-summary {
   border: 2px solid #22577A;

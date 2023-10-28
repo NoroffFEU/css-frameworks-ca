@@ -2,38 +2,61 @@
 
 // export async function setRemovePostFormListener() {
 //     const removePostLink = document.querySelector("#removePostLink");
+//     console.log("Hei");
+//     console.log(removePostLink);
 
-//     const url = new URL(location.href);
-//     const postId = url.searchParams.get("id");
+//     if (removePostLink) {
+//         removePostLink.addEventListener("click", async (event) => {
+//             event.preventDefault();
+//             console.log("Remove button clicked");
 
-//     removePostLink.addEventListener("click", async (event) => {
-//         event.preventDefault();
-//         console.log("click");
+//             const url = new URL(location.href);
+//             const postId = url.searchParams.get("id");
+//             console.log(postId);
 
-//         if (!postId) {
-//             alert("Post ID not found.");
-//             return;
-//         }
+//             if (!postId) {
+//                 alert("Post ID not found.");
+//                 return;
+//             }
 
-//         try {
-//             await removePost(postId);
-//             // Remove the post from the UI
-//             removePostFromUI(postId);
-//             // Redirect to the feed page (adjust the URL as needed)
-//             window.location.href = "/posts/"; // Change to your feed URL
-//         } catch (error) {
-//             console.error("Error deleting post:", error);
-//             alert("An error occurred while deleting the post.");
-//         }
-//     });
+//             try {
+//                 await removePost(postId);
+//                 // Message to indicate the post has been deleted.
+//                 alert("Post has been deleted.");
+//                 // Remove the post UI from the page.
+//                 const postContainer = document.querySelector("#postContainer");
+//                 if (postContainer) {
+//                     postContainer.innerHTML = ""; // Clear the post container
+//                 }
+//                 // Redirect to the feed page
+//                 window.location.href = "/posts/";
+//             } catch (error) {
+//                 console.error("Error deleting post:", error);
+//                 alert("An error occurred while deleting the post.");
+//             }
+//         });
+//     }
 // }
 
-// // Add a function to remove the post from the UI
-// function removePostFromUI(postId) {
-//     const postContainer = document.querySelector("#postContainer");
-//     const postToRemove = postContainer.querySelector(`#post-${postId}`);
+// export async function setRemovePostFormListener(postId) {
+//     const removePostLink = document.querySelector("#removePostLink");
 
-//     if (postToRemove) {
-//         postContainer.removeChild(postToRemove);
+//     if (removePostLink) {
+//         removePostLink.addEventListener("click", async (event) => {
+//             event.preventDefault();
+
+//             if (!postId) {
+//                 alert("Post ID not found.");
+//                 return;
+//             }
+
+//             try {
+//                 await removePost(postId);
+//                 alert("Post has been deleted.");
+//             } catch (error) {
+//                 console.error("Error deleting post:", error);
+//                 alert("An error occurred while deleting the post.");
+//             }
+//         });
 //     }
 // }

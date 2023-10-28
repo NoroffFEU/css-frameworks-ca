@@ -1,1 +1,9 @@
+@import "./_variables.scss";
 
+$body-bg: $white;
+
+$theme-colors: (
+        primary: $indigo
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap";

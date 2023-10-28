@@ -1,1 +1,151 @@
+$primary: #364F6B;
+$secondary: #3FC1C9;
+$background-color: #F5F5F5;
+$font-color: #333;
+$border-color: #D9E4E7;
+body {
+    background-color: $background-color;
+    font-family: 'Arial', sans-serif;
+    color: $font-color;
+    line-height: 1.6;
+}
+.container {
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid $border-color;
+    .row {
+        margin: 0; 
+    }
+}
+.navbar {
+    background-color: $primary !important;
+    border-bottom: 3px solid $secondary;
 
+    .navbar-brand, .nav-link {
+        color: $background-color;
+
+        &:hover, &:focus {
+            color: $secondary;
+        }
+    }
+
+    .btn {
+        background-color: $secondary;
+        color: $primary;
+
+        &:hover, &:focus {
+            background-color: darken($secondary, 10%);
+        }
+    }
+}
+.navbar form {
+    input[type="search"].form-control {
+        height: 36px;
+    }
+
+    button.btn {
+        height: 36px;
+        line-height: 20px;
+    }
+}
+.custom-btn {
+    @extend .btn;
+    border-radius: 5px;
+}
+.form-control {
+    &:focus {
+        border-color: $secondary;
+        box-shadow: none;
+    }
+}
+.btn {
+    background-color: $primary;
+    border: none;
+    color: white;
+
+    &:hover {
+        background-color: darken($primary, 8%);
+    }
+}
+.input-group, .dropdown {
+    margin-bottom: 20px;
+
+    .form-control {
+        border-radius: 0;
+        border: 1px solid $border-color;
+    }
+
+    .btn, .input-group-text, button {
+        background-color: $primary;
+        color: $background-color;
+
+        &:hover {
+            background-color: darken($primary, 10%);
+        }
+    }
+}
+form {
+    .form-control, textarea {
+        border: 1px solid $border-color;
+    }
+
+    button[type="submit"] {
+        background-color: $primary;
+        color: $background-color;
+        
+        &:hover {
+            background-color: darken($primary, 8%);
+        }
+    }
+}
+.card {
+    margin-bottom: 20px;
+    border: 1px solid $border-color;
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        color: lighten($font-color, 10%);
+    }
+
+    .btn {
+        background-color: $primary;
+        color: $background-color;
+
+        &:hover {
+            background-color: darken($primary, 8%);
+        }
+    }
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: lighten($secondary, 20%);
+    border: 3px solid $primary;
+}
+.username {
+    color: $primary;
+}
+.follow-button {
+    background-color: $secondary;
+    text-transform: uppercase;
+    color: $primary; 
+
+    &:hover {
+        background-color: darken($secondary, 10%);
+    }
+}
+@mixin responsive-font($mobile-size, $desktop-size) {
+    font-size: $mobile-size;
+
+    @media screen and (min-width: 992px) {
+        font-size: $desktop-size;
+    }
+}
+.heading {
+    @include responsive-font(1.5rem, 2rem);
+}

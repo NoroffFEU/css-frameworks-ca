@@ -28,13 +28,17 @@ switch (location.pathname) {
     case "/profile/register/index.html":
         listeners.setRegisterFormListener();
         break;
+    // case "/post/":
+    // case "/post/index.html":
+    //     listeners.setRemovePostFormListener();
+    //     break;
     case "/post/create/":
     case "/post/create/index.html":
         listeners.setCreatePostFormListener();
+        break;
     case "/post/edit/":
     case "/post/edit/index.html":
         listeners.setUpdatePostFormListener();
-        // listeners.setRemovePostFormListener();
         break;
     default:
 }
@@ -70,24 +74,55 @@ switch (location.pathname) {
 // renderPosts();
 
 //---------------------------------------------------------------------------
-// Code added to click on view more and see post details:
+// Code to click on view more link and see post details:
 
 if (location.pathname.includes("/post/index.html")) {
-    // This block executes when you are on the post detail page
+    // Executes for the post detail page
     const urlParams = new URLSearchParams(location.search);
     const postId = urlParams.get("id");
 
-    async function renderPost() {
-        // Fetch the specific post by ID using the getPost method
-        const post = await postMethods.getPost(postId);
-        const container = document.querySelector("#postContainer");
-        templates.renderPostTemplate(post, container);
-    }
+    if (postId) {
+        async function renderPost() {
+            // Fetch the specific post by ID using the getPost method
+            const post = await postMethods.getPost(postId);
+            const container = document.querySelector("#postContainer");
+            templates.renderPostTemplate(post, container);
+            console.log(post);
+            const removePostButton = document.querySelector("#removePostButton");
+            console.log(removePostButton);
 
-    renderPost();
+            if (removePostButton) {
+                removePostButton.addEventListener("click", async (event) => {
+                    console.log(removePostButton);
+                    event.preventDefault();
+                    // Remove post
+                    try {
+                        await postMethods.removePost(postId);
+                        // Message indicating the post has been deleted.
+                        alert("Post has been deleted.");
+                        // Remove the post UI from the page.
+                        const postContainer = document.querySelector("#postContainer");
+                        if (postContainer) {
+                            templates.afterDeleteTemplate();
+                        } else {
+                        }
+                        // Redirect to the feed page (adjust the URL as needed)
+                        // window.location.href = "/posts/"; // Change to your feed URL
+                    } catch (error) {
+                        console.error("Error deleting post:", error);
+                        alert("An error occurred while deleting the post.");
+                    }
+                });
+            }
+        }
+
+        renderPost();
+    } else {
+        templates.afterDeleteTemplateError();
+    }
 } else {
-    // This block executes for the posts/index.html page
-    // Include your existing code for rendering the list of posts
+    // Executes for the posts/index.html page
+    // Rendering the list of posts
     async function renderPosts() {
         const posts = await postMethods.getPosts();
         const container = document.querySelector("#postList");
@@ -96,6 +131,36 @@ if (location.pathname.includes("/post/index.html")) {
 
     renderPosts();
 }
+
+//---------------------------------------------------------------------------
+//The code I had for rendering and updating posts before implementing removal of posts
+
+// if (location.pathname.includes("/post/index.html")) {
+//     // Executes for the post detail page
+//     const urlParams = new URLSearchParams(location.search);
+//     const postId = urlParams.get("id");
+
+//         async function renderPost() {
+//             // Fetch the specific post by ID using the getPost method
+//             const post = await postMethods.getPost(postId);
+//             const container = document.querySelector("#postContainer");
+//             templates.renderPostTemplate(post, container);
+//             console.log(post);
+//         }
+
+//         renderPost();
+
+// } else {
+//     // Executes for the posts/index.html page
+//     // Rendering the list of posts
+//     async function renderPosts() {
+//         const posts = await postMethods.getPosts();
+//         const container = document.querySelector("#postList");
+//         templates.renderPostTemplates(posts, container);
+//     }
+
+//     renderPosts();
+// }
 
 //--------------------------------------------------------------------------
 
@@ -117,7 +182,7 @@ if (location.pathname.includes("/post/index.html")) {
 //     media: "https://images.freeimages.com/images/large-previews/5aa/spooky-chillin-1258602.jpg",
 // });
 
-// postMethods.removePost(7470);
+// postMethods.removePost(id);
 // postMethods.getPosts().then(console.log);
 // postMethods.getPost(7470).then(console.log);
 //--------------------------------------------------------------------------------------

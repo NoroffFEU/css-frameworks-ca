@@ -221,14 +221,16 @@ export function postTemplateDetails(postData) {
     updateButton.className = "btn btn-sm btn-secondary";
     updateButton.innerHTML = '<i class="bi bi-pencil-square"></i> Update';
 
-    const removeButton = document.createElement("a");
-    removeButton.href = `/post/index.html?id=${postData.id}`;
+    const removeButton = document.createElement("button");
+    // removeButton.href = `/post/index.html?id=${postData.id}`;
+    // removeButton.href = "#";
     removeButton.className = "btn btn-sm btn-primary ms-2";
-    removeButton.id = "removePostLink";
+    removeButton.id = "removePostButton";
     removeButton.innerHTML = '<i class="bi bi-trash-fill"></i> Remove';
 
     buttonDiv.appendChild(updateButton);
     buttonDiv.appendChild(removeButton);
+    // console.log(removeButton);
 
     innerDiv.appendChild(buttonDiv);
     //Buttongroup finished---------------------------------------

@@ -18,6 +18,7 @@ nav .disabled, footer .disabled {
 
 .the-box {
   height: 40vh;
+  margin-top: 5rem;
 }
 .the-box form {
   max-width: 500px;

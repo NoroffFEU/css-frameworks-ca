@@ -104,10 +104,7 @@ if (location.pathname.includes("/post/index.html")) {
                         const postContainer = document.querySelector("#postContainer");
                         if (postContainer) {
                             templates.afterDeleteTemplate();
-                        } else {
                         }
-                        // Redirect to the feed page (adjust the URL as needed)
-                        // window.location.href = "/posts/"; // Change to your feed URL
                     } catch (error) {
                         console.error("Error deleting post:", error);
                         alert("An error occurred while deleting the post.");

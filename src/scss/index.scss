@@ -5,34 +5,42 @@
 
 $primary: #253c6b;
 $font-stack: Arial, sans-serif;
-$secondary: #7c9cb3;
+$secondary: #a6c0d2;
 $box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 $body-bg: #ebeced;
 $light: #f1f1f1;
+$dark: #020202;
 
-nav, footer {
+nav {
   box-shadow: $box-shadow;
   background-color: $primary;
-  color: $body-bg;
-
-  a, p {
-    color: $body-bg;
+  margin-bottom: 15px;
+  a,
+  p {
+    color: $light;
     &:hover {
       color: lightblue;
     }
   }
   .nav-link {
-    color: $body-bg;
+    color: $light;
     &:hover {
       color: lightblue;
     }
   }
 }
 
+footer {
+  background-color: $secondary;
+  a {
+    color: $primary;
+  }
+}
+
 .btn {
   border: $primary 0.5px solid;
   margin-bottom: 5px;
- 
+
   &:hover {
     background-color: white;
     color: $primary;
@@ -40,24 +48,27 @@ nav, footer {
   }
 }
 .btn-primary {
-    background-color: $primary;
-    color: $body-bg;
+  background-color: $primary;
+  color: $body-bg;
 }
 
-    .btn-secondary {
-      background-color: white;
-      color: $primary;
-     &:hover {
-      background-color: $primary;
-      color: white;
-     } 
-    }
-  
-
+.btn-secondary {
+  background-color: white;
+  color: $primary;
+  &:hover {
+    background-color: $primary;
+    color: white;
+  }
+}
 
 body {
   height: 100vh;
   background-color: $body-bg;
+  color: $dark;
+
+  img {
+    border: solid 1px lightgrey;
+  }
 }
 
 ul {
@@ -72,6 +83,17 @@ ul {
   box-shadow: $box-shadow;
   background-color: $body-bg;
   border: 1px solid lightgrey;
+
+  .favorite-btn {
+    border: none;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  i {
+    color: lightpink;
+  }
 }
 
 .form-control {
@@ -79,9 +101,6 @@ ul {
   height: 50px;
 }
 
-main {
-  margin: 50px;
-}
 
 #post-list {
   margin-top: 2rem;
@@ -98,12 +117,7 @@ main {
   }
 }
 
-.profile-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-}
+
 
 #user-posts {
   .user-post {

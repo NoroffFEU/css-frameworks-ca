@@ -12,7 +12,9 @@
      </head>
      <body class="custom-w-g-bg">
           <header class="main-header">
-               <nav class="navbar navbar-expand-md bg-body-tertiary">
+               <nav
+                    class="navbar navbar-expand-md bg-body-tertiary custom-max-width"
+               >
                     <div class="container-fluid me-4 ms-3">
                          <a class="navbar-brand ms-md-4" href="/index.html">
                               <img
@@ -63,12 +65,12 @@
                                              >Feed</a
                                         >
                                    </li>
-                                   <li class="nav-item">
+                                   <li class="nav-item ms-2">
                                         <a class="navbar-links" href="#"
                                              >Learn more!</a
                                         >
                                    </li>
-                                   <li class="nav-item">
+                                   <li class="nav-item ms-2">
                                         <a class="" href="/index.html"
                                              ><span
                                                   class="navbar-links text-primary"
@@ -103,11 +105,11 @@
                </nav>
           </header>
           <main>
-               <div class="container my-3">
-                    <div class="row pt-2 remove-at-300">
-                         <div class="col-12">
-                              <div class="row">
-                                   <div class="col-3">
+               <div class="container my-3 custom-max-width">
+                    <div class="row pt-2">
+                         <div class="col-12 remove-at-300">
+                              <div class="d-flex justify-content-center mx-4">
+                                   <div class="">
                                         <img
                                              src="/img/profilepicture.png"
                                              height="100"
@@ -116,14 +118,14 @@
                                              class="custom-profile-img"
                                         />
                                    </div>
-                                   <div class="col-7 title-font ms-3">
+                                   <div class="col-6 title-font ms-3">
                                         <h5 class="">Chris Sturgis</h5>
                                         <h6 class="">23.05.2011</h6>
                                         <h6 class="">
                                              Here to share my life with you!
                                         </h6>
                                    </div>
-                                   <div class="col-1">
+                                   <div class="">
                                         <a href=""
                                              ><svg
                                                   xmlns="http://www.w3.org/2000/svg"
@@ -151,14 +153,10 @@
                                    role="group"
                                    aria-label="Button group with nested dropdown"
                               >
-                                   <button type="button" class="btn-custom-lg">
-                                        Post new memory
-                                   </button>
-
                                    <div class="btn-group" role="group">
                                         <button
                                              type="button"
-                                             class="btn-custom-lg dropdown-toggle"
+                                             class="btn-custom-1 dropdown-toggle"
                                              data-bs-toggle="dropdown"
                                              aria-expanded="false"
                                         >
@@ -188,7 +186,7 @@
                                    <div class="btn-group" role="group">
                                         <button
                                              type="button"
-                                             class="btn-custom-lg dropdown-toggle"
+                                             class="btn-custom-1 dropdown-toggle"
                                              data-bs-toggle="dropdown"
                                              aria-expanded="false"
                                         >
@@ -250,16 +248,15 @@
                                    data-bs-toggle="modal"
                                    data-bs-target="#exampleModal"
                               >
-                                   <div class="">
-                                        <div class="card-body p-0 mt-1">
+                                   <div class="p-0 m-0">
+                                        <div class="card-body p-0 mt-0">
                                              <div
                                                   class="mx-0 position-relative text-center"
                                              >
-                                                  <!-- SVG positioned in top right corner -->
                                                   <svg
                                                        xmlns="http://www.w3.org/2000/svg"
-                                                       width="14"
-                                                       height="14"
+                                                       width="18"
+                                                       height="18"
                                                        viewBox="0 0 16 16"
                                                        fill="none"
                                                        class="position-absolute top-0 end-0 ps-1 ps-md-0"
@@ -269,11 +266,11 @@
                                                             fill="#8C4285"
                                                        />
                                                   </svg>
-                                                  <!-- h6 tags centered and above each other -->
+
                                                   <h6
                                                        class="remove-at-300 p-0 m-0 title-font"
                                                   >
-                                                       Post title
+                                                       My first travel
                                                   </h6>
                                                   <h6
                                                        class="card-title remove-at-300 title-font"
@@ -283,7 +280,7 @@
                                              </div>
                                              <div class="p-1 mb-1">
                                                   <img
-                                                       src="/img/randompic1 (1).jpeg"
+                                                       src="/img/randompic1 (1).jpg"
                                                        class="d-block w-100"
                                                        alt="..."
                                                   />
@@ -433,18 +430,20 @@
                                              <div
                                                   class="mx-0 position-relative text-center"
                                              >
-                                                  <!-- SVG positioned in top right corner -->
                                                   <svg
                                                        xmlns="http://www.w3.org/2000/svg"
-                                                       width="14"
-                                                       height="14"
+                                                       width="16"
+                                                       height="16"
                                                        viewBox="0 0 16 16"
                                                        fill="none"
                                                        class="position-absolute top-0 end-0 ps-1 ps-md-0"
                                                   >
-                                                       <!-- SVG path remains the same -->
+                                                       <path
+                                                            d="M0.5 8C0.5 7.5875 0.646874 7.23438 0.940624 6.94063C1.23438 6.64688 1.5875 6.5 2 6.5L8 6.5C8.4125 6.5 8.76562 6.64688 9.05937 6.94063C9.35312 7.23438 9.5 7.5875 9.5 8V14C9.5 14.4125 9.35312 14.7656 9.05937 15.0594C8.76562 15.3531 8.4125 15.5 8 15.5H2C1.5875 15.5 1.23438 15.3531 0.940624 15.0594C0.646874 14.7656 0.5 14.4125 0.5 14V8ZM2 8V14H8V8H2ZM3.5 3.5L11 3.5C11.4125 3.5 11.7656 3.64688 12.0594 3.94063C12.3531 4.23438 12.5 4.5875 12.5 5V12.5H11V5L3.5 5V3.5ZM6.5 0.5L14 0.5C14.4125 0.5 14.7656 0.646875 15.0594 0.940625C15.3531 1.23438 15.5 1.5875 15.5 2V9.5H14V2L6.5 2V0.5Z"
+                                                            fill="#8C4285"
+                                                       />
                                                   </svg>
-                                                  <!-- h6 tags centered and above each other -->
+
                                                   <h6
                                                        class="remove-at-300 p-0 m-0 title-font"
                                                   >
@@ -458,7 +457,7 @@
                                              </div>
                                              <div class="p-1 mb-1">
                                                   <img
-                                                       src="/img/randompic3 (1).jpeg"
+                                                       src="/img/Randompic2 (9).jpg"
                                                        class="d-block w-100"
                                                        alt="Mountain View"
                                                   />
@@ -473,7 +472,6 @@
                               </button>
                          </div>
 
-                         <!-- Modal structure for Modal 2 -->
                          <div
                               class="modal fade"
                               id="modalTwo"
@@ -538,7 +536,7 @@
                                                             class="carousel-item active thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic3 (1).jpeg"
+                                                                 src="/img/Randompic2 (9).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Mountain View 1"
                                                             />
@@ -547,7 +545,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic3 (2).jpg"
+                                                                 src="/img/randompic2 (3).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Mountain View 2"
                                                             />
@@ -556,7 +554,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic3 (3).jpeg"
+                                                                 src="/img/randompic2 (4).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Mountain View 3"
                                                             />
@@ -597,7 +595,7 @@
                                    </div>
                               </div>
                          </div>
-                         <!-- Thumbnail for Modal 3 -->
+                         <!-- Thumbnail 3 -->
                          <div class="col-4 col-md-4 mb-4 mt-3">
                               <button
                                    type="button"
@@ -610,18 +608,20 @@
                                              <div
                                                   class="mx-0 position-relative text-center"
                                              >
-                                                  <!-- SVG positioned in top right corner -->
                                                   <svg
                                                        xmlns="http://www.w3.org/2000/svg"
-                                                       width="14"
-                                                       height="14"
+                                                       width="18"
+                                                       height="18"
                                                        viewBox="0 0 16 16"
                                                        fill="none"
                                                        class="position-absolute top-0 end-0 ps-1 ps-md-0"
                                                   >
-                                                       <!-- SVG path remains the same -->
+                                                       <path
+                                                            d="M0.5 8C0.5 7.5875 0.646874 7.23438 0.940624 6.94063C1.23438 6.64688 1.5875 6.5 2 6.5L8 6.5C8.4125 6.5 8.76562 6.64688 9.05937 6.94063C9.35312 7.23438 9.5 7.5875 9.5 8V14C9.5 14.4125 9.35312 14.7656 9.05937 15.0594C8.76562 15.3531 8.4125 15.5 8 15.5H2C1.5875 15.5 1.23438 15.3531 0.940624 15.0594C0.646874 14.7656 0.5 14.4125 0.5 14V8ZM2 8V14H8V8H2ZM3.5 3.5L11 3.5C11.4125 3.5 11.7656 3.64688 12.0594 3.94063C12.3531 4.23438 12.5 4.5875 12.5 5V12.5H11V5L3.5 5V3.5ZM6.5 0.5L14 0.5C14.4125 0.5 14.7656 0.646875 15.0594 0.940625C15.3531 1.23438 15.5 1.5875 15.5 2V9.5H14V2L6.5 2V0.5Z"
+                                                            fill="#8C4285"
+                                                       />
                                                   </svg>
-                                                  <!-- h6 tags centered and above each other -->
+
                                                   <h6
                                                        class="remove-at-300 p-0 m-0 title-font"
                                                   >
@@ -635,7 +635,7 @@
                                              </div>
                                              <div class="p-1 mb-1">
                                                   <img
-                                                       src="/img/randompic4.jpeg"
+                                                       src="/img/randompic1 (5).jpg"
                                                        class="d-block w-100"
                                                        alt="Desert View"
                                                   />
@@ -714,7 +714,7 @@
                                                             class="carousel-item active thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic4 (1).jpeg"
+                                                                 src="/img/Randompic2 (6).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Desert View 1"
                                                             />
@@ -723,7 +723,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic4 (2).jpg"
+                                                                 src="/img/Randompic2 (7).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Desert View 2"
                                                             />
@@ -732,7 +732,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic4 (3).jpeg"
+                                                                 src="/img/Randompic2 (8).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Desert View 3"
                                                             />
@@ -786,18 +786,20 @@
                                              <div
                                                   class="mx-0 position-relative text-center"
                                              >
-                                                  <!-- SVG positioned in top right corner -->
                                                   <svg
                                                        xmlns="http://www.w3.org/2000/svg"
-                                                       width="14"
-                                                       height="14"
+                                                       width="18"
+                                                       height="18"
                                                        viewBox="0 0 16 16"
                                                        fill="none"
                                                        class="position-absolute top-0 end-0 ps-1 ps-md-0"
                                                   >
-                                                       <!-- SVG path remains the same -->
+                                                       <path
+                                                            d="M0.5 8C0.5 7.5875 0.646874 7.23438 0.940624 6.94063C1.23438 6.64688 1.5875 6.5 2 6.5L8 6.5C8.4125 6.5 8.76562 6.64688 9.05937 6.94063C9.35312 7.23438 9.5 7.5875 9.5 8V14C9.5 14.4125 9.35312 14.7656 9.05937 15.0594C8.76562 15.3531 8.4125 15.5 8 15.5H2C1.5875 15.5 1.23438 15.3531 0.940624 15.0594C0.646874 14.7656 0.5 14.4125 0.5 14V8ZM2 8V14H8V8H2ZM3.5 3.5L11 3.5C11.4125 3.5 11.7656 3.64688 12.0594 3.94063C12.3531 4.23438 12.5 4.5875 12.5 5V12.5H11V5L3.5 5V3.5ZM6.5 0.5L14 0.5C14.4125 0.5 14.7656 0.646875 15.0594 0.940625C15.3531 1.23438 15.5 1.5875 15.5 2V9.5H14V2L6.5 2V0.5Z"
+                                                            fill="#8C4285"
+                                                       />
                                                   </svg>
-                                                  <!-- h6 tags centered and above each other -->
+
                                                   <h6
                                                        class="remove-at-300 p-0 m-0 title-font"
                                                   >
@@ -811,7 +813,7 @@
                                              </div>
                                              <div class="p-1 mb-1">
                                                   <img
-                                                       src="/img/randompic5.jpeg"
+                                                       src="/img/randompic1 (1).jpeg"
                                                        class="d-block w-100"
                                                        alt="Winter View"
                                                   />
@@ -890,7 +892,7 @@
                                                             class="carousel-item active thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic5 (1).jpeg"
+                                                                 src="/img/Randompic2 (9).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Winter View 1"
                                                             />
@@ -899,7 +901,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic5 (2).jpg"
+                                                                 src="/img/Randompic2 (10).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Winter View 2"
                                                             />
@@ -908,7 +910,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic5 (3).jpeg"
+                                                                 src="/img/Randompic2 (11).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Winter View 3"
                                                             />
@@ -962,18 +964,20 @@
                                              <div
                                                   class="mx-0 position-relative text-center"
                                              >
-                                                  <!-- SVG positioned in top right corner -->
                                                   <svg
                                                        xmlns="http://www.w3.org/2000/svg"
-                                                       width="14"
-                                                       height="14"
+                                                       width="18"
+                                                       height="18"
                                                        viewBox="0 0 16 16"
                                                        fill="none"
                                                        class="position-absolute top-0 end-0 ps-1 ps-md-0"
                                                   >
-                                                       <!-- SVG path remains the same -->
+                                                       <path
+                                                            d="M0.5 8C0.5 7.5875 0.646874 7.23438 0.940624 6.94063C1.23438 6.64688 1.5875 6.5 2 6.5L8 6.5C8.4125 6.5 8.76562 6.64688 9.05937 6.94063C9.35312 7.23438 9.5 7.5875 9.5 8V14C9.5 14.4125 9.35312 14.7656 9.05937 15.0594C8.76562 15.3531 8.4125 15.5 8 15.5H2C1.5875 15.5 1.23438 15.3531 0.940624 15.0594C0.646874 14.7656 0.5 14.4125 0.5 14V8ZM2 8V14H8V8H2ZM3.5 3.5L11 3.5C11.4125 3.5 11.7656 3.64688 12.0594 3.94063C12.3531 4.23438 12.5 4.5875 12.5 5V12.5H11V5L3.5 5V3.5ZM6.5 0.5L14 0.5C14.4125 0.5 14.7656 0.646875 15.0594 0.940625C15.3531 1.23438 15.5 1.5875 15.5 2V9.5H14V2L6.5 2V0.5Z"
+                                                            fill="#8C4285"
+                                                       />
                                                   </svg>
-                                                  <!-- h6 tags centered and above each other -->
+
                                                   <h6
                                                        class="remove-at-300 p-0 m-0 title-font"
                                                   >
@@ -987,7 +991,7 @@
                                              </div>
                                              <div class="p-1 mb-1">
                                                   <img
-                                                       src="/img/randompic6.jpeg"
+                                                       src="/img/Randompic2 (15).jpg"
                                                        class="d-block w-100"
                                                        alt="Tropical Beach"
                                                   />
@@ -1002,7 +1006,6 @@
                               </button>
                          </div>
 
-                         <!-- Modal structure for Modal 5 -->
                          <div
                               class="modal fade"
                               id="modalFive"
@@ -1067,7 +1070,7 @@
                                                             class="carousel-item active thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic6 (1).jpeg"
+                                                                 src="/img/Randompic2 (13).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Tropical Beach 1"
                                                             />
@@ -1076,7 +1079,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic6 (2).jpg"
+                                                                 src="/img/Randompic2 (14).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Tropical Beach 2"
                                                             />
@@ -1085,7 +1088,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic6 (3).jpeg"
+                                                                 src="/img/Randompic2 (15).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Tropical Beach 3"
                                                             />
@@ -1142,13 +1145,16 @@
                                                   <!-- SVG positioned in top right corner -->
                                                   <svg
                                                        xmlns="http://www.w3.org/2000/svg"
-                                                       width="14"
-                                                       height="14"
+                                                       width="18"
+                                                       height="18"
                                                        viewBox="0 0 16 16"
                                                        fill="none"
                                                        class="position-absolute top-0 end-0 ps-1 ps-md-0"
                                                   >
-                                                       <!-- SVG path remains the same -->
+                                                       <path
+                                                            d="M0.5 8C0.5 7.5875 0.646874 7.23438 0.940624 6.94063C1.23438 6.64688 1.5875 6.5 2 6.5L8 6.5C8.4125 6.5 8.76562 6.64688 9.05937 6.94063C9.35312 7.23438 9.5 7.5875 9.5 8V14C9.5 14.4125 9.35312 14.7656 9.05937 15.0594C8.76562 15.3531 8.4125 15.5 8 15.5H2C1.5875 15.5 1.23438 15.3531 0.940624 15.0594C0.646874 14.7656 0.5 14.4125 0.5 14V8ZM2 8V14H8V8H2ZM3.5 3.5L11 3.5C11.4125 3.5 11.7656 3.64688 12.0594 3.94063C12.3531 4.23438 12.5 4.5875 12.5 5V12.5H11V5L3.5 5V3.5ZM6.5 0.5L14 0.5C14.4125 0.5 14.7656 0.646875 15.0594 0.940625C15.3531 1.23438 15.5 1.5875 15.5 2V9.5H14V2L6.5 2V0.5Z"
+                                                            fill="#8C4285"
+                                                       />
                                                   </svg>
                                                   <!-- h6 tags centered and above each other -->
                                                   <h6
@@ -1164,7 +1170,7 @@
                                              </div>
                                              <div class="p-1 mb-1">
                                                   <img
-                                                       src="/img/randompic7.jpeg"
+                                                       src="/img/Randompic2 (17).jpg"
                                                        class="d-block w-100"
                                                        alt="Mountain View"
                                                   />
@@ -1244,7 +1250,7 @@
                                                             class="carousel-item active thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic7 (1).jpeg"
+                                                                 src="/img/Randompic2 (18).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Mountain View 1"
                                                             />
@@ -1253,7 +1259,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic7 (2).jpg"
+                                                                 src="/img/Randompic2 (19).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Mountain View 2"
                                                             />
@@ -1262,7 +1268,7 @@
                                                             class="carousel-item thumbnail-carousel-max-height"
                                                        >
                                                             <img
-                                                                 src="/img/randompic7 (3).jpeg"
+                                                                 src="/img/Randompic2 (20).jpg"
                                                                  class="d-block w-100"
                                                                  alt="Mountain View 3"
                                                             />
@@ -1308,7 +1314,7 @@
           </main>
           <footer class="main-footer">
                <div>
-                    <nav class="navbar bg-body-tertiary">
+                    <nav class="navbar bg-body-tertiary custom-max-width">
                          <div class="container">
                               <div class="d-flex gap-4">
                                    <a href="" class="navbar-links mb-0"

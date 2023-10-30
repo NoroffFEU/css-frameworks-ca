@@ -56,12 +56,13 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      font-family: "Lato", sans-serif;
 }
 
-.btn-custom-lg {
+.btn-custom-1 {
      @extend .btn;
      @extend .btn-lg;
      @extend .standard-border;
+     @extend .title-font;
      //  Using the @extend method lets me keep the defualt bootstrap styling, and override parts of underneath
-     font-size: 16px;
+
      color: $third;
      background-color: $fourth;
      border-radius: 30px;
@@ -70,6 +71,7 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      &:hover {
           @extend .standard-border;
           box-shadow: $box-shadow;
+          background-color: rgba($fourth, 0.9);
      }
 
      &:focus {
@@ -82,43 +84,53 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      }
 }
 
+.custom-btn-size {
+     height: 50px;
+     width: 200px;
+     font-size: 16px;
+     max-width: 100%;
+}
+
 .custom-toggle-btn {
      @extend .btn-group;
-     @extend .standard-border;
+
      @extend .title-font;
      border-radius: 30px;
      background-color: $fourth;
      outline: none;
-
+     border: 0px;
      font-size: 16px;
-     width: 110%;
-     box-shadow: inset 0 0 3px rgba($third, 0.5);
+     width: 100%;
 
      .btn-check:checked + .btn {
-          background-color: rgba($primary, 0.4);
-          border: none;
-          outline: none;
+          @extend .standard-border;
+          font-size: 1.1rem;
+          font-weight: 400;
+          text-decoration: underline;
      }
 
      .btn {
           display: flex;
           justify-content: center;
           align-items: center;
-     }
-
-     &:hover {
-          @extend .standard-border;
+          border: 1px solid $primary;
      }
 }
-
-// @media method is used here instead of the ususal bootstrap classes, since the container does not go as low as
-// 300px. But minimizing the window to such a degree, creates a overlap between the .btn-custom-lg and the .custom-toggle-btn
-// By simply removing the toggle btn and applying some margin to the post btn, the interface looks better.
 
 .custom-form-range {
      @extend .form-range;
      width: 50vw;
      color: $secondary;
+}
+
+.custom-input-field {
+     @extend .standard-border;
+     border-radius: 5px;
+
+     &:hover {
+          box-shadow: inset 0 0 3px rgba($third, 0.6);
+          background-color: rgba($fourth, 0.9);
+     }
 }
 
 .thumbnail-card-big {
@@ -184,6 +196,11 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      }
 }
 
+.thumbnail-card-small {
+     @extend .thumbnail-card-big;
+     margin: 0;
+}
+
 @media (max-width: 300px) {
      .custom-toggle-btn {
           display: none;
@@ -203,15 +220,19 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
           height: auto;
      }
 }
+// @media method is used here instead of the ususal bootstrap classes, since the container does not go as low as
+// 300px. But minimizing the window to such a degree, creates a overlap between the .btn-custom-lg and the .custom-toggle-btn
+// By simply removing the toggle btn and applying some margin to the post btn, the interface looks better.
+
+.custom-set-height-300px {
+     height: 340px;
+}
+// This keeps the carousel to a set height, unrelated to the height of the content within
 
 .custom-thumbnail-text-btn {
      background-color: $fourth;
      border: none;
      padding: 0;
-}
-
-.thumbnail-card-small {
-     @extend .thumbnail-card-big;
 }
 
 .main-header {
@@ -223,11 +244,20 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      border-bottom: 2px solid $primary;
 }
 
+// This was added at the end to expand all elements a bit on md and above devices.
+// The max-width also sets a max container-width for larger devices
+@media (min-width: map-get($grid-breakpoints, md)) {
+     .custom-max-width {
+          zoom: 130%;
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+     }
+}
+
+// Usage
 .custom-container {
-     @extend .container-fluid;
-     margin-left: 5%;
-     margin-right: 10%;
-     column-gap: 10px;
+     @include make-container();
 }
 
 .main-footer {
@@ -264,7 +294,6 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      @extend .title-font;
      @extend .navbar-brand;
 
-     font-size: 14px;
      color: rgba($third, 0.7);
 
      &:hover {

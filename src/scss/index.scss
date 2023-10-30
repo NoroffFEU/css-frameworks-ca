@@ -1,1 +1,16 @@
+@import "variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+
+
+
+.profile-picture {
+ 
+  max-width: 5rem;
+}
+.profile-image {
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -1,6 +1,3 @@
-const formInputs = document.querySelector("fieldset").elements;
-const btn = document.querySelector(".btn-primary");
-
 /**
  * 
  * @param {arrayOfBooleans} arr 
@@ -17,12 +14,12 @@ const trueChecker = arr => arr.every(Boolean);
  * There is a "pattern" attribute in the email input, which handles regex for me. I could have added this via JS, 
  * but hardcoding the regex in HTML did the same job and keeps the code generic and reusable. 
  */
-function formCheck() {
+export function formCheck(inputs, btn) {
     const trueCheckerArr = [];
 
-    for (let i = 0; i < formInputs.length; i++) {
+    for (let i = 0; i < inputs.length; i++) {
 
-        const inputsValidity = formInputs[i].validity.valid;
+        const inputsValidity = inputs[i].validity.valid;
         trueCheckerArr.push(inputsValidity);
         
     }
@@ -37,7 +34,3 @@ function formCheck() {
 }
 
 
-for (let i = 0; i < formInputs.length; i++) {
-    const input = formInputs[i];
-    input.onkeyup = (e) => formCheck();
-}

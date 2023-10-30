@@ -1,0 +1,41 @@
+/*theme colors*/
+/*fonts*/
+/*box shadow*/
+/*body*/
+/*text*/
+/*navbar */
+.navbar {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background-color: #253c6b;
+  margin-bottom: 15px;
+}
+.navbar a,
+.navbar p {
+  color: #f1f1f1;
+}
+.navbar a:hover,
+.navbar p:hover {
+  color: lightgrey;
+}
+.navbar .nav-link {
+  color: #f1f1f1;
+}
+.navbar .nav-link:hover {
+  color: lightblue;
+}
+
+/*footer */
+footer {
+  background-color: #a6c0d2;
+  color: #253c6b;
+}
+footer a.footer-link {
+  color: #253c6b;
+  padding: 5px;
+  text-decoration: none;
+}
+footer a.footer-link:hover {
+  color: #f1f1f1;
+}
+
+/*# sourceMappingURL=nav.css.map */

@@ -1,0 +1,36 @@
+/*theme colors*/
+/*fonts*/
+/*box shadow*/
+/*body*/
+/*text*/
+.btn {
+  border: #253c6b 0.5px solid;
+  margin-bottom: 5px;
+}
+
+.btn-primary {
+  background-color: #253c6b;
+  color: #ebeced;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1;
+  color: #253c6b;
+}
+.btn-secondary:hover {
+  background-color: #253c6b;
+  color: #f1f1f1;
+}
+
+.favorite-btn {
+  border: none;
+}
+.favorite-btn:hover {
+  background-color: transparent;
+}
+
+i {
+  color: lightpink;
+}
+
+/*# sourceMappingURL=buttons.css.map */

@@ -1,0 +1,35 @@
+/*theme colors*/
+/*fonts*/
+/*box shadow*/
+/*body*/
+/*text*/
+.card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background-color: #ebeced;
+  border: 1px solid lightgrey;
+}
+.card .form-control {
+  margin-bottom: 1rem;
+  height: 50px;
+}
+.card #post-list {
+  margin-top: 2rem;
+}
+.card #post-list .post-thumbnail {
+  margin-bottom: 1rem;
+}
+.card #post-list .post-thumbnail img {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 2%;
+}
+.card #user-posts .user-post {
+  margin-bottom: 1rem;
+}
+.card #user-posts .user-post img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=feed.css.map */

@@ -1,5 +1,5 @@
 import { formCheck } from "./components/formValidation.mjs";
-import { postData } from "./components/postData.mjs";
+import { submitForm } from "./components/submitForm.mjs";
 
 const formElem = document.querySelector("form");
 const fieldset = document.querySelector("fieldset");
@@ -15,25 +15,23 @@ const baseUrl = "https://api.noroff.dev/api/v1";
 let endpoint; 
 let completeUrl;
 
-function submitForm (e) {
+if (document.title === "Noroff Social Media | Sign up") {
+    endpoint = "/social/auth/register";
+    completeUrl = `${baseUrl}${endpoint}`;
+} else  {
+    endpoint = "/social/auth/login";
+    completeUrl = `${baseUrl}${endpoint}`;
+}
+
+
+btn.onclick = (e) => {
     e.preventDefault();
-    console.log(e.target);
-    const formData = new FormData(e.target);
-    console.log(formData);
-    let formdataOBj = {};
-    formdataOBj = Object.fromEntries(formData.entries());
-    console.log(formdataOBj);
+    submitForm(formElem, completeUrl);
+}
 
-    
-    // if (document.title === "Noroff Social Media | Sign up") {
-    //     endpoint = "/social/auth/register";
-    //     completeUrl = `${baseUrl}${endpoint}`;
-    //     postData(completeUrl, formData);
-    // } else  {
-    //     endpoint = "/social/auth/login";
-    //     completeUrl = `${baseUrl}${endpoint}`;
-    //     postData(completeUrl, formData);
-    // }
-};
-
-formElem.addEventListener("submit", submitForm);
+// TESTING PURPOSES; LOGIN WITH:
+// Name: vegard
+// email: my@stud.noroff.no
+// Pass: Troll123123
+// THIS USER WORKS, and I know for sure that the postData function as well as the submitForm function works as  they should
+// When I use the function to log in with these credentials, I receive a JWT in my finishedResponse object

@@ -4,11 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/40355c2075.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../dist/css/index.css" />
   </head>
-  <body>
-    <header class="bg-dark text-white p-5">
-      <a href="feed/index.html"> <h1>Click to go to feed</h1></a>
+  <body class="text-center bg-success">
+    <header>
+      <div class="col position-relative">
+        <img
+          class="col w-100"
+          src="/images/cover-image.jpg"
+          alt="cover image"
+          style="object-fit: cover; opacity: 80%; object-position: 50% 0%"
+          height="400"
+        />
+      </div>
+
+      <div
+        class="col position-absolute"
+        style="margin-top: -150px; width: 100%"
+      >
+        <img
+          class="m-auto"
+          src="/images/logo-dark.png"
+          alt="logo"
+          width="200"
+          height="200"
+        />
+      </div>
     </header>
+
+    <main class="container w-75 m-auto p-5">
+      <form class="col-sm-11 col-md-8 col-lg-7 col-xl-6 m-auto">
+        <h1 class="display-3 mb-3 fw-normal text-white">Welcome back</h1>
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mt-2">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 mt-3 btn btn-lg btn-warning" type="submit">
+          Continue
+        </button>
+        <p class="mt-4 mb-3 text-white">
+          Don't have an account? <u>Sign up</u>
+        </p>
+        <div class="container">
+          <hr style="color: white" />
+          <p class="mt-2 mb-3 text-white">OR</p>
+          <hr style="color: white" />
+        </div>
+        <button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
+          <i class="fa-brands fa-google"></i> Continue with Google</button
+        ><button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
+          <i class="fa-brands fa-facebook"></i> Continue with Facebook</button
+        ><button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
+          <i class="fa-brands fa-apple"></i>
+          Continue with Apple
+        </button>
+        <p class="mt-5 mb-3 text-white">
+          By continuing, you agree with our <u>Terms of Service</u>
+        </p>
+      </form>
+    </main>
   </body>
 </html>

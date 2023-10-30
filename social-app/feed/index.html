@@ -4,11 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/40355c2075.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
-  <body>
-    <header class="bg-dark text-white p-5">
-      <a href="../profile/index.html"><h1>Go to profile</h1></a>
+  <body class="text-center bg-success">
+    <header>
+      <div class="col position-relative">
+        <img
+          class="col w-100"
+          src="/images/feed-image.jpg"
+          alt="cover image"
+          style="object-fit: cover; opacity: 80%; object-position: 50% 50%"
+          height="200"
+        />
+      </div>
+      <div class="col position-absolute p-4" style="margin-top: -200px">
+        <h1 class="display-3 fw-normal text-white">Latest Projects</h1>
+      </div>
+      <div class="col position-absolute" style="margin-top: -75px; width: 100%">
+        <img
+          class="m-auto"
+          src="/images/logo-dark.png"
+          alt="logo"
+          width="100"
+          height="100"
+        />
+      </div>
     </header>
+
+    <main class="container w-75 m-auto p-5">
+      <form class="col-xs-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 m-auto">
+        <div class="form-floating">
+          <input
+            type="search"
+            class="form-control"
+            id="floatingInput"
+            placeholder="searchbar"
+          />
+          <label for="floatingInput"
+            >Search <i class="fa-solid fa-magnifying-glass"></i
+          ></label>
+        </div>
+        <div class="form-floating mt-2">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Post title"
+          />
+          <label for="floatingPassword">Post title</label>
+        </div>
+        <div class="form-floating mt-2">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Description"
+          />
+          <label for="floatingPassword"
+            >Description<i class="fa-regular fa-image"></i
+          ></label>
+        </div>
+        <button class="w-100 mt-3 btn btn-lg btn-warning" type="submit">
+          Add post +
+        </button>
+      </form>
+      <p class="text-white">Sort by date<i class="fa-solid fa-sort"></i></p>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 d-flex">
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="/images/post-1.jpg" alt="post 1" />
+              <div class="card-body">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 1</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

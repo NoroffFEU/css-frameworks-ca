@@ -1,8 +1,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "variables";
-@import "buttons";
-@import "feed";
-@import "nav";
+@import "variables.scss";
+@import "buttons.scss";
+@import "feed.scss";
+@import "nav.scss";
 
 body {
   height: 100vh;

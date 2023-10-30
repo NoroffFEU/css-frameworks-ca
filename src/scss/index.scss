@@ -1,65 +1,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../../node_modules/bootstrap/scss/_mixins.scss";
-@import "../../node_modules/bootstrap/scss/_buttons";
-@import "../../node_modules/bootstrap/scss/variables";
-
-$primary: #253c6b;
-$font-stack: Arial, sans-serif;
-$secondary: #a6c0d2;
-$box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-$body-bg: #ebeced;
-$light: #f1f1f1;
-$dark: #020202;
-
-nav {
-  box-shadow: $box-shadow;
-  background-color: $primary;
-  margin-bottom: 15px;
-  a,
-  p {
-    color: $light;
-    &:hover {
-      color: lightblue;
-    }
-  }
-  .nav-link {
-    color: $light;
-    &:hover {
-      color: lightblue;
-    }
-  }
-}
-
-footer {
-  background-color: $secondary;
-  a {
-    color: $primary;
-  }
-}
-
-.btn {
-  border: $primary 0.5px solid;
-  margin-bottom: 5px;
-
-  &:hover {
-    background-color: white;
-    color: $primary;
-    border: $primary 0.5px solid;
-  }
-}
-.btn-primary {
-  background-color: $primary;
-  color: $body-bg;
-}
-
-.btn-secondary {
-  background-color: white;
-  color: $primary;
-  &:hover {
-    background-color: $primary;
-    color: white;
-  }
-}
+@import "variables";
+@import "buttons";
+@import "feed";
+@import "nav";
 
 body {
   height: 100vh;
@@ -78,53 +21,4 @@ ul {
   }
 }
 
-.card {
-  border: none;
-  box-shadow: $box-shadow;
-  background-color: $body-bg;
-  border: 1px solid lightgrey;
 
-  .favorite-btn {
-    border: none;
-    &:hover {
-      background-color: transparent;
-    }
-  }
-
-  i {
-    color: lightpink;
-  }
-}
-
-.form-control {
-  margin-bottom: 1rem;
-  height: 50px;
-}
-
-
-#post-list {
-  margin-top: 2rem;
-
-  .post-thumbnail {
-    margin-bottom: 1rem;
-
-    img {
-      width: auto;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 2%;
-    }
-  }
-}
-
-
-
-#user-posts {
-  .user-post {
-    margin-bottom: 1rem;
-
-    img {
-      width: 100%;
-    }
-  }
-}

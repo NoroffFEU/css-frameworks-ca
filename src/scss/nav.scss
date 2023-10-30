@@ -1,0 +1,37 @@
+@import "variables.scss";
+
+/*navbar */
+.navbar {
+  box-shadow: $box-shadow;
+  background-color: $primary;
+  margin-bottom: 15px;
+  a,
+  p {
+    color: $light;
+    &:hover {
+      color: lightgrey;
+    }
+  }
+  .nav-link {
+    color: $light;
+    &:hover {
+      color: lightblue;
+    }
+  }
+}
+
+
+/*footer */
+
+footer {
+  background-color: $secondary;
+  color: $primary;
+  a.footer-link {
+    color: $primary;
+    padding: 5px;
+    text-decoration: none;
+    &:hover {
+      color: $light;
+    }
+  }
+}

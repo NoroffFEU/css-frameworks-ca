@@ -6,16 +6,16 @@
 $primary: #253c6b;
 $font-stack: Arial, sans-serif;
 $secondary: #7c9cb3;
-$body-bg: #355194b4;
 $box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 $body-bg: #ebeced;
+$light: #f1f1f1;
 
-nav {
+nav, footer {
   box-shadow: $box-shadow;
   background-color: $primary;
   color: $body-bg;
 
-  a {
+  a, p {
     color: $body-bg;
     &:hover {
       color: lightblue;
@@ -57,6 +57,7 @@ nav {
 
 body {
   height: 100vh;
+  background-color: $body-bg;
 }
 
 ul {
@@ -69,6 +70,8 @@ ul {
 .card {
   border: none;
   box-shadow: $box-shadow;
+  background-color: $body-bg;
+  border: 1px solid lightgrey;
 }
 
 .form-control {

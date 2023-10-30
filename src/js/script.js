@@ -21,7 +21,7 @@ function addPostThumbnail(title) {
           <div class="card-body">
               <div class="d-flex justify-content-between align-items-center">
                   <h6 class="card-title">${title}</h6>
-                  <button class="btn btn-link favorite-btn">
+                  <button class="btn favorite-btn">
                       <i class="far fa-heart"></i>
                   </button>
               </div>

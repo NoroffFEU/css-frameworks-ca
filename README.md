@@ -1,2 +1,9 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+Project Homestead is a community for DIY enthusiasts who want to share their creative ideas.
+
+This CSS Frameworks project includes:
+
+1. Authentication Page
+2. Feed Page
+3. Profile Page

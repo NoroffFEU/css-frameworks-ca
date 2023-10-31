@@ -1,13 +1,42 @@
+// SCSS specific for feedpage
 @import "index";
 
 // This added carousel code wil ensure that the height does not change with different img-sizes.
 .thumbnail-carousel-max-height {
-     max-height: 40vh;
-     height: 60vw;
+     max-height: 100%;
 }
 // This specific height setting makes the carousel img fit nicely for both vertical mobile screen and horizontal laptop screen.
 .thumbnail-carousel-max-height img {
-     height: 100%;
      object-fit: fill;
+}
+
+.custom-toggle-btn {
+     @extend .btn-group;
+
+     @extend .title-font;
+     border-radius: 30px;
+     background-color: $fourth;
+     outline: none;
+     border: 0px;
+     font-size: 16px;
      width: 100%;
+
+     .btn-check:checked + .btn {
+          @extend .standard-border;
+          font-size: 1.1rem;
+          font-weight: 400;
+          text-decoration: underline;
+     }
+
+     .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid $primary;
+     }
+}
+
+.custom-btn-size {
+     height: 50px;
+     font-size: 16px;
 }

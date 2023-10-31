@@ -1,18 +1,33 @@
+// SCSS specific for root index
 @import "index";
 
 .landing-page-bg {
      background-image: linear-gradient(180deg, $secondary 0%, transparent 100%);
 }
 
-// .big-carousel {
-//      height: 200px;
-// }
-
-// // not responsive
-// $small-carousel: 10vh;
-
 .landing-page-main-carousel {
      height: 60vh;
+}
+
+.custom-accordion {
+     // Styles for the custom accordion container
+     background-color: transparent;
+
+     .accordion-item {
+          // Styles for each accordion item
+
+          .accordion-button {
+               color: black;
+          }
+
+          .accordion-collapse {
+               // Styles for the accordion collapse section
+
+               .accordion-body {
+                    // Styles for the accordion body
+               }
+          }
+     }
 }
 
 .user-data-input {
@@ -26,7 +41,7 @@
      width: 80vh;
 }
 
-// .custom-next-icon {
-//      @extend .carousel-control-next-icon;
-
-// }
+.custom-set-height-340px {
+     height: 340px;
+}
+// This keeps the carousel to a set height, unrelated to the height of the content within

@@ -84,43 +84,9 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      }
 }
 
-.custom-btn-size {
-     height: 50px;
-     width: 200px;
-     font-size: 16px;
-     max-width: 100%;
-}
-
-.custom-toggle-btn {
-     @extend .btn-group;
-
-     @extend .title-font;
-     border-radius: 30px;
-     background-color: $fourth;
-     outline: none;
-     border: 0px;
-     font-size: 16px;
-     width: 100%;
-
-     .btn-check:checked + .btn {
-          @extend .standard-border;
-          font-size: 1.1rem;
-          font-weight: 400;
-          text-decoration: underline;
-     }
-
-     .btn {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid $primary;
-     }
-}
-
 .custom-form-range {
      @extend .form-range;
-     width: 50vw;
-     color: $secondary;
+     width: 50%;
 }
 
 .custom-input-field {
@@ -138,7 +104,6 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      border: none;
      border-radius: 0;
      position: relative;
-
      border-top: 3px solid $primary;
      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
@@ -150,7 +115,7 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
           bottom: 0;
           left: 0;
           right: 0;
-          height: 3px; // Adjust height as needed
+          height: 3px;
 
           .left-bar,
           .right-bar {
@@ -196,39 +161,6 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      }
 }
 
-.thumbnail-card-small {
-     @extend .thumbnail-card-big;
-     margin: 0;
-}
-
-@media (max-width: 300px) {
-     .custom-toggle-btn {
-          display: none;
-     }
-
-     .btn-custom-lg {
-          margin-left: 110%;
-          font-size: 20px;
-     }
-
-     .remove-at-300 {
-          display: none;
-     }
-
-     .resize-at-300 {
-          width: 20vw;
-          height: auto;
-     }
-}
-// @media method is used here instead of the ususal bootstrap classes, since the container does not go as low as
-// 300px. But minimizing the window to such a degree, creates a overlap between the .btn-custom-lg and the .custom-toggle-btn
-// By simply removing the toggle btn and applying some margin to the post btn, the interface looks better.
-
-.custom-set-height-300px {
-     height: 340px;
-}
-// This keeps the carousel to a set height, unrelated to the height of the content within
-
 .custom-thumbnail-text-btn {
      background-color: $fourth;
      border: none;
@@ -248,14 +180,13 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
 // The max-width also sets a max container-width for larger devices
 @media (min-width: map-get($grid-breakpoints, md)) {
      .custom-max-width {
-          zoom: 130%;
-          max-width: 1000px;
+          zoom: 120%;
+          max-width: 900px;
           margin-left: auto;
           margin-right: auto;
      }
 }
 
-// Usage
 .custom-container {
      @include make-container();
 }
@@ -269,12 +200,6 @@ $carousel-transition: transform $carousel-transition-duration ease-in-out;
      @extend .form-control;
      @extend .title-font;
      outline: none;
-
-     &.active {
-     }
-
-     &.focus {
-     }
 
      &:hover {
           box-shadow: $box-shadow-sm;

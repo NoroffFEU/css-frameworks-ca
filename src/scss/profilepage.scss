@@ -1,1 +1,7 @@
+// SCSS specific for profilepage
 @import "index";
+
+.thumbnail-card-small {
+     @extend .thumbnail-card-big;
+     margin: 0;
+}

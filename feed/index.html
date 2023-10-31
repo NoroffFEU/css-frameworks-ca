@@ -38,9 +38,8 @@
                                    <span class="navbar-toggler-icon"></span>
                               </button>
 
-                              <!-- Profile Image for Small Devices (Right of Button) -->
                               <a
-                                   href="/Profilepage/profilepage.html"
+                                   href="/profile/index.html"
                                    class="d-flex d-md-none"
                               >
                                    <img
@@ -69,7 +68,7 @@
                                    </li>
                                    <li class="nav-item ms-2">
                                         <a class="navbar-links" href="#"
-                                             >Learn more!</a
+                                             >Follow more!</a
                                         >
                                    </li>
                                    <li class="nav-item ms-2">
@@ -90,9 +89,8 @@
                                    />
                               </form>
 
-                              <!-- Profile Image for Medium Devices (Right of Input Field) -->
                               <a
-                                   href="/Profilepage/profilepage.html"
+                                   href="/profile/index.html"
                                    class="d-none d-md-flex me-3"
                               >
                                    <img
@@ -110,7 +108,6 @@
                <div class="container custom text-center my-3">
                     <div class="row mt-5 d-flex">
                          <div class="col-6">
-                              <!-- Button trigger modal -->
                               <button
                                    type="button"
                                    class="btn-custom-1 custom-btn-size"
@@ -120,7 +117,6 @@
                                    Post new memory
                               </button>
 
-                              <!-- Modal -->
                               <div
                                    class="modal fade"
                                    id="exampleModal"
@@ -132,7 +128,7 @@
                                         <div class="modal-content">
                                              <div class="modal-header">
                                                   <h1
-                                                       class="modal-title title-font text-sm"
+                                                       class="modal-title title-font text-sm ms-5 ps-3"
                                                        id="exampleModalLabel"
                                                   >
                                                        Post your memory!
@@ -148,21 +144,21 @@
                                              <div class="modal-body pt-0">
                                                   <form
                                                        class="row"
-                                                       action="/Profilepage/profilepage.html"
+                                                       action="/profile/index.html"
                                                        method="get"
                                                   >
                                                        <div
                                                             class="col-2 d-flex justify-content-center align-items-center"
                                                        >
                                                             <a
-                                                                 href="/Profilepage/profilepage.html"
+                                                                 href="/profile/index.html"
                                                                  class=""
                                                             >
                                                                  <img
                                                                       src="/img/profilepicture.png"
                                                                       height="60"
                                                                       width="auto"
-                                                                      class="custom-profile-img"
+                                                                      class="custom-profile-img mt-4"
                                                                  />
                                                             </a>
                                                        </div>
@@ -175,7 +171,7 @@
                                                                  ></label>
                                                                  <textarea
                                                                       type="text"
-                                                                      class="form-control"
+                                                                      class="form-control custom-input-field"
                                                                       placeholder="Your memory"
                                                                       id="validationDefault03"
                                                                       rows="3"
@@ -203,7 +199,7 @@
                                                                  >
                                                                  <input
                                                                       type="text"
-                                                                      class="form-control"
+                                                                      class="form-control custom-input-field"
                                                                       id="validationDefaultUsername"
                                                                       aria-describedby="inputGroupPrepend2"
                                                                       required
@@ -220,12 +216,14 @@
                                                             >
                                                             <input
                                                                  type="text"
-                                                                 class="form-control"
+                                                                 class="form-control custom-input-field"
                                                                  id="validationDefault03"
                                                                  required
                                                             />
                                                        </div>
-                                                       <div class="col-12 mt-1">
+                                                       <div
+                                                            class="col-12 col-md-6 mt-1"
+                                                       >
                                                             <label
                                                                  for="exampleDate"
                                                                  class="form-label"
@@ -234,7 +232,7 @@
                                                             >
                                                             <input
                                                                  type="date"
-                                                                 class="form-control"
+                                                                 class="form-control custom-input-field"
                                                                  id="exampleDate"
                                                                  name="date"
                                                                  required
@@ -246,6 +244,21 @@
                                                                  valid date.
                                                             </div>
                                                        </div>
+                                                       <div
+                                                            class="col-12 col-md-6 mt-1"
+                                                       >
+                                                            <label
+                                                                 for="validationDefault03"
+                                                                 class="form-label"
+                                                                 >Add
+                                                                 pictures</label
+                                                            >
+                                                            <input
+                                                                 type="file"
+                                                                 class="form-control custom-input-field"
+                                                                 id="inputGroupFile02"
+                                                            />
+                                                       </div>
 
                                                        <div class="col-12 my-3">
                                                             <div
@@ -254,7 +267,6 @@
                                                                  <input
                                                                       class="form-check-input"
                                                                       type="checkbox"
-                                                                      value=""
                                                                       id="invalidCheck2"
                                                                       required
                                                                  />
@@ -270,7 +282,7 @@
                                                        </div>
                                                        <div class="col-12">
                                                             <button
-                                                                 class="btn btn-primary"
+                                                                 class="btn-custom-1"
                                                                  type="submit"
                                                             >
                                                                  Publish
@@ -327,7 +339,7 @@
                          <div class="col-12">
                               <label
                                    for="customRange2"
-                                   class="form-label d-flex justify-content-center"
+                                   class="form-label d-flex justify-content-center title-font"
                                    >Display timeline</label
                               >
 
@@ -365,14 +377,11 @@
                                                   height="80"
                                                   width="auto"
                                                   alt="profilepicture"
-                                                  class="resize-at-300"
                                              />
                                         </div>
                                         <div class="mx-3">
                                              <div class="d-flex gap-3">
-                                                  <h5
-                                                       class="card-title remove-at-300 w-100"
-                                                  >
+                                                  <h5 class="card-title w-100">
                                                        Hanna Green
                                                   </h5>
                                                   <div class="ml-auto">
@@ -412,14 +421,10 @@
                                                   </div>
                                              </div>
 
-                                             <h6
-                                                  class="card-title remove-at-300"
-                                             >
+                                             <h6 class="card-title">
                                                   23.05.2011
                                              </h6>
-                                             <div
-                                                  class="card-title remove-at-300"
-                                             >
+                                             <div class="card-title">
                                                   <div
                                                        class="collapse show"
                                                        id="shortTextDiv"
@@ -478,12 +483,14 @@
                                                        class="collapse w-100"
                                                        id="fullTextDiv"
                                                   >
-                                                       World travels of 2011
-                                                       where we ate at a bar and
-                                                       drank at a restaurant and
-                                                       did many more exciting
-                                                       things during our
-                                                       journey.
+                                                       Adventures in Tokyo 2011
+                                                       where we wandered through
+                                                       neon streets, savored
+                                                       sushi at Tsukiji, and
+                                                       marveled at the beauty of
+                                                       cherry blossoms in full
+                                                       bloom.
+
                                                        <button
                                                             class="custom-thumbnail-text-btn"
                                                             type="button"
@@ -612,14 +619,11 @@
                                                   height="80"
                                                   width="auto"
                                                   alt="profilepicture"
-                                                  class="resize-at-300"
                                              />
                                         </div>
                                         <div class="mx-3">
                                              <div class="d-flex gap-3">
-                                                  <h5
-                                                       class="card-title remove-at-300 w-100"
-                                                  >
+                                                  <h5 class="card-title w-100">
                                                        Robert Claymore
                                                   </h5>
                                                   <div class="ml-auto">
@@ -659,23 +663,19 @@
                                                   </div>
                                              </div>
 
-                                             <h6
-                                                  class="card-title remove-at-300"
-                                             >
+                                             <h6 class="card-title">
                                                   02.03.2006
                                              </h6>
-                                             <div
-                                                  class="card-title remove-at-300"
-                                             >
+                                             <div class="card-title">
                                                   <div
                                                        class="collapse show"
-                                                       id="shortTextDiv"
+                                                       id="shortTextDiv2"
                                                   >
                                                        <button
                                                             class="custom-thumbnail-text-btn"
                                                             type="button"
                                                             data-bs-toggle="collapse"
-                                                            data-bs-target="#fullTextDiv,#shortTextDiv"
+                                                            data-bs-target="#fullTextDiv2,#shortTextDiv2"
                                                             aria-expanded="false"
                                                             aria-controls="fullTextDiv"
                                                        >
@@ -723,19 +723,21 @@
 
                                                   <div
                                                        class="collapse w-100"
-                                                       id="fullTextDiv"
+                                                       id="fullTextDiv2"
                                                   >
-                                                       World travels of 2011
-                                                       where we ate at a bar and
-                                                       drank at a restaurant and
-                                                       did many more exciting
-                                                       things during our
-                                                       journey.
+                                                       Exploring Paris 2006
+                                                       where we climbed the
+                                                       Eiffel Tower, indulged in
+                                                       croissants by the Seine,
+                                                       and got lost in the charm
+                                                       of Montmartre's
+                                                       alleyways.
+
                                                        <button
                                                             class="custom-thumbnail-text-btn"
                                                             type="button"
                                                             data-bs-toggle="collapse"
-                                                            data-bs-target="#fullTextDiv,#shortTextDiv"
+                                                            data-bs-target="#fullTextDiv2,#shortTextDiv2"
                                                             aria-expanded="true"
                                                             aria-controls="shortTextDiv"
                                                        >
@@ -851,12 +853,10 @@
                                    </div>
                               </div>
                          </div>
-
-                         <!-- Add more memories as needed -->
                     </div>
                </div>
           </main>
-          <footer class="main-footer">
+          <footer class="main-footer mt-2">
                <div>
                     <nav class="navbar bg-body-tertiary custom-max-width">
                          <div class="container">

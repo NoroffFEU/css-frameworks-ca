@@ -8,9 +8,16 @@
  
   max-width: 5rem;
 }
+.profile-pictures {
+  max-width: 50px;
+}
 .profile-image {
-  max-width: 80%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50%;
+  max-width: 300px;
+  max-height: auto;  
+}
+.card {
+  width: 20rem;
+}
+.post-text{
+  max-height: 70px;
 }

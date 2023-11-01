@@ -10729,4 +10729,8 @@ body {
   --bs-body-bg:rgb(102, 102, 223);
 }
 
+.nav {
+  --bs-nav-link-color: white;
+}
+
 /*# sourceMappingURL=index.css.map */

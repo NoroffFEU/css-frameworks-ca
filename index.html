@@ -16,9 +16,60 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/4c69c38b68.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="dist/css/index.css" />
   </head>
-  <body class="bg-secondary">
-    <h1>Hello</h1>
+  <body class="bg-dark">
+    <div class="container mt-5">
+      <div
+        class="col-8 col-md-6 col-lg-5 col-xl-4 col-xxl-4 mx-auto border border-secondary rounded-4 p-5 bg-light"
+      >
+        <div class="row"><h1 class="text-center">#SoMe</h1></div>
+        <div class="row mt-5 mb-2"><h2>Log in</h2></div>
+        <form action="feed/index.html">
+          <div class="row">
+            <input
+              type="email"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="row my-3">
+            <input
+              type="password"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="●●●●●●●●"
+            />
+          </div>
+          <div class="row">
+            <button class="btn btn-primary p-2" name="submit">Submit</button>
+          </div>
+          <hr class="my-5" />
+          <div class="row">
+            <a
+              href="feed/index.html"
+              class="btn border-danger p-2 p-lg-3 border rounded-3 justify-content-between"
+              ><i class="fa-brands fa-google"></i>
+              Continue with Google
+            </a>
+            <a
+              href="feed/index.html"
+              class="btn border-primary p-2 p-lg-3 border bg-color- rounded-3 my-3"
+            >
+              Facebook
+            </a>
+            <a
+              href="feed/index.html"
+              class="btn border-secondary p-2 p-lg-3 border border-secondary bg-color- rounded-3"
+            >
+              Apple
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

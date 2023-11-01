@@ -37,24 +37,37 @@
 
         </div>
         <form>
-            <div class="mb-3">
+            <div class="col-md-4 mx-auto">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="title of post">
             </div>
-            <div class="mb-3">
+            <div class="col-md-4 mx-auto">
                 <label for="exampleFormControlTextarea1" class="form-label">Content</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <div class="mb-3">
+            <div class="col-md-4 mx-auto">
                 <label for="formFileMultiple" class="form-label">Multiple files input example</label>
                 <input class="form-control" type="file" id="formFileMultiple" multiple>
             </div>
     
-            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <button type="submit" class="btn btn-primary btn-lg mx-auto">Submit</button>
     
         </form>
 
-        <h2 class="mb-4 font-weight-bolder text-center">MORE POSTS</h2>
+        <div class="sort-options mt-3 col-8 col-md-4 mx-auto">
+            <label for="sort-by" class="text-center">Sort By:</label>
+            <select id="sort-by" class="form-control form-control-sm">
+                <option value="latest">Recent</option>
+                <option value="popular">Popular</option>
+            </select>
+        </div>
+
+        <div class="search-bar mt-2 col-10 col-md-4 mx-auto">
+            <input type="text" class="form-control form-control-sm" placeholder="Search">
+            <button type="button" class="btn btn-primary btn-lg mt-2">Search</button>
+        </div>
+
+        <h2 class="mb-4 font-weight-bold text-center">MORE POSTS</h2>
 
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3 g-4">

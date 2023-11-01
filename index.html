@@ -36,7 +36,7 @@
                 <div class="col-12 col-lg-6">
                     <img src="images/act-now.jpg" alt="call to action image" class="img-fluid">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 text-white">
                     <p>
                         Do you want to share our thoughts on climate change? Join your voice amongst the thousands in the globe so together we can save our planet Earth.
                     </p>
@@ -48,18 +48,21 @@
         </div>
 
         <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div class="mb-3 text-white mx-auto col-md-4">
+              <label for="exampleInputEmail1" class="form-label col-sm-3 col-form">Email address</label>
+              <input type="email" class="form-control mx-auto col-md-6" id="exampleInputEmail1" aria-describedby="emailHelp" required>
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" id="exampleInputPassword1" class="form-control" aria-describedby="passwordHelpB" >
+            <div class="mb-3 text-white mx-auto col-md-4">
+              <label for="exampleInputPassword1" class="col-form-label col-sm-3">Password</label>
+              <input type="password" id="exampleInputPassword1" class="form-control mx-auto col-md-6" minlength="8" aria-describedby="passwordHelpB" placeholder="minimum 8characters" required>
             </div>
-            <div id="passwordHelpBlock" class="form-text">
-                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            
+            <div class="row mb-3">
+                <div class="col-lg-4 mx-auto offset-lg-3">
+                    <a href="/profile" class="btn btn-primary">Login</a>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            
         </form>
 
     </main>

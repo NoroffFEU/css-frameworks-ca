@@ -11,8 +11,35 @@
     <link rel="stylesheet" href="../../dist/css/index.css" />
   </head>
   <body class="text-center bg-success">
-    <header class="container d-flex align-items-center">
-      <div class="col-xs-6 col">
+    <nav class="navbar navbar-expand-lg bg-info" role="navigation">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav">
+            <a class="nav-link" href="/social-app/index.html">Login</a>
+
+            <a class="nav-link" href="index.html">Profile</a>
+
+            <a class="nav-link" href="/social-app/feed/index.html">Feed</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header
+      class="container d-flex align-items-center flex-wrap-reverse mx-auto"
+      style="max-width: 800px"
+    >
+      <div class="col-xs-6 col mb-2">
         <h1 class="text-white m-4 display-3">Username</h1>
         <div class="row d-flex justify-content-center">
           <div class="col-4">
@@ -43,7 +70,7 @@
           alt="profile image"
           style="opacity: 80%; object-fit: cover"
           height="400"
-          width="250"
+          width="350"
         />
         <div
           class="col position-absolute"
@@ -118,5 +145,6 @@
         </div>
       </div>
     </main>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

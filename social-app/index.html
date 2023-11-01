@@ -12,6 +12,30 @@
   </head>
   <body class="text-center bg-success">
     <header>
+      <nav class="navbar navbar-expand-lg bg-info" role="navigation">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+              <a class="nav-link" href="index.html">Login</a>
+
+              <a class="nav-link" href="profile/index.html">Profile</a>
+
+              <a class="nav-link" href="feed/index.html">Feed</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
       <div class="col position-relative">
         <img
           class="col w-100"
@@ -72,21 +96,24 @@
       </form>
       <p class="mt-4 mb-3 text-white">Don't have an account? <u>Sign up</u></p>
       <div class="container">
-        <hr style="color: white" />
+        <hr class="text-white w-50 mx-auto" />
         <p class="mt-2 mb-3 text-white">OR</p>
-        <hr style="color: white" />
+        <hr class="text-white w-50 mx-auto" />
       </div>
-      <button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
-        <i class="fa-brands fa-google"></i> Continue with Google</button
-      ><button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
-        <i class="fa-brands fa-facebook"></i> Continue with Facebook</button
-      ><button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
-        <i class="fa-brands fa-apple"></i>
-        Continue with Apple
-      </button>
+      <div class="col-xs-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 m-auto">
+        <button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
+          <i class="fa-brands fa-google"></i> Continue with Google</button
+        ><button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
+          <i class="fa-brands fa-facebook"></i> Continue with Facebook</button
+        ><button class="w-100 mt-2 btn btn-lg bg-white" type="submit">
+          <i class="fa-brands fa-apple"></i>
+          Continue with Apple
+        </button>
+      </div>
       <p class="mt-5 mb-3 text-white">
         By continuing, you agree with our <u>Terms of Service</u>
       </p>
     </main>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>

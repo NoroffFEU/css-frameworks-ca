@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,34 +15,101 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <meta name="description" content="Profile Page">
+    <meta name="description" content="Profile Page" />
     <title>Profile Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark d-flex">
-            <div class="container">
-              <div class="logo-container mt-5">
-                <a class="navbar-brand" href="../index.html"
-                  ><img type="svg+xml" class="m-auto w-25 d-flex" src="../assets/fade.svg" alt="The logo of Fade social media"
-                /></a>
-              </div>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Profile</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="../feed/index.html">Feed</a>
-                  </li>
-                </ul>
-              </div>
+      <nav class="navbar navbar-expand-lg navbar-dark d-flex">
+        <div class="container d-flex justify-content-center justify-content-between p-3">
+            <div class="back-btn-container">
+                <a href="../feed/">
+                    <img class="img-fluid" src="../assets/back-arrow.svg" alt="Back arrow to return to feed">
+                </a>
             </div>
-          </nav>
+          <div class="img-fluid">
+            <a href="../feed/">
+                <img
+                    type="svg+xml"
+                    width="74" 
+                    height="30"
+                    class="m-auto d-flex"
+                    src="../assets/fade.svg"
+                    alt="The logo of Fade social media"
+                />
+            </a>
+          </div>
+          <div class="profile-settings-container">
+            <a href="#">
+                <img src="../assets/settings.svg" alt="Profile page settings">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Profile</a>
+              </li>
+              <li>
+                <a class="nav-link" href="../feed/index.html">Feed</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
-    
-</body>
+    <main>
+        <section>
+            <div class="profile-card bg-secondary card-body p-2 d-flex flex-column">
+                <div class="top-profile-container d-flex p-2">
+                    <div class="profile-picture-container">
+                        <img src="../assets/profile-picture.png" alt="Profile picture">
+                    </div>
+                    <div class="follow-container px-3">
+                        <h3>Profile name</h3>
+                        <button class="btn border-1 border-white rounded-pill btn-sm w-75 mt-2 " >
+                            Follow
+                        </button>
+                    </div>
+                </div>
+                <div class="bottom-profile-container d-flex justify-content-evenly mt-4">
+                    <p class="fw-lighter">123 Following</p>
+                    <p class="fw-lighter">112 Followers</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="feed-container d-flex justify-content-center">
+                <div class="card bg-secondary mt-5 w-75">
+                    <div class="card-body">
+                        <div class="post-picture rounded-circle">
+                            <img src="../assets/post-picture.png" alt="Maker of posts profile picture">
+                        </div>
+                        <p class="card-text p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <img class="w-100 rounded-3" src="../assets/post-image.png" alt="Posts image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-container d-flex justify-content-center">
+                <div class="card bg-secondary mt-5 w-75">
+                    <div class="card-body">
+                        <div class="post-picture rounded-circle">
+                            <img src="../assets/post-picture.png" alt="Maker of posts profile picture">
+                        </div>
+                        <p class="card-text text-start p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <img class="w-100 rounded-3" src="../assets/post-image.png" alt="Posts image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+  </body>
 </html>

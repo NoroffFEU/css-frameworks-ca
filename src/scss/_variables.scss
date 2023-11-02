@@ -1,0 +1,33 @@
+$enable-shadows: true;
+
+
+
+// Color system
+
+//Background color
+$white: #1A1D2E;
+
+
+
+// Typography
+
+
+//Font family
+$font-family-sans-serif: "Helvetica Neue", sans-serif;
+
+//Font weight headings
+$headings-font-weight: 300;
+
+//Font weight text
+$font-weight-normal: 300;
+
+//Font color 
+$gray-900: #F5F5F5;
+
+.heading-hide {
+  color: $white;
+}
+
+.follow-numbers {
+  color: #e5b9f9;
+}

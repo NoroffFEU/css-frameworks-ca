@@ -1,5 +1,6 @@
 import { errorMsg } from "./errorMsg.mjs";
 const token = localStorage.getItem('accessToken');
+let error;
 
 /**
  * 
@@ -23,9 +24,9 @@ export async function postData(url, formData, divForError) {
         const fetchResponse = await fetch(url, dataForPostRequest)
         const finishedResponse = await fetchResponse.json();
         if (finishedResponse.statusCode > 399) {
-            console.log("goodbye")
-        }
-        if (finishedResponse.accessToken && !token) {
+            error = finishedResponse.errors[0].message
+            throw error;
+        } else if (finishedResponse.accessToken && !token) {
             localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`)
         }
         console.log(finishedResponse)
@@ -35,8 +36,7 @@ export async function postData(url, formData, divForError) {
         // does not run. Might have to use an if statement to fix it, but I don't want that.
         // Maybe I can set an if (response > 399) and break? Gotta do some research here
     } catch (error) {
-        console.log("hello");
-        console.dir(divForError);
+        console.log(error);
         errorMsg(divForError, error);
     }
 }

@@ -24,7 +24,9 @@
   </head>
   <body>
     <nav class="nav bg-dark py-3 px-4 justify-content-between">
-      <h2 class="text-light">#SoMe</h2>
+      <a class="text-light fs-3 text-decoration-none" href="../feed/index.html"
+        >#SoMe</a
+      >
       <form class="d-none d-sm-block">
         <input
           type="search"
@@ -38,6 +40,84 @@
         ><i class="fa-solid fa-user text-light p-3"></i
       ></a>
     </nav>
-    <div class="container"></div>
+    <div class="container-fluid">
+      <div
+        class="col col-md-10 col-lg-8 col-xl-6 col-xxl-6 mx-auto border border-top-0 border-secondary bg-light min-vh-100"
+      >
+        <div class="row">
+          <form class="px-5">
+            <textarea
+              rows="1"
+              class="w-100 form-control border-0 border-secondary rounded-0 fs-4 p-3 bg-light"
+              placeholder="What are you sinking about?"
+            ></textarea>
+            <hr class="m-0 mb-3 mx-2" />
+            <div class="row mx-3 align-items-center">
+              <div class="col fs-4 text-dark">
+                <label for="image1" class="fa-regular fa-image me-2"></label>
+                <input type="file" name="Image" id="image1" class="d-none" />
+                <label for="attachment1" class="fa-solid fa-paperclip"></label>
+                <input
+                  type="file"
+                  name="Image"
+                  id="attachment1"
+                  class="d-none"
+                />
+              </div>
+              <div class="col text-end">
+                <button
+                  class="btn btn-primary fs-5 border rounded-5 py-1 px-4"
+                  type="submit"
+                >
+                  Post
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr class="my-4" />
+        <div class="row">
+          <div class="col-auto mx-4">
+            <a href="../profile/index.html" class=""
+              ><i class="fa-solid fa-user text-dark p-3 border rounded-5"></i
+            ></a>
+          </div>
+          <div class="col me-4">
+            <div class="row mb-2">
+              <div class="col-auto fw-bold">Ola Normann</div>
+              <div class="col-auto px-1 text-secondary">@olanormann</div>
+              ·
+              <div class="col-auto px-1 text-secondary">Just now</div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
+              dolorem porro illo, blanditiis earum repudiandae officia fugit,
+              nihil eligendi deleniti adipisci saepe laboriosam quo mollitia.
+              Necessitatibus distinctio commodi sed nemo?
+            </p>
+          </div>
+        </div>
+        <hr class="m-4" />
+        <div class="row">
+          <div class="col-auto mx-4">
+            <a href="../profile/index.html" class=""
+              ><i class="fa-solid fa-user text-dark p-3 border rounded-5"></i
+            ></a>
+          </div>
+          <div class="col me-4">
+            <div class="row mb-2">
+              <div class="col-auto fw-bold">Ola Normann</div>
+              <div class="col-auto px-1 text-secondary">@olanormann</div>
+              ·
+              <div class="col-auto px-1 text-secondary">27 min</div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
+              dolorem porro illo, blanditiis earum repudiandae officia fugit
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

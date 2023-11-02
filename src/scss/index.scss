@@ -5,7 +5,6 @@
 @import "nav.scss";
 
 body {
-  height: 100vh;
   background-color: $body-bg;
   color: $dark;
 
@@ -19,6 +18,16 @@ ul {
   li {
     display: inline-block;
   }
+}
+
+h1, 
+h2,
+h3,
+h4,
+p,
+span {
+  font-family: $font-family;
+  color: $dark;
 }
 
 

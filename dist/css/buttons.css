@@ -12,14 +12,19 @@
   background-color: #253c6b;
   color: #ebeced;
 }
+.btn-primary:hover {
+  background-color: #f1f1f1;
+  color: #253c6b;
+}
 
 .btn-secondary {
   background-color: #f1f1f1;
   color: #253c6b;
 }
 .btn-secondary:hover {
-  background-color: #253c6b;
+  background-color: #a6c0d2;
   color: #f1f1f1;
+  border: #a6c0d2 0.5px solid;
 }
 
 .favorite-btn {

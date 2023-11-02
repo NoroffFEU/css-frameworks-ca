@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login and Registration</title>
-    <link href="dist/css/index.css" rel="stylesheet" />
+    <link href="../dist/css/index.css" rel="stylesheet" />
   </head>
   <body class="bg-light">
     <!--Head-->
@@ -35,14 +35,40 @@
       </nav>
     </head>
 
-    <!--Main-->
+    <!--main-->
     <main>
       <div class="container">
         <div class="row mt-5">
           <div class="col-lg-5 bg-white m-auto rounded-top custom-wrapper">
-            <h2 class="text-center pt-4 mb-4">Login Now</h2>
+            <h2 class="text-center pt-3">Register</h2>
+            <p class="text-center text-muted lead mb-4">
+              Free and Take a Minute
+            </p>
             <!--Form start-->
             <form action="/profile" method="post" class="required action">
+              <div class="input-group mb-3">
+                <span class="input-group-text"
+                  ><i class="bi bi-person"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  name="name"
+                  pattern="[A-Za-z ]+"
+                  required
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text"
+                  ><i class="bi bi-person"></i
+                ></span>
+                <input
+                  type="LastName"
+                  class="form-control"
+                  placeholder="Last Name"
+                />
+              </div>
               <div class="input-group mb-3">
                 <span class="input-group-text"
                   ><i class="bi bi-envelope"></i
@@ -69,28 +95,30 @@
                 <button type="submit" class="btn btn-success">
                   Register Now
                 </button>
-
+                <p class="text-center text-muted mt-2 wrapper">
+                  When You Clicking Register Botton, You Agree To Our
+                  <a href="#"> Terms and Conditions</a> and
+                  <a href="#"> Privacy Policy</a>
+                </p>
                 <p class="text-center wrapper">
-                  Register Now For Free by clicking
-                  <a href="/register">Register Here </a>
+                  Alredy have an Account ? <a href="/index.html">Login Here </a>
                 </p>
               </div>
             </form>
-            <!--Form close-->
           </div>
         </div>
       </div>
-    </main>
 
-    <!--footer-->
-    <footer class="bg-dark py-5 mt-5">
-      <div class="container text-light text-center">
-        <p class="display-5 mb-3">Contact Us</p>
-        <small class="text-white-50"
-          >&copy; Copyright. All right reserved.</small
-        >
-      </div>
-    </footer>
+      <!--footer-->
+      <footer class="bg-dark py-5 mt-5">
+        <div class="container text-light text-center">
+          <p class="display-5 mb-3">Contact Us</p>
+          <small class="text-white-50"
+            >&copy; Copyright. All right reserved.</small
+          >
+        </div>
+      </footer>
+    </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

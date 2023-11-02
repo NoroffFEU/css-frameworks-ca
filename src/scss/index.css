@@ -1,4 +1,41 @@
 @charset "UTF-8";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+.my-custom-margin {
+  margin-top: 20px;
+}
+
+.my-custom-margin-b {
+  margin-bottom: 10px;
+}
+
+.custom-m {
+  margin-bottom: 20px;
+}
+
+.custom-padding-form {
+  padding-right: 10%;
+}
+
+.custom-wrapper {
+  border-top: 3px solid green;
+}
+
+.wrapper a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: content-box !important;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -1978,7 +2015,7 @@ progress {
 }
 
 .form-text {
-  margin-top: 0.25rem;
+  margin-top: 10rem;
   font-size: 0.875em;
   color: #6c757d;
 }
@@ -2544,7 +2581,7 @@ textarea.form-control-lg {
 .valid-feedback {
   display: none;
   width: 100%;
-  margin-top: 0.25rem;
+  margin-top: 10rem;
   font-size: 0.875em;
   color: #198754;
 }
@@ -2637,7 +2674,7 @@ textarea.form-control-lg {
 .invalid-feedback {
   display: none;
   width: 100%;
-  margin-top: 0.25rem;
+  margin-top: 10rem;
   font-size: 0.875em;
   color: #dc3545;
 }

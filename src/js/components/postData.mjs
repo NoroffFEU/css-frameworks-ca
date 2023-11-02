@@ -27,7 +27,7 @@ export async function postData(url, formData, divForError) {
             error = finishedResponse.errors[0].message
             throw error;
         } else if (finishedResponse.accessToken && !token) {
-            localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`)
+            localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`);
         }
         console.log(finishedResponse)
         return finishedResponse;

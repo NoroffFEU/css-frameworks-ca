@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile</title>
+    <title>Feed</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,7 +16,38 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/4c69c38b68.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="dist/css/index.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="nav bg-dark py-3 px-4 justify-content-between">
+      <a class="text-light fs-3 text-decoration-none" href="../feed/index.html"
+        >#SoMe</a
+      >
+      <form class="d-none d-sm-block">
+        <input
+          type="search"
+          class="form-control rounded-5"
+          placeholder="Search"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+      </form>
+      <a href="../profile/index.html" class="border rounded-5"
+        ><i class="fa-solid fa-user text-light p-3"></i
+      ></a>
+    </nav>
+    <div class="container-fluid">
+      <div
+        class="col col-md-10 col-lg-8 col-xl-6 col-xxl-6 mx-auto border border-top-0 border-secondary bg-light min-vh-100"
+      >
+        <div class="row">
+          <div class="col"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

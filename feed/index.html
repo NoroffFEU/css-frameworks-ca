@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../dist/css/index.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script defer type="module" src="../src/js/feed.mjs"></script>
     <title>Noroff Social Media | Feed</title>
 </head>
 <body>
@@ -37,15 +38,15 @@
             <div class="container">
                 
                 <div class="row">
-                    <form class="d-flex justify-content-center align-items-center flex-column" action="">
+                    <form class="add-post-form d-flex justify-content-center align-items-center flex-column" action="">
                         <h2 class="h3"><u>Add a post:</u></h2>
                         <div class="form-outline col-6">
-                            <fieldset>
-                                <textarea class="form-control" id="form4Example3" rows="7" placeholder="Say something clever about the environment, minimum  25 characters, max 250" minlength="25" maxlength="250"></textarea>
+                            <fieldset class="add-post-fieldset">
+                                <textarea class="form-control" id="form4Example3" rows="7" placeholder="Say something clever about the environment, minimum  25 characters, max 250" minlength="25" maxlength="250" required></textarea>
                                 <label class="form-label" for="form4Example3"></label>
                             </fieldset>
                           </div>
-                          <button type="submit" class="btn btn-primary btn-block mb-4" disabled>Post</button> 
+                          <button type="submit" class="btn add-post-btn btn-primary btn-block mb-4" disabled>Post</button> 
                     </form>
                 </div>
 
@@ -146,7 +147,5 @@
           </div>
           <!-- https://mdbootstrap.com/docs/standard/navigation/footer/ -->
       </footer>
-
-      <script src="../src/js/formValidation.js"></script>
 </body>
 </html>

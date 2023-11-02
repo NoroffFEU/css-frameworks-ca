@@ -1,6 +1,21 @@
 import { errorMsg } from "./errorMsg.mjs";
+
+
 const token = localStorage.getItem('accessToken');
 let error;
+let goToPage;
+const currentPage = document.title;
+
+switch (currentPage) {
+    case "Noroff Social Media | Log in":
+        goToPage = "feed/index.html";
+        break;
+    case "Noroff Social Media | Sign up":
+        goToPage = "index.html";
+        break;
+    default:
+        break;
+}
 
 /**
  * 
@@ -12,6 +27,7 @@ let error;
  * This function takes an API URL and sends data from an object using a fetch (POST) request
  */
 export async function postData(url, formData, divForError) {
+    divForError.innerHTML = "";
     const dataForPostRequest= {
         method: "POST",
         headers: {
@@ -29,14 +45,12 @@ export async function postData(url, formData, divForError) {
         } else if (finishedResponse.accessToken && !token) {
             localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`);
         }
-        console.log(finishedResponse)
+        if (goToPage.lenght > 0) {
+            window.location.href = [goToPage];   
+        }
+        console.log(goToPage);
         return finishedResponse;
-        // ISSUE //
-        // When the function runs, but returns as 400 / 401, etc, the catch block
-        // does not run. Might have to use an if statement to fix it, but I don't want that.
-        // Maybe I can set an if (response > 399) and break? Gotta do some research here
     } catch (error) {
-        console.log(error);
         errorMsg(divForError, error);
     }
 }

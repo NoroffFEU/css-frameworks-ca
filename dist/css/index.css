@@ -11923,6 +11923,9 @@ body {
   background-color: #C7F9CC;
   min-height: 70vh;
 }
+body .counter {
+  color: red;
+}
 
 main {
   min-height: 90vh;

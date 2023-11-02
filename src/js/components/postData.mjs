@@ -45,7 +45,7 @@ export async function postData(url, formData, divForError) {
         } else if (finishedResponse.accessToken && !token) {
             localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`);
         }
-        if (goToPage.lenght > 0) {
+        if (goToPage) {
             window.location.href = [goToPage];   
         }
         console.log(goToPage);

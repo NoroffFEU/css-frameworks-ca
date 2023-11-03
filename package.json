@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "build": "if [ \"$NETLIFY\" = \"true\" ]; then mkdir -p build/ && cp -R css-frameworks-ca/* build/; else sass src/scss:dist/css; fi",
+    "build": "if [ \"$NETLIFY\" = \"true\" ]; then npm run build:netlify; else npm run build:local; fi",
+    "build:netlify": "npm run sass && npm run copy",
+    "build:local": "sass src/scss:dist/css",
+    "sass": "sass src/scss:dist/css",
+    "copy": "mkdir -p build/ && cp -R css-frameworks-ca/* build/",
     "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {

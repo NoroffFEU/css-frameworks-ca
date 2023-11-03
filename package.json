@@ -7,7 +7,7 @@
     "build:netlify": "npm run sass && npm run copy",
     "build:local": "sass src/scss:dist/css",
     "sass": "sass src/scss:dist/css",
-    "copy": "mkdir -p build/ && cp -R * build",
+    "copy": "mkdir -p build/ && rsync -av --exclude='build' --exclude='node_modules' . build/",
     "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {

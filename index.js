@@ -10,16 +10,3 @@ document.addEventListener("DOMContentLoaded", function () {
                }
           });
 });
-
-// JS for accordian front page opening just once
-document.addEventListener("DOMContentLoaded", function () {
-     const accordionButton = document.querySelector(".accordion-button");
-
-     accordionButton.addEventListener("click", function () {
-          setTimeout(function () {
-               if (!accordionButton.classList.contains("collapsed")) {
-                    accordionButton.removeAttribute("data-bs-toggle");
-               }
-          }, 0);
-     });
-});

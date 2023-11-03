@@ -9,7 +9,6 @@
           <title>Pastport - landing page</title>
 
           <link rel="stylesheet" href="./dist/css/main.css" />
-          <script src="./index.js"></script>
           <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
      </head>
      <body class="">
@@ -64,7 +63,7 @@
                                              data-bs-interval="10000"
                                         >
                                              <div
-                                                  class="col-10 mt-md-5 ms-3 pt-5 para-font lead"
+                                                  class="col-11 mt-md-5 ms-3 pt-5 para-font lead"
                                              >
                                                   <p>
                                                        Introducing PastPort, the
@@ -100,94 +99,33 @@
                                    </button>
                               </div>
 
-                              <div class="col-12 mt-3 mt-md-0">
-                                   <div
-                                        class="d-flex justify-content-center align-items-center title-font"
-                                   >
-                                        <h4>Sign up!</h4>
-                                   </div>
-                                   <form
-                                        action="./profile/index.html"
-                                        method="get"
+                              <div class="col-12 mt-4 mt-md-0">
+                                   <button
+                                        class="accordion-button collapsed row g-2"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne"
+                                        aria-expanded="true"
+                                        aria-controls="collapseOne"
                                    >
                                         <div
-                                             class="custom-accordion"
-                                             id="accordionExample"
+                                             class="d-flex justify-content-center align-items-center title-font"
                                         >
-                                             <div
-                                                  class="accordion-item row g-2 m-1 m-mx-5"
+                                             <h4 class="btn-custom-1">
+                                                  Sign up!
+                                             </h4>
+                                        </div>
+                                   </button>
+                                   <div
+                                        class="custom-accordion"
+                                        id="accordionExample"
+                                   >
+                                        <div class="accordion-item">
+                                             <form
+                                                  action="./profile/index.html"
+                                                  method="get"
+                                                  class="row"
                                              >
-                                                  <button
-                                                       class="accordion-button collapsed row g-2 m-1 m-mx-5"
-                                                       type="button"
-                                                       data-bs-toggle="collapse"
-                                                       data-bs-target="#collapseOne"
-                                                       aria-expanded="true"
-                                                       aria-controls="collapseOne"
-                                                  >
-                                                       <div
-                                                            class="col-md-4 text-center"
-                                                       >
-                                                            <label
-                                                                 for="validationDefault01"
-                                                                 class="form-label title-font"
-                                                                 >First
-                                                                 name</label
-                                                            >
-                                                            <input
-                                                                 type="text"
-                                                                 class="form-control custom-input-field"
-                                                                 id="validationDefault01"
-                                                                 required
-                                                            />
-                                                       </div>
-                                                       <div
-                                                            class="col-6 col-md-4 text-center"
-                                                       >
-                                                            <label
-                                                                 for="validationDefault02"
-                                                                 class="form-label title-font"
-                                                                 >Last
-                                                                 name</label
-                                                            >
-                                                            <input
-                                                                 type="text"
-                                                                 class="form-control custom-input-field"
-                                                                 id="validationDefault02"
-                                                                 required
-                                                            />
-                                                       </div>
-                                                       <div
-                                                            class="col-12 col-md-4 text-center"
-                                                       >
-                                                            <label
-                                                                 for="validationDefault02"
-                                                                 class="form-label title-font"
-                                                                 >Country</label
-                                                            >
-                                                            <select
-                                                                 class="form-select custom-input-field"
-                                                                 aria-label="Default select example"
-                                                            >
-                                                                 <option
-                                                                      value="1"
-                                                                 >
-                                                                      Norway
-                                                                 </option>
-                                                                 <option
-                                                                      value="2"
-                                                                 >
-                                                                      Norge
-                                                                 </option>
-                                                                 <option
-                                                                      value="3"
-                                                                 >
-                                                                      Noruega
-                                                                 </option>
-                                                            </select>
-                                                       </div>
-                                                  </button>
-
                                                   <div
                                                        id="collapseOne"
                                                        class="accordion-collapse collapse"
@@ -196,6 +134,68 @@
                                                        <div
                                                             class="accordion-body row"
                                                        >
+                                                            <div
+                                                                 class="col-md-4 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault01"
+                                                                      class="form-label title-font"
+                                                                      >First
+                                                                      name</label
+                                                                 >
+                                                                 <input
+                                                                      type="text"
+                                                                      class="form-control custom-input-field"
+                                                                      id="validationDefault01"
+                                                                      required
+                                                                 />
+                                                            </div>
+                                                            <div
+                                                                 class="col-12 col-md-4 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault02"
+                                                                      class="form-label title-font"
+                                                                      >Last
+                                                                      name</label
+                                                                 >
+                                                                 <input
+                                                                      type="text"
+                                                                      class="form-control custom-input-field"
+                                                                      id="validationDefault02"
+                                                                      required
+                                                                 />
+                                                            </div>
+                                                            <div
+                                                                 class="col-12 col-md-4 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault02"
+                                                                      class="form-label title-font"
+                                                                      >Country</label
+                                                                 >
+                                                                 <select
+                                                                      class="form-select custom-input-field"
+                                                                      aria-label="Default select example"
+                                                                 >
+                                                                      <option
+                                                                           value="1"
+                                                                      >
+                                                                           Norway
+                                                                      </option>
+                                                                      <option
+                                                                           value="2"
+                                                                      >
+                                                                           Norge
+                                                                      </option>
+                                                                      <option
+                                                                           value="3"
+                                                                      >
+                                                                           Noruega
+                                                                      </option>
+                                                                 </select>
+                                                            </div>
+
                                                             <div
                                                                  class="col-6 text-center"
                                                             >
@@ -250,7 +250,7 @@
                                                                  class="col-12 col-md-6 text-center"
                                                             >
                                                                  <label
-                                                                      for="validationDefault01"
+                                                                      for="validationDefault02"
                                                                       class="form-label title-font"
                                                                       >Email
                                                                       address</label
@@ -258,7 +258,7 @@
                                                                  <input
                                                                       type="text"
                                                                       class="form-control custom-input-field"
-                                                                      id="validationDefault01"
+                                                                      id="validationDefault02"
                                                                       required
                                                                  />
                                                             </div>
@@ -311,9 +311,9 @@
                                                             </div>
                                                        </div>
                                                   </div>
-                                             </div>
+                                             </form>
                                         </div>
-                                   </form>
+                                   </div>
                                    <div
                                         class="col-12 d-flex justify-content-center align-items-center mt-4"
                                    >
@@ -339,4 +339,5 @@
                </main>
           </div>
      </body>
+     <script src="./index.js"></script>
 </html>

@@ -12,6 +12,7 @@ body {
     text-align: var(--bs-body-text-align);
     --bs-body-bg:rgb(85, 212, 149);
     
+    
 }
 
 .nav {
@@ -21,13 +22,24 @@ body {
 
 .navbar {
   --bs-navbar-padding-x: 15px;
-  --bs-navbar-hover-color: red;
+  --bs-navbar-brand-hover-color: red;
   --bs-navbar-brand-font-size: 32px;
 }
+
+.navbar-brand {
+  margin-right: 40px;
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+
+
 .nav-link {
   font-weight: bold;
   font-size: 30px;
+  justify-content: center;
 }
+
 
 .nav-link.active {
   color: red;

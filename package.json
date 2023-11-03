@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "build": "if [ \"$NETLIFY\" = \"true\" ]; then npm run build:netlify; else npm run build:local; fi",
+    "build": "if-env NETLIFY=true && npm run build:netlify || npm run build:local",
     "build:netlify": "npm run sass && npm run copy",
-    "build:local": "sass src/scss:dist/css  && npm run copy:bootstrap",
+    "build:local": "sass src/scss:dist/css",
     "sass": "sass src/scss:dist/css",
     "copy": "mkdir -p build/ && rsync -av --exclude='build' --exclude='node_modules' . build/",
     "copy:bootstrap": "shx cp node_modules/bootstrap/dist/js/bootstrap.min.js src/js/",
@@ -29,10 +29,12 @@
   },
   "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
   "dependencies": {
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "core-js": "^3.33.2"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "if-env": "^1.0.4",
     "sass": "^1.69.5",
     "shx": "^0.3.4"
   },

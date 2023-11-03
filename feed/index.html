@@ -19,6 +19,79 @@
     <title>Feed page</title>
 </head>
 <body>
-    
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark d-flex">
+        <div class="container d-flex justify-content-center justify-content-between p-3">
+            <div class="back-btn-container">
+                <a href="../feed/">
+                    <img class="img-fluid" src="../assets/back-arrow.svg" alt="Back arrow to return to feed">
+                </a>
+            </div>
+          <div class="img-fluid">
+            <a href="/feed/">
+                <img
+                    type="svg+xml"
+                    width="74" 
+                    height="30"
+                    class="m-auto d-flex"
+                    src="../assets/fade.svg"
+                    alt="The logo of Fade social media"
+                />
+            </a>
+          </div>
+          <div class="search-button">
+            <button class="btn" id="search-toggle"><img src="../assets/search-bar.svg" alt="Search button"></button>
+            <div class="search-bar">
+              <input type="text" class="form-control border-0 rounded-pill" placeholder="Search...">
+            </div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Profile</a>
+              </li>
+              <li>
+                <a class="nav-link" href="../feed/index.html">Feed</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+<main>
+  <section>
+    <div class="feed-container d-flex justify-content-center">
+      <div class="card bg-secondary mt-5 w-75">
+          <div class="card-body">
+              <div class="post-picture rounded-circle">
+                  <img src="../assets/post-picture.png" alt="Maker of posts profile picture">
+              </div>
+              <p class="card-text p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <img class="w-100 rounded-3 card-img" src="../assets/post-image.png" alt="Posts image">
+          </div>
+      </div>
+  </div>
+
+  <div class="feed-container d-flex justify-content-center">
+      <div class="card bg-secondary mt-5 w-75">
+          <div class="card-body">
+              <div class="post-picture rounded-circle">
+                  <img src="../assets/post-picture.png" alt="Maker of posts profile picture">
+              </div>
+              <p class="card-text text-start p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <img class="w-100 rounded-3 img-fluid" src="../assets/post-image.png" alt="Posts image">
+          </div>
+      </div>
+  </div>
+  </section>
+</main>
 </body>
 </html>

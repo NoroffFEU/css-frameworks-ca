@@ -4,10 +4,11 @@
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
     "build": "if [ \"$NETLIFY\" = \"true\" ]; then npm run build:netlify; else npm run build:local; fi",
-    "build:netlify": "npm run sass && npm run copy",
+    "build:netlify": "npm run sass && npm run copy && npm run copy:bootstrap",
     "build:local": "sass src/scss:dist/css",
     "sass": "sass src/scss:dist/css",
     "copy": "mkdir -p build/ && rsync -av --exclude='build' --exclude='node_modules' . build/",
+    "copy:bootstrap": "cp node_modules/bootstrap/dist/js/bootstrap.min.js src/js/",
     "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {

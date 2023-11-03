@@ -1,0 +1,39 @@
+@import "variables";
+
+.btn {
+  border: $primary 0.5px solid;
+  margin-bottom: 5px;
+  }
+
+.btn-primary {
+  background-color: $primary;
+  color: $body-bg;
+
+  &:hover {
+    background-color: $light;
+    color: $primary;
+  }
+}
+
+.btn-secondary {
+  background-color: $light;
+  color: $primary;
+
+  &:hover {
+    background-color: $secondary;
+    color: $light;
+    border: $secondary 0.5px solid;
+  }
+}
+
+  .favorite-btn {
+    border: none;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  i {
+    color: lightpink;
+  }
+

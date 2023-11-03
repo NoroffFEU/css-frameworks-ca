@@ -1,1 +1,33 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "variables.scss";
+@import "buttons.scss";
+@import "feed.scss";
+@import "nav.scss";
+
+body {
+  background-color: $body-bg;
+  color: $dark;
+
+  img {
+    border: solid 1px lightgrey;
+  }
+}
+
+ul {
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+h1, 
+h2,
+h3,
+h4,
+p,
+span {
+  font-family: $font-family;
+  color: $dark;
+}
+
 

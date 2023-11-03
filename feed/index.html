@@ -73,8 +73,10 @@
     </header>
     <main>
       <section>
-        <div class="filer-post-container d-flex justify-content-between">
-          <div class="filter-container">
+        <div
+          class="filter-post-container"
+        >
+          <div class="filter-container mx-4">
             <div class="dropdown">
               <button
                 class="btn btn-secondary dropdown-toggle mx-4"
@@ -91,20 +93,30 @@
               </ul>
             </div>
           </div>
-          <div class="container ">
-            <button id="new-post-button" class="btn "><img src="../assets/new-post.svg" alt="New post button"></button>
+          <div class="new-post-container">
+            <button id="new-post-button" class="btn">
+              <img src="../assets/new-post.svg" alt="New post button" />
+            </button>
           </div>
-        
-          
+
           <div id="post-modal" class="modal">
             <div class="modal-content bg-dark border-0">
               <span class="close" id="close-button">&times;</span>
               <form id="post-form">
                 <div class="form-group">
                   <label for="post-content">Post Content:</label>
-                  <textarea class="form-control border-0" id="post-content" rows="4"></textarea>
+                  <textarea
+                    class="form-control border-0"
+                    id="post-content"
+                    rows="4"
+                  ></textarea>
                 </div>
-                <button type="submit" class="btn"><img src="../assets/new-post.svg" alt="New post submit button"></button>
+                <button type="submit" class="btn">
+                  <img
+                    src="../assets/new-post.svg"
+                    alt="New post submit button"
+                  />
+                </button>
               </form>
             </div>
           </div>

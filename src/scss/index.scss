@@ -6,44 +6,7 @@ $input-bg: #494949;
 $profile-container: #1E1E1E;
 $secondary: #1E1E1E;
 
-//Search bar button
-.search-button {
-    position: relative;
-  
-    .search-bar {
-      position: absolute;
-      top: 60;
-      right: 0;
-      width: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: width 0.3s, opacity 0.3s;
-      
-      input {
-        width: 0;
-      }
-      
-      button {
-        display: none;
-      }
-    }
-  
-    #search-toggle:focus + .search-bar {
-      width: 200px;
-      opacity: 1;
-      
-      input {
-        width: 100%;
-      }
-      
-      button {
-        display: block;
-      }
-    }
-  }
-  
-
 
 //Imports
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "custom.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

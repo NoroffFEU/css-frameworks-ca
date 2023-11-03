@@ -1,14 +1,39 @@
+//My font / colors
+$body-bg: #121212;
+$body-color: #FFFFFF;
+$font-family-base: 'Poppins', sans-serif;
+$input-bg: #494949;
+$profile-container: #1E1E1E;
+$secondary: #1E1E1E;
+
 //Link color
 .nav-link {
     color: white;
-    transition: color 0.2s; // Add a smooth color transition on hover
-  
+    transition: color 0.2s; 
     &:hover {
-      color: darken(white, 30%); // Darken the color by 10% when hovered
+      color: darken(white, 30%);
     }
   }
 
-//Search bar button
+
+.filter-post-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  
+  .filter-container, .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 2rem;
+  
+  }
+}
+
+ 
+
+
+//Search bar button | Feed page
 .search-button {
   position: relative;
 
@@ -45,7 +70,8 @@
 }
 
 
-//New Post 
+
+//New Post | Feed page
 #post-modal {
   display: none;
   position: fixed;

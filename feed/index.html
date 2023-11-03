@@ -20,11 +20,11 @@
 </head>
 <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark d-flex">
-        <div class="container d-flex justify-content-center justify-content-between p-3">
-            <div class="back-btn-container">
+      <nav class="navbar navbar-expand-lg navbar-dark d-flex ">
+        <div class="container d-flex justify-content-center p-3">
+            <div class="profile-btn-container d-lg-none">
                 <a href="../feed/">
-                    <img class="img-fluid" src="../assets/back-arrow.svg" alt="Back arrow to return to feed">
+                    <img class="img-fluid" src="../assets/profile.svg" alt="Profile button">
                 </a>
             </div>
           <div class="img-fluid">
@@ -39,7 +39,7 @@
                 />
             </a>
           </div>
-          <div class="search-button test">
+          <div class="search-button d-lg-none">
             <button class="btn" id="search-toggle"><img src="../assets/search-bar.svg" alt="Search button"></button>
             <div class="search-bar">
               <input type="text" class="form-control border-0 rounded-pill" placeholder="Search...">
@@ -48,17 +48,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../index.html"
-                  >Home</a
-                >
+                <a class="nav-link" href="../profile/">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Profile</a>
-              </li>
-              <li>
                 <a class="nav-link" href="../feed/index.html">Feed</a>
               </li>
             </ul>
@@ -69,7 +61,7 @@
 <main>
   <section>
     <div class="feed-container d-flex justify-content-center">
-      <div class="card bg-secondary mt-5 w-75">
+      <div class="card bg-secondary mt-5 m-4">
           <div class="card-body">
               <div class="post-picture rounded-circle">
                   <img src="../assets/post-picture.png" alt="Maker of posts profile picture">
@@ -81,7 +73,7 @@
   </div>
 
   <div class="feed-container d-flex justify-content-center">
-      <div class="card bg-secondary mt-5 w-75">
+      <div class="card bg-secondary mt-5 m-4">
           <div class="card-body">
               <div class="post-picture rounded-circle">
                   <img src="../assets/post-picture.png" alt="Maker of posts profile picture">

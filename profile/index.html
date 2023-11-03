@@ -22,7 +22,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark d-flex">
         <div class="container d-flex justify-content-center justify-content-between p-3">
-            <div class="back-btn-container">
+            <div class="back-btn-container d-lg-none">
                 <a href="../feed/">
                     <img class="img-fluid" src="../assets/back-arrow.svg" alt="Back arrow to return to feed">
                 </a>
@@ -39,7 +39,7 @@
                 />
             </a>
           </div>
-          <div class="profile-settings-container">
+          <div class="profile-settings-container d-lg-none">
             <a href="#">
                 <img src="../assets/settings.svg" alt="Profile page settings">
             </a>
@@ -47,17 +47,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="index.html">Profile</a>
               </li>
-              <li>
+              <li class="nav-item">
                 <a class="nav-link" href="../feed/index.html">Feed</a>
               </li>
             </ul>
@@ -68,7 +60,7 @@
     <main>
         <section>
             <div class="profile-card bg-secondary card-body p-2 d-flex flex-column">
-                <div class="top-profile-container d-flex p-2">
+                <div class="top-profile-container d-flex p-2 justify-content-center">
                     <div class="profile-picture-container">
                         <img src="../assets/profile-picture.png" alt="Profile picture">
                     </div>
@@ -87,7 +79,7 @@
         </section>
         <section>
             <div class="feed-container d-flex justify-content-center">
-                <div class="card bg-secondary mt-5 w-75">
+                <div class="card bg-secondary mt-5 m-4">
                     <div class="card-body">
                         <div class="post-picture rounded-circle">
                             <img src="../assets/post-picture.png" alt="Maker of posts profile picture">
@@ -99,7 +91,7 @@
             </div>
 
             <div class="feed-container d-flex justify-content-center">
-                <div class="card bg-secondary mt-5 w-75">
+                <div class="card bg-secondary mt-5 m-4">
                     <div class="card-body">
                         <div class="post-picture rounded-circle">
                             <img src="../assets/post-picture.png" alt="Maker of posts profile picture">

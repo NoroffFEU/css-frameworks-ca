@@ -22,7 +22,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
 import { getData } from "./components/getData.mjs";
 
-const posts = [];
 const token = localStorage.getItem("accessToken");
 const baseUrl = "https://api.noroff.dev/api/v1";
 let endpoint;
@@ -32,11 +31,3 @@ endpoint = "/social/posts";
 const fullURL = `${baseUrl}${endpoint}`;
 getData(fullURL, token, posts);
 
-console.log(posts);
-
-for (let i = 0; i < posts.length; i++) {
-    console.log("hello")
-    // const post = posts[i];
-
-    // console.log(post);
-}

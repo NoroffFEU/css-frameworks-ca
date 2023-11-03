@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "build": "sass src/scss:dist/css && npx shx cp -r node_modules/bootstrap/dist/js dist/",
+    "build": "cross-env NETLIFY=false npm run build-local",
+    "build-netlify": "npm run build-css && npm run copy-bootstrap && npm run copy-html",
+    "build-local": "sass src/scss:dist/css",
+    "build-css": "sass src/scss:dist/css --no-source-map",
+    "copy-bootstrap": "npx shx cp -r node_modules/bootstrap/dist/js dist/bootstrap",
+    "copy-html": "npx shx mkdir -p dist/profile && npx shx mkdir -p dist/feed && npx shx cp ./*.html dist/ && npx shx cp profile/index.html dist/profile/ && npx shx cp feed/index.html dist/feed/",
     "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {
@@ -27,6 +32,7 @@
     "bootstrap": "^5.3.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "sass": "^1.69.5",
     "shx": "^0.3.4"
   },

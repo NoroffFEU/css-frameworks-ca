@@ -1,1 +1,227 @@
+// Here the default bootstrap colors are changed to my own color scheme
+$primary: rgba(66, 133, 140, 1);
+$secondary: rgba(140, 66, 133, 1);
+$third: rgba(0, 0, 0, 1);
+$fourth: rgba(255, 255, 255, 1);
+$custom-whitegray-bg: rgba(248, 248, 248, 1);
 
+// Scass bootstrap variable for all caruosels
+$carousel-control-width: 10%;
+$carousel-control-opacity: 0.4;
+$carousel-control-hover-opacity: 1;
+$carousel-control-transition: opacity 1.15s ease;
+$carousel-control-color: $primary;
+$carousel-control-icon-width: 1.5rem;
+
+$carousel-indicator-width: 30px;
+$carousel-indicator-height: 3px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer: 3px;
+$carousel-indicator-opacity: 0.5;
+$carousel-indicator-active-bg: $primary;
+$carousel-indicator-active-opacity: 1;
+$carousel-indicator-transition: opacity 0.6s ease;
+
+$carousel-transition-duration: 0.1s;
+$carousel-transition-duration-slow: 0.8s;
+
+$carousel-transition: transform $carousel-transition-duration ease-in-out;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+.carousel-item {
+     transition: transform $carousel-transition-duration ease-in-out;
+
+     .carousel.slow-slide & {
+          transition: transform $carousel-transition-duration-slow ease-in-out;
+     }
+}
+// This code will add another transition time with the custom made variable
+// and add it to the existing bootstrap carousel class
+.standard-border {
+     border: 2px solid $primary;
+     outline: none;
+}
+
+.custom-w-g-bg {
+     background-color: $custom-whitegray-bg;
+}
+.title-font {
+     font-family: "Playfair Display", serif;
+}
+
+.para-font {
+     font-family: "Lato", sans-serif;
+}
+
+.btn-custom-1 {
+     @extend .btn;
+     @extend .btn-lg;
+     @extend .standard-border;
+     @extend .title-font;
+     //  Using the @extend method lets me keep the defualt bootstrap styling, and override parts of underneath
+
+     color: $third;
+     background-color: $fourth;
+     border-radius: 30px;
+     box-shadow: $box-shadow-sm;
+
+     &:hover {
+          @extend .standard-border;
+          box-shadow: $box-shadow;
+          background-color: rgba($fourth, 0.9);
+     }
+
+     &:focus {
+          @extend .standard-border;
+     }
+
+     &:active {
+          @extend .standard-border;
+          outline: none;
+     }
+}
+
+.custom-form-range {
+     @extend .form-range;
+     width: 50%;
+}
+
+.custom-input-field {
+     @extend .standard-border;
+     border-radius: 5px;
+
+     &:hover {
+          box-shadow: inset 0 0 3px rgba($third, 0.6);
+          background-color: rgba($fourth, 0.9);
+     }
+}
+
+.thumbnail-card-big {
+     @extend .card;
+     border: none;
+     border-radius: 0;
+     position: relative;
+     border-top: 3px solid $primary;
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+     // To be able to add these custom element im using pseudo-elements ::before and after. The content:"" property
+     // defines what is inside the pseudo-element. The absolute is used to position the two lines on each side.
+     // Some extra classe had to be added to the bootstrap HTML to make this possible.
+     .bottom-bar {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+
+          .left-bar,
+          .right-bar {
+               position: absolute;
+               bottom: 0;
+               width: 40px;
+               height: 3px;
+          }
+
+          .left-bar {
+               left: 0;
+               background-color: $primary;
+
+               &::before {
+                    content: "";
+                    position: absolute;
+                    top: -40px;
+                    left: 0;
+                    width: 3px;
+                    height: 40px;
+                    background-color: $primary;
+               }
+          }
+
+          .right-bar {
+               right: 0;
+               background-color: $primary;
+
+               &::before {
+                    content: "";
+                    position: absolute;
+                    top: -40px;
+                    right: 0;
+                    width: 3px;
+                    height: 40px;
+                    background-color: $primary;
+               }
+          }
+     }
+
+     &:hover {
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+     }
+}
+
+.custom-thumbnail-text-btn {
+     background-color: $fourth;
+     border: none;
+     padding: 0;
+}
+
+.main-header {
+     background-image: linear-gradient(
+          180deg,
+          rgba($secondary, 0.6) 0%,
+          transparent 100%
+     );
+     border-bottom: 2px solid $primary;
+}
+
+// This was added at the end to expand all elements a bit on md and above devices.
+// The max-width also sets a max container-width for larger devices
+@media (min-width: map-get($grid-breakpoints, md)) {
+     .custom-max-width {
+          zoom: 120%;
+          max-width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+     }
+}
+
+.custom-container {
+     @include make-container();
+}
+
+.main-footer {
+     background-color: $primary;
+}
+
+.custom-header-input {
+     @extend .standard-border;
+     @extend .form-control;
+     @extend .title-font;
+     outline: none;
+
+     &:hover {
+          box-shadow: $box-shadow-sm;
+     }
+}
+
+.custom-profile-img {
+     border: 1px solid $primary;
+     border-radius: 100px;
+
+     &:hover {
+          outline: 1px solid $primary;
+     }
+}
+
+.navbar-links {
+     @extend .title-font;
+     @extend .navbar-brand;
+
+     color: rgba($third, 0.7);
+
+     &:hover {
+          color: $third;
+     }
+}

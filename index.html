@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta
+               name="viewport"
+               content="width=device-width, initial-scale=1.0"
+          />
+          <title>Pastport - landing page</title>
+
+          <link rel="stylesheet" href="./dist/css/main.css" />
+          <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+     </head>
+     <body class="">
+          <div class="landing-page-bg">
+               <main class="custom-max-width">
+                    <div class="container">
+                         <div class="row d-flex justify-content-center">
+                              <div
+                                   id="carouselExample"
+                                   class="col-12 carousel slide slow-slide landing-page-main-carousel h-100"
+                                   data-bs-ride="carousel"
+                              >
+                                   <div
+                                        class="carousel-inner slow-slide custom-set-height-340px"
+                                   >
+                                        <div
+                                             class="carousel-item active mt-5"
+                                             data-bs-interval="5000"
+                                        >
+                                             <div
+                                                  class="row d-flex align-items-center"
+                                             >
+                                                  <!-- Logo -->
+                                                  <div
+                                                       class="col-12 col-md-4 text-center"
+                                                  >
+                                                       <img
+                                                            src="./img/logo-no-background.png"
+                                                            width="220"
+                                                            height="220"
+                                                            alt="Webpage logo: Pastport"
+                                                       />
+                                                  </div>
+
+                                                  <div
+                                                       class="col-12 col-md-8 mt-md-0 mt-2 title-font ms-3 ms-md-0"
+                                                  >
+                                                       <h4>
+                                                            A journey through
+                                                            memories,
+                                                       </h4>
+                                                       <h4
+                                                            class="text-primary title-font"
+                                                       >
+                                                            one year at a time.
+                                                       </h4>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div
+                                             class="carousel-item"
+                                             data-bs-interval="10000"
+                                        >
+                                             <div
+                                                  class="col-11 mt-md-5 ms-3 pt-5 para-font lead"
+                                             >
+                                                  <p>
+                                                       Introducing PastPort, the
+                                                       ultimate portal to your
+                                                       cherished memories. Dive
+                                                       deep into a world where
+                                                       moments don't merely echo
+                                                       the past; they come
+                                                       alive. With PastPort,
+                                                       every memory is more than
+                                                       a fleeting thought; it's
+                                                       an experience waiting to
+                                                       be relived in vivid
+                                                       detail.
+                                                  </p>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <button
+                                        class="carousel-control-next"
+                                        type="button"
+                                        data-bs-target="#carouselExample"
+                                        data-bs-slide="next"
+                                   >
+                                        <span
+                                             class="carousel-control-next-icon"
+                                             aria-hidden="true"
+                                        ></span>
+                                        <span class="visually-hidden"
+                                             >Next</span
+                                        >
+                                   </button>
+                              </div>
+
+                              <div class="col-12 mt-4 mt-md-0">
+                                   <button
+                                        class="accordion-button collapsed row g-2"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne"
+                                        aria-expanded="true"
+                                        aria-controls="collapseOne"
+                                   >
+                                        <div
+                                             class="d-flex justify-content-center align-items-center title-font"
+                                        >
+                                             <h4 class="btn-custom-1">
+                                                  Sign up!
+                                             </h4>
+                                        </div>
+                                   </button>
+                                   <div
+                                        class="custom-accordion"
+                                        id="accordionExample"
+                                   >
+                                        <div class="accordion-item">
+                                             <form
+                                                  action="./profile/index.html"
+                                                  method="get"
+                                                  class="row"
+                                             >
+                                                  <div
+                                                       id="collapseOne"
+                                                       class="accordion-collapse collapse"
+                                                       data-bs-parent="#accordionExample"
+                                                  >
+                                                       <div
+                                                            class="accordion-body row"
+                                                       >
+                                                            <div
+                                                                 class="col-md-4 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault01"
+                                                                      class="form-label title-font"
+                                                                      >First
+                                                                      name</label
+                                                                 >
+                                                                 <input
+                                                                      type="text"
+                                                                      class="form-control custom-input-field"
+                                                                      id="validationDefault01"
+                                                                      required
+                                                                 />
+                                                            </div>
+                                                            <div
+                                                                 class="col-12 col-md-4 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault02"
+                                                                      class="form-label title-font"
+                                                                      >Last
+                                                                      name</label
+                                                                 >
+                                                                 <input
+                                                                      type="text"
+                                                                      class="form-control custom-input-field"
+                                                                      id="validationDefault02"
+                                                                      required
+                                                                 />
+                                                            </div>
+                                                            <div
+                                                                 class="col-12 col-md-4 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault02"
+                                                                      class="form-label title-font"
+                                                                      >Country</label
+                                                                 >
+                                                                 <select
+                                                                      class="form-select custom-input-field"
+                                                                      aria-label="Default select example"
+                                                                 >
+                                                                      <option
+                                                                           value="1"
+                                                                      >
+                                                                           Norway
+                                                                      </option>
+                                                                      <option
+                                                                           value="2"
+                                                                      >
+                                                                           Norge
+                                                                      </option>
+                                                                      <option
+                                                                           value="3"
+                                                                      >
+                                                                           Noruega
+                                                                      </option>
+                                                                 </select>
+                                                            </div>
+
+                                                            <div
+                                                                 class="col-6 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="password"
+                                                                      class="form-label title-font"
+                                                                      >Password</label
+                                                                 >
+                                                                 <input
+                                                                      type="password"
+                                                                      class="form-control custom-input-field"
+                                                                      id="password"
+                                                                      minlength="8"
+                                                                      required
+                                                                 />
+                                                            </div>
+
+                                                            <div
+                                                                 class="col-6 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="confirmPassword"
+                                                                      class="form-label title-font"
+                                                                      >Confirm
+                                                                      Password</label
+                                                                 >
+                                                                 <input
+                                                                      type="password"
+                                                                      class="form-control custom-input-field"
+                                                                      id="confirmPassword"
+                                                                      required
+                                                                 />
+                                                            </div>
+
+                                                            <div
+                                                                 class="col-12 col-md-6 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault03"
+                                                                      class="form-label title-font"
+                                                                      >Add
+                                                                      profile
+                                                                      picture</label
+                                                                 >
+                                                                 <input
+                                                                      type="file"
+                                                                      class="form-control custom-input-field"
+                                                                      id="inputGroupFile02"
+                                                                 />
+                                                            </div>
+                                                            <div
+                                                                 class="col-12 col-md-6 text-center"
+                                                            >
+                                                                 <label
+                                                                      for="validationDefault02"
+                                                                      class="form-label title-font"
+                                                                      >Email
+                                                                      address</label
+                                                                 >
+                                                                 <input
+                                                                      type="text"
+                                                                      class="form-control custom-input-field"
+                                                                      id="validationDefault02"
+                                                                      required
+                                                                 />
+                                                            </div>
+
+                                                            <div class="col-12">
+                                                                 <div
+                                                                      class="form-check my-2"
+                                                                 >
+                                                                      <input
+                                                                           class="form-check-input"
+                                                                           type="checkbox"
+                                                                           value=""
+                                                                           id="invalidCheck2"
+                                                                           required
+                                                                      />
+                                                                      <label
+                                                                           class="form-check-label para-font"
+                                                                           for="invalidCheck2"
+                                                                      >
+                                                                           Agree
+                                                                           to
+                                                                           terms
+                                                                           and
+                                                                           conditions
+                                                                      </label>
+                                                                 </div>
+                                                            </div>
+                                                            <div
+                                                                 class="d-flex justify-content-center"
+                                                            >
+                                                                 <button
+                                                                      class="btn-custom-1"
+                                                                      type="submit"
+                                                                 >
+                                                                      Create
+                                                                      account
+                                                                      <svg
+                                                                           xmlns="http://www.w3.org/2000/svg"
+                                                                           width="12"
+                                                                           height="12"
+                                                                           viewBox="0 0 12 24"
+                                                                           fill="none"
+                                                                      >
+                                                                           <path
+                                                                                d="M1.775 24.0426L0 21.9088L8.225 12.0213L0 2.13378L1.775 0L11.775 12.0213L1.775 24.0426Z"
+                                                                                fill="black"
+                                                                           />
+                                                                      </svg>
+                                                                 </button>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </form>
+                                        </div>
+                                   </div>
+                                   <div
+                                        class="col-12 d-flex justify-content-center align-items-center mt-4"
+                                   >
+                                        <h4 class="title-font">
+                                             Already a
+                                             <span class="text-primary"
+                                                  >member?</span
+                                             >
+                                        </h4>
+                                   </div>
+                                   <div
+                                        class="col-12 d-flex justify-content-center align-items-center mb-5"
+                                   >
+                                        <a href="./feed/index.html">
+                                             <button class="btn-custom-1">
+                                                  Log in
+                                             </button></a
+                                        >
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </main>
+          </div>
+     </body>
+     <script src="./index.js"></script>
+</html>

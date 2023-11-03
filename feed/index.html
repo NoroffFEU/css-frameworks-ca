@@ -12,33 +12,29 @@
 </head>
 
 <body class="bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-4 mb-3">
-    <img src="../images/1131031-84.png" alt="Toastit-logo" class="ms-4">
-    <a class="navbar-brand ms-4" href="../index.html">Toastit</a>
-    
+  <nav class="navbar navbar-expand navbar-light bg-light border-bottom border-4 mb-3">
+    <a class="navbar-brand ms-4" href="../index.html"><img src="../images/1131031-84.png" alt="Toastit-logo" class="ms-4"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto flex-column flex-sm-row"> <!-- Add flex-column and flex-sm-row classes -->
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Feed</a>
+          <a class="nav-link fw-semibold" href="index.html">Feed</a>
         </li>
         <li>
-          <a class="nav-link" href="../index.html">Log out</a>
+          <a class="nav-link fw-semibold" href="../index.html">Log out</a>
         </li>
       </ul>
     </div>
     <div class="float-end me-2">
-      <a href="../profile/index.html">
-        <img src="../images/profile-pictures/a0d7d86f-9157-4fbe-be40-31e76765585b.png"
-          class="profile-picture border border-primary border-4 rounded-circle " style="cursor: pointer;"
-          title="Profile"></img>
-      </a>
+      <a class="nav-link fw-semibold" href="../profile/index.html"><img src="../images/profile-pictures/a0d7d86f-9157-4fbe-be40-31e76765585b.png"
+        class="profile-picture border border-primary border-4 rounded-circle " title="Profile"></img></a>
     </div>
   </nav>
+
   <div class="input-group mb-3 container">
     <input type="text" class="form-control rounded-pill m-1" placeholder="🔍" aria-label="Search">
     <button class="btn btn-outline-secondary rounded-pill m-1" type="button" id="search-button">Search</button>
   </div>
-
+<!-- create post dropdown -->
 <div class="container bg-primary text-white rounded mb-4 col-10">
     <h2>
         <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm" class="text-white text-decoration-none">🍞Create a Post</a>
@@ -62,7 +58,6 @@
     </div>
 </div>
 
-
 <div class="container">
   <!-- Sorting Dropdown -->
   <div class="dropdown mb-3">
@@ -77,7 +72,7 @@
   </div>
 </div>
   <!-- Posts -->
-  <div class="container text-white">
+  <div class="container text-white mb-4">
     <div class="row justify-content-center">
       <div class="card bg-primary m-1">
         <h3 class="card-title">Halloween Toaster</h3>
@@ -195,11 +190,6 @@
     </div>
   </div>
 
-  <footer class="bg-primary text-white text-center py-3 mt-4 ">
-    <div class="container">
-      <p>&copy; 2023 Toastit</p>
-    </div>
-  </footer>
   <script defer type="module" src="../JS/index.js"></script>
 </body>
 

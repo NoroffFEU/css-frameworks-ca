@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication Page</title>
+    <title>Feed Page</title>
     <link rel="stylesheet" href="../dist/css/index.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="bg-secondary">
     <header class="mb-4">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav text-center">
                     <li class="nav-item">
                         <a class="nav-link text-light" href="../index.html">Home</a>
                     </li>
@@ -34,12 +35,11 @@
 
 
 
-
     <main class="pb-4">
         <section class="container authentication-form">
             <h1 class="text-center mb-3">Login or Register</h1>
-            <div class="d-flex justify-content-center" style="height: 100vh;">
-                <form action="" method="post">
+            <div class="d-flex justify-content-center">
+                <form action="/profile" method="get">
                     <div class="form-group row mb-3">
                         <label for="username" class="col-sm-3 col-form-label">Username:</label>
                         <div class="col-sm-9">
@@ -51,17 +51,18 @@
                         <label for="password" class="col-sm-3 col-form-label">Password:</label>
                         <div class="col-sm-9">
                             <input type="password" class="form-control mx-auto col-md-6" id="password" name="password"
-                                minlength="8" required>
+                                required minlength="8">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-9 offset-sm-3">
-                            <a href="feed/index.html" class="btn btn-primary">Login</a>
+                            <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </div>
                     <p>Don't have an account? <a href="/profile">Register here</a></p>
                 </form>
             </div>
+
 
             <div class="modal fade" id="passwordLengthErrorModal" tabindex="-1" role="dialog"
                 aria-labelledby="passwordLengthErrorModalLabel" aria-hidden="true">
@@ -85,7 +86,7 @@
         </section>
     </main>
 
-    <footer class="text-center py-3">
+    <footer class="text-center py-3 fixed-bottom">
         &copy; 2023 Tord Åke Larsson. All rights reserved.
     </footer>
 

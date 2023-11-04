@@ -10,3 +10,10 @@ $green:   #103638;
 $teal:    #20c997;
 $cyan:    #D3E8E5;
 // scss-docs-end color-variables
+
+//font for headings
+@import url(https://db.onlinewebfonts.com/c/51d11a72b39f33f909abddc723d66f03?family=Kaushan+Script);
+
+h1 {
+    font-family: "Kaushan Script";
+}

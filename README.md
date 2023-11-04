@@ -1,6 +1,6 @@
 # css-frameworks-ca
 
-My social media project is for car media where you can go and view people post on differnt tip cars.
+My social media project is about cars where you can and view other people post or post your on car picture.
 
 ![image](/img/css-frameworks-prototype-design-each-page.png)
 

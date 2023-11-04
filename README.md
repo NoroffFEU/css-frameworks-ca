@@ -21,5 +21,5 @@ npm install
 3. Running for development:
 
 ```bash
-npm run start or watch
+npm run start
 ```

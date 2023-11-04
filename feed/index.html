@@ -20,22 +20,24 @@
       src="https://kit.fontawesome.com/4c69c38b68.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="dist/css/index.css" />
+    <link rel="stylesheet" href="../dist/css/index.css" />
   </head>
   <body>
-    <nav class="nav bg-dark py-3 px-4 justify-content-between">
+    <nav class="navbar bg-dark py-3 px-4">
       <a class="text-light fs-3 text-decoration-none" href="../feed/index.html"
         >#SoMe</a
       >
-      <form class="d-none d-sm-block">
-        <input
-          type="search"
-          class="form-control rounded-5"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="search-addon"
-        />
-      </form>
+      <div class="col-6 col-lg-4 flex-center mx-auto">
+        <form class="d-none d-sm-block">
+          <input
+            type="search"
+            class="form-control rounded-5"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+        </form>
+      </div>
       <a href="../profile/index.html" class="border rounded-5"
         ><i class="fa-solid fa-user text-light p-3"></i
       ></a>
@@ -138,6 +140,9 @@
               class="img-thumbnail img-fluid"
             />
           </div>
+        </div>
+        <div class="row">
+          <button class="btn btn-primary mx-auto w-auto mt-3">Load more</button>
         </div>
       </div>
     </div>

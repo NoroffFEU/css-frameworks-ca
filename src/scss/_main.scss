@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .my-custom-margin {
   margin-top: 20px;
 }
@@ -24,4 +28,12 @@
 
 .custom-form-style {
   max-width: 40px;
+}
+
+.element {
+  max-width: 100%;
+}
+
+.card-img-top {
+  max-width: 100%;
 }

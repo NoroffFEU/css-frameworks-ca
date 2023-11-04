@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="/dist/css/index.css" />
   </head>
   <body>
+    <!-- Navigation bar with responsive toggler for smaller screens -->
     <header class="navbar navbar-expand-lg">
       <nav class="container">
         <a class="navbar-brand" href="/feed/index.html">Feed</a>
+        <!-- Toggler button appears on small screens to show the navigation items -->
         <button
           class="navbar-toggler"
           type="button"
@@ -31,6 +33,7 @@
               <a class="nav-link" href="/profile/index.html">Profile</a>
             </li>
           </ul>
+          <!-- Search form -->
           <form class="d-flex">
             <input
               class="form-control me-2"
@@ -50,8 +53,9 @@
         </div>
       </nav>
     </header>
+    <!-- Main container for page content -->
     <main class="container my-4">
-      <!-- Search Bar -->
+      <!-- Form for searching posts with inline Bootstrap classes -->
       <form class="form-inline mb-4">
         <input
           class="form-control mb-2 mr-sm-2"
@@ -64,7 +68,7 @@
         </button>
       </form>
 
-      <!-- Sort Options -->
+      <!-- Dropdown for sorting posts -->
       <div class="mb-4">
         <label for="sortOptions" class="mr-2">Sort by:</label>
         <select class="custom-select w-auto" id="sortOptions">

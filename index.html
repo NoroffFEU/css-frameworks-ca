@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="dist/css/index.css" />
   </head>
   <body>
+    <!-- Main container for the auth form -->
     <main class="container background">
       <div class="row justify-content-center align-items-center min-vh-100">
+        <!-- Responsive columns for auth card -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="auth-card p-4 shadow rounded">
             <form action="/profile" method="get" class="auth-form">
               <h2 class="text-center mb-4">Login/Register</h2>
+              <!-- Username input field -->
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input
@@ -27,6 +30,7 @@
                   required
                 />
               </div>
+              <!-- Password input field -->
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input
@@ -38,6 +42,7 @@
                   required
                 />
               </div>
+              <!-- Submit button for the form -->
               <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
             <div class="auth-footer">

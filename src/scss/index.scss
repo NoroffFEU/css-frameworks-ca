@@ -1,16 +1,20 @@
+// Importing variables and Bootstrap styles
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// Base body styles
 body {
     font-family: $font-family-base;
     font-size: $font-size-base;
   }
 
+  // Background styling for main content area
 .background {
     background: url('/Images/background.jpg') no-repeat center center;
     background-size: cover;
 }
 
+// Navbar styles
   .navbar {
     background-color: $background-color;
   
@@ -34,6 +38,7 @@ body {
       }
   }
 
+  // Authentication card styles
 .auth-card {
     background-color: $background-color;
     padding: 2rem;

@@ -36,16 +36,20 @@
     </header>
     <main class="p-3">
       <section class="d-flex justify-content-center">
-        <form action="/profile" class="col-12 col-lg-12 d-flex flex-column gap-3">
-          <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Username</label>
-            <div class="input-group has-validation">
-              <span class="input-group-text bg-dark border-0" id="inputGroupPrepend">@</span>
-              <input type="text" class="form-control border-0" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Please choose a username.
-              </div>
-            </div>
+        <form
+          action="/profile"
+          class="col-12 col-lg-12 d-flex flex-column gap-3"
+        >
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Email address</label
+            >
+            <input
+              required type="email"
+              class="form-control border-0"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
           </div>
           <div class="mb-5">
             <label for="inputPassword5" class="form-label">Password</label>
@@ -53,6 +57,7 @@
               type="password"
               id="inputPassword5"
               class="form-control border-0 input-bg"
+              required
               minlength="8"
               aria-describedby="passwordHelpBlock"
             />

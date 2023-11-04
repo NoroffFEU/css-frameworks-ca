@@ -10770,6 +10770,7 @@ body {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0d6efd;
   --bs-btn-disabled-border-color: #0d6efd;
+  --bs-btn-border-radius:15px;
 }
 
 /*# sourceMappingURL=index.css.map */

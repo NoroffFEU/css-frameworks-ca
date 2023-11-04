@@ -23,3 +23,9 @@ npm install
 ```bash
 npm run start
 ```
+
+##build
+
+- Bootstrap
+- Sass
+- Html

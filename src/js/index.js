@@ -122,6 +122,7 @@ if (location.pathname.includes("/post/index.html")) {
     // Rendering the list of posts
     async function renderPosts() {
         const posts = await postMethods.getPosts();
+        console.log(posts);
         const container = document.querySelector("#postList");
         templates.renderPostTemplates(posts, container);
     }

@@ -12,13 +12,13 @@ My social media project is about cars where you can and view other people post o
 git clone https://github.com/NoroffFEU/css-frameworks-ca/pull/159
 ```
 
-2. Install the dependencies:
+2. Install:
 
 ```bash
 npm install
 ```
 
-2. Running for development:
+3. Running for development:
 
 ```bash
 npm run start or watch

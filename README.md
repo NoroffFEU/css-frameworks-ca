@@ -1,7 +1,7 @@
 <h1>Andreas Ulvund | CSS Frameworks CA</h1>
 <p>CSS Frameworks @ Noroff School of technology and digital media</p>
 
-![2023-09-18](https://github.com/Ulvounth/Semester-project/assets/98667510/f53eb2b4-c0d8-48af-844c-cc98d34ffa0e)
+![Social-app](https://github.com/Ulvounth/css-frameworks-ca/assets/98667510/1a82c0f7-068e-4b6e-b757-322d1da58cb0)
 
 
 .
@@ -27,4 +27,3 @@ Craft an authentication page, a dynamic feed page, and a user profile page, focu
 ## Contact
 
 [My Linkedin](https://www.linkedin.com/in/andreas-ulvund-98066376/)
-

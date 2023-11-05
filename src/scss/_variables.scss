@@ -1,0 +1,22 @@
+
+
+
+
+
+
+// my custom theme colors
+$custom-colors:(
+    "primary": #725AC1,
+    "primary-light": #8D86C9,
+    "primary-dark": #242038,
+);
+// my custom spacer variables
+$custom-spacers:(
+    6: $spacer * 6,
+    7: $spacer *7,
+);
+
+// adding my custom theme colors to the default color palette
+$theme-colors: map-merge($theme-colors,$custom-colors);
+//adding custom spacer to $spacers variable
+$spacers: map-merge($spacers,$custom-spacers);

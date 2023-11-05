@@ -4,6 +4,7 @@ import { formatDate } from './util.js';
 document.addEventListener('DOMContentLoaded', function () {
 
 
+
 let postsData = [];
 
 // Function to get the post author/user name from the URL
@@ -103,8 +104,8 @@ function displayAuthorPosts(posts) {
           <p class="post-content">${post.body}</p>
           ${post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid">` : ''}
           </div>
-          <button class="btn btn-primary" onclick="editPost(${post.id})">Edit</button>
-          <button class="btn btn-danger" onclick="deletePost(${post.id})">Delete</button>
+          <button class="btn btn-primary" data-post-id="${post.id}">Edit</button>
+          <button class="btn btn-danger" data-post-id="${post.id}">Delete</button>
 
         </div>
       `;
@@ -115,6 +116,26 @@ function displayAuthorPosts(posts) {
 
 // Call the function to fetch and display posts of the specific author
 fetchAuthorPosts(authorName);
+
+// Add event listener for the "Edit" and "Delete" buttons within the userPostsContainer
+const userPostsContainer = document.querySelector('#user-posts-container');
+userPostsContainer.addEventListener('click', function (event) {
+    // Check if the clicked element is a "Edit" or "Delete" button
+    if (event.target.classList.contains('btn')) {
+        const postId = event.target.getAttribute('data-post-id');
+        console.log('Button clicked with data-post-id:', postId);
+
+        if (event.target.classList.contains('btn-primary')) {
+            // "Edit" button is clicked
+            editPost(postId);
+        } else if (event.target.classList.contains('btn-danger')) {
+            // "Delete" button is clicked
+            deletePost(postId);
+        }
+    }
+});
+
+
 
 
 // Function to edit a post
@@ -128,7 +149,9 @@ function editPost(postId) {
 
         if (hasNoQueryParams) {
             // Find the post with the given postId
-            const postToEdit = postsData.find(post => post.id === postId);
+            console.log('All postsData:', postsData);
+            const postToEdit = postsData.find(post => post.id === parseInt(postId, 10));
+            console.log('Post to edit:', postToEdit);
 
             if (!postToEdit) {
                 alert('Post not found for editing');
@@ -137,6 +160,7 @@ function editPost(postId) {
 
             // Show a prompt for the user to edit the post content
             const updatedContent = prompt('Edit the post content:', postToEdit.body);
+            console.log('Updated content:', updatedContent);
 
             if (updatedContent === null) {
                 return;
@@ -153,30 +177,34 @@ function editPost(postId) {
 }
   
   // Function to update a post via a PUT request
-  async function updatePost(postId, updatedContent) {
+async function updatePost(postId, updatedContent) {
+    console.log('Updating post with ID:', postId);
     try {
-      const token = localStorage.getItem('accessToken');
-      const putData = {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ body: updatedContent }),
-      };
-  
-      const response = await fetch(`${API_BASE_URL}/api/v1/social/posts/${postId}`, putData);
-  
-      if (response.ok) {
-        console.log('Post updated successfully');
-        fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
-      } else {
-        console.error('Failed to update post');
-      }
+        const token = localStorage.getItem('accessToken');
+        const putData = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ body: updatedContent }),
+        };
+
+        const response = await fetch(`${API_BASE_URL}/api/v1/social/posts/${postId}`, putData);
+        console.log('Update response:', response);
+
+        if (response.ok) {
+            console.log('Post updated successfully');
+            alert('Post updated successfully');
+            // Refresh the posts
+            fetchAuthorPosts(authorName);
+        } else {
+            console.error('Failed to update post');
+        }
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
-  }
+}
   
 // Function to delete a post
 function deletePost(postId) {
@@ -210,7 +238,9 @@ async function deletePostRequest(postId) {
 
         if (response.ok) {
             console.log('Post deleted successfully');
-            fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
+            alert('Post deleted successfully');
+            // Reload the userPostsContainer
+            fetchAuthorPosts(authorName);
         } else {
             console.error('Failed to delete post');
         }

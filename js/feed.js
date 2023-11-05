@@ -89,38 +89,57 @@ function displayPosts(posts, filterDate) {
   userPostsContainer.innerHTML = '';
 
   // Loop through the filtered posts and create HTML elements for each post
-  filteredPosts.forEach((post) => {
-    const postElement = document.createElement('div');
-    postElement.classList.add('row', 'mb-3');
+filteredPosts.forEach((post) => {
+  const postElement = document.createElement('div');
+  postElement.classList.add('col-md-12', 'bg-white', 'p-4', 'rounded', 'shadow', 'mb-4', 'mt-4');
 
-    // Replace backslashes with HTML line break tags to get more lines if user posts more than one line
-    const postTitleWithLineBreaks = post.title.replace(/\n/g, '<br>');
+  // Replace backslashes with HTML line break tags to get more lines if user posts more than one line
+  const postTitleWithLineBreaks = post.title.replace(/\n/g, '<br>');
 
     // Include the author's name in the post
-    const authorName = post.author.name;
+  const authorName = post.author.name;
 
-    postElement.innerHTML = `
-      <div class="col-md-12 bg-white p-4 rounded shadow mb-4 mt-4">
-        <div class="row">
-          <div class="col-md-6">
-            <p class="text-secondary">${formatDate(post.created)}</p>
-            <p class="fs-5">${authorName}</p>
-          </div>
-          <div class="col-md-6 text-end">
-            <a href="#" onclick="openUserProfile('${post.author.name}')" class="ms-2">View ${post.author.name}'s profile</a>
-          </div>
-        </div>
-        <div class="shadow p-2">
-          <p class="text-primary-emphasis">${postTitleWithLineBreaks}</p>
-          <p class="post-content">${post.body}</p>
-          ${post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid">` : ''}
-        </div>
-        <button class="btn btn-primary" onclick="openPostModal(${post.id})">View Post</button>
-        </div>
-    `;
+  postElement.innerHTML = `
+    <div class="row">
+      <div class="col-md-6">
+        <p class="text-secondary">${formatDate(post.created)}</p>
+        <p class="fs-5">${authorName}</p>
+      </div>
+      <div class="col-md-6 text-end">
+        <a href="#" class="view-profile-link ms-2" data-author-name="${post.author.name}">View ${post.author.name}'s profile</a>
+      </div>
+    </div>
+    <div class="shadow p-2">
+      <p class="text-primary-emphasis">${postTitleWithLineBreaks}</p>
+      <p class="post-content">${post.body}</p>
+      ${post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid">` : ''}
+    </div>
+  `;
 
-    userPostsContainer.appendChild(postElement);
+  // Create a button to view the post
+  const viewButton = document.createElement('button');
+  viewButton.textContent = 'View Post';
+  viewButton.classList.add('btn', 'btn-primary');
+
+  // Add the click event listener to open the post modal
+  viewButton.addEventListener('click', () => openPostModal(post.id));
+
+  // Add the "View Post" button within the post element
+  postElement.appendChild(viewButton);
+
+  userPostsContainer.appendChild(postElement);
+});
+
+// Find all elements with the class "view-profile-link" and add an event listener to them
+document.querySelectorAll('.view-profile-link').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the default link behavior
+
+    const authorName = link.getAttribute('data-author-name');
+    openUserProfile(authorName);
   });
+});
+
 }
 
 
@@ -141,7 +160,14 @@ async function sendNewPost(title, body, media) {
 
     if (response.ok) {
       console.log('Post created successfully');
-      fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
+   // Check if the current page is the profile page
+   if (window.location.pathname === '/profile/index.html') {
+    // If it is, reload the entire page
+    location.reload();
+  } else {
+    // If not, fetch the updated posts and reload the user-posts-container
+    fetchWithToken(`${API_BASE_URL}/api/v1/social/posts`);
+  }
     } else {
       console.error('Failed to create post');
     }
@@ -162,6 +188,7 @@ blogPostForm.addEventListener('submit', function (e) {
   sendNewPost(postTitle, postBody, postMedia);
 
   blogPostForm.reset();
+  
 });
 
 
@@ -231,7 +258,6 @@ function openPostModal(postId) {
       <p>Created: ${formatDate(post.created)}</p>
       <p>${post.body}</p>
       ${post.media ? `<img src="${post.media}" alt="Post Image" class="img-fluid">` : ''}
-      <button onclick="closePostModal()">Close</button>
     `;
     document.body.appendChild(modal);
 

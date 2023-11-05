@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const API_BASE_URL = 'https://api.noroff.dev';
 
@@ -14,10 +12,48 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             const response = await fetch(url, postData);
-            const json = await response.json();
-            return json;
+
+            if (response.ok) {
+                const json = await response.json();
+
+                // Check the response and handle success or error cases
+                if (json.id) {
+                    // Registration was successful
+                    console.log('Registration successful');
+                    registrationMessage.textContent = 'Registration successful';
+                    registrationMessage.classList.remove('text-danger');
+                    registrationMessage.classList.add('text-success');
+
+                    // Clear input fields
+                    emailField.value = '';
+                    usernameField.value = '';
+                    passwordField.value = '';
+                } else {
+                    // Handle other registration errors
+                    console.error('Registration failed');
+                    registrationMessage.textContent = 'Registration failed. Please try again.';
+                    registrationMessage.classList.remove('text-success');
+                    registrationMessage.classList.add('text-danger');
+                }
+            } else if (response.status === 400) {
+                // User already exists
+                console.error('User already exists');
+                registrationMessage.textContent = 'User already exists. Please use a different email or username.';
+                registrationMessage.classList.remove('text-success');
+                registrationMessage.classList.add('text-danger');
+            } else {
+                // Handle other types of errors
+                console.error(`Error: ${response.status} - ${response.statusText}`);
+                registrationMessage.textContent = 'Registration failed. Please try again.';
+                registrationMessage.classList.remove('text-success');
+                registrationMessage.classList.add('text-danger');
+            }
         } catch (error) {
-            console.log(error);
+            // Handle other generic errors
+            console.error('Error:', error);
+            registrationMessage.textContent = 'Error during registration. Please try again.';
+            registrationMessage.classList.remove('text-success');
+            registrationMessage.classList.add('text-danger');
         }
     }
 
@@ -44,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
             emailValidationError.textContent = 'Email must be a @noroff.no or @stud.noroff.no email';
         }
     });
-    
+
     usernameField.addEventListener('input', function () {
         clearValidationError(usernameValidationError);
         const username = usernameField.value;
@@ -55,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-    
+
     passwordField.addEventListener('input', function () {
         clearValidationError(passwordValidationError);
         const password = passwordField.value;
@@ -105,36 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Clear registration message
             registrationMessage.textContent = '';
 
-            const registrationResponse = await registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
-
-            // Log the registration response
-            console.log('Registration Response:', registrationResponse);
-
-            if (registrationResponse && registrationResponse.id) {
-                // Registration was successful
-                console.log('Registration successful');
-                registrationMessage.textContent = 'Registration successful';
-                registrationMessage.classList.remove('text-danger');
-                registrationMessage.classList.add('text-success');
-
-                 // Clear input fields
-                    emailField.value = '';
-                    usernameField.value = '';
-                    passwordField.value = '';
-
-            } else if (registrationResponse && registrationResponse.status === 'Bad Request') {
-                // User already exists
-                console.error('User already exists');
-                registrationMessage.textContent = 'User already exists. Please use a different email or username.';
-                registrationMessage.classList.remove('text-success');
-                registrationMessage.classList.add('text-danger');
-            } else {
-                // Handle other registration errors
-                console.error('Registration failed');
-                registrationMessage.textContent = 'Registration failed. Please try again.';
-                registrationMessage.classList.remove('text-success');
-                registrationMessage.classList.add('text-danger');
-            }
+            await registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user);
         } catch (error) {
             console.error('Error:', error);
             registrationMessage.textContent = 'Error during registration. Please try again.';

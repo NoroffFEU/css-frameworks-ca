@@ -1,3 +1,57 @@
 body {
-    background-image: "../../images/background.png";
+    background-image: url("../../images/background3.png");
+    background-size:  1000px auto;  
+    // background-size:  100%; 
+    background-repeat: repeat;
+    background-position-y: 50px;
+
+    
+}
+
+.login-h1 {
+    border: 1px solid var(--bs-primary);
+    width: 400px;
+    display: block;
+    background-color: #0F0F0F;
+    border-radius: 10px;
+}
+
+.login-form {
+    margin-top: 200px;
+    width: 400px;
+    padding: 0;
+    // background-color: #0F0F0F;
+}
+
+.register-new-acc {
+    text-decoration: none;
+    // padding: 10px;
+}
+
+form.input {
+    background-color: #0F0F0F;
+}
+
+.login-form-button {
+    width: 400px;
+}
+
+.form-input {
+    background-color: #0F0F0F;
+    color: var(--bs-primary) !important;
+    border-color: var(--bs-primary);
+}
+
+/* ???? */
+::placeholder {
+    color: var(--bg-primary);
+    opacity: var(--placeholder-opacity-max);
+}
+
+.login-worm-green img {
+    height: 170px;
+}
+
+.login-worm-red img{
+    height: 130px;
 }

@@ -112,8 +112,7 @@ css-frameworks-ca
 │  ├─ 4.png
 │  ├─ car-snow.png
 │  ├─ post.png
-│  ├─ profile-image.png
-│  ├─ profile-image2.png
+│  ├─ profile-image.png│ 
 │  └─ sunset.png
 ├─ index.html
 ├─ netlify.toml

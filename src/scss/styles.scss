@@ -40,7 +40,7 @@
     overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
   }
 
-  /* Add this CSS to hide the scrollbar when the modal is open */
+
   .modal-popup.opened {
     overflow: hidden;
   }

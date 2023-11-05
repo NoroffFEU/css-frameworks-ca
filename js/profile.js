@@ -1,3 +1,10 @@
+import { API_BASE_URL } from './util.js';
+import { formatDate } from './util.js';
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+let postsData = [];
 
 // Function to get the post author/user name from the URL
 function getAuthorNameFromURL() {
@@ -59,6 +66,9 @@ async function fetchAuthorPosts(authorName) {
                     logoutButton.style.display = 'none';
                 }
 
+                 // Populate the postsData array with the fetched data
+                postsData = json;
+
                 // Display the posts of the specific author
                 displayAuthorPosts(json);
             } else {
@@ -109,6 +119,7 @@ fetchAuthorPosts(authorName);
 
 // Function to edit a post
 function editPost(postId) {
+    console.log('Edit button clicked for post ID:', postId);
     const isProfilePage = window.location.pathname === '/profile/index.html';
 
     if (isProfilePage) {
@@ -169,6 +180,7 @@ function editPost(postId) {
   
 // Function to delete a post
 function deletePost(postId) {
+    console.log('Delete button clicked for post ID:', postId);
     const isProfilePage = window.location.pathname === '/profile/index.html';
 
     if (isProfilePage && window.location.search === '') {
@@ -209,3 +221,5 @@ async function deletePostRequest(postId) {
 
 
   console.log("Fetching posts for author:", authorName);
+
+});

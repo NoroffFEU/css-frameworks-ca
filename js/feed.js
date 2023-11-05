@@ -1,9 +1,11 @@
 
+// API base URL
+import { API_BASE_URL } from './util.js';
+
 const username = localStorage.getItem('userName');
 const nameofuserDiv = document.querySelector('.nameofuser');
 
-// API base URL
-const API_BASE_URL = 'https://api.noroff.dev';
+
 
 nameofuserDiv.textContent = username;
 
@@ -26,14 +28,7 @@ function handleSearchEnter(event) {
 }
 
 // Function to format a date to the EU format (dd/mm/yyyy)
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    const day = date.getUTCDate().toString().padStart(2, '0');
-    const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
-    const year = date.getUTCFullYear().toString();
-    return `${day}.${month}.${year}`;
-
-}
+import { formatDate } from './util.js';
 
 // Define a variable to store the posts data
 let postsData = [];

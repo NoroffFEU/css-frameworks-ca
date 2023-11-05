@@ -1,5 +1,8 @@
+import { API_BASE_URL } from './util.js';
+
+
 document.addEventListener('DOMContentLoaded', function () {
-    const API_BASE_URL = 'https://api.noroff.dev';
+    
 
     async function loginUser(url, data) {
         try {

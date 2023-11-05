@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/stylesstyles.css">
     
     <title>Document</title>
 </head>
-<body>
+<body class="bg-dark">
     
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand fs-1 ms-4" href="index.html">Navbar</a>
+                <a class="navbar-brand fs-1 ms-4" href="index.html">CollectiVerse</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +34,7 @@
 
     <main>
 
-        <h3 class="card-text text-center mt-5">For you</h3>
+        <h3 class="card-text text-center mt-5 text-light">For you</h3>
 
         <div class="container mt-5 mb-5 gap-3 d-flex justify-content-center ">
 
@@ -62,7 +61,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/action figure.png" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">My action figure collection!</h2>
@@ -82,7 +81,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/stamp.jpg" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">I have been collecting stamps for a few years now :D</h2>
@@ -102,7 +101,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/mug.jpg" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">I am quite proud of my collection thus far</h2>
@@ -122,7 +121,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/pokemon card.jpg" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">This collection cost me an arm and a leg...</h2>
@@ -142,7 +141,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/game.jpg" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">My massive video game collection B-)</h2>
@@ -162,7 +161,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/music.png" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">My dad has a crazy big record collection :-O</h2>
@@ -182,7 +181,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/coin.jpg" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">I found this coin collection in my grandparents attic</h2>
@@ -202,7 +201,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="card h-80 my-3">
+                    <div class="card h-80 my-3 border-0">
                         <img src="/images/phone.jpg" alt="Post image">
                         <div class="card-body py-2 px-3">
                             <h2 class="card-title">I dont need a smartphone</h2>
@@ -217,6 +216,24 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="container text-light mb-5">
+            <h3 class="card-text text-center mt-5">Create a new post</h3>
+
+            <form action="submit">
+                <div class="mb-3">
+                    <label for="exampleImputTitle1">Title</label>
+                    <input type="title" class="form-control" id="exampleImputTitle1" placeholder="Enter Title">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1">Content</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your content"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+            </form>
         </div>
 
     </main>

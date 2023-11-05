@@ -6,7 +6,7 @@
     "build": "if-env NETLIFY=true && npm run build:netlify || npm run build:local",
     "build:netlify": "npm run sass && webpack --mode production && npm run copy",
     "build:local": "npm run sass && webpack --mode development",
-    "copy": "shx mkdir -p build && shx cp -r !(build|node_modules) build/",
+    "copy": "shx mkdir -p build && shx cp -r src dist src profile images feed build/",
     "sass": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css"
   },

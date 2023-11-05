@@ -14,13 +14,14 @@ As part of my course assignment, I've developed this responsive social media sit
 - **Profile Page**: Shows user information, posts, and social interaction options like follow/unfollow.
 
 ## Development Process
-- Began with page prototyping on Figma. [Link to Netlify Live Site](https://www.figma.com/proto/P1fgLkvEUToDAHAaAalnSy/CSS-Frameworks-Prototype?page-id=0%3A1&type=design&node-id=29-166&viewport=777%2C550%2C0.52&t=q70jBb6D2RK1j3kq-1&scaling=scale-down&starting-point-node-id=13%3A3&mode=design)
+- Began with page prototyping on Figma. [Link to Figma Prototype](https://www.figma.com/proto/P1fgLkvEUToDAHAaAalnSy/CSS-Frameworks-Prototype?page-id=0%3A1&type=design&node-id=29-166&viewport=777%2C550%2C0.52&t=q70jBb6D2RK1j3kq-1&scaling=scale-down&starting-point-node-id=13%3A3&mode=design)
 - Forked the base repository and created a `css-frameworks` branch.
 - Configured Bootstrap, SASS, and Live Server for development.
 - Set up NPM scripts for task automation.
 - Designed using Bootstrap components and SASS customizations.
 - Engaged in peer reviews and refined the project based on feedback.
 - Bundled JavaScript files with Webpack, creating `bundle.js` for Netlify deployment.
+[Link to Netlify Live Site](https://socia-media-site.netlify.app/)
 
 ## Netlify Deployment
 - Published the site on Netlify, ensuring full operational capability of Bootstrap JavaScript features through `bundle.js`.

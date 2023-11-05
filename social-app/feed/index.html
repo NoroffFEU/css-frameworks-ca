@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your DIY feed" />
+    <title>Project Homestead | Feed</title>
+    <link rel="icon" type="image/x-icon" href="../../images/logo-light.png" />
+    <script
+      src="https://kit.fontawesome.com/40355c2075.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+  </head>
+  <body class="text-center bg-success">
+    <header>
+      <!--Navigation-->
+      <nav class="navbar navbar-expand-lg bg-info" role="navigation">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav">
+              <a class="nav-link" href="/social-app/index.html">Login</a>
+
+              <a class="nav-link" href="/social-app/profile/index.html"
+                >Profile</a
+              >
+              <a class="nav-link" href="index.html">Feed</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="col position-relative">
+        <img
+          class="col w-100"
+          src="/images/feed-image.jpg"
+          alt="cover image"
+          style="object-fit: cover; opacity: 80%; object-position: 50% 50%"
+          height="200"
+        />
+      </div>
+
+      <div class="col position-absolute p-4" style="margin-top: -200px">
+        <h1 class="display-3 fw-normal text-white">Latest Projects</h1>
+      </div>
+      <div class="col position-absolute" style="margin-top: -75px; width: 100%">
+        <a href="/social-app/index.html"
+          ><img
+            class="m-auto"
+            src="/images/logo-dark.png"
+            alt="logo"
+            width="100"
+            height="100"
+        /></a>
+      </div>
+    </header>
+
+    <main class="container w-100 m-auto p-4">
+      <!--Search & Add post form-->
+      <form
+        class="col-xs-12 col-sm-11 col-md-8 col-lg-7 col-xl-6 m-auto w-xs-100 w-sm-75"
+      >
+        <div class="form-floating">
+          <input
+            type="search"
+            class="form-control"
+            id="floatingInput"
+            placeholder="searchbar"
+          />
+          <label for="floatingInput"
+            >Search <i class="fa-solid fa-magnifying-glass"></i
+          ></label>
+        </div>
+        <div class="form-floating mt-2">
+          <input
+            type="text"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Post title"
+          />
+          <label for="floatingPassword">Post title</label>
+        </div>
+        <div class="form-floating mt-2">
+          <input
+            type="text"
+            class="form-control p-5"
+            id="floatingPassword"
+            placeholder="Description"
+          />
+          <label for="floatingPassword"
+            >Description<i class="fa-regular fa-image p-1"></i
+          ></label>
+        </div>
+        <button class="w-100 mt-3 btn btn-lg btn-warning" type="submit">
+          Add post +
+        </button>
+      </form>
+      <div class="d-flex justify-content-end">
+        <p class="text-white p-3">
+          Sort by date <i class="fa-solid fa-sort p-1"></i>
+        </p>
+      </div>
+      <!--Post feed-->
+      <div class="container-fluid mx-auto" style="min-width: 300px">
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <img
+                src="/images/post-1.jpg"
+                alt="post 1"
+                style="height: 150px; object-fit: cover"
+              />
+              <div class="card-body bg-info">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 1</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <img
+                src="/images/post-2.jpg"
+                alt="post 1"
+                style="height: 150px; object-fit: cover"
+              />
+              <div class="card-body bg-info">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 2</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <img
+                src="/images/post-3.jpg"
+                alt="post 1"
+                style="height: 150px; object-fit: cover"
+              />
+              <div class="card-body bg-info">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 3</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <img
+                src="/images/post-1.jpg"
+                alt="post 1"
+                style="height: 150px; object-fit: cover"
+              />
+              <div class="card-body bg-info">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 4</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <img
+                src="/images/post-2.jpg"
+                alt="post 1"
+                style="height: 150px; object-fit: cover"
+              />
+              <div class="card-body bg-info">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 5</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="card shadow-sm">
+              <img
+                src="/images/post-3.jpg"
+                alt="post 1"
+                style="height: 150px; object-fit: cover"
+              />
+              <div class="card-body bg-info">
+                <p class="card-text">12 October 2023</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h1>Post 6</h1>
+                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

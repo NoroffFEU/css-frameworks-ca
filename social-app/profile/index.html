@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your user profile" />
+    <title>Project Homestead | User Profile</title>
+    <link rel="icon" type="image/x-icon" href="../../images/logo-light.png" />
+    <script
+      src="https://kit.fontawesome.com/40355c2075.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../dist/css/index.css" />
+  </head>
+  <body class="text-center bg-success">
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-lg bg-info" role="navigation">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav">
+            <a class="nav-link" href="/social-app/index.html">Log out</a>
+
+            <a class="nav-link" href="index.html">Profile</a>
+
+            <a class="nav-link" href="/social-app/feed/index.html">Feed</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--Header/User info-->
+    <header
+      class="container d-flex align-items-center flex-wrap-reverse mx-auto"
+      style="max-width: 800px"
+    >
+      <div class="col-xs-6 col mb-2">
+        <h1 class="text-white m-4 display-3">Username</h1>
+        <div class="row d-flex justify-content-center">
+          <div class="col-4">
+            <p class="text-white mb-0 h2">12</p>
+            <p class="text-white">Projects</p>
+          </div>
+          <div class="col-4">
+            <p class="text-white mb-0 h2">340</p>
+            <p class="text-white">Followers</p>
+          </div>
+          <div class="col-4">
+            <p class="text-white mb-0 h2">640</p>
+            <p class="text-white">Following</p>
+          </div>
+        </div>
+        <p class="text-white mt-4">
+          A dedicated DIY enthusiast who loves to turn everyday materials into
+          creative projects. Whether it's crafting, woodworking, or home
+          improvements, I enjoy the satisfaction of making things by hand.
+        </p>
+        <button class="w-75 mt-3 btn btn-lg btn-warning" type="submit">
+          Follow +
+        </button>
+      </div>
+
+      <div class="col col-xs-6 position-relative m-auto">
+        <img
+          src="/images/profile-pic.jpg"
+          alt="profile image"
+          style="opacity: 80%; object-fit: cover"
+          height="400"
+          width="350"
+        />
+        <div
+          class="col position-absolute"
+          style="margin-top: -75px; width: 100%"
+        >
+          <a href="/social-app/index.html"
+            ><img
+              src="/images/logo-dark.png"
+              alt="logo"
+              width="100"
+              height="100"
+          /></a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container w-100 m-auto">
+      <div class="container w-100">
+        <div class="col-xs-12 col-sm-11 col-lg-8 col-xl-6 m-auto mt-4">
+          <div class="card shadow-sm">
+            <img
+              src="/images/post-1.jpg"
+              alt="post 1"
+              height="150"
+              style="object-fit: cover"
+            />
+            <div class="card-body bg-info" style="height: 100px">
+              <p class="card-text">12 October 2023</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h1>Post 1</h1>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-11 col-lg-8 col-xl-6 m-auto mt-4">
+          <div class="card shadow-sm">
+            <img
+              src="/images/post-2.jpg"
+              alt="post 1"
+              height="150"
+              style="object-fit: cover"
+            />
+            <div class="card-body bg-info" style="height: 100px">
+              <p class="card-text">12 October 2023</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h1>Post 2</h1>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-11 col-lg-8 col-xl-6 m-auto mt-4">
+          <div class="card shadow-sm">
+            <img
+              src="/images/post-3.jpg"
+              alt="post 1"
+              height="150"
+              style="object-fit: cover"
+            />
+            <div class="card-body bg-info" style="height: 100px">
+              <p class="card-text">12 October 2023</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <h1>Post 3</h1>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

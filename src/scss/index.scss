@@ -1,1 +1,133 @@
+// Importing variables and Bootstrap styles
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+// Base body styles
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+  }
+
+  // Background styling for main content area
+.background {
+    background: url('/Images/background.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+// Navbar styles
+  .navbar {
+    background-color: $background-color;
+  
+    .navbar-brand,
+    .nav-link {
+      color: $navbar-link-color;
+      font-size: $navbar-link-font-size;
+      &:hover, &:focus {
+        color: darken($navbar-link-color, 10%);
+        text-decoration: underline;
+      }
+    }
+    .btn-outline-danger {
+        margin-left: .5rem;
+    
+        &:hover {
+          background-color: darken(#dc3545, 10%);
+          border-color: darken(#dc3545, 10%);
+          color: #fff;
+        }
+      }
+  }
+
+  // Authentication card styles
+.auth-card {
+    background-color: $background-color;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+  
+    .form-label {
+      color: $secondary-color;
+    }
+  
+    .btn-primary {
+      background-color: $primary-color;
+      border: none;
+      margin-bottom: 10px;
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  .search-bar,
+.sort-select {
+  margin-bottom: 1rem;
+}
+
+.profile-header {
+    text-align: center;
+  
+    .profile-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+  
+    .username {
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+  
+    .follow-btn {
+      background-color: $primary-color;
+      border: none;
+      margin-bottom: 1rem;
+  
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  
+    .followers-count {
+      span {
+        color: $secondary-color;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  
+    .post-thumbnail {
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      transition: transform 0.3s ease-in-out;
+      margin: 0 auto;
+  
+      img {
+        border-radius: 0.25rem;
+      }
+  
+      .post-title {
+        margin-top: 0.5rem;
+        text-align: center;
+      }
+  
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .card-img-top {
+    max-height: 600px;
+    object-fit: cover;
+  }

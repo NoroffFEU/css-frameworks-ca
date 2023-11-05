@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed page</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+  </head>
+  <body>
+    <!-- Navigation bar with responsive toggler for smaller screens -->
+    <header class="navbar navbar-expand-lg">
+      <nav class="container">
+        <a class="navbar-brand" href="/feed/index.html">Feed</a>
+        <!-- Toggler button appears on small screens to show the navigation items -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/index.html">Profile</a>
+            </li>
+          </ul>
+          <!-- Search form -->
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+            <a
+              href="/index.html"
+              class="btn btn-outline-danger my-2 my-sm-0 ml-2"
+              >Logout</a
+            >
+          </form>
+        </div>
+      </nav>
+    </header>
+    <!-- Main container for page content -->
+    <main class="container my-4">
+      <!-- Form for searching posts with inline Bootstrap classes -->
+      <form class="form-inline mb-4">
+        <input
+          class="form-control mb-2 mr-sm-2"
+          type="search"
+          placeholder="Search posts"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+
+      <!-- Dropdown for sorting posts -->
+      <div class="mb-4">
+        <label for="sortOptions" class="mr-2">Sort by:</label>
+        <select class="custom-select w-auto" id="sortOptions">
+          <option selected>Latest</option>
+          <option value="1">Oldest</option>
+          <option value="2">Most Liked</option>
+        </select>
+      </div>
+
+      <!-- New Post Form -->
+      <form class="mb-4">
+        <div class="form-group">
+          <label for="postContent">Create a New Post</label>
+          <textarea
+            class="form-control"
+            id="postContent"
+            rows="3"
+            placeholder="What's on your mind?"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
+
+      <!-- Posts Thumbnails -->
+      <div class="row">
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img src="/Images/profilefeed.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img src="/Images/profilefeed.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img src="/Images/profilefeed.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card">
+            <img src="/Images/profilefeed.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Post Title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer py-3 bg-light">
+      <div class="container text-center">
+        <span>© 2023 CSS Frameworks</span>
+      </div>
+    </footer>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

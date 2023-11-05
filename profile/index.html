@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile page</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+  </head>
+  <body>
+    <!-- Navigation bar with responsive toggler for smaller screens -->
+    <header class="navbar navbar-expand-lg">
+      <nav class="container">
+        <a class="navbar-brand" href="/feed/index.html">Feed</a>
+        <!-- Toggler button appears on small screens to show the navigation items -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/index.html">Profile</a>
+            </li>
+          </ul>
+          <!-- Search form -->
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+            <a
+              href="/index.html"
+              class="btn btn-outline-danger my-2 my-sm-0 ml-2"
+              >Logout</a
+            >
+          </form>
+        </div>
+      </nav>
+    </header>
+    <!-- Main profile content area -->
+    <main class="container py-3">
+      <div class="row profile-header text-center">
+        <div class="col-12">
+          <img
+            src="/Images/player-quote.jpg"
+            alt="Profile Image"
+            class="profile-image rounded-circle"
+          />
+          <h2 class="username">Username</h2>
+          <button class="btn btn-primary follow-btn">Follow</button>
+          <div class="followers-count">
+            <span><strong>120</strong> followers</span> ·
+            <span><strong>150</strong> following</span>
+          </div>
+        </div>
+      </div>
+      <!-- Section for posts -->
+      <div class="row">
+        <div class="col-12">
+          <h3 class="mt-4">Posts</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="post-thumbnail">
+            <img src="/Images/profilefeed.jpg" alt="Post 1" class="img-fluid" />
+            <h4 class="post-title">Post Title</h4>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="post-thumbnail">
+            <img src="/Images/profilefeed.jpg" alt="Post 2" class="img-fluid" />
+            <h4 class="post-title">Post Title</h4>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="post-thumbnail">
+            <img src="/Images/profilefeed.jpg" alt="Post 3" class="img-fluid" />
+            <h4 class="post-title">Post Title</h4>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="post-thumbnail">
+            <img src="/Images/profilefeed.jpg" alt="Post 4" class="img-fluid" />
+            <h4 class="post-title">Post Title</h4>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="post-thumbnail">
+            <img src="/Images/profilefeed.jpg" alt="Post 5" class="img-fluid" />
+            <h4 class="post-title">Post Title</h4>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="post-thumbnail">
+            <img src="/Images/profilefeed.jpg" alt="Post 6" class="img-fluid" />
+            <h4 class="post-title">Post Title</h4>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-3 bg-light">
+      <div class="container text-center">
+        <span class="text-muted">© 2023 CSS Frameworks</span>
+      </div>
+    </footer>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -3,10 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <title>Document</title>
+    
+    <title>CollectiVerse | Log in</title>
 </head>
 <body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fs-1 ms-4" href="index.html">CollectiVerse</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                        <a class="nav-link" href="/feed/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="/profile/index.html">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     
+    <main>
+
+        <h3 class="card-text text-center mt-5">Sign in</h3>
+        
+        <div class="container mt-3">
+            <form action="/profile" method="get">
+                <div class="form-group mb-4">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required minlength="8">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Log in</button>
+                </div>
+            </form>
+        </div>
+        
+        <h3 class="card-text text-center mt-5">Or Register Here!</h3>
+
+        <div class="container">
+            <form action="/profile" method="get">
+                <div class="form-group mb-4">
+                    <label for="exampleInputName1">Username</label>
+                    <input type="name" class="form-control" id="exampleInputName1">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="exampleInputEmail2">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="exampleInputPassword2">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" required minlength="8">
+                </div>
+                <div class="form-group mb-4">
+                    <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputConfirmPassword1" required minlength="8">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="container">
+            <h3 class="card-text text-center mt-5">Create a new post</h3>
+
+            <form action="submit">
+                <div class="mb-3">
+                    <label for="exampleImputTitle1">Title</label>
+                    <input type="title" class="form-control" id="exampleImputTitle1" placeholder="Enter Title">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1">Content</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your content"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </div>
+            </form>
+        </div>
+
+
+
+        <h3 class="card-text text-center mt-5">For you</h3>
+
+        <div class="container mt-5 mb-5 gap-5 d-flex justify-content-center ">
+
+            <form class="form-inline">
+                <div class="input-group">
+                    <input type="search" class="form-control" aria-label="Search" aria-describedby="search-button" placeholder="Search">
+                </div>
+            </form>
+
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort by
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Newest</a>
+                <a class="dropdown-item" href="#">Oldest</a>
+                <a class="dropdown-item" href="#">Alphabetical</a>
+                <a class="dropdown-item" href="#">Most Popular</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card h-80 my-3">
+                        <img src="" alt="">
+                        <div class="card-body py-2 px-3">
+                            <h2 class="card-title">TEST</h2>
+                            <div class="d-flex flex-row mb-1">
+                                <img src="" alt="">
+                                <p class="mb-0 d-flex align-items-center">OLA NORMANN</p>
+                            </div>
+                        </div>
+                        <div class="card-body text-end">
+                            <small class="text-secondary">July 3, 2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

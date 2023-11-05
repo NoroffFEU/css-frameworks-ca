@@ -1,0 +1,18 @@
+$primary: red;
+
+
+@import "variables";
+@import "buttons";
+@import "images";
+
+
+.btn-custom {
+  @extend .btn-warning;
+  
+  &:hover {
+    @extend .btn-danger;
+  }
+}
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/bootstrap";

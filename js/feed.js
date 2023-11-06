@@ -5,27 +5,10 @@ import { API_BASE_URL } from './util.js';
 const username = localStorage.getItem('userName');
 const nameofuserDiv = document.querySelector('.nameofuser');
 
-
-
 nameofuserDiv.textContent = username;
 
-// Function to handle search when Enter key is pressed
-function handleSearchEnter(event) {
-    if (event.key === 'Enter') {
-      const searchInput = document.getElementById('searchInput');
-      const searchTerm = searchInput.value.trim().toLowerCase();
-  
-      // Filter posts that match the search term
-      const filteredPosts = postsData.filter((post) => {
-        const postTitle = post.title.toLowerCase();
-        const postBody = post.body.toLowerCase();
-        return postTitle.includes(searchTerm) || postBody.includes(searchTerm);
-      });
-  
-      // Display the filtered posts
-      displayPosts(filteredPosts);
-    }
-}
+
+
 
 // Function to format a date to the EU format (dd/mm/yyyy)
 import { formatDate } from './util.js';
@@ -219,6 +202,32 @@ function openUserProfile(authorName) {
   // Redirect to the user's profile page and pass the authorName as a query parameter
   window.location.href = `/profile/index.html?authorName=${authorName}`;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const searchInput = document.getElementById('searchInput');
+
+  // Add an event listener to the search input element if it exists
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+  
+      // Filter posts that match the search query
+      const filteredPosts = postsData.filter((post) => {
+        // Check if post.body is not null or undefined before applying toLowerCase()
+        return (
+          post.title.toLowerCase().includes(searchTerm) ||
+          (post.body && post.body.toLowerCase().includes(searchTerm)) ||
+          post.author.name.toLowerCase().includes(searchTerm)
+        );
+      });
+  
+      // Display the filtered posts
+      displayPosts(filteredPosts);
+    });
+  }
+  
+  
+});
 
 
 function viewPost(postId) {

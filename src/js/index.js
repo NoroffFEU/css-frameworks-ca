@@ -1,5 +1,4 @@
 import * as listeners from "./handlers/index.js";
-
 import * as templates from "./templates/index.js";
 import * as postMethods from "./api/posts/index.js";
 
@@ -43,6 +42,84 @@ switch (location.pathname) {
     default:
 }
 
+//---------------------------------------------------------------------------
+// Code to click on view more link and see post details:
+
+if (location.pathname.includes("/post/index.html")) {
+    // Executes for the post detail page
+    const urlParams = new URLSearchParams(location.search);
+    const postId = urlParams.get("id");
+
+    if (postId) {
+        async function renderPost() {
+            // Fetch the specific post by ID using the getPost method
+            const post = await postMethods.getPost(postId);
+            const container = document.querySelector("#postContainer");
+            templates.renderPostTemplate(post, container);
+            console.log(post);
+
+            // Get the current user's username from local storage
+            const userName = localStorage.getItem("userName");
+            // Trim it so it does not have the quotation marks on it
+            const currentUserName = userName ? userName.trim().replace(/^"(.*)"$/, "$1") : null;
+            console.log("currentUserName:", currentUserName);
+
+            const authorName = post.author.name.trim();
+            console.log("authorName:", authorName);
+
+            //check if the users token matches the post owners token
+            if (currentUserName === post.author.name) {
+                const removePostButton = document.querySelector("#removePostButton");
+                const updatePostButton = document.querySelector("#updatePostButton");
+
+                if (removePostButton && updatePostButton) {
+                    removePostButton.style.display = "block";
+                    updatePostButton.style.display = "block";
+                    removePostButton.addEventListener("click", async (event) => {
+                        event.preventDefault();
+                        // Remove post
+                        try {
+                            await postMethods.removePost(postId);
+                            // Message indicating the post has been deleted.
+                            alert("Post has been deleted.");
+                            // Remove the post UI from the page.
+                            const postContainer = document.querySelector("#postContainer");
+                            if (postContainer) {
+                                templates.afterDeleteTemplate();
+                            }
+                        } catch (error) {
+                            console.error("Error deleting post:", error);
+                            alert("An error occurred while deleting the post.");
+                        }
+                    });
+                }
+            } else {
+                const removePostButton = document.querySelector("#removePostButton");
+                const updatePostButton = document.querySelector("#updatePostButton");
+                if (removePostButton && updatePostButton) {
+                    removePostButton.style.display = "none";
+                    updatePostButton.style.display = "none";
+                }
+            }
+        }
+
+        renderPost();
+    } else {
+        templates.afterDeleteTemplateError();
+    }
+} else {
+    // Executes for the posts/index.html page
+    // Rendering the list of posts
+    async function renderPosts() {
+        const posts = await postMethods.getPosts();
+        console.log(posts);
+        const container = document.querySelector("#postList");
+        templates.renderPostTemplates(posts, container);
+    }
+
+    renderPosts();
+}
+
 //--------------------------------------------------------------
 // Testing templates for rendering/showing POST and POSTS
 
@@ -72,63 +149,6 @@ switch (location.pathname) {
 // }
 
 // renderPosts();
-
-//---------------------------------------------------------------------------
-// Code to click on view more link and see post details:
-
-if (location.pathname.includes("/post/index.html")) {
-    // Executes for the post detail page
-    const urlParams = new URLSearchParams(location.search);
-    const postId = urlParams.get("id");
-
-    if (postId) {
-        async function renderPost() {
-            // Fetch the specific post by ID using the getPost method
-            const post = await postMethods.getPost(postId);
-            const container = document.querySelector("#postContainer");
-            templates.renderPostTemplate(post, container);
-            console.log(post);
-            const removePostButton = document.querySelector("#removePostButton");
-            console.log(removePostButton);
-
-            if (removePostButton) {
-                removePostButton.addEventListener("click", async (event) => {
-                    console.log(removePostButton);
-                    event.preventDefault();
-                    // Remove post
-                    try {
-                        await postMethods.removePost(postId);
-                        // Message indicating the post has been deleted.
-                        alert("Post has been deleted.");
-                        // Remove the post UI from the page.
-                        const postContainer = document.querySelector("#postContainer");
-                        if (postContainer) {
-                            templates.afterDeleteTemplate();
-                        }
-                    } catch (error) {
-                        console.error("Error deleting post:", error);
-                        alert("An error occurred while deleting the post.");
-                    }
-                });
-            }
-        }
-
-        renderPost();
-    } else {
-        templates.afterDeleteTemplateError();
-    }
-} else {
-    // Executes for the posts/index.html page
-    // Rendering the list of posts
-    async function renderPosts() {
-        const posts = await postMethods.getPosts();
-        console.log(posts);
-        const container = document.querySelector("#postList");
-        templates.renderPostTemplates(posts, container);
-    }
-
-    renderPosts();
-}
 
 //---------------------------------------------------------------------------
 //The code I had for rendering and updating posts before implementing removal of posts

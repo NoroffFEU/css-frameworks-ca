@@ -30,6 +30,8 @@ export async function login(profile) {
     console.log("This is a new user logged in, with a token", accessToken, user);
     storage.save("token", accessToken); // Saves the token seperatly
     storage.save("profile", user); // saves all the other details apart from the token as user
+    console.log(user.name);
+    storage.save("userName", user.name);
 
     alert("You are now logged in");
     window.location.href = "/posts/index.html";

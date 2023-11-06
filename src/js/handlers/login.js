@@ -4,6 +4,7 @@ import { login } from "../api/auth/login.js";
 
 export function setLoginFormListener() {
     const form = document.querySelector("#loginForm");
+
     //this says: proceed if there is a form. If it fails to find the loginform it won't do anything
     if (form) {
         form.addEventListener("submit", (event) => {

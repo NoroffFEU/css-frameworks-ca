@@ -27,7 +27,13 @@ export function postTemplateForFeed(postData) {
     profileImageDiv.className = "mx-2 mb-2";
 
     const profileImage = document.createElement("img");
-    profileImage.src = "../images/profile-1-harry-cunningham-EPi3TRQc5Z0-unsplash.jpg";
+    profileImage.src = postData.author.avatar;
+
+    if (!postData.author.avatar) {
+        // If an avatar link is provided
+        profileImage.src = "/images/default-profile-image.jpg";
+    }
+
     profileImage.alt = "Profile image";
     profileImage.title = "Profile image";
     profileImage.width = "100%";
@@ -39,8 +45,8 @@ export function postTemplateForFeed(postData) {
     nameAndTitleDiv.className = "nameAndTitleDiv";
 
     const nameHeading = document.createElement("h1");
-    nameHeading.className = "feed-heading feed-name mb-0 fs-3";
-    nameHeading.textContent = "Peter Peterson";
+    nameHeading.className = "feed-heading feed-name mb-0 fs-4";
+    nameHeading.textContent = postData.author.name;
 
     const titleParagraph = document.createElement("p");
     titleParagraph.className = "feed-heading feed-title fs-2 lh-1";
@@ -159,7 +165,13 @@ export function postTemplateDetails(postData) {
     profileImageDiv.className = "mx-2 mb-2";
 
     const profileImage = document.createElement("img");
-    profileImage.src = "../images/profile-1-harry-cunningham-EPi3TRQc5Z0-unsplash.jpg";
+    profileImage.src = postData.author.avatar;
+
+    if (!postData.author.avatar) {
+        // If an avatar link is provided
+        profileImage.src = "/images/default-profile-image.jpg";
+    }
+
     profileImage.alt = "Profile image";
     profileImage.title = "Profile image";
     profileImage.width = "100%";
@@ -171,8 +183,8 @@ export function postTemplateDetails(postData) {
     nameAndTitleDiv.className = "nameAndTitleDiv";
 
     const nameHeading = document.createElement("h1");
-    nameHeading.className = "feed-heading feed-name mb-0 fs-3";
-    nameHeading.textContent = "Peter Peterson";
+    nameHeading.className = "feed-heading feed-name mb-0 fs-4";
+    nameHeading.textContent = postData.author.name;
 
     const titleParagraph = document.createElement("p");
     titleParagraph.className = "feed-heading feed-title fs-2 lh-1";
@@ -217,6 +229,7 @@ export function postTemplateDetails(postData) {
     buttonDiv.className = "buttonDiv d-grid align-items-center mb-3";
 
     const updateButton = document.createElement("a");
+    updateButton.id = "updatePostButton";
     updateButton.href = `/post/edit/?id=${postData.id}`;
     updateButton.className = "btn btn-sm btn-secondary";
     updateButton.innerHTML = '<i class="bi bi-pencil-square"></i> Update';

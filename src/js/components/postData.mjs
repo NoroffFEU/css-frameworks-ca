@@ -42,8 +42,10 @@ export async function postData(url, formData, divForError) {
         if (finishedResponse.statusCode > 399) {
             error = finishedResponse.errors[0].message
             throw error;
-        } else if (finishedResponse.accessToken && !token) {
+        } 
+        if (finishedResponse.accessToken && !token) {
             localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`);
+            localStorage.setItem('userName', `${finishedResponse.name}`);
         }
         if (goToPage) {
             window.location.href = [goToPage];   

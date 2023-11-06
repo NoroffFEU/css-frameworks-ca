@@ -22,12 +22,15 @@ for (let i = 0; i < formInputs.length; i++) {
 
 import { getData } from "./components/getData.mjs";
 
+const allPostsDom = document.querySelector(".all-posts");
 const token = localStorage.getItem("accessToken");
 const baseUrl = "https://api.noroff.dev/api/v1";
 let endpoint;
+let queries;
 
 
 endpoint = "/social/posts";
-const fullURL = `${baseUrl}${endpoint}`;
-getData(fullURL, token, posts);
+queries = "?_author=true&_comments=true&_reactions=true";
+const fullURL = `${baseUrl}${endpoint}${queries}`;
+getData(fullURL, token, allPostsDom, "print");
 

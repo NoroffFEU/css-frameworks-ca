@@ -16,7 +16,6 @@ const trueChecker = arr => arr.every(Boolean);
  */
 export function formCheck(inputs, btn) {
     const trueCheckerArr = [];
-    console.log("hello")
     for (let i = 0; i < inputs.length; i++) {
 
         const inputsValidity = inputs[i].validity.valid;

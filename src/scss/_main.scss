@@ -10,8 +10,9 @@ h1 {
     font-size: 6rem;
 }
 
-.yellow {
+.logo-yellow {
     color: #FFD723;
+    font-family: 'Baloo 2', sans-serif;
 }
 
 nav {
@@ -22,4 +23,22 @@ nav {
 .navbar a:not(.logo) {
     color: var(--bs-primary);
     padding-left: 10px ;
+}
+
+/* footer */
+.logo-pink {
+    color: #FF85A0;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+footer {
+    background-color: #0F0F0F;
+    border-top: 2px solid var(--bs-primary);
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer .logo-pink,
+footer .logo-yellow {
+    font-size: 1.5rem;
+    font-weight: 800;
 }

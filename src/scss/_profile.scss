@@ -8,3 +8,25 @@
     font-weight: 800;
     font-size: 2rem;
 }
+
+main {
+    
+    
+    
+}
+
+.main-content {
+    border-left: 2px solid var(--bs-primary);
+    border-right: 2px solid var(--bs-primary);
+    background-color: #0F0F0F;
+    height: 100vh;
+}
+
+.profile-background img{
+    width: 100%;
+    height: auto;
+}
+
+footer p {
+    color: var(--bs-primary);
+}

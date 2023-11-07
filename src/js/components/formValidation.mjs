@@ -1,6 +1,6 @@
 /**
  * 
- * @param {arrayOfBooleans} arr 
+ * @param {arrayOfBooleans} arr - array of boolean values
  * @returns false, unless all Booleans are true
  */
 const trueChecker = arr => arr.every(Boolean);

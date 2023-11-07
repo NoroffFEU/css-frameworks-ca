@@ -34,3 +34,9 @@ queries = "?_author=true&_comments=true&_reactions=true";
 const fullURL = `${baseUrl}${endpoint}${queries}`;
 getData(fullURL, token, allPostsDom, "print");
 
+const sortByInp = document.querySelector("#sort-by");
+
+sortByInp.addEventListener("change", (e) => {
+    allPostsDom.innerHTML = "";
+    getData(fullURL, token, allPostsDom, "sort", sortByInp.value)
+})

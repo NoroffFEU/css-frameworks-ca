@@ -110,7 +110,8 @@ export function searchArray(postsArray, domElement, searchQuery) {
     console.log(searchIn);
     if (searchIn === "title") {
         const filteredArray = postsArray.filter((searchIn) => postsArray.toLowerCase().includes(searchQuery.toLowerCase()));
-
+        // Working on this, but taking a break. I might set up another switch
+        // where I either filter or don't filter based on what's in the searchkeys attribute of my query
     }
     
 }

@@ -35,8 +35,17 @@ const fullURL = `${baseUrl}${endpoint}${queries}`;
 getData(fullURL, token, allPostsDom, "print");
 
 const sortByInp = document.querySelector("#sort-by");
+const searchFrom = document.querySelector(".search-form");
+const searcInp = document.querySelector("#search-input");
 
 sortByInp.addEventListener("change", (e) => {
     allPostsDom.innerHTML = "";
     getData(fullURL, token, allPostsDom, "sort", sortByInp.value)
 })
+
+searcInp.onkeyup = () => {
+    const willBeSearchParams = new FormData(searchFrom);
+    const searchParams = {};
+    willBeSearchParams.forEach((value, key) => (searchParams[key] = value));    
+    getData(fullURL, token, allPostsDom, "search", searchParams)
+};

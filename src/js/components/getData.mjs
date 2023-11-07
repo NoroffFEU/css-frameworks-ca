@@ -1,5 +1,6 @@
 import { printFeed } from "./getActions.mjs";
 import { sortArray } from "./getActions.mjs";
+import { searchArray } from "./getActions.mjs";
 
 
 export async function getData(url, token, domElement, action, actionParam) {
@@ -16,8 +17,7 @@ export async function getData(url, token, domElement, action, actionParam) {
         const finishedResponse = await fetchResponse.json();
         switch (action) {
             case "print":
-                // Will run script for printing the data 
-                // in HTML
+                // Will run script for printing the data in HTML
                 printFeed(finishedResponse, domElement);
                 break;
             case "sort": {
@@ -29,6 +29,7 @@ export async function getData(url, token, domElement, action, actionParam) {
             case "search": {
                 // Will search the array, then print
                 // "actionParam" will contain the search query
+                searchArray(finishedResponse, domElement, actionParam)
             }
             case "filter": {
                 // Will filter, then print

@@ -101,3 +101,16 @@ export function sortArray(postsArray, domElement, sortBy){
             break;
     }
 };
+
+
+
+export function searchArray(postsArray, domElement, searchQuery) {
+    console.log(searchQuery);
+    const searchIn = searchQuery.searchKeys;
+    console.log(searchIn);
+    if (searchIn === "title") {
+        const filteredArray = postsArray.filter((searchIn) => postsArray.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    }
+    
+}

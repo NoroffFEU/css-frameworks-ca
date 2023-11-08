@@ -67,7 +67,7 @@ if (location.pathname.includes("/post/index.html")) {
             const authorName = post.author.name.trim();
             console.log("authorName:", authorName);
 
-            //check if the users token matches the post owners token
+            //check if the current username from local storage matches the post author name in api
             if (currentUserName === post.author.name) {
                 const removePostButton = document.querySelector("#removePostButton");
                 const updatePostButton = document.querySelector("#updatePostButton");
@@ -112,14 +112,47 @@ if (location.pathname.includes("/post/index.html")) {
     // Rendering the list of posts
     async function renderPosts() {
         const posts = await postMethods.getPosts();
-        console.log(posts);
+        const goodPosts = postMethods.filterBadPostData(posts);
+        console.log(goodPosts);
         const container = document.querySelector("#postList");
-        templates.renderPostTemplates(posts, container);
+        templates.renderPostTemplates(goodPosts, container);
     }
 
     renderPosts();
 }
 
+//---------------------------------------------------------------
+// Testing functions for filtering, sorting and that stuff
+
+// function isPostTitleGood(post) {
+//     return post.title.length > 3;
+// }
+
+// function doesPostHaveMedia(post) {
+//     return Boolean(post.media && post.media.length);
+// }
+
+// function doesPostHaveBody(post) {
+//     return post.body;
+// }
+
+// function doesPostMeetCriterias(post) {
+//     return isPostTitleGood(post) && doesPostHaveMedia(post) && doesPostHaveBody(post);
+// }
+
+// function filterBadPostData(posts) {
+//     return posts.filter(doesPostMeetCriterias);
+// }
+
+// async function test() {
+//     const posts = await postMethods.getPosts();
+
+//     const goodPosts = filterBadPostData(posts);
+
+//     console.log("goodPosts:", goodPosts);
+// }
+
+// test();
 //--------------------------------------------------------------
 // Testing templates for rendering/showing POST and POSTS
 

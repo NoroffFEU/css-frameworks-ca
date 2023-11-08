@@ -18,13 +18,13 @@ export function postTemplateForFeed(postData) {
     post.className = "card feed-post col-12 mb-3 pb-3";
 
     const innerDiv = document.createElement("div");
-    innerDiv.className = "col-11 mx-auto pt-3";
+    innerDiv.className = "innerDiv col-11 mx-auto pt-3";
 
     const dFlexDiv = document.createElement("div");
-    dFlexDiv.className = "d-flex";
+    dFlexDiv.className = "dFlexDiv d-flex";
 
     const profileImageDiv = document.createElement("div");
-    profileImageDiv.className = "mx-2 mb-2";
+    profileImageDiv.className = "profileImageDiv mx-2 mb-2";
 
     const profileImage = document.createElement("img");
     profileImage.src = postData.author.avatar;
@@ -37,7 +37,7 @@ export function postTemplateForFeed(postData) {
     profileImage.alt = "Profile image";
     profileImage.title = "Profile image";
     profileImage.width = "100%";
-    profileImage.className = "card shadow-sm profile-image";
+    profileImage.className = "profileImage card shadow-sm profile-image";
 
     profileImageDiv.appendChild(profileImage);
 
@@ -45,11 +45,11 @@ export function postTemplateForFeed(postData) {
     nameAndTitleDiv.className = "nameAndTitleDiv";
 
     const nameHeading = document.createElement("h1");
-    nameHeading.className = "feed-heading feed-name mb-0 fs-4";
+    nameHeading.className = "nameHeading feed-heading feed-name mb-0 fs-4";
     nameHeading.textContent = postData.author.name;
 
     const titleParagraph = document.createElement("p");
-    titleParagraph.className = "feed-heading feed-title fs-2 lh-1";
+    titleParagraph.className = "titleParagraph feed-heading feed-title fs-2 lh-1";
     titleParagraph.textContent = postData.title;
 
     nameAndTitleDiv.appendChild(nameHeading);
@@ -61,73 +61,98 @@ export function postTemplateForFeed(postData) {
     innerDiv.appendChild(dFlexDiv);
 
     const cardDiv = document.createElement("div");
-    cardDiv.className = "card shadow-sm bg-light";
+    cardDiv.className = "cardDiv card shadow-sm bg-light";
 
     if (postData.media) {
         const workoutImage = document.createElement("img");
         workoutImage.src = postData.media; // Use the API-provided image URL
         workoutImage.alt = `Image from post with title: ${postData.title}`;
         workoutImage.title = "Workout post image";
-        workoutImage.className = "bd-placeholder-img card-img-top ";
+        workoutImage.className = "workoutImage bd-placeholder-img card-img-top ";
         workoutImage.width = "100%";
         cardDiv.appendChild(workoutImage);
     }
-    // else {
-    //     // workoutImage.src = "../images/man-running-jenny-hill-mQVWb7kUoOE-unsplash.jpg";
-    //     workoutImage.src = "https://picsum.photos/600/400"; // Use the default image URL
-    // }
 
     const cardBodyDiv = document.createElement("div");
-    cardBodyDiv.className = "card-body";
+    cardBodyDiv.className = "cardBodyDiv card-body";
 
     const cardTextParagraph = document.createElement("p");
-    cardTextParagraph.className = "card-text";
-    // cardTextParagraph.textContent =
-    //     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores doloribus consequuntur tenetur non sapiente culpa assumenda nobis totam in animi dignissimos corrupti.";
+    cardTextParagraph.className = "cardTextParagraph card-text";
     cardTextParagraph.textContent = postData.body;
 
     //Button view more in posts in feed-----------------------------------------
     const buttonDiv = document.createElement("div");
-    buttonDiv.className = "d-flex justify-content-between align-items-center mb-3";
+    buttonDiv.className = "buttonDiv d-flex justify-content-between align-items-center mb-3";
     const viewMoreButton = document.createElement("a");
     viewMoreButton.href = `/post/index.html?id=${postData.id}`;
-    viewMoreButton.className = "btn btn-sm btn-secondary";
+    viewMoreButton.className = "viewMoreButton btn btn-sm btn-secondary w-50";
     viewMoreButton.textContent = "View more";
     //---------------------------------------
 
     const timeSmall = document.createElement("small");
-    timeSmall.className = "text-muted text-end";
-    timeSmall.textContent = "9 mins";
+    timeSmall.className = "timeSmall text-muted text-end";
+    timeSmall.textContent = postData.created;
+
+    // This is where the commentArea begin-------------------------------------------------------
+    const comments = postData.comments;
+
+    const commentContainer = document.createElement("div");
+    commentContainer.className = "commentContainer";
+
+    const commentCount = document.createElement("div");
+    commentCount.className = " ms-1 p-2 w-100 mb-0";
+
+    if (comments && comments.length > 0) {
+        commentCount.innerHTML = `<i class="bi bi-chat-dots-fill fs-5"></i> ${comments.length}`;
+
+        for (let i = 0; i < 2 && i < comments.length; i++) {
+            const comment = comments[i];
+
+            const commentDiv = document.createElement("div");
+            commentDiv.className = "commentDiv d-flex mb-3";
+
+            const commentImageDiv = document.createElement("div");
+            commentImageDiv.className = "commentImageDiv";
+
+            const commentImage = document.createElement("img");
+            commentImage.className = "commentImage card shadow-sm profile-image";
+
+            if (comment.author.avatar) {
+                commentImage.src = comment.author.avatar;
+            } else {
+                commentImage.src = "/images/default-profile-image.jpg";
+            }
+
+            const commentParagraph = document.createElement("p");
+            commentParagraph.className = "commentParagraph comment ms-1 p-2 w-100 mb-0";
+            commentParagraph.textContent = comment.body;
+
+            commentDiv.appendChild(commentImageDiv);
+            commentImageDiv.appendChild(commentImage);
+            commentDiv.appendChild(commentParagraph);
+            commentContainer.appendChild(commentDiv);
+        }
+    } else {
+        commentCount.innerHTML = `<i class="bi bi-chat-dots-fill fs-5"></i> <span class=fs-6> 0 </span>`;
+    }
 
     buttonDiv.appendChild(viewMoreButton);
+    buttonDiv.appendChild(commentCount);
     buttonDiv.appendChild(timeSmall);
-
-    const commentDiv = document.createElement("div");
-    commentDiv.className = "d-flex mb-3";
-
-    const userImageDiv = document.createElement("div");
-    userImageDiv.appendChild(profileImage.cloneNode(true));
-
-    const commentParagraph = document.createElement("p");
-    commentParagraph.className = "comment ms-1 p-2 w-100 mb-0";
-    commentParagraph.textContent = "Hi there! Nice work! Would love to hear more about your marathon training! DM me!";
-
-    commentDiv.appendChild(userImageDiv);
-    commentDiv.appendChild(commentParagraph);
-
+    //------------------------------------------------------------------------------------------
+    //Add comment input area
     const addCommentDiv = document.createElement("div");
-    addCommentDiv.className = "add-comment input-group shadow-sm mb-1";
+    addCommentDiv.className = "addCommentDiv add-comment input-group shadow-sm mb-1";
 
     const commentButton = document.createElement("button");
     commentButton.type = "button";
     commentButton.id = "button-addon1";
-    commentButton.className = "btn btn-secondary";
-    // commentButton.textContent = "Comment";
+    commentButton.className = "commentButton btn btn-secondary";
     commentButton.innerHTML = `<i class="bi bi-chat-dots-fill fs-6"></i>`;
 
     const commentInput = document.createElement("input");
     commentInput.type = "text";
-    commentInput.className = "form-control";
+    commentInput.className = "commentInput form-control";
     commentInput.placeholder = "Give some positive feedback!";
     commentInput.setAttribute("aria-label", "Example text with button addon");
     commentInput.setAttribute("aria-describedby", "button-addon1");
@@ -137,10 +162,9 @@ export function postTemplateForFeed(postData) {
 
     cardBodyDiv.appendChild(cardTextParagraph);
     cardBodyDiv.appendChild(buttonDiv);
-    cardBodyDiv.appendChild(commentDiv);
+    cardBodyDiv.appendChild(commentContainer);
     cardBodyDiv.appendChild(addCommentDiv);
 
-    // cardDiv.appendChild(workoutImage);
     cardDiv.appendChild(cardBodyDiv);
 
     innerDiv.appendChild(cardDiv);
@@ -210,18 +234,12 @@ export function postTemplateDetails(postData) {
         workoutImage.width = "100%";
         cardDiv.appendChild(workoutImage);
     }
-    // else {
-    //     // workoutImage.src = "../images/man-running-jenny-hill-mQVWb7kUoOE-unsplash.jpg";
-    //     workoutImage.src = "https://picsum.photos/600/400"; // Use the default image URL
-    // }
 
     const cardBodyDiv = document.createElement("div");
     cardBodyDiv.className = "card-body";
 
     const cardTextParagraph = document.createElement("p");
     cardTextParagraph.className = "card-text";
-    // cardTextParagraph.textContent =
-    //     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores doloribus consequuntur tenetur non sapiente culpa assumenda nobis totam in animi dignissimos corrupti.";
     cardTextParagraph.textContent = postData.body;
 
     //Buttongroup for the post details page: ----------------------------------
@@ -235,39 +253,64 @@ export function postTemplateDetails(postData) {
     updateButton.innerHTML = '<i class="bi bi-pencil-square"></i> Update';
 
     const removeButton = document.createElement("button");
-    // removeButton.href = `/post/index.html?id=${postData.id}`;
-    // removeButton.href = "#";
     removeButton.className = "btn btn-sm btn-primary ms-2";
     removeButton.id = "removePostButton";
     removeButton.innerHTML = '<i class="bi bi-trash-fill"></i> Remove';
 
     buttonDiv.appendChild(updateButton);
     buttonDiv.appendChild(removeButton);
-    // console.log(removeButton);
 
     innerDiv.appendChild(buttonDiv);
     //Buttongroup finished---------------------------------------
 
     const timeSmall = document.createElement("small");
     timeSmall.className = "text-muted text-end";
-    timeSmall.textContent = "9 mins";
+    timeSmall.textContent = postData.created;
 
-    // buttonDiv.appendChild(viewMoreButton);
+    // This is where the commentArea begin-------------------------------------------------------
+    const comments = postData.comments;
+
+    const commentContainer = document.createElement("div");
+    commentContainer.className = "commentContainer";
+
+    const commentCount = document.createElement("div");
+    commentCount.className = " ms-1 p-2 w-100 mb-0";
+
+    if (comments && comments.length > 0) {
+        commentCount.innerHTML = `<i class="bi bi-chat-dots-fill fs-5"></i> ${comments.length}`;
+        comments.forEach((comment) => {
+            const commentDiv = document.createElement("div");
+            commentDiv.className = "commentDiv d-flex mb-3";
+
+            const commentImageDiv = document.createElement("div");
+            commentImageDiv.className = "commentImageDiv";
+
+            const commentImage = document.createElement("img");
+            commentImage.className = "commentImage card shadow-sm profile-image";
+
+            if (comment.author.avatar) {
+                commentImage.src = comment.author.avatar;
+            } else {
+                commentImage.src = "/images/default-profile-image.jpg";
+            }
+
+            const commentParagraph = document.createElement("p");
+            commentParagraph.className = "commentParagraph comment ms-1 p-2 w-100 mb-0";
+            commentParagraph.textContent = comment.body;
+
+            commentDiv.appendChild(commentImageDiv);
+            commentImageDiv.appendChild(commentImage);
+            commentDiv.appendChild(commentParagraph);
+            commentContainer.appendChild(commentDiv);
+        });
+    } else {
+        commentCount.innerHTML = `<i class="bi bi-chat-dots-fill fs-5"></i> <span class=fs-6> 0 </span>`;
+    }
+
+    buttonDiv.appendChild(commentCount);
     buttonDiv.appendChild(timeSmall);
-
-    const commentDiv = document.createElement("div");
-    commentDiv.className = "d-flex mb-3";
-
-    const userImageDiv = document.createElement("div");
-    userImageDiv.appendChild(profileImage.cloneNode(true));
-
-    const commentParagraph = document.createElement("p");
-    commentParagraph.className = "comment ms-1 p-2 w-100 mb-0";
-    commentParagraph.textContent = "Hi there! Nice work! Would love to hear more about your marathon training! DM me!";
-
-    commentDiv.appendChild(userImageDiv);
-    commentDiv.appendChild(commentParagraph);
-
+    //------------------------------------------------------------------------------------------
+    // Input area for adding comments inside cardBodyDiv
     const addCommentDiv = document.createElement("div");
     addCommentDiv.className = "add-comment input-group shadow-sm mb-1";
 
@@ -275,7 +318,6 @@ export function postTemplateDetails(postData) {
     commentButton.type = "button";
     commentButton.id = "button-addon1";
     commentButton.className = "btn btn-secondary";
-    // commentButton.textContent = "Comment";
     commentButton.innerHTML = `<i class="bi bi-chat-dots-fill fs-6"></i>`;
 
     const commentInput = document.createElement("input");
@@ -290,10 +332,9 @@ export function postTemplateDetails(postData) {
 
     cardBodyDiv.appendChild(cardTextParagraph);
     cardBodyDiv.appendChild(buttonDiv);
-    cardBodyDiv.appendChild(commentDiv);
+    cardBodyDiv.appendChild(commentContainer);
     cardBodyDiv.appendChild(addCommentDiv);
 
-    // cardDiv.appendChild(workoutImage);
     cardDiv.appendChild(cardBodyDiv);
 
     innerDiv.appendChild(cardDiv);

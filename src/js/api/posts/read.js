@@ -5,7 +5,7 @@ const action = "/posts";
 const method = "get"; //do not have to write this
 
 export async function getPosts() {
-    const getPostURL = `${API_SOCIAL_URL}${action}?_author=true&_comments=true`;
+    const getPostURL = `${API_SOCIAL_URL}${action}?_author=true&_comments=true&_reactions=true`;
 
     const response = await authFetch(getPostURL);
 
@@ -17,7 +17,7 @@ export async function getPost(id) {
     if (!id) {
         throw new Error("Get requires a postID");
     }
-    const getPostURL = `${API_SOCIAL_URL}${action}/${id}?_author=true&_comments=true`;
+    const getPostURL = `${API_SOCIAL_URL}${action}/${id}?_author=true&_comments=true&_reactions=true`;
 
     const response = await authFetch(getPostURL);
 

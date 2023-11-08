@@ -12,9 +12,9 @@ body, html {
 }
 
 .user-profile-picture {
-    top: 30%; /* Start at 50% from the top of main-content */
-    left: 50%; /* Start at 50% from the left of main-content */
-    transform: translate(-50%, -50%); /* Adjusts the position to center the element */
+    top: 30%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     z-index: 10;
 }
 
@@ -30,6 +30,12 @@ h1 {
 
 p {
     color: var(--bs-primary);
+}
+
+.baloo {
+    font-family: 'baloo 2', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .white {

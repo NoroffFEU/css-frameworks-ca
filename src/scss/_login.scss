@@ -9,23 +9,26 @@ body {
 }
 
 .login-h1 {
-    // border: 1px solid var(--bs-primary);
     width: 400px;
     display: block;
     background-color: #0F0F0F;
     border-radius: 10px;
+    color: #FF85A0;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 6rem;
 }
 
 .login-form {
     margin-top: 200px;
     width: 400px;
     padding: 0;
-    // background-color: #0F0F0F;
+    
 }
 
 .register-new-acc {
     text-decoration: none;
-    // padding: 10px;
+   
 }
 
 form.input {

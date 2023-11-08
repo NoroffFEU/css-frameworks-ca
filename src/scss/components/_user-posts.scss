@@ -1,0 +1,35 @@
+@use "../utilities/variables" as variables;
+
+.profile-pic-tiny{
+    height: 50px;
+}
+
+.profile-name-post{
+    font-weight: 500;
+    font-size: 0.7rem;
+}
+
+.all-user-posts{
+    border: 2px solid map-get($map: variables.$colors, $key:blue-dark );
+
+    .custom-border{
+        border: 2px solid map-get($map: variables.$colors, $key:blue-dark );
+    }
+
+    p{
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+
+    .single-post{
+
+        .username-and-post-date{
+            margin-top: 15px;
+        }
+
+        h5, .profile-pic-tiny{
+            margin: 15px;
+        }
+    }
+    
+}

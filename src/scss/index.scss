@@ -1,1 +1,19 @@
+@use "./utilities/variables" as variables;
+@use "./components/navigation";
+@use "./components/login";
+@use "./components/profile_summary";
+@use "./components/user-posts";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+body{
+    background-color: map-get($map: variables.$theme-colors, $key: primary);
+    min-height: 70vh;
+
+    .counter {
+        color: red;
+    }
+}
+
+main{
+    min-height: 90vh;
+}

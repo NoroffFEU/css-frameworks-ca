@@ -1,6 +1,8 @@
 body {
     background-color: #0F0F0F;
     font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {

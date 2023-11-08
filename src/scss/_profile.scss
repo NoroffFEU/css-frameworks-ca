@@ -1,6 +1,8 @@
-// body {
-//     background-image: none;
-// }
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
 
 .logo {
     color: #FF85A0;
@@ -9,21 +11,52 @@
     font-size: 2rem;
 }
 
-main {
-    
-    
+.user-profile-picture {
+    top: 30%; /* Start at 50% from the top of main-content */
+    left: 50%; /* Start at 50% from the left of main-content */
+    transform: translate(-50%, -50%); /* Adjusts the position to center the element */
+    z-index: 10;
+}
+
+.btn {
+    max-width: 120px;
     
 }
 
+h1 {
+    color: var(--bs-primary);
+    font-size: 3rem;
+}
+
+p {
+    color: var(--bs-primary);
+}
+
+.white {
+    color: white;
+}
+
 .main-content {
+    flex-grow: 1;
     border-left: 2px solid var(--bs-primary);
     border-right: 2px solid var(--bs-primary);
     background-color: #0F0F0F;
-    height: 100vh;
+    box-sizing: border-box;
+    // height: 100vh;
 }
 
 .profile-background img{
     width: 100%;
+    height: auto;
+}
+
+.small-user-picture {
+    width: 30px;
+    height: 30px;
+}
+
+.aurora {
+    max-width: 100%;
     height: auto;
 }
 

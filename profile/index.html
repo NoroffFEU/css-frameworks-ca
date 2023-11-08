@@ -16,7 +16,7 @@
     <body>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <div> <a class="navbar-brand ms-5 logo" href="#">Vib`n<span class="yellow">!</span></a></div>
+                <div> <a class="navbar-brand ms-5 logo" href="#">Vib`n<span class="logo-yellow">!</span></a></div>
             <div>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-5  mb-2 mb-lg-0">
                   <li class="nav-item ">
-                    <a class="nav-link nav-text"  href="/feed">Home</a>
+                    <a class="nav-link nav-text"  href="/home">Home</a>
                   </li>
                   <li class="nav-item ps-3">
                     <a class="nav-link disabled nav-text" aria-current="page" href="/profile">Profile</a>
@@ -37,27 +37,128 @@
             </div>
             </div>
           </nav>
-        <main >
-            <section class="container mx-auto col-6 main-content">
+        <main class="main-content mx-auto col-6 ">
 
-            <section class="row ">
-                <div class="position-relative p-0 profile-background ">
-                    <img src="/images/profile-background.png" alt="profile background">
-                </div>
-                <div class="position-absolute top-20 start-50 ">
-                    <img src="/images/profile-pic1.png" alt="profile picture">
-                    <button class="btn btn-primary mb-3 mt-3">Follow me!</button>
-                </div>
-            </section>
+            <div class=" p-0 profile-background position-relative">
+                <img src="/images/profile-background.png" alt="profile background">
+            </div>
+            <section class="container ps-4 pe-4">
+
+                <section class="container mb-5">
+                    <div class="row user-info align-items-center justify-content-between pt-3 mb-5">
+                        <div class="col-3 text-start mb-5">
+                            <h1 class="mb-5">Lizz Kiss</h1>
+                        </div>
+                        <div class="col-3 d-flex justify-content-end">
+                            <div class="user-info-followers text-center px-2 mb-5">
+                                <p class="mb-0">560</p>
+                                <p class="mb-5">Followers</p>
+                            </div>
+                            <div class="user-info-following text-center px-2 mb-5">
+                                <p class="mb-0">1200</p>
+                                <p class="mb-5">Following</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute user-profile-picture d-flex flex-column align-items-center">
+                        <img src="/images/profile-pic1.png" alt="user picture" class="mb-0">
+                        <button class="btn btn-primary mb-3 mt-0">Follow me!</button>
+                    </div>
+                </section>
+
+                
+                <section class="container mt-5">
+                    <div class="row justify-content-between">
+                        <div class="col ps-0">
+                            <p class="white text-start">Followers</p>
+                        </div>
+                        <div class="col pe-0">
+                            <p class="white text-end">Show All</p>
+                        </div>
+                    </div>
+                    <div class="row bg-light pt-3 pb-2 justify-content-around">
+                        <div class="col-auto">
+                            <img src="/images/profile-pic2.png" alt="user picture" class="img-fluid">
+                            <p class="text-center">Code Ninja</p>
+                        </div>
+                        <div class="col-auto">
+                            <img src="/images/profile-pic3.png" alt="user picture" class="img-fluid">
+                            <p class="text-center">Geek Goddess</p>
+                        </div>
+                        <div class="col-auto">
+                            <img src="/images/profile-pic4.png" alt="user picture" class="img-fluid">
+                            <p class="text-center">Lovely Lu</p>
+                        </div>
+                        <div class="col-auto">
+                            <img src="/images/profile-pic5.png" alt="user picture" class="img-fluid">
+                            <p class="text-center">King Chong</p>
+                        </div>
+                        <div class="col-auto">
+                            <img src="/images/profile-pic6.png" alt="user picture" class="img-fluid">
+                            <p class="text-center">Flash Finn</p>
+                        </div>
+                        <div class="col-auto">
+                            <img src="/images/profile-pic7.png" alt="user picture" class="img-fluid">
+                            <p class="text-center">Rex Racer</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="container mt-5">
+                    <div class="row justify-content-between">
+                        <div class="col ps-0">
+                            <p class="white text-start">Posts</p>
+                        </div>
+                        <div class="col pe-0">
+                            <p class="white text-end">Show All</p>
+                        </div>
+                    </div>
+                    <div class="row bg-light  text-center align-items-center justify-content-between">
+                        <div class="col-auto ps-0 d-flex align-items-center">
+                            <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0">
+                            <p class="mb-0"><span class="pe-2">Lizz Kiss</span>3d. London</p>
+                        </div>
+                        <div class="col-auto d-flex justify-content-end align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                            </svg>
+                            <p class="align-items-center ps-2 mb-0">210</p>
+                        </div>
+                        <div>
+                            <p class="text-start text-dark pt-3">🇺🇦 Just watched the news about the situation in Ukraine. It’s heart-wrenching to see what’s happening there. Politics should never come at the cost of innocent lives. Sending my thoughts and prayers to all affected. 💔 #PrayForUkraine #PoliticsFail</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="container mt-5 bg-light">
+
+                    <div class="row text-center align-items-center justify-content-between">
+                        <div class="col d-flex ps-0 align-items-center">
+                            <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0">
+                            <p class="mb-0"><span class="pe-2">Lizz Kiss</span>4d. London</p>
+                        </div>
+                        <div class="col-auto d-flex justify-content-end">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                            </svg>
+                            <p class="ps-2 mb-0">356</p>
+                        </div>
+                    </div>
+                        <div>
+                            <p class="text-start text-dark pt-3">On a brighter note amidst all this chaos, the aurora last night was absolutely mesmerizing. Nature has its way of reminding us of the beauty in the world. Let’s spread love and hope, not hatred and fear. 💙 #NatureHeals #AuroraDreams</p>
+                        </div>
+                        <div class="row">
+                            <img src="/images/aurora1.jpg" alt="aurora in the night sky above the mountains" class="aurora img-fluid">
+                        </div>
+                </section>
 
 
 
         </section>
         </main >
-           
         <footer class="py-4 mt-5">
             <div class="container text-center">
-                <p class="mb-0">&copy; 2023 <span class="logo-pink">Vib`n</span><span class="logo-yellow">!</span> | Built by Laura Karaliene</p>
+                <p class="mb-0">&copy; 2023 <span class="logo-pink ps-1">Vib`n</span><span class="logo-yellow">!</span> | Built by Laura Karaliene</p>
             </div>
         </footer>
     </body>

@@ -344,18 +344,41 @@ export function postTemplateDetails(postData) {
     return post;
 }
 
+// export function renderPostTemplate(postData, parent) {
+//     //Put the post template inside the parent
+//     parent.append(postTemplateDetails(postData));
+// }
+
 export function renderPostTemplate(postData, parent) {
-    //Put the post template inside the parent
+    if (!parent || !(parent instanceof Element)) {
+        console.error("Invalid parent element provided for rendering post template.");
+        return;
+    }
+
+    const postElement = postTemplateDetails(postData);
+    console.log("postElement:", postElement);
+
+    // Put the post template inside the parent
     parent.append(postTemplateDetails(postData));
 }
 
+// export function renderPostTemplates(postDataList, parent) {
+//     parent.append(...postDataList.map(postTemplateForFeed));
+
+//     //mapped an array of postData items. And for each postData item we provided a html template, and the we are passing that into the parent. So we go back to our test script in the main index.js file.
+
+//     //The above is the same as:
+//     // postDataList.forEach(function(post) {
+//     //     postTemplate(post)
+//     // })
+// }
+
 export function renderPostTemplates(postDataList, parent) {
-    parent.append(...postDataList.map(postTemplateForFeed));
+    const postElements = postDataList.map((postData) => {
+        const postElement = postTemplateForFeed(postData);
+        // console.log("postElement:", postElement);
+        return postElement;
+    });
 
-    //mapped an array of postData items. And for each postData item we provided a html template, and the we are passing that into the parent. So we go back to our test script in the main index.js file.
-
-    //The above is the same as:
-    // postDataList.forEach(function(post) {
-    //     postTemplate(post)
-    // })
+    parent.append(...postElements);
 }

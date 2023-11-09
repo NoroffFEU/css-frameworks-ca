@@ -15,12 +15,6 @@ nav {
 }
 
 
-.card  {
-  max-width: 400px;
-  margin: 20px 0 20px 50px;
-}
-
-
 .crown {
   margin: 0px auto 50px -30px !important;
 }
@@ -38,9 +32,6 @@ nav {
   text-decoration: underline;
 }
 
-.container-fluid {
-  column-gap: 3rem;
-}
 
 .navbar-brand {
   margin: 1.5rem 2rem;
@@ -53,3 +44,9 @@ nav {
   font-size: 20px;
   font-weight: 300;
 }
+
+.login {
+  max-width: 500px;
+}
+
+

@@ -11,7 +11,7 @@
  * provide anything to the page.
  */
 export function printFeed(postsArray, domElement) {
-
+    domElement.innerHTML = "";
     const myUserName = localStorage.getItem('userName');
 
     for (let i = 0; i < postsArray.length; i++) {
@@ -103,34 +103,28 @@ export function sortArray(postsArray, domElement, sortBy){
 };
 
 
-
+/**
+ * 
+ * @param {array} postsArray - an array containing all posts
+ * @param {object} domElement - the object where I print my HTML, only there to be passed down to printFeed();
+ * @param {object} searchQuery - an object containing both what I am searching in (title, body or both) and what string I want the post to includce
+ * 
+ * This function lets me search my array by title, body or both. 
+ */
 export function searchArray(postsArray, domElement, searchQuery) {
     let filteredArray;
-    console.log(searchQuery);
     const searchWord = searchQuery.searchText.toLowerCase();
     const searchIn = searchQuery.searchKeys;
-    console.log(searchIn);
-    if (!searchIn){
 
-    } else if (searchIn === "title") {
-        // filteredArray = postsArray.filter(post => {
-        //     return post.title.toLowerCase() === searchWord;
-        // })
-        // console.log(filteredArray);
-         // -------------- Think I'm onto something here, 
-        // but I got to search the whole array. Will try a forloop -----------
-
-        // for (let i = 0; i < postsArray.length; i++) {
-        //     const element = postsArray[i];
-        //     if (element.title.toLowerCase().includes(searchWord)) {
-        //         return element;
-        //     }
-        // }
-        console.log(filteredArray);
-        } else if ( searchIn === "body"){
-
-        }
-        // Working on this, but taking a break. I might set up another switch
-        // where I either filter or don't filter based on what's in the searchkeys attribute of my query
+    if (!searchIn) {
+        filteredArray = postsArray.filter(post => {
+            return post[`title`].toLowerCase().includes(`${searchWord}`) || post[`body`].toLowerCase().includes(`${searchWord}`)
+        });
+    } else {
+        filteredArray = postsArray.filter(post => {
+            return post[`${searchIn}`].toLowerCase().includes(`${searchWord}`)
+        });
+    }
+    printFeed(filteredArray, domElement);
     }
     

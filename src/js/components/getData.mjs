@@ -24,12 +24,13 @@ export async function getData(url, token, domElement, action, actionParam) {
                 // Will sort the array, then print
                 // "actionParam" will contain information how to  sort 
                 // I first run the sort function, then printFeed based on the new array
-                sortArray(finishedResponse, domElement, actionParam)
+                sortArray(finishedResponse, domElement, actionParam);
+                break;
             }
             case "search": {
                 // Will search the array, then print
                 // "actionParam" will contain the search query
-                searchArray(finishedResponse, domElement, actionParam)
+                searchArray(finishedResponse, domElement, actionParam);
             }
             case "filter": {
                 // Will filter, then print

@@ -68,6 +68,9 @@ nav .disabled, footer .disabled {
 .all-user-posts .single-post h5, .all-user-posts .single-post .h5, .all-user-posts .single-post .profile-pic-tiny {
   margin: 15px;
 }
+.all-user-posts .single-post .single-post-link {
+  color: black;
+}
 
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)

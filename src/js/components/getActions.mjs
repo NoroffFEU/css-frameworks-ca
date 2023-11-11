@@ -35,7 +35,7 @@ export function printFeed(postsArray, domElement) {
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>
-                <h5>${post.title}<h5>
+                <h5><a href="${post.id}">${post.title}</a><h5>
                 <p class="post-text">
                     ${post.body}
                 </p>
@@ -53,7 +53,7 @@ export function printFeed(postsArray, domElement) {
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>
-                <h5>${post.title}<h5>
+                <h5><a href="singlepost.html?id=${post.id}" class="single-post-link">${post.title}</a><h5>
                 <p class="post-text">
                     ${post.body}
                 </p>

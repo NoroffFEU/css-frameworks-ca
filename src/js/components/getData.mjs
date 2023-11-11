@@ -1,3 +1,12 @@
+/**
+ * 
+ * @param {string} url - url for the fetch request
+ * @param {string} token - JWT for the request
+ * @param {object} domElement - where to print the retured data
+ * @param {function} action - what function to pass the data into
+ * @param {string} actionParam - optional - how to treat the data, if passed into search or sort functions
+ * @returns 
+ */
 export async function getData(url, token, domElement, action, actionParam) {
     const dataForPostRequest= {
         method: "GET",

@@ -128,3 +128,19 @@ export function searchArray(domElement, postsArray, searchQuery) {
     printFeed(domElement, filteredArray);
     }
     
+
+export function singlePostContent(domElement, postData) {
+    const creationDate = postData.created.replaceAll("-", ".");
+    const formattedDate = creationDate.slice(0, creationDate.length - 14).split(".").reverse().join(".");
+    domElement.innerHTML = `
+    <h1>${postData.title}</h1>
+    <p>${postData.body}</p>
+    <img src="${postData.media}" alt="">
+    <p>Posted the ${formattedDate}</p>
+    `;
+
+    const reactions = postData.reactions.reverse(); 
+    for (let i = 0; i < reactions.length; i++) {
+        domElement.innerHTML += `<span class="reactions m-2">${reactions[i].symbol}${reactions[i].count}</span>`;
+    }
+}

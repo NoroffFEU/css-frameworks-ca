@@ -10,7 +10,7 @@
  * Posts without title or content are skipped because I think they look ugly and don't 
  * provide anything to the page.
  */
-export function printFeed(postsArray, domElement) {
+export function printFeed(domElement, postsArray) {
     domElement.innerHTML = "";
     const myUserName = localStorage.getItem('userName');
 
@@ -72,29 +72,29 @@ export function printFeed(postsArray, domElement) {
  * @param {string} sortBy - how to sort the array
  * This function sorts my array before printing out the feed in a new order. 
  */
-export function sortArray(postsArray, domElement, sortBy){
+export function sortArray(domElement, postsArray, sortBy){
     switch (sortBy) {
         case "newest-posts":
-            printFeed(postsArray, domElement);
+            printFeed(domElement, postsArray);
             break;
         
         case "oldest-posts":
             const reverseArray = postsArray.slice().reverse();
-            printFeed(reverseArray, domElement);
+            printFeed(domElement, reverseArray);
             break;
     
         case "most-reactions":
             const arrayByReactions = postsArray.sort(function (x, y) {
                 return y._count.reactions - x._count.reactions;
             });
-            printFeed(arrayByReactions, domElement);
+            printFeed(domElement, arrayByReactions);
             break;
 
         case "most-comments":
             const arrayByComments = postsArray.sort(function (x, y) {
                 return y._count.comments - x._count.comments;
             });
-            printFeed(arrayByComments, domElement);
+            printFeed(domElement, arrayByComments);
             break;
         
         default:
@@ -111,7 +111,7 @@ export function sortArray(postsArray, domElement, sortBy){
  * 
  * This function lets me search my array by title, body or both. 
  */
-export function searchArray(postsArray, domElement, searchQuery) {
+export function searchArray(domElement, postsArray, searchQuery) {
     let filteredArray;
     const searchWord = searchQuery.searchText.toLowerCase();
     const searchIn = searchQuery.searchKeys;
@@ -125,6 +125,6 @@ export function searchArray(postsArray, domElement, searchQuery) {
             return post[`${searchIn}`].toLowerCase().includes(`${searchWord}`)
         });
     }
-    printFeed(filteredArray, domElement);
+    printFeed(domElement, filteredArray);
     }
     

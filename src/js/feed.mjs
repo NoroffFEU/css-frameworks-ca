@@ -1,6 +1,10 @@
 import { formCheck } from "./components/formValidation.mjs";
 import { characterCount } from "./components/formValidation.mjs";
 
+import { printFeed } from "./components/getActions.mjs";
+import { sortArray } from "./components/getActions.mjs";
+import { searchArray } from "./components/getActions.mjs";
+
 const fieldset = document.querySelector(".add-post-fieldset");
 const formInputs = fieldset.elements;
 const btn = document.querySelector(".add-post-btn");
@@ -32,20 +36,22 @@ let queries;
 endpoint = "/social/posts";
 queries = "?_author=true&_comments=true&_reactions=true";
 const fullURL = `${baseUrl}${endpoint}${queries}`;
-getData(fullURL, token, allPostsDom, "print");
+getData(fullURL, token, allPostsDom, printFeed);
 
 const sortByInp = document.querySelector("#sort-by");
 const searchFrom = document.querySelector(".search-form");
 const searcInp = document.querySelector("#search-input");
 
+searchFrom.onsubmit = (e) => {e.preventDefault()};
+
 sortByInp.addEventListener("change", (e) => {
     allPostsDom.innerHTML = "";
-    getData(fullURL, token, allPostsDom, "sort", sortByInp.value)
+    getData(fullURL, token, allPostsDom, sortArray, sortByInp.value)
 })
 
 searcInp.onkeyup = () => {
     const willBeSearchParams = new FormData(searchFrom);
     const searchParams = {};
     willBeSearchParams.forEach((value, key) => (searchParams[key] = value));    
-    getData(fullURL, token, allPostsDom, "search", searchParams)
+    getData(fullURL, token, allPostsDom, searchArray, searchParams);
 };

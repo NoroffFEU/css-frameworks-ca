@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Owl</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <form
+        class="row justify-content-center"
+        action="/profile"
+        method="post"
+        onsubmit="return validateForm()"
+      >
+        <div class="col-md-6">
+          <img
+            class="img-fluid mb-4 img-thumbnail"
+            src="img/coding-owl-background-img.png"
+            alt="coding owl"
+          />
+          <h1 class="text-light">Log in</h1>
+          <label for="email" class="form-label text-light mt-4">Email</label>
+          <input type="email" class="form-control" id="email" required />
+          <label for="password" class="form-label text-light mt-4"
+            >Password:</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            minlength="8"
+            required
+          />
+          <button type="submit" class="btn btn-primary mb-4 mt-4">
+            Log in
+          </button>
+          <p class="text-light mt-4 text-center">or register</p>
+          <label for="name" class="form-label text-light mt-4">Name</label>
+          <input type="text" class="form-control" id="name" />
+          <label for="surname" class="form-label text-light mt-4"
+            >Surname</label
+          >
+          <input type="text" class="form-control" id="surname" />
+          <label for="email" class="form-label text-light mt-4">Email</label>
+          <input type="email" class="form-control" id="email" required />
+          <label for="password" class="form-label text-light mt-4"
+            >Password:</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            minlength="8"
+            required
+          />
+          <button type="submit" class="btn btn-primary mb-4 mt-4">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        var password = document.getElementById("password").value;
+
+        if (password.length < 8) {
+          alert("Password must have a minimum length of 8 characters.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

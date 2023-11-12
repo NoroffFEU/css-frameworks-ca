@@ -1,9 +1,10 @@
-# ApeAmigos - CSS Frameworks CA
+# CSS Frameworks CA
 ![image](https://github.com/ephraimdjeket/css-frameworks-ca/assets/45997915/cb437017-2ed6-4a26-b442-ad40827ddf9c)
 
 Live demo: https://apeamigos.netlify.app/
-
+# ApeAmigos - Chat, Share, and Swing into the Social Jungle!
 Brief
+
 You are tasked with creating 3 pages in HTML using Bootstrap and SASS:
 
 Authentication page (/index.html)

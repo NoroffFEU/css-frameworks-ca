@@ -2,6 +2,10 @@
 
 A a social media application built with Bootstrap and SASS.
 
+## Live site
+
+https://css-framework-ca-norheim.netlify.app/
+
 ## Description
 
 ### This were our brief
@@ -30,3 +34,25 @@ There is no requirment for JS functionality beyond Bootstrap UX behaviour. For e
 ## Getting Started
 
 ### Installing
+
+If you would like to add to the project or do edits, go ahead and clone or fork the repository. Use your preffered coding tool, like Visual Studio Code or Atom.
+
+Clone the repo:
+
+```bash
+git clone https://github.com/KariannNor/css-frameworks-ca.git
+```
+
+## Running
+
+Add the LiveServer Extension to have a real time view of the site. You should also use the developer tools in Chrome for a overview of the HTML, CSS, and JS.
+
+- start: npm i sass -D
+- run: npm run build
+- watch: npm run watch
+
+## Contact
+
+Any questions?
+
+[Reach out here](https://www.linkedin.com/in/kariann-norheim-1a342862/)

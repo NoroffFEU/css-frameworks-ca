@@ -1,12 +1,12 @@
-form {
-  margin: 20px 0;
- max-width: 400px; 
-}
+// form {
+//   margin: 20px 0;
+//  max-width: 400px; 
+// }
 
 
-.input-group, .custom-btn {
-  max-width: 400px;
-}
+// .input-group, .custom-btn {
+//   max-width: 400px;
+// }
 
 .btn-post{
   text-align: center;
@@ -16,5 +16,18 @@ form {
 
 .custom-btn {
 margin-top: 20px;
+background-color: black;
+color: white;
 
+}
+
+.custom-container {
+max-width: 500px;
+}
+
+@media screen and (max-width: 550px) {
+  .custom-container {
+  width: 80vw;
+  margin: 20px auto;
+  }
 }

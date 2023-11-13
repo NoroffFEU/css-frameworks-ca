@@ -1,0 +1,62 @@
+.sorting {
+    width: 400px;
+}
+
+.new-post-form {
+    width: 400px;
+}
+
+.search {
+    width: 400px;
+}
+
+.search-sort {
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.chat {
+    width: 50px;
+}
+
+.cherries {
+    max-width: 100px;
+}
+
+.divider {
+    max-width: 100px;
+}
+
+.new-post-form {
+    width: 400px;
+    padding: 20px;
+    font-family: 'open sans', sans-serif;
+}
+
+.post-btn {
+    width: 100%; 
+    display: block;
+}
+
+.form-control {
+    background-color: #0F0F0F;
+    border-color: var(--bs-primary);
+    color: white;
+  }
+
+  .form-control::placeholder {
+    color: white;
+  }
+
+  .feed-posts {
+    max-width: 800px;
+  }
+
+  .feed-posts.container {
+    height: auto;
+    max-width: 800px;
+  }
+

@@ -19,9 +19,9 @@
         <div class="container-fluid">
             <div> <a class="navbar-brand ms-5 logo" href="#">Vib`n<span class="logo-yellow">!</span></a></div>
         <div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+            </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-5  mb-2 mb-lg-0">
               <li class="nav-item ">
@@ -38,12 +38,95 @@
         </div>
         </div>
       </nav>
-      <main>
+    <main>
+        <!-- new post section -->
+        <section class="container new-post-form d-flex flex-column  mb-5 mt-5">
+            <div class="d-flex align-items-center justify-content-center">
+                <h1 class="white fs-1">New Post </h1>
+                <img src="/images/Asset 4.png" class="chat ms-3" alt="chat icon">
+            </div>
+              <div class="mb-3">
+                <textarea class="form-control" placeholder="Share your thoughts" id="newPost" rows="4"></textarea>
+              </div>
+              <div class="mb-3">
+                <input class="form-control" type="file" id="formFile">
+              </div>
+              <div class="col-auto mx-auto">
+                <button type="submit" class="btn btn-outline-primary bg-dark post-btn mb-3">Post</button>
+              </div>
+        </section>
 
+        <!-- divider -->
+        <div class="divider mx-auto mt-5 mb-5">
+            <img src="/images/cherries.png" class="cherries mb-5" alt="section deviding picture of cherries">
+        </div>
 
+        <!-- search-sort section -->
+        <section class="search-sort container">
+            <div class="search mt-5">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary bg-dark" type="submit">Search</button>
+                  </form>
+            </div>
+            <div class="sorting mt-3">
+                <select class="form-select default " aria-label="Select sorting">
+                    <option selected>Sort by</option>
+                    <option value="1">Newest</option>
+                    <option value="2">Latest</option>
+                </select>
+            </div>
+        </section>
 
+        <!-- feed section -->
+        <section class="feed-posts mx-auto">
 
-      </main>
+             <!-- post 1 -->
+            <section class="container mt-5 pt-2 bg-light">
+                <div class="row text-center align-items-center justify-content-between">
+                    <div class="col d-flex ps-0 align-items-center">
+                        <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0">
+                        <p class="mb-0"><span class="pe-2 baloo">Lizz Kiss</span>4d. London</p>
+                    </div>
+                    <div class="col-auto d-flex justify-content-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg>
+                        <p class="ps-2 mb-0">356</p>
+                    </div>
+                </div>
+                <div>
+                     <p class="text-start text-dark pt-3">On a brighter note amidst all this chaos, the aurora last night was absolutely mesmerizing. Nature has its way of reminding us of the beauty in the world. Let’s spread love and hope, not hatred and fear. 💙 #NatureHeals #AuroraDreams</p>
+                </div>
+                <div class="row">
+                    <img src="/images/aurora1.jpg" alt="aurora in the night sky above the mountains" class="aurora img-fluid">
+                </div>
+            </section>
+
+            <!-- post 2 -->
+            <section class="mt-5 container">
+                <div class="row bg-light pt-2 text-center align-items-center justify-content-between">
+                    <div class="col-auto ps-0 d-flex align-items-center">
+                        <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0">
+                        <p class="mb-0"><span class="pe-2 baloo">Lizz Kiss</span>3d. London</p>
+                    </div>
+                    <div class="col-auto d-flex justify-content-end align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg>
+                        <p class="align-items-center ps-2 mb-0">210</p>
+                    </div>
+                    <div>
+                        <p class="text-start text-dark pt-3">🇺🇦 Just watched the news about the situation in Ukraine. It’s heart-wrenching to see what’s happening there. Politics should never come at the cost of innocent lives. Sending my thoughts and prayers to all affected. 💔 #PrayForUkraine #PoliticsFail</p>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+        
+        
+
+    </main>
     <footer class="py-4 mt-5">
         <div class="container text-center">
             <p class="mb-0">&copy; 2023 <span class="logo-pink ps-1">Vib`n</span><span class="logo-yellow">!</span> | Built by Laura Karaliene</p>

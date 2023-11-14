@@ -1,5 +1,7 @@
 import { getData } from "./components/getData.mjs";
 import { singlePostContent } from "./components/getActions.mjs";
+import { characterCount } from "./components/formValidation.mjs";
+import { formCheck } from "./components/formValidation.mjs";
 
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
@@ -12,25 +14,35 @@ const token = localStorage.getItem("accessToken");
 
 getData(completeUrl, token, postDOM, singlePostContent);
 
-// postDOM.addEventListener("DOMSubtreeModified", (e) => {
-//     const addReaction = document.querySelector(".add-reaction");
-//     console.dir(addReaction);
-//     addReaction.onclick = (e) => {console.log("hello")};
-// });
-
-let arr = [];
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(){
+        const form = document.querySelector(".add-post-form");
+        const fieldset = document.querySelector(".add-post-fieldset");
+        const formInputs = fieldset.elements;
+        const btn = document.querySelector(".add-post-btn");
+        const textarea = document.querySelector("textarea");
+        const counter = document.querySelector(".counter");
+        const maxValText = document.querySelector(".max-val")
+        for (let i = 0; i < formInputs.length; i++) {
+            const input = formInputs[i];
+            input.onkeyup = () => {
+                formCheck(formInputs, btn);
+                characterCount(textarea.value, counter, maxValText, 250, 15);
+            }
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+        });
+
         const reactions = document.querySelectorAll(".reactions");
-        // console.log(reactions)
-        // reactions.onclick = (e) => {console.log("hello")}
         reactions.forEach((react) => {
-            react.onclick = (e) => {console.log("hello")}
+            react.onclick = () => {console.log("hello")}
         });
 
         const plusSymb = document.querySelector(".add-reaction");
-        // console.dir(plusSymb);
-        plusSymb.onclick = (e) => {console.log("goodbye")}
+        plusSymb.onclick = () => {console.log("goodbye")};
     })
 });
 

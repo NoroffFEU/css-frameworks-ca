@@ -133,16 +133,17 @@ export function singlePostContent(domElement, postData) {
     const creationDate = postData.created.replaceAll("-", ".");
     const formattedDate = creationDate.slice(0, creationDate.length - 14).split(".").reverse().join(".");
     domElement.innerHTML = `
-    <h1>${postData.title}</h1>
-    <p>${postData.body}</p>
-    <img src="${postData.media}" alt="">
-    <p>Posted the ${formattedDate}</p>
-    <div class="reactions-div">
+    <div class="post d-flex flex-column justify-content-center align-content-center">
+        <h1 class="text-center">${postData.title}</h1>
+        <p class="text-center">${postData.body}</p>
+        <img class="post-img text-center justify-self-center align-self-center" src="${postData.media}" alt="">
+        <p class="text-center">Posted the ${formattedDate}</p>
+    </div>
     `;
 
     const reactions = postData.reactions.reverse(); 
     for (let i = 0; i < reactions.length; i++) {
-        domElement.innerHTML += `<span class="reactions m-2">${reactions[i].symbol}${reactions[i].count}</span>`;
+        domElement.innerHTML += `<span class="reactions text-center m-2">${reactions[i].symbol}${reactions[i].count}</span>`;
     }
 
     domElement.innerHTML += `
@@ -151,5 +152,40 @@ export function singlePostContent(domElement, postData) {
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
             </svg>
             </div>
-            `;
+        </div>
+
+        <div class="add-comment">
+            <div class="row">
+                <form class="add-post-form d-flex justify-content-center align-items-center flex-column" action="">
+                    <h2 class="h3"><u>Add a comment:</u></h2>
+                    <div class="form-outline col-6">
+                        <fieldset class="add-post-fieldset">
+                            <textarea class="form-control" id="form4Example3" rows="7" placeholder="Say something clever, minimum  15 characters, max 250" minlength="15" maxlength="250" required></textarea>
+                            <label class="form-label" for="form4Example3"><span class="counter">0</span> / <span class="max-val">250</span></label>
+                        </fieldset>
+                    </div>
+                    <button type="submit" class="btn add-post-btn btn-primary btn-block mb-4" disabled>Post</button> 
+                </form>
+            </div>
+        </div>
+        `;
+
+    const comments = postData.comments;
+    for (let i = 0; i < comments.length; i++) {
+        const element = comments[i];
+        if (!element.body){
+            continue;
+        }
+        domElement.innerHTML += `
+        <div class="comment">
+            <div class="d-flex flex-row space-evenly">
+                <img class="avatar-img mr-3" src="${element.author.avatar} alt="${element.author.name}" title=${element.author.name}">
+                <h5 class="ml-3">${element.author.name}</h5> 
+            </div>
+            <p class="comment-text">${element.body}</p>
+        </div>
+    `;
+    }
+
+
 };

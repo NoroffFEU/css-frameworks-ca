@@ -16,4 +16,28 @@ body{
 
 main{
     min-height: 90vh;
+
+    .add-comment{
+        width: 500px;
+        margin: 50px;
+    }
+
+    .comment{
+        margin: 25px;
+        border: 2px solid black;
+        padding: 10px;
+    }
+
+    .avatar-img{
+        height: 25px;
+        width: 25px;
+        border-radius: 100%;
+        margin-right: 10px;
+    }
+
+    .post-img{
+        max-width: 450px;
+    }
+
+    
 }

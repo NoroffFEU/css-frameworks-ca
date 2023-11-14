@@ -2,9 +2,9 @@ function isPostTitleGood(post) {
     return post.title.length > 3;
 }
 
-function doesPostHaveMedia(post) {
-    return Boolean(post.media && post.media.length);
-}
+// function doesPostHaveMedia(post) {
+//     return Boolean(post.media && post.media.length);
+// }
 
 // function doesPostHaveBody(post) {
 //     return post.body;
@@ -28,7 +28,8 @@ function doesPostHaveMedia(post) {
 // isPostCreatedByCurrentUser();
 
 function doesPostMeetCriterias(post) {
-    return isPostTitleGood(post) && doesPostHaveMedia(post);
+    // return isPostTitleGood(post) && doesPostHaveMedia(post);
+    return isPostTitleGood(post);
 }
 
 // function doesPostMeetProfileCriteria(post) {

@@ -1,17 +1,3 @@
-// // Example A
-// export function postTemplateA(postData) {
-//     return `<div class="post" id=${postData.id}>
-//     ${postData.title}
-//     <button>Log post to console</button>
-//     </div>`;
-// }
-
-// export function renderPostTemplateA(postData, parent) {
-//     parent.innerHTML += postTemplateA(postData);
-
-//     document.querySelector(".post > button").addEventListener("clock");
-// }
-
 // Post template for post in FEED postList
 export function postTemplateForFeed(postData) {
     const post = document.createElement("div");
@@ -65,7 +51,7 @@ export function postTemplateForFeed(postData) {
 
     if (postData.media) {
         const workoutImage = document.createElement("img");
-        workoutImage.src = postData.media; // Use the API-provided image URL
+        workoutImage.src = postData.media;
         workoutImage.alt = `Image from post with title: ${postData.title}`;
         workoutImage.title = "Workout post image";
         workoutImage.className = "workoutImage bd-placeholder-img card-img-top ";
@@ -80,7 +66,7 @@ export function postTemplateForFeed(postData) {
     cardTextParagraph.className = "cardTextParagraph card-text";
     cardTextParagraph.textContent = postData.body;
 
-    //Button view more in posts in feed-----------------------------------------
+    //Button "view more" in posts in feed-----------------------------------------
     const buttonDiv = document.createElement("div");
     buttonDiv.className = "buttonDiv d-flex justify-content-between align-items-center mb-3";
     const viewMoreButton = document.createElement("a");
@@ -227,7 +213,7 @@ export function postTemplateDetails(postData) {
 
     if (postData.media) {
         const workoutImage = document.createElement("img");
-        workoutImage.src = postData.media; // Use the API-provided image URL
+        workoutImage.src = postData.media;
         workoutImage.alt = `Image from post with title: ${postData.title}`;
         workoutImage.title = "Workout post image";
         workoutImage.className = "bd-placeholder-img card-img-top ";
@@ -344,11 +330,6 @@ export function postTemplateDetails(postData) {
     return post;
 }
 
-// export function renderPostTemplate(postData, parent) {
-//     //Put the post template inside the parent
-//     parent.append(postTemplateDetails(postData));
-// }
-
 export function renderPostTemplate(postData, parent) {
     if (!parent || !(parent instanceof Element)) {
         console.error("Invalid parent element provided for rendering post template.");
@@ -362,6 +343,17 @@ export function renderPostTemplate(postData, parent) {
     parent.append(postTemplateDetails(postData));
 }
 
+export function renderPostTemplates(postDataList, parent) {
+    const postElements = postDataList.map((postData) => {
+        const postElement = postTemplateForFeed(postData);
+        // console.log("postElement:", postElement);
+        return postElement;
+    });
+
+    parent.append(...postElements);
+}
+
+// Some notes
 // export function renderPostTemplates(postDataList, parent) {
 //     parent.append(...postDataList.map(postTemplateForFeed));
 
@@ -372,13 +364,3 @@ export function renderPostTemplate(postData, parent) {
 //     //     postTemplate(post)
 //     // })
 // }
-
-export function renderPostTemplates(postDataList, parent) {
-    const postElements = postDataList.map((postData) => {
-        const postElement = postTemplateForFeed(postData);
-        // console.log("postElement:", postElement);
-        return postElement;
-    });
-
-    parent.append(...postElements);
-}

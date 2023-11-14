@@ -11,3 +11,30 @@ const postDOM = document.querySelector(".single-post");
 const token = localStorage.getItem("accessToken");
 
 getData(completeUrl, token, postDOM, singlePostContent);
+
+// postDOM.addEventListener("DOMSubtreeModified", (e) => {
+//     const addReaction = document.querySelector(".add-reaction");
+//     console.dir(addReaction);
+//     addReaction.onclick = (e) => {console.log("hello")};
+// });
+
+let arr = [];
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(){
+        const reactions = document.querySelectorAll(".reactions");
+        // console.log(reactions)
+        // reactions.onclick = (e) => {console.log("hello")}
+        reactions.forEach((react) => {
+            react.onclick = (e) => {console.log("hello")}
+        });
+
+        const plusSymb = document.querySelector(".add-reaction");
+        // console.dir(plusSymb);
+        plusSymb.onclick = (e) => {console.log("goodbye")}
+    })
+});
+
+
+const config = {attributes: true, childList: true, subtree: true};
+
+observer.observe(postDOM, config);

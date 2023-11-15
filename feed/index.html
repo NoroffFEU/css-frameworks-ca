@@ -69,53 +69,57 @@
 
     <main>
       <section>
-        <div class="container custom-container">
-          <div class="container ms-3 mb-5">
-            <button
-              class="form-control custom-btn btn-primary mb-4"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#createContent"
-              aria-controls="createContent"
-              aria-expanded="false"
-              aria-label="Toggle create post">
-              <span>Create a new post +</span>
-            </button>
+        <!-- <div class="container custom-container">
+          <div class="container ms-3 mb-5"> -->
+        <div class="container custom-container ms-5">
+          <div class="row mb-5">
+            <div class="col-8">
+              <button
+                class="form-control custom-btn btn-primary mb-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#createContent"
+                aria-controls="createContent"
+                aria-expanded="false"
+                aria-label="Toggle create post">
+                <span>Create a new post +</span>
+              </button>
 
-            <form class="collapse" id="createContent">
-              <div class="input-group my-2">
-                <textarea
-                  class="form-control"
-                  aria-label="Add text content"
-                  placeholder="What do you want to share today?"
-                  rows="4"></textarea>
-              </div>
-              <div class="input-group">
-                <input type="file" class="form-control" />
-              </div>
-              <div class="row mb-5">
-                <div class="row">
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-post"
-                    value="post-comment">
-                    Post
-                  </button>
+              <form class="collapse" id="createContent">
+                <div class="input-group my-2">
+                  <textarea
+                    class="form-control"
+                    aria-label="Add text content"
+                    placeholder="What do you want to share today?"
+                    rows="4"></textarea>
                 </div>
+                <div class="input-group">
+                  <input type="file" class="form-control" />
+                </div>
+                <div class="row mb-5">
+                  <div class="row">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-post"
+                      value="post-comment">
+                      Post
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="input-group col-sm-3 col-mb-6 mb-2">
+                <label class="input-group-text" for="orderby">Order by</label>
+                <select class="form-select" id="orderby">
+                  <option value="date">Latest posts</option>
+                  <option value="popular">Most popular</option>
+                </select>
               </div>
-            </form>
 
-            <div class="input-group col-sm-3 col-mb-6 mb-2">
-              <label class="input-group-text" for="orderby">Order by</label>
-              <select class="form-select" id="orderby">
-                <option value="date">Latest posts</option>
-                <option value="popular">Most popular</option>
-              </select>
-            </div>
-
-            <div class="input-group col">
-              <label class="input-group-text" for="search">Search</label>
-              <input type="search" class="form-control" id="search" />
+              <div class="input-group col">
+                <label class="input-group-text" for="search">Search</label>
+                <input type="search" class="form-control" id="search" />
+              </div>
             </div>
           </div>
         </div>

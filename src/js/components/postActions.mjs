@@ -1,6 +1,5 @@
 import { postData } from "./postData.mjs";
 
-
 function goToPage(page){
     window.location.href = [`${page}`];  
 }
@@ -31,3 +30,5 @@ export function login(url, formData, divForError, currentPage) {
     } 
     postData(url, formData, divForError, headers, goToPage, page)
 }
+
+

@@ -3,19 +3,6 @@ import { errorMsg } from "./errorMsg.mjs";
 
 const token = localStorage.getItem('accessToken');
 let error;
-let goToPage;
-// const currentPage = document.title;
-
-// switch (currentPage) {
-//     case "Noroff Social Media | Log in":
-//         goToPage = "feed/index.html";
-//         break;
-//     case "Noroff Social Media | Sign up":
-//         goToPage = "index.html";
-//         break;
-//     default:
-//         break;
-// }
 
 /**
  * 

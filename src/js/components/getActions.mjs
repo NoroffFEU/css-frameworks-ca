@@ -4,8 +4,8 @@
  * @param {Array} postsArray 
  * @param {object} domElement 
  * 
- * This function takes the array of posts, and a DOM element, then produces
- * HTML based on the array in  our given HTML-element. 
+ * This function takes the array of posts, and a DOM comment, then produces
+ * HTML based on the array in  our given HTML-comment. 
  * 
  * Posts without title or content are skipped because I think they look ugly and don't 
  * provide anything to the page.
@@ -172,17 +172,17 @@ export function singlePostContent(domElement, postData) {
 
     const comments = postData.comments;
     for (let i = 0; i < comments.length; i++) {
-        const element = comments[i];
-        if (!element.body){
+        const comment = comments[i];
+        if (!comment.body){
             continue;
         }
         domElement.innerHTML += `
         <div class="comment">
             <div class="d-flex flex-row space-evenly">
-                <img class="avatar-img mr-3" src="${element.author.avatar} alt="${element.author.name}" title=${element.author.name}">
-                <h5 class="ml-3">${element.author.name}</h5> 
+                <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
+                <h5 class="ml-3">${comment.author.name}</h5> 
             </div>
-            <p class="comment-text">${element.body}</p>
+            <p class="comment-text">${comment.body}</p>
         </div>
     `;
     }

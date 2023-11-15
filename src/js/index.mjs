@@ -6,6 +6,7 @@ const fieldset = document.querySelector("fieldset");
 const formInputs = fieldset.elements;
 const btn = document.querySelector(".btn-primary");
 const divForError = document.querySelector(".error-box");
+const currentPage = document.title;
 
 for (let i = 0; i < formInputs.length; i++) {
     const input = formInputs[i];
@@ -27,7 +28,7 @@ if (document.title === "Noroff Social Media | Sign up") {
 
 btn.onclick = (e) => {
     e.preventDefault();
-    submitForm(formElem, completeUrl, divForError);
+    submitForm(formElem, completeUrl, divForError, currentPage);
 }
 
 // TESTING PURPOSES; LOGIN WITH:

@@ -1,6 +1,7 @@
 
 
 body {
+  margin-top: 150px;
   font-family: 'Jost', sans-serif;
 }
 
@@ -16,7 +17,7 @@ nav {
 
 
 .crown {
-  margin: 0px auto 50px -30px !important;
+  margin: 0px auto 10px -30px !important;
 }
 
 .container img {
@@ -49,4 +50,19 @@ nav {
   max-width: 500px;
 }
 
+.title {
+margin-left: -50px;
+}
 
+footer {
+height: 150px;
+text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+.title {
+margin-left: 10px;
+margin-bottom: 50px;
+}
+
+}

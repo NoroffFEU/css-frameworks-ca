@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Frameworks CA | Home</title>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io//favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon_io//site.webmanifest">
+
     <link rel="stylesheet" href="dist/css/index.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,7 +30,7 @@
       crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">DIP/DRIVE</a>
         <!-- <button
@@ -56,16 +61,27 @@
     <main>
       <section>
         <div class="container">
-          <img
-            src="/assets/ConsistencyisKing.webp"
-            class="crown m-3"
-            alt="Our motto" />
-          <h1 class="display-4">WELCOME TO OUR COMMUNITY</h1>
-          <p class="h4">
-            Consistency is king - log your result an share with your peers
-          </p>
-   
+          <div class="row">
+            <div class="col-sm-4 col-md-3 me-3 mt-3">
+              <img
+                src="/assets/ConsistencyisKing.webp"
+                class="crown m-3"
+                alt="Our motto" />
+            </div>
+     
+
+          <div class="col-sm-7 col-md-7 title mt-3">
+            <h1 class="display-4">WELCOME TO OUR COMMUNITY</h1>
+
+            <p class="h4">
+              Consistency is king - log your result an share with your peers
+            </p>
+          </div>
+        </div>
+
+        <div class="container">
           <div class="row login">
+          <div class="col">
             <form class="auth" action="/feed/">
               <div class="mb-3">
                 <label for="inputEmail1" class="form-label">Email</label>
@@ -96,6 +112,7 @@
                 Create an account
               </a>
             </form>
+          </div>
           </div>
         </div>
       </section>

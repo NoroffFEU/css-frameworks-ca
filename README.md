@@ -2,6 +2,8 @@
 
 A a social media application built with Bootstrap and SASS.
 
+![image](https://css-framework-ca-norheim.netlify.app/assets/dip-drive.png)
+
 ## Live site
 
 https://css-framework-ca-norheim.netlify.app/

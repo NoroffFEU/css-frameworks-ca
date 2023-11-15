@@ -40,7 +40,7 @@ If you would like to add to the project or do edits, go ahead and clone or fork 
 1. Clone repository
 
 ```bash
-git clone https://github.com/KariannNor/css-frameworks-ca.git
+git https://github.com/KariannNor/css-frameworks-ca.git
 ```
 
 2. Install dependencies

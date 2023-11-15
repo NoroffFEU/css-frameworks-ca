@@ -59,7 +59,7 @@ npm run build
 
 ## Running
 
-Add the LiveServer Extension to have a real time view of the site. You should also use the developer tools in Chrome for a overview of the HTML, CSS, and JS.
+Add the LiveServer Extension to have a real time view of the site. You should also use the developer tools in Chrome for a overview of the HTML, CSS, and JS. Another option is to drag the index into your preffered web browser.
 
 ## Contact
 

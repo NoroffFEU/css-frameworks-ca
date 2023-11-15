@@ -7,6 +7,11 @@ body {
 
 h4 {
   font-weight: 300;
+
+}
+
+h5 {
+color: $primary;
 }
 
 nav {
@@ -15,6 +20,9 @@ nav {
   font-size: 18px;
 }
 
+h1 {
+color: $primary;
+}
 
 .crown {
   margin: 0px auto 10px -30px !important;

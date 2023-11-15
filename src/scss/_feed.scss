@@ -12,9 +12,6 @@
 margin: 10px auto;
 }
 
-
-@media screen and (max-width: 550px) {
 .custom-feed {
-width: 80vw;
-}
+max-width: 80vw;
 }

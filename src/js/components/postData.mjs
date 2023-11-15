@@ -8,15 +8,15 @@ let error;
  * 
  * @param {string} url - an url where we 
  * @param {object} formData - Data from submitForm.mjs
- * @param {object} divForError - OPTIONAL - a div where our error message will be output
  * @param {object} headerData - data for the header of the request 
- * @param {function} action - optional - addidional action to take after the request has been sent
- * @param {*} actionParam - optional - argument for the action function. Data type depends on the function
+ * @param {object} divForError - OPTIONAL - a div where our error message will be output
+ * @param {function} action - OPTIONAL - addidional action to take after the request has been sent
+ * @param {*} actionParam - OPTIONAL - argument for the action function. Data type depends on the function
  * @returns a finished response from our API Post request. 
  * 
  * This function takes an API URL and sends data from an object using a fetch (POST) request
  */
-export async function postData(url, formData, divForError, headerData, action, actionParam) {
+export async function postData(url, formData, headerData, divForError, action, actionParam) {
     divForError.innerHTML = "";
     const dataForPostRequest= {
         method: "POST",

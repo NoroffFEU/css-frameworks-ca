@@ -28,7 +28,11 @@ export function login(url, formData, divForError, currentPage) {
         default:
             break;
     } 
-    postData(url, formData, divForError, headers, goToPage, page)
+    postData(url, formData, headers, divForError, goToPage, page)
 }
 
 
+export function makePost(url, formData) {
+    console.log(url);
+    console.log(formData);
+}

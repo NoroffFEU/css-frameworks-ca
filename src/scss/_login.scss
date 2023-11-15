@@ -1,55 +1,28 @@
 body {
-    background-image: url("../../images/background3.png");
-    background-size:  1000px auto;  
-    background-repeat: repeat;
-    background-position-y: 50px;
+  background-image: url("../../images/background3.png");
+  background-size: 1000px auto;
+  background-repeat: repeat;
+  background-position-y: 50px;
 }
 
 .login-h1 {
-    width: 400px;
-    display: block;
-    background-color: #0F0F0F;
-    border-radius: 10px;
-    color: #FF85A0;
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 800;
-    font-size: 6rem;
-}
-
-.login-form {
-    margin-top: 200px;
-    width: 400px;
-    padding: 0;
+  width: 400px;
+  display: block;
+  border-radius: 10px;
+  color: var(--pink);
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 6rem;
 }
 
 .register-new-acc {
-    text-decoration: none;
-}
-
-form.input {
-    background-color: #0F0F0F;
-}
-
-.login-form-button {
-    width: 400px;
-}
-
-.form-input {
-    background-color: #0F0F0F;
-    color: var(--bs-primary) !important;
-    border-color: var(--bs-primary);
-}
-
-/* ???? */
-.login-form::placeholder {
-    color: var(--bg-primary);
-    opacity: var(--placeholder-opacity-max);
+  text-decoration: none;
 }
 
 .login-worm-green img {
-    height: 170px;
+  height: 170px;
 }
 
-.login-worm-red img{
-    height: 130px;
+.login-worm-red img {
+  height: 130px;
 }

@@ -1,71 +1,57 @@
-
-body, html {
-    height: 100%;
-    margin: 0;
+body,
+html {
+  height: 100%;
+  margin: 0;
 }
 
 .logo {
-    color: #FF85A0;
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 800;
-    font-size: 2rem;
+  color: var(--pink);
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
 }
 
 .user-profile-picture {
-    top: 30%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 10;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
-.btn {
-    max-width: 120px;
-    
-}
+// .btn {
+//   max-width: 120px;
+// }
 
 h1 {
-    color: var(--bs-primary);
-    font-size: 3rem;
+  color: var(--bs-primary);
 }
 
 p {
-    color: var(--bs-primary);
+  color: var(--bs-primary);
 }
 
 .baloo {
-    font-family: 'baloo 2', sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.white {
-    color: white;
+  font-family: "baloo 2", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .main-content {
-    flex-grow: 1;
-    border-left: 2px solid var(--bs-primary);
-    border-right: 2px solid var(--bs-primary);
-    background-color: #0F0F0F;
-    box-sizing: border-box;
-    // height: 100vh;
+  flex-grow: 1;
+  border-left: 2px solid var(--bs-primary);
+  border-right: 2px solid var(--bs-primary);
 }
 
-.profile-background img{
-    width: 100%;
-    height: auto;
+.profile-background img {
+  width: 100%;
+  height: auto;
 }
 
 .small-user-picture {
-    width: 30px;
-    height: 30px;
-}
-
-.aurora {
-    max-width: 100%;
-    eight: auto;
+  width: 30px;
+  height: 30px;
 }
 
 footer p {
-    color: var(--bs-primary);
+  color: var(--bs-primary);
 }

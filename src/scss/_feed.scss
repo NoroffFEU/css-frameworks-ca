@@ -1,83 +1,62 @@
-// .sorting {
-//     width: 400px;
-// }
-
-// .new-post-form {
-//     width: 400px;
-// }
-
-// .search {
-//     width: 400px;
-// }
-
-// .search-sort {
-//     width: 400px;
-// }
-
-
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FF85A0' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23FF85A0' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-
 
 /* ???? why hamburger is moving???? */
 .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none; 
-    transform: none;
-    position: relative;
-    margin-right: 0px;
+  outline: none;
+  box-shadow: none;
+  transform: none;
+  position: relative;
+  margin-right: 0px;
 }
 
 .navbar-toggler:active {
-    position: relative;
-    transform: none;
-    margin-right: 0px;
+  position: relative;
+  transform: none;
+  margin-right: 0px;
 }
 
-
-
 .chat {
-    width: 100px;
+  width: 100px;
 }
 
 .new-post-form {
-    padding: 20px;
-    font-family: 'open sans', sans-serif;
-    align-items: center;
+  padding: 20px;
+  font-family: "open sans", sans-serif;
+  align-items: center;
 }
 
 .post-btn {
-    width: 100%; 
-    display: block;
-    align-items: center;
+  width: 100%;
+  display: block;
+  align-items: center;
 }
 
 .card {
-    background-color: #0F0F0F;
+  background-color: #0f0f0f;
 }
 
 .form-control {
-    width: 400px;
-    background-color: transparent;
-    border-color: var(--bs-primary);
-    color: white;
-  }
+  width: 400px;
+  background-color: transparent;
+  border-color: var(--bs-primary);
+  color: white;
+}
 
-  .form-control::placeholder {
-    color: white;
-  }
+.form-control::placeholder {
+  color: white;
+}
 
-  .textarea::placeholder {
-    color: var(--bs-dark);
-  }
+.textarea::placeholder {
+  color: var(--bs-dark);
+}
 
-  .feed-posts {
-    max-width: 800px;
-  }
+.feed-posts {
+  max-width: 800px;
+}
 
-  .feed-posts.container {
-    height: auto;
-    max-width: 800px;
-  }
-
+.feed-posts.container {
+  height: auto;
+  max-width: 800px;
+}

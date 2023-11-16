@@ -31,6 +31,14 @@ export function login(url, formData, divForError, currentPage) {
     postData(url, formData, headers, divForError, goToPage, page)
 }
 
+/**
+ * 
+ * @param {string} url - where  to end the data
+ * @param {object} formData - data to be sent 
+ * @param {object} divForError - a div to print out error 
+ * 
+ * This function passes information about the post you want to create down to the postData function
+ */
 export function makePost(url, formData, divForError) {
     const token = localStorage.getItem("accessToken");
     const headerData = {

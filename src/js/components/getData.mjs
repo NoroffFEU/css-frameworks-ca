@@ -12,7 +12,7 @@ export async function getData(url, token, domElement, action, actionParam) {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
           }
     }
 

@@ -35,12 +35,12 @@ export function printFeed(domElement, postsArray) {
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>
-                <h5><a href="${post.id}">${post.title}</a><h5>
+                <h5><a href="singlepost.html?id=${post.id}">${post.title}</a><h5>
                 <p class="post-text">
                     ${post.body}
                 </p>
                 <p>Post has ${post._count.comments} comments and ${post._count.reactions} reactions</p>
-                <button>delete post</button><button>edit post</button>
+                <button class="delete-post" id="${post.id}">delete post</button><button>edit post</button>
             </div>
             `;
         } else {

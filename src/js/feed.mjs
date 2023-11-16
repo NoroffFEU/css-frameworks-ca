@@ -35,10 +35,10 @@ let endpoint;
 let queries;
 
 
-endpoint = "/social/posts";
+endpoint = "/social/posts/";
 queries = "?_author=true&_comments=true&_reactions=true";
-let fullURL = `${baseUrl}${endpoint}${queries}`;
-getData(fullURL, token, allPostsDom, printFeed);
+const feedUrl = `${baseUrl}${endpoint}${queries}`;
+getData(feedUrl, token, allPostsDom, printFeed);
 
 const sortByInp = document.querySelector("#sort-by");
 const searchFrom = document.querySelector(".search-form");
@@ -48,21 +48,41 @@ searchFrom.onsubmit = (e) => {e.preventDefault()};
 
 sortByInp.addEventListener("change", (e) => {
     allPostsDom.innerHTML = "";
-    getData(fullURL, token, allPostsDom, sortArray, sortByInp.value)
+    getData(feedUrl, token, allPostsDom, sortArray, sortByInp.value)
 })
 
 searcInp.onkeyup = () => {
     const willBeSearchParams = new FormData(searchFrom);
     const searchParams = {};
     willBeSearchParams.forEach((value, key) => (searchParams[key] = value));    
-    getData(fullURL, token, allPostsDom, searchArray, searchParams);
+    getData(feedUrl, token, allPostsDom, searchArray, searchParams);
 };
 
 import { makePost } from "./components/postActions.mjs";
 newPostForm.addEventListener("submit", (e) => {
     const divForError = document.querySelector(".div-for-error");
     e.preventDefault();
-    fullURL = `${baseUrl}${endpoint}`;
-    submitForm(newPostForm, fullURL, makePost, divForError);
-    
+    const newPostURl = `${baseUrl}${endpoint}`;
+    submitForm(newPostForm, newPostURl, makePost, divForError);
+    getData(feedUrl, token, allPostsDom, printFeed);
 });
+
+import { deletePost } from "./components/deleteData.mjs";
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(){
+        const deleteBtns = document.querySelectorAll(".delete-post");
+        deleteBtns.forEach((deleteBtn) => {
+            deleteBtn.onclick = () => {
+                const postToDelete = deleteBtn.id;
+                const deleteURl = `${baseUrl}${endpoint}${postToDelete}`;
+                deletePost(deleteURl);
+                getData(feedUrl, token, allPostsDom, printFeed);
+            };
+        });
+    })
+});
+
+
+const config = {attributes: true, childList: true, subtree: true};
+
+observer.observe(allPostsDom, config);

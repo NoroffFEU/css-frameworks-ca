@@ -5,6 +5,16 @@ body {
   flex-direction: column;
 }
 
+.logo {
+  position: absolute;
+  left: 3rem;
+  top: 0.2rem;
+  color: var(--pink);
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
 h1 {
   color: var(--pink);
   font-family: "Baloo 2", sans-serif;

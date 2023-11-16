@@ -29,10 +29,10 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark position-relative">
       <div class="container-fluid">
         <div>
-          <a class="navbar-brand ms-5 logo" href="#"
+          <a class="navbar-brand logo" href="#"
             >Vib`n<span class="logo-yellow">!</span></a
           >
         </div>
@@ -69,41 +69,44 @@
         </div>
       </div>
     </nav>
-    <main class="main-content bg-dark mx-auto col-6 pb-5">
+    <main
+      class="main-content bg-dark mx-auto col-12 col-sm-10 col-sm-10 col-md-8 col-xxl-6 pb-5"
+    >
       <div class="p-0 profile-background position-relative">
         <img src="/images/profile-background.png" alt="profile background" />
       </div>
       <section class="container ps-4 pe-4">
-        <section class="container mb-5">
+        <section class="container container-no-margin">
           <div
             class="row user-info align-items-center justify-content-between pt-3 mb-5"
           >
-            <div class="col-3 text-start mb-5">
-              <h1 class="mb-5 fs-1">Lizz Kiss</h1>
+            <div class="col-3 text-start d-flex flex-column">
+              <h1 class="mb-1 fs-1">Lizz Kiss</h1>
+              <button class="btn follow btn-primary mb-3 mt-0 ms-1">
+                Follow me!
+              </button>
             </div>
-            <div class="col-3 d-flex justify-content-end">
-              <div class="user-info-followers text-center px-2 mb-5">
+            <div class="col-3 d-flex justify-content-end followers-numbers">
+              <div class="user-info-followers text-center px-2">
                 <p class="mb-0">560</p>
                 <p class="mb-5">Followers</p>
               </div>
-              <div class="user-info-following text-center px-2 mb-5">
+              <div class="user-info-following text-center px-2">
                 <p class="mb-0">1200</p>
                 <p class="mb-5">Following</p>
               </div>
             </div>
           </div>
           <div
-            class="position-absolute user-profile-picture d-flex flex-column align-items-center"
+            class="position-absolute user-profile-picture d-block align-items-center"
           >
             <img
               src="/images/profile-pic1.png"
               alt="user picture"
               class="mb-0"
             />
-            <button class="btn btn-primary mb-3 mt-0">Follow me!</button>
           </div>
         </section>
-
         <section class="container mt-5">
           <div class="row justify-content-between">
             <div class="col ps-0">
@@ -118,7 +121,7 @@
               <img
                 src="/images/profile-pic2.png"
                 alt="user picture"
-                class="img-fluid"
+                class="img-fluid friends-profile-img"
               />
               <p class="text-center baloo">Code Ninja</p>
             </div>
@@ -126,7 +129,7 @@
               <img
                 src="/images/profile-pic3.png"
                 alt="user picture"
-                class="img-fluid"
+                class="img-fluid friends-profile-img"
               />
               <p class="text-center baloo">Geek Goddess</p>
             </div>
@@ -134,7 +137,7 @@
               <img
                 src="/images/profile-pic4.png"
                 alt="user picture"
-                class="img-fluid"
+                class="img-fluid friends-profile-img"
               />
               <p class="text-center baloo">Lovely Lu</p>
             </div>
@@ -142,7 +145,7 @@
               <img
                 src="/images/profile-pic5.png"
                 alt="user picture"
-                class="img-fluid"
+                class="img-fluid friends-profile-img"
               />
               <p class="text-center baloo">King Chong</p>
             </div>
@@ -150,7 +153,7 @@
               <img
                 src="/images/profile-pic6.png"
                 alt="user picture"
-                class="img-fluid"
+                class="img-fluid friends-profile-img"
               />
               <p class="text-center baloo">Flash Finn</p>
             </div>
@@ -158,7 +161,7 @@
               <img
                 src="/images/profile-pic7.png"
                 alt="user picture"
-                class="img-fluid"
+                class="img-fluid friends-profile-img"
               />
               <p class="text-center baloo">Rex Racer</p>
             </div>
@@ -174,51 +177,54 @@
               <p class="text-white text-end">Show All</p>
             </div>
           </div>
-          <div
-            class="row bg-light pt-2 text-center align-items-center justify-content-between"
-          >
-            <div class="col-auto ps-0 d-flex align-items-center">
-              <img
-                src="/images/profile-pic1.png"
-                alt="user picture"
-                class="small-user-picture m-1 p-0"
-              />
-              <p class="mb-0">
-                <span class="pe-2 baloo">Lizz Kiss</span>3d. London
-              </p>
-            </div>
-            <div class="col-auto d-flex justify-content-end align-items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="red"
-                class="bi bi-heart-fill"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+          <section>
+            <div
+              class="row bg-light pt-2 text-center align-items-center justify-content-between"
+            >
+              <div class="col-auto ps-0 d-flex align-items-center">
+                <img
+                  src="/images/profile-pic1.png"
+                  alt="user picture"
+                  class="small-user-picture m-1 p-0"
                 />
-              </svg>
-              <p class="align-items-center ps-2 mb-0">210</p>
+                <p class="mb-0">
+                  <span class="pe-2 baloo">Lizz Kiss</span>3d. London
+                </p>
+              </div>
+              <div
+                class="col-auto d-flex justify-content-end align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="red"
+                  class="bi bi-heart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                  />
+                </svg>
+                <p class="align-items-center ps-2 mb-0">210</p>
+              </div>
+              <div>
+                <p class="text-start text-dark pt-3">
+                  🇺🇦 Just watched the news about the situation in Ukraine. It’s
+                  heart-wrenching to see what’s happening there. Politics should
+                  never come at the cost of innocent lives. Sending my thoughts
+                  and prayers to all affected. 💔 #PrayForUkraine #PoliticsFail
+                </p>
+              </div>
             </div>
-            <div>
-              <p class="text-start text-dark pt-3">
-                🇺🇦 Just watched the news about the situation in Ukraine. It’s
-                heart-wrenching to see what’s happening there. Politics should
-                never come at the cost of innocent lives. Sending my thoughts
-                and prayers to all affected. 💔 #PrayForUkraine #PoliticsFail
-              </p>
-            </div>
-          </div>
+          </section>
         </section>
-
         <section class="container mt-5 pb-2 pt-2 bg-light">
           <div
             class="row text-center align-items-center justify-content-between"
           >
-            <div class="col d-flex ps-0 align-items-center">
+            <div class="col-auto d-flex ps-0 align-items-center">
               <img
                 src="/images/profile-pic1.png"
                 alt="user picture"
@@ -228,7 +234,7 @@
                 <span class="pe-2 baloo">Lizz Kiss</span>4d. London
               </p>
             </div>
-            <div class="col-auto d-flex justify-content-end">
+            <div class="col-auto d-flex justify-content-end align-items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -263,12 +269,11 @@
             />
           </div>
         </section>
-
         <section class="container mt-5 pt-2 bg-light">
           <div
             class="row text-center align-items-center justify-content-between"
           >
-            <div class="col d-flex ps-0 align-items-center">
+            <div class="col-auto d-flex ps-0 align-items-center">
               <img
                 src="/images/profile-pic1.png"
                 alt="user picture"

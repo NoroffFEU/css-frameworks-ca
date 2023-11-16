@@ -1,5 +1,6 @@
 import { formCheck } from "./components/formValidation.mjs";
 import { submitForm } from "./components/submitForm.mjs";
+import { login } from "./components/postActions.mjs";
 
 const formElem = document.querySelector("form");
 const fieldset = document.querySelector("fieldset");
@@ -28,7 +29,7 @@ if (document.title === "Noroff Social Media | Sign up") {
 
 btn.onclick = (e) => {
     e.preventDefault();
-    submitForm(formElem, completeUrl, divForError, currentPage);
+    submitForm(formElem, completeUrl, login, divForError, currentPage);
 }
 
 // TESTING PURPOSES; LOGIN WITH:

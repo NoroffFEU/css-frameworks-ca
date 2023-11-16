@@ -26,13 +26,6 @@ for (let i = 0; i < formInputs.length; i++) {
     }
 }
 
-newPostForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("HELLO");
-    // const newPost = new FormData(newPostForm);
-    // Not getting more work done for now, taking a break and goin to work
-});
-
 import { getData } from "./components/getData.mjs";
 
 const allPostsDom = document.querySelector(".all-posts");
@@ -44,7 +37,7 @@ let queries;
 
 endpoint = "/social/posts";
 queries = "?_author=true&_comments=true&_reactions=true";
-const fullURL = `${baseUrl}${endpoint}${queries}`;
+let fullURL = `${baseUrl}${endpoint}${queries}`;
 getData(fullURL, token, allPostsDom, printFeed);
 
 const sortByInp = document.querySelector("#sort-by");
@@ -65,3 +58,11 @@ searcInp.onkeyup = () => {
     getData(fullURL, token, allPostsDom, searchArray, searchParams);
 };
 
+import { makePost } from "./components/postActions.mjs";
+newPostForm.addEventListener("submit", (e) => {
+    const divForError = document.querySelector(".div-for-error");
+    e.preventDefault();
+    fullURL = `${baseUrl}${endpoint}`;
+    submitForm(newPostForm, fullURL, makePost, divForError);
+    
+});

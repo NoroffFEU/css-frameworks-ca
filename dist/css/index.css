@@ -11939,6 +11939,9 @@ body .counter {
 main {
   min-height: 90vh;
 }
+main .title {
+  max-width: 250px;
+}
 main .add-comment {
   width: 500px;
   margin: 50px;

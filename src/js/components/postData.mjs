@@ -17,7 +17,9 @@ let error;
  * This function takes an API URL and sends data from an object using a fetch (POST) request
  */
 export async function postData(url, formData, headerData, divForError, action, actionParam) {
-    divForError.innerHTML = "";
+    if (divForError) {
+        divForError.innerHTML = "";
+    }
     const dataForPostRequest= {
         method: "POST",
         headers: headerData,
@@ -26,15 +28,18 @@ export async function postData(url, formData, headerData, divForError, action, a
     try {
         const fetchResponse = await fetch(url, dataForPostRequest)
         const finishedResponse = await fetchResponse.json();
+        console.log(finishedResponse);
         if (finishedResponse.statusCode > 399) {
-            error = finishedResponse.errors[0].message
+            error = finishedResponse.errors[0].message;
             throw error;
         } 
-        if (finishedResponse.accessToken && !token) {
+        if (finishedResponse.accessToken) {
             localStorage.setItem(`accessToken`, `${finishedResponse.accessToken}`);
             localStorage.setItem('userName', `${finishedResponse.name}`);
         }
-        action(actionParam);
+        if (action) {
+            action(actionParam);
+        }
         return finishedResponse;
     } catch (error) {
         errorMsg(divForError, error);

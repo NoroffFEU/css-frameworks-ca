@@ -46,12 +46,21 @@
                         <h2 class="h3"><u>Add a post:</u></h2>
                         <div class="form-outline col-6">
                             <fieldset class="add-post-fieldset">
-                                <textarea class="form-control" id="form4Example3" rows="7" placeholder="Say something clever, minimum  15 characters, max 250" minlength="15" maxlength="250" required></textarea>
+                                <div class="mt-2 mb-3 d-flex flex-column">
+                                    <label for="title"><u>Post Title:</u></label>
+                                    <input type="text" class="title" name="title" id="title" required>
+                                </div>
+                                <textarea class="form-control" name="body" id="form4Example3" rows="7" placeholder="Say something clever, minimum  15 characters, max 250" minlength="15" maxlength="250" required></textarea>
                                 <label class="form-label" for="form4Example3"><span class="counter">0</span> / <span class="max-val">250</span></label>
+                            <div class="mt-2 mb-3 d-flex flex-column">
+                                <label for="media">Media URL (optional)</label>
+                                <input type="text" class="title" name="media" id="media">
+                            </div>
                             </fieldset>
                           </div>
                           <button type="submit" class="btn add-post-btn btn-primary btn-block mb-4" disabled>Post</button> 
                     </form>
+                    <div class="div-for-error"></div>
                 </div>
 
                 <div class="row justify-content-center">

@@ -17,6 +17,10 @@ body{
 main{
     min-height: 90vh;
 
+    .title{
+        max-width: 250px;
+    }
+
     .add-comment{
         width: 500px;
         margin: 50px;

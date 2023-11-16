@@ -31,8 +31,11 @@ export function login(url, formData, divForError, currentPage) {
     postData(url, formData, headers, divForError, goToPage, page)
 }
 
-
-export function makePost(url, formData) {
-    console.log(url);
-    console.log(formData);
+export function makePost(url, formData, divForError) {
+    const token = localStorage.getItem("accessToken");
+    const headerData = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    postData(url, formData, headerData, divForError);
 }

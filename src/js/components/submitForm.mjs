@@ -1,4 +1,4 @@
-import { login } from "./postActions.mjs";
+
 /**
  * 
  * @param {object} form - The HTMLForm which we create our object from
@@ -9,9 +9,9 @@ import { login } from "./postActions.mjs";
  * Gathers form data and inserts it into an empty object using a forEach, saving keys and values.
  * Then runs it through the login function below. 
  */
-export function submitForm (form, url, divForError, currentPage) {
+export function submitForm (form, url, action, divForError, currentPage) {
     const formData = new FormData(form);
     const formdataOBj = {};
     formData.forEach((value, key) => (formdataOBj[key] = value));
-    login(url, formdataOBj, divForError, currentPage);
+    action(url, formdataOBj, divForError, currentPage);
 };

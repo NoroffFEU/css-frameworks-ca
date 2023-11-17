@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Frameworks CA | Home</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io//favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io//favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicon_io//site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon_io/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon_io//favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon_io//favicon-16x16.png" />
+    <link rel="manifest" href="/assets/favicon_io//site.webmanifest" />
 
     <link rel="stylesheet" href="dist/css/index.css" />
 
@@ -62,59 +73,64 @@
     </header>
     <main>
       <section>
-        <div class="container">
+        <div class="container mb-5">
           <div class="row m-2">
-            <div class="col-sm-4 col-md-3 me-3 mt-3">
+            <div class="col-sm-4 col-md-3 m-3">
               <img
                 src="/assets/ConsistencyisKing.webp"
                 class="crown m-3"
                 alt="Our motto" />
             </div>
-     
 
-          <div class="col-sm-7 col-md-7 title mt-3">
-            <h1 class="display-4">WELCOME TO OUR COMMUNITY</h1>
+            <div class="col-sm-5 col-md-5 title mt-3">
+              <h1 class="display-4">WELCOME TO OUR COMMUNITY</h1>
 
-            <p class="h4 my-3">
-              Consistency is king - log your results and share with your peers
-            </p>
+              <p class="h4 my-2 mb-5">
+                Consistency is king - log your results and share with your peers
+              </p>
+            </div>
           </div>
         </div>
+        <div class="container-expand-lg divider bg-light">
+          <div class="container my-5 login">
+            <div class="row">
+              <div class="col">
+                <form class="auth" action="/feed/">
+                  <div class="mb-3">
+                    <label for="inputEmail1" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="* Your email"
+                      required />
+                  </div>
 
-        <div class="container my-5">
-          <div class="row login">
-          <div class="col">
-            <form class="auth form-custom" action="/feed/">
-              <div class="mb-3">
-                <label for="inputEmail1" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="* Your email"
-                  required />
+                  <div class="mb-3">
+                    <label for="inputPassword1" class="form-label"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="* Your password"
+                      minlength="8"
+                      required />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">
+                    Sign me in
+                  </button>
+                  <a
+                    href="/profile/index.html"
+                    role="button"
+                    class="btn btn-outline-secondary ms-3">
+                    Create an account
+                  </a>
+                </form>
               </div>
-
-              <div class="mb-3">
-                <label for="inputPassword1" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="* Your password"
-                  minlength="8"
-                  required />
-              </div>
-
-              <button type="submit" class="btn btn-primary">Sign me in</button>
-              <a
-                href="/profile/index.html"
-                role="button"
-                class="btn btn-outline-secondary ms-3">
-                Create an account
-              </a>
-            </form>
-          </div>
+            </div>
           </div>
         </div>
       </section>

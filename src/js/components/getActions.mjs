@@ -129,6 +129,13 @@ export function searchArray(domElement, postsArray, searchQuery) {
     }
     
 
+/**
+ * 
+ * @param {object} domElement - where to print HTML  
+ * @param {array} postData - what HTML to print
+ * 
+ * This function prints HTML to the single post DOM element
+ */    
 export function singlePostContent(domElement, postData) {
     const creationDate = postData.created.replaceAll("-", ".");
     const formattedDate = creationDate.slice(0, creationDate.length - 14).split(".").reverse().join(".");
@@ -140,36 +147,36 @@ export function singlePostContent(domElement, postData) {
         <p class="text-center">Posted the ${formattedDate}</p>
     </div>
     `;
+};
 
-    const reactions = postData.reactions.reverse(); 
+/**
+ * 
+ * @param {object} domElement - where to print HTML  
+ * @param {array} postData - what HTML to print
+ * 
+ * This function prints the post reactions to HTML in the reactions div  
+ */
+export function createReactions(domElement, postData) {
+    const reactions = postData.reactions; 
     for (let i = 0; i < reactions.length; i++) {
-        domElement.innerHTML += `<span class="reactions text-center m-2">${reactions[i].symbol}${reactions[i].count}</span>`;
+        domElement.innerHTML += `<span class="reaction text-center m-2">${reactions[i].symbol}${reactions[i].count}</span>`;
     }
-
     domElement.innerHTML += `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="add-reaction bi bi-plus-circle" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-            </div>
-        </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="add-reaction bi bi-plus-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+    </svg>`;
+}
 
-        <div class="add-comment">
-            <div class="row">
-                <form class="add-post-form d-flex justify-content-center align-items-center flex-column" action="">
-                    <h2 class="h3"><u>Add a comment:</u></h2>
-                    <div class="form-outline col-6">
-                        <fieldset class="add-post-fieldset">
-                            <textarea class="form-control" id="form4Example3" rows="7" placeholder="Say something clever, minimum  15 characters, max 250" minlength="15" maxlength="250" required></textarea>
-                            <label class="form-label" for="form4Example3"><span class="counter">0</span> / <span class="max-val">250</span></label>
-                        </fieldset>
-                    </div>
-                    <button type="submit" class="btn add-post-btn btn-primary btn-block mb-4" disabled>Post</button> 
-                </form>
-            </div>
-        </div>
-        `;
-
+/**
+ * 
+ * @param {object} domElement - where to print HTML  
+ * @param {array} postData - what HTML to print
+ * 
+ * This function  prints post commmments to the post. If the comment was made by the logged in user, you get the option to delete or edit it
+ */
+export function createComments(domElement, postData) {
+    const myUserName = localStorage.getItem('userName');
     const comments = postData.comments;
     for (let i = 0; i < comments.length; i++) {
         const comment = comments[i];
@@ -185,7 +192,8 @@ export function singlePostContent(domElement, postData) {
             <p class="comment-text">${comment.body}</p>
         </div>
     `;
+    if (comment.author.name === myUserName){
+        domElement.innerHTML += `<button class="delete-comment" id="${postData.id}">delete post</button><button class="edit-comment">edit post</button>`;
     }
-
-
-};
+    }
+}

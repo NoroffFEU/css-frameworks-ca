@@ -193,7 +193,7 @@ export function createComments(domElement, postData) {
         </div>
     `;
     if (comment.author.name === myUserName){
-        domElement.innerHTML += `<button class="delete-comment" id="${postData.id}">delete post</button><button class="edit-comment">edit post</button>`;
+        domElement.innerHTML += `<button class="delete-comment" id="${postData.id}">delete post</button><button class="edit-comment" id="${postData.id}>edit post</button>`;
     }
     }
 }

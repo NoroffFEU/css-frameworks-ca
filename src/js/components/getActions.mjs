@@ -40,7 +40,7 @@ export function printFeed(domElement, postsArray) {
                     ${post.body}
                 </p>
                 <p>Post has ${post._count.comments} comments and ${post._count.reactions} reactions</p>
-                <button class="delete-post" id="${post.id}">delete post</button><button>edit post</button>
+                <button class="delete-post" id="${post.id}">delete post</button><button class="edit-post">edit post</button>
             </div>
             `;
         } else {

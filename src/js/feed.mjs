@@ -79,6 +79,16 @@ const observer = new MutationObserver(function(mutations) {
                 getData(feedUrl, token, allPostsDom, printFeed);
             };
         });
+
+        const editBtns = document.querySelectorAll(".edit-post");
+        editBtns.forEach((editBtn) => {
+            editBtn.onclick = () => {
+                const postToEdit = editBtn.id;
+                const editUrl = `${baseUrl}${endpoint}${postToEdit}`;
+                console.log(editUrl); // FIX THIS LATER 
+                getData(feedUrl, token, allPostsDom, printFeed);
+            };
+        });
     })
 });
 

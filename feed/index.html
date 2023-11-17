@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feed/CSS Frameworks</title>
-    <link href="dist/css/style.css" rel="stylesheet"/>
+   
+    <link href="/dist/css/style.css" rel="stylesheet"/>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"> <img src="/image/airplane.png" alt="Logo" width="35" height="29"> Voyage</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +18,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/profile">Profile</a>
@@ -26,12 +27,70 @@
                 <a class="nav-link" href="/feed">Feed</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
+      <main class="container">
+        <section> 
+            <div class="d-flex row justify-content-center mt-5">
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/bilferie.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">I recently had the opportunity to visit Norway, and I was blown away by the beauty of the country. The mountains, fjords, and glaciers are truly breathtaking.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/by-ferie.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Japan is a land of contrasts. From the bustling streets of Tokyo to the serene beauty of Kyoto, there is something for everyone in this amazing country.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/camping.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">We woke up to the sound of waves crashing on the shore. We were camping in Australia, and it was the perfect place to relax and enjoy the beauty of nature.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/camping-bil.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Exploring the fjords of Norway by campervan is the perfect way to experience the beauty of this stunning country. You can drive along winding mountain roads, stop to take in the views, and camp in the most amazing spots.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/flyreise.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">I can't believe I'm finally on my way to Hawaii! I've been dreaming of this trip for years, and now it's finally here.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/italia.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Italy is a stunning country to explore. It has something for everyone, from ancient ruins to stunning beaches to delicious food.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/kart-kamera.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Where are you going now?.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+              <div class="card m-2" style="width: 18rem;">
+                <img src="/image/motorsykkel.jpg" class="card-img-top mt-2" alt="...">
+                <div class="card-body">
+                  <p class="card-text">I'm so excited to finally be on my way with my motorcycle trip through Asia! I've been planning this trip for years, and I can't wait to see the amazing sights and meet the interesting people along the way.</p>
+                  <a href="/profile" class="btn btn-secondary">Profile</a>
+                </div>
+              </div>
+            </div>
+        </section>
+      </main>
 </body>
 </html>

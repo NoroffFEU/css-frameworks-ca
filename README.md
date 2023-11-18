@@ -1,5 +1,6 @@
 # CSS Frameworks CA
-![image](https://github.com/ephraimdjeket/css-frameworks-ca/assets/45997915/cb437017-2ed6-4a26-b442-ad40827ddf9c)
+![image](https://github.com/ephraimdjeket/css-frameworks-ca/assets/45997915/9658d23a-d55e-481b-b364-011e2a42335c)
+
 
 Live demo: https://apeamigos.netlify.app/
 # ApeAmigos - Chat, Share, and Swing into the Social Jungle!

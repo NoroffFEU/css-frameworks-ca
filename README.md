@@ -3,6 +3,7 @@
 Course assignment bootstrap
 
 
-## Install Instuctions:
-  # npm install
-  # npm run build
+# Install Instuctions:
+Download project then run:
+  1. npm install bootstrap
+  2. npm run build

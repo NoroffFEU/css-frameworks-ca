@@ -16,4 +16,20 @@ h1, h2{
     justify-content: center;
   } 
 
+ .add-post02{
+    display: none;
+ }
 
+ p{
+    font-size: 20px;
+ }
+
+  @media (max-width: 1000px){
+ .add-post{
+    display: none;
+ }
+
+ .add-post02{
+    display: block;
+ }
+  }

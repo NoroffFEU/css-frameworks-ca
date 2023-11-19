@@ -21,6 +21,12 @@
   width: 100px;
 }
 
+.search-group {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+}
+
 .new-post-form {
   padding: 20px;
   font-family: "open sans", sans-serif;
@@ -38,7 +44,7 @@
 }
 
 .form-control {
-  width: 400px;
+  max-width: 400px;
   background-color: transparent;
   border-color: var(--bs-primary);
   color: white;

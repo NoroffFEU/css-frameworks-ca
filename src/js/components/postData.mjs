@@ -28,7 +28,6 @@ export async function postData(url, formData, headerData, divForError, action, a
     try {
         const fetchResponse = await fetch(url, dataForPostRequest)
         const finishedResponse = await fetchResponse.json();
-        console.log(finishedResponse);
         if (finishedResponse.statusCode > 399) {
             error = finishedResponse.errors[0].message;
             throw error;

@@ -59,12 +59,20 @@ searcInp.onkeyup = () => {
 };
 
 import { makePost } from "./components/postActions.mjs";
+
 newPostForm.addEventListener("submit", (e) => {
     const divForError = document.querySelector(".div-for-error");
     e.preventDefault();
     const newPostURl = `${baseUrl}${endpoint}`;
     submitForm(newPostForm, newPostURl, makePost, divForError);
-    getData(feedUrl, token, allPostsDom, printFeed);
+    allPostsDom.innerHTML = "";
+    for (let i = 0; i < formInputs.length; i++) {
+        const formInp = formInputs[i];
+        formInp.value = "";
+    }
+    setTimeout(() => {
+        getData(feedUrl, token, allPostsDom, printFeed);
+    }, 1000);
 });
 
 import { deletePost } from "./components/deleteData.mjs";
@@ -76,7 +84,10 @@ const observer = new MutationObserver(function(mutations) {
                 const postToDelete = deleteBtn.id;
                 const deleteURl = `${baseUrl}${endpoint}${postToDelete}`;
                 deletePost(deleteURl);
-                getData(feedUrl, token, allPostsDom, printFeed);
+                allPostsDom.innerHTML = "";
+                setTimeout(() => {
+                    getData(feedUrl, token, allPostsDom, printFeed);
+                }, 1000);
             };
         });
 

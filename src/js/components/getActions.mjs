@@ -170,10 +170,11 @@ export function createReactions(domElement, postData) {
         domElement.innerHTML += `<span class="reaction text-center m-2">${reactions[i].symbol}${reactions[i].count}</span>`;
     }
     domElement.innerHTML += `
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="add-reaction bi bi-plus-circle" viewBox="0 0 16 16">
+    <svg class="add-reaction" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="add-reaction bi bi-plus-circle" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-    </svg>`;
+    </svg> 
+    `;
 }
 
 /**
@@ -201,7 +202,7 @@ export function createComments(domElement, postData) {
                     <h5 class="ml-3">${comment.author.name}</h5> 
                 </div>
                 <p class="comment-text">${comment.body}</p>
-                <button class="delete" id="${postData.id}">delete post</button>
+                <button class="delete" id="${postData.id}">Delete Comment</button>
             </div>
             `;
         } else {

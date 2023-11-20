@@ -11960,8 +11960,11 @@ main .avatar-img {
 main .post-img {
   max-width: 450px;
 }
-main .reaction:hover {
+main .reaction:hover, main .add-reaction:hover {
   cursor: pointer;
+}
+main .edit-post label {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=index.css.map */

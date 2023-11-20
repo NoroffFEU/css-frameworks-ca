@@ -43,7 +43,15 @@ main{
         max-width: 450px;
     }
 
-    .reaction:hover{
+    .reaction:hover, .add-reaction:hover{
         cursor: pointer;
     }
+
+    .edit-post{
+
+        label{
+            text-decoration: underline;
+        }
+    }
+
 }

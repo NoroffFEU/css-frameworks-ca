@@ -47,3 +47,12 @@ export function makePost(url, formData, divForError) {
     }
     postData(url, formData, headerData, divForError);
 }
+
+export function postComment(url, formData, divForError) {
+    const token = localStorage.getItem("accessToken");
+    const headerData = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    };
+    postData(url, formData, headerData, divForError);
+}

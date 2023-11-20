@@ -137,6 +137,7 @@ export function searchArray(domElement, postsArray, searchQuery) {
  * This function prints HTML to the single post DOM element
  */    
 export function singlePostContent(domElement, postData) {
+    const myUserName = localStorage.getItem('userName');
     const creationDate = postData.created.replaceAll("-", ".");
     const formattedDate = creationDate.slice(0, creationDate.length - 14).split(".").reverse().join(".");
     domElement.innerHTML = `
@@ -144,9 +145,16 @@ export function singlePostContent(domElement, postData) {
         <h1 class="text-center">${postData.title}</h1>
         <p class="text-center">${postData.body}</p>
         <img class="post-img text-center justify-self-center align-self-center" src="${postData.media}" alt="">
-        <p class="text-center">Posted the ${formattedDate}</p>
+        <p class="text-center">Posted the ${formattedDate} by ${postData.author.name}</p>
     </div>
     `;
+
+    if (postData.author.name === myUserName) {
+        domElement.innerHTML += `
+        <div class="d-flex justify-content-evenly">
+            <button class="delete" id="${postData.id}">delete post</button><button class="edit">edit post</button>
+        </div>`;
+    }
 };
 
 /**
@@ -173,7 +181,8 @@ export function createReactions(domElement, postData) {
  * @param {object} domElement - where to print HTML  
  * @param {array} postData - what HTML to print
  * 
- * This function  prints post commmments to the post. If the comment was made by the logged in user, you get the option to delete or edit it
+ * This function  prints post commmments to the post. If the comment was 
+ * made by the logged in user, you get the option to delete or edit it
  */
 export function createComments(domElement, postData) {
     const myUserName = localStorage.getItem('userName');
@@ -183,17 +192,28 @@ export function createComments(domElement, postData) {
         if (!comment.body){
             continue;
         }
-        domElement.innerHTML += `
-        <div class="comment">
-            <div class="d-flex flex-row space-evenly">
-                <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
-                <h5 class="ml-3">${comment.author.name}</h5> 
+
+        if (comment.author.name === myUserName){
+            domElement.innerHTML += `
+            <div class="comment">
+                <div class="d-flex flex-row space-evenly">
+                    <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
+                    <h5 class="ml-3">${comment.author.name}</h5> 
+                </div>
+                <p class="comment-text">${comment.body}</p>
+                <button class="delete" id="${postData.id}">delete post</button>
             </div>
-            <p class="comment-text">${comment.body}</p>
-        </div>
-    `;
-    if (comment.author.name === myUserName){
-        domElement.innerHTML += `<button class="delete-comment" id="${postData.id}">delete post</button><button class="edit-comment" id="${postData.id}>edit post</button>`;
-    }
+            `;
+        } else {
+            domElement.innerHTML += `
+            <div class="comment">
+                <div class="d-flex flex-row space-evenly">
+                    <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
+                    <h5 class="ml-3">${comment.author.name}</h5> 
+                </div>
+                <p class="comment-text">${comment.body}</p>
+            </div>
+             `;
+        }
     }
 }

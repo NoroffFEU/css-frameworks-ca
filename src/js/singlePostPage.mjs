@@ -8,7 +8,7 @@ const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
 const id = parameter.get("id");
 const baseURL = "https://api.noroff.dev/api/v1";
-const endpoint = `/social/posts/${id}/?_reactions=true&_author=true&_comments=true`;
+let endpoint = `/social/posts/${id}/?_reactions=true&_author=true&_comments=true`;
 const completeUrl = `${baseURL}${endpoint}`;
 const postDOM = document.querySelector(".single-post");
 const token = localStorage.getItem("accessToken");
@@ -42,48 +42,61 @@ for (let i = 0; i < formInputs.length; i++) {
     }
 }
 
+import { postComment } from "./components/postActions.mjs";
+import { submitForm } from "./components/submitForm.mjs";
+const spanForError = document.querySelector(".error-msg")
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
+    endpoint = `/social/posts/${id}/comment`;
+    const postCommentUrl = `${baseURL}${endpoint}`;
+    submitForm(form, postCommentUrl, postComment, spanForError);
+    commentDiv.innerHTML += "";
+    setTimeout(() => {
+        getData(completeUrl, token, commentDiv, createComments);
+    }, 1000);
 });
 
 /**
  * An observer to look out for changes to the DOM  elements, 
  * in order to add click functionallity to reactions. 
  */
-const observer = new MutationObserver(function(mutations) {
+const postObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(){
+        const deleteBtns = document.querySelectorAll(".delete");
+        deleteBtns.forEach((deleteBtn) => {
+            deleteBtn.onclick = () => {
+                console.log("delete")
+            }
+        })
+
+        const editBtns = document.querySelectorAll(".edit");
+        editBtns.forEach((editBtn) => {
+            editBtn.onclick = () => {
+                console.log("edit");
+            }
+        })
+    })
+});
+
+const reactionObserver = new MutationObserver(function(mutations) {
     mutations.forEach(function(){
         const reactions = document.querySelectorAll(".reaction");
         reactions.forEach((react) => {
             react.onclick = () => {
-                console.log("hello")
+                console.log("hello");
             }
         });
 
         const plusSymb = document.querySelector(".add-reaction");
         plusSymb.onclick = () => {
-            console.log("goodbye")
+            console.log("goodbye");
         };
-
-        const deleteCommentBtn = document.querySelector(".delete-comment");
-        if (deleteCommentBtn) {
-            deleteCommentBtn.onclick = () => {
-                console.log("DELETE MEEEE");
-            };
-        }
-
-        const editCommentBtn = document.querySelector(".edit-comment");
-        if (editCommentBtn) {
-            editCommentBtn.onclick = () => {
-                console.log("Edit me por favor");
-            };
-        }
     })
 });
 
-
 const config = {attributes: true, childList: true, subtree: true};
+postObserver.observe(postDOM, config);
+reactionObserver.observe(reactionDiv, config);
+postObserver.observe(commentDiv, config);
 
-observer.observe(reactionDiv, config);
-
-observer.observe(commentDiv, config)

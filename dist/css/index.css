@@ -11960,5 +11960,8 @@ main .avatar-img {
 main .post-img {
   max-width: 450px;
 }
+main .reaction:hover {
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=index.css.map */

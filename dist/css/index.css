@@ -11960,11 +11960,34 @@ main .avatar-img {
 main .post-img {
   max-width: 450px;
 }
+main .reactions {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
 main .reaction:hover, main .add-reaction:hover {
   cursor: pointer;
 }
 main .edit-post label {
   text-decoration: underline;
+}
+main .all-emojis {
+  display: none;
+  border: 1px solid black;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  font-size: 1.4rem;
+}
+main .all-emojis span {
+  margin: 0.5rem;
+  align-self: center;
+}
+main .all-emojis span:hover {
+  cursor: pointer;
+}
+main #plus-symbol-checkbox {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

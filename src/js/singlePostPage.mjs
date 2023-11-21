@@ -27,7 +27,7 @@ const textarea = document.querySelector("textarea");
 const counter = document.querySelector(".counter");
 const maxValText = document.querySelector(".max-val");
 const reactionDiv = document.querySelector(".reactions");
-const commentDiv = document.querySelector(".comments") 
+const commentDiv = document.querySelector(".comments");
 
 getData(completeUrl, token, reactionDiv, createReactions);
 getData(completeUrl, token, commentDiv, createComments);
@@ -120,10 +120,21 @@ const reactionObserver = new MutationObserver(function(mutations) {
             }
         });
 
-        const plusSymb = document.querySelector(".add-reaction");
-        plusSymb.onclick = () => {
-            console.log("goodbye");
-        };
+        // const plusSymb = document.querySelector(".add-reaction");
+        // const checkBox = document.querySelector("#plus-symbol-checkbox");
+        // const allAddableEmojis = document.querySelector(".all-emojis");
+        // plusSymb.onclick = () => {
+        //     if (!checkBox.checked) {
+        //         console.log("goodbye")
+        //         allAddableEmojis.style.cssText = "display: none;";
+        //     } else {
+        //         allAddableEmojis.style.cssText = "display: grid;";
+        //     }
+        // };
+
+        // Taking another break. It feels like I am overthinking this way too much
+        // Strange thing  is that I can use this commented out code inside the observer, but not outside it? really weird imo 
+        // Gotta think about this tomorrow 
     })
 });
 

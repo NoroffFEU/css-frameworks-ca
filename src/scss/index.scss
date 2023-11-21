@@ -43,6 +43,12 @@ main{
         max-width: 450px;
     }
 
+    .reactions{
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    
     .reaction:hover, .add-reaction:hover{
         cursor: pointer;
     }
@@ -52,6 +58,27 @@ main{
         label{
             text-decoration: underline;
         }
+    }
+
+    .all-emojis{
+        display: none;
+        border: 1px solid black;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        font-size: 1.4rem;
+
+        span{
+            margin: 0.5rem;
+            align-self: center;
+        }
+        span:hover{
+            cursor: pointer;
+        }
+    }
+
+    #plus-symbol-checkbox{
+        display: none;
     }
 
 }

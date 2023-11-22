@@ -1,4 +1,3 @@
-# This is a test
 # Charlotte Valset - CSS-frameworks-ca
 
 ![image](images/dancehub.jpg)

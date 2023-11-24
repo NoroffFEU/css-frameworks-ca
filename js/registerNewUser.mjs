@@ -1,4 +1,4 @@
-import { apiBaseUrl } from "./variables.mjs";
+import { apiBaseUrl } from "./script.mjs";
 
 const registerUrl = `${apiBaseUrl}/social/auth/register`;
 

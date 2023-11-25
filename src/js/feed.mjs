@@ -1,10 +1,13 @@
 import { formCheck } from "./components/formValidation.mjs";
 import { characterCount } from "./components/formValidation.mjs";
 import { submitForm } from "./components/submitForm.mjs";
-
+import { makePost } from "./components/postActions.mjs";
 import { printFeed } from "./components/getActions.mjs";
 import { sortArray } from "./components/getActions.mjs";
 import { searchArray } from "./components/getActions.mjs";
+import { getData } from "./components/getData.mjs";
+import { deletePost } from "./components/deleteData.mjs";
+import { clearForm } from "./components/submitForm.mjs";
 
 const newPostForm = document.querySelector(".add-post-form");
 const fieldset = document.querySelector(".add-post-fieldset");
@@ -13,7 +16,17 @@ const btn = document.querySelector(".add-post-btn");
 
 const textarea = document.querySelector("textarea");
 const counter = document.querySelector(".counter");
-const maxValText = document.querySelector(".max-val")
+const maxValText = document.querySelector(".max-val");
+
+const sortByInp = document.querySelector("#sort-by");
+const searchFrom = document.querySelector(".search-form");
+const searcInp = document.querySelector("#search-input");
+
+const allPostsDom = document.querySelector(".all-posts");
+const token = localStorage.getItem("accessToken");
+const baseUrl = "https://api.noroff.dev/api/v1";
+let endpoint;
+let queries;
 
 textarea.textContent = "";
 characterCount("", counter, maxValText, 250)
@@ -26,23 +39,12 @@ for (let i = 0; i < formInputs.length; i++) {
     }
 }
 
-import { getData } from "./components/getData.mjs";
-
-const allPostsDom = document.querySelector(".all-posts");
-const token = localStorage.getItem("accessToken");
-const baseUrl = "https://api.noroff.dev/api/v1";
-let endpoint;
-let queries;
-
-
 endpoint = "/social/posts/";
 queries = "?_author=true&_comments=true&_reactions=true";
 const feedUrl = `${baseUrl}${endpoint}${queries}`;
 getData(feedUrl, token, allPostsDom, printFeed);
 
-const sortByInp = document.querySelector("#sort-by");
-const searchFrom = document.querySelector(".search-form");
-const searcInp = document.querySelector("#search-input");
+;
 
 searchFrom.onsubmit = (e) => {e.preventDefault()};
 
@@ -58,24 +60,19 @@ searcInp.onkeyup = () => {
     getData(feedUrl, token, allPostsDom, searchArray, searchParams);
 };
 
-import { makePost } from "./components/postActions.mjs";
-
 newPostForm.addEventListener("submit", (e) => {
-    const divForError = document.querySelector(".div-for-error");
     e.preventDefault();
+    const divForError = document.querySelector(".div-for-error");
     const newPostURl = `${baseUrl}${endpoint}`;
     submitForm(newPostForm, newPostURl, makePost, divForError);
     allPostsDom.innerHTML = "";
-    for (let i = 0; i < formInputs.length; i++) {
-        const formInp = formInputs[i];
-        formInp.value = "";
-    }
+    clearForm(formInputs);
     setTimeout(() => {
         getData(feedUrl, token, allPostsDom, printFeed);
     }, 1000);
 });
 
-import { deletePost } from "./components/deleteData.mjs";
+
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(){
         const deleteBtns = document.querySelectorAll(".delete-post");
@@ -97,7 +94,19 @@ const observer = new MutationObserver(function(mutations) {
                 const postToEdit = editBtn.id;
                 const editUrl = `${baseUrl}${endpoint}${postToEdit}`;
                 console.log(editUrl); // FIX THIS LATER 
-                getData(feedUrl, token, allPostsDom, printFeed);
+                // NEEDS TO BE  ABLE TO EDIT CONTENT AND POST THE FORM AGAIN 
+                // innerHTML = `
+                // <form class="edit-post d-flex flex-column align-items-center" action="submit">
+                //     <label for="title">Post Title</label>
+                //     <input type="text" name="title" id="title">
+                //     <label for="body">Body text</label>
+                //     <textarea name="body" id="body" cols="30" rows="10"></textarea>
+                //     <label for="media">Media</label>
+                //     <input type="text" name="media" id="media">
+                //     <button>Save changes</button>
+                // </form>
+                // `;
+                // getData(feedUrl, token, allPostsDom, printFeed);
             };
         });
     })

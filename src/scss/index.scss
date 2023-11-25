@@ -47,26 +47,55 @@ main{
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
+        justify-content: center;
+        font-size: 1.2rem;
+
     }
     
     .reaction:hover, .add-reaction:hover{
         cursor: pointer;
     }
 
-    .edit-post{
-
+    .edit-post-div{
+        display: none;
+        
         label{
             text-decoration: underline;
+        }
+
+        #cancel-editing:hover{
+            cursor: pointer;
+        }
+    }
+
+    .new-reactions{
+        height: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+       
+
+        p{
+            align-self: center;
+            
+        }
+        
+        label{
+            margin-left: 10px;
         }
     }
 
     .all-emojis{
         display: none;
         border: 1px solid black;
+        border-radius: 50px;
         width: 100%;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         justify-items: center;
         font-size: 1.4rem;
+        transition: 200ms ease-in-out;
 
         span{
             margin: 0.5rem;
@@ -76,7 +105,7 @@ main{
             cursor: pointer;
         }
     }
-
+    
     #plus-symbol-checkbox{
         display: none;
     }

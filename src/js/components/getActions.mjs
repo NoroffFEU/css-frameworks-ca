@@ -190,28 +190,14 @@ export function createComments(domElement, postData) {
         if (!comment.body){
             continue;
         }
-
-        if (comment.author.name === myUserName){
-            domElement.innerHTML += `
-            <div class="comment">
-                <div class="d-flex flex-row space-evenly">
-                    <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
-                    <h5 class="ml-3">${comment.author.name}</h5> 
-                </div>
-                <p class="comment-text">${comment.body}</p>
-                <button class="delete" id="${postData.id}">Delete Comment</button>
+        domElement.innerHTML += `
+        <div class="comment">
+            <div class="d-flex flex-row space-evenly">
+                <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
+                <h5 class="ml-3">${comment.author.name}</h5> 
             </div>
-            `;
-        } else {
-            domElement.innerHTML += `
-            <div class="comment">
-                <div class="d-flex flex-row space-evenly">
-                    <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
-                    <h5 class="ml-3">${comment.author.name}</h5> 
-                </div>
-                <p class="comment-text">${comment.body}</p>
-            </div>
-             `;
-        }
+            <p class="comment-text">${comment.body}</p>
+        </div>
+            `
     }
 }

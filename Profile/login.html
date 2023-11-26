@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Climate Care</title>
+    <link rel="stylesheet" href="dist/css/index.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="index.html">CLIMATE CARE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="index.html" class="nav-link active text-black" aria-current="page">HOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/feed" class="nav-link text-black">FEED</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/profile" class="nav-link text-black">PROFILE</a>
+                </li>
+                
+    
+              </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container col-lg-6 px-4 py-5">
+            <div class="row align-items-center g-lg-4 py-4">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-4 font-weight-bold mb-3 text-primary">
+                        Join Cliamte Care to share your voice on climate change issues.
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <form action="https:nf-api.orender.com/api/v1/social/posts" class="p-4 p-md-5 border rounded-4 bg-light" id="loginform">
+                <div class="form-floating mb-3">
+                    <label for="floatingInput">Email</label>
+                    <input type="email" name="email" class="form-control" required title="only @(stud.)noroff.no domains are allowed to login.">
+                </div>
+                <div class="form-floating mb-3">
+                    <label for="floatingInput">Password</label>
+                    <input type="password" name="password" class="form-control" required minlength="8">
+                </div>
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                    <a href="Profile/register.html" class="nav-link active">Register here</a>
+                </div>
+                <button class="btn btn-lg-outline-success" type="submit">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+    </main>
+
+    
+</body>
+</html>

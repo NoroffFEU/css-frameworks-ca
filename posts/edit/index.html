@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page/Climate Care</title>
+    <link rel="stylesheet" href="dist/css/index.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="index.html">CLIMATE CARE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarcollapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="navbar-item">
+                    <a href="index.html" class="nav-link active text-black" aria-current="page">HOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/feed" class="nav-link text-black">FEED</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/profile" class="nav-link text-black">PROFILE</a>
+                </li>
+                
+    
+              </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pb-3">
+        <div class="container text-width shadow-sm p-4 mt-4 rounded bg-light">
+            <h2>New Post</h2>
+
+            <div class="container col-lg-10 px-4 py-4">
+                <div class="row align-items-center g-lg-4 py-4">
+                    <div class="mx-auto">
+                        <form class="p-4 p-md-5 border rounded-4 bg-light" id="editpost">
+                            <div class="form-floating mb-3">
+                                <label for="floatingInput">Title></label>
+                                <input type="text" name="title" class="form-control" required>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <label for="floatingInput">Content</label>
+                                <textarea name="content" id="" cols="30" rows="10" class="form-control" required></textarea>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <label for="floatingInput">Tags</label>
+                                <input type="text" name="tags" class="form-control">
+                            </div>
+
+                            <div class="form-floating">
+                                <label for="floatingInput">Media</label>
+                                <input type="url" name="password" class="form-control">
+                            </div>
+
+                            <button class="btn btn-lg-outline-success float-end" type="submit">
+                                Update Post
+                            </button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+
+
+</body>
+</html>

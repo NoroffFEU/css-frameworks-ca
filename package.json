@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
     "build": "sass src/scss:dist/css",
-    "watch": "sass --watch src/scss:dist/css"
+    "watch": "sass --watch src/scss:dist/css",
+    "dev": "npm run watch & live-server"
   },
   "repository": {
     "type": "git",
@@ -103,7 +104,6 @@
     "isarray": "^1.0.0",
     "isobject": "^3.0.1",
     "kind-of": "^6.0.3",
-    "live-server": "^1.2.2",
     "map-cache": "^0.2.2",
     "map-stream": "^0.1.0",
     "map-visit": "^1.0.0",
@@ -181,6 +181,7 @@
     "websocket-extensions": "^0.1.4"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.69.5"
   }
 }

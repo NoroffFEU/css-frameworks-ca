@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page/Climate Care</title>
-    <link rel="stylesheet" href="dist/css/index.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>update post/Climate Care</title>
+    <link rel="stylesheet" href="../../dist/css/index.css">
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
     <header class="mb-4">
@@ -20,10 +20,10 @@
                     <a href="index.html" class="nav-link active text-black" aria-current="page">HOME</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/feed" class="nav-link text-black">FEED</a>
+                    <a href="/posts/index.html" class="nav-link text-black">POST</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/profile" class="nav-link text-black">PROFILE</a>
+                    <a href="/Profile/login/index.html" class="nav-link text-black">LOGIN</a>
                 </li>
                 
     
@@ -40,27 +40,27 @@
                 <div class="row align-items-center g-lg-4 py-4">
                     <div class="mx-auto">
                         <form class="p-4 p-md-5 border rounded-4 bg-light" id="editpost">
-                            <div class="form-floating mb-3">
+                            <div class="col-md-4 mx-auto">
                                 <label for="floatingInput">Title></label>
                                 <input type="text" name="title" class="form-control" required>
                             </div>
 
-                            <div class="form-floating mb-3">
+                            <div class="col-md-4 mx-auto">
                                 <label for="floatingInput">Content</label>
                                 <textarea name="content" id="" cols="30" rows="10" class="form-control" required></textarea>
                             </div>
 
-                            <div class="form-floating mb-3">
+                            <div class="col-md-4 mx-auto">
                                 <label for="floatingInput">Tags</label>
                                 <input type="text" name="tags" class="form-control">
                             </div>
 
-                            <div class="form-floating">
+                            <div class="col-md-4 mx-auto">
                                 <label for="floatingInput">Media</label>
                                 <input type="url" name="password" class="form-control">
                             </div>
 
-                            <button class="btn btn-lg-outline-success float-end" type="submit">
+                            <button class="btn btn-primary float-end" type="submit">
                                 Update Post
                             </button>
                         </form>
@@ -73,6 +73,9 @@
 
         </div>
     </main>
+    <footer class="py-4 text-center">
+        Copyright &copy; Design and Developed by EF II PAMI
+    </footer>
 
 
 

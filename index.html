@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="dist/css/styles.css" />
-    <script src="./js/loginUser.mjs" type="module" defer></script>
+    <script src="./js/loginUser.mjs"></script>
     <title>Home | Dancehub</title>
     <link rel="icon" type="image/x-icon" href="/images/dancehub.ico">
   </head>
@@ -54,14 +54,14 @@
         <h2 class="text-center py-3 px-2">Share your passion and connect with other dancers!</h2>
       </div>
       <div class="container col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-        <form id="loginForm" method="get">
+        <form action="/profile" method="get">
           <div class="mb-3">
-            <label for="inputEmailLogin" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmailLogin" required/>
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail1" required/>
           </div>
           <div class="mb-3">
-            <label for="inputPasswordLogin" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPasswordLogin" minlength="8" required/>
+            <label for="inputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword1" minlength="8" required/>
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Log in</button>
@@ -69,18 +69,22 @@
         </form>
         <h4 class="card-text text-center mt-5">Haven't signed up yet?</h4>
         <h4 class="card-text text-center mt-2 mb-3">Get started!</h4>
-        <form id="registerForm" method="get">
+        <form action="/profile" method="get">
           <div class="mb-3">
-            <label for="inputNameRegister" class="form-label">Username</label>
-            <input type="text" class="form-control" id="inputNameRegister" required/>
+            <label for="inputName1" class="form-label">Username</label>
+            <input type="text" class="form-control" id="inputName1" required/>
           </div>
           <div class="mb-3">
-            <label for="inputEmailRegister" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmailRegister" required/>
+            <label for="inputEmail2" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail2" required/>
           </div>
           <div class="mb-3">
-            <label for="inputPasswordRegister" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPasswordRegister" required/>
+            <label for="inputPassword2" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" required/>
+          </div>
+          <div class="mb-3">
+            <label for="inputConfirmPassword2" class="form-label">Confirm password</label>
+            <input type="password" class="form-control" id="inputConfirmPassword2" required minlength="8"/>
           </div>
           <div class="text-center my-3">
             <button type="submit" class="btn btn-primary">Sign up!</button>

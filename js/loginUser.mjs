@@ -24,13 +24,11 @@ async function loginUser(url, data) {
     };
     // Sending the fetch request to the specified URL with the provided data
     const response = await fetch(url, postData);
-    console.log(response);
     // Parsing the response body as JSON
     const json = await response.json();
     // Storing the accessToken into local storage
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
-    console.log(json);
 
     // Returning the parsed JSON data
     return json;

@@ -69,22 +69,18 @@
         </form>
         <h4 class="card-text text-center mt-5">Haven't signed up yet?</h4>
         <h4 class="card-text text-center mt-2 mb-3">Get started!</h4>
-        <form action="/profile" method="get">
+        <form id="registerForm" method="get">
           <div class="mb-3">
-            <label for="inputName1" class="form-label">Username</label>
-            <input type="text" class="form-control" id="inputName1" required/>
+            <label for="inputNameRegister" class="form-label">Username</label>
+            <input type="text" class="form-control" id="inputNameRegister" required/>
           </div>
           <div class="mb-3">
-            <label for="inputEmail2" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail2" required/>
+            <label for="inputEmailRegister" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmailRegister" required/>
           </div>
           <div class="mb-3">
-            <label for="inputPassword2" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword2" required/>
-          </div>
-          <div class="mb-3">
-            <label for="inputConfirmPassword2" class="form-label">Confirm password</label>
-            <input type="password" class="form-control" id="inputConfirmPassword2" required minlength="8"/>
+            <label for="inputPasswordRegister" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPasswordRegister" required/>
           </div>
           <div class="text-center my-3">
             <button type="submit" class="btn btn-primary">Sign up!</button>

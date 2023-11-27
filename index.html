@@ -44,49 +44,60 @@
             />
           </div>
           <div class="row">
-            <button class="btn btn-primary p-2" name="submit">Submit</button>
+            <button class="btn btn-primary p-2" name="submit">Log in</button>
           </div>
-          <hr class="my-5" />
+        </form>
+        <div class="row align-items-center">
+          <div class="col">
+            <hr class="my-5" />
+          </div>
+          <div class="col-auto text-center">Don't have an account?</div>
+          <div class="col">
+            <hr class="my-5" />
+          </div>
+        </div>
+        <div class="row mb-2"><h2>Sign Up</h2></div>
+        <form action="feed/index.html">
           <div class="row">
-            <a
-              href="feed/index.html"
-              class="btn border-danger p-2 p-lg-3 border rounded-3 justify-content-between"
+            <label class="text-secondary" for="newEmail">Email address</label>
+            <input
+              id="newEmail"
+              type="email"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="row my-3">
+            <label class="text-secondary" for="myPassword"
+              >Create a password (min 8 characters long)</label
             >
-              <div class="row">
-                <div class="col-auto">
-                  <i class="fa-brands fa-google fs-5"></i>
-                </div>
-                <div class="col">
-                  <span class="mx-auto">Continue with Google</span>
-                </div>
-              </div>
-            </a>
-            <a
-              href="feed/index.html"
-              class="btn border-primary p-2 p-lg-3 my-3 border rounded-3 justify-content-between"
+            <input
+              id="myPassword"
+              type="password"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="●●●●●●●●"
+              required
+              minlength="8"
+            />
+          </div>
+          <div class="row my-3">
+            <label class="text-secondary" for="confirmPassword"
+              >Confirm password (must be identical)</label
             >
-              <div class="row">
-                <div class="col-auto">
-                  <i class="fa-brands fa-facebook fs-5"></i>
-                </div>
-                <div class="col">
-                  <span class="mx-auto">Continue with Facebook</span>
-                </div>
-              </div>
-            </a>
-            <a
-              href="feed/index.html"
-              class="btn border-secondary p-2 p-lg-3 border rounded-3 justify-content-between"
-            >
-              <div class="row">
-                <div class="col-auto">
-                  <i class="fa-brands fa-apple fs-4"></i>
-                </div>
-                <div class="col">
-                  <span class="mx-auto">Continue with Apple</span>
-                </div>
-              </div>
-            </a>
+            <input
+              id="confirmPassword"
+              type="password"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="●●●●●●●●"
+              required
+              minlength="8"
+            />
+          </div>
+          <div class="row">
+            <button class="btn btn-primary p-2" name="submit">
+              Create account
+            </button>
           </div>
         </form>
       </div>

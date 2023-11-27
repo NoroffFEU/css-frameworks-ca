@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In</title>
+    <title>Log In | #SoMe</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,7 +16,84 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/4c69c38b68.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="dist/css/index.css" />
   </head>
-  <body></body>
+  <body class="bg-dark">
+    <div class="container mt-5">
+      <div
+        class="col col-sm-9 col-md-6 col-lg-5 col-xl-4 col-xxl-4 mx-auto border border-secondary rounded-4 p-5 bg-light"
+      >
+        <div class="row"><h1 class="text-center">#SoMe</h1></div>
+        <div class="row mt-5 mb-2"><h2>Log in</h2></div>
+        <form action="feed/index.html">
+          <div class="row">
+            <input
+              type="email"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="row my-3">
+            <input
+              type="password"
+              class="form.control p-2 border border-secondary rounded-3"
+              placeholder="●●●●●●●●"
+              required
+              minlength="8"
+            />
+          </div>
+          <div class="row">
+            <button class="btn btn-primary p-2" name="submit">Submit</button>
+          </div>
+          <hr class="my-5" />
+          <div class="row">
+            <a
+              href="feed/index.html"
+              class="btn border-danger p-2 p-lg-3 border rounded-3 justify-content-between"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa-brands fa-google fs-5"></i>
+                </div>
+                <div class="col">
+                  <span class="mx-auto">Continue with Google</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="feed/index.html"
+              class="btn border-primary p-2 p-lg-3 my-3 border rounded-3 justify-content-between"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa-brands fa-facebook fs-5"></i>
+                </div>
+                <div class="col">
+                  <span class="mx-auto">Continue with Facebook</span>
+                </div>
+              </div>
+            </a>
+            <a
+              href="feed/index.html"
+              class="btn border-secondary p-2 p-lg-3 border rounded-3 justify-content-between"
+            >
+              <div class="row">
+                <div class="col-auto">
+                  <i class="fa-brands fa-apple fs-4"></i>
+                </div>
+                <div class="col">
+                  <span class="mx-auto">Continue with Apple</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

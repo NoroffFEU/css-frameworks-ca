@@ -25,11 +25,11 @@
       >
         <div class="row"><h1 class="text-center">#SoMe</h1></div>
         <div class="row mt-5 mb-2"><h2>Log in</h2></div>
-        <form action="feed/index.html">
+        <form method="" id="signInForm">
           <div class="row">
             <input
               type="email"
-              class="form.control p-2 border border-secondary rounded-3"
+              class="form-control p-2 border border-secondary rounded-3"
               placeholder="name@example.com"
               required
             />
@@ -37,14 +37,13 @@
           <div class="row my-3">
             <input
               type="password"
-              class="form.control p-2 border border-secondary rounded-3"
-              placeholder="●●●●●●●●"
+              class="form-control p-2 border border-secondary rounded-3"
+              placeholder="password"
               required
-              minlength="8"
             />
           </div>
           <div class="row">
-            <button class="btn btn-primary p-2" name="submit">Log in</button>
+            <button class="btn btn-primary p-2" type="submit">Log in</button>
           </div>
         </form>
         <div class="row align-items-center">
@@ -57,45 +56,48 @@
           </div>
         </div>
         <div class="row mb-2"><h2>Sign Up</h2></div>
-        <form action="feed/index.html">
-          <div class="row">
-            <label class="text-secondary" for="newEmail">Email address</label>
+        <form method="" id="signUpForm">
+          <div class="row my-3">
             <input
-              id="newEmail"
               type="email"
-              class="form.control p-2 border border-secondary rounded-3"
+              class="form-control p-2 border border-secondary rounded-3"
               placeholder="name@example.com"
-              required
             />
           </div>
           <div class="row my-3">
-            <label class="text-secondary" for="myPassword"
-              >Create a password (min 8 characters long)</label
-            >
+            <div class="input-group border rounded-3 p-0">
+              <span class="input-group-text border border-secondary">@</span>
+              <input
+                type="username"
+                class="form-control p-2 border border-secondary"
+                placeholder="username"
+              />
+            </div>
+          </div>
+          <div class="row my-3">
             <input
               id="myPassword"
               type="password"
-              class="form.control p-2 border border-secondary rounded-3"
-              placeholder="●●●●●●●●"
-              required
-              minlength="8"
+              class="form-control p-2 border border-secondary rounded-3"
+              placeholder="password"
             />
+            <label class="form-text" for="myPassword"
+              >(min 8 characters long)</label
+            >
           </div>
           <div class="row my-3">
-            <label class="text-secondary" for="confirmPassword"
-              >Confirm password (must be identical)</label
-            >
             <input
               id="confirmPassword"
               type="password"
-              class="form.control p-2 border border-secondary rounded-3"
-              placeholder="●●●●●●●●"
-              required
-              minlength="8"
+              class="form-control p-2 border border-secondary rounded-3"
+              placeholder="password"
             />
+            <label class="form-text" for="confirmPassword"
+              >(must be identical)</label
+            >
           </div>
           <div class="row">
-            <button class="btn btn-primary p-2" name="submit">
+            <button class="btn btn-primary p-2" type="submit">
               Create account
             </button>
           </div>

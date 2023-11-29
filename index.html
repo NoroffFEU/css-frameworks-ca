@@ -56,33 +56,44 @@
           </div>
         </div>
         <div class="row mb-2"><h2>Sign Up</h2></div>
-        <form method="" id="signUpForm">
+        <form class="needs-validation" id="signUpForm" novalidate>
           <div class="row my-3">
             <input
-              type="email"
-              class="form-control p-2 border border-secondary rounded-3"
-              placeholder="name@example.com"
+              id="email"
+              type="text"
+              class="form-control p-2 border-secondary"
+              placeholder="example@noroff.no"
+              required
             />
+            <span id="email_message" class="form-text text-danger d-none"
+              >please enter a valid noroff email address</span
+            >
           </div>
           <div class="row my-3">
             <div class="input-group border rounded-3 p-0">
               <span class="input-group-text border border-secondary">@</span>
               <input
-                type="username"
+                id="name"
+                type="name"
                 class="form-control p-2 border border-secondary"
                 placeholder="username"
+                required
               />
             </div>
+            <span id="name_message" class="form-text text-danger d-none"
+              >please enter a username</span
+            >
           </div>
           <div class="row my-3">
             <input
-              id="myPassword"
+              id="password"
               type="password"
               class="form-control p-2 border border-secondary rounded-3"
               placeholder="password"
+              required
             />
-            <label class="form-text" for="myPassword"
-              >(min 8 characters long)</label
+            <span id="password_message" class="form-text text-danger d-none"
+              >Must be at least 8 characters</span
             >
           </div>
           <div class="row my-3">
@@ -91,9 +102,12 @@
               type="password"
               class="form-control p-2 border border-secondary rounded-3"
               placeholder="password"
+              required
             />
-            <label class="form-text" for="confirmPassword"
-              >(must be identical)</label
+            <span
+              id="confirm_password_message"
+              class="form-text text-danger d-none"
+              >must be identical</span
             >
           </div>
           <div class="row">

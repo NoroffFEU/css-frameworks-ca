@@ -19,8 +19,7 @@ export function printFeed(domElement, postsArray) {
 
         const postedDate = post.created.replaceAll("-", ".");
         const slicedPostDate = postedDate.slice(0, postedDate.length - 14).split(".").reverse().join(".");
-
-        console.log(post)
+        
         if (!post.body || !post.title) {
             continue;
         }

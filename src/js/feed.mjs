@@ -75,41 +75,13 @@ newPostForm.addEventListener("submit", (e) => {
 
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(){
-        const deleteBtns = document.querySelectorAll(".delete-post");
-        deleteBtns.forEach((deleteBtn) => {
-            deleteBtn.onclick = () => {
-                const postToDelete = deleteBtn.id;
-                const deleteURl = `${baseUrl}${endpoint}${postToDelete}`;
-                deletePost(deleteURl);
-                allPostsDom.innerHTML = "";
-                setTimeout(() => {
-                    getData(feedUrl, token, allPostsDom, printFeed);
-                }, 1000);
-            };
-        });
-
-        const editBtns = document.querySelectorAll(".edit-post");
-        editBtns.forEach((editBtn) => {
-            editBtn.onclick = () => {
-                const postToEdit = editBtn.id;
-                const editUrl = `${baseUrl}${endpoint}${postToEdit}`;
-                console.log(editUrl); // FIX THIS LATER 
-                // NEEDS TO BE  ABLE TO EDIT CONTENT AND POST THE FORM AGAIN 
-                // innerHTML = `
-                // <form class="edit-post d-flex flex-column align-items-center" action="submit">
-                //     <label for="title">Post Title</label>
-                //     <input type="text" name="title" id="title">
-                //     <label for="body">Body text</label>
-                //     <textarea name="body" id="body" cols="30" rows="10"></textarea>
-                //     <label for="media">Media</label>
-                //     <input type="text" name="media" id="media">
-                //     <button>Save changes</button>
-                // </form>
-                // `;
-                // getData(feedUrl, token, allPostsDom, printFeed);
-            };
-        });
-    })
+        const userAvatars = document.querySelectorAll(".profile-pic-tiny");
+        userAvatars.forEach((userAvatar) => {
+            if (userAvatar.outerHTML === `<img class="profile-pic-tiny" src="null" alt="User icon">` || userAvatar.outerHTML === `<img class="profile-pic-tiny" src="" alt="User icon">`) {
+                userAvatar.outerHTML = `<img class="profile-pic-tiny" src="../images_and_icon/icons/user_icon.png" alt="User icon">`
+            }
+            })
+        })
 });
 
 

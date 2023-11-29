@@ -18,10 +18,9 @@ export function printFeed(domElement, postsArray) {
         const post = postsArray[i];
 
         const postedDate = post.created.replaceAll("-", ".");
-        const editDate = post.updated.replaceAll("-", ".");
         const slicedPostDate = postedDate.slice(0, postedDate.length - 14).split(".").reverse().join(".");
-        const slicedEditDate = editDate.slice(0, postedDate.length - 14).split(".").reverse().join(".");
 
+        console.log(post)
         if (!post.body || !post.title) {
             continue;
         }
@@ -29,9 +28,11 @@ export function printFeed(domElement, postsArray) {
             domElement.innerHTML += `
             <div class="single-post m-3 custom-border">
                 <div class="d-flex">
-                    <img class="profile-pic-tiny" src="../images_and_icon/icons/user_icon.png" alt="User icon created by Freepik">
+                <a href="/profile/index.html?name=${post.author.name}">
+                    <img class="profile-pic-tiny" src="${post.author.avatar}" alt="User icon">
+                </a>
                     <div class=username-and-post-date>
-                        <p class="profile-name-post mt-1 mr-1 mb-0 ml-3">${post.author.name}</p>
+                        <p class="profile-name-post my-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${post.author.name}">${post.author.name}</a></p>
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>
@@ -40,16 +41,17 @@ export function printFeed(domElement, postsArray) {
                     ${post.body}
                 </p>
                 <p>Post has ${post._count.comments} comments and ${post._count.reactions} reactions</p>
-                <button class="delete-post" id="${post.id}">delete post</button><button class="edit-post">edit post</button>
             </div>
             `;
         } else {
             domElement.innerHTML += `
             <div class="single-post m-3 custom-border">
                 <div class="d-flex">
-                    <img class="profile-pic-tiny" src="../images_and_icon/icons/user_icon.png" alt="User icon created by Freepik">
+                <a href="/profile/index.html?name=${post.author.name}">
+                    <img class="profile-pic-tiny" src="${post.author.avatar}" alt="User icon">
+                </a>
                     <div class=username-and-post-date>
-                        <p class="profile-name-post mt-1 mr-1 mb-0 ml-3">${post.author.name}</p>
+                        <p class="profile-name-post someone-else-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${post.author.name}">${post.author.name}</a></p>
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>

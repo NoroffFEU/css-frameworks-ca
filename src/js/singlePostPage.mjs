@@ -72,6 +72,7 @@ commentForm.addEventListener("submit", (e) => {
     endpoint = `/social/posts/${id}/comment`;
     const postCommentUrl = `${baseURL}${endpoint}`;
     submitForm(commentForm, postCommentUrl, postComment, spanForError);
+    commentDiv.innerHTML="";
     clearForm(commentForm.elements)
     setTimeout(() => {
         getData(completeUrl, token, commentDiv, createComments);

@@ -17,6 +17,36 @@ body{
 main{
     min-height: 90vh;
 
+    .someone-else-profile{
+        border: 2px solid black;
+        padding: 4px;
+        border-radius: 25px;
+        text-align: center;
+
+        a{
+            text-decoration: none;
+        }
+    }
+
+    .someone-else-profile:hover{
+        cursor: pointer;
+    }
+
+    .my-profile{
+        border: 2px solid blue;
+        padding: 4px;
+        border-radius: 25px;
+        text-align: center;
+        
+        a{
+            text-decoration: none;
+        }
+    }
+
+    .my-profile:hover{
+        cursor: pointer;
+    }
+
     .title{
         max-width: 250px;
     }

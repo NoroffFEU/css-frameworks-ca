@@ -6,6 +6,7 @@
     <title>Login/Climate Care</title>
     <link rel="stylesheet" href="../../dist/css/index.css">
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../src/js/auth/login.mjs" type="module"></script>
 </head>
 <body>
     <header class="mb-4">
@@ -43,14 +44,14 @@
             </div>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-            <form action="https:nf-api.orender.com/api/v1/social/posts" class="p-4 p-md-5 border rounded-4 bg-light" id="loginform">
+            <form action="https://api.noroff.dev/api/v1/social/posts" class="p-4 p-md-5 border rounded-4 bg-light" id="loginform">
                 <div class="form-floating mb-3">
-                    <label for="floatingInput">Email</label>
-                    <input type="email" name="email" class="form-control" required title="only @(stud.)noroff.no domains are allowed to login.">
+                    <label for="exampleInputEmail1" class="form-label col-sm-3 col-form ">Email address</label>
+                    <input type="email" name="email" id="loginemail" class="form-control" required title="only @(stud.)noroff.no domains are allowed to login.">
                 </div>
                 <div class="form-floating mb-3">
-                    <label for="floatingInput">Password</label>
-                    <input type="password" name="password" class="form-control" required minlength="8">
+                    <label for="exampleInputPassword1" class="col-form-label col-sm-3">Password</label>
+                    <input type="password" name="password" id="loginpassword" class="form-control" required minlength="8">
                 </div>
                 <div class="checkbox mb-3">
                     <label>
@@ -58,8 +59,8 @@
                     </label>
                     <a href="/Profile/register/index.html" class="nav-link active text-black">Register here</a>
                 </div>
-                <a href="../index.html" class="btn btn-primary" type="submit">Login</a>
-                
+                <!--<a href="../index.html" class="btn btn-primary" type="submit">Login</a>-->
+                <button type="submit" class="btn btn-primary">Login</button>
 
             </form>
 

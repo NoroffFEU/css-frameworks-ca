@@ -193,9 +193,11 @@ export function createComments(domElement, postData) {
         }
         domElement.innerHTML += `
         <div class="comment">
-            <div class="d-flex flex-row space-evenly">
-                <img class="avatar-img mr-3" src="${comment.author.avatar} alt="${comment.author.name}" title=${comment.author.name}">
-                <h5 class="ml-3">${comment.author.name}</h5> 
+            <div class="d-flex profile-info flex-row space-evenly">
+            <a href="/profile/index.html?name=${comment.author.name}">
+                <img class="profile-pic-tiny" src="${comment.author.avatar}" alt="User icon">
+            </a>
+                <p class="profile-name-post my-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${comment.author.name}">${comment.author.name}</a></p>
             </div>
             <p class="comment-text">${comment.body}</p>
         </div>

@@ -72,7 +72,11 @@ newPostForm.addEventListener("submit", (e) => {
     }, 1000);
 });
 
-
+/**
+ * Observes a DOM element for changes, in this case the allPostsDOM
+ * If a user does not have a set avatar, this observer will replace the 
+ * broken image icon with a placeholder icon
+ */
 const observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(){
         const userAvatars = document.querySelectorAll(".profile-pic-tiny");

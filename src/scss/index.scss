@@ -56,10 +56,28 @@ main{
         margin: 50px;
     }
 
+    .comments{
+        width: 350px;
+    }
+
     .comment{
         margin: 25px;
         border: 2px solid black;
         padding: 10px;
+
+        .profile-info{
+            width: 100px;
+            justify-content: space-evenly;
+        }
+
+        .profile-pic-tiny{
+            height: 30px;
+            width: 30px;
+        }
+
+        p{
+            font-size: 0.8rem;
+        }
     }
 
     .avatar-img{

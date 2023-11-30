@@ -203,4 +203,4 @@ export function createComments(domElement, postData) {
         </div>
             `
     }
-}
+};

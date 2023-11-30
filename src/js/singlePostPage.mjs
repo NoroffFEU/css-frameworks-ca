@@ -10,6 +10,8 @@ import { submitForm } from "./components/submitForm.mjs";
 import { putData } from "./components/putData.mjs";
 import { clearForm } from "./components/submitForm.mjs";
 
+const linkToMyProfile = document.querySelector("#link-to-my-profile");
+const myUserName = localStorage.getItem("userName");
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
 const id = parameter.get("id");
@@ -39,6 +41,7 @@ getData(completeUrl, token, postDOM, singlePostContent);
 getData(completeUrl, token, reactionDiv, createReactions);
 getData(completeUrl, token, commentDiv, createComments);
 
+linkToMyProfile.href += `?name=${myUserName}`;
 
 for (let i = 0; i < commentformInputs.length; i++) {
     const input = commentformInputs[i];

@@ -6,9 +6,10 @@ import { printFeed } from "./components/getActions.mjs";
 import { sortArray } from "./components/getActions.mjs";
 import { searchArray } from "./components/getActions.mjs";
 import { getData } from "./components/getData.mjs";
-import { deletePost } from "./components/deleteData.mjs";
 import { clearForm } from "./components/submitForm.mjs";
 
+const linkToMyProfile = document.querySelector("#link-to-my-profile");
+const myUserName = localStorage.getItem("userName");
 const newPostForm = document.querySelector(".add-post-form");
 const fieldset = document.querySelector(".add-post-fieldset");
 const formInputs = fieldset.elements;
@@ -27,6 +28,8 @@ const token = localStorage.getItem("accessToken");
 const baseUrl = "https://api.noroff.dev/api/v1";
 let endpoint;
 let queries;
+
+linkToMyProfile.href += `?name=${myUserName}`;
 
 textarea.textContent = "";
 characterCount("", counter, maxValText, 250)

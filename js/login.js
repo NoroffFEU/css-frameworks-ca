@@ -1,31 +1,87 @@
 const signUpForm = document.getElementById("signUpForm");
+const logInForm = document.getElementById("logInForm");
 const email_message = document.getElementById("email_message");
 const name_message = document.getElementById("name_message");
 const password_message = document.getElementById("password_message");
 const confirm_password_message = document.getElementById(
   "confirm_password_message"
 );
+const registration_successful = document.getElementById(
+  "registration_successful"
+);
+const user_exists = document.getElementById("user_exists");
+const loginError = document.getElementById("loginError");
 
-const API_BASE_URL = "https://api.noroff.dev/api/v1";
-const registerUrl = `${API_BASE_URL}/social/auth/register`;
-const loginUrl = `${API_BASE_URL}/social/auth/login`;
-
-async function loginUser(url, userdata) {}
-
-async function registerUser(url, userData) {
-  console.log(url, userData);
+/**
+ * Function that sends user data to api and directs to feed if valid. If invalid, displays an error message
+ * @param {string} url Login API endpoint
+ * @param {object} userData
+ */
+async function loginUser(url, userData) {
   const methodOptions = {
     method: "POST",
+    body: JSON.stringify(userData),
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(userData),
   };
   const response = await fetch(url, methodOptions);
   const json = await response.json();
-  console.log(json);
+  if (json.accessToken) {
+    const { accessToken } = json;
+    console.log(accessToken);
+    localStorage.setItem("accessToken", accessToken);
+    window.location.href = "../";
+  } else {
+    loginError.innerHTML = `${json.errors[0].message}`;
+  }
 }
 
+/**
+ * Event listener that captures login details and passes it to loginUser() an an object
+ */
+logInForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const loginEmail = document.getElementById("loginEmail").value;
+  const loginPassword = document.getElementById("loginPassword").value;
+  const loginData = {
+    email: loginEmail,
+    password: loginPassword,
+  };
+  loginUser(loginUrl, loginData);
+});
+
+/**
+ *
+ * @param {string} url Register api endpoint
+ * @param {object} userData
+ */
+async function registerUser(url, userData) {
+  try {
+    console.log(url, userData);
+    const methodOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    };
+    const response = await fetch(url, methodOptions);
+    const json = await response.json();
+    if (json.errors[0].message.includes("Profile already exists")) {
+      user_exists.classList.remove("d-none");
+    } else {
+      loginUser(loginUrl, userData);
+    }
+  } catch (error) {}
+}
+
+/**
+ * Function that sends the form data to registerUser() if valid, and displays an error message if invalid
+ * @param {object} userData
+ * @param {object} formData
+ *
+ */
 function validateForm({ name, email, password, confirmPassword }, formData) {
   let isValid = true;
   if (password.length < 8) {
@@ -51,8 +107,6 @@ function validateForm({ name, email, password, confirmPassword }, formData) {
   } else {
     email_message.classList.add("d-none");
   }
-  {
-  }
 
   if (name.length === 0) {
     name_message.classList.remove("d-none");
@@ -73,6 +127,9 @@ function validateForm({ name, email, password, confirmPassword }, formData) {
   }
 }
 
+/**
+ * Event listener that captures form input data and passes it to validateForm() as an object when submitting
+ */
 signUpForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const name = document.getElementById("name").value.replace(/ /g, "");

@@ -36,8 +36,13 @@ nav .disabled, footer .disabled {
   height: 100px;
 }
 
-.followers, .following {
-  border: 2px solid #22577A;
+.followers-and-following {
+  border: 2px solid black;
+  width: 350px;
+}
+
+.followers .profile-name-post, .following .profile-name-post {
+  font-size: 1rem;
 }
 .followers h2, .followers .h2, .following h2, .following .h2 {
   font-size: 1.2rem;

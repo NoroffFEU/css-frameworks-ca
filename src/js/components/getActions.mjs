@@ -204,3 +204,123 @@ export function createComments(domElement, postData) {
             `
     }
 };
+
+/**
+ * 
+ * @param {object} domElement  - where to print data
+ * @param {*} userData - what data to print
+ * gets data about the relevant user and prints a profile summary with the users avatar and name
+ */
+export function creatreProfileUser(domElement, userData) {
+    const myUserName = localStorage.getItem("userName");
+    if (userData.name === myUserName) {
+        domElement.innerHTML = `
+        <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
+            <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
+            <div class="d-flex flex-column justify-content-center">
+                <h1 class="profile-name text-center">${userData.name}</h1>
+            </div>
+        </div>
+        `;       
+    } else {
+        domElement.innerHTML = `
+            <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
+                <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
+                <div class="d-flex flex-column justify-content-center">
+                    <h1 class="profile-name text-center">${userData.name}</h1>
+                    <button class="btn btn-primary mb-1">
+                        Follow
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+};
+
+/**
+ * 
+ * @param {object} domElement  - where to print data
+ * @param {*} userData - what data to print
+ * gets data about the relevant user and prints a summary of who follows this profile, 
+ */
+export function showFollowers(domElement, userData) {
+    console.log(userData.followers)
+    const followers = userData.followers;
+    if (followers.length === 0) {
+        domElement.innerHTML = `
+        <p>No followers yet</p>
+        `;
+    }
+    for (let i = 0; i < followers.length; i++) {
+        const follower = followers[i];
+        domElement.innerHTML += `
+            <div class="d-flex align-items-center mt-2 mb-2">
+                <a href="/profile/index.html?name=${follower.name}">
+                    <img class="profile-pic-tiny" src="${follower.avatar}" alt="User icon">
+                </a>
+                <div>
+                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1"><a href="/profile/index.html?name=${follower.name}">${follower.name}</a></p>
+                </div>
+            </div>
+        `;
+    }
+};
+
+/**
+ * 
+ * @param {object} domElement  - where to print data
+ * @param {*} userData - what data to print
+ * gets data about the relevant user and prints a summary of who the profile follows 
+ */
+export function showFollowing(domElement, userData) {
+    console.log(userData.following)
+    const following = userData.following;
+    if (following.length === 0) {
+        domElement.innerHTML = `
+        <p>Not following anyone yet</p>
+        `;
+    }
+    for (let i = 0; i < following.length; i++) {
+        const follower = following[i];
+        domElement.innerHTML += `
+            <div class="d-flex align-items-center mt-2 mb-2">
+                <a href="/profile/index.html?name=${follower.name}">
+                    <img class="profile-pic-tiny" src="${follower.avatar}" alt="User icon">
+                </a>
+                <div>
+                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1"><a href="/profile/index.html?name=${follower.name}">${follower.name}</a></p>
+                </div>
+            </div>
+        `;
+    }
+}
+
+/**
+ * 
+ * @param {object} domElement  - where to print data
+ * @param {*} userData - what data to print
+ * gets data about the relevant user and prints a the users posts
+ */
+export function createPostHistory(domElement, userData) {
+    const allUserPosts = userData.posts;
+    for (let i = 0; i < allUserPosts.length; i++) {
+        const post = allUserPosts[i];
+        const postedDate = post.created.replaceAll("-", ".");
+        const slicedPostDate = postedDate.slice(0, postedDate.length - 14).split(".").reverse().join(".");
+        domElement.innerHTML += `
+        <div class="single-post m-3 custom-border">
+            <div class="d-flex">
+                <img class="profile-pic-tiny" src="${userData.avatar}" alt="User icon">
+                <div>
+                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1 someone-else-profile ">${userData.name}</p>
+                    <p class="mt-1 mr-1 mb-0 ml-1">${slicedPostDate}</p>
+                </div>
+            </div>
+            <h5><a href="../feed/singlepost.html?id=${post.id}" class="single-post-link">${post.title}</a></h5>
+            <p class="post-text">
+                ${post.body}
+            </p>
+        </div>
+        `;
+    }
+}

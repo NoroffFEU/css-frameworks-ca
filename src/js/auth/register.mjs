@@ -13,7 +13,7 @@ async function register(profile) {
         method,
         body,
     });
-
+    //console.log(registerurl);
     const result = await response.json();
     alert("You are now register");
     window.location.replace("/profile/login/index.html");

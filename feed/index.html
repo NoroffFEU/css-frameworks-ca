@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script src="/js/fetchAllPosts.mjs" type="module"></script>
+    <script src="/js/script.mjs" type="module"></script>
     <title>Posts feed | Dancehub</title>
     <link rel="icon" type="image/x-icon" href="/images/dancehub.ico">
   </head>
@@ -95,141 +98,12 @@
           </ul>
         </div>
       </div>
+      <div class="loader-container">
+        <div class="content-loader"></div>
+        <p>Loading...</p>
+      </div>
       <div class="container mt-4">
-        <div class="row">
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/hiphop.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">HIP-HOP</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/show.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">SHOW</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/choreography.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">CHOREOGRAPHY</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/photoshoot.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">PHOTOSHOOT</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/dancevideo.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">DANCE VIDEO</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/ballet.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">BALLET</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-80 my-3">
-              <img src="/images/dancebattle.jpg" class="card-img-top feed-card-img" alt="Thumbnail image" />
-              <div class="card-body py-2 px-3">
-                <h6 class="card-title">DANCE BATTLE</h6>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p class="mb-0 d-flex align-items-center">Charlie</p>
-                </div>
-              </div>
-              <div class="card-footer text-end">
-                <small class="text-secondary">March 15, 2023</small>
-              </div>
-            </div>
-          </div>
+        <div class="row all-posts_card-container gy-4">
         </div>
       </div>
     </main>

@@ -1,6 +1,5 @@
-import { apiBaseUrl } from "./script.mjs";
+import { apiBaseUrl, allPostsApi } from "./script.mjs";
 
-const postsAPI = "/social/posts";
 /**
  * Fetches posts with an access token
  * @param {string} url The URL to fetch posts from.
@@ -8,7 +7,7 @@ const postsAPI = "/social/posts";
  * const apiUrl = `${apiBaseUrl}${postsAPI}`;
  * fetchPostsWithToken(apiUrl);
  */
-async function fetchPostsWithToken(url) {
+export async function fetchPostsWithToken(url) {
   try {
     // Getting accessToken from localStorage
     const token = localStorage.getItem("accessToken");
@@ -22,13 +21,16 @@ async function fetchPostsWithToken(url) {
     };
     // Fetch a response with the specified URL and the accessToken
     const response = await fetch(url, getData);
+
     // Parse the response body as JSON
     const json = await response.json();
+
     // Handle errors that may occur during the fetch operation
+    return json;
   } catch (error) {
     console.log("An error occurred during the fetch operation", error);
   }
 }
 
-// Calling the fetchPostsWithToken using the URL provided
-fetchPostsWithToken(`${apiBaseUrl}${postsAPI}`);
+/* // Calling the fetchPostsWithToken using the URL provided
+fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}`); */

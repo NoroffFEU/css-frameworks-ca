@@ -9,14 +9,23 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+/**
+ * Fetches a single post from the server with authentication.
+ * @param {string} id The unique identifier of the post to fetch.
+ * @returns {Promise<Object>} A promise that resolves to the data of the fetched post.
+ * @example
+ * const singlePostData = await fetchSinglePost("123");
+ */
+const fetchSinglePost = async (id) => {
+  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}/${id}?_author=true`);
+};
 
-async function fetchSinglePost(id) {
-    return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}/${id}?_author=true`);
-}
-
-
-
-function createCardSinglePost(postData) {
+/**
+ * Creates an HTML card element for a single post.
+ * @param {Object} postData The data for the post.
+ * @returns {HTMLElement} The generated HTML card element.
+ */
+const createCardSinglePost = (postData) => {
     const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5";
 
@@ -83,8 +92,13 @@ const loaderContainer = document.querySelector(".loader-container");
 const singlePostContainer = document.querySelector("#post-single-container");
 const errorMessage = createMessage("error");
 
-
-async function displaySinglePostCard() {
+/**
+ * Displays a single blog post card.
+ * @throws {Error} - Throws an error if there's an issue during the fetch operation.
+ * @example
+ * await displaySinglePostCard();
+ */
+const displaySinglePostCard = async () => {
   try {
     const jsonSpecific = await fetchSinglePost(id);
     const singlePostCard = createCardSinglePost(jsonSpecific);
@@ -92,12 +106,16 @@ async function displaySinglePostCard() {
   } catch (error) {
     console.log(error);
 
+ // Display error message in case of an error
     singlePostContainer.innerHTML = errorMessage;
+
+    // Rethrow the error for external handling, if necessary
     throw new Error(error);
   } finally {
+    // Hide loader regardless of success or failure
     loaderContainer.style.display = "none";
- 
+
   }
 }
-
+// Initial call to display the single post card
 displaySinglePostCard();

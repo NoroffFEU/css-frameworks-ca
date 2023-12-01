@@ -111,7 +111,9 @@ const offset = 0;
  * Displays post cards by fetching and rendering posts.
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
- */
+ * @example
+ * await displayAllPostsCards();
+*/
 async function displayAllPostsCards() {
   try {
   // If posts are already being loaded, return  

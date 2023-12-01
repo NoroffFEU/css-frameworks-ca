@@ -213,6 +213,8 @@ export function createComments(domElement, postData) {
  */
 export function creatreProfileUser(domElement, userData) {
     const myUserName = localStorage.getItem("userName");
+    const userFollowers = userData.followers;
+    const me = userFollowers.find((follower) => follower.name === myUserName);
     if (userData.name === myUserName) {
         domElement.innerHTML = `
         <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
@@ -220,15 +222,32 @@ export function creatreProfileUser(domElement, userData) {
             <div class="d-flex flex-column justify-content-center">
                 <h1 class="profile-name text-center">${userData.name}</h1>
             </div>
+            <form class="set-avatar" action="submit">
+                <label for="avatar">Change Avatar</label>
+                <input type="text" name="avatar" id="avatar" placeholder="url to image">
+                <button class="set-avatar-btn">Set avatar</button>
+            </form>
         </div>
         `;       
+    } else if (me) {
+        domElement.innerHTML = `
+            <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
+                <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
+                <div class="d-flex flex-column justify-content-center">
+                    <h1 class="profile-name text-center">${userData.name}</h1>
+                    <button class="btn unfollow-btn btn-primary mb-1">
+                        Unfollow
+                    </button>
+                </div>
+            </div>
+        `;
     } else {
         domElement.innerHTML = `
             <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
                 <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
                 <div class="d-flex flex-column justify-content-center">
                     <h1 class="profile-name text-center">${userData.name}</h1>
-                    <button class="btn btn-primary mb-1">
+                    <button class="btn follow-btn btn-primary mb-1">
                         Follow
                     </button>
                 </div>
@@ -244,7 +263,6 @@ export function creatreProfileUser(domElement, userData) {
  * gets data about the relevant user and prints a summary of who follows this profile, 
  */
 export function showFollowers(domElement, userData) {
-    console.log(userData.followers)
     const followers = userData.followers;
     if (followers.length === 0) {
         domElement.innerHTML = `
@@ -273,7 +291,6 @@ export function showFollowers(domElement, userData) {
  * gets data about the relevant user and prints a summary of who the profile follows 
  */
 export function showFollowing(domElement, userData) {
-    console.log(userData.following)
     const following = userData.following;
     if (following.length === 0) {
         domElement.innerHTML = `

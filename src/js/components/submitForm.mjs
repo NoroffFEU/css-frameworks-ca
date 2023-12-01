@@ -27,4 +27,4 @@ export function clearForm(formInputs) {
     for (let i = 0; i < formInputs.length; i++) {
         formInputs[i].value = "";
     }
-}
+};

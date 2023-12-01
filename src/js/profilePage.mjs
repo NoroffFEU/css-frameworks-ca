@@ -3,6 +3,9 @@ import { creatreProfileUser } from "./components/getActions.mjs";
 import { createPostHistory } from "./components/getActions.mjs";
 import { showFollowers } from "./components/getActions.mjs";
 import { showFollowing } from "./components/getActions.mjs";
+import { putData } from "./components/putData.mjs";
+import { submitForm } from "./components/submitForm.mjs";
+import { clearForm } from "./components/submitForm.mjs";
 
 const linkToMyProfile = document.querySelector("#link-to-my-profile");
 const myUserName = localStorage.getItem("userName");
@@ -21,11 +24,17 @@ let queries = `?_following=true&_followers=true&_posts=true`;
 const fullUrl = `${baseUrl}${endpoint}${queries}`;
 
 linkToMyProfile.href += `?name=${myUserName}`;
+if(name === myUserName){
+    linkToMyProfile.classList.remove("active");
+    linkToMyProfile.classList.add("disabled");
+};
 
 getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
 getData(fullUrl, token, postHistoryDom, createPostHistory);
 getData(fullUrl, token, followersDom, showFollowers);
 getData(fullUrl, token, followingDom, showFollowing);
+
+
 
 /**
  * Observes a DOM element for changes
@@ -35,10 +44,47 @@ getData(fullUrl, token, followingDom, showFollowing);
 const profileSummaryObserver = new MutationObserver(function(mutations) {
     mutations.forEach(function(){
         const userAvatar = document.querySelector(".profile-pic");
-        console.dir(userAvatar)
-            if (userAvatar.outerHTML === `<img class=\"profile-pic m-3\" src=\"null\" alt=\"User icon created by Freepik\">`) {
+            if (userAvatar.outerHTML === `<img class=\"profile-pic m-3\" src=\"null\" alt=\"User icon created by Freepik\">` || userAvatar.outerHTML === `<img class=\"profile-pic m-3\" src="" alt=\"User icon created by Freepik\">`) {
                 userAvatar.outerHTML = `<img class="profile-pic" src="../images_and_icon/icons/user_icon.png" alt="User icon">`
             }
+
+        const changeAvatarForm = document.querySelector(".set-avatar");
+        if (changeAvatarForm) {
+            changeAvatarForm.addEventListener("submit", (e) => {
+                e.preventDefault()
+                endpoint = `/social/profiles/${name}/media`;
+                const changeAvatarURl = `${baseUrl}${endpoint}`;
+                submitForm(changeAvatarForm, changeAvatarURl, putData);
+                clearForm(changeAvatarForm);
+                setTimeout(() => {
+                    getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+                }, 1000);
+            })
+        }
+
+        const followBtn = document.querySelector(".follow-btn");
+        if (followBtn) {
+            followBtn.addEventListener("click", (e) => {
+                endpoint = `/social/profiles/${name}/follow`;
+                const followUrl = `${baseUrl}${endpoint}`;
+                putData(followUrl, "")
+                setTimeout(() => {
+                    getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+                }, 1000);
+            });
+        }
+
+        const unfollowBtn = document.querySelector(".unfollow-btn");
+        if (unfollowBtn) {
+            unfollowBtn.addEventListener("click", (e) => {
+                endpoint = `/social/profiles/${name}/unfollow`;
+                const followUrl = `${baseUrl}${endpoint}`;
+                putData(followUrl, "")
+                setTimeout(() => {
+                    getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+                }, 1000);
+            });
+        }
     })  
 });
 
@@ -59,3 +105,4 @@ profileSummaryObserver.observe(profileSummaryDom, config);
 profilePostsObserver.observe(followersDom, config);
 profilePostsObserver.observe(followingDom, config);
 profilePostsObserver.observe(postHistoryDom, config);
+

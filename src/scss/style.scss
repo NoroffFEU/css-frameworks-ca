@@ -1,0 +1,20 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+body {
+    margin-top: 150px;
+}
+
+.navbar-custom, .login, .border-custom-col, .card-body{
+    background-color: $primary;
+    border: $border-color;
+}
+
+.card {
+    background-color: $secondary;
+}
+
+.custom-container {
+    max-width: 600px;
+}

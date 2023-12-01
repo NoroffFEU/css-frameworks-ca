@@ -23,7 +23,7 @@ async function fetchAllPosts(limit, offset) {
  * @param {Object} postData The data for the post.
  * @returns {HTMLElement} The generated HTML card element.
  */
-function createCardAllPosts(postData) {
+export function createCardAllPosts(postData) {
   console.log(postData);
     const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";

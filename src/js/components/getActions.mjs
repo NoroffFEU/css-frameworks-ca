@@ -13,52 +13,52 @@
 export function printFeed(domElement, postsArray) {
     domElement.innerHTML = "";
     const myUserName = localStorage.getItem('userName');
-
+    console.log(postsArray);
     for (let i = 0; i < postsArray.length; i++) {
-        const post = postsArray[i];
-
-        const postedDate = post.created.replaceAll("-", ".");
+        const {title, body, author, id, _count, created} = postsArray[i];
+        // console.log(`title is ${title}, body is ${body} and author is ${author.name}`);
+        const postedDate = created.replaceAll("-", ".");
         const slicedPostDate = postedDate.slice(0, postedDate.length - 14).split(".").reverse().join(".");
         
-        if (!post.body || !post.title) {
+        if (!body || !title) {
             continue;
         }
-        if (post.author.name === myUserName) {
+        if (author.name === myUserName) {
             domElement.innerHTML += `
             <div class="single-post m-3 custom-border">
                 <div class="d-flex">
-                <a href="/profile/index.html?name=${post.author.name}">
-                    <img class="profile-pic-tiny" src="${post.author.avatar}" alt="User icon">
+                <a href="/profile/index.html?name=${author.name}">
+                    <img class="profile-pic-tiny" src="${author.avatar}" alt="User icon">
                 </a>
                     <div class=username-and-post-date>
-                        <p class="profile-name-post my-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${post.author.name}">${post.author.name}</a></p>
+                        <p class="profile-name-post my-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${author.name}">${author.name}</a></p>
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>
-                <h5><a href="singlepost.html?id=${post.id}">${post.title}</a><h5>
+                <h5><a href="singlepost.html?id=${id}">${title}</a><h5>
                 <p class="post-text">
-                    ${post.body}
+                    ${body}
                 </p>
-                <p>Post has ${post._count.comments} comments and ${post._count.reactions} reactions</p>
+                <p>Post has ${_count.comments} comments and ${_count.reactions} reactions</p>
             </div>
             `;
         } else {
             domElement.innerHTML += `
             <div class="single-post m-3 custom-border">
                 <div class="d-flex">
-                <a href="/profile/index.html?name=${post.author.name}">
-                    <img class="profile-pic-tiny" src="${post.author.avatar}" alt="User icon">
+                <a href="/profile/index.html?name=${author.name}">
+                    <img class="profile-pic-tiny" src="${author.avatar}" alt="User icon">
                 </a>
                     <div class=username-and-post-date>
-                        <p class="profile-name-post someone-else-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${post.author.name}">${post.author.name}</a></p>
+                        <p class="profile-name-post someone-else-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${author.name}">${author.name}</a></p>
                         <p class="mt-1 mr-1 mb-0 ml-1">Posted the ${slicedPostDate}</p>
                     </div>
                 </div>
-                <h5><a href="singlepost.html?id=${post.id}" class="single-post-link">${post.title}</a><h5>
+                <h5><a href="singlepost.html?id=${id}" class="single-post-link">${title}</a><h5>
                 <p class="post-text">
-                    ${post.body}
+                    ${body}
                 </p>
-                <p>Post has ${post._count.comments} comments and ${post._count.reactions} reactions</p>
+                <p>Post has ${_count.comments} comments and ${_count.reactions} reactions</p>
             </div>
             `;
         }
@@ -139,21 +139,22 @@ export function searchArray(domElement, postsArray, searchQuery) {
  */    
 export function singlePostContent(domElement, postData) {
     const myUserName = localStorage.getItem('userName');
-    const creationDate = postData.created.replaceAll("-", ".");
+    const {title, body, media, created, author, id} = postData
+    const creationDate = created.replaceAll("-", ".");
     const formattedDate = creationDate.slice(0, creationDate.length - 14).split(".").reverse().join(".");
     domElement.innerHTML = `
     <div class="post d-flex flex-column justify-content-center align-content-center">
-        <h1 class="text-center">${postData.title}</h1>
-        <p class="text-center">${postData.body}</p>
-        <img class="post-img text-center justify-self-center align-self-center" src="${postData.media}" alt="">
-        <p class="text-center">Posted the ${formattedDate} by ${postData.author.name}</p>
+        <h1 class="text-center">${title}</h1>
+        <p class="text-center">${body}</p>
+        <img class="post-img text-center justify-self-center align-self-center" src="${media}" alt="">
+        <p class="text-center">Posted the ${formattedDate} by ${author.name}</p>
     </div>
     `;
 
-    if (postData.author.name === myUserName) {
+    if (author.name === myUserName) {
         domElement.innerHTML += `
         <div class="d-flex justify-content-evenly">
-            <button class="delete" id="${postData.id}">delete post</button><button class="edit">edit post</button>
+            <button class="delete" id="${id}">delete post</button><button class="edit">edit post</button>
         </div>`;
     }
 };
@@ -187,20 +188,20 @@ export function createComments(domElement, postData) {
     const myUserName = localStorage.getItem('userName');
     const comments = postData.comments;
     for (let i = 0; i < comments.length; i++) {
-        const comment = comments[i];
-        if (!comment.body){
+        const {author, body} = comments[i];
+        if (!body){
             continue;
         }
         domElement.innerHTML += `
-        <div class="comment">
+            <div class="comment">
             <div class="d-flex profile-info flex-row space-evenly">
-            <a href="/profile/index.html?name=${comment.author.name}">
-                <img class="profile-pic-tiny" src="${comment.author.avatar}" alt="User icon">
+            <a href="/profile/index.html?name=${author.name}">
+                <img class="profile-pic-tiny" src="${author.avatar}" alt="User icon">
             </a>
-                <p class="profile-name-post my-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${comment.author.name}">${comment.author.name}</a></p>
+                <p class="profile-name-post my-profile mt-1 mr-1 mb-0 ml-3"><a href="/profile/index.html?name=${author.name}">${author.name}</a></p>
             </div>
-            <p class="comment-text">${comment.body}</p>
-        </div>
+            <p class="comment-text">${body}</p>
+            </div>
             `
     }
 };
@@ -213,14 +214,15 @@ export function createComments(domElement, postData) {
  */
 export function creatreProfileUser(domElement, userData) {
     const myUserName = localStorage.getItem("userName");
-    const userFollowers = userData.followers;
+    const {followers, name, avatar} = userData;
+    const userFollowers = followers;
     const me = userFollowers.find((follower) => follower.name === myUserName);
     if (userData.name === myUserName) {
         domElement.innerHTML = `
         <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
-            <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
+            <img class="profile-pic m-3" src="${avatar}" alt="User icon created by Freepik">
             <div class="d-flex flex-column justify-content-center">
-                <h1 class="profile-name text-center">${userData.name}</h1>
+                <h1 class="profile-name text-center">${name}</h1>
             </div>
             <form class="set-avatar" action="submit">
                 <label for="avatar">Change Avatar</label>
@@ -232,9 +234,9 @@ export function creatreProfileUser(domElement, userData) {
     } else if (me) {
         domElement.innerHTML = `
             <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
-                <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
+                <img class="profile-pic m-3" src="${avatar}" alt="User icon created by Freepik">
                 <div class="d-flex flex-column justify-content-center">
-                    <h1 class="profile-name text-center">${userData.name}</h1>
+                    <h1 class="profile-name text-center">${name}</h1>
                     <button class="btn unfollow-btn btn-primary mb-1">
                         Unfollow
                     </button>
@@ -244,9 +246,9 @@ export function creatreProfileUser(domElement, userData) {
     } else {
         domElement.innerHTML = `
             <div class="col-4 profile-summary mt-lg-5 mr-auto mb-5 ml-auto mt-sm-0 d-flex flex-column align-items-center w-50">
-                <img class="profile-pic m-3" src="${userData.avatar}" alt="User icon created by Freepik">
+                <img class="profile-pic m-3" src="${avatar}" alt="User icon created by Freepik">
                 <div class="d-flex flex-column justify-content-center">
-                    <h1 class="profile-name text-center">${userData.name}</h1>
+                    <h1 class="profile-name text-center">${name}</h1>
                     <button class="btn follow-btn btn-primary mb-1">
                         Follow
                     </button>
@@ -270,14 +272,14 @@ export function showFollowers(domElement, userData) {
         `;
     }
     for (let i = 0; i < followers.length; i++) {
-        const follower = followers[i];
+        const {name, avatar} = followers[i];
         domElement.innerHTML += `
             <div class="d-flex align-items-center mt-2 mb-2">
-                <a href="/profile/index.html?name=${follower.name}">
-                    <img class="profile-pic-tiny" src="${follower.avatar}" alt="User icon">
+                <a href="/profile/index.html?name=${name}">
+                    <img class="profile-pic-tiny" src="${avatar}" alt="User icon">
                 </a>
                 <div>
-                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1"><a href="/profile/index.html?name=${follower.name}">${follower.name}</a></p>
+                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1"><a href="/profile/index.html?name=${name}">${name}</a></p>
                 </div>
             </div>
         `;
@@ -298,14 +300,14 @@ export function showFollowing(domElement, userData) {
         `;
     }
     for (let i = 0; i < following.length; i++) {
-        const follower = following[i];
+        const {name, avatar} = following[i];
         domElement.innerHTML += `
             <div class="d-flex align-items-center mt-2 mb-2">
-                <a href="/profile/index.html?name=${follower.name}">
-                    <img class="profile-pic-tiny" src="${follower.avatar}" alt="User icon">
+                <a href="/profile/index.html?name=${name}">
+                    <img class="profile-pic-tiny" src="${avatar}" alt="User icon">
                 </a>
                 <div>
-                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1"><a href="/profile/index.html?name=${follower.name}">${follower.name}</a></p>
+                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1"><a href="/profile/index.html?name=${name}">${name}</a></p>
                 </div>
             </div>
         `;
@@ -319,23 +321,23 @@ export function showFollowing(domElement, userData) {
  * gets data about the relevant user and prints a the users posts
  */
 export function createPostHistory(domElement, userData) {
-    const allUserPosts = userData.posts;
-    for (let i = 0; i < allUserPosts.length; i++) {
-        const post = allUserPosts[i];
-        const postedDate = post.created.replaceAll("-", ".");
+    const {posts, avatar, name} = userData;
+    for (let i = 0; i < posts.length; i++) {
+        const {created, id, title, body} = posts[i];
+        const postedDate = created.replaceAll("-", ".");
         const slicedPostDate = postedDate.slice(0, postedDate.length - 14).split(".").reverse().join(".");
         domElement.innerHTML += `
         <div class="single-post m-3 custom-border">
             <div class="d-flex">
-                <img class="profile-pic-tiny" src="${userData.avatar}" alt="User icon">
+                <img class="profile-pic-tiny" src="${avatar}" alt="User icon">
                 <div>
-                    <p class="profile-name-post mt-1 mr-1 mb-0 ml-1 someone-else-profile ">${userData.name}</p>
+                <p class="profile-name-post mt-1 mr-1 mb-0 ml-1 someone-else-profile ">${name}</p>
                     <p class="mt-1 mr-1 mb-0 ml-1">${slicedPostDate}</p>
                 </div>
             </div>
-            <h5><a href="../feed/singlepost.html?id=${post.id}" class="single-post-link">${post.title}</a></h5>
+            <h5><a href="../feed/singlepost.html?id=${id}" class="single-post-link">${title}</a></h5>
             <p class="post-text">
-                ${post.body}
+                ${body}
             </p>
         </div>
         `;

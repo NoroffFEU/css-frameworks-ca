@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Profile | Dancehub</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/viewSinglePost.mjs" type="module"></script>
+    <title>Post | Dancehub</title>
     <link rel="icon" type="image/x-icon" href="/images/dancehub.ico">
   </head>
   <body>
@@ -30,7 +32,7 @@
                 <a class="nav-link ms-3" href="../index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link ms-3 active" aria-current="page" href="/profile/">Profile</a>
+                <a class="nav-link ms-3" href="/profile/">Profile</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link ms-3" href="/feed/">Feed</a>
@@ -43,30 +45,11 @@
     <main>
      <h1 class="visually-hide mb-5">Post</h1>
      <button onclick="history.back()" class="btn btn-outline-primary mx-3 mb-3"><i class="fa-solid fa-chevron-left"></i>BACK</button>
-      <div id="post-single-container" class="container d-flex justify-content-center align-items-center">
-          <div class="col-12 col-sm-12 col-md-10 col-lg-6">
-            <div class="card mb-5">
-              <img src="/images/hiphop.jpg" id="post-img" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 id="post-title" class="card-title mb-2">HIP-HOP</h5>
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <img
-                    src="/images/profileImage.jpg"
-                    id="profile-img-thumbnail"
-                    class="rounded-circle me-1 profile-img-thumbnail"
-                    alt="Profile image thumbnail"
-                  />
-                  <p id="user-name" class="mb-0">Charlie</p>
-                </div>
-                <p id="post-text" class="card-text">
-                  Hip-hop is where I found my rhythm and soul. The asphalt beneath my feet became my stage, each move a
-                  poetic expression of life's raw energy. With every beat, I painted stories in motion, connecting with the
-                  pulse of the city. Hip-hop is more than a passion; it's my urban poetry.
-                </p>
-                <p class="card-text text-end"><small id="post-date" class="text-secondary">March 15, 2023</small></p>
-              </div>
-            </div>
-          </div>
+     <div class="loader-container">
+      <div class="content-loader"></div>
+      <p>Loading...</p>
+    </div>
+      <div id="post-single-container" class="container d-flex justify-content-center align-items-center"
       </div>
     </main>
     <footer class="py-3 my-4">

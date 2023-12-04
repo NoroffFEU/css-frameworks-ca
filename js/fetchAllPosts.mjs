@@ -13,7 +13,7 @@ import { formatDateString } from "./formatDate.mjs";
  * // Example: Fetch all posts with a limit of 10 and offset of 0
  * const posts = await fetchAllPosts(10, 0);
  */
-async function fetchAllPosts(limit, offset) {
+export async function fetchAllPosts(limit, offset) {
     return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true&limit=${limit}&offset=${offset}`);
 }
 
@@ -23,17 +23,19 @@ async function fetchAllPosts(limit, offset) {
  * @param {Object} postData The data for the post.
  * @returns {HTMLElement} The generated HTML card element.
  */
-function createCardAllPosts(postData) {
-  console.log(postData);
+export function createCardAllPosts(postData) {
     const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
-    const cardPostContent = document.createElement("div");
+    const cardPostContent = document.createElement("a");
+    cardPostContent.href = `../post/index.html?id=${postData.id}`
     cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
+
     const cardPostImage = document.createElement("img");
     cardPostImage.src = postData.media;
+
     
     // Handle errors in case the image fails to load
     cardPostImage.onerror = () => {
@@ -51,7 +53,7 @@ function createCardAllPosts(postData) {
 
     const cardPostTitle = document.createElement("h6");
     cardPostTitle.innerText = postData.title;
-    cardPostTitle.className = "card-title";
+    cardPostTitle.className = "card-title text-to-uppercase";
     cardPostTextContent.appendChild(cardPostTitle);
 
     const userNameOnCardLayout = document.createElement("div");
@@ -109,8 +111,9 @@ const offset = 0;
  * Displays post cards by fetching and rendering posts.
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
- */
+*/
 async function displayAllPostsCards() {
+
   try {
   // If posts are already being loaded, return  
   if(loadingPosts) {
@@ -119,18 +122,25 @@ async function displayAllPostsCards() {
 
     // Set loading flag to true
     loadingPosts = true;
- 
+
     // Display loader while posts are being fetched
     loaderContainer.style.display = "block";
 
      // Fetch posts
     const posts = await fetchAllPosts(limit, offset);
+    console.log("Limit:", limit); // Log the offset value
+    console.log("Offset:", offset); // Log the offset value
+    console.log("Received posts:", posts);  
 
-    // Render each post as a card
+    // Render only the first post as a card
+    const postCard = createCardAllPosts(posts[0]);
+    allPostsContainer.appendChild(postCard);
+
+/*     // Render each post as a card
     posts.forEach((postData) => {
       const postCard = createCardAllPosts(postData);
       allPostsContainer.appendChild(postCard);
-    });
+    }); */
 
     } catch (error) {
     console.log(error);

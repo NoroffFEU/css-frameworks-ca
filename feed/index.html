@@ -61,7 +61,7 @@
               <h1 class="text-center">News Feed:</h1>
             </div>
 
-            <div class="ford-control">
+            <div class="">
               <div class="row mt-4 d-flex flex-row align-items-center">
                 <div class="col-md-4 col-lg-5 mx-auto mb-3 mt-5">
                   <div class="small fw-light"></div>
@@ -79,10 +79,23 @@
                       <i class="fa fa-search"></i>
                     </button>
                   </div>
+                  <div class="sort-form text-center mt-3">
+                    <label for="sortSelect" class="mb-2 fs-4">Sort:</label>
+                    <select
+                      class="form-control"
+                      id="sortSelect"
+                      onchange="sortNews()"
+                    >
+                      <option value="a-z">From A to Z</option>
+                      <option value="new-old">New to old</option>
+                      <option value="old-new">Old to new</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
             <hr class="mt-3" />
+
             <div class="text-center mt-4">
               <h2 class="">Share your content by creating a DevCard:</h2>
               <button class="btn btn-primary this_button mt-4 mb-2">
@@ -111,10 +124,8 @@
                     tenetur animi, dolores dolorum aliquid debitis. Odio,
                     aliquam!
                   </p>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-feed">
-                      Read more...
-                    </button>
+                  <div class="text-center d-grid gap-2">
+                    <button class="btn btn-primary">Read more...</button>
                   </div>
                 </div>
               </div>
@@ -141,10 +152,8 @@
                     tenetur animi, dolores dolorum aliquid debitis. Odio,
                     aliquam!
                   </p>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-feed">
-                      Read more...
-                    </button>
+                  <div class="text-center d-grid gap-2">
+                    <button class="btn btn-primary">Read more...</button>
                   </div>
                 </div>
               </div>
@@ -171,10 +180,8 @@
                     tenetur animi, dolores dolorum aliquid debitis. Odio,
                     aliquam!
                   </p>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-feed">
-                      Read more...
-                    </button>
+                  <div class="text-center d-grid gap-2">
+                    <button class="btn btn-primary">Read more...</button>
                   </div>
                 </div>
               </div>
@@ -201,10 +208,8 @@
                     tenetur animi, dolores dolorum aliquid debitis. Odio,
                     aliquam!
                   </p>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-feed">
-                      Read more...
-                    </button>
+                  <div class="text-center d-grid gap-2">
+                    <button class="btn btn-primary">Read more...</button>
                   </div>
                 </div>
               </div>
@@ -231,10 +236,8 @@
                     tenetur animi, dolores dolorum aliquid debitis. Odio,
                     aliquam!
                   </p>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-feed">
-                      Read more...
-                    </button>
+                  <div class="text-center d-grid gap-2">
+                    <button class="btn btn-primary">Read more...</button>
                   </div>
                 </div>
               </div>
@@ -261,10 +264,8 @@
                     tenetur animi, dolores dolorum aliquid debitis. Odio,
                     aliquam!
                   </p>
-                  <div class="text-center">
-                    <button class="btn btn-primary btn-feed">
-                      Read more...
-                    </button>
+                  <div class="text-center d-grid gap-2">
+                    <button class="btn btn-primary">Read more...</button>
                   </div>
                 </div>
               </div>
@@ -275,9 +276,9 @@
       </section>
     </main>
 
-    <footer class="main-footer py-5 mt-5">
-      <div class="container text-ceter">
-        <p class="display-6 mb-3">CSS Framework - CA</p>
+    <footer class="main-footer bg-dark py-5 mt-5 shadow">
+      <div class="container text-center text-light">
+        <p class="display-6 mb-3">CSS Frameworks - CA</p>
         <p class="display-7">&copy; Copyright Johan F. Aas-Haug 2023</p>
       </div>
     </footer>

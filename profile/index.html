@@ -52,16 +52,17 @@
       
       <div class="container">
         <div class="profile-container align-items-center  ">
-            <img class="profile-picture" src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg" alt="Profile Picture">
+            <img class="profile-picture img-fluid mb-3" src="https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg" alt="Profile Picture">
             <p class="user-name text-center">Firstname Lastname</p>
             <p class="email text-center mt3">developer@developer.com</p>
-            <h2 class="about-header text-center text-primary">About</h2>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button class="btn btn-outline-warning mt-1 mb-3">Follow</button>
+            </div>
             <div class="about-content">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, totam natus! Maiores nostrum tempora vero provident omnis a illum labore reiciendis, iusto dignissimos laboriosam perspiciatis nihil expedita ipsum eligendi iure dolores veritatis nemo vel eveniet repudiandae adipisci aliquam! Incidunt ea consequatur et, ex, beatae illo laboriosam deleniti blanditiis, rem possimus est ut corporis ullam asperiores quibusdam. Facilis aut suscipit id illum corrupti vel veniam veritatis. Aperiam, in provident qui tenetur dolor distinctio! Dolorum hic atque dolor minus vitae eligendi labore veniam id, qui cum earum non eum vero optio ad alias corrupti nostrum consequatur fugiat, quam aliquid natus soluta expedita?</p>
             </div>
-            <div>
-            <button class="btn btn-primary mt-3">Edit profile</button>
-            
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-secondary mt-3">Contact</button>
           </div>
         </div>
     </div>
@@ -90,7 +91,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo unde ab incidunt ea, accusantium
                 facere vitae tenetur animi, dolores dolorum aliquid debitis. Odio, aliquam!
               </p>
-              <a href="#" class="btn btn-primary btn-feed">Read more...</a>
+              <div class="d-grid gap-2">
+                <a href="#" class="btn btn-primary">Read more...</a>
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +111,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo unde ab incidunt ea, accusantium
                 facere vitae tenetur animi, dolores dolorum aliquid debitis. Odio, aliquam!
               </p>
-              <a href="#" class="btn btn-primary btn-feed">Read more...</a>
+              <div class="d-grid gap-2">
+                <a href="#" class="btn btn-primary">Read more...</a>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +131,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo unde ab incidunt ea, accusantium
                 facere vitae tenetur animi, dolores dolorum aliquid debitis. Odio, aliquam!
               </p>
-              <a href="#" class="btn btn-primary btn-feed">Read more...</a>
+              <div class="d-grid gap-2">
+              <a href="#" class="btn btn-primary">Read more...</a>
+            </div>
             </div>
           </div>
         </div>
@@ -136,12 +143,13 @@
 </section>
     </main>
 
-    <footer class="main-footer py-5 mt-5">
-      <div class="container text-ceter">
+    <footer class="main-footer bg-dark py-5 mt-5 shadow">
+      <div class="container text-center text-light">
         <p class="display-6 mb-3">CSS Frameworks - CA</p>
         <p class="display-7">&copy; Copyright Johan F. Aas-Haug 2023</p>
       </div>
     </footer>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>

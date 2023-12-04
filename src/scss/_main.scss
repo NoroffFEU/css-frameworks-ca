@@ -2,15 +2,6 @@
   background: linear-gradient(#ffd580, #f1f1f1);
 }
 
-.btn-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  margin-top: 10px;
-}
-
 .nav-banner {
   background-color: rgb(255, 166, 0);
 }
@@ -18,15 +9,6 @@
 .nav-banner a:hover {
   color: rgba(255, 166, 0, 0.987);
   text-decoration: underline;
-}
-
-.main-footer {
-  background-color: rgba(255, 166, 0, 0.136);
-  box-shadow: 5px 5px 5px rgba(184, 184, 184, 0.325);
-  color: black;
-
-  display: flex;
-  text-align: center;
 }
 
 .login-container {

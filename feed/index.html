@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <script src="/js/fetchAllPosts.mjs" type="module"></script>
+    <script src="/js/searchFunction.mjs" type="module"></script>
     <script src="/js/script.mjs" type="module"></script>
     <title>Posts feed | Dancehub</title>
     <link rel="icon" type="image/x-icon" href="/images/dancehub.ico">
@@ -56,17 +57,22 @@
             <label for="exampleInputTextArea1" class="form-label">Add your content</label>
             <textarea class="form-control textarea-height" id="exampleInputTextArea1"></textarea>
           </div>
+          <div class="mb-3">
+            <label for="exampleInputImageUrl" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="exampleInputImageUrl" />
+          </div>
           <div class="text-center my-3 d-flex justify-content-center gap-4">
-            <button type="submit" class="btn btn-outline-primary">Add image</button>
+        <!--     <button type="submit" class="btn btn-outline-primary">Add image</button> -->
             <button type="submit" class="btn btn-primary">Publish</button>
           </div>
         </form>
       </div>
       <h2 class="text-center">Posts</h2>
       <div class="container mt-4 d-flex align-items-center justify-content-center flex-row flex-wrap gap-4">
-        <form class="form-inline">
+        <form id="search-form" class="form-inline">
           <div class="input-group">
             <input
+              id="search-input"
               type="text"
               class="form-control"
               placeholder="Search"
@@ -74,7 +80,7 @@
               aria-describedby="search-button"
             />
             <div class="input-group-append">
-              <button class="btn btn-primary search-button" type="button" id="search-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <button class="btn btn-primary search-button" type="submit" id="search-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
               </svg></button>
             </div>

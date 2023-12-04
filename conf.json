@@ -1,7 +1,8 @@
 {
-    "source": {
-      "include": ["."],
-      "exclude": ["node_modules/"]
-    }
+  "devDependencies": {
+    "jsdoc": "^4.0.2"
+  },
+  "scripts": {
+    "docs": "jsdoc -c ./conf.json -r"
   }
-  
+}

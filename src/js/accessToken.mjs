@@ -1,4 +1,4 @@
-const API_BASE_URL = `https://api.noroff.dev/api/v1/social`
+/*const API_BASE_URL = `https://api.noroff.dev/api/v1/social`
 export async function fetchwithToken (url) {
     try {
         console.log(url);
@@ -21,5 +21,22 @@ export async function fetchwithToken (url) {
 
 const postsUrl = `${API_BASE_URL}/posts`;
 
-fetchwithToken(postsUrl);
+fetchwithToken(postsUrl);*/
+
+export function save (key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
+export function load(key) {
+    try {
+        const value = localStorage.getItem(key);
+        return JSON.parse(value);
+    } catch {
+        return null;
+    }
+}
+
+export function remove(key) {
+    localStorage.removeItem(key);
+}
     

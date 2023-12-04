@@ -32,42 +32,17 @@ export function createCardAllPosts(postData) {
     cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
- /*    const cardPostImage = document.createElement("img"); */
-/*     cardPostImage.onerror = () => {
-      cardPostImage.onerror = null;
-      cardPostImage.src = "../images/no_img.jpg";
-  }; */
-/*   if (postData.media) {
-      cardPostImage.src = postData.media;
-    } else {
-      cardPostImage.src = "../images/no_img.jpg";
-    }
+
+    const cardPostImage = document.createElement("img");
+    cardPostImage.src = postData.media;
+
+    cardPostImage.onerror = () => {
+    cardPostImage.onerror = null;
+    cardPostImage.src = "../images/no_img.jpg";
+    };
+
     cardPostImage.className = "card-img-top feed-card-img";
-    cardPostContent.appendChild(cardPostImage); */
-
-    // Create an image element
-const cardPostImage = document.createElement("img");
-
-// Set up an error handler for the image
-cardPostImage.onerror = () => {
-  // Remove the error handler to prevent an infinite loop
-  cardPostImage.onerror = null;
-  
-  // Set the source of the image to a default image when an error occurs
-  cardPostImage.src = "../images/no_img.jpg";
-};
-
-// Set the class for styling purposes
-cardPostImage.className = "card-img-top feed-card-img";
-
-// Set the source of the image (ensure this is intentional and might cause an error)
-cardPostImage.src = "intentional_error_source.jpg"; // Replace with the actual source
-
-// Append the image element to the card content
-cardPostContent.appendChild(cardPostImage);
-
-    
-    console.log(cardPostImage);
+    cardPostContent.appendChild(cardPostImage);
 
     const cardPostTextContent = document.createElement("div");
     cardPostTextContent.className = "card-body py-2 px-3";
@@ -83,16 +58,13 @@ cardPostContent.appendChild(cardPostImage);
     cardPostTextContent.appendChild(userNameOnCardLayout);
 
     const profileImageThumbnail = document.createElement("img");
-    
-/*     profileImageThumbnail.onerror = () => {
-        profileImageThumbnail.onerror = null;
-        profileImageThumbnail.src = "../images/no_avatar.jpg";
-    }; */
-    if (postData.media) {
-      profileImageThumbnail.src = postData.author.avatar;
-    } else {
+    profileImageThumbnail.src = postData.author.avatar;
+
+    profileImageThumbnail.onerror = () => {
+      profileImageThumbnail.onerror = null;
       profileImageThumbnail.src = "../images/no_avatar.jpg";
-    } 
+    };
+
     profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
     userNameOnCardLayout.appendChild(profileImageThumbnail);
 
@@ -126,7 +98,7 @@ const errorMessage = createMessage("error");
 let loadingPosts = false;
 
 // Pagination settings
-const limit = 10;
+const limit = 5;
 const offset = 0;
 
 
@@ -151,13 +123,19 @@ async function displayAllPostsCards() {
 
      // Fetch posts
     const posts = await fetchAllPosts(limit, offset);
+    console.log("Limit:", limit); // Log the offset value
+    console.log("Offset:", offset); // Log the offset value
     console.log("Received posts:", posts);  
 
-    // Render each post as a card
+    // Render only the first post as a card
+    const postCard = createCardAllPosts(posts[0]);
+    allPostsContainer.appendChild(postCard);
+
+/*     // Render each post as a card
     posts.forEach((postData) => {
       const postCard = createCardAllPosts(postData);
       allPostsContainer.appendChild(postCard);
-    });
+    }); */
 
     } catch (error) {
     console.log(error);

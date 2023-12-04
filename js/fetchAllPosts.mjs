@@ -33,15 +33,15 @@ function createCardAllPosts(postData) {
     cardColLayout.appendChild(cardPostContent);
 
     const cardPostImage = document.createElement("img");
-/*     cardPostImage.onerror = () => {
+    cardPostImage.src = postData.media;
+    
+    // Handle errors in case the image fails to load
+    cardPostImage.onerror = () => {
+       // Remove the error handler to prevent an infinite loop
       cardPostImage.onerror = null;
+      // Set the source of the image to a default image when an error occurs
       cardPostImage.src = "../images/no_img.jpg";
-  }; */
-  if (postData.media) {
-      cardPostImage.src = postData.media;
-    } else {
-      cardPostImage.src = "../images/no_img.jpg";
-    }
+    };
     cardPostImage.className = "card-img-top feed-card-img";
     cardPostContent.appendChild(cardPostImage);
 
@@ -59,16 +59,15 @@ function createCardAllPosts(postData) {
     cardPostTextContent.appendChild(userNameOnCardLayout);
 
     const profileImageThumbnail = document.createElement("img");
+    profileImageThumbnail.src = postData.author.avatar;
     
-/*     profileImageThumbnail.onerror = () => {
-        profileImageThumbnail.onerror = null;
-        profileImageThumbnail.src = "../images/no_avatar.jpg";
-    }; */
-     if (postData.media) {
-      profileImageThumbnail.src = postData.author.avatar;
-    } else {
-      profileImageThumbnail.src = "../images/no_avatar.jpg";
-    } 
+    // Handle errors in case the image fails to load
+    profileImageThumbnail.onerror = () => {
+    // Remove the error handler to prevent an infinite loop
+    profileImageThumbnail.onerror = null;
+    // Set the source of the image to a default image when an error occurs
+    profileImageThumbnail.src = "../images/no_avatar.jpg";
+    };
     profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
     userNameOnCardLayout.appendChild(profileImageThumbnail);
 
@@ -102,7 +101,7 @@ const errorMessage = createMessage("error");
 let loadingPosts = false;
 
 // Pagination settings
-const limit = 25;
+const limit = 15;
 const offset = 0;
 
 

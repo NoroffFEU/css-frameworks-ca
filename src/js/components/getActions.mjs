@@ -13,7 +13,6 @@
 export function printFeed(domElement, postsArray) {
     domElement.innerHTML = "";
     const myUserName = localStorage.getItem('userName');
-    console.log(postsArray);
     for (let i = 0; i < postsArray.length; i++) {
         const {title, body, author, id, _count, created} = postsArray[i];
         // console.log(`title is ${title}, body is ${body} and author is ${author.name}`);

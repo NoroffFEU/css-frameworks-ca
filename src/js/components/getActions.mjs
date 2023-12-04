@@ -116,13 +116,32 @@ export function searchArray(domElement, postsArray, searchQuery) {
     const searchWord = searchQuery.searchText.toLowerCase();
     const searchIn = searchQuery.searchKeys;
 
+    if (!searchWord) {
+        printFeed(domElement, postsArray);
+    }
+
     if (!searchIn) {
         filteredArray = postsArray.filter(post => {
-            return post[`title`].toLowerCase().includes(`${searchWord}`) || post[`body`].toLowerCase().includes(`${searchWord}`)
+            const {title, body} = post;
+            const lowerCaseTitle = title.toLowerCase();
+            if (title && body) {
+                const lowerCaseBody = body.toLowerCase();
+                return lowerCaseTitle.includes(`${searchWord}`) || lowerCaseBody.includes(`${searchWord}`);
+            } else if (!body) {
+                return lowerCaseTitle.includes(`${searchWord}`);
+            }
         });
     } else {
         filteredArray = postsArray.filter(post => {
-            return post[`${searchIn}`].toLowerCase().includes(`${searchWord}`)
+            const {title, body} = post; 
+            if (searchIn === "title") {
+                const lowerCaseTitle = title.toLowerCase();
+                return lowerCaseTitle.includes(`${searchWord}`);
+            } else if (searchIn === "body" && body) {
+                const lowerCaseBody = body.toLowerCase();
+                return lowerCaseBody.includes(`${searchWord}`);
+            }
+            
         });
     }
     printFeed(domElement, filteredArray);

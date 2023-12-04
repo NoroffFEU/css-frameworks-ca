@@ -1,10 +1,10 @@
-import { API_BASE_URL } from "./routes.mjs";
+import { API_BASE_URL } from "../routes.mjs";
 
-const registeruser = "/auth/register";
+const action = "/auth/register";
 const method = "post";
 
-async function register(profile) {
-    const registerurl = API_BASE_URL + registeruser;
+export async function register(profile) {
+    const registerurl = API_BASE_URL + action;
     const body = JSON.stringify(profile);
     const response = await fetch (registerurl, {
         headers: {

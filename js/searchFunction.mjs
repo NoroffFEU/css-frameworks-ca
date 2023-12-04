@@ -13,16 +13,30 @@ const APIURL = `${apiBaseUrl}${allPostsApi}?_author=true`
  *
  * @param {Object[]} posts An array of post objects to be rendered.
  * @example
+ * Assume filteredPosts is an array of post objects obtained through some filtering mechanism.
  * renderPosts(filteredPosts);
  */
 const renderPosts = (posts) => {
   const postsContainer = document.querySelector('.all-posts_card-container');
   postsContainer.innerHTML = '';
 
-  posts.forEach(post => {
-    const postElement = createCardAllPosts(post);
-    postsContainer.appendChild(postElement);
-  });
+  const searchInput = document.getElementById('search-input');
+  const searchTerm = searchInput.value;
+
+  if (posts.length === 0) {
+     // If no posts are found, display a message
+    const noResultsMessage = document.createElement("p");
+    noResultsMessage.className = "d-flex justify-content-center bold";
+    noResultsMessage.innerText = `Search result "${searchTerm}" not found.`;
+    postsContainer.appendChild(noResultsMessage);
+    console.log(noResultsMessage);
+  } else {
+     // Render the posts
+    posts.forEach(post => {
+      const postElement = createCardAllPosts(post);
+      postsContainer.appendChild(postElement);
+    });
+  }
 }
 
 /**
@@ -44,11 +58,17 @@ const filterPosts = (inputText) => {
 
 // Adds an event listener to the search form, preventing its default submission behavior.
 const searchForm = document.getElementById('search-form');
-searchForm.addEventListener('submit', function (e) {
-  e.preventDefault();
+searchForm.addEventListener('submit', function (event) {
+  event.preventDefault();
   // Extracts and trims the search term from the input field.
   const searchInput = document.getElementById('search-input');
   const searchTerm = searchInput.value.trim();
+
+  if (searchTerm === "") {
+    // If search term is empty, render all posts
+    return renderPosts(posts);
+  }
+
 
   // Call the filterPosts function with the search term
   filterPosts(searchTerm);

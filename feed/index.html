@@ -57,8 +57,12 @@
             <label for="exampleInputTextArea1" class="form-label">Add your content</label>
             <textarea class="form-control textarea-height" id="exampleInputTextArea1"></textarea>
           </div>
+          <div class="mb-3">
+            <label for="exampleInputImageUrl" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="exampleInputImageUrl" />
+          </div>
           <div class="text-center my-3 d-flex justify-content-center gap-4">
-            <button type="submit" class="btn btn-outline-primary">Add image</button>
+        <!--     <button type="submit" class="btn btn-outline-primary">Add image</button> -->
             <button type="submit" class="btn btn-primary">Publish</button>
           </div>
         </form>
@@ -68,6 +72,7 @@
         <form class="form-inline">
           <div class="input-group">
             <input
+              id="search-input"
               type="text"
               class="form-control"
               placeholder="Search"

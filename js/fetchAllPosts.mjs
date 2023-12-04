@@ -13,7 +13,7 @@ import { formatDateString } from "./formatDate.mjs";
  * // Example: Fetch all posts with a limit of 10 and offset of 0
  * const posts = await fetchAllPosts(10, 0);
  */
-async function fetchAllPosts(limit, offset) {
+export async function fetchAllPosts(limit, offset) {
     return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true&limit=${limit}&offset=${offset}`);
 }
 
@@ -24,7 +24,6 @@ async function fetchAllPosts(limit, offset) {
  * @returns {HTMLElement} The generated HTML card element.
  */
 export function createCardAllPosts(postData) {
-  console.log(postData);
     const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
@@ -111,7 +110,7 @@ const offset = 0;
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
  */
-async function displayAllPostsCards() {
+export async function displayAllPostsCards() {
   try {
   // If posts are already being loaded, return  
   if(loadingPosts) {

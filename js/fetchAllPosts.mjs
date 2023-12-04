@@ -36,11 +36,14 @@ export function createCardAllPosts(postData) {
     const cardPostImage = document.createElement("img");
     cardPostImage.src = postData.media;
 
+    
+    // Handle errors in case the image fails to load
     cardPostImage.onerror = () => {
-    cardPostImage.onerror = null;
-    cardPostImage.src = "../images/no_img.jpg";
+       // Remove the error handler to prevent an infinite loop
+      cardPostImage.onerror = null;
+      // Set the source of the image to a default image when an error occurs
+      cardPostImage.src = "../images/no_img.jpg";
     };
-
     cardPostImage.className = "card-img-top feed-card-img";
     cardPostContent.appendChild(cardPostImage);
 
@@ -59,12 +62,14 @@ export function createCardAllPosts(postData) {
 
     const profileImageThumbnail = document.createElement("img");
     profileImageThumbnail.src = postData.author.avatar;
-
+    
+    // Handle errors in case the image fails to load
     profileImageThumbnail.onerror = () => {
-      profileImageThumbnail.onerror = null;
-      profileImageThumbnail.src = "../images/no_avatar.jpg";
+    // Remove the error handler to prevent an infinite loop
+    profileImageThumbnail.onerror = null;
+    // Set the source of the image to a default image when an error occurs
+    profileImageThumbnail.src = "../images/no_avatar.jpg";
     };
-
     profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
     userNameOnCardLayout.appendChild(profileImageThumbnail);
 
@@ -98,7 +103,7 @@ const errorMessage = createMessage("error");
 let loadingPosts = false;
 
 // Pagination settings
-const limit = 5;
+const limit = 15;
 const offset = 0;
 
 

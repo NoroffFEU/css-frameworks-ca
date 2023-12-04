@@ -7,7 +7,7 @@ let posts = [];
 
 const APIURL = `${apiBaseUrl}${allPostsApi}?_author=true`
 
-function renderPosts(posts) {
+const renderPosts = (posts) => {
   const postsContainer = document.querySelector('.all-posts_card-container');
   postsContainer.innerHTML = '';
 
@@ -17,7 +17,7 @@ function renderPosts(posts) {
   });
 }
 
-function filterPosts(inputText) {
+const filterPosts = (inputText) => {
   const filteredPosts = posts.filter(post => {
     const titleMatch = post.title.toLowerCase().includes(inputText.toLowerCase());
 /*     const contentMatch = post.body.toLowerCase().includes(inputText.toLowerCase());
@@ -36,7 +36,7 @@ console.log(searchTerm);
   filterPosts(searchTerm);
 });
 
-async function initialize() {
+const initialize = async () => {
   try {
     posts = await fetchPostsWithToken(APIURL);
     renderPosts(posts);

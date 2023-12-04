@@ -37,3 +37,15 @@
     transform: rotate(360deg);
   }
 }
+
+.single-post-img {
+  max-height: 370px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-to-uppercase {
+  text-transform: uppercase;
+}

@@ -27,7 +27,8 @@ export function createCardAllPosts(postData) {
     const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
-    const cardPostContent = document.createElement("div");
+    const cardPostContent = document.createElement("a");
+    cardPostContent.href = `../post/index.html?id=${postData.id}`
     cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
@@ -50,7 +51,7 @@ export function createCardAllPosts(postData) {
 
     const cardPostTitle = document.createElement("h6");
     cardPostTitle.innerText = postData.title;
-    cardPostTitle.className = "card-title";
+    cardPostTitle.className = "card-title text-to-uppercase";
     cardPostTextContent.appendChild(cardPostTitle);
 
     const userNameOnCardLayout = document.createElement("div");
@@ -109,8 +110,9 @@ const offset = 0;
  * Displays post cards by fetching and rendering posts.
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
- */
+
 export async function displayAllPostsCards() {
+
   try {
   // If posts are already being loaded, return  
   if(loadingPosts) {

@@ -32,18 +32,42 @@ export function createCardAllPosts(postData) {
     cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
-    const cardPostImage = document.createElement("img");
+ /*    const cardPostImage = document.createElement("img"); */
 /*     cardPostImage.onerror = () => {
       cardPostImage.onerror = null;
       cardPostImage.src = "../images/no_img.jpg";
   }; */
-  if (postData.media) {
+/*   if (postData.media) {
       cardPostImage.src = postData.media;
     } else {
       cardPostImage.src = "../images/no_img.jpg";
     }
     cardPostImage.className = "card-img-top feed-card-img";
-    cardPostContent.appendChild(cardPostImage);
+    cardPostContent.appendChild(cardPostImage); */
+
+    // Create an image element
+const cardPostImage = document.createElement("img");
+
+// Set up an error handler for the image
+cardPostImage.onerror = () => {
+  // Remove the error handler to prevent an infinite loop
+  cardPostImage.onerror = null;
+  
+  // Set the source of the image to a default image when an error occurs
+  cardPostImage.src = "../images/no_img.jpg";
+};
+
+// Set the class for styling purposes
+cardPostImage.className = "card-img-top feed-card-img";
+
+// Set the source of the image (ensure this is intentional and might cause an error)
+cardPostImage.src = "intentional_error_source.jpg"; // Replace with the actual source
+
+// Append the image element to the card content
+cardPostContent.appendChild(cardPostImage);
+
+    
+    console.log(cardPostImage);
 
     const cardPostTextContent = document.createElement("div");
     cardPostTextContent.className = "card-body py-2 px-3";
@@ -64,7 +88,7 @@ export function createCardAllPosts(postData) {
         profileImageThumbnail.onerror = null;
         profileImageThumbnail.src = "../images/no_avatar.jpg";
     }; */
-     if (postData.media) {
+    if (postData.media) {
       profileImageThumbnail.src = postData.author.avatar;
     } else {
       profileImageThumbnail.src = "../images/no_avatar.jpg";
@@ -102,7 +126,7 @@ const errorMessage = createMessage("error");
 let loadingPosts = false;
 
 // Pagination settings
-const limit = 25;
+const limit = 10;
 const offset = 0;
 
 
@@ -110,8 +134,8 @@ const offset = 0;
  * Displays post cards by fetching and rendering posts.
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
-
-export async function displayAllPostsCards() {
+*/
+async function displayAllPostsCards() {
 
   try {
   // If posts are already being loaded, return  
@@ -121,12 +145,13 @@ export async function displayAllPostsCards() {
 
     // Set loading flag to true
     loadingPosts = true;
- 
+
     // Display loader while posts are being fetched
     loaderContainer.style.display = "block";
 
      // Fetch posts
     const posts = await fetchAllPosts(limit, offset);
+    console.log("Received posts:", posts);  
 
     // Render each post as a card
     posts.forEach((postData) => {

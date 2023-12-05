@@ -1,4 +1,3 @@
-import { apiBaseUrl, allPostsApi } from "./script.mjs";
 
 /**
  * Fetches posts with an access token

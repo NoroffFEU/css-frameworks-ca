@@ -149,3 +149,24 @@ async function displayAllPostsCards() {
 // Initial call to display blog cards
 displayAllPostsCards();
 
+const cardPostImage = document.createElement("img");
+if (postData.media) {
+  cardPostImage.src = postData.media;
+} else {
+  cardPostImage.src = "../images/no_img.jpg";
+}
+cardPostImage.className = "card-img-top single-post-img";
+cardPostContent.appendChild(cardPostImage);
+
+const profileImageThumbnail = document.createElement("img");
+    profileImageThumbnail.src = postData.author.avatar;
+    
+    // Handle errors in case the image fails to load
+    profileImageThumbnail.onerror = () => {
+    // Remove the error handler to prevent an infinite loop
+    profileImageThumbnail.onerror = null;
+    // Set the source of the image to a default image when an error occurs
+    profileImageThumbnail.src = "../images/no_avatar.jpg";
+    };
+    profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
+    userNameOnCardLayout.appendChild(profileImageThumbnail);

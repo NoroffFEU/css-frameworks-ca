@@ -23,7 +23,7 @@ async function fetchAllPosts(limit, offset) {
  * @param {Object} postData The data for the post.
  * @returns {HTMLElement} The generated HTML card element.
  */
-export function createCardAllPosts(postData) {
+function createCardAllPosts(postData) {
     const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
@@ -65,8 +65,6 @@ export function createCardAllPosts(postData) {
     tagName.innerText = `TAGS: ${postData.tags[0]}`;
     tagName.className = "mb-0 d-flex align-items-center";
     cardPostTextContent.appendChild(tagName);
-
-    console.log(postData.tags[0]);
 
     const cardPostDatePublishedWrapper = document.createElement("div");
     cardPostDatePublishedWrapper.className = "card-footer text-end";

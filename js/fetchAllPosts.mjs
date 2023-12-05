@@ -13,8 +13,8 @@ import { formatDateString } from "./formatDate.mjs";
  * // Example: Fetch all posts with a limit of 10 and offset of 0
  * const posts = await fetchAllPosts(10, 0);
  */
-async function fetchAllPosts(limit, offset) {
-    return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true&limit=${limit}&offset=${offset}`);
+async function fetchAllPosts() {
+    return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
 }
 
 /**
@@ -90,10 +90,6 @@ const errorMessage = createMessage("error");
 // Flag to prevent multiple simultaneous loading requests
 let loadingPosts = false;
 
-// Pagination settings
-const limit = 99;
-const offset = 0;
-
 
 /**
  * Displays post cards by fetching and rendering posts.
@@ -115,10 +111,8 @@ async function displayAllPostsCards() {
     loaderContainer.style.display = "block";
 
      // Fetch posts
-    const posts = await fetchAllPosts(limit, offset);
-   // Log limit and offset values
-   console.log("Limit:", limit);
-   console.log("Offset:", offset);
+    const posts = await fetchAllPosts();
+
    console.log("Received posts:", posts);  
    // Clear existing cards from the container
    allPostsContainer.innerHTML = '';

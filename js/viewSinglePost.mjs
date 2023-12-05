@@ -34,6 +34,7 @@ const createCardSinglePost = (postData) => {
     cardColLayout.appendChild(cardPostContent);
 
     const cardPostImage = document.createElement("img");
+    cardPostImage.src = postData.media;
     cardPostImage.className = "card-img-top single-post-img";
     cardPostContent.appendChild(cardPostImage);
 

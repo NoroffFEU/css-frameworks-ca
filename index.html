@@ -50,25 +50,57 @@
 
         </div>
 
-        <form>
-            <div class="row mb-3 mt-3">
-                <div class="col-lg-4 mx-auto offset-lg-3">
-                    <a href="./Profile/login/index.html" class="btn btn-primary">Login</a>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-5 mx-auto text-center bg">
+                    <h2 class="card-title login text-center mb-2 mt-5 content-font">
+                        Log in
+                    </h2>
+                    <a class="content-font hover login-signup-text" href="./Profile/register/index.html">New to Climate Care? Sign up for free.</a>
+                    <form action="./Profile/index.html" id="loginForm">
+                        <div class="mb-4 col-md-9 mx-auto text-start">
+                            <label for="name" class="form-label content-font mt-4">Name</label>
+                            <input type="name" class="form-control" id="name" required placeholder="Joel">
+                        </div>
+                        <div class="mb-4 col-md-9 mx-auto text-start">
+                            <label for="email" class="form-label content-font">Email</label>
+                            <input type="email"  class="form-control" id="emailLogIn" name="email" required placeholder="joel@stud.noroff.no">
+                        </div>
+                        <div class="invalid-feedback content-font">
+                            Please enter a valid email.
+                        </div>
+                        <div class="mb-4 col-md-9 mx-auto text-start">
+                            <label for="password" class="form-label content-font">Password</label>
+                            <input type="password" class="form-control" id="passwordLoggIn" name="password" minlength="8" required placeholder="********"/>
+                            <div class="invalid-feedback content-font">
+                              Password must be at least 8 characters long.
+                            </div>
+                        </div>
+                        <div
+                            class="error-message"
+                            id="error-message"
+                            style="color: red">
+                        </div>
+                        <div class="d-grid mx-auto col-md-5">
+                            <button type="submit" class="btn btn-primary mt-3 mb-5 content-font">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+
                 </div>
+
             </div>
-            <p class="col-md-4 mx-auto">Not yet a subscriber</p>
-            <div class="row mb-3">
-                <div class="col-lg-4 mx-auto offset-lg-3">
-                    <a href="./Profile/register/index.html" class="btn btn-primary">Sign Up</a>
-                </div>
-            </div>  
-        </form>
+
+        </div>
+        
 
     </main>
 
     <footer class="py-4 text-center">
         Copyright &copy; Design and Developed by EF II PAMI
     </footer>
+    <script type="module" src="./src/js/login.mjs"></script>
     
 </body>
 </html>

@@ -1,54 +1,57 @@
 import { apiBaseUrl, allPostsApi } from "./script.mjs";
+import { fetchPostsWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
-import { fetchPostsWithToken } from "./accessToken.mjs";
 
-
-// Query string parameter
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const id = params.get("id");
 
 /**
- * Fetches a single post from the server with authentication.
- * @param {string} id The unique identifier of the post to fetch.
- * @returns {Promise<Object>} A promise that resolves to the data of the fetched post.
+ * Fetches all posts with an access token, applying pagination using limit and offset.
+ * @param {number} limit The maximum number of posts to fetch.
+ * @param {number} offset The offset for paginating through posts.
+ * @returns {Promise} A promise representing the asynchronous operation of fetching posts.
  * @example
- * const singlePostData = await fetchSinglePost("123");
+ * // Example: Fetch all posts with a limit of 10 and offset of 0
+ * const posts = await fetchAllPosts(10, 0);
  */
-const fetchSinglePost = async (id) => {
-  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}/${id}?_author=true`);
-};
+async function fetchAllPosts(limit, offset) {
+    return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true&limit=${limit}&offset=${offset}`);
+}
 
 /**
- * Creates an HTML card element for a single post.
+ * Creates an HTML card element for a social app post.
+ *
  * @param {Object} postData The data for the post.
  * @returns {HTMLElement} The generated HTML card element.
  */
-const createCardSinglePost = (postData) => {
+function createCardAllPosts(postData) {
+  console.log(postData);
     const cardColLayout = document.createElement("div");
-    cardColLayout.className = "col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5";
+    cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
     const cardPostContent = document.createElement("div");
-    cardPostContent.className = "card mb-5";
+    cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
     const cardPostImage = document.createElement("img");
-      if (postData.media) {
-        cardPostImage.src = postData.media;
-      } else {
-        cardPostImage.src = "../images/no_img.jpg";
-      }
-    cardPostImage.className = "card-img-top single-post-img";
+    cardPostImage.src = postData.media;
+    
+    // Handle errors in case the image fails to load
+    cardPostImage.onerror = () => {
+       // Remove the error handler to prevent an infinite loop
+      cardPostImage.onerror = null;
+      // Set the source of the image to a default image when an error occurs
+      cardPostImage.src = "../images/no_img.jpg";
+    };
+    cardPostImage.className = "card-img-top feed-card-img";
     cardPostContent.appendChild(cardPostImage);
 
     const cardPostTextContent = document.createElement("div");
-    cardPostTextContent.className = "card-body";
+    cardPostTextContent.className = "card-body py-2 px-3";
     cardPostContent.appendChild(cardPostTextContent);
 
-    const cardPostTitle = document.createElement("h5");
+    const cardPostTitle = document.createElement("h6");
     cardPostTitle.innerText = postData.title;
-    cardPostTitle.className = "card-title mb-2 text-to-uppercase";
+    cardPostTitle.className = "card-title";
     cardPostTextContent.appendChild(cardPostTitle);
 
     const userNameOnCardLayout = document.createElement("div");
@@ -70,13 +73,8 @@ const createCardSinglePost = (postData) => {
 
     const userName = document.createElement("p");
     userName.innerText = postData.author.name;
-    userName.className = "mb-0";
+    userName.className = "mb-0 d-flex align-items-center";
     userNameOnCardLayout.appendChild(userName);
-
-    const cardPostText = document.createElement("p");
-    cardPostText.innerText = postData.body;
-    cardPostText.className = "card-text";
-    cardPostTextContent.appendChild(cardPostText)
 
     const cardPostDatePublishedWrapper = document.createElement("div");
     cardPostDatePublishedWrapper.className = "card-footer text-end";
@@ -91,35 +89,63 @@ const createCardSinglePost = (postData) => {
     return cardColLayout;
 }
 
+
+
+
 // Targeting DOM elements
 const loaderContainer = document.querySelector(".loader-container");
-const singlePostContainer = document.querySelector("#post-single-container");
+const allPostsContainer = document.querySelector(".all-posts_card-container");
 const errorMessage = createMessage("error");
 
+// Flag to prevent multiple simultaneous loading requests
+let loadingPosts = false;
+
+// Pagination settings
+const limit = 11;
+const offset = 0;
+
+
 /**
- * Displays a single blog post card.
+ * Displays post cards by fetching and rendering posts.
+ *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
- * @example
- * await displaySinglePostCard();
  */
-const displaySinglePostCard = async () => {
+async function displayAllPostsCards() {
   try {
-    const jsonSpecific = await fetchSinglePost(id);
-    const singlePostCard = createCardSinglePost(jsonSpecific);
-    singlePostContainer.appendChild(singlePostCard);
-  } catch (error) {
+  // If posts are already being loaded, return  
+  if(loadingPosts) {
+    return;
+    }
+
+    // Set loading flag to true
+    loadingPosts = true;
+ 
+    // Display loader while posts are being fetched
+    loaderContainer.style.display = "block";
+
+     // Fetch posts
+    const posts = await fetchAllPosts(limit, offset);
+
+    // Render each post as a card
+    posts.forEach((postData) => {
+      const postCard = createCardAllPosts(postData);
+      allPostsContainer.appendChild(postCard);
+    });
+
+    } catch (error) {
     console.log(error);
+    // Display error message in case of an error
 
- // Display error message in case of an error
-    singlePostContainer.innerHTML = errorMessage;
-
+    allPostsContainer.innerHTML = errorMessage;
     // Rethrow the error for external handling, if necessary
     throw new Error(error);
   } finally {
-    // Hide loader regardless of success or failure
+    // Reset loading flag and hide loader
+    loadingPosts = false;
     loaderContainer.style.display = "none";
-
   }
-}
-// Initial call to display the single post card
-displaySinglePostCard();
+} 
+
+// Initial call to display blog cards
+displayAllPostsCards();
+

@@ -32,7 +32,7 @@ const renderPosts = (posts) => {
     console.log(noResultsMessage);
   } else {
      // Render the posts
-    posts.forEach(post => {
+   posts.forEach(post => {
       const postElement = createCardAllPosts(post);
       postsContainer.appendChild(postElement);
     });

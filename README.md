@@ -11,3 +11,6 @@ https://trello.com/b/SH69bQ1K/js2-course-assignment-vegard-maa%C3%B8
 
 ## Set up environment
 Uses Bootstrap 5.3.2, Sass 1.68.0, JSDocs 4.0.2 and Live Server 1.2.2 as dependencies
+
+## Documentation
+See the docs folder for JSDocs

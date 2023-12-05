@@ -1,8 +1,8 @@
 {
-  "devDependencies": {
-    "jsdoc": "^4.0.2"
+  "recurseDepth": 10,
+  "source": {
+    "includePattern": ".+\\.+mjs(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
   },
-  "scripts": {
-    "docs": "jsdoc -c ./conf.json -r"
-  }
+  "sourceType": "module"
 }

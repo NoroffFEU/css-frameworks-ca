@@ -1,9 +1,9 @@
-
 /**
  * 
  * @param {string} url - Where to send the put request
  * @param {*} formData - what to send 
- * @returns an edit to the existing post 
+ * @returns {object} - an edit to the existing post 
+ * Lets you edit data on the server
  */
 export async function putData(url, formData) {
     let error;

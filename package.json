@@ -6,7 +6,7 @@
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css & live-server",
-    "docs": "jsdoc -c ./conf.json -r",
+    "docs": "jsdoc src -r -c ./conf.json -d docs",
     "start": "live-server",
     "dev": "npm-run-all --parallel watch start"
   },

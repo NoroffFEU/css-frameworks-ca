@@ -22,47 +22,39 @@
 }
 
 .search-group {
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
   width: 400px;
 }
 
-.new-post-form {
-  padding: 20px;
-  font-family: "open sans", sans-serif;
-  align-items: center;
-}
+// .new-post-form {
+//   // padding: 20px;
+//   // font-family: "open sans", sans-serif;
+//   // align-items: center;
+// }
 
-.post-btn {
-  width: 100%;
-  display: block;
-  align-items: center;
-}
+// .post-btn {
+//   width: 100%;
+//   display: block;
+//   align-items: center;
+// }
 
-.card {
-  background-color: #0f0f0f;
-}
+// .card {
+//   background-color: #0f0f0f;
+// }
 
-.form-control {
-  max-width: 400px;
-  background-color: transparent;
-  border-color: var(--bs-primary);
-  color: white;
-}
-
-.form-control::placeholder {
-  color: white;
-}
-
-.textarea::placeholder {
-  color: var(--bs-dark);
-}
+// .form-control {
+//   max-width: 400px;
+//   // background-color: transparent;
+//   // border-color: var(--bs-primary);
+//   // color: white;
+// }
 
 .feed-posts {
   max-width: 800px;
 }
 
-.feed-posts.container {
-  height: auto;
-  max-width: 800px;
-}
+// .feed-posts.container {
+//   height: auto;
+//   max-width: 800px;
+// }

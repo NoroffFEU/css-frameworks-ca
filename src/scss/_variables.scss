@@ -10,19 +10,11 @@ $position-values: (
 
 $primary: #2baff0;
 $dark: #0f0f0f;
+$danger: #ff85a0;
 
 :root {
   --pink: #ff85a0;
   --yellow: #ffd723;
-
-  // --loader-brown: #685240;
-  // --loader-blue: #448ed4;
-  // --loader-background: rgba(255, 255, 255, 0.7);
-
-  // --border-colour: rgb(121, 118, 118);
-  // --border-blog-image: #ccd4db;
-  // --error-colour: red;
-  // --success-colour: green;
-
-  // --box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
+
+$font-family-base: "Open Sans", sans-serif;

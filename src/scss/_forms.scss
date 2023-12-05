@@ -1,14 +1,27 @@
-.auth {
+.auth,
+.form-control {
   max-width: 400px;
   height: auto;
 }
 
-.login-form {
-  margin-top: 200px;
-  padding: 0;
+// .login-form {
+//   margin-top: 200px;
+//   padding: 0;
+// }
+
+// .form-input {
+//   color: var(--bs-primary) !important;
+//   border-color: var(--bs-primary);
+// }
+
+.form-control::placeholder {
+  color: white;
 }
 
-.form-input {
-  color: var(--bs-primary) !important;
-  border-color: var(--bs-primary);
+.textarea::placeholder {
+  color: var(--bs-dark);
+}
+
+.form-input::placeholder {
+  color: var(--bs-primary);
 }

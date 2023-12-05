@@ -1,8 +1,8 @@
 body {
-  background-color: var(--bs-dark);
-  font-family: "Open Sans", sans-serif;
-  display: flex;
-  flex-direction: column;
+  // background-color: var(--bs-dark);
+  // font-family: "Open Sans", sans-serif;
+  // display: flex;
+  // flex-direction: column;
 }
 
 .logo {
@@ -15,26 +15,26 @@ body {
   font-size: 2rem;
 }
 
-h1 {
-  color: var(--pink);
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 800;
-  font-size: 6rem;
-}
+// h1 {
+//   color: var(--pink);
+//   font-family: "Baloo 2", sans-serif;
+//   font-weight: 800;
+//   font-size: 6rem;
+// }
 
-.logo-yellow {
-  color: var(--yellow);
-  font-family: "Baloo 2", sans-serif;
-}
+// .logo-yellow {
+//   // color: var(--yellow);
+//   font-family: "Baloo 2", sans-serif;
+// }
 
-nav {
-  border-bottom: 1px solid var(--bs-primary);
-}
+// nav {
+//   border-bottom: 1px solid var(--bs-primary);
+// }
 
-.navbar a:not(.logo) {
-  color: var(--bs-primary);
-  padding-left: 10px;
-}
+// .navbar a:not(.logo) {
+//   color: var(--bs-primary);
+//   padding-left: 10px;
+// }
 
 .nav-link[aria-current="page"] {
   text-decoration: underline;
@@ -43,20 +43,29 @@ nav {
   text-underline-offset: 5px;
 }
 
-/* footer */
-.logo-pink {
-  color: var(--pink);
-  font-family: "Baloo 2", sans-serif;
+.baloo {
+  font-family: "baloo 2", sans-serif;
 }
 
+.small-user-picture {
+  width: 40px;
+  height: 40px;
+}
+
+/* footer */
+// .logo-pink {
+//   color: var(--pink);
+//   // font-family: "Baloo 2", sans-serif;
+// }
+
 footer {
-  background-color: var(--bs-dark);
-  border-top: 2px solid var(--bs-primary);
+  // background-color: var(--bs-dark);
+  // border-top: 2px solid var(--bs-primary);
   font-family: "Open Sans", sans-serif;
 }
 
-footer .logo-pink,
-footer .logo-yellow {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
+// footer .logo-pink,
+// footer .logo-yellow {
+//   font-size: 1.5rem;
+//   font-weight: 800;
+// }

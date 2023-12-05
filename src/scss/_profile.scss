@@ -1,62 +1,53 @@
-body,
-html {
-  height: 100%;
-  margin: 0;
+// body,
+// html {
+//   height: 100%;
+//   margin: 0;
+// }
+
+.profile-background img {
+  z-index: 1;
+  // width: 100%;
+  // height: auto;
 }
 
 .user-profile-picture {
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  // top: 30%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  margin-top: -80px;
+  z-index: 100;
 }
 
-h1 {
-  color: var(--bs-primary);
-}
+// h1 {
+//   color: var(--bs-primary);
+// }
 
 .follow {
   width: 150px;
 }
 
-p {
-  color: var(--bs-primary);
-}
+// p {
+//   color: var(--bs-primary);
+// }
 
-.baloo {
-  font-family: "baloo 2", sans-serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
+// .main-content {
+//   flex-grow: 1;
+//   border-left: 2px solid var(--bs-primary);
+//   border-right: 2px solid var(--bs-primary);
+// }
 
-.main-content {
-  flex-grow: 1;
-  border-left: 2px solid var(--bs-primary);
-  border-right: 2px solid var(--bs-primary);
-}
-
-.profile-background img {
-  width: 100%;
-  height: auto;
-}
-
-.small-user-picture {
-  width: 30px;
-  height: 30px;
-}
-
-footer p {
-  color: var(--bs-primary);
-}
+// footer p {
+//   color: var(--bs-primary);
+// }
 
 @media screen and (max-width: 1200px) {
   .user-profile-picture img {
     width: 200px;
   }
 
-  .user-profile-picture {
-    top: 20%;
-  }
+  // .user-profile-picture {
+  //   top: 20%;
+  // }
 }
 
 @media screen and (max-width: 900px) {

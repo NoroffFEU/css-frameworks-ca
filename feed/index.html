@@ -28,12 +28,14 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-dark position-relative">
+  <body class="bg-dark h-100 m-0 d-flex flex-column">
+    <nav
+      class="navbar navbar-expand-lg bg-dark position-relative border-bottom border-2 border-primary"
+    >
       <div class="container-fluid">
         <div>
-          <a class="navbar-brand logo" href="#"
-            >Vib`n<span class="logo-yellow">!</span></a
+          <a class="navbar-brand text-danger fs-1 fw-bold ps-4 baloo" href="#"
+            >Vib`n<span class="text-warning">!</span></a
           >
         </div>
         <div>
@@ -52,17 +54,19 @@
             <ul class="navbar-nav me-5 mb-2 mb-lg-0">
               <li class="nav-item ps-3">
                 <a
-                  class="nav-link disabled nav-text"
+                  class="nav-link disabled nav-text text-primary"
                   aria-current="page"
                   href="/feed"
                   >Feed</a
                 >
               </li>
               <li class="nav-item ps-3">
-                <a class="nav-link nav-text" href="/profile">Profile</a>
+                <a class="nav-link nav-text text-primary" href="/profile"
+                  >Profile</a
+                >
               </li>
               <li class="nav-item ps-3">
-                <a class="nav-link nav-text" href="#">Contact</a>
+                <a class="nav-link nav-text text-primary" href="#">Contact</a>
               </li>
             </ul>
           </div>
@@ -71,72 +75,86 @@
     </nav>
     <main class="container pb-3">
       <!-- search-sort section -->
-      <section class="search-sort container mx-auto">
-        <div class="d-flex flex-column mx-auto mb-5">
-          <h1 class="fs-1 text-white mt-5 text-center">Feed</h1>
-          <img
-            src="/images/Asset 4.png"
-            class="chat mx-auto align-items-center"
-            alt="chat icon"
-          />
+      <section class="search-sort container mx-auto text-center">
+        <div class="mb-5">
+          <h1 class="fs-1 text-white mt-5 baloo fw-bold">Feed</h1>
+          <img src="/images/Asset 4.png" class="chat mx-auto" alt="chat icon" />
         </div>
 
-        <div class="col-md-4 align-items-center mx-auto">
-          <div class="search mt-5">
-            <form class="d-flex" role="search">
-              <div class="search-group">
-                <input
-                  class="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn row btn-outline-primary" type="submit">
-                  Search
-                </button>
-              </div>
-            </form>
+        <div class="row">
+          <div class="col-md-8 mx-auto mx-auto">
+            <div class="search mt-5">
+              <form class="d-flex justify-content-center" role="search">
+                <div class="search-group bg-dark d-flex flex-row">
+                  <input
+                    class="form-control border-primary bg-dark text-white"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn row btn-outline-primary bg-dark"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="sorting mt-3">
-            <select class="form-select default" aria-label="Select sorting">
-              <option selected>Sort by</option>
-              <option value="1">Newest</option>
-              <option value="2">Latest</option>
-            </select>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mt-3 mx-auto">
+            <div class="sorting">
+              <select class="form-select default" aria-label="Select sorting">
+                <option selected>Sort by</option>
+                <option value="1">Newest</option>
+                <option value="2">Latest</option>
+              </select>
+            </div>
           </div>
         </div>
 
         <!-- new post section -->
-        <div class="mt-3 mx-auto new-post col-md-4">
-          <p class="text-center">
-            <button
-              class="btn mb-0 w-100 btn-outline-primary mx-auto new-post-btn"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseExample"
-              aria-expanded="false"
-              aria-controls="collapseExample"
+        <div class="row">
+          <div class="mt-3 mx-auto new-post col-md-8">
+            <p class="text-center">
+              <button
+                class="btn mb-0 btn-outline-primary mx-auto new-post-btn bg-dark"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <span class="text-nowrap"> New post +</span>
+              </button>
+            </p>
+            <div
+              class="collapse align-items-center mx-auto"
+              id="collapseExample"
             >
-              <span class="text-nowrap"> New post +</span>
-            </button>
-          </p>
-          <div class="collapse" id="collapseExample">
-            <div class="card align-items-center card-body">
-              <div class="mb-1">
-                <textarea
-                  class="form-control textarea bg-light text-dark"
-                  placeholder="Write something for us"
-                  id="newPost"
-                  rows="4"
-                ></textarea>
-              </div>
-              <div class="mb-1">
-                <input class="form-control" type="file" id="formFile" />
-              </div>
-              <div class="col-auto mx-auto mt-1">
-                <button type="submit" class="btn btn-outline-primary post-btn">
-                  Post
-                </button>
+              <div class="card bg-dark card-body">
+                <div class="mb-1">
+                  <textarea
+                    class="form-control col-md-4 textarea bg-light text-dark"
+                    placeholder="Write something for us"
+                    id="newPost"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <div class="mb-1">
+                  <input class="form-control" type="file" id="formFile" />
+                </div>
+                <div class="col-auto mx-auto mt-1">
+                  <button
+                    type="submit"
+                    class="btn btn-outline-primary post-btn"
+                  >
+                    Post
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -144,9 +162,9 @@
       </section>
 
       <!-- feed section -->
-      <section class="feed-posts mx-auto">
+      <section class="feed-posts mx-auto container-md">
         <!-- post 1 -->
-        <section class="mt-5 container">
+        <section class="mt-5 container h-auto">
           <div
             class="row bg-light pt-2 text-center align-items-center justify-content-between"
           >
@@ -195,7 +213,7 @@
         </section>
 
         <!-- post 2 -->
-        <section class="mt-5 container bg-light">
+        <section class="mt-5 container bg-light h-auto">
           <div
             class="row pt-2 text-center align-items-center justify-content-between"
           >
@@ -238,7 +256,7 @@
         </section>
 
         <!-- post 3 -->
-        <section class="container mt-5 bg-light">
+        <section class="container mt-5 bg-light h-auto">
           <div
             class="row pt-2 text-center align-items-center justify-content-between"
           >
@@ -287,7 +305,7 @@
         </section>
 
         <!-- post 4 -->
-        <section class="container mt-5 pt-2 pb-2 bg-light">
+        <section class="container h-auto mt-5 pt-2 pb-2 bg-light">
           <div
             class="row text-center align-items-center justify-content-between"
           >
@@ -330,7 +348,7 @@
         </section>
 
         <!-- post 5 -->
-        <section class="container mt-5 pt-2 pb-2 bg-light">
+        <section class="container h-auto mt-5 pt-2 pb-2 bg-light">
           <div
             class="row text-center align-items-center justify-content-between"
           >
@@ -384,11 +402,13 @@
         </section>
       </section>
     </main>
-    <footer class="py-4">
+    <footer class="py-4 border-2 border-top border-primary bg-dark">
       <div class="container text-center">
-        <p class="mb-0">
-          &copy; 2023 <span class="logo-pink ps-1">Vib`n</span
-          ><span class="logo-yellow">!</span> | Built by Laura Karaliene
+        <p class="mb-0 text-primary">
+          &copy; 2023
+          <span class="text-danger ps-1 baloo fs-5 fw-bold">Vib`n</span
+          ><span class="text-warning baloo fs-5 fw-bold">!</span> | Built by
+          Laura Karaliene
         </p>
       </div>
     </footer>

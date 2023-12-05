@@ -30,6 +30,3 @@ export async function fetchPostsWithToken(url) {
     console.log("An error occurred during the fetch operation", error);
   }
 }
-
-/* // Calling the fetchPostsWithToken using the URL provided
-fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}`); */

@@ -1,5 +1,5 @@
 import { fetchPostsWithToken } from "./accessToken.mjs";
-import { apiBaseUrl, allPostsApi } from "./script.mjs";
+import { apiBaseUrl, allPostsApi } from "./variables.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
 // Array to store fetched posts

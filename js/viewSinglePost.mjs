@@ -1,4 +1,4 @@
-import { apiBaseUrl, allPostsApi } from "./script.mjs";
+import { apiBaseUrl, allPostsApi } from "./variables.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 import { fetchPostsWithToken } from "./accessToken.mjs";

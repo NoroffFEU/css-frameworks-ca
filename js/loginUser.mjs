@@ -1,4 +1,4 @@
-import { apiBaseUrl } from "./script.mjs";
+import { apiBaseUrl } from "./variables.mjs";
 
 // Define the login URL
 const loginUrl = "/social/auth/login";

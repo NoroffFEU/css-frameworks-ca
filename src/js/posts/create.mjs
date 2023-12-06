@@ -1,22 +1,34 @@
+
 import { API_BASE_URL } from "../routes.mjs";
-import { authFetch } from "../authFetch.mjs";
 
-const action = "/posts";
+export async function createNewPost (postTitle, postContent, accessToken) {
+    try {
+        const postData = {
+            title: postTitle,
+            body: postContent,
+        };
 
-/** 
-* this let us create posts
-* @param {string} postData
-* @returns
-*/
-export async function createPost(postData) {
-    postData.tags = postData.tags.split(" ");
-    const createPosturl = API_BASE_URL + action;
-    const response = await authFetch(createPosturl, {
-        method: "post",
-        body: JSON.stringify(postData),
-    });
-    const result = await response.json();
-    alert("Your post has been created");
-    window.location.replace("/posts/index.html" || "/posts");
-    return result;
+        if (!accessToken) {
+            return;
+        }
+
+        const response = await fetch (`${API_BASE_URL}/posts`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${accessToken}`,
+            },
+            body: JSON.stringify (postData),
+        });
+
+        if (response.ok) {
+            const newPost = await response.json();
+            alert (`New post added (ID ${newPost.id})`);
+            return newPost;
+        } else {
+            return null;
+        }
+    } catch (error) {
+        return null;
+    }
 }

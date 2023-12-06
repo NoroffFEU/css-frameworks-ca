@@ -1,4 +1,5 @@
-const API_BASE_URL = `https://api.noroff.dev`;
+import { API_BASE_URL } from "./routes.mjs";
+//const API_BASE_URL = `https://api.noroff.dev`;
 
 
 async function registerUser(API_BASE_URL, data) {
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         emailError.style.display = 'none';
 
-        await registerUser(`${API_BASE_URL}/api/v1/social/auth/register`, user)
+        await registerUser(`${API_BASE_URL}/auth/register`, user)
 });
 
 function isValidEmail(email) {

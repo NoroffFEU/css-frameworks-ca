@@ -1,4 +1,5 @@
-const API_BASE_URL = `https://api.noroff.dev`;
+import { API_BASE_URL } from "./routes.mjs";
+//const API_BASE_URL = `https://api.noroff.dev`;
 
 
 function saveUserData(accessToken) {
@@ -52,6 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
             password: passwordInput.value,
         };
 
-        await loginUser (`${API_BASE_URL}/api/v1/social/auth/login`, { name, email, password});
+        await loginUser (`${API_BASE_URL}/auth/login`, { name, email, password});
     });
 });

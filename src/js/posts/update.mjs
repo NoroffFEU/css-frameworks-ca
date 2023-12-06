@@ -1,26 +1,30 @@
 import { API_BASE_URL } from "../routes.mjs";
-import { authFetch } from "../authFetch.mjs";
 
-const action = "/posts";
-const method = "put";
+export async function updatePost (postID, updatedTitle, updatedBody) {
+    try {
+        const updatedPostData = {
+            title: updatedTitle,
+            body: updatedBody,
+        };
 
-/**
- * this for updating posts  by id
- * @param {string} postData
- * @returns
- */
+        const token = localStorage.getItem('accessToken');
+        const updatedData = {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(updatedPostData),
+        };
 
-export async function updatePost(postData) {
-    if(!postData.id) {
-        throw error ("update requires a postID");
+        const response = await fetch(`${API_BASE_URL}/posts/${postID}`, updatedData);
+
+        if (response.ok) {
+            alert('Post update was successful');
+        } else {
+            alert ('Unseccessful update, Please try again.');
+        }
+    } catch (error) {
+        alert ('An error occured during post update, please try again later.');
     }
-    postData.tags = postData.tags.split(" ");
-    const updatePosturl = `${API_BASE_URL}${action}/${postData.id}`;
-    const response = await authFetch(updatePosturl, {
-        method,
-        body: JSON.stringify(postData),
-    });
-    alert("Your post was updated");
-    window.location.replace("/post/index.html");
-    return await response.json();
 }

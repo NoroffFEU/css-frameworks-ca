@@ -1,24 +1,24 @@
 import { API_BASE_URL } from "../routes.mjs";
-import { authFetch } from "../authFetch.mjs";
 
-const action = `/posts`;
-const method = `delete`;
+export async function deletePost(postID) {
+    try {
+        const token = localStorage.getItem ('accessToken');
+        const deleteData = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+        };
 
-/**
- * this to delete post by id
- * @param {string} id
- * @returns
- */
+        const response = await fetch(`${API_BASE_URL}/posts/${postID}`, deleteData);
 
-export async function removePost(id) {
-    if (!id) {
-        throw error ("Deleting post requires postID");
+        if (response.status ===204 || response.status ===200) {
+            alert (`Post (ID ${postID}) was successfully deleted.`);
+        } else {
+            alert (`Sorry, you do not have permission to delete this post (ID ${postID}).`);
+        }
+    } catch (error) {
+        alert(`An error occured, please try again later.`);
     }
-    const removePosturl = `${API_BASE_URL}${action}/${id}`;
-    const response = await authFetch(removePosturl, {
-        method,
-    });
-    alert("Your post has been deleted");
-    window.location.replace("/post/index.html" || "/posts");
-    return await response.json();
 }

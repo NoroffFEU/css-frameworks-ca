@@ -11,7 +11,13 @@ body {
     line-height: var(--bs-body-line-height);
     
     text-align: var(--bs-body-text-align);
-    --bs-body-bg:rgb(58, 139, 58);    
+    //--bs-body-bg:rgb(58, 139, 58);    
+}
+
+body{
+  background-image: url(/images/plant-tree.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .nav {

@@ -1,4 +1,5 @@
 import { apiBaseUrl, allPostsApi } from "./variables.mjs";
+import { displayAllPostsCards } from "./fetchAllPosts.mjs";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,10 +45,16 @@ const imageUrl = event.target.querySelector("#exampleInputImageUrl").value;
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
+    event.target.reset();
+
     const data = await response.json();
 
     console.log("Post created!:", data);
+
+    await displayAllPostsCards();
+
   } catch (error) {
     console.error("Error creating post:", error);
   }
 }
+

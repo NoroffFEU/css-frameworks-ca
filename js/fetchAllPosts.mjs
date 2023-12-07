@@ -92,7 +92,7 @@ let loadingPosts = false;
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
 */
-async function displayAllPostsCards() {
+export async function displayAllPostsCards() {
 
   try {
   // If posts are already being loaded, return  
@@ -109,7 +109,7 @@ async function displayAllPostsCards() {
      // Fetch posts
     const posts = await fetchAllPosts();
 
-   console.log("Received posts:", posts);  
+/*    console.log("Received posts:", posts);   */
    // Clear existing cards from the container
    allPostsContainer.innerHTML = '';
 

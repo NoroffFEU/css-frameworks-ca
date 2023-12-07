@@ -6,8 +6,6 @@ import { formatDateString } from "./formatDate.mjs";
 
 /**
  * Fetches all posts with an access token, applying pagination using limit and offset.
- * @param {number} limit The maximum number of posts to fetch.
- * @param {number} offset The offset for paginating through posts.
  * @returns {Promise} A promise representing the asynchronous operation of fetching posts.
  * @example
  * // Example: Fetch all posts with a limit of 10 and offset of 0
@@ -32,9 +30,10 @@ function createCardAllPosts(postData) {
     cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
-
     const cardPostImage = document.createElement("img");
-    cardPostImage.src = postData.media;
+    // Set the source (src) attribute of the image. Use the postData.media if it's truthy,
+    // if not, use the fallback image "../images/no_img.jpg"
+    cardPostImage.src = !!postData.media ? postData.media : "../images/no_img.jpg";
     cardPostImage.className = "card-img-top feed-card-img";
     cardPostContent.appendChild(cardPostImage);
 
@@ -52,7 +51,9 @@ function createCardAllPosts(postData) {
     cardPostTextContent.appendChild(userNameOnCardLayout);
 
     const profileImageThumbnail = document.createElement("img");
-    profileImageThumbnail.src = postData.author.avatar;
+     // Set the source (src) attribute of the image. Use the postData.author.avatar if it's truthy,
+    // if not, use the fallback image "../images/no_avatar.jpg"
+    profileImageThumbnail.src = !!postData.author.avatar ? postData.author.avatar : "../images/no_avatar.jpg";
     profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
     userNameOnCardLayout.appendChild(profileImageThumbnail);
 
@@ -60,11 +61,6 @@ function createCardAllPosts(postData) {
     userName.innerText = postData.author.name;
     userName.className = "mb-0 d-flex align-items-center";
     userNameOnCardLayout.appendChild(userName);
-
-    const tagName = document.createElement("p");
-    tagName.innerText = `TAGS: ${postData.tags[0]}`;
-    tagName.className = "mb-0 d-flex align-items-center";
-    cardPostTextContent.appendChild(tagName);
 
     const cardPostDatePublishedWrapper = document.createElement("div");
     cardPostDatePublishedWrapper.className = "card-footer text-end";
@@ -117,10 +113,13 @@ async function displayAllPostsCards() {
    // Clear existing cards from the container
    allPostsContainer.innerHTML = '';
 
-
+    // Iterate over each post data and create a card for each post
     posts.forEach((postData) => {
-      const postCard = createCardAllPosts(postData);
-      allPostsContainer.appendChild(postCard);
+          // Create a card element for the current post data
+        const postCard = createCardAllPosts(postData);
+         // Append the generated card to the container for all posts
+        allPostsContainer.appendChild(postCard);
+
     });
 
     } catch (error) {
@@ -129,7 +128,7 @@ async function displayAllPostsCards() {
 
     allPostsContainer.innerHTML = errorMessage;
     // Rethrow the error for external handling, if necessary
-    throw new Error(error);
+  /*   throw new Error(error); */
   } finally {
     // Reset loading flag and hide loader
     loadingPosts = false;

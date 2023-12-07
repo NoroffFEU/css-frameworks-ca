@@ -32,18 +32,19 @@ const renderPosts = (posts) => {
     console.log(noResultsMessage);
   } else {
      // Render the posts
-    posts.forEach(post => {
-    const cardColLayout = document.createElement("div");
+    posts.forEach(postData => {
+      const cardColLayout = document.createElement("div");
     cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
     const cardPostContent = document.createElement("a");
-    cardPostContent.href = `../post/index.html?id=${post.id}`
+    cardPostContent.href = `../post/index.html?id=${postData.id}`
     cardPostContent.className = "card h-100 my-3";
     cardColLayout.appendChild(cardPostContent);
 
-
     const cardPostImage = document.createElement("img");
-    cardPostImage.src = post.media;
+    // Set the source (src) attribute of the image. Use the postData.media if it's truthy,
+    // if not, use the fallback image "../images/no_img.jpg"
+    cardPostImage.src = !!postData.media ? postData.media : "../images/no_img.jpg";
     cardPostImage.className = "card-img-top feed-card-img";
     cardPostContent.appendChild(cardPostImage);
 
@@ -52,7 +53,7 @@ const renderPosts = (posts) => {
     cardPostContent.appendChild(cardPostTextContent);
 
     const cardPostTitle = document.createElement("h6");
-    cardPostTitle.innerText = post.title;
+    cardPostTitle.innerText = postData.title;
     cardPostTitle.className = "card-title text-to-uppercase";
     cardPostTextContent.appendChild(cardPostTitle);
 
@@ -61,32 +62,29 @@ const renderPosts = (posts) => {
     cardPostTextContent.appendChild(userNameOnCardLayout);
 
     const profileImageThumbnail = document.createElement("img");
-    profileImageThumbnail.src = post.author.avatar;
+    // Set the source (src) attribute of the image. Use the postData.author.avatar if it's truthy,
+    // if not, use the fallback image "../images/no_avatar.jpg"
+    profileImageThumbnail.src = !!postData.author.avatar ? postData.author.avatar : "../images/no_avatar.jpg";
     profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
     userNameOnCardLayout.appendChild(profileImageThumbnail);
 
     const userName = document.createElement("p");
-    userName.innerText = post.author.name;
+    userName.innerText = postData.author.name;
     userName.className = "mb-0 d-flex align-items-center";
     userNameOnCardLayout.appendChild(userName);
-
-    const tagName = document.createElement("p");
-    tagName.innerText = `TAGS: ${post.tags[0]}`;
-    tagName.className = "mb-0 d-flex align-items-center";
-    cardPostTextContent.appendChild(tagName);
 
     const cardPostDatePublishedWrapper = document.createElement("div");
     cardPostDatePublishedWrapper.className = "card-footer text-end";
     cardPostContent.appendChild(cardPostDatePublishedWrapper);
 
     const cardPostDatePublished = document.createElement("small");
-    const formattedDate = formatDateString(post.created);
+    const formattedDate = formatDateString(postData.created);
     cardPostDatePublished.innerText = formattedDate;
     cardPostDatePublished.className = "text-secondary";
     cardPostDatePublishedWrapper.appendChild(cardPostDatePublished);
-
+  
     postsContainer.appendChild(cardColLayout);
-   
+  
     });
   }
 }
@@ -135,6 +133,8 @@ const initialize = async () => {
     renderPosts(posts);
   } catch (error) {
     console.error("Error fetching posts:", error);
+
+
   }
 }
 

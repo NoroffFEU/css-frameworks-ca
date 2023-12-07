@@ -34,6 +34,9 @@ const createCardSinglePost = (postData) => {
     cardColLayout.appendChild(cardPostContent);
 
     const cardPostImage = document.createElement("img");
+    // Set the source (src) attribute of the image. Use the postData.media if it's truthy,
+    // if not, use the fallback image "../images/no_img.jpg"
+    cardPostImage.src = !!postData.media ? postData.media : "../images/no_img.jpg";
     cardPostImage.className = "card-img-top single-post-img";
     cardPostContent.appendChild(cardPostImage);
 
@@ -51,7 +54,9 @@ const createCardSinglePost = (postData) => {
     cardPostTextContent.appendChild(userNameOnCardLayout);
 
     const profileImageThumbnail = document.createElement("img");
-    profileImageThumbnail.src = postData.author.avatar;
+    // Set the source (src) attribute of the image. Use the postData.author.avatar if it's truthy,
+    // if not, use the fallback image "../images/no_avatar.jpg"
+    profileImageThumbnail.src = !!postData.author.avatar ? postData.author.avatar : "../images/no_avatar.jpg";
     profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail"
     userNameOnCardLayout.appendChild(profileImageThumbnail);
 

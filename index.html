@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feed | #SoMe</title>
+    <title>#SoMe | Home</title>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -15,7 +15,12 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="../js/module.mjs"></script>
     <script type="module" src="/js/feed.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4c69c38b68.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="dist/css/index.css" />
   </head>
   <body>
@@ -32,7 +37,7 @@
           />
         </form>
       </div>
-      <a href="profile/" class="border rounded-5"
+      <a href="profile/" class="border rounded-5 profile"
         ><i class="fa-solid fa-user text-light p-3"></i
       ></a>
     </nav>
@@ -41,10 +46,12 @@
         class="col col-md-10 col-lg-6 col-xl-5 col-xxl-5 mx-auto pb-5 min-vh-100"
       >
         <div class="row bg-light border rounded-4 py-2 my-3">
-          <form>
+          <form id="post">
+            <input id="title" type="text" class="form-control mb-2" placeholder="Title"></input>
             <textarea
+              id="postText"
               rows="1"
-              class="w-100 form-control border-0 border-secondary rounded-0 fs-6 p-3 bg-light"
+              class="w-100 form-control fs-6 p-3 my-1"
               placeholder="What are you sinking about?"
             ></textarea>
             <div class="row mx-3 align-items-center">
@@ -61,7 +68,7 @@
               </div>
               <div class="col text-end">
                 <button
-                  class="btn btn-primary fs-5 border rounded-5 py-1 px-4"
+                  class="btn btn-primary fs-5 border rounded-5 py-0 px-3"
                   type="submit"
                 >
                   Post
@@ -70,69 +77,80 @@
             </div>
           </form>
         </div>
-        <div class="row bg-light border rounded-4 py-2 mb-3">
-          <div class="col-auto">
-            <a href="profile/"
-              ><i class="fa-solid fa-user text-dark p-3 border rounded-5"></i
-            ></a>
-          </div>
-          <div class="col me-4">
-            <div class="row mb-2">
-              <div class="col-auto fw-bold">Ola Normann</div>
-              <div class="col-auto px-1 text-secondary">@olanormann</div>
-              ·
-              <div class="col-auto px-1 text-secondary">Just now</div>
+        <div id="posts-container"></div>
+        <div class="loader">
+          <div class="row bg-light border rounded-4 py-2 mb-3">
+            <div class="col-auto placeholder-glow">
+              <a class="p-3 placeholder rounded-5"></a>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
-              dolorem porro illo, blanditiis earum repudiandae officia fugit,
-              nihil eligendi deleniti adipisci saepe laboriosam quo mollitia.
-              Necessitatibus distinctio commodi sed nemo?
-            </p>
-          </div>
-        </div>
-        <div class="row bg-light border rounded-4 py-2 mb-3">
-          <div class="col-auto">
-            <a href="profile/" class=""
-              ><i class="fa-solid fa-user text-dark p-3 border rounded-5"></i
-            ></a>
-          </div>
-          <div class="col me-4">
-            <div class="row mb-2">
-              <div class="col-auto fw-bold">Ola Normann</div>
-              <div class="col-auto px-1 text-secondary">@olanormann</div>
-              ·
-              <div class="col-auto px-1 text-secondary">27 min</div>
+            <div class="col me-4">
+              <div class="mb-2 placeholder-glow">
+                <div class="col-3 fw-bold placeholder rounded-3"></div>
+              </div>
+              <p class="placeholder-glow" aria-hidden="true">
+                <span class="col-4 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-5 placeholder"></span>
+                <span class="col-7 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+              </p>
             </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio
-              dolorem porro illo, blanditiis earum repudiandae officia fugit
-            </p>
           </div>
-        </div>
-        <div class="row bg-light border rounded-4 py-2 mb-3">
-          <div class="col-auto">
-            <a href="profile/" class=""
-              ><i class="fa-solid fa-user text-dark p-3 border rounded-5"></i
-            ></a>
-          </div>
-          <div class="col me-4">
-            <div class="row mb-2">
-              <div class="col-auto fw-bold">Ola Normann</div>
-              <div class="col-auto px-1 text-secondary">@olanormann</div>
-              ·
-              <div class="col-auto px-1 text-secondary">27 min</div>
+          <div class="row bg-light border rounded-4 py-2 mb-3">
+            <div class="col-auto placeholder-glow">
+              <a class="p-3 placeholder rounded-5"></a>
             </div>
-            <p>Can you spot the missing number in under 20 seconds?</p>
-            <img
-              src="/assets/Missing_number.jfif"
-              alt="Post attachment"
-              class="img-thumbnail img-fluid"
-            />
+            <div class="col me-4">
+              <div class="mb-2 placeholder-glow">
+                <div class="col-3 fw-bold placeholder rounded-3"></div>
+              </div>
+              <p class="placeholder-glow" aria-hidden="true">
+                <span class="col-4 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-5 placeholder"></span>
+                <span class="col-7 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-5 placeholder"></span>
+                <span class="col-7 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <button class="btn btn-primary mx-auto w-auto mt-3">Load more</button>
+          <div class="row bg-light border rounded-4 py-2 mb-3">
+            <div class="col-auto placeholder-glow">
+              <a class="p-3 placeholder rounded-5"></a>
+            </div>
+            <div class="col me-4">
+              <div class="mb-2 placeholder-glow">
+                <div class="col-3 fw-bold placeholder rounded-3"></div>
+              </div>
+              <p class="placeholder-glow" aria-hidden="true">
+                <span class="col-4 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-5 placeholder"></span>
+                <span class="col-7 placeholder"></span>
+                <span class="col-2 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+                <span class="col-4 placeholder"></span>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <button
+              class="btn btn-primary mx-auto w-auto mt-3 disabled placeholder text-primary"
+              aria-disabled="true"
+            >
+              Loading
+            </button>
+          </div>
         </div>
       </div>
     </div>

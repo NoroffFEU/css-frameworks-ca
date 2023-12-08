@@ -1,10 +1,12 @@
+import { API_BASE_URL, registerUrl, loginUrl } from "./constants.js";
+
 const signUpForm = document.getElementById("signUpForm");
 const logInForm = document.getElementById("logInForm");
-const email_message = document.getElementById("email_message");
-const name_message = document.getElementById("name_message");
-const password_message = document.getElementById("password_message");
-const confirm_password_message = document.getElementById(
-  "confirm_password_message"
+const email_error = document.getElementById("email_error");
+const name_error = document.getElementById("name_error");
+const password_error = document.getElementById("password_error");
+const confirm_password_error = document.getElementById(
+  "confirm_password_error"
 );
 const registration_successful = document.getElementById(
   "registration_successful"
@@ -85,41 +87,41 @@ async function registerUser(url, userData) {
 function validateForm({ name, email, password, confirmPassword }, formData) {
   let isValid = true;
   if (password.length < 8) {
-    password_message.classList.remove("d-none");
+    password_error.classList.remove("d-none");
     isValid = false;
   } else {
-    password_message.classList.add("d-none");
+    password_error.classList.add("d-none");
   }
 
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);
   console.log(email);
   if (!patternMatches) {
-    email_message.classList.remove("d-none");
+    email_error.classList.remove("d-none");
     isValid = false;
   } else {
-    email_message.classList.add("d-none");
+    email_error.classList.add("d-none");
   }
 
   if (!email.includes("noroff.no")) {
-    email_message.classList.remove("d-none");
+    email_error.classList.remove("d-none");
     isValid = false;
   } else {
-    email_message.classList.add("d-none");
+    email_error.classList.add("d-none");
   }
 
   if (name.length === 0) {
-    name_message.classList.remove("d-none");
+    name_error.classList.remove("d-none");
     isValid = false;
   } else {
-    name_message.classList.add("d-none");
+    name_error.classList.add("d-none");
   }
 
   if (confirmPassword != password) {
-    confirm_password_message.classList.remove("d-none");
+    confirm_password_error.classList.remove("d-none");
     isValid = false;
   } else {
-    confirm_password_message.classList.add("d-none");
+    confirm_password_error.classList.add("d-none");
   }
 
   if (isValid) {

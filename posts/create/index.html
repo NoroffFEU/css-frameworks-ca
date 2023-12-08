@@ -34,7 +34,7 @@
 
     <main class="mt-3">
         <div class="column">
-            <h2 class="col-12 font-weight-bold text-center">New Post</h2>
+            <h2 class="col-12 font-weight-bold text-center text-white">New Post</h2>
 
             <div class="container col-xl-10 col-xxl-8 px-4 py-5">
                 
@@ -44,22 +44,22 @@
                         
                         <form id="createpost" class="p-4 p-md-5 border rounded-3 bg">
                             <div class="col-md-4 mx-auto">
-                                <label for="floatingInput">Title</label>
-                                <input type="text" name="title" class="form-control" required>
+                                <label for="postTitle" class="content-font text-white">Title</label>
+                                <input type="text" name="title" class="form-control" id="postTitle" required>
                             </div>
 
                             <div class="col-md-4 mx-auto">
-                                <label for="floatingInput">Content</label>
-                                <textarea name="content" id="" cols="30" rows="10" class="form-control" required></textarea>
+                                <label for="postContent" class="content-font text-white">Content</label>
+                                <textarea name="content" id="postContent" cols="30" rows="10" class="form-control" required></textarea>
                             </div>
 
                             <div class="col-md-4 mx-auto">
-                                <label for="floatingInput">Tags</label>
+                                <label for="postTag" class="content-font text-white">Tags</label>
                                 <input type="text" name="tags" class="form-control">
                             </div>
 
                             <div class="col-md-4 mx-auto">
-                                <label for="floatingInput">Media</label>
+                                <label for="postMedia" class="content-font text-white">Media</label>
                                 <input type="url" name="password" class="form-control">
                             </div>
 

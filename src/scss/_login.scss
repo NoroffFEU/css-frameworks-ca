@@ -1,81 +1,12 @@
 body {
   background-image: url("../../images/background3.png");
   background-size: 1000px auto;
-  background-repeat: repeat;
-  background-position-y: 50px;
 }
 
 .login-h1 {
-  width: 400px;
-  display: block;
-  border-radius: 10px;
-  color: var(--pink);
-  font-family: "Baloo 2", sans-serif;
-  font-weight: 800;
   font-size: 6rem;
-}
-
-.register-new-acc {
-  text-decoration: none;
-}
-
-.login-worm-green {
-  position: absolute;
-  left: 30%;
-  top: 100%;
 }
 
 .login-worm-green img {
   height: 170px;
-}
-
-.login-worm-red {
-  position: absolute;
-  right: 20%;
-  top: 60%;
-}
-
-.login-worm-red img {
-  height: 130px;
-}
-
-@media screen and (max-width: 1300px) {
-  .login-worm-red {
-    right: 10%;
-    top: 60%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .login-worm-red {
-    top: 20%;
-  }
-
-  .login-worm-green {
-    left: 20%;
-    top: 100%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .login-worm-red {
-    top: 10%;
-  }
-
-  .login-worm-green {
-    left: 10%;
-  }
-
-  .login-worm-red img {
-    height: 100px;
-  }
-
-  .login-worm-green img {
-    height: 120px;
-  }
-
-  .login-h1 {
-    width: 300px;
-    font-size: 6rem;
-  }
 }

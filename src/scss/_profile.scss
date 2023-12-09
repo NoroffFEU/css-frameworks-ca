@@ -1,0 +1,25 @@
+.profile-container {
+  border: 1px solid #333;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 166, 0, 0.034);
+  box-shadow: 5px 5px 5px rgba(184, 184, 184, 0.325);
+  border-radius: 10px;
+  margin: 50px auto;
+  max-width: 800px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hr-profile {
+  display: flex;
+
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,15 @@
+.card-thumbnail {
+  max-height: 250px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.card-title,
+.card-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  margin-bottom: 35px;
+  padding: 20px;
+}

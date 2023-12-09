@@ -1,0 +1,27 @@
+.main-login {
+  background: linear-gradient(#ffd580, #f1f1f1);
+}
+
+.nav-banner {
+  background-color: rgb(255, 166, 0);
+}
+
+.nav-banner a:hover {
+  color: rgba(255, 166, 0, 0.987);
+  text-decoration: underline;
+}
+
+.login-container {
+  border: solid 2px rgba(79, 79, 79, 0.426);
+  background-color: rgba(241, 241, 240, 0.454);
+
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 10px 5px 10px rgba(255, 166, 0, 0.297);
+
+  min-width: 360px;
+}
+
+.hr-main-page {
+  border: 2px solid black;
+}

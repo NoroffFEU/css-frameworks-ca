@@ -8,5 +8,7 @@ export const postUrl = `${API_BASE_URL}/posts`;
 // HTML Elements
 export const loader = document.querySelector(".loader");
 export const profile = document.querySelector(".profile");
+export const reactions = document.querySelector(".reactions");
+export const comments = document.querySelector(".comments");
 
 export const accessToken = localStorage.getItem("accessToken");

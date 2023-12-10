@@ -28,11 +28,14 @@ getPosts(`${API_BASE_URL}/profiles/${user.name}/posts?_author=true&_comments=tru
     posts = json;
     loader.classList.add("d-none");
     createHTML(posts);
+  })
+  .then(() => {
+    const ellipsises = document.querySelectorAll(".fa-ellipsis");
+    console.log(ellipsises);
+    ellipsises.forEach((ellipsis) => {
+      ellipsis.classList.remove("d-none");
+    });
   });
-
-const ellipsises = document.querySelectorAll(".fa-ellipsis");
-console.log(ellipsises);
-const deleteButton = document.querySelector(".deleteButton");
 
 document.addEventListener("click", function (event) {
   if (event.target.matches(".fa-ellipsis")) {

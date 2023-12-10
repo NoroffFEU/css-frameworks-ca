@@ -2,6 +2,7 @@ import { API_BASE_URL } from "../routes.mjs";
 import { createNewPost } from "./create.mjs";
 import { deletePost } from "./delete.mjs";
 import { updatePost } from "./update.mjs";
+import { searchAndsort } from "./filterAndSearch.mjs";
 
 
 /**
@@ -10,6 +11,8 @@ import { updatePost } from "./update.mjs";
  * @returns {string} get the post returned from the API 
  */
 API_BASE_URL();
+createNewPost();
+searchAndsort();
 
 export async function fetchwithToken(API_BASE_URL) {
     try {

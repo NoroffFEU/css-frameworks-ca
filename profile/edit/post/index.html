@@ -18,27 +18,45 @@
   </head>
   <body>
     <nav class="navbar bg-dark py-3 px-4">
-      <a class="text-light fs-3 text-decoration-none" href="../../">#SoMe</a>
+      <a class="text-light fs-3 text-decoration-none" href="../../../../">#SoMe</a>
       <div class="col-6 col-lg-4 flex-center mx-auto">
         <form class="d-none d-sm-block">
           <input type="search" class="form-control rounded-5" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         </form>
       </div>
-      <a href="../../../../" class="border rounded-5 profile"><i class="fa-solid fa-user text-light p-3"></i></a>
+      <a href="../../../profile/" class="border rounded-5 profile"><i class="fa-solid fa-user text-light p-3"></i></a>
     </nav>
     <main>
-        <div class="container-fluid">
+      <div class="container-fluid">
         <div class="col col-md-10 col-lg-6 col-xl-5 col-xxl-5 mx-auto pb-5 min-vh-100">
-            <div class="row align-items-center">
+          <div class="row align-items-center">
             <div class="col-auto">
-                <a href="../../">
+              <a href="../../">
                 <i class="fa-solid fa-arrow-left fs-3 p-3 text-dark"></i>
-                </a>
+              </a>
             </div>
+          </div>
+
+          <div class="row bg-light border rounded-4 py-2 mb-3 post">
+            <a class="p-3 rounded-5 col-auto"></a>
+            <div class="col me-4">
+              <div class="mb-2 row justify-content-between">
+                <div id="postAuthorName" class="col-auto fw-bold rounded-3"></div>
+              </div>
+              <form id="editForm" class="mb-3">
+                <input id="editTitle" class="form-control mb-3" type="text" placeholder="Edit Title" />
+                <textarea class="form-control mb-3" name="body" id="editBody" cols="30" rows="1" placeholder="Edit body"></textarea>
+                <button type="submit" class="btn btn-primary">Submit Changes</button>
+              </form>
+              <div class="row">
+                <a class="col-auto reactions"><i class="fa-regular fa-heart me-1"></i></a>
+                <a class="col-auto comments"><i class="fa-regular fa-comment me-1"></i></a>
+              </div>
             </div>
-            </div>
+          </div>
+          <div id="posts-container"></div>
         </div>
-        </div>
+      </div>
     </main>
     <footer class="footer mt-auto py-4 bg-dark">
       <div class="container">

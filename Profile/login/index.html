@@ -37,22 +37,31 @@
         <div class="container col-lg-6 px-4 py-5">
             <div class="row align-items-center g-lg-4 py-4">
                 <div class="col-lg-12 text-center text-lg-start">
-                    <h1 class="font-weight-bold mb-3">
+                    <h1 class="font-weight-bold mb-3 text-white">
                         Join Cliamte Care to share your voice on climate change issues.
                     </h1>
                 </div>
             </div>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-            <form action="https://api.noroff.dev/api/v1/social/posts" class="p-4 p-md-5 border rounded-4 bg-light" id="loginform">
+            <form action="https://api.noroff.dev/api/v1/social/posts" class="p-4 p-md-5 border rounded-4 bg-light" id="loginForm">
                 <div class="mb-4 col-md-9 mx-auto text-start">
-                    <label for="exampleInputEmail1" class="form-label col-sm-3 col-form ">Email address</label>
-                    <input type="email" name="email" id="loginemail" class="form-control" required title="only @(stud.)noroff.no domains are allowed to login.">
+                    <label for="name" class="form-label content-font mt-4">Name</label>
+                    <input type="name" class="form-control" id="name" required placeholder="Joel">
                 </div>
                 <div class="mb-4 col-md-9 mx-auto text-start">
-                    <label for="exampleInputPassword1" class="col-form-label col-sm-3">Password</label>
-                    <input type="password" name="password" id="loginpassword" class="form-control" required minlength="8">
+                    <label for="email" class="form-label content-font">Email</label>
+                    <input type="email"  class="form-control" id="emailLogIn" name="email" required placeholder="joel@stud.noroff.no">
                 </div>
+                <div class="invalid-feedback content-font">
+                    Please enter a valid email.
+                </div>
+                <div class="mb-4 col-md-9 mx-auto text-start">
+                    <label for="password" class="form-label content-font">Password</label>
+                    <input type="password" class="form-control" id="passwordLoggIn" name="password" minlength="8" required placeholder="********"/>
+                    <div class="invalid-feedback content-font">
+                      Password must be at least 8 characters long.
+                    </div>
                 <div class="checkbox mb-3">
                     <label>
                         <input type="checkbox" value="remember-me"> Remember me
@@ -69,6 +78,7 @@
     <footer class="py-4 text-center">
         Copyright &copy; Design and Developed by EF II PAMI
     </footer>
+    <script type="module" src="../../src/js/login.mjs"></script>
 
     
 </body>

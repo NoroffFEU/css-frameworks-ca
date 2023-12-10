@@ -79,7 +79,7 @@ export function createHTML(posts) {
     authorName.classList.add("col-auto", "fw-bold", "rounded-3");
 
     const ellipsis = document.createElement("i");
-    ellipsis.classList.add("fa-solid", "fa-ellipsis", "col-auto", "p-0");
+    ellipsis.classList.add("fa-solid", "fa-ellipsis", "d-none", "col-auto", "p-0");
     ellipsis.setAttribute("role", "button");
     ellipsis.setAttribute("data-id", id);
 

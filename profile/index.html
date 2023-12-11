@@ -24,13 +24,16 @@
           <input type="search" class="form-control rounded-5" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         </form>
       </div>
-      <a href="../profile/" class="border rounded-5 profile"><i class="fa-solid fa-user text-light p-3"></i></a>
+      <div>
+        <a id="profileButton" href="./" class="btn btn-dark border-white">Profile</a>
+        <a class="btn btn-dark border-danger text-danger ms-2">Sign out</a>
+      </div>
     </nav>
     <div class="container-fluid">
       <div class="col col-md-10 col-lg-6 col-xl-5 col-xxl-5 mx-auto pb-5 min-vh-100">
         <div class="row align-items-center">
           <div class="col-auto">
-            <a href="../">
+            <a onclick="window.history.back()" role="button">
               <i class="fa-solid fa-arrow-left fs-3 p-3 text-dark"></i>
             </a>
           </div>
@@ -56,7 +59,8 @@
               </div>
             </div>
             <div class="row w-100 mx-auto px-2">
-              <button class="btn btn-primary">Follow</button>
+              <button id="followButton" class="btn btn-primary">Follow</button>
+              <a id="editProfile" href="./edit/index.html" class="btn btn-primary d-none border-white mx-2">Edit Profile</a>
             </div>
           </div>
         </div>

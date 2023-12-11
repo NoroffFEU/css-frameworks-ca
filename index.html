@@ -37,9 +37,10 @@
           />
         </form>
       </div>
-      <a href="profile/" class="border rounded-5 profile"
-        ><i class="fa-solid fa-user text-light p-3"></i
-      ></a>
+        <div>
+          <a id="profileButton" href="./profile/" class="btn btn-dark border-white">Profile</a>
+          <a class="btn btn-dark border-danger text-danger ms-2">Sign out</a>
+        </div>
     </nav>
     <div class="container-fluid">
       <div
@@ -47,7 +48,7 @@
       >
         <div class="row bg-light border rounded-4 py-2 my-3">
           <form id="post">
-            <input id="title" type="text" class="form-control mb-2" placeholder="Title"></input>
+            <input id="title" type="text" class="form-control mb-2" placeholder="Title" required></input>
             <textarea
               id="postText"
               rows="1"

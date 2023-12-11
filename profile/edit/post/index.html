@@ -24,14 +24,17 @@
           <input type="search" class="form-control rounded-5" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         </form>
       </div>
-      <a href="../../../profile/" class="border rounded-5 profile"><i class="fa-solid fa-user text-light p-3"></i></a>
+      <div>
+        <a id="profileButton" href="../../../profile/" class="btn btn-dark border-white">Profile</a>
+        <a class="btn btn-dark border-danger text-danger ms-2">Sign out</a>
+      </div>
     </nav>
     <main>
       <div class="container-fluid">
         <div class="col col-md-10 col-lg-6 col-xl-5 col-xxl-5 mx-auto pb-5 min-vh-100">
           <div class="row align-items-center">
             <div class="col-auto">
-              <a href="../../">
+              <a onclick="window.history.back()" role="button">
                 <i class="fa-solid fa-arrow-left fs-3 p-3 text-dark"></i>
               </a>
             </div>
@@ -44,9 +47,12 @@
                 <div id="postAuthorName" class="col-auto fw-bold rounded-3"></div>
               </div>
               <form id="editForm" class="mb-3">
-                <input id="editTitle" class="form-control mb-3" type="text" placeholder="Edit Title" />
+                <input id="editTitle" class="form-control mb-3" type="text" placeholder="Edit Title" required />
                 <textarea class="form-control mb-3" name="body" id="editBody" cols="30" rows="1" placeholder="Edit body"></textarea>
-                <button type="submit" class="btn btn-primary">Submit Changes</button>
+                <div class="row mx-0 justify-content-between">
+                  <button type="submit" class="btn btn-primary col-auto">Submit Changes</button>
+                  <button id="deletePost" type="button" class="btn btn-danger col-auto">Delete Post</button>
+                </div>
               </form>
               <div class="row">
                 <a class="col-auto reactions"><i class="fa-regular fa-heart me-1"></i></a>

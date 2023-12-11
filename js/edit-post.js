@@ -1,4 +1,4 @@
-import { comments, reactions } from "./constants.js";
+import { API_BASE_URL, accessToken, comments, reactions } from "./constants.js";
 import { getPosts } from "./module.mjs";
 
 const parameterString = window.location.search;
@@ -10,6 +10,7 @@ const editTitle = document.querySelector("#editTitle");
 const editBody = document.querySelector("#editBody");
 const postAuthorName = document.querySelector("#postAuthorName");
 const editForm = document.querySelector("#editForm");
+const deletePost = document.querySelector("#deletePost");
 
 getPosts(singlePostUrl)
   .then((data) => data.json())
@@ -25,4 +26,42 @@ getPosts(singlePostUrl)
 editForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("submit");
+  fetch(API_BASE_URL + `/posts/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify({
+      title: editTitle.value,
+      body: editBody.value,
+    }),
+  })
+    .then((data) => data.json())
+    .then(() => {
+      window.location.href = "../../../profile/";
+    });
+});
+
+deletePost.addEventListener("click", (event) => {
+  fetch(`${API_BASE_URL}/posts/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+    .then((data) => data.json())
+    .then(() => {
+      window.location.href = "../../../profile/";
+    });
+});
+
+const hiddenDiv = document.createElement("div");
+hiddenDiv.classList.add("hiddendiv");
+document.body.appendChild(hiddenDiv);
+const textarea = document.querySelector("textarea");
+
+textarea.addEventListener("input", function () {
+  hiddenDiv.textContent = textarea.value + "\n";
+  this.style.height = hiddenDiv.offsetHeight + "px";
 });

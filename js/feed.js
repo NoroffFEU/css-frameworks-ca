@@ -1,11 +1,11 @@
-import { API_BASE_URL, getPostsUrl, accessToken, postUrl, loader, profile } from "./constants.js";
-import { checkLogin, getNameFromJwt, getPosts, createHTML } from "./module.mjs";
+import { API_BASE_URL, getPostsUrl, accessToken, createPostUrl, loader } from "./constants.js";
+import { checkLogin, jwtDecoder, getPosts, createHTML } from "./module.mjs";
 
 const container = document.getElementById("container");
 const post = document.getElementById("post");
 
 checkLogin();
-getNameFromJwt(accessToken);
+jwtDecoder(accessToken);
 
 post.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -22,7 +22,7 @@ post.addEventListener("submit", function (event) {
       body: postText,
     }),
   };
-  fetch(postUrl, methodOptions)
+  fetch(createPostUrl, methodOptions)
     .then((data) => data.json())
     .then((json) => {
       console.log(json);
@@ -40,3 +40,13 @@ getPosts(`${getPostsUrl}?_author=true&_comments=true&_reactions=true`)
     createHTML(posts);
     console.log(posts);
   });
+
+const hiddenDiv = document.createElement("div");
+hiddenDiv.classList.add("hiddendiv");
+document.body.appendChild(hiddenDiv);
+const textarea = document.querySelector("textarea");
+
+textarea.addEventListener("input", function () {
+  hiddenDiv.textContent = textarea.value + "\n";
+  this.style.height = hiddenDiv.offsetHeight + "px";
+});

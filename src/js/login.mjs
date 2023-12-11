@@ -26,7 +26,7 @@ async function loginUser(API_BASE_URL, data) {
 
             saveUserData(accessToken);
 
-            window.location.href = '/Profile/index.html';
+            window.location.href = '/Posts/index.html';
         } else {
             const errorMessage = document.getElementById('error-message');
             errorMessage.textContent = 'Wrong email or password, please try again.';

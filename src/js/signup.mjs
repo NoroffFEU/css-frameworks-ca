@@ -16,7 +16,7 @@ async function registerUser(API_BASE_URL, data) {
         const json = await response.json();
 
         if (response.ok) {
-            window.location.href = '/Profile/index.html';
+            window.location.href = '/Profile/login/index.html';
         } else {
         }
         return json;

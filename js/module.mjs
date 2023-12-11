@@ -8,9 +8,9 @@ export function checkLogin() {
   }
 }
 
-import { accessToken, postUrl } from "./constants.js";
+import { accessToken, createPostUrl } from "./constants.js";
 
-export function getNameFromJwt(token) {
+export function jwtDecoder(token) {
   const tokenParts = token.split(".");
   const header = tokenParts[0];
   const payload = tokenParts[1];
@@ -24,8 +24,9 @@ export function getNameFromJwt(token) {
   return payloadObject;
 }
 
+export const JWT = jwtDecoder(accessToken);
+
 export function getProfile(url, name) {
-  console.log(url, name);
   return fetch(url + name, {
     headers: {
       method: "GET",
@@ -75,13 +76,14 @@ export function createHTML(posts) {
     const interactLine = document.createElement("div");
     interactLine.classList.add("row");
 
-    const authorName = document.createElement("span");
-    authorName.classList.add("col-auto", "fw-bold", "rounded-3");
+    const authorName = document.createElement("a");
+    authorName.classList.add("col-auto", "fw-bold", "rounded-3", "text-decoration-none", "text-black");
+    authorName.setAttribute("href", `./profile/?${author.name}`);
 
-    const ellipsis = document.createElement("i");
-    ellipsis.classList.add("fa-solid", "fa-ellipsis", "d-none", "col-auto", "p-0");
-    ellipsis.setAttribute("role", "button");
-    ellipsis.setAttribute("data-id", id);
+    const gear = document.createElement("i");
+    gear.classList.add("fa-solid", "fa-gear", "d-none", "col-auto", "p-0");
+    gear.setAttribute("role", "button");
+    gear.setAttribute("data-id", id);
 
     const reactButton = document.createElement("a");
     const reactIcon = document.createElement("i");
@@ -98,14 +100,15 @@ export function createHTML(posts) {
 
     postContent.append(infoLine, postTitle, postBody, interactLine);
 
-    infoLine.append(authorName, ellipsis);
+    infoLine.append(authorName, gear);
 
     authorName.append(author.name);
-    // ellipsisContainer.append(ellipsis, postOptions);
-    // postOptions.append(editButton, deleteButton);
 
     interactLine.append(reactButton, commentButton);
     reactButton.append(reactIcon, _count.reactions);
     commentButton.append(commentIcon, _count.comments);
   });
 }
+
+const profileButton = document.querySelector("#profileButton");
+profileButton.setAttribute("href", `${profileButton.href}?${JWT.name}`);

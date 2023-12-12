@@ -55,7 +55,7 @@ export function deletePost(id) {
   });
 }
 
-const postsContainer = document.getElementById("posts-container");
+export const postsContainer = document.getElementById("posts-container");
 export function createHTML(posts) {
   posts.forEach(({ author, body, comments, created, id, media, reactions, tags, title, updated, _count }) => {
     const postWrapper = document.createElement("div");

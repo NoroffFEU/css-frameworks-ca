@@ -1,5 +1,5 @@
 import { API_BASE_URL, getPostsUrl, accessToken, createPostUrl, loader } from "./constants.js";
-import { checkLogin, jwtDecoder, getPosts, createHTML } from "./module.mjs";
+import { checkLogin, jwtDecoder, getPosts, createHTML, postsContainer } from "./module.mjs";
 
 const container = document.getElementById("container");
 const post = document.getElementById("post");
@@ -37,7 +37,7 @@ getPosts(`${getPostsUrl}?_author=true&_comments=true&_reactions=true`)
   .then((json) => {
     posts = json;
     loader.classList.add("d-none");
-    console.log(posts);
+    createHTML(posts);
   });
 
 const hiddenDiv = document.createElement("div");
@@ -57,6 +57,6 @@ searchInput.addEventListener("input", (event) => {
   const filteredPosts = posts.filter((post) => {
     return post.title.toLowerCase().trim().includes(query);
   });
-  console.log(filteredPosts);
+  postsContainer.innerHTML = "";
   createHTML(filteredPosts);
 });

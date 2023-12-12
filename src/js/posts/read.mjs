@@ -48,8 +48,8 @@ export async function fetchwithToken(API_BASE_URL) {
         const response = await fetch(API_BASE_URL, getData);
         const json = await response.json();
 
-        const postscontainer = document.getElementsByClassName('postscontainer');
-
+        const postscontainer = document.getElementsByClassName('postscontainer')[0];
+        
         json.forEach((post) => {
             if (post.title && post.body) {
                 const postcard = document.createElement('div');
@@ -63,6 +63,10 @@ export async function fetchwithToken(API_BASE_URL) {
                 postContent.textContent = post.body;
                 postContent.classList.add("card-text", "content-font");
 
+                //const postimg = document.createElement('img');
+                //postimg.imagecontent = post.media;
+                //postimg.classList.add("card-img-top img-fluid")
+                console.log(post)
        ///////// adding the butons/////////////////////         
 
                 const buttonrow = document.createElement ('div');

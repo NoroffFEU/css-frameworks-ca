@@ -1,4 +1,4 @@
-import { API_BASE_URL, accessToken, loader } from "./constants.js";
+import { API_BASE_URL, accessToken, loader, profilePicture } from "./constants.js";
 import { checkLogin, getPosts, createHTML, getProfile, JWT } from "./module.mjs";
 
 const countPosts = document.getElementById("countPosts");
@@ -24,9 +24,10 @@ getProfile(API_BASE_URL + "/profiles/", profileName)
       followButton.classList.add("d-none");
       editProfile.classList.remove("d-none");
     }
+    if (user.avatar) {
+      profilePicture.setAttribute("src", user.avatar);
+    }
   });
-
-console.log(displayName.textContent);
 
 let posts = [];
 

@@ -37,7 +37,6 @@ getPosts(`${getPostsUrl}?_author=true&_comments=true&_reactions=true`)
   .then((json) => {
     posts = json;
     loader.classList.add("d-none");
-    createHTML(posts);
     console.log(posts);
   });
 
@@ -49,4 +48,15 @@ const textarea = document.querySelector("textarea");
 textarea.addEventListener("input", function () {
   hiddenDiv.textContent = textarea.value + "\n";
   this.style.height = hiddenDiv.offsetHeight + "px";
+});
+
+const searchInput = document.querySelector("#search");
+
+searchInput.addEventListener("input", (event) => {
+  const query = searchInput.value.toLowerCase().trim();
+  const filteredPosts = posts.filter((post) => {
+    return post.title.toLowerCase().trim().includes(query);
+  });
+  console.log(filteredPosts);
+  createHTML(filteredPosts);
 });

@@ -9,5 +9,6 @@ export const createPostUrl = `${API_BASE_URL}/posts`;
 export const loader = document.querySelector(".loader");
 export const reactions = document.querySelector(".reactions");
 export const comments = document.querySelector(".comments");
+export const profilePicture = document.querySelector("#profilePicture");
 
 export const accessToken = localStorage.getItem("accessToken");

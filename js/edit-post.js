@@ -1,5 +1,5 @@
 import { API_BASE_URL, accessToken, comments, reactions } from "./constants.js";
-import { getPosts } from "./module.mjs";
+import { JWT, getPosts } from "./module.mjs";
 
 const parameterString = window.location.search;
 const params = new URLSearchParams(parameterString);
@@ -39,7 +39,7 @@ editForm.addEventListener("submit", (event) => {
   })
     .then((data) => data.json())
     .then(() => {
-      window.location.href = "../../../profile/";
+      window.location.href = `../../../profile/?${JWT.name}`;
     });
 });
 
@@ -52,7 +52,7 @@ deletePost.addEventListener("click", (event) => {
   })
     .then((data) => data.json())
     .then(() => {
-      window.location.href = "../../../profile/";
+      window.location.href = `../../../profile/?${JWT.name}`;
     });
 });
 

@@ -59,10 +59,20 @@ const postsContainer = document.getElementById("posts-container");
 export function createHTML(posts) {
   posts.forEach(({ author, body, comments, created, id, media, reactions, tags, title, updated, _count }) => {
     const postWrapper = document.createElement("div");
-    postWrapper.classList.add("row", "bg-light", "border", "rounded-4", "py-2", "mb-3", "post-wrapper");
+    postWrapper.classList.add("row", "bg-light", "border", "rounded-4", "py-2", "mb-3", "post-wrapper", "px-2");
 
     const avatar = document.createElement("a");
-    avatar.classList.add("p-3", "rounded-5", "col-auto");
+    avatar.classList.add("col-auto", "p-0");
+    if (author.avatar) {
+      avatar.style.width = "42px";
+      avatar.style.height = "42px";
+      avatar.setAttribute("href", `./profile/?${author.name}`);
+      const avatarImg = document.createElement("img");
+      avatarImg.setAttribute("src", author.avatar);
+      avatarImg.classList.add("rounded-circle", "w-100", "h-100");
+      avatarImg.style.objectFit = "cover";
+      avatar.append(avatarImg);
+    }
 
     const postContent = document.createElement("div");
     postContent.classList.add("col", "me-4");

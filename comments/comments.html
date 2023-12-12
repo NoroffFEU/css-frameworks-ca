@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="/images/1131031-84.png">
+  <script type="module" src="../JS/utils/seePost.js" defer></script>
+
+  <title>Post Comments | Toastit</title>
+</head>
+
+<body class="bg-dark">
+  <nav class="navbar navbar-expand navbar-light bg-light border-bottom border-4 mb-3">
+    <a class="navbar-brand ms-4" href="../index.html"><img src="../images/1131031-84.png" alt="Toastit-logo" class="ms-4"></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto flex-column flex-sm-row"> <!-- Add flex-column and flex-sm-row classes -->
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="../feed/index.html">Feed</a>
+        </li>
+        <li>
+          <a class="nav-link fw-semibold" href="../index.html">Log out</a>
+        </li>
+      </ul>
+    </div>
+    <div class="float-end me-2">
+      <a class="nav-link fw-semibold" href="../profile/index.html"><img src="../images/profile-pictures/default-profile.jpg"
+        class="profile-picture border border-primary border-4 rounded-circle " id="profileImage" title="Profile"></img></a>
+    </div>
+  </nav>
+  
+</div>
+  <!-- Post container -->
+  <div class="container text-white mb-4">
+    <div class="row justify-content-center post-wrapper post-display-container" id="singel-post-display">
+      <div class="comment-form" id="comment-form"></div>
+      <div class="comments" id="comments-container"></div>
+      <!-- Posts -->
+      <!-- <div class="col-8 bg-primary m-1">
+        <p>log in to see post </p>
+      </div>
+      <div class="col-8 bg-primary m-1">
+        <h3 class="card-title">${title}</h3>
+        <div class="d-flex flex-row align-items-center">
+          <img src="${avatarUrl}" class="rounded-circle border border-3 profile-pictures" alt="profile image">
+          <p class="ms-2 mt-1">
+            ${author.name}
+          </p>
+        </div>
+        <img src="${media}" class="post-img card-img-top mt-2 rounded mx-auto d-block" alt="${title}">
+        <div class="card-body">
+          <p class="card-text overflow-hidden post-text">${body}</p>
+        </div>
+        <button class="btn bg-primary text-white float-end" title="delete post">🗑</button><br>
+        <div class="d-flex flex-column flex-sm-row justify-content-evenly mb-3">
+          <div class="p-2">⇧ ${reactionsCount} reactions</div>
+          <div class="p-2">🗨 ${commentsCount} comments</div>
+          <div class="p-2">${shortenedCreatedDate}</div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+
+  <script defer type="module" src="../JS/index.js"></script>
+</body>
+
+</html>

@@ -7,15 +7,16 @@
   max-width: 5rem;
 }
 .profile-pictures {
-  max-width: 50px;
+  max-width: 3rem;
+  height: 3rem;
 }
 .profile-image {
   max-width: 300px;
   max-height: auto;  
 }
-.card {
-  width: 20rem;
+.post-img {
+ max-height: 200px;
+ object-fit: cover;
 }
-.post-text{
-  max-height: 70px;
-}
+
+

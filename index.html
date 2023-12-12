@@ -29,6 +29,7 @@
       <div class="col-6 col-lg-4 flex-center mx-auto">
         <form class="d-none d-sm-block">
           <input
+          id="search"
             type="search"
             class="form-control rounded-5"
             placeholder="Search"
@@ -56,17 +57,6 @@
               placeholder="What are you sinking about?"
             ></textarea>
             <div class="row mx-3 align-items-center">
-              <div class="col fs-4 text-dark">
-                <label for="image1" class="fa-regular fa-image me-2"></label>
-                <input type="file" name="Image" id="image1" class="d-none" />
-                <label for="attachment1" class="fa-solid fa-paperclip"></label>
-                <input
-                  type="file"
-                  name="Image"
-                  id="attachment1"
-                  class="d-none"
-                />
-              </div>
               <div class="col text-end">
                 <button
                   class="btn btn-primary fs-5 border rounded-5 py-0 px-3"
@@ -77,6 +67,26 @@
               </div>
             </div>
           </form>
+        </div>
+        <div class="row mb-3 justify-content-center">
+          <div class="dropdown col-auto">
+            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Filter
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">For You</a></li>
+              <li><a class="dropdown-item" href="#">Following</a></li>
+            </ul>
+          </div>
+          <div class="dropdown col-auto">
+            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Sort By
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Newest first</a></li>
+              <li><a class="dropdown-item" href="#">Oldest first</a></li>
+            </ul>
+          </div>
         </div>
         <div id="posts-container"></div>
         <div class="loader">

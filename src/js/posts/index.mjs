@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../routes.mjs";
+/*import { API_BASE_URL } from "../routes.mjs";
 import { createNewPost } from "./create.mjs";
 import { deletePost } from "./delete.mjs";
 import { updatePost } from "./update.mjs";
@@ -10,7 +10,7 @@ import { searchAndsort } from "./filterAndSearch.mjs";
  * @param {string} url represents the URL of the API we are fetching the posts from
  * @returns {string} get the post returned from the API 
  */
-API_BASE_URL();
+/*API_BASE_URL();
 createNewPost();
 searchAndsort();
 
@@ -94,7 +94,7 @@ export async function fetchwithToken(API_BASE_URL) {
  * this funciton will display more information about a post in a modal when the view more button is clicked
  */
 
-function showMore(post) {
+/*function showMore(post) {
     const modalContainer = document.createElement('div');
     modalContainer.classList.add ('modal-container');
 
@@ -127,7 +127,7 @@ function showMore(post) {
  * this function displays a modal for updating a post
  */
 
-function showUpdateModal(post) {
+/*function showUpdateModal(post) {
     
     const modalContainer = document.createElement('div');
     modalContainer.classList.add('modal-container');
@@ -184,5 +184,5 @@ function showUpdateModal(post) {
     updatemodal.appendChild(buttonContainer);
     modalContainer.appendChild(updatemodal);
     document.body.appendChild(modalContainer);
-}
+}*/
 

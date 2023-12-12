@@ -51,13 +51,19 @@ export async function fetchwithToken(API_BASE_URL) {
         const postscontainer = document.getElementsByClassName('postscontainer');
 
         json.forEach((post) => {
-            if (post.title) {
-                const postdiv = document.createElement('div');
-                postdiv.classList.add("card", "mb-5", "p-3", "position-relative");
+            if (post.title && post.body) {
+                const postcard = document.createElement('div');
+                postcard.classList.add("card", "mb-5", "p-3", "position-relative");
 
                 const postTitle = document.createElement('h5');
                 postTitle.textContent = `Title: ${post.title}`;
                 postTitle.classList.add("card-title", "content-font");
+
+                const postContent = document.createElement('P');
+                postContent.textContent = post.body;
+                postContent.classList.add("card-text", "content-font");
+
+       ///////// adding the butons/////////////////////         
 
                 const buttonrow = document.createElement ('div');
                 buttonrow.classList.add('row', 'mt-2');
@@ -80,6 +86,7 @@ export async function fetchwithToken(API_BASE_URL) {
 
                 const updateButton = document.createElement('div');
                 updateButton.textContent = 'Update';
+                updateButton.classList.add('btn', 'content-font', 'btn-sm', 'custom-update-btn');
                 updateButton.addEventListener('click', () => {
                     showUpdateModal(post);
                 });
@@ -95,9 +102,9 @@ export async function fetchwithToken(API_BASE_URL) {
                 actioncol.appendChild(deleteButton);
                 buttonrow.appendChild(actioncol);
 
-                postdiv.appendChild(postTitle);
-                postdiv.appendChild(buttonrow);
-                postscontainer.appendChild(postdiv);
+                postcard.appendChild(postTitle);
+                postcard.appendChild(buttonrow);
+                postscontainer.appendChild(postcard);
             }
         });
     } catch (error) {
@@ -151,7 +158,7 @@ async function deletePost(postID) {
         };
 
         const response = await fetch(`${API_BASE_URL}/posts/${postID}`, deleteData);
-
+        
         if (response.status ===204 || response.status ===200) {
             alert (`Post (ID ${postID}) was successfully deleted.`);
         } else {
@@ -179,6 +186,10 @@ function showMore(post) {
     const postID = document.createElement('p');
     postID.textContent = `ID: ${post.id}`;
     modal.appendChild(postID);
+
+    const postBody = document.createElement('P');
+    postBody.textContent = `${post.body}`;
+    modal.appendChild(postBody);
 
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
@@ -229,7 +240,7 @@ function showUpdateModal(post) {
     ////update button in modal
 
     const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('d-fle', 'justify-content-between', 'mt-4');
+    buttonContainer.classList.add('d-flex', 'justify-content-between', 'mt-4');
 
     const updateButton = document.createElement('button');
     updateButton.textContent = 'Update Post';

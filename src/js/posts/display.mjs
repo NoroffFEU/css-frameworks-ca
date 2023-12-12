@@ -32,3 +32,4 @@ createpost.addEventListener('submit', async function (event) {
             document.getElementById('postContent').value = '';
     }
 });
+

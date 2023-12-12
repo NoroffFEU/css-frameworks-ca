@@ -38,11 +38,11 @@ export function searchAndsort() {
             });
         }
 
-        if (sortvalue === 'title') {
+        if (sortvalue === 'All Posts', 'Following') {
             cards.sort((a, b) => {
-                const titleA = a.queryselector('.card-title').textContent.toLowerCase();
-                const titleB = b.queryselector('.card-title').textContent.toLowerCase();
-                return titleA.localeCompare(titleB);
+                const sortA = a.queryselector('All Posts').textContent.toLowerCase();
+                const sortB = b.queryselector('Following').textContent.toLowerCase();
+                return sortA.localeCompare(sortB);
             });
         }
 

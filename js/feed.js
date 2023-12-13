@@ -4,8 +4,7 @@ import { checkLogin, jwtDecoder, getPosts, createHTML, postsContainer } from "./
 const container = document.getElementById("container");
 const post = document.getElementById("post");
 
-checkLogin();
-jwtDecoder(accessToken);
+checkLogin(accessToken);
 
 post.addEventListener("submit", function (event) {
   event.preventDefault();

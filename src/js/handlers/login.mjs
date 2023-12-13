@@ -1,5 +1,5 @@
 import { login } from "../api/auth/login.mjs";
-import { displayError } from "./error.mjs";
+// import { displayError } from "./error.mjs";
 /**
  * this function handler our login function
  */

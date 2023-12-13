@@ -15,9 +15,8 @@ export async function register(profile) {
     body,
   });
 
-    const result = await response.json();
-    console.log(result);
+  const result = await response.json();
   alert("You are now registered");
-  window.location.replace("/profile/login/index.html");
+  window.location.replace("/index.html");
   return result;
 }

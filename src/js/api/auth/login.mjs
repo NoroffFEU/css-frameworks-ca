@@ -25,5 +25,5 @@ export async function login(profile) {
     
   alert("You are now logged in");
 
-  window.location.replace("/posts/index.html");
+  window.location.replace("/profile/index.html");
 }

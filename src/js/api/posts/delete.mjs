@@ -1,8 +1,8 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
-const action = "/posts";
-const method = "delete";
+const action = `/posts`;
+const method = `delete`;
 
 /**
  * this function let us delete post by id
@@ -17,7 +17,6 @@ export async function removePost(id) {
   const response = await authFetch(removePostURL, {
     method,
   });
-    
   alert("Your post has deleted");
   window.location.replace("/posts/index.html" || "/posts");
   return await response.json();

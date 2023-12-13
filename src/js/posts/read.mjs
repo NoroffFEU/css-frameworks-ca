@@ -51,7 +51,7 @@ export async function fetchwithToken(API_BASE_URL) {
         const postscontainer = document.getElementsByClassName('postscontainer')[0];
         
         json.forEach((post) => {
-            if (post.title && post.body) {
+            if (post.title, post.media && post.body) {
                 const postcard = document.createElement('div');
                 postcard.classList.add("card", "mb-5", "p-3", "position-relative");
 
@@ -63,9 +63,9 @@ export async function fetchwithToken(API_BASE_URL) {
                 postContent.textContent = post.body;
                 postContent.classList.add("card-text", "content-font");
 
-                //const postimg = document.createElement('img');
-                //postimg.imagecontent = post.media;
-                //postimg.classList.add("card-img-top img-fluid")
+                const img = document.createElement('img');
+                img.src = post.media;
+                img.classList.add("card-img-top-img-fluid", "img-thumbnail")
                 console.log(post)
        ///////// adding the butons/////////////////////         
 

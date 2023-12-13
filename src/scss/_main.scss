@@ -1,8 +1,8 @@
-
-
 body {
   margin-top: 150px;
   font-family: 'Jost', sans-serif;
+  height: 100%;
+
 }
 
 h4 {
@@ -24,14 +24,6 @@ h1 {
 color: $primary;
 }
 
-.crown {
-  margin: 0px auto 10px -30px !important;
-
-}
-
-.container img {
-  max-width: 230px;
-}
 
 .display-4 {
   font-weight: 200;
@@ -42,6 +34,9 @@ color: $primary;
   text-decoration: underline;
 }
 
+.custom-btn {
+width: 12em;
+}
 
 .navbar-brand {
   margin: 1.5rem 2rem;
@@ -56,6 +51,18 @@ color: $primary;
 }
 
 .divider {
-  border-top: solid 3px $gray-100;
+  border-top: solid 3px $gray-300;
   max-height: 500px;
+}
+
+
+/** login picture **/
+
+.crown {
+  margin: 0px auto 10px -30px !important;
+
+}
+
+.container img {
+  max-width: 230px;
 }

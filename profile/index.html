@@ -17,12 +17,26 @@
     <link rel="stylesheet" href="../dist/css/index.css" />
   </head>
   <body>
-    <nav class="navbar bg-dark py-3 px-4">
-      <a class="text-light fs-3 text-decoration-none" href="../">#SoMe</a>
-      <div class="col-6 col-lg-4 flex-center mx-auto"></div>
-      <div>
-        <a id="profileButton" href="./" class="btn btn-dark border-white">Profile</a>
-        <a class="btn btn-dark border-danger text-danger ms-2">Sign out</a>
+    <nav class="navbar navbar-expand-md bg-dark py-3 px-4">
+      <a class="text-light fs-3 navbar-brand" href="/">#SoMe</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item ms-3 mt-3 mt-md-0">
+            <a id="profileButton" class="btn btn-dark border-white">Profile</a>
+            <a id="signOut" class="btn btn-dark border-danger text-danger">Sign out</a>
+          </li>
+        </ul>
       </div>
     </nav>
     <div class="container-fluid">

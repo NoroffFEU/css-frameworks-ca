@@ -33,3 +33,4 @@ createpost.addEventListener('submit', async function (event) {
     }
 });
 
+console.log(postscontainer);

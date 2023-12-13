@@ -206,7 +206,7 @@ function showMore(post) {
     modalContainer.appendChild(modal);
     document.body.appendChild(modalContainer);
 }
-
+console.log(showMore)
 //////update modal////
 
 function showUpdateModal(post) {

@@ -1,5 +1,5 @@
 import { API_BASE_URL, accessToken, loader, profilePicture } from "./constants.js";
-import { checkLogin, getPosts, createHTML, getProfile, JWT } from "./module.mjs";
+import { checkLogin, getPosts, createHTML, getProfile, jwtDecoder } from "./module.mjs";
 
 const countPosts = document.getElementById("countPosts");
 const countFollowers = document.getElementById("countFollowers");
@@ -9,8 +9,9 @@ const noPostsMessage = document.getElementById("noPostsMessage");
 const followButton = document.querySelector("#followButton");
 const editProfile = document.querySelector("#editProfile");
 
-checkLogin();
+checkLogin(accessToken);
 const profileName = window.location.search.replace("?", "");
+const JWT = jwtDecoder(accessToken);
 
 getProfile(API_BASE_URL + "/profiles/", profileName)
   .then((data) => data.json())

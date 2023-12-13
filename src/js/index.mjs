@@ -1,3 +1,10 @@
+/*
+import * as listeners from "./handlers/index.mjs";
+import { postsTemplate } from "./templates/posts.mjs";
+import { resultById } from "./templates/post.mjs";
+import { postsFilter } from "./handlers/filterPosts.mjs";
+*/
+
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener} from "./handlers/login.mjs";
 

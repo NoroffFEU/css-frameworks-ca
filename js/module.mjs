@@ -2,29 +2,29 @@
  * Checks if there is an accesToken in local storage and directs to login if not found
  */
 
-export function checkLogin() {
-  if (!accessToken) {
-    window.location.href = "/login/";
+export function checkLogin(token) {
+  if (!token) {
+    window.location.href = "/login";
   }
 }
 
-import { accessToken, createPostUrl } from "./constants.js";
+import { accessToken, signOut } from "./constants.js";
 
 export function jwtDecoder(token) {
-  const tokenParts = token.split(".");
-  const header = tokenParts[0];
-  const payload = tokenParts[1];
-  const signature = tokenParts[2];
+  if (accessToken) {
+    const tokenParts = token.split(".");
+    const header = tokenParts[0];
+    const payload = tokenParts[1];
+    const signature = tokenParts[2];
 
-  const base64UrlPayload = payload;
-  const base64Payload = base64UrlPayload.replace(/-/g, "+").replace(/_/g, "/");
-  const jsonPayload = atob(base64Payload);
+    const base64UrlPayload = payload;
+    const base64Payload = base64UrlPayload.replace(/-/g, "+").replace(/_/g, "/");
+    const jsonPayload = atob(base64Payload);
 
-  const payloadObject = JSON.parse(jsonPayload);
-  return payloadObject;
+    const payloadObject = JSON.parse(jsonPayload);
+    return payloadObject;
+  }
 }
-
-export const JWT = jwtDecoder(accessToken);
 
 export function getProfile(url, name) {
   return fetch(url + name, {
@@ -120,5 +120,13 @@ export function createHTML(posts) {
   });
 }
 
-const profileButton = document.querySelector("#profileButton");
-profileButton.setAttribute("href", `${profileButton.href}?${JWT.name}`);
+if (accessToken) {
+  const JWT = jwtDecoder(accessToken);
+  const profileButton = document.querySelector("#profileButton");
+  profileButton.setAttribute("href", `/profile/?${JWT.name}`);
+}
+
+signOut.addEventListener("click", (event) => {
+  localStorage.removeItem("accessToken");
+  window.location.reload();
+});

@@ -1,8 +1,9 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 
+
 const action = "/auth/login";
-const method = "post";
+const method = "POST";
 
 export async function login(profile) {
   const loginURL = API_SOCIAL_URL + action;
@@ -22,8 +23,9 @@ export async function login(profile) {
   storage.save("token", accessToken);
     
   storage.save("profile", user);
-    
-  alert("You are now logged in");
 
+  alert("You are now logged in");
+  
   window.location.replace("/profile/index.html");
+
 }

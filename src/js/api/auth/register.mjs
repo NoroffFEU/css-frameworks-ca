@@ -1,10 +1,11 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
 
-const action = "/auth/register";
-const method = "post";
+const action = '/auth/register';
+const method = 'POST';
 
 export async function register(profile) {
   const registerURL = API_SOCIAL_URL + action;
+  
   const body = JSON.stringify(profile);
     
   const response = await fetch(registerURL, {
@@ -16,7 +17,10 @@ export async function register(profile) {
   });
 
   const result = await response.json();
+
   alert("You are now registered");
-  window.location.replace("/index.html");
+  
+  window.location.replace("/profile/login/index.html");
+  
   return result;
 }

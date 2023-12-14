@@ -6,18 +6,18 @@ import { postsFilter } from "./handlers/filterPosts.mjs";
 
 const path = location.pathname;
 
-if (path === "/profile/login/index.html" || path === "/post/login") {
+if (path === '/profile/login/index.html') {
     listeners.setLoginFormListener();
-  } else if (path === "/profile/register/index.html" || path === "/post/register") {
+  } else if (path === "/profile/register/index.html") {
     listeners.setRegisterFormListener();
-  } else if (path === "/post/create/index.html" || path === "/post/create") {
+  } else if (path === '/post/create') {
     listeners.setCreatePostFormListener();
-  } else if (path === "/post/edit/index.html" || path === "/post/edit") {
+  } else if (path === '/post/edit') {
     listeners.setUpdatePostFormListener();
-  } else if (path === "/posts/index.html" || path === "/posts") {
+  } else if (path === '/posts') {
     postsTemplate();
-  } else if (path === "/post/index.html" || path === "/post") {
+  } else if ( path === '/post') {
     resultById();
-  } else if (path === "/posts/myPosts.html") {
+  } else if (path === '/posts') {
     postsFilter();
   }

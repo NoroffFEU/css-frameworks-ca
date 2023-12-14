@@ -33,7 +33,7 @@
           <ul class="navbar-nav text-center">
               <li class="nav-item ms-3 mt-3 mt-md-0">
                   <form>
-                      <input id="search" type="search" class="form-control rounded-5" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+                      <input id="search" type="search" class="form-control rounded-5" placeholder="Search" aria-label="Search">
                   </form>
               </li>
               <li class="nav-item ms-3 mt-3 mt-md-0">
@@ -74,21 +74,13 @@
               Filter
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">For You</a></li>
-              <li><a class="dropdown-item" href="#">Following</a></li>
-            </ul>
-          </div>
-          <div class="dropdown col-auto">
-            <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Sort By
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Newest first</a></li>
-              <li><a class="dropdown-item" href="#">Oldest first</a></li>
+              <li><a role="button" id="forYou" class="dropdown-item">For You</a></li>
+              <li><a role="button" id="following" class="dropdown-item">Following</a></li>
             </ul>
           </div>
         </div>
-        <div id="posts-container"></div>
+        <div id="posts-container">
+        </div>
         <div class="loader">
           <div class="row bg-light border rounded-4 py-2 mb-3">
             <div class="col-auto placeholder-glow">

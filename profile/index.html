@@ -43,16 +43,17 @@
       <div class="col col-md-10 col-lg-6 col-xl-5 col-xxl-5 mx-auto pb-5 min-vh-100">
         <div class="row align-items-center">
           <div class="col-auto">
-            <a onclick="window.history.back()" role="button">
+            <a href="../" role="button">
               <i class="fa-solid fa-arrow-left fs-3 p-3 text-dark"></i>
+              <span class="d-none">Go back</span>
             </a>
           </div>
         </div>
         <div class="row justify-content-center justify-content-md-between px-4 align-items-center bg-light border rounded-4 p-5">
-          <div class="col-8 col-md-4 order-md-2 mb-2 mb-md-0 p-0" style="height: 150px; width: 150px">
+          <div id="profilePictureContainer" class="col-8 col-md-4 order-md-2 mb-2 mb-md-0 p-0" style="height: 150px; width: 150px">
             <img id="profilePicture" alt="Profile picture" class="w-100 h-100 rounded-circle" style="object-fit: cover" />
           </div>
-          <div class="col-10 col-md-7 p-0 order-md-1">
+          <div id="countContainer" class="col-10 col-md-7 p-0 order-md-1">
             <h3 id="displayName" class="m-0 fs-5 text-center"></h3>
             <div class="row text-center my-3 mx-0 justify-content-between">
               <div class="col-auto">
@@ -69,7 +70,7 @@
               </div>
             </div>
             <div class="row w-100 mx-auto px-2">
-              <button id="followButton" class="btn btn-primary">Follow</button>
+              <button id="followButton" class="btn"></button>
               <a id="editProfile" href="./edit/" class="btn btn-primary d-none border-white mx-2">Edit Profile</a>
             </div>
           </div>

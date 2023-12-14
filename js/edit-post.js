@@ -1,7 +1,8 @@
 import { API_BASE_URL, accessToken, comments, reactions } from "./constants.js";
-import { checkLogin, getPosts } from "./module.mjs";
+import { checkLogin, getPosts, jwtDecoder } from "./module.mjs";
 
 checkLogin(accessToken);
+const JWT = jwtDecoder(accessToken);
 
 const parameterString = window.location.search;
 const params = new URLSearchParams(parameterString);

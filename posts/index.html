@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delicious Recipes | Feed</title>
+    <title>Delicious Recipes | Posts</title>
     <link
       rel="stylesheet"
       href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../dist/css/index.css" />
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="/src/js/index.mjs" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -73,6 +78,7 @@
         </select>
 
         <h3 class="ms-4 mt-4">RECIPES</h3>
+        <div id="posts"></div>
         <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
           <div class="col">
             <div class="card h-100">

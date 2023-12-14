@@ -1,4 +1,9 @@
 import { login } from "../api/auth/login.mjs";
+import { displayError } from "./error.mjs";
+
+/**
+ * login function
+ */
 
 
 export function setLoginFormListener() {

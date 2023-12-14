@@ -2,11 +2,13 @@ import { API_SOCIAL_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
 
 
+
 const action = "/auth/login";
-const method = "POST";
+const method = "post";
 
 export async function login(profile) {
   const loginURL = API_SOCIAL_URL + action;
+  
   const body = JSON.stringify(profile);
     
   const response = await fetch(loginURL, {
@@ -17,15 +19,21 @@ export async function login(profile) {
     body,
   });
 
-    
   const { accessToken, ...user } = await response.json();
     
   storage.save("token", accessToken);
     
   storage.save("profile", user);
 
-  alert("You are now logged in");
+  if (response.ok) {
+    alert("You are now logged in");
+    window.location.replace("/profile/index.html");
+} else {
+    alert("Write your email and password again")
+}
+
   
-  window.location.replace("/profile/index.html");
+  
+  
 
 }

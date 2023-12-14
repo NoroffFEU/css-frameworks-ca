@@ -5,7 +5,7 @@ const method = 'POST';
 
 export async function register(profile) {
   const registerURL = API_SOCIAL_URL + action;
-  
+  console.log(registerURL)
   const body = JSON.stringify(profile);
     
   const response = await fetch(registerURL, {

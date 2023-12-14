@@ -4,6 +4,10 @@ import { checkLogin, jwtDecoder, getPosts, createHTML, postsContainer } from "./
 const container = document.getElementById("container");
 const post = document.getElementById("post");
 
+const forYou = document.querySelector("#forYou");
+const following = document.querySelector("#following");
+const followingUrl = `${API_BASE_URL}/posts/following`;
+
 checkLogin(accessToken);
 
 post.addEventListener("submit", function (event) {
@@ -31,13 +35,38 @@ post.addEventListener("submit", function (event) {
 
 let posts = [];
 
-getPosts(`${getPostsUrl}?_author=true&_comments=true&_reactions=true`)
+getPosts(getPostsUrl)
   .then((data) => data.json())
   .then((json) => {
     posts = json;
     loader.classList.add("d-none");
+    postsContainer.innerHTML = "";
     createHTML(posts);
   });
+
+forYou.addEventListener("click", (event) => {
+  getPosts(getPostsUrl)
+    .then((data) => data.json())
+    .then((json) => {
+      console.log(json);
+      posts = json;
+      loader.classList.add("d-none");
+      postsContainer.innerHTML = "";
+      createHTML(posts);
+    });
+});
+
+following.addEventListener("click", (event) => {
+  getPosts(followingUrl + "?_author=true&_comments=true&_reactions=true")
+    .then((data) => data.json())
+    .then((json) => {
+      console.log(json);
+      posts = json;
+      loader.classList.add("d-none");
+      postsContainer.innerHTML = "";
+      createHTML(posts);
+    });
+});
 
 const hiddenDiv = document.createElement("div");
 hiddenDiv.classList.add("hiddendiv");

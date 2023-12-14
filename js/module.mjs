@@ -8,7 +8,7 @@ export function checkLogin(token) {
   }
 }
 
-import { API_BASE_URL, accessToken, signOut } from "./constants.js";
+import { accessToken, signOut } from "./constants.js";
 
 export function jwtDecoder(token) {
   if (accessToken) {
@@ -107,9 +107,6 @@ export function createHTML(posts) {
     reactIcon.classList.add("fa-regular", "fa-heart", "me-1", "text-decoration-none", "text-black");
     commentIcon.classList.add("fa-regular", "fa-comment", "me-1", "text-decoration-none", "text-black");
 
-    reactButton.setAttribute("data-id", id);
-    commentButton.setAttribute("data-id", id);
-
     postsContainer.appendChild(postWrapper);
 
     postWrapper.append(avatar, postContent);
@@ -136,8 +133,3 @@ signOut.addEventListener("click", (event) => {
   localStorage.removeItem("accessToken");
   window.location.reload();
 });
-
-const reactions = document.querySelectorAll(".reactions");
-// reactions.addEventListener("click", (event) => {
-//   fetch(API_BASE_URL + `posts//react/👍`);
-// });

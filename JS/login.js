@@ -13,7 +13,16 @@ const LOGIN_API_URL = `${API_BASE_URL}/api/v1/social/auth/login`;
 const form = document.querySelector('#login-form');
 const userEmail = document.querySelector('#loginEmail');
 const userPassword = document.querySelector('#loginPassword');
-
+/**
+ * Logs in a user by sending a POST request to the login API endpoint.
+ *
+ * @async
+ * @function loginUser
+ * @param {Object} user - The user object: login details.
+ * @param {string} user.emailValue - User's Email.
+ * @param {string} user.passwordValue - The password.
+ * @returns {Promise<void>}
+ */
 async function loginUser(user) {
 console.log('Login user:', user);
 const postBody = JSON.stringify(user);
@@ -32,8 +41,6 @@ window.location.href = '../feed/index.html';
 
 const userId = userLoginData.name;
 addToLocalStorage('userId', userId);
-const userName = userLoginData.name;
-updateUserName(userName);
 };
 
 form.addEventListener('submit', async (event) => {
@@ -45,9 +52,6 @@ const userloginDetails = {
   await loginUser(userloginDetails);
 });
 
-function updateUserName(userName) {
-  const userNameElement = document.querySelector('.user-name');
-  userNameElement.innerText = userName;
-}
+
 
 

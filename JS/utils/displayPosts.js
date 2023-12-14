@@ -1,4 +1,5 @@
 import { generatePostHTML } from './generatePostHTML.js';
+import {deletheAndEditBtn} from './deleteAndEditBtn.js';
 
 let posts = [];
 console.log('displayPosts.js loaded');
@@ -23,11 +24,13 @@ function displayPosts(posts) {
   document.getElementById("newest").addEventListener("click", () => {
     displayedPosts = [...allPosts].sort((a, b) => new Date(b.created) - new Date(a.created)).slice(0, 50);
     updatePostsHTML();
+    deletheAndEditBtn();
   });
 
   document.getElementById("oldest").addEventListener("click", () => {
     displayedPosts = [...allPosts].sort((a, b) => new Date(a.created) - new Date(b.created)).slice(0, 50);
     updatePostsHTML();
+    deletheAndEditBtn();
   });
 
   if (posts.length > 50) {
@@ -44,41 +47,10 @@ function displayPosts(posts) {
     });
     postDisplayContainer.appendChild(loadMoreButton);
   }
-//  console.log(allPosts, displayedPosts);
+ console.log(allPosts, displayedPosts);
  
- const authorNames = allPosts.map(post => post.author.name);
+ deletheAndEditBtn();
 
-// const userId = localStorage.getItem("userId");
-
-// // move to singel post page later
-// posts.forEach(post => {
-//   const authorName = post.author.name;
- 
-//   const deleteButton = document.querySelector(`.delete-post-btn.${authorName}`);
-
-//   if (deleteButton && authorName === userId) {
-//     deleteButton.classList.remove('d-none');
-//   }
-// });
-  //----------------------------------------
 }
 
 export { displayPosts, posts };
-
-
-// deleteButtons.forEach(button => {
-//   button.addEventListener('click', async (event) => {
-//     const postId = event.target.dataset.postId;
-//     const deletePostUrl = `https://api.noroff.dev/api/v1/social/posts/${postId}`;
-//     const deletePostResponse = await fetch(deletePostUrl, {
-//       method: 'DELETE',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-//       },
-//     });
-//     const deletePostData = await deletePostResponse.json();
-//     console.log(deletePostData);
-//     window.location.reload();
-//   });
-// });

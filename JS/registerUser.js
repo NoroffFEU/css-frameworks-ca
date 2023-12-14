@@ -12,7 +12,17 @@ const form = document.querySelector('#registerForm');
 const userName = document.querySelector('#form-name');
 const userEmail = document.querySelector('#form-email');
 const userPassword = document.querySelector('#form-password');
-
+/**
+ * Registers a new user by sending a POST request to the authentication API endpoint.
+ *
+ * @async
+ * @function registerUser
+ * @param {Object} user - The user object containing registration details.
+ * @param {string} user.nameValue - The username.
+ * @param {string} user.emailValue - Email address of the user must be an @noroff.no or @stud.noroff.no
+ * @param {string} user.passwordValue - The password.
+ * @returns {Promise<void>}
+ */
 async function registerUser(user) {
   console.log('Register user:', user);
   const postBody = JSON.stringify(user);

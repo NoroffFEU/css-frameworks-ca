@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../dist/css/index.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <link rel="icon" type="image/x-icon" href="/images/1131031-84.png">
-  <script type="module" src="../JS/feed-page.js" defer></script> 
+  <script type="module" src="../JS/feed-page.js" defer></script>
   <script type="module" src="../JS/utils/createPost.js"></script>
   <script type="module" src="../JS/utils/singelPostEntry.js" defer></script>
   <title>Feed | Toastit</title>
@@ -16,68 +18,66 @@
 
 <body class="bg-dark">
   <nav class="navbar navbar-expand navbar-light bg-light border-bottom border-4 mb-3">
-    <a class="navbar-brand ms-4" href="../index.html"><img src="../images/1131031-84.png" alt="Toastit-logo" class="ms-4"></a>
+    <a class="navbar-brand ms-4" href="../index.html"><img src="../images/1131031-84.png" alt="Toastit-logo"
+        class="ms-4"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto flex-column flex-sm-row"> <!-- Add flex-column and flex-sm-row classes -->
+      <ul class="navbar-nav ml-auto flex-column flex-sm-row">
         <li class="nav-item">
-          <a class="nav-link fw-semibold" href="index.html">Feed</a>
-        </li>
-        <li>
-          <a class="nav-link fw-semibold" href="../index.html">Log out</a>
+          <!-- <a class="nav-link fw-semibold" href="index.html">Feed</a> -->
         </li>
       </ul>
     </div>
-    <div class="float-end me-2">
-      <a class="nav-link fw-semibold" href="../profile/index.html"><img src="../images/profile-pictures/a0d7d86f-9157-4fbe-be40-31e76765585b.png"
-        class="profile-picture border border-primary border-4 rounded-circle " title="Profile"></img></a>
+    <div class="user-name float-end me-2">
     </div>
   </nav>
-
   <div class="input-group mb-3 container">
-    <input type="text" class="form-control rounded-pill m-1" id="search-bar" placeholder="🔍" aria-label="Search">
-    <button class="btn btn-outline-secondary rounded-pill m-1" type="button" id="search-button">Search</button>
+    <input type="text" class="form-control rounded-pill m-1" id="search-input" placeholder="🔍" aria-label="Search">
+    <!-- <button class="btn btn-outline-secondary rounded-pill m-1" type="button" id="search-button">Search</button> -->
   </div>
-<!-- create post dropdown -->
-<div class="container bg-primary text-white rounded mb-4 col-10">
+  <h1 class="col-8 mx-auto text-white d-none">Feed</h1>
+  <!-- create post dropdown -->
+  <div class="container bg-primary text-white rounded mb-4 col-10">
+
     <h2>
-        <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm" class="text-white text-decoration-none">🍞Create a Post</a>
+      <a data-bs-toggle="collapse" href="#postForm" role="button" aria-expanded="false" aria-controls="postForm"
+        class="text-white text-decoration-none">🍞Create a Post</a>
     </h2>
     <div class="collapse" id="postForm">
-        <form>
-            <div class="mb-3">
-                <label for="postTitle" class="form-label">Title</label>
-                <input type="text" class="form-control bg-dark text-white" id="postTitle" name="postTitle" required>
-            </div>
-            <div class="mb-3">
-                <label for="postText" class="form-label">Text (max 280 characters)</label>
-                <textarea class="form-control bg-dark text-white" id="postText" name="postText" rows="4"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="Tags" class="form-label">Tags</label>
-              <textarea class="form-control bg-dark text-white" id="postTags" name="postTags" ></textarea>
-          </div>
-            <div class="mb-3">
-                <label for="postImage" class="form-label">Upload Image URL</label>
-                <input type="text" class="form-control bg-dark text-white" id="postImage" name="postImage">
-            </div>
-            <button type="submit" class="btn btn-success mb-2 bg-dark text-white">Post</button>
-        </form>
+      <form>
+        <div class="mb-3">
+          <label for="postTitle" class="form-label">Title</label>
+          <input type="text" class="form-control bg-dark text-white" id="postTitle" name="postTitle" required>
+        </div>
+        <div class="mb-3">
+          <label for="postText" class="form-label">Text (max 280 characters)</label>
+          <textarea class="form-control bg-dark text-white" id="postText" name="postText" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="Tags" class="form-label">Tags</label>
+          <textarea class="form-control bg-dark text-white" id="postTags" name="postTags"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="postImage" class="form-label">Upload Image URL</label>
+          <input type="text" class="form-control bg-dark text-white" id="postImage" name="postImage">
+        </div>
+        <button type="submit" class="btn btn-success mb-2 bg-dark text-white">Post</button>
+      </form>
     </div>
-</div>
+  </div>
 
-<div class="container">
-  <!-- Sorting Dropdown -->
-  <div class="dropdown mb-3">
+  <div class="container">
+    <!-- Sorting Dropdown -->
+    <div class="dropdown mb-3">
       <button class="btn btn-primary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
-          Sort by
+        Sort by
       </button>
       <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-          <li><a class="dropdown-item" id="newest" href="#">Newest</a></li>
-          <li><a class="dropdown-item" id="oldest" href="#">Oldest</a></li>
-          <!-- <li><a class="dropdown-item" id="mostPopular" href="#">Most Popular</a></li> -->
+        <li><a class="dropdown-item" id="newest" href="#">Newest</a></li>
+        <li><a class="dropdown-item" id="oldest" href="#">Oldest</a></li>
+        <!-- <li><a class="dropdown-item" id="mostPopular" href="#">Most Popular</a></li> -->
       </ul>
+    </div>
   </div>
-</div>
   <!-- Post container -->
   <div class="container text-white mb-4">
     <div class="row justify-content-center post-wrapper post-display-container" id="post-display">
@@ -85,25 +85,9 @@
       <div class="col-8 bg-primary m-1">
         <p>log in to see post feed</p>
       </div>
-      <!-- <div class="col-8 bg-primary m-1">
-        <h3 class="card-title">Halloween Toaster</h3>
-        <p><img src="../images/profile-pictures/a0d7d86f-9157-4fbe-be40-31e76765585b.png"
-            class="rounded-circle mh-100 border border-3 profile-pictures"  alt="profile image"> Jedi-Toaster</p>
-        <img src="../images/feed-images/d1031791-19ab-498e-b9fd-d4b324f2d8c8.png" class="card-img-top" alt="post img">
-        <div class="card-body">
-          <p class="card-text overflow-hidden post-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum nemo et consequatur aut, earum distinctio ab modi architecto voluptatem neque eos consequuntur ipsam. Dignissimos fuga vel ipsa repudiandae nihil eos. </p>
-        </div>
-        <div class="d-flex flex-row justify-content-evenly mb-3">
-          <div class="p-2">⇧ 13</div>
-          <div class="p-2">🗨 22</div>
-          <div class="p-2">26/10/23</div>
-        </div>
-      </div>   -->
 
     </div>
   </div>
-
-  <script defer type="module" src="../JS/index.js"></script>
 </body>
 
 </html>

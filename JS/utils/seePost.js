@@ -1,9 +1,13 @@
 import { fetcher } from '../fetcher.js';
 import { logginChecker } from './loggin-Checker.js';
+import { displayUsernames } from "./displayUsername.js";
 console.log('seePost.js loaded');
+
+displayUsernames();
 
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('postId');
+console.log(postId);
 
 async function getPostById(postId) {
   const apiUrl = `https://api.noroff.dev/api/v1/social/posts/${postId}?_author=true&_comments=true&_reactions=true`;
@@ -72,18 +76,6 @@ authorContainer.appendChild(authorImage);
   postBody.appendChild(postText);
   postElement.appendChild(postBody);
 
-  // Delete post btn
-  const deleteButton = document.createElement('button');
-  deleteButton.classList.add('btn', 'bg-primary', 'text-white', 'float-end');
-  deleteButton.title = 'delete post';
-  deleteButton.innerHTML = '🗑';
-
-  deleteButton.addEventListener('click', function () {
-    // Handle delete post logic here later
-  });
-
-  postElement.appendChild(deleteButton);
-
   const detailsContainer = document.createElement('div');
   detailsContainer.classList.add('d-flex', 'flex-column', 'flex-sm-row', 'justify-content-evenly', 'mb-3');
 
@@ -108,7 +100,7 @@ authorContainer.appendChild(authorImage);
 
    container.appendChild(postElement);
     
-  // Create a form for submitting comments
+  // Form for submitting comments, JS WIP !!!!!!!!
   const commentFormContainer = document.createElement('div');
   commentFormContainer.id = 'comment-form'; 
   commentFormContainer.classList.add('col-10', 'bg-primary', 'm-1');
@@ -117,7 +109,7 @@ authorContainer.appendChild(authorImage);
 
   const commentInput = document.createElement('textarea');
   commentInput.classList.add('bg-primary', 'm-1', 'mt-2', 'form-control', 'mb-2', 'text-white');
-  commentInput.placeholder = 'Add a comment...';
+  commentInput.placeholder = 'currently under construction, this is not working yet';
   commentForm.appendChild(commentInput);
 
   const submitButton = document.createElement('button');
@@ -140,9 +132,43 @@ authorContainer.appendChild(authorImage);
   });
   commentFormContainer.appendChild(commentForm);
 
-  // Append the comment form to the main container
   container.appendChild(commentFormContainer);
+
+  // Generate HTML for Comments ----------------------------------
+
+  const commentsContainer = document.createElement('div');
+  commentsContainer.classList.add('col-10', 'm-1', 'd-grid', 'gap-3' );
+
+  post.comments.forEach((comment) => {
+    const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment', 'mt-1', 'bg-primary', 'p-2');
+
+    const authorImage = document.createElement('img');
+ 
+    if (post.author.avatar === null || post.author.avatar === undefined) {
+      authorImage.src = '../images/profile-pictures/default-profile.jpg';
+    } else {
+      authorImage.src = post.author.avatar;
+    }
+    authorImage.classList.add('rounded-circle', 'border', 'border-3', 'profile-pictures');
+    authorImage.alt = 'profile image';
+    commentDiv.appendChild(authorImage);
+
+    const authorName = document.createElement('p');
+    authorName.textContent = comment.author.name;
+    commentDiv.appendChild(authorName);
+
+    const commentBody = document.createElement('p');
+    commentBody.textContent = comment.body;
+    commentDiv.appendChild(commentBody);
+
+    const createdDate = document.createElement('p');
+    const shortenDate = comment.created.slice(0, 10);
+    createdDate.textContent = shortenDate;
+    commentDiv.appendChild(createdDate);
+
+    commentsContainer.appendChild(commentDiv);
+  });
+  container.appendChild(commentsContainer);
 }
-
-
 document.addEventListener('DOMContentLoaded', loadPostDetails);

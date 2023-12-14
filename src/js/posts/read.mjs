@@ -67,6 +67,12 @@ export async function fetchwithToken(API_BASE_URL) {
                 img.src = post.media;
                 img.classList.add("card-img-top-img-fluid", "img-thumbnail")
                 console.log(post)
+
+                // adding media file if available
+                //let mediaContent = '';
+                //if (post.media) {
+                    //mediaContent = `<img src="${post.media}" alt="Post media" class="img-fluid mb-3">`;
+                //}
        ///////// adding the butons/////////////////////         
 
                 const buttonrow = document.createElement ('div');

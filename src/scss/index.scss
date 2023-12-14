@@ -1,1 +1,46 @@
 
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    margin: 120px 20px 20px;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    
+    text-align: var(--bs-body-text-align);
+    //--bs-body-bg:rgb(58, 139, 58);    
+}
+
+body{
+  background-image: url(/images/plant-tree.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav {
+    --bs-nav-link-hover-color: red;
+    
+}
+
+.navbar {
+  --bs-navbar-padding-x: 15px;
+  --bs-navbar-brand-hover-color: red;
+  --bs-navbar-brand-font-size: 32px;
+}
+
+.navbar-brand {
+  margin-right: 40px;
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+
+
+.nav-link {
+  font-weight: bold;
+  font-size: 30px;
+  justify-content: center;
+}

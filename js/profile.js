@@ -1,4 +1,4 @@
-import { API_BASE_URL, accessToken, loader, profilePicture } from "./constants.js";
+import { API_BASE_URL, accessToken, countContainer, loader, profilePicture, profilePictureContainer } from "./constants.js";
 import { checkLogin, getPosts, createHTML, getProfile, jwtDecoder } from "./module.mjs";
 
 const countPosts = document.getElementById("countPosts");
@@ -12,6 +12,34 @@ const editProfile = document.querySelector("#editProfile");
 checkLogin(accessToken);
 const profileName = window.location.search.replace("?", "");
 const JWT = jwtDecoder(accessToken);
+const followUrl = `${API_BASE_URL}/profiles/${profileName}/follow`;
+const unfollowUrl = `${API_BASE_URL}/profiles/${profileName}/unfollow`;
+
+function checkFollowing() {
+  fetch(API_BASE_URL + `/profiles/${JWT.name}/?_following=true`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+    .then((data) => data.json())
+    .then((json) => {
+      const isFollowing = json.following.find(({ name }) => {
+        if (name == profileName) {
+          return true;
+        }
+      });
+      if (isFollowing) {
+        followButton.textContent = "Following";
+        followButton.classList.add("btn-success");
+        followButton.setAttribute("data-id", "1");
+      } else {
+        followButton.textContent = "Follow";
+        followButton.classList.add("btn-primary");
+        followButton.setAttribute("data-id", "0");
+      }
+    });
+}
+checkFollowing();
 
 getProfile(API_BASE_URL + "/profiles/", profileName)
   .then((data) => data.json())
@@ -27,6 +55,9 @@ getProfile(API_BASE_URL + "/profiles/", profileName)
     }
     if (user.avatar) {
       profilePicture.setAttribute("src", user.avatar);
+    } else {
+      profilePictureContainer.classList.add("d-none");
+      countContainer.classList.add("mx-auto");
     }
   });
 
@@ -46,12 +77,38 @@ getPosts(`${API_BASE_URL}/profiles/${profileName}/posts?_author=true&_comments=t
   .then(() => {
     if (JWT.name === displayName.textContent) {
       const gears = document.querySelectorAll(".fa-gear");
-      console.log(gears);
       gears.forEach((gear) => {
         gear.classList.remove("d-none");
       });
     }
   });
+
+followButton.addEventListener("click", (event) => {
+  if (followButton.dataset.id === "1") {
+    fetch(unfollowUrl, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+      .then((data) => data.json())
+      .then((json) => {
+        window.location.reload();
+      });
+  }
+  if (followButton.dataset.id === "0") {
+  }
+  fetch(followUrl, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  })
+    .then((data) => data.json())
+    .then((json) => {
+      window.location.reload();
+    });
+});
 
 document.addEventListener("click", function (event) {
   if (event.target.matches(".fa-gear")) {

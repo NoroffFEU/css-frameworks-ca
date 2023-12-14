@@ -8,7 +8,7 @@ export function checkLogin(token) {
   }
 }
 
-import { accessToken, signOut } from "./constants.js";
+import { API_BASE_URL, accessToken, signOut } from "./constants.js";
 
 export function jwtDecoder(token) {
   if (accessToken) {
@@ -69,6 +69,7 @@ export function createHTML(posts) {
       avatar.setAttribute("href", `./profile/?${author.name}`);
       const avatarImg = document.createElement("img");
       avatarImg.setAttribute("src", author.avatar);
+      avatarImg.setAttribute("alt", "Prifile picture");
       avatarImg.classList.add("rounded-circle", "w-100", "h-100");
       avatarImg.style.objectFit = "cover";
       avatar.append(avatarImg);
@@ -81,7 +82,9 @@ export function createHTML(posts) {
     infoLine.classList.add("mb-2", "row", "justify-content-between");
     const postTitle = document.createElement("p");
     postTitle.append(title);
+    postTitle.classList.add("text-break");
     const postBody = document.createElement("p");
+    postBody.classList.add("text-break");
     postBody.append(body);
     const interactLine = document.createElement("div");
     interactLine.classList.add("row");
@@ -95,14 +98,17 @@ export function createHTML(posts) {
     gear.setAttribute("role", "button");
     gear.setAttribute("data-id", id);
 
-    const reactButton = document.createElement("a");
+    const reactButton = document.createElement("span");
     const reactIcon = document.createElement("i");
     const commentButton = document.createElement("a");
     const commentIcon = document.createElement("i");
-    reactButton.classList.add("col-auto", "reactions");
-    commentButton.classList.add("col-auto");
-    reactIcon.classList.add("fa-regular", "fa-heart", "me-1");
-    commentIcon.classList.add("fa-regular", "fa-comment", "me-1");
+    reactButton.classList.add("col-auto", "reactions", "text-decoration-none", "text-black");
+    commentButton.classList.add("col-auto", "text-decoration-none", "text-black");
+    reactIcon.classList.add("fa-regular", "fa-heart", "me-1", "text-decoration-none", "text-black");
+    commentIcon.classList.add("fa-regular", "fa-comment", "me-1", "text-decoration-none", "text-black");
+
+    reactButton.setAttribute("data-id", id);
+    commentButton.setAttribute("data-id", id);
 
     postsContainer.appendChild(postWrapper);
 
@@ -130,3 +136,8 @@ signOut.addEventListener("click", (event) => {
   localStorage.removeItem("accessToken");
   window.location.reload();
 });
+
+const reactions = document.querySelectorAll(".reactions");
+// reactions.addEventListener("click", (event) => {
+//   fetch(API_BASE_URL + `posts//react/👍`);
+// });

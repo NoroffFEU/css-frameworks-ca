@@ -15,6 +15,8 @@ const postAuthorName = document.querySelector("#postAuthorName");
 const editForm = document.querySelector("#editForm");
 const deletePost = document.querySelector("#deletePost");
 
+// Fetches a single post using post id and adds content
+// as input value
 getPosts(singlePostUrl)
   .then((data) => data.json())
   .then((post) => {
@@ -26,6 +28,8 @@ getPosts(singlePostUrl)
     reactions.append(post._count.reactions);
   });
 
+// Fetches PUT request with value from inputs
+// Redirects to profile
 editForm.addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("submit");
@@ -42,10 +46,11 @@ editForm.addEventListener("submit", (event) => {
   })
     .then((data) => data.json())
     .then(() => {
-      window.location.href = `../../../profile/?${JWT.name}`;
+      window.location.href = `/profile/?${JWT.name}`;
     });
 });
 
+// Sends DELETE request  with the post id
 deletePost.addEventListener("click", (event) => {
   fetch(`${API_BASE_URL}/posts/${id}`, {
     method: "DELETE",
@@ -55,10 +60,11 @@ deletePost.addEventListener("click", (event) => {
   })
     .then((data) => data.json())
     .then(() => {
-      window.location.href = `../../../profile/?${JWT.name}`;
+      window.location.href = `/profile/?${JWT.name}`;
     });
 });
 
+// Same hidden div that dynamically resizes textarea
 const hiddenDiv = document.createElement("div");
 hiddenDiv.classList.add("hiddendiv");
 document.body.appendChild(hiddenDiv);

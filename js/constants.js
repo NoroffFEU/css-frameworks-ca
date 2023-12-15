@@ -13,5 +13,7 @@ export const profilePictureContainer = document.querySelector("#profilePictureCo
 export const profilePicture = document.querySelector("#profilePicture");
 export const countContainer = document.querySelector("#countContainer");
 export const signOut = document.querySelector("#signOut");
+export const postsContainer = document.getElementById("posts-container");
 
+// Local Storage
 export const accessToken = localStorage.getItem("accessToken");

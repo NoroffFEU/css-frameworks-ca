@@ -1,6 +1,5 @@
-/**
- * Checks if there is an accesToken in local storage and directs to login if not found
- */
+// Checks if there is an accesToken in local storage
+// and directs to login if not found
 
 export function checkLogin(token) {
   if (!token) {
@@ -8,8 +7,13 @@ export function checkLogin(token) {
   }
 }
 
-import { accessToken, signOut } from "./constants.js";
+import { accessToken, signOut, postsContainer } from "./constants.js";
 
+/**
+ * A JWT decoder that takes a token string and splits into header, payload and signature, returns the payload
+ * @param {string} token JWT
+ * @returns Your JWT payload as an object
+ */
 export function jwtDecoder(token) {
   if (accessToken) {
     const tokenParts = token.split(".");
@@ -25,6 +29,8 @@ export function jwtDecoder(token) {
     return payloadObject;
   }
 }
+
+// Various fetchers
 
 export function getProfile(url, name) {
   return fetch(url + name, {
@@ -55,7 +61,10 @@ export function deletePost(id) {
   });
 }
 
-export const postsContainer = document.getElementById("posts-container");
+/**
+ * Takes an array of posts and creates HTML using the properties provided
+ * @param {array} posts An array of objects (posts)
+ */
 export function createHTML(posts) {
   posts.forEach(({ author, body, comments, created, id, media, reactions, tags, title, updated, _count }) => {
     const postWrapper = document.createElement("div");
@@ -81,11 +90,11 @@ export function createHTML(posts) {
     const infoLine = document.createElement("div");
     infoLine.classList.add("mb-2", "row", "justify-content-between");
     const postTitle = document.createElement("p");
-    postTitle.append(title);
+    postTitle.textContent = title;
     postTitle.classList.add("text-break");
     const postBody = document.createElement("p");
     postBody.classList.add("text-break");
-    postBody.append(body);
+    postBody.textContent = body;
     const interactLine = document.createElement("div");
     interactLine.classList.add("row");
 
@@ -123,6 +132,7 @@ export function createHTML(posts) {
   });
 }
 
+// Makes the href of the profile button in the nav link to your own profile using search params
 if (accessToken) {
   const JWT = jwtDecoder(accessToken);
   const profileButton = document.querySelector("#profileButton");

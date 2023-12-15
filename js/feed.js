@@ -1,5 +1,5 @@
-import { API_BASE_URL, getPostsUrl, accessToken, createPostUrl, loader } from "./constants.js";
-import { checkLogin, jwtDecoder, getPosts, createHTML, postsContainer } from "./module.mjs";
+import { API_BASE_URL, getPostsUrl, accessToken, createPostUrl, loader, postsContainer } from "./constants.js";
+import { checkLogin, jwtDecoder, getPosts, createHTML } from "./module.mjs";
 
 const container = document.getElementById("container");
 const post = document.getElementById("post");
@@ -10,6 +10,9 @@ const followingUrl = `${API_BASE_URL}/posts/following`;
 
 checkLogin(accessToken);
 
+// Fires when the form for making a post is submitted.
+// Extracts values of inputs and sends post request
+// with that added to body
 post.addEventListener("submit", function (event) {
   event.preventDefault();
   const postTitle = document.getElementById("title").value;
@@ -44,6 +47,11 @@ getPosts(getPostsUrl)
     createHTML(posts);
   });
 
+// Fetches different posts depending on what option you
+// have selected
+// - forYou is every entry from the api
+// - following fetches entries from followed profiles
+
 forYou.addEventListener("click", (event) => {
   getPosts(getPostsUrl)
     .then((data) => data.json())
@@ -68,6 +76,9 @@ following.addEventListener("click", (event) => {
     });
 });
 
+// Creates a hidden div that expands as you type in a
+// textarea. Textarea then matches height to make it
+// dynamically resize as you type
 const hiddenDiv = document.createElement("div");
 hiddenDiv.classList.add("hiddendiv");
 document.body.appendChild(hiddenDiv);

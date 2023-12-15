@@ -11,6 +11,8 @@ const discardChanges = document.querySelector("#discardChanges");
 const JWT = jwtDecoder(accessToken);
 console.log(JWT);
 
+// Checks for avatar, displays it and adds to input value
+// Checks for banner and adds to input value
 getProfile(API_BASE_URL + "/profiles/", JWT.name)
   .then((data) => data.json())
   .then((json) => {
@@ -27,9 +29,10 @@ getProfile(API_BASE_URL + "/profiles/", JWT.name)
     }
   });
 
+// Sends PUT request with url from inputs and
+// redirects to profile page
 editForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(newAvatar.value, newBanner.value);
   fetch(API_BASE_URL + `/profiles/${JWT.name}/media`, {
     method: "PUT",
     headers: {
@@ -44,10 +47,11 @@ editForm.addEventListener("submit", (event) => {
     .then((data) => data.json())
     .then((json) => {})
     .then(() => {
-      window.location.href = `../../profile/?${JWT.name}`;
+      window.location.href = `/profile/?${JWT.name}`;
     });
 });
 
+// Sends to profile page without submitting
 discardChanges.addEventListener("click", (event) => {
-  window.location.href = `../../profile/?${JWT.name}`;
+  window.location.href = `/profile/?${JWT.name}`;
 });

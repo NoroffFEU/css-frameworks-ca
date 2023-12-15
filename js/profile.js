@@ -15,6 +15,12 @@ const JWT = jwtDecoder(accessToken);
 const followUrl = `${API_BASE_URL}/profiles/${profileName}/follow`;
 const unfollowUrl = `${API_BASE_URL}/profiles/${profileName}/unfollow`;
 
+/**
+ * Fetches who you are following, then runs through with
+ * a find() array method to see if the profile you are
+ * visiting is in the list to display either "Follow",
+ * or "Following"
+ */
 function checkFollowing() {
   fetch(API_BASE_URL + `/profiles/${JWT.name}/?_following=true`, {
     headers: {
@@ -41,6 +47,8 @@ function checkFollowing() {
 }
 checkFollowing();
 
+// Fetches profile you're visiting and uses details to
+// display on page
 getProfile(API_BASE_URL + "/profiles/", profileName)
   .then((data) => data.json())
   .then((user) => {
@@ -63,6 +71,8 @@ getProfile(API_BASE_URL + "/profiles/", profileName)
 
 let posts = [];
 
+// Gets the posts from profile and adds edit post icon
+// if it is your own page
 getPosts(`${API_BASE_URL}/profiles/${profileName}/posts?_author=true&_comments=true&_reactions=true`)
   .then((data) => data.json())
   .then((json) => {
@@ -83,6 +93,11 @@ getPosts(`${API_BASE_URL}/profiles/${profileName}/posts?_author=true&_comments=t
     }
   });
 
+// When the follow butten is clicked, changes the data-id
+// to 0 or 1.
+// 0 = not currently following
+// 1 = currently following
+// Sends fetch with different url depending on data-id
 followButton.addEventListener("click", (event) => {
   if (followButton.dataset.id === "1") {
     fetch(unfollowUrl, {
@@ -110,6 +125,8 @@ followButton.addEventListener("click", (event) => {
     });
 });
 
+// Directs you to edit posts page when pressing the
+// gear icon on a post
 document.addEventListener("click", function (event) {
   if (event.target.matches(".fa-gear")) {
     window.location.href = `./edit/post/?id=${event.target.dataset.id}`;

@@ -61,7 +61,6 @@ async function loadPostDetails() {
   authorContainer.appendChild(authorName);
 
   postElement.appendChild(authorContainer);
-
   
   const postImage = document.createElement('img');
   postImage.src = post.media;

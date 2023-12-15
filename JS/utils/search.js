@@ -10,7 +10,6 @@ async function handleSearch() {
   if (inputValue !== '') {
     const apiUrl = `https://api.noroff.dev/api/v1/social/posts?_tag=${inputValue}&_active=true&_author=true&_comments=true&_reactions=true`;
 
-
     try {
       const searchTag = await fetcher(apiUrl, { method: 'GET' }, true);
 

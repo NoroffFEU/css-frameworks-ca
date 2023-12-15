@@ -36,7 +36,6 @@ const userLoginData = await fetcher(LOGIN_API_URL, {
 const token = userLoginData.accessToken;
 addToLocalStorage('accessToken', token);
 
-
 window.location.href = '../feed/index.html';
 
 const userId = userLoginData.name;
@@ -51,7 +50,3 @@ const userloginDetails = {
 };
   await loginUser(userloginDetails);
 });
-
-
-
-

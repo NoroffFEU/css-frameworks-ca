@@ -18,7 +18,6 @@
       editButton.classList.remove('d-none');
     }
 
-    // move this code later
     deleteBtn.addEventListener('click', async () => {
       const postId = deleteBtn.dataset.postId;
       const deletePostUrl = `https://api.noroff.dev/api/v1/social/posts/${postId}`;

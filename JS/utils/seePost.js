@@ -33,7 +33,7 @@ async function loadPostDetails() {
   postElement.classList.add('col-10', 'bg-primary', 'm-1');
 
   const postTitle = document.createElement('h3');
-  postTitle.classList.add('card-title');
+  postTitle.classList.add('card-title', 'text-break');
   postTitle.textContent = post.title;
   postElement.appendChild(postTitle);
 
@@ -61,16 +61,16 @@ authorContainer.appendChild(authorImage);
   
   const postImage = document.createElement('img');
   postImage.src = post.media;
-  postImage.classList.add('post-img', 'card-img-top', 'mt-2', 'rounded', 'mx-auto', 'd-block');
+  postImage.classList.add('post-img', 'card-img-top', 'mt-2', 'rounded', 'mx-auto', 'd-block', 'text-break');
   postImage.alt = post.title;
   postElement.appendChild(postImage);
 
  
   const postBody = document.createElement('div');
-  postBody.classList.add('card-body');
+  postBody.classList.add('card-body', 'text-break');
 
   const postText = document.createElement('p');
-  postText.classList.add('card-text', 'overflow-hidden', 'post-text');
+  postText.classList.add('card-text', 'overflow-hidden', 'post-text', 'text-break');
   postText.textContent = post.body;
 
   postBody.appendChild(postText);
@@ -120,16 +120,8 @@ authorContainer.appendChild(authorImage);
 
   // Add an event listener to handle comment submission
   commentForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-
-    const commentText = commentInput.value;
-      // Assuming you have a function for submitting comments
-    // You need to implement this function to send the comment to the server
-    await submitComment(postId, commentText);
-
-    // After submitting the comment, you might want to refresh the post details
-    // You can call loadPostDetails() again or update the comments section dynamically
-  });
+    event.preventDefault(); 
+     });
   commentFormContainer.appendChild(commentForm);
 
   container.appendChild(commentFormContainer);

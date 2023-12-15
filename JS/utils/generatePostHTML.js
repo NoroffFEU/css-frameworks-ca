@@ -27,11 +27,11 @@ export function generatePostHTML(post) {
   } = post;
 
   const shortenedCreatedDate = created.slice(0, 10);
-  const avatarUrl = author.avatar || "../images/profile-pictures/default-profile.jpg";
+  const avatarUrl = (author && author.avatar) || "../images/profile-pictures/default-profile.jpg";
 
   const postHTML = `
     <div class="post col-8 bg-primary m-1">
-      <h3 class="card-title">${title}</h3>
+      <h3 class="card-title text-break">${title}</h3>
       <div class="d-flex flex-row align-items-center">
         <img src="${avatarUrl}" class="rounded-circle border border-3 profile-pictures" alt="profile image">
         <p class="userName ms-2 mt-1">
@@ -39,7 +39,7 @@ export function generatePostHTML(post) {
         </p>
       </div>
     
-      <div class="card-body">
+      <div class="card-body text-break">
         <p class="card-text overflow-hidden post-text">${body}</p>
       </div>
       <button class="btn btn-light bg-dark text-white spesificPost" data-post-id="${id}">See post</button>

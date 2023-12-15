@@ -31,7 +31,7 @@ async function handleAddPost(){
     media: media.value,
   }
   console.log(post);
-  const response = await fetcher(
+   await fetcher(
     'https://api.noroff.dev/api/v1/social/posts',
     {
     method: 'POST',

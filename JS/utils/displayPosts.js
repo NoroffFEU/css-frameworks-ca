@@ -1,20 +1,22 @@
 import { generatePostHTML } from './generatePostHTML.js';
-import {deletheAndEditBtn} from './deleteAndEditBtn.js';
+import {deleteAndEditBtn} from './deleteAndEditBtn.js';
+import { handleSearch } from './search.js';
 
 let posts = [];
 console.log('displayPosts.js loaded');
 
-function displayPosts(posts) {
+function displayPosts(initialPosts) {
   const postDisplayContainer = document.getElementById("post-display");
   if (!postDisplayContainer) {
     alert("Post display container not found.");
     return;
   }
 
-  let displayedPosts = posts.slice(0, 50); 
-  const allPosts = posts;  
+  let posts = initialPosts.slice(0, 50);
+  let displayedPosts = [...initialPosts.slice(0, 50)];
+  const allPosts = initialPosts;
 
-   function updatePostsHTML() {
+    function updatePostsHTML() {
     const postsHTML = displayedPosts.map(post => generatePostHTML(post)).join('');
     postDisplayContainer.innerHTML = postsHTML;
   }
@@ -24,13 +26,13 @@ function displayPosts(posts) {
   document.getElementById("newest").addEventListener("click", () => {
     displayedPosts = [...allPosts].sort((a, b) => new Date(b.created) - new Date(a.created)).slice(0, 50);
     updatePostsHTML();
-    deletheAndEditBtn();
+    deleteAndEditBtn();
   });
 
   document.getElementById("oldest").addEventListener("click", () => {
     displayedPosts = [...allPosts].sort((a, b) => new Date(a.created) - new Date(b.created)).slice(0, 50);
     updatePostsHTML();
-    deletheAndEditBtn();
+    deleteAndEditBtn();
   });
 
   if (posts.length > 50) {
@@ -47,9 +49,8 @@ function displayPosts(posts) {
     });
     postDisplayContainer.appendChild(loadMoreButton);
   }
- console.log(allPosts, displayedPosts);
  
- deletheAndEditBtn();
+ deleteAndEditBtn();
 
 }
 

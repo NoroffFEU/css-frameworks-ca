@@ -13,6 +13,7 @@ async function getPostById(postId) {
   const apiUrl = `https://api.noroff.dev/api/v1/social/posts/${postId}?_author=true&_comments=true&_reactions=true`;
   const singlePost = await fetcher(apiUrl, { method: 'GET' }, true);
   return singlePost;
+  
 }
 
 async function loadPostDetails() {
@@ -28,6 +29,7 @@ async function loadPostDetails() {
     container.appendChild(loginMessage);
     return;
   }
+ 
 
   const postElement = document.createElement('div');
   postElement.classList.add('col-10', 'bg-primary', 'm-1');
@@ -41,15 +43,17 @@ async function loadPostDetails() {
   authorContainer.classList.add('d-flex', 'flex-row', 'align-items-center');
 
   const authorImage = document.createElement('img');
- 
-if (post.author.avatar === null || post.author.avatar === undefined) {
-  authorImage.src = '../images/profile-pictures/default-profile.jpg';
-} else {
-  authorImage.src = post.author.avatar;
-}
-authorImage.classList.add('rounded-circle', 'border', 'border-3', 'profile-pictures');
-authorImage.alt = 'profile image';
-authorContainer.appendChild(authorImage);
+
+  if (!post.author.avatar || post.author.avatar.trim() === "") {
+    authorImage.src = '../images/profile-pictures/default-profile.jpg';
+  } else {
+    authorImage.src = post.author.avatar;
+  }
+  
+  authorImage.classList.add('rounded-circle', 'border', 'border-3', 'profile-pictures');
+  authorImage.alt = 'profile image';
+  authorContainer.appendChild(authorImage);
+  
 
   const authorName = document.createElement('p');
   authorName.classList.add('ms-2', 'mt-1');

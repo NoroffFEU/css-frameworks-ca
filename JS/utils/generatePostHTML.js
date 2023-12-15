@@ -27,7 +27,8 @@ export function generatePostHTML(post) {
   } = post;
 
   const shortenedCreatedDate = created.slice(0, 10);
-  const avatarUrl = (author && author.avatar) || "../images/profile-pictures/default-profile.jpg";
+  const avatarUrl = (author && author.avatar !== "" && author.avatar) || "../images/profile-pictures/default-profile.jpg";
+
 
   const postHTML = `
     <div class="post col-8 bg-primary m-1">

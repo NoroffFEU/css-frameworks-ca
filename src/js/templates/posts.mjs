@@ -1,12 +1,12 @@
 import * as postsMethods from "../api/posts/index.mjs";
+import { searchTeams } from "../handlers/search.mjs";
 import { displayError } from "../handlers/error.mjs";
-
 /**
  * this function Allows us to view posts from the api on html
  */
 export async function postsTemplate() {
-  const container = document.querySelector("#allPosts");
   try {
+    const container = document.querySelector("#allPosts");
     const posts = await postsMethods.getPosts();
 
     container.innerHTML = "";
@@ -29,11 +29,11 @@ export async function postsTemplate() {
           <h4>${post.title}</h4>
           ${image}
           <a href="/post/index.html?id=${post.id}" class="btn btn-outline-secondary"> View post </a>
-          <button id="removePost" class="btn btn-outline-secondary"> Remove </button>
         </div>
         `;
+    
     });
-
+    searchTeams();
   } catch (error) {
     container.innerHTML += displayError(
       "An error occurred when calling the API"

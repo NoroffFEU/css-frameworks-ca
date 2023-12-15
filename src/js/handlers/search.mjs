@@ -7,9 +7,8 @@ export async function searchTeams() {
   try {
     const posts = await postsMethods.getPosts();
     const searchBar = document.querySelector(".searchBar");
-    const searchBtn = document.querySelector(".searchBtn");
-    searchBar.addEventListener("keyup", NameControlInput);
-    function NameControlInput(event) {
+    searchBar.addEventListener("keyup", handelNameControlInput);
+    function handelNameControlInput(event) {
       const inputValue = event.target.value.trim().toLowerCase();
       const filteredResult = posts.filter(({ title }) => {
         return title.toLowerCase().includes(inputValue);
@@ -18,6 +17,11 @@ export async function searchTeams() {
       container.innerHTML = "";
 
       filteredResult.forEach(function (filteredPosts) {
+        let image = `<img
+        src="../images/food-712665_640.jpg"
+        class="card-img-top"
+        alt="post image"
+        />`;
         if (filteredPosts.media) {
           image = `<img
             src="${filteredPosts.media}"
@@ -32,13 +36,6 @@ export async function searchTeams() {
           </div>
           `;
       });
-
-      searchBtn.addEventListener('click', searchTeams);
-      searchBar.addEventListener('keypress', function (event) {
-      if (event.key === 'Enter') {
-        searchTeams();
-  }
-});
     }
   } catch (error) {
     container.innerHTML += displayError(

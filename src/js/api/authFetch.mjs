@@ -9,8 +9,6 @@ export function headers() {
   };
 }
 
-
-
 export async function authFetch(url, options = {}) {
     return fetch(url, {
       ...options,

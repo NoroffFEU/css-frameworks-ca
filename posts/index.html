@@ -61,12 +61,15 @@
       <div class="container">
         <form class="d-flex" role="search">
           <input
-            class="form-control me-2"
+            class="form-control me-2 searchBar"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-warning text-black" type="submit">
+          <button
+            class="btn btn-outline-warning text-black searchBtn"
+            type="submit"
+          >
             Search
           </button>
         </form>
@@ -76,9 +79,8 @@
           <option value="2">Diet Food</option>
           <option value="3">Pasta Recipes</option>
         </select>
-
         <h3 class="ms-4 mt-4">RECIPES</h3>
-        <div id="posts"></div>
+        <div id="allPosts"></div>
         <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
           <div class="col">
             <div class="card h-100">

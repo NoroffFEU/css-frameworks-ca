@@ -7,7 +7,7 @@ const method = "post";
 
 
 export async function createPost(postData) {
-  
+ 
   const createPostURL = API_SOCIAL_URL + action;
     
   const response = await authFetch(createPostURL, {
@@ -16,5 +16,8 @@ export async function createPost(postData) {
   });
     
   alert("Your post has created");
+
+  window.location.replace("/posts/index.html");
+  
   return await response.json();
 }

@@ -23,7 +23,7 @@ export function headers() {
 
   return {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`
+      "Authorization": `Bearer ${token}`,
   }
 }
 

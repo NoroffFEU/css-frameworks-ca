@@ -33,7 +33,7 @@ export async function singlePost() {
           alt="post image"
           />`;
       }
-      resultById.innerHTML += `<div>
+      resultById.innerHTML = `<div>
         <h4 class="text-center">${singleResult.title}</h4>
         ${image}
         <a href="/post/edit/index.html?id=${singleResult.id}" class="btn bg-warning mt-4"> Edit post </a>
@@ -44,7 +44,7 @@ export async function singlePost() {
     //deletePost(id);
   } catch (error) {
 
-    resultById.innerHTML += displayError(
+    resultById.innerHTML = displayError(
       "An error occurred when calling the API"
     );
   }

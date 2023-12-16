@@ -1,7 +1,5 @@
 import { fetcher } from './fetcher.js';
-console.log('registerUser.js loaded');
 const API_BASE_URL = 'https://api.noroff.dev';
-
 // Endpoints:
 // Register: /api/v1/social/auth/register
 // Login: /api/v1/social/auth/login
@@ -24,7 +22,6 @@ const userPassword = document.querySelector('#form-password');
  * @returns {Promise<void>}
  */
 async function registerUser(user) {
-  console.log('Register user:', user);
   const postBody = JSON.stringify(user);
 
   try {

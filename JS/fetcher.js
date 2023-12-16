@@ -21,6 +21,6 @@ export async function fetcher(url, options = { method: 'POST' }, shouldUseAuth =
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error with api call', error);
+    console.alert('Error with api call', error);
   }
 }

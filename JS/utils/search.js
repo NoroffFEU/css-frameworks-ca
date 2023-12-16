@@ -1,8 +1,6 @@
 import { fetcher } from "../fetcher.js";
 import { displayPosts } from "./displayPosts.js";
 
-console.log('search.js loaded');
-
 async function handleSearch() {
   const searchInput = document.querySelector('#search-input');
   const inputValue = searchInput.value.trim().toLowerCase();
@@ -16,14 +14,13 @@ async function handleSearch() {
       if (Array.isArray(searchTag) && Array.isArray(searchTag.data) && searchTag.data.length > 0) {
 
       } else {
-        console.log("else");
-
-        console.log(searchTag);
-        displayPosts(searchTag);
+         displayPosts(searchTag);
       }
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
+  } else {
+    window.location.reload();
   }
 }
 

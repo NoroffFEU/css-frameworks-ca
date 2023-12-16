@@ -3,7 +3,6 @@ import {deleteAndEditBtn} from './deleteAndEditBtn.js';
 import { handleSearch } from './search.js';
 
 let posts = [];
-console.log('displayPosts.js loaded');
 
 function displayPosts(initialPosts) {
   const postDisplayContainer = document.getElementById("post-display");

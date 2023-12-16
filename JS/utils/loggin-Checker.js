@@ -1,4 +1,3 @@
-console.log('loggin-Checker.js loaded');
 /**
  * Checks if user is logged in based on the presence of a token in local storage
  * @returns {boolean} true if user is logged in, false if not

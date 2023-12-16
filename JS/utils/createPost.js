@@ -1,7 +1,5 @@
 import { fetcher } from '../fetcher.js';
 
-console.log('createPost.js loaded');
-
 const addPostForm = document.querySelector('#postForm');
 const title = document.querySelector('#postTitle');
 const body = document.querySelector('#postText');
@@ -29,8 +27,7 @@ async function handleAddPost(){
     body: body.value,
     tags: tags.value.split(' '),
     media: media.value,
-  }
-  console.log(post);
+  }  
    await fetcher(
     'https://api.noroff.dev/api/v1/social/posts',
     {

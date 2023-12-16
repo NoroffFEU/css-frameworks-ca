@@ -10727,4 +10727,9 @@ textarea.form-control-lg {
   object-fit: cover;
 }
 
+.post-img-comment {
+  max-height: 400px;
+  width: auto;
+}
+
 /*# sourceMappingURL=index.css.map */

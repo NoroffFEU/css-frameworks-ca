@@ -1,6 +1,5 @@
 import { fetcher } from './fetcher.js';
 import { addToLocalStorage, getFromLocalStorage } from './utils/localstorageUtils.js';
-console.log("login.js loaded");
 
 const API_BASE_URL = 'https://api.noroff.dev';
 const LOGIN_API_URL = `${API_BASE_URL}/api/v1/social/auth/login`;
@@ -24,7 +23,6 @@ const userPassword = document.querySelector('#loginPassword');
  * @returns {Promise<void>}
  */
 async function loginUser(user) {
-console.log('Login user:', user);
 const postBody = JSON.stringify(user);
 const userLoginData = await fetcher(LOGIN_API_URL, {
   method: 'POST',

@@ -1,24 +1,23 @@
 import { fetcher } from '../fetcher.js';
 import { logginChecker } from './loggin-Checker.js';
 import { displayUsernames } from "./displayUsername.js";
-console.log('seePost.js loaded');
+import { checkAndDisplayLogout } from "../logout.js";
+import { makeCommentPostRequest } from "./addComment.js";
 
+checkAndDisplayLogout();
 displayUsernames();
 
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('postId');
-console.log(postId);
 
 async function getPostById(postId) {
   const apiUrl = `https://api.noroff.dev/api/v1/social/posts/${postId}?_author=true&_comments=true&_reactions=true`;
   const singlePost = await fetcher(apiUrl, { method: 'GET' }, true);
-  return singlePost;
-  
+  return singlePost;  
 }
 
 async function loadPostDetails() {
   const post = await getPostById(postId);
-  console.log(post);
 
   const container = document.getElementById('singel-post-display');
 
@@ -28,8 +27,7 @@ async function loadPostDetails() {
     loginMessage.innerHTML = '<p>Log in to see the post</p>';
     container.appendChild(loginMessage);
     return;
-  }
- 
+  } 
 
   const postElement = document.createElement('div');
   postElement.classList.add('col-10', 'bg-primary', 'm-1');
@@ -63,11 +61,15 @@ async function loadPostDetails() {
   postElement.appendChild(authorContainer);
   
   const postImage = document.createElement('img');
-  postImage.src = post.media;
-  postImage.classList.add('post-img', 'card-img-top', 'mt-2', 'rounded', 'mx-auto', 'd-block', 'text-break');
-  postImage.alt = post.title;
-  postElement.appendChild(postImage);
+postImage.classList.add('post-img-comment', 'card-img-top', 'mt-2', 'rounded', 'mx-auto', 'd-block', 'text-break');
 
+if (post.media) {
+  postImage.src = post.media;
+} else {
+  postImage.classList.add('d-none');
+}
+postImage.alt = post.title;
+postElement.appendChild(postImage);
  
   const postBody = document.createElement('div');
   postBody.classList.add('card-body', 'text-break');
@@ -103,7 +105,6 @@ async function loadPostDetails() {
 
    container.appendChild(postElement);
     
-  // Form for submitting comments, JS WIP !!!!!!!!
   const commentFormContainer = document.createElement('div');
   commentFormContainer.id = 'comment-form'; 
   commentFormContainer.classList.add('col-10', 'bg-primary', 'm-1');
@@ -111,24 +112,41 @@ async function loadPostDetails() {
   const commentForm = document.createElement('form');
 
   const commentInput = document.createElement('textarea');
-  commentInput.classList.add('bg-primary', 'm-1', 'mt-2', 'form-control', 'mb-2', 'text-white');
-  commentInput.placeholder = 'currently under construction, this is not working yet';
+  commentInput.id = 'commentText';
+  commentInput.classList.add('bg-primary', 'm-1', 'mt-2', 'form-control', 'mb-2', 'text-white')
+
   commentForm.appendChild(commentInput);
 
   const submitButton = document.createElement('button');
   submitButton.type = 'submit';
   submitButton.classList.add('btn', 'btn-light', 'bg-dark', 'mb-3');
+  submitButton.id = 'submitComment';
   submitButton.textContent = 'Comment';
   commentForm.appendChild(submitButton);
-
-  // Add an event listener to handle comment submission
-  commentForm.addEventListener('submit', async function (event) {
-    event.preventDefault(); 
-     });
+  
   commentFormContainer.appendChild(commentForm);
-
+  
   container.appendChild(commentFormContainer);
 
+  const submitComment = document.querySelector('#submitComment');
+  const commentText = document.getElementById('commentText');
+  
+  commentText.addEventListener('input', function() {
+    const commentTextValue = this.value;
+  });
+  
+  submitComment.addEventListener('click', async (event) => {
+    event.preventDefault();
+  
+    const commentData = {
+      body: commentText.value,
+      
+    };
+  
+    await makeCommentPostRequest(postId, commentData);
+    window.location.reload();
+  });  
+  
   // Generate HTML for Comments ----------------------------------
 
   const commentsContainer = document.createElement('div');
@@ -137,18 +155,7 @@ async function loadPostDetails() {
   post.comments.forEach((comment) => {
     const commentDiv = document.createElement('div');
     commentDiv.classList.add('comment', 'mt-1', 'bg-primary', 'p-2');
-
-    const authorImage = document.createElement('img');
- 
-    if (post.author.avatar === null || post.author.avatar === undefined) {
-      authorImage.src = '../images/profile-pictures/default-profile.jpg';
-    } else {
-      authorImage.src = post.author.avatar;
-    }
-    authorImage.classList.add('rounded-circle', 'border', 'border-3', 'profile-pictures');
-    authorImage.alt = 'profile image';
-    commentDiv.appendChild(authorImage);
-
+   
     const authorName = document.createElement('p');
     authorName.textContent = comment.author.name;
     commentDiv.appendChild(authorName);

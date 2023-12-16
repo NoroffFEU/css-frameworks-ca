@@ -2,10 +2,9 @@ import { logginChecker } from "./utils/loggin-Checker.js";
 import { displayPosts } from "./utils/displayPosts.js";
 import { fetcher } from "./fetcher.js";
 import { displayUsernames } from "./utils/displayUsername.js";
+import { checkAndDisplayLogout } from "./logout.js";
 
-
-console.log('feed-page.js loaded');
-
+checkAndDisplayLogout();
 displayUsernames();
 
 /**
@@ -25,8 +24,9 @@ async function main() {
     const apiUrl = `https://api.noroff.dev/api/v1/social/posts?_author=${includeAuthor}&_comment=${includeComment}&_reaction=${includeReaction}`;
     const posts = await fetcher(apiUrl, {method: 'GET'}, true);
     displayPosts(posts);
-  } else {
+    } else {
     displayLoginPage();
   }
 }
+
 main();

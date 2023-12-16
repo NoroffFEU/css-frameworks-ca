@@ -9,38 +9,32 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
   <link rel="icon" type="image/x-icon" href="/images/1131031-84.png">
-  <script type="module" src="../JS/login.js" defer></script>
+  <script type="module" src="../JS/profile-page.js" defer></script>
   <title>Profile | Toastit</title>
 </head>
 
 <body class="bg-dark">
   <nav class="navbar navbar-expand navbar-light bg-light border-bottom border-4 mb-3">
-    <a class="navbar-brand ms-4" href="../index.html"><img src="../images/1131031-84.png" alt="Toastit-logo" class="ms-4"></a>
+    <a class="navbar-brand ms-4" href="../feed/index.html"><img src="../images/1131031-84.png" alt="Toastit-logo" class="ms-4"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto flex-column flex-sm-row"> <!-- Add flex-column and flex-sm-row classes -->
-        <li class="nav-item">
-          <a class="nav-link fw-semibold" href="../feed/index.html">Feed</a>
-        </li>
+      <ul class="navbar-nav ml-auto flex-column flex-sm-row">      
         <li>
-          <a class="nav-link fw-semibold" href="../index.html">Log out</a>
+          <a class="nav-link fw-semibold logout d-none" href="../index.html">Log out</a>
         </li>
       </ul>
     </div>
     <div class="float-end me-2">
       <p class="user-name">User not logged inn</p>
-      <!-- <img src="images/profile-pictures/default-profile.jpg"
-          class="profile-picture border border-primary border-4 rounded-circle "
-          title="you're not logged in"></img> -->
   </div>
   </nav>
-  
+  <h1>Profile</h1>
   <div class="container">
     <button class="btn btn-success follow-button rounded-pill">Follow</button>
-    <h1 class="text-white">Jedi-toaster</h1>
+    <h2 class="text-white">Jedi-toaster</h2>
     <div class="m-3 text-white">
       <span class="follow-count">654</span> Followers | <span class="follow-count">75</span> Following
     </div>
-    <div class="col-12 d-flex flex-column flex-lg-row">
+    <div class="col-12 d-flex flex-column">
       <div class="card bg-primary text-white m-1 mb-3">
         <h2>Bio</h2>
         <img src="../images/profile-pictures/a0d7d86f-9157-4fbe-be40-31e76765585b.png" alt="Profile Image"

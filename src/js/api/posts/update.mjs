@@ -1,8 +1,4 @@
-import { API_SOCIAL_URL } from "../constants.mjs";
-import { displayError } from "../../handlers/error.mjs";
-import { authFetch } from "../authFetch.mjs";
-
-const action = "/posts";
+/*const action = "/posts";
 const method = "put";
 
 export async function updatePost(postData) {
@@ -15,8 +11,31 @@ export async function updatePost(postData) {
     method,
     body: JSON.stringify(postData),
   });
-
   alert("Your post has updated");
- 
+  window.location.replace("/posts/myPosts.html");
   return await response.json();
+}
+*/
+
+import { API_SOCIAL_URL } from "../constants.mjs";
+
+import { authFetch } from "../authFetch.mjs";
+
+const action = "/posts";
+const method = "put";
+
+export async function updatePost(postData) {
+  if (!postData.id) {
+    throw new Error("Update requires a postID")
+  }
+
+  const updatePostURL = `${API_SOCIAL_URL}${action}/${postData.id}`;
+
+  const response = await authFetch(updatePostURL, {
+    method,
+    body: JSON.stringify(postData)
+  })
+
+   return await response.json();
+  
 }

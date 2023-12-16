@@ -1,4 +1,4 @@
-import { getPost, updatePost } from "../api/posts/index.mjs";
+/*import { getPost, updatePost } from "../api/posts/index.mjs";
 
 
 
@@ -26,3 +26,4 @@ export async function setUpdatePostFormListener() {
     });
   }
 }
+*/

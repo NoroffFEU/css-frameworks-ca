@@ -1,8 +1,8 @@
 import * as listeners from "./handlers/index.mjs";
-import { resultById } from "./templates/post.mjs";
+import { singlePost } from "./templates/post.mjs";
 import { postsTemplate } from "./templates/posts.mjs";
-
 import { searchTeams } from "./handlers/search.mjs";
+import * as post from "./api/posts/index.mjs"
 
 const path = location.pathname;
 
@@ -17,7 +17,9 @@ if (path === "/profile/login/index.html") {
 } else if (path === "/posts/index.html") {
   postsTemplate();
 } else if (path === "/post/index.html") {
-  resultById();
+  singlePost();
 } else if (path === "/posts/index.html") {
   searchTeams();
 }
+
+post.removePost(9317);

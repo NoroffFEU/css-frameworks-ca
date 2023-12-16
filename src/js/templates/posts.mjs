@@ -1,12 +1,13 @@
 import * as postsMethods from "../api/posts/index.mjs";
 import { searchTeams } from "../handlers/search.mjs";
 import { displayError } from "../handlers/error.mjs";
+
 /**
  * this function Allows us to view posts from the api on html
  */
 export async function postsTemplate() {
+   const container = document.querySelector("#allPosts");
   try {
-    const container = document.querySelector("#allPosts");
     const posts = await postsMethods.getPosts();
 
     container.innerHTML = "";
@@ -26,14 +27,15 @@ export async function postsTemplate() {
       }
       container.innerHTML += `
         <div class="post mb-5 border">
-          <h4>${post.title}</h4>
+          <h4 class="text-center">${post.title}</h4>
           ${image}
-          <a href="/post/index.html?id=${post.id}" class="btn btn-outline-secondary"> View post </a>
+          <a href="/post/index.html?id=${post.id}" class="btn bg-warning mt-4 mx-4 mb-4"> View post </a>
         </div>
         `;
     
     });
     searchTeams();
+    
   } catch (error) {
     container.innerHTML += displayError(
       "An error occurred when calling the API"

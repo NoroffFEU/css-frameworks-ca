@@ -20,7 +20,7 @@ export async function singlePost() {
     const response = await authFetch(singleUrl);
     const singleResult = await response.json();
     
-    function myOwnPosts() {
+    function postTemplate() {
       let image = `<img
         src="../images/food-712665_640.jpg"
         class="card-img-top"
@@ -40,7 +40,7 @@ export async function singlePost() {
         <button id="removePost" class="btn btn-outline-danger mt-4">Delete</button>
         </div>`;
     }
-    myOwnPosts();
+    postTemplate();
     deletePost(id);
   } catch (error) {
 

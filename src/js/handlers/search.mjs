@@ -32,7 +32,7 @@ export async function searchTeams() {
         container.innerHTML += `<div class="post">
             <h3>${filteredPosts.title}</h3>
             ${image}
-            <a href="/post/index.html?id=${filteredPosts.id}" class="btn btn-outline-secondary"> View post </a>
+            <a href="/post/index.html?id=${filteredPosts.id}" class="btn bg-warning mt-4"> View post </a>
           </div>
           `;
       });

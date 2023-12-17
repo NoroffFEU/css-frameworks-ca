@@ -1,4 +1,4 @@
-/*import { removePost } from "../api/posts/delete.mjs";
+import { removePost } from "../api/posts/delete.mjs";
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { authFetch } from "../api/authFetch.mjs";
 
@@ -8,4 +8,3 @@ export function deletePost(id) {
     removePost(id);
   });
 }
-*/

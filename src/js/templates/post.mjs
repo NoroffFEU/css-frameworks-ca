@@ -1,7 +1,7 @@
 import { API_SOCIAL_URL } from "../api/constants.mjs";
 import { authFetch } from "../api/authFetch.mjs";
 import { displayError } from "../handlers/error.mjs";
-//import { deletePost } from "../handlers/deletePost.mjs";
+import { deletePost } from "../handlers/deletePost.mjs";
 
 
 export async function singlePost() {
@@ -41,7 +41,7 @@ export async function singlePost() {
         </div>`;
     }
     myOwnPosts();
-    //deletePost(id);
+    deletePost(id);
   } catch (error) {
 
     resultById.innerHTML = displayError(

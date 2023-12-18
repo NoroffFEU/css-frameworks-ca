@@ -4,12 +4,12 @@ import { apiBaseUrl } from "./variables.mjs";
 const loginUrl = "/social/auth/login";
 
 /**
- * Function to login an existing user 
+ * Function to login an existing user
  * @param {string} url The URL to which the login request will be sent.
  * @param {Object} data The user data to be included in the login request.
  * @returns {Promise<Object>} The function returns a Promise, when Promise is fulfilled, it provides the parsed JSON response recieved from the server.
  * @example
- * 
+ *
  */
 async function loginUser(url, data) {
   try {
@@ -29,6 +29,12 @@ async function loginUser(url, data) {
     // Storing the accessToken into local storage
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
+
+    // Alert for successful login
+    alert("Login successful!");
+
+    // Redirect to the feed page after successful login
+    window.location.href = "/feed/";
 
     // Returning the parsed JSON data
     return json;
@@ -55,11 +61,10 @@ function login(event) {
   const user = {
     email: email.value,
     password: password.value,
-  }
+  };
 
   // Calling the loginUser function to send the user data to the server
   loginUser(`${apiBaseUrl}${loginUrl}`, user);
-
 }
 
 // Adding an event listner to the form to call the loginUser function on form submission

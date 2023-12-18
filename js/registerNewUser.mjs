@@ -16,16 +16,16 @@ async function registerUser(url, data) {
     const postData = {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-       // Converting the user data to a JSON string and including it in the request body
+      // Converting the user data to a JSON string and including it in the request body
       body: JSON.stringify(data),
     };
     // Sending the fetch request to the specified URL with the provided data
     const response = await fetch(url, postData);
-  // Parsing the response body as JSON
+    // Parsing the response body as JSON
     const json = await response.json();
-// Returning the parsed JSON data
+    // Returning the parsed JSON data
     return json;
   } catch (error) {
     // Handling any errors that may occur during the fetch operation
@@ -40,7 +40,7 @@ const registerForm = document.querySelector("#registerForm");
  * Function to handle the form submission event and register a new user.
  * @param {Event} event The form submission event
  * @return {none} This function doesent return a value
- * @example 
+ * @example
  */
 function register(event) {
   // Preventing the default form submission behavior to handle it manually
@@ -53,11 +53,12 @@ function register(event) {
     name: name.value,
     email: email.value,
     password: password.value,
-  }
+  };
+  console.log(user);
 
   // Calling the registerUser function to send the user data to the server
   registerUser(registerUrl, user);
 }
 
 // Adding an event listener to the form to call the register function on form submission
-registerForm.addEventListener("submit", register)
+registerForm.addEventListener("submit", register);

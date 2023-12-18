@@ -3,10 +3,8 @@ import { fetchPostsWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
-const userId = postData.id;
-
 async function fetchAllPosts() {
-  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true&userId=${userId}`);
+  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
 }
 
 /**

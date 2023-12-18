@@ -106,23 +106,19 @@ function sortPostsOldest(posts) {
   return sortedArray;
 }
 
-const newestPosts = document.querySelector("#newest");
-const oldestPosts = document.querySelector("#oldest");
+const sortButtonsContainer = document.querySelector("#sort-buttons");
 
-// Event listener for "Newest first"
-newestPosts.addEventListener("click", function () {
-  console.log("newest worked");
-  const sortedArray = sortPostsNewest(posts);
-  renderPosts(sortedArray);
+sortButtonsContainer.addEventListener("click", function (event) {
+  if (event.target.id === "newest") {
+    const sortedArray = sortPostsNewest(posts);
+    renderPosts(sortedArray);
+  } else if (event.target.id === "oldest") {
+    const sortedArray = sortPostsOldest(posts);
+    renderPosts(sortedArray);
+  }
 });
 
-// Event listener for "Oldest first"
-oldestPosts.addEventListener("click", function () {
-  const sortedArray = sortPostsOldest(posts);
-  renderPosts(sortedArray);
-});
-
-const initializeSort = async () => {
+const initializeSortPosts = async () => {
   try {
     // Fetch posts from the API
     posts = await fetchPostsWithToken(APIURL);
@@ -134,4 +130,4 @@ const initializeSort = async () => {
 };
 
 // Call the initialize function to start the app
-initializeSort();
+initializeSortPosts();

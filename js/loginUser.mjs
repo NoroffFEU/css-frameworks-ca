@@ -26,6 +26,8 @@ async function loginUser(url, data) {
     const response = await fetch(url, postData);
     // Parsing the response body as JSON
     const json = await response.json();
+
+    if (json.accessToken) {
     // Storing the accessToken into local storage
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
@@ -41,6 +43,11 @@ async function loginUser(url, data) {
 
     // Returning the parsed JSON data
     return json;
+    } else {
+      // Alert for unsuccessful login
+      alert("Invalid email or password");
+    }
+  
   } catch (error) {
     // Handling errors that may occur during the fetch operation
     console.log(error, "An error occurred!");
@@ -68,6 +75,10 @@ function login(event) {
 
   // Calling the loginUser function to send the user data to the server
   loginUser(`${apiBaseUrl}${loginUrl}`, user);
+
+  // Clearing input fields
+  email.value = "";
+  password.value = "";
 }
 
 // Adding an event listner to the form to call the loginUser function on form submission

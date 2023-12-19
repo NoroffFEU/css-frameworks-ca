@@ -30,6 +30,9 @@ async function loginUser(url, data) {
     const accessToken = json.accessToken;
     localStorage.setItem("accessToken", accessToken);
 
+    // Storing the user profile info into local storage
+    localStorage.setItem("userProfile", JSON.stringify({ name: json.name, email: json.email, avatar: json.avatar, banner: json.banner, }));
+
     // Alert for successful login
     alert("Login successful!");
 

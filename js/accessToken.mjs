@@ -4,9 +4,9 @@
  * @param {string} url The URL to fetch posts from.
  * @example
  * const apiUrl = `${apiBaseUrl}${postsAPI}`;
- * fetchPostsWithToken(apiUrl);
+ * fetchWithToken(apiUrl);
  */
-export async function fetchPostsWithToken(url) {
+export async function fetchWithToken(url) {
   try {
     // Getting accessToken from localStorage
     const token = localStorage.getItem("accessToken");

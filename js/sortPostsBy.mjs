@@ -1,4 +1,4 @@
-import { fetchPostsWithToken } from "./accessToken.mjs";
+import { fetchWithToken } from "./accessToken.mjs";
 import { apiBaseUrl, allPostsApi } from "./variables.mjs";
 import { createCardElement } from "./createCards.mjs";
 
@@ -41,7 +41,7 @@ sortButtonsContainer.addEventListener("click", function (event) {
 const initializeSortPosts = async () => {
   try {
     // Fetch posts from the API
-    posts = await fetchPostsWithToken(APIURL);
+    posts = await fetchWithToken(APIURL);
     // Render the fetched posts
     createCardElement(posts);
   } catch (error) {

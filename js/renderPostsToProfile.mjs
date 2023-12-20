@@ -1,13 +1,16 @@
 import { apiBaseUrl, profileUrl } from "./variables.mjs"; 
-import { fetchPostsWithToken } from "./accessToken.mjs";
+import { fetchWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
 const user = JSON.parse(localStorage.getItem("userProfile"))
 
-async function fetchUserProfile() {
-  return await fetchPostsWithToken(`${apiBaseUrl}${profileUrl}${user.name}?_author=true&_posts=true`);
+async function fetchUserProfilePosts() {
+  return await fetchWithToken(`${apiBaseUrl}${profileUrl}${user.name}?_author=true&_posts=true`);
+  
 }
+
+
 
 /**
  * Creates an HTML card element for a single post.
@@ -15,6 +18,9 @@ async function fetchUserProfile() {
  * @returns {HTMLElement} The generated HTML card element.
  */
 const createCardAllPosts = (postData) => {
+
+  console.log(postData);
+
   const cardColLayout = document.createElement("div");
   cardColLayout.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3";
 
@@ -99,6 +105,7 @@ const createCardAllPosts = (postData) => {
   );
   svg.appendChild(path2);
 
+
   const dropDownMenu = document.createElement("div");
   dropDownMenu.className = "dropdown-menu";
   sortByButtonWrapper.appendChild(dropDownMenu);
@@ -144,19 +151,12 @@ async function displayAllPostsCards() {
     // Display loader while posts are being fetched
     loaderContainer.style.display = "block";
 
-    const userObject = await fetchUserProfile();
+    const userObject = await fetchUserProfilePosts();
 
     userPostsContainer.innerHTML = "";
 
     const posts = userObject.posts;
 
-
-    // Fetch posts
-/*     const posts = await fetchUserProfile(); */
-
-    console.log("Received posts:", posts); 
-    // Clear existing cards from the container
-/*     userPostsContainer.innerHTML = ""; */
 
     // Iterate over each post data and create a card for each post
     posts.forEach((postData) => {

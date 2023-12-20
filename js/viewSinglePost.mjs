@@ -1,7 +1,7 @@
 import { apiBaseUrl, allPostsApi } from "./variables.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
-import { fetchPostsWithToken } from "./accessToken.mjs";
+import { fetchWithToken } from "./accessToken.mjs";
 
 
 // Query string parameter
@@ -17,7 +17,7 @@ const id = params.get("id");
  * const singlePostData = await fetchSinglePost("123");
  */
 const fetchSinglePost = async (id) => {
-  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}/${id}?_author=true`);
+  return await fetchWithToken(`${apiBaseUrl}${allPostsApi}/${id}?_author=true`);
 };
 
 /**

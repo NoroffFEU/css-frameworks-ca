@@ -16,14 +16,13 @@
   flex-direction: column;
   align-items: center;
   margin-top: 30px;
-
 }
 
 .content-loader {
   width: 70px;
   height: 70px;
   border: 10px solid #252941;
-  border-top: 10px solid #C342FF;
+  border-top: 10px solid #c342ff;
   border-radius: 50%;
   margin: 20px auto;
   animation: spin 2s linear infinite;
@@ -38,14 +37,19 @@
   }
 }
 
+.feed-card-img {
+  height: 200px !important;
+  object-fit: cover;
+}
 .single-post-img {
   max-height: 370px;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
-.text-to-uppercase {
+.card-title {
   text-transform: uppercase;
+  letter-spacing: 1px;
 }

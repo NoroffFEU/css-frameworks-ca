@@ -1,12 +1,4 @@
-import { fetchPostsWithToken } from "./accessToken.mjs";
-import { apiBaseUrl, allPostsApi } from "./variables.mjs";
 import { formatDateString } from "./formatDate.mjs";
-
-// Array to store fetched posts
-let posts = [];
-
-// URL to the fetch API
-const APIURL = `${apiBaseUrl}${allPostsApi}?_author=true`;
 
 /**
  * Renders all the posts in the selected container.
@@ -16,12 +8,9 @@ const APIURL = `${apiBaseUrl}${allPostsApi}?_author=true`;
  * Assume filteredPosts is an array of post objects obtained through some filtering mechanism.
  * renderPosts(filteredPosts);
  */
-const renderPosts = (posts) => {
+export const createCardElement = (posts) => {
   const postsContainer = document.querySelector(".all-posts_card-container");
   postsContainer.innerHTML = "";
-
-  const searchInput = document.getElementById("search-input");
-  const searchTerm = searchInput.value;
 
   if (posts.length === 0) {
     // If no posts are found, display a message
@@ -34,7 +23,7 @@ const renderPosts = (posts) => {
     // Render the posts
     posts.forEach((postData) => {
       const cardColLayout = document.createElement("div");
-      cardColLayout.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3";
+      cardColLayout.className = "col-6 col-sm-6 col-md-4 col-lg-3";
 
       const cardPostContent = document.createElement("a");
       cardPostContent.href = `../post/index.html?id=${postData.id}`;
@@ -54,7 +43,7 @@ const renderPosts = (posts) => {
 
       const cardPostTitle = document.createElement("h6");
       cardPostTitle.innerText = postData.title;
-      cardPostTitle.className = "card-title";
+      cardPostTitle.className = "card-title text-to-uppercase";
       cardPostTextContent.appendChild(cardPostTitle);
 
       const userNameOnCardLayout = document.createElement("div");
@@ -87,52 +76,3 @@ const renderPosts = (posts) => {
     });
   }
 };
-
-/**
- * Filters posts based on the provided search text and renders the filtered posts.
- *
- * @param {string} inputText The search text to filter posts.
- * @example
- * filterPosts(searchTerm);
- */
-const filterPosts = (inputText) => {
-  const filteredPosts = posts.filter((post) => {
-    const titleMatch = post.title.toLowerCase().includes(inputText.toLowerCase());
-    const contentMatch = post.body?.toLowerCase().includes(inputText.toLowerCase());
-    const userMatch = post.author.name.toLowerCase().includes(inputText.toLowerCase());
-    return titleMatch || contentMatch || userMatch;
-  });
-  renderPosts(filteredPosts);
-};
-
-// Adds an event listener to the search form, preventing its default submission behavior.
-const searchForm = document.getElementById("search-form");
-searchForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  // Extracts and trims the search term from the input field.
-  const searchInput = document.getElementById("search-input");
-  const searchTerm = searchInput.value.trim();
-
-  if (searchTerm === "") {
-    // If search term is empty, render all posts
-    return renderPosts(posts);
-  }
-
-  // Call the filterPosts function with the search term
-  filterPosts(searchTerm);
-});
-
-// Initializes the app by fetching posts and rendering them
-const initialize = async () => {
-  try {
-    // Fetch posts from the API
-    posts = await fetchPostsWithToken(APIURL);
-    // Render the fetched posts
-    renderPosts(posts);
-  } catch (error) {
-    console.error("Error fetching posts:", error);
-  }
-};
-
-// Call the initialize function to start the app
-initialize();

@@ -1,10 +1,12 @@
-import { apiBaseUrl, allPostsApi } from "./variables.mjs";
+import { apiBaseUrl, profileUrl } from "./variables.mjs"; 
 import { fetchPostsWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
-async function fetchAllPosts() {
-  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
+const user = JSON.parse(localStorage.getItem("userProfile"))
+
+async function fetchUserProfile() {
+  return await fetchPostsWithToken(`${apiBaseUrl}${profileUrl}${user.name}?_author=true&_posts=true`);
 }
 
 /**
@@ -44,12 +46,12 @@ const createCardAllPosts = (postData) => {
   const profileImageThumbnail = document.createElement("img");
   // Set the source (src) attribute of the image. Use the postData.author.avatar if it's truthy,
   // if not, use the fallback image "../images/no_avatar.jpg"
-  profileImageThumbnail.src = !!postData.author.avatar ? postData.author.avatar : "../images/no_avatar.jpg";
+  profileImageThumbnail.src = !!postData.avatar ? postData.avatar : "../images/no_avatar.jpg";
   profileImageThumbnail.className = "rounded-circle me-1 profile-img-thumbnail";
   userNameOnCardLayout.appendChild(profileImageThumbnail);
 
   const userName = document.createElement("p");
-  userName.innerText = postData.author.name;
+  userName.innerText = postData.owner;
   userName.className = "mb-0";
   userNameOnCardLayout.appendChild(userName);
 
@@ -97,13 +99,6 @@ const createCardAllPosts = (postData) => {
   );
   svg.appendChild(path2);
 
-  /*   path1.appendChild(svg);
-  path2.appendChild(svg); */
-  /*   svg.appendChild(path1); */
-  /*   svg.appendChild(path2); */
-  /*   sortByButton.appendChild(svg); */
-  /*   sortByButtonWrapper.appendChild(sortByButton); */
-
   const dropDownMenu = document.createElement("div");
   dropDownMenu.className = "dropdown-menu";
   sortByButtonWrapper.appendChild(dropDownMenu);
@@ -149,12 +144,19 @@ async function displayAllPostsCards() {
     // Display loader while posts are being fetched
     loaderContainer.style.display = "block";
 
-    // Fetch posts
-    const posts = await fetchAllPosts();
+    const userObject = await fetchUserProfile();
 
-    /*    console.log("Received posts:", posts);   */
-    // Clear existing cards from the container
     userPostsContainer.innerHTML = "";
+
+    const posts = userObject.posts;
+
+
+    // Fetch posts
+/*     const posts = await fetchUserProfile(); */
+
+    console.log("Received posts:", posts); 
+    // Clear existing cards from the container
+/*     userPostsContainer.innerHTML = ""; */
 
     // Iterate over each post data and create a card for each post
     posts.forEach((postData) => {

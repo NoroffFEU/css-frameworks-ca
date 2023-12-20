@@ -1,5 +1,5 @@
 import { apiBaseUrl, allPostsApi } from "./variables.mjs";
-import { fetchPostsWithToken } from "./accessToken.mjs";
+import { fetchWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
@@ -11,7 +11,7 @@ import { formatDateString } from "./formatDate.mjs";
  * const posts = await fetchAllPosts(10, 0);
  */
 async function fetchAllPosts() {
-  return await fetchPostsWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
+  return await fetchWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
 }
 
 /**
@@ -21,6 +21,7 @@ async function fetchAllPosts() {
  * @returns {HTMLElement} The generated HTML card element.
  */
 function createCardAllPosts(postData) {
+  console.log(postData);
   const cardColLayout = document.createElement("div");
   cardColLayout.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3";
 

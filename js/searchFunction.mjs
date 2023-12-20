@@ -1,4 +1,4 @@
-import { fetchPostsWithToken } from "./accessToken.mjs";
+import { fetchWithToken } from "./accessToken.mjs";
 import { apiBaseUrl, allPostsApi } from "./variables.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
@@ -126,7 +126,7 @@ searchForm.addEventListener("submit", function (event) {
 const initialize = async () => {
   try {
     // Fetch posts from the API
-    posts = await fetchPostsWithToken(APIURL);
+    posts = await fetchWithToken(APIURL);
     // Render the fetched posts
     renderPosts(posts);
   } catch (error) {

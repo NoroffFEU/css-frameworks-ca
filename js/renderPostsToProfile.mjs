@@ -114,6 +114,10 @@ const createCardAllPosts = (postData) => {
   dropDownItemEditPost.className = "dropdown-item";
   dropDownItemEditPost.innerText = "Edit post";
   dropDownItemEditPost.id = "edit-post";
+
+const editPostUrl = `/post/edit.html?id=${postData.id}`;
+dropDownItemEditPost.href = editPostUrl;
+
   dropDownMenu.appendChild(dropDownItemEditPost);
 
   const dropDownItemDeletePost = document.createElement("a");

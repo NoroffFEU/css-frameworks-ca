@@ -59,11 +59,11 @@
         <form id="loginForm" method="get">
           <div class="mb-3">
             <label for="inputEmailLogin" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmailLogin" required/>
+            <input type="email" class="form-control" id="inputEmailLogin" required pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only @(stud.)noroff.no domains are allowed to log in"/>
           </div>
           <div class="mb-3">
             <label for="inputPasswordLogin" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPasswordLogin" minlength="8" required/>
+            <input type="password" class="form-control" id="inputPasswordLogin" minlength="8" required title="Password must be at least 8 characters long"/>
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Log in</button>

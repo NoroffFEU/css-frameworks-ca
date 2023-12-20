@@ -25,6 +25,10 @@ async function registerUser(url, data) {
     const response = await fetch(url, postData);
     // Parsing the response body as JSON
     const json = await response.json();
+
+    // Alert for successful register
+    alert("You are now registerd, please log in with your email and password!");
+    
     // Returning the parsed JSON data
     return json;
   } catch (error) {
@@ -46,18 +50,25 @@ function register(event) {
   // Preventing the default form submission behavior to handle it manually
   event.preventDefault();
   // Destructuring the form elements to get values for name, email, and password
-  const [name, email, password] = event.target.elements;
+  const [name, email, password, avatar] = event.target.elements;
 
   // Creating a user object with the extracted values
   const user = {
     name: name.value,
     email: email.value,
     password: password.value,
+    avatar: avatar.value,
   };
   console.log(user);
 
   // Calling the registerUser function to send the user data to the server
   registerUser(registerUrl, user);
+
+    // Clearing input fields
+    name.value ="";
+    email.value = "";
+    password.value = "";
+    avatar.value = "";
 }
 
 // Adding an event listener to the form to call the register function on form submission

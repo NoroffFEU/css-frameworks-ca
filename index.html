@@ -74,15 +74,20 @@
         <form id="registerForm" method="get">
           <div class="mb-3">
             <label for="inputNameRegister" class="form-label">Username</label>
-            <input type="text" class="form-control" id="inputNameRegister" required/>
+            <input type="text" class="form-control" id="inputNameRegister" required minlength="3" pattern="^[\w]+$" title="Username must only contain lowercase and uppercase letters, numbers and underscore (_). Example: Tom_123"/>
           </div>
           <div class="mb-3">
             <label for="inputEmailRegister" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmailRegister" required/>
+            <input type="email" class="form-control" id="inputEmailRegister" required pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only @(stud.)noroff.no domains are allowed to register"/>
           </div>
           <div class="mb-3">
             <label for="inputPasswordRegister" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPasswordRegister" required/>
+            <input type="password" class="form-control" id="inputPasswordRegister" 
+            <input type="password" class="form-control" id="inputPasswordLogin" minlength="8" title="Password must be at least 8 characters long" required/>
+          </div>
+          <div class="mb-3">
+            <label for="inputAvatarRegister" class="form-label">Avatar Image URL</label>
+            <input type="text" class="form-control" id="inputAvatarRegister" />
           </div>
           <div class="text-center my-3">
             <button type="submit" class="btn btn-primary">Sign up!</button>

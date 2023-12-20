@@ -20,8 +20,8 @@ const content = event.target.querySelector("#exampleInputTextArea1").value;
 const imageUrl = event.target.querySelector("#exampleInputImageUrl").value;
 
 
-  if (!title || !content || !imageUrl) {
-    alert("Please fill in all fields");
+  if (!title || !content) {
+    alert("Please fill in all required fields");
     return;
   }
 

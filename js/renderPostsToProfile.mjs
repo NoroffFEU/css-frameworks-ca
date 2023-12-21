@@ -124,6 +124,8 @@ dropDownItemEditPost.href = editPostUrl;
   dropDownItemDeletePost.className = "dropdown-item";
   dropDownItemDeletePost.innerText = "Delete post";
   dropDownItemDeletePost.id = "delete-post";
+  const removePostUrl = `/post/id=${postData.id}`;
+  dropDownItemDeletePost.href = removePostUrl;
   dropDownMenu.appendChild(dropDownItemDeletePost);
 
   return cardColLayout;

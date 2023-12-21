@@ -66,15 +66,26 @@ a {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #1b1d2e;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+  width: 260px !important;
   text-align: center;
 }
 
 #confirmDelete,
 #cancelDelete {
   margin-top: 10px;
+  background-color: #1b1d2e;
+  color: #e5b9f9;
+  border: 1px solid #e5b9f9;
+  border-radius: 10px;
+}
+
+
+#confirmDelete:hover,
+#cancelDelete:hover {
+  background-color: #e5b9f9;
+  color: #1b1d2e;
+  border: 1px solid #e5b9f9;
 }

@@ -1,13 +1,20 @@
 import { apiPath } from "../const";
 
-export async function registerNewUser(name, password) {
+/**
+ * Logs in a user. Saves accessToken in local storage.
+ * 
+ * @param {string} userName 
+ * @param {string} password 
+ * @returns object with name, email, banner, avatar & accessToken
+ */
+export async function registerNewUser(userName, password) {
     const response = await fetch(`${apiPath}/social/auth/login`, {
         method: "post",
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
         },
-        body: JSON.stringify({ name, password }),
+        body: JSON.stringify({ userName, password }),
     });
 
     const data = await response.json();

@@ -44,7 +44,7 @@ async function editPost(event) {
     }
 
   } catch (error) {
-    console.error("Error updating post:", error);
+    throw new Error("Error updating post:", error);
   }
 }
 
@@ -72,17 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (response) {
         const postData = await response.json();
-        console.log(postData);
 
         // Pre-fill input fields with post data
         titleInput.value = postData.title;
         bodyTextInput.value = postData.body;
         imageInput.value = postData.media;
       } else {
-        console.error("Failed to fetch post data");
+        throw new Error("Failed to fetch post data");
       }
     } catch (error) {
-      console.error("Error fetching post data:", error);
+      throw new Error("Error fetching post data:", error);
     }
   }
   

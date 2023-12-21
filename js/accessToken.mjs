@@ -29,6 +29,6 @@ export async function fetchWithToken(url, options = getData) {
     // Handle errors that may occur during the fetch operation
     return json;
   } catch (error) {
-    console.log("An error occurred during the fetch operation", error);
+    throw new Error("An error occurred during the fetch operation", error);
   }
 }

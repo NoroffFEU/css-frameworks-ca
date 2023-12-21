@@ -33,7 +33,7 @@ async function registerUser(url, data) {
     return json;
   } catch (error) {
     // Handling any errors that may occur during the fetch operation
-    console.log(error, "Error happened");
+    throw new Error(error, "Error happened");
   }
 }
 
@@ -59,7 +59,6 @@ function register(event) {
     password: password.value,
     avatar: avatar.value,
   };
-  console.log(user);
 
   // Calling the registerUser function to send the user data to the server
   registerUser(registerUrl, user);

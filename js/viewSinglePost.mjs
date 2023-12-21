@@ -100,7 +100,6 @@ const displaySinglePostCard = async () => {
     const singlePostCard = createCardSinglePost(jsonSpecific);
     singlePostContainer.appendChild(singlePostCard);
   } catch (error) {
-    console.log(error);
 
  // Display error message in case of an error
     singlePostContainer.innerHTML = errorMessage;

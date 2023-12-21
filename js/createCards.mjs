@@ -18,7 +18,6 @@ export const createCardElement = (posts) => {
     noResultsMessage.className = "d-flex justify-content-center bold";
     noResultsMessage.innerText = `Search result "${searchTerm}" not found.`;
     postsContainer.appendChild(noResultsMessage);
-    console.log(noResultsMessage);
   } else {
     // Render the posts
     posts.forEach((postData) => {

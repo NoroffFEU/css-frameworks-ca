@@ -21,7 +21,6 @@ async function fetchAllPosts() {
  * @returns {HTMLElement} The generated HTML card element.
  */
 function createCardAllPosts(postData) {
-  console.log(postData);
   const cardColLayout = document.createElement("div");
   cardColLayout.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3";
 
@@ -104,7 +103,6 @@ export async function displayAllPostsCards() {
     // Fetch posts
     const posts = await fetchAllPosts();
 
-    /*    console.log("Received posts:", posts);   */
     // Clear existing cards from the container
     allPostsContainer.innerHTML = "";
 
@@ -116,12 +114,9 @@ export async function displayAllPostsCards() {
       allPostsContainer.appendChild(postCard);
     });
   } catch (error) {
-    console.log(error);
-    // Display error message in case of an error
 
     allPostsContainer.innerHTML = errorMessage;
-    // Rethrow the error for external handling, if necessary
-    /*   throw new Error(error); */
+    throw new Error(error);
   } finally {
     // Reset loading flag and hide loader
     loadingPosts = false;

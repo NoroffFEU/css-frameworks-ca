@@ -16,9 +16,6 @@ const displayUserName = async () => {
     userNameContainer.innerText = json.name;
     userAvatarContainer.src = !!json.avatar ? json.avatar : "../images/no_avatar.jpg";
   } catch (error) {
-    console.log(error);
-
-    // Rethrow the error for external handling, if necessary
     throw new Error(error);
   } 
 }

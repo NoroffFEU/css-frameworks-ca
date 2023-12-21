@@ -2,7 +2,7 @@
     export const token = localStorage.getItem("accessToken");
 
    // Creating an object to include the accessToken in the request headers
-   const getData = {
+   export const getData = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

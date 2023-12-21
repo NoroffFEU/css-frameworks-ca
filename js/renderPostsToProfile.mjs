@@ -34,6 +34,7 @@ const createCardAllPosts = (postData) => {
   // if not, use the fallback image "../images/no_img.jpg"
   cardPostImage.src = !!postData.media ? postData.media : "../images/no_img.jpg";
   cardPostImage.className = "card-img-top feed-card-img";
+  cardPostImage.id = "cardPostImage"
   cardPostContent.appendChild(cardPostImage);
 
   const cardPostTextContent = document.createElement("div");
@@ -43,6 +44,7 @@ const createCardAllPosts = (postData) => {
   const cardPostTitle = document.createElement("h5");
   cardPostTitle.innerText = postData.title;
   cardPostTitle.className = "card-title mb-2";
+  cardPostTitle.id = "cardPostTitle"
   cardPostTextContent.appendChild(cardPostTitle);
 
   const userNameOnCardLayout = document.createElement("div");
@@ -59,6 +61,7 @@ const createCardAllPosts = (postData) => {
   const userName = document.createElement("p");
   userName.innerText = postData.owner;
   userName.className = "mb-0";
+  userName.id = "cardPostBody"
   userNameOnCardLayout.appendChild(userName);
 
   const cardFooterWrapper = document.createElement("div");

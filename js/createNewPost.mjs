@@ -47,10 +47,6 @@ const imageUrl = event.target.querySelector("#exampleInputImageUrl").value;
 
     event.target.reset();
 
-    const data = await response.json();
-
-    console.log("Post created!:", data);
-
     await displayAllPostsCards();
 
   } catch (error) {

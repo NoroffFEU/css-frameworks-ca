@@ -29,7 +29,6 @@ const renderPosts = (posts) => {
     noResultsMessage.className = "d-flex justify-content-center bold";
     noResultsMessage.innerText = `Search result "${searchTerm}" not found.`;
     postsContainer.appendChild(noResultsMessage);
-    console.log(noResultsMessage);
   } else {
     // Render the posts
     posts.forEach((postData) => {
@@ -130,7 +129,7 @@ const initialize = async () => {
     // Render the fetched posts
     renderPosts(posts);
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    throw new Error("Error fetching posts:", error);
   }
 };
 

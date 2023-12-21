@@ -53,3 +53,39 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #1b1d2e;
+  margin: 15% auto;
+  padding: 20px;
+  width: 260px !important;
+  text-align: center;
+}
+
+#confirmDelete,
+#cancelDelete {
+  margin-top: 10px;
+  background-color: #1b1d2e;
+  color: #e5b9f9;
+  border: 1px solid #e5b9f9;
+  border-radius: 10px;
+}
+
+
+#confirmDelete:hover,
+#cancelDelete:hover {
+  background-color: #e5b9f9;
+  color: #1b1d2e;
+  border: 1px solid #e5b9f9;
+}

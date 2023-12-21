@@ -45,7 +45,7 @@ const initializeSortPosts = async () => {
     // Render the fetched posts
     createCardElement(posts);
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    throw new Error("Error fetching posts:", error);
   }
 };
 

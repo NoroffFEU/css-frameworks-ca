@@ -50,7 +50,7 @@ async function loginUser(url, data) {
   
   } catch (error) {
     // Handling errors that may occur during the fetch operation
-    console.log(error, "An error occurred!");
+    throw new Error(error, "An error occurred!");
   }
 }
 

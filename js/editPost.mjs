@@ -1,5 +1,5 @@
 import { apiBaseUrl, allPostsApi } from "./variables.mjs";
-import { fetchWithToken, token } from "./accessToken.mjs";
+import { fetchWithToken, token, getData } from "./accessToken.mjs";
 
 // Query string parameter
 const queryString = document.location.search;
@@ -53,7 +53,40 @@ document.addEventListener("DOMContentLoaded", () => {
   editPostForm.addEventListener("submit", editPost);
 });
 
+const editTitle = document.querySelector("#editTitle");
+console.log("editTitle", editTitle);
+const editContent = document.querySelector("#editBodyText")
+const editImageUrl = document.querySelector("#editImage");
 
+
+function getPostId() {
+  const currentPostId = postId;
+  console.log("currentPostId", currentPostId);
+  return currentPostId;
+}
+
+async function getSinglePost(postId) {
+  const apiUrl = `${apiBaseUrl}${allPostsApi}/${postId}`;
+  const currentPost = await fetchWithToken(apiUrl, getData);
+console.log("currentPost", currentPost);
+return currentPost;
+}
+
+function preFillFormWithPostData(post) {
+  editTitle.value = post.title;
+  editContent.value = post.body;
+  editImageUrl.value = post.media;
+}
+
+async function main () {
+  const postId = getPostId();
+  const post = await getSinglePost(postId);
+  preFillFormWithPostData(post);
+}
+
+window.addEventListener("DOMContentLoaded", main)
+
+/* 
   // Select the input fields
   const titleInput = document.querySelector("#editTitle");
   const bodyTextInput = document.querySelector("#editBodyText");
@@ -86,4 +119,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   getPostData();
-
+ */

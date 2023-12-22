@@ -6,15 +6,13 @@ import { formatDateString } from "./formatDate.mjs";
 /**
  * Fetches all posts with an access token
  * @returns {Promise} A promise representing the asynchronous operation of fetching posts.
- * @example
-
  */
 const fetchAllPosts = async () => {
   return await fetchWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
 };
 
 /**
- * Creates an HTML card element for a social app post.
+ * Creates an HTML card element.
  *
  * @param {Object} postData The data for the post.
  * @returns {HTMLElement} The generated HTML card element.
@@ -113,7 +111,9 @@ export const displayAllPostsCards = async () => {
       allPostsContainer.appendChild(postCard);
     });
   } catch (error) {
+    // Display error message
     allPostsContainer.innerHTML = errorMessage;
+    // Throw a new error
     throw new Error(error);
   } finally {
     // Reset loading flag and hide loader

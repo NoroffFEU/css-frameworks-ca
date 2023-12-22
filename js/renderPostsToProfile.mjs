@@ -3,8 +3,14 @@ import { fetchWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
+// Getting userData from localStorage
 const user = JSON.parse(localStorage.getItem("userProfile"));
 
+/**
+ * Fetches the profile posts of the logged-in user.
+ *
+ * @returns {Promise<Object>} - A promise that resolves with the user's profile data and posts.
+ */
 const fetchUserProfilePosts = async () => {
   return await fetchWithToken(`${apiBaseUrl}${profileUrl}${user.name}?_author=true&_posts=true`);
 };
@@ -156,10 +162,13 @@ const displayAllPostsCards = async () => {
     // Display loader while posts are being fetched
     loaderContainer.style.display = "block";
 
+    // Fetch the user profile data and posts using the fetchUserProfilePosts function.
     const userObject = await fetchUserProfilePosts();
 
+    // Clear the inner HTML of the userPostsContainer to prepare for displaying new posts.
     userPostsContainer.innerHTML = "";
 
+    // Extract the posts array from the userObject, which contains the user's posts.
     const posts = userObject.posts;
 
     // Iterate over each post data and create a card for each post
@@ -170,6 +179,7 @@ const displayAllPostsCards = async () => {
       userPostsContainer.appendChild(postCard);
     });
   } catch (error) {
+    // Display error message
     userPostsContainer.innerHTML = errorMessage;
     // Rethrow the error for external handling, if necessary
     throw new Error(error);

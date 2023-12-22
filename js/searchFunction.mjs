@@ -95,10 +95,13 @@ const renderPosts = (posts) => {
  * filterPosts(searchTerm);
  */
 const filterPosts = (inputText) => {
+  // Create a new array of posts that match the search criteria
   const filteredPosts = posts.filter((post) => {
+    // Check if the lowercase version of post title/content/userName includes the lowercase search text
     const titleMatch = post.title.toLowerCase().includes(inputText.toLowerCase());
     const contentMatch = post.body?.toLowerCase().includes(inputText.toLowerCase());
     const userMatch = post.author.name.toLowerCase().includes(inputText.toLowerCase());
+    // Return true if any of the conditions (title, content, or userName) are true
     return titleMatch || contentMatch || userMatch;
   });
   renderPosts(filteredPosts);
@@ -121,7 +124,10 @@ searchForm.addEventListener("submit", function (event) {
   filterPosts(searchTerm);
 });
 
-// Initializes the app by fetching posts and rendering them
+/**
+ * Initializes the app by fetching posts and rendering them.
+ * @throws {Error} - Throws an error if there's an issue during the fetch operation.
+ */
 const initialize = async () => {
   try {
     // Fetch posts from the API

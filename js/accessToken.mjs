@@ -11,11 +11,18 @@ export const getData = {
 };
 
 /**
- * Fetches posts with an access token
- * @param {string} url The URL to fetch posts from.
+ * Fetches data from the specified URL with an access token.
+ * @param {string} url - The URL to fetch data from.
+ * @param {Object} [options=getData] - The options for the fetch request.
+ * @returns {Promise<Object>} - A promise that resolves to the parsed JSON response.
+ * @throws {Error} - Throws an error if an issue occurs during the fetch operation.
  * @example
  * const apiUrl = `${apiBaseUrl}${postsAPI}`;
- * fetchWithToken(apiUrl);
+ * try {
+ *   const data = await fetchWithToken(apiUrl);
+ * } catch (error) {
+ *   throw new Error(message, error);
+ * }
  */
 export const fetchWithToken = async (url, options = getData) => {
   try {
@@ -28,6 +35,7 @@ export const fetchWithToken = async (url, options = getData) => {
     // Handle errors that may occur during the fetch operation
     return json;
   } catch (error) {
+    // Rethrow the error with a more informative message
     throw new Error("An error occurred during the fetch operation", error);
   }
 };

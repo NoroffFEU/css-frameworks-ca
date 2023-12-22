@@ -6,7 +6,13 @@ import { apiBaseUrl, registerUrl } from "./variables.mjs";
  * @param {Object} data The user data to be included in the registration request.
  * @returns {Promise<Object>} The function returns a Promise, when Promise is fulfilled, it provides the parsed JSON response received from the server.
  * @example
-
+ * const userData = {
+ *   name: "John Doe",
+ *   email: "john.doe@example.com",
+ *   password: "securepassword123",
+ *   avatar: "https://example.com/avatar.jpg",
+ * };
+ * registerUser("https://example.com/api/register", userData);
  */
 const registerUser = async (url, data) => {
   try {
@@ -27,6 +33,9 @@ const registerUser = async (url, data) => {
     // Alert for successful register
     alert("You are now registerd, please log in with your email and password!");
 
+    // Redirect to the top of the page after successful register
+    window.location.href = "#";
+
     // Returning the parsed JSON data
     return json;
   } catch (error) {
@@ -41,10 +50,9 @@ const registerForm = document.querySelector("#registerForm");
 /**
  * Function to handle the form submission event and register a new user.
  * @param {Event} event The form submission event
- * @return {none} This function doesent return a value
  * @example
+ * registerForm.addEventListener("submit", register);
  */
-
 const register = (event) => {
   // Preventing the default form submission behavior to handle it manually
   event.preventDefault();

@@ -6,7 +6,8 @@ import { apiBaseUrl, loginUrl } from "./variables.mjs";
  * @param {Object} data The user data to be included in the login request.
  * @returns {Promise<Object>} The function returns a Promise, when Promise is fulfilled, it provides the parsed JSON response recieved from the server.
  * @example
- *
+ * const loginData = { email: "example@email.com", password: "password123" };
+ * loginUser("https://example.com/api/login", loginData);
  */
 const loginUser = async (url, data) => {
   try {
@@ -55,10 +56,12 @@ const loginUser = async (url, data) => {
 
 //Selecting the HTML form with the id "loginForm"
 const loginForm = document.querySelector("#loginForm");
+
 /**
  * Function to handle the form submission and initiates the logion process.
  * @param {Event} event The form submission event
  * @example
+ * loginForm.addEventListener("submit", login);
  */
 const login = (event) => {
   // Preventing default form submission bahaviour to handle it manually

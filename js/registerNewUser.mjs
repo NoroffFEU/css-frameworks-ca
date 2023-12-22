@@ -1,6 +1,4 @@
-import { apiBaseUrl } from "./variables.mjs";
-
-const registerUrl = `${apiBaseUrl}/social/auth/register`;
+import { apiBaseUrl, registerUrl } from "./variables.mjs";
 
 /**
  * Fuction to register a new user
@@ -10,7 +8,7 @@ const registerUrl = `${apiBaseUrl}/social/auth/register`;
  * @example
 
  */
-async function registerUser(url, data) {
+const registerUser = async (url, data) => {
   try {
     // Creating an object to configure the fetch request
     const postData = {
@@ -28,14 +26,14 @@ async function registerUser(url, data) {
 
     // Alert for successful register
     alert("You are now registerd, please log in with your email and password!");
-    
+
     // Returning the parsed JSON data
     return json;
   } catch (error) {
     // Handling any errors that may occur during the fetch operation
     throw new Error(error, "Error happened");
   }
-}
+};
 
 // Selecting the HTML form with the id "registerForm"
 const registerForm = document.querySelector("#registerForm");
@@ -46,7 +44,8 @@ const registerForm = document.querySelector("#registerForm");
  * @return {none} This function doesent return a value
  * @example
  */
-function register(event) {
+
+const register = (event) => {
   // Preventing the default form submission behavior to handle it manually
   event.preventDefault();
   // Destructuring the form elements to get values for name, email, and password
@@ -61,14 +60,14 @@ function register(event) {
   };
 
   // Calling the registerUser function to send the user data to the server
-  registerUser(registerUrl, user);
+  registerUser(`${apiBaseUrl}${registerUrl}`, user);
 
-    // Clearing input fields
-    name.value ="";
-    email.value = "";
-    password.value = "";
-    avatar.value = "";
-}
+  // Clearing input fields
+  name.value = "";
+  email.value = "";
+  password.value = "";
+  avatar.value = "";
+};
 
 // Adding an event listener to the form to call the register function on form submission
 registerForm.addEventListener("submit", register);

@@ -6,17 +6,13 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const postId = params.get("id");
 
-async function editPost(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
+const editPost = async (event) => {
+  // Prevent the form from submitting normally
+  event.preventDefault(); 
 
   const title = event.target.querySelector("#editTitle");
   const content = event.target.querySelector("#editBodyText")
   const imageUrl = event.target.querySelector("#editImage");
-
-  if (!title || !content) {
-    alert("Please fill in all required fields");
-    return;
-  }
 
   const editPostData = {
     title: title.value,
@@ -54,69 +50,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const editTitle = document.querySelector("#editTitle");
-console.log("editTitle", editTitle);
 const editContent = document.querySelector("#editBodyText")
 const editImageUrl = document.querySelector("#editImage");
 
-
-function getPostId() {
+const getPostId = () => {
   const currentPostId = postId;
-  console.log("currentPostId", currentPostId);
   return currentPostId;
 }
 
-async function getSinglePost(postId) {
+const getSinglePost = async (postId) => {
   const apiUrl = `${apiBaseUrl}${allPostsApi}/${postId}`;
   const currentPost = await fetchWithToken(apiUrl, getData);
-console.log("currentPost", currentPost);
 return currentPost;
 }
 
-function preFillFormWithPostData(post) {
+const preFillFormWithPostData = (post) => {
   editTitle.value = post.title;
   editContent.value = post.body;
   editImageUrl.value = post.media;
 }
 
-async function main () {
+const main = async () => {
   const postId = getPostId();
   const post = await getSinglePost(postId);
   preFillFormWithPostData(post);
 }
 
 window.addEventListener("DOMContentLoaded", main)
-
-/* 
-  // Select the input fields
-  const titleInput = document.querySelector("#editTitle");
-  const bodyTextInput = document.querySelector("#editBodyText");
-  const imageInput = document.querySelector("#editImage");
-
-  // Fetch post data and pre-fill input fields
-  async function getPostData() {
-    try {
-      const response = await fetchWithToken(`${apiBaseUrl}${allPostsApi}/${postId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (response) {
-        const postData = await response.json();
-
-        // Pre-fill input fields with post data
-        titleInput.value = postData.title;
-        bodyTextInput.value = postData.body;
-        imageInput.value = postData.media;
-      } else {
-        throw new Error("Failed to fetch post data");
-      }
-    } catch (error) {
-      throw new Error("Error fetching post data:", error);
-    }
-  }
-  
-  getPostData();
- */

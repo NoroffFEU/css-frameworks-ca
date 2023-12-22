@@ -7,10 +7,11 @@
  * const errorMessage = createMessage("error", "This is an error message.");
  * document.body.innerHTML = errorMessage;
  */
-export function createMessage(type = "error", message = "Ooops! An error has occured.") {
+
+export const createMessage = (type = "error", message = "Ooops! An error has occured.") => {
   // Construct the HTML message element with specified type and message
   const html = `<div class="message" ${type}">${message}</div>`;
 
-   // Return the generated HTML message string
+  // Return the generated HTML message string
   return html;
-}
+};

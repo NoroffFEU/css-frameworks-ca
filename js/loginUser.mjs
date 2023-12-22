@@ -1,7 +1,4 @@
-import { apiBaseUrl } from "./variables.mjs";
-
-// Define the login URL
-const loginUrl = "/social/auth/login";
+import { apiBaseUrl, loginUrl } from "./variables.mjs";
 
 /**
  * Function to login an existing user
@@ -11,7 +8,7 @@ const loginUrl = "/social/auth/login";
  * @example
  *
  */
-async function loginUser(url, data) {
+const loginUser = async (url, data) => {
   try {
     // Creating an object to configure the fetch request
     const postData = {
@@ -28,31 +25,33 @@ async function loginUser(url, data) {
     const json = await response.json();
 
     if (json.accessToken) {
-    // Storing the accessToken into local storage
-    const accessToken = json.accessToken;
-    localStorage.setItem("accessToken", accessToken);
+      // Storing the accessToken into local storage
+      const accessToken = json.accessToken;
+      localStorage.setItem("accessToken", accessToken);
 
-    // Storing the user profile info into local storage
-    localStorage.setItem("userProfile", JSON.stringify({ name: json.name, email: json.email, avatar: json.avatar, banner: json.banner, }));
+      // Storing the user profile info into local storage
+      localStorage.setItem(
+        "userProfile",
+        JSON.stringify({ name: json.name, email: json.email, avatar: json.avatar, banner: json.banner })
+      );
 
-    // Alert for successful login
-    alert("Login successful!");
+      // Alert for successful login
+      alert("Login successful!");
 
-    // Redirect to the feed page after successful login
-    window.location.href = "/feed/";
+      // Redirect to the feed page after successful login
+      window.location.href = "/feed/";
 
-    // Returning the parsed JSON data
-    return json;
+      // Returning the parsed JSON data
+      return json;
     } else {
       // Alert for unsuccessful login
       alert("Invalid email or password");
     }
-  
   } catch (error) {
     // Handling errors that may occur during the fetch operation
     throw new Error(error, "An error occurred!");
   }
-}
+};
 
 //Selecting the HTML form with the id "loginForm"
 const loginForm = document.querySelector("#loginForm");
@@ -61,7 +60,7 @@ const loginForm = document.querySelector("#loginForm");
  * @param {Event} event The form submission event
  * @example
  */
-function login(event) {
+const login = (event) => {
   // Preventing default form submission bahaviour to handle it manually
   event.preventDefault();
   // Destructuring the form elements to get value for email and password
@@ -79,7 +78,7 @@ function login(event) {
   // Clearing input fields
   email.value = "";
   password.value = "";
-}
+};
 
 // Adding an event listner to the form to call the loginUser function on form submission
 loginForm.addEventListener("submit", login);

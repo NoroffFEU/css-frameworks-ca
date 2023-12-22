@@ -8,23 +8,23 @@ let posts = [];
 // URL to the fetch API
 const APIURL = `${apiBaseUrl}${allPostsApi}?_author=true`;
 
-function sortPostsNewest(posts) {
+const sortPostsNewest = (posts) => {
   const sortedArray = posts.sort(function (a, b) {
     const timeA = new Date(a.updated);
     const timeB = new Date(b.updated);
     return timeB - timeA; // Compare timestamps in descending order
   });
   return sortedArray;
-}
+};
 
-function sortPostsOldest(posts) {
+const sortPostsOldest = (posts) => {
   const sortedArray = posts.sort(function (a, b) {
     const timeA = new Date(a.updated);
     const timeB = new Date(b.updated);
     return timeA - timeB; // Compare timestamps in ascending order
   });
   return sortedArray;
-}
+};
 
 const sortButtonsContainer = document.querySelector("#sort-buttons");
 

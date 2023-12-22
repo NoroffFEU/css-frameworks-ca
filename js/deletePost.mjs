@@ -7,7 +7,7 @@ import { fetchWithToken, token } from "./accessToken.mjs";
  * @param {number} id - The ID of the post to be deleted
  * @returns {Promise<void>} - A Promise that resolves when the deletion is successful
  */
-async function deletePost(id) {
+const deletePost = async (id) => {
     try {
       // Perform the deletion when confirmed
       const response = await fetchWithToken(`${apiBaseUrl}${allPostsApi}/${id}`, {

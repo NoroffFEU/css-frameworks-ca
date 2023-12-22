@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-async function createPost(event) {
+const createPost = async (event) => {
   event.preventDefault();
 
 
@@ -50,7 +49,7 @@ const imageUrl = event.target.querySelector("#exampleInputImageUrl").value;
     await displayAllPostsCards();
 
   } catch (error) {
-    console.error("Error creating post:", error);
+    throw new Error("Error creating post:", error);
   }
 }
 

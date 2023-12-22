@@ -4,15 +4,14 @@ import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
 /**
- * Fetches all posts with an access token, applying pagination using limit and offset.
+ * Fetches all posts with an access token
  * @returns {Promise} A promise representing the asynchronous operation of fetching posts.
  * @example
- * // Example: Fetch all posts with a limit of 10 and offset of 0
- * const posts = await fetchAllPosts(10, 0);
+
  */
-async function fetchAllPosts() {
+const fetchAllPosts = async () => {
   return await fetchWithToken(`${apiBaseUrl}${allPostsApi}?_author=true`);
-}
+};
 
 /**
  * Creates an HTML card element for a social app post.
@@ -20,7 +19,7 @@ async function fetchAllPosts() {
  * @param {Object} postData The data for the post.
  * @returns {HTMLElement} The generated HTML card element.
  */
-function createCardAllPosts(postData) {
+const createCardAllPosts = (postData) => {
   const cardColLayout = document.createElement("div");
   cardColLayout.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3";
 
@@ -72,7 +71,7 @@ function createCardAllPosts(postData) {
   cardPostDatePublishedWrapper.appendChild(cardPostDatePublished);
 
   return cardColLayout;
-}
+};
 
 // Targeting DOM elements
 const loaderContainer = document.querySelector(".loader-container");
@@ -87,7 +86,7 @@ let loadingPosts = false;
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
  */
-export async function displayAllPostsCards() {
+export const displayAllPostsCards = async () => {
   try {
     // If posts are already being loaded, return
     if (loadingPosts) {
@@ -114,7 +113,6 @@ export async function displayAllPostsCards() {
       allPostsContainer.appendChild(postCard);
     });
   } catch (error) {
-
     allPostsContainer.innerHTML = errorMessage;
     throw new Error(error);
   } finally {
@@ -122,7 +120,7 @@ export async function displayAllPostsCards() {
     loadingPosts = false;
     loaderContainer.style.display = "none";
   }
-}
+};
 
 // Initial call to display blog cards
 displayAllPostsCards();

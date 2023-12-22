@@ -6,8 +6,8 @@
  * const timestamp = "2023-04-15T12:30:00Z";
  * const formattedDate = formatDateString(timestamp);
  */
-export function formatDateString(timestamp) {
-    // Array of month names
+export const formatDateString = (timestamp) => {
+  // Array of month names
   const months = [
     "January",
     "February",
@@ -20,15 +20,14 @@ export function formatDateString(timestamp) {
     "September",
     "Oktober",
     "November",
-    "December"
+    "December",
   ];
-
 
   //Create a Date object from the timestamp
   const date = new Date(timestamp);
 
   // Get the day, month and year components
-  const day = String(date.getDate()).padStart(2,"0");
+  const day = String(date.getDate()).padStart(2, "0");
   const monthIndex = date.getMonth();
   const month = months[monthIndex];
   const year = date.getFullYear();
@@ -37,6 +36,4 @@ export function formatDateString(timestamp) {
   const formattedDate = `${month} ${day}, ${year}`;
 
   return formattedDate;
-
-}
-
+};

@@ -1,16 +1,13 @@
-import { apiBaseUrl, profileUrl } from "./variables.mjs"; 
+import { apiBaseUrl, profileUrl } from "./variables.mjs";
 import { fetchWithToken } from "./accessToken.mjs";
 import { createMessage } from "./errorMessage.mjs";
 import { formatDateString } from "./formatDate.mjs";
 
-const user = JSON.parse(localStorage.getItem("userProfile"))
+const user = JSON.parse(localStorage.getItem("userProfile"));
 
-async function fetchUserProfilePosts() {
+const fetchUserProfilePosts = async () => {
   return await fetchWithToken(`${apiBaseUrl}${profileUrl}${user.name}?_author=true&_posts=true`);
-  
-}
-
-
+};
 
 /**
  * Creates an HTML card element for a single post.
@@ -18,7 +15,6 @@ async function fetchUserProfilePosts() {
  * @returns {HTMLElement} The generated HTML card element.
  */
 const createCardAllPosts = (postData) => {
-
   const cardColLayout = document.createElement("div");
   cardColLayout.className = "col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3";
 
@@ -32,7 +28,7 @@ const createCardAllPosts = (postData) => {
   // if not, use the fallback image "../images/no_img.jpg"
   cardPostImage.src = !!postData.media ? postData.media : "../images/no_img.jpg";
   cardPostImage.className = "card-img-top feed-card-img";
-  cardPostImage.id = "cardPostImage"
+  cardPostImage.id = "cardPostImage";
   cardPostContent.appendChild(cardPostImage);
 
   const cardPostTextContent = document.createElement("div");
@@ -42,7 +38,7 @@ const createCardAllPosts = (postData) => {
   const cardPostTitle = document.createElement("h5");
   cardPostTitle.innerText = postData.title;
   cardPostTitle.className = "card-title mb-2";
-  cardPostTitle.id = "cardPostTitle"
+  cardPostTitle.id = "cardPostTitle";
   cardPostTextContent.appendChild(cardPostTitle);
 
   const userNameOnCardLayout = document.createElement("div");
@@ -59,7 +55,7 @@ const createCardAllPosts = (postData) => {
   const userName = document.createElement("p");
   userName.innerText = postData.owner;
   userName.className = "mb-0";
-  userName.id = "cardPostBody"
+  userName.id = "cardPostBody";
   userNameOnCardLayout.appendChild(userName);
 
   const cardFooterWrapper = document.createElement("div");
@@ -103,9 +99,8 @@ const createCardAllPosts = (postData) => {
   path2.setAttribute(
     "d",
     "M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
-    );
+  );
   svg.appendChild(path2);
-
 
   const dropDownMenu = document.createElement("div");
   dropDownMenu.className = "dropdown-menu";
@@ -116,8 +111,8 @@ const createCardAllPosts = (postData) => {
   dropDownItemEditPost.innerText = "Edit post";
   dropDownItemEditPost.id = "edit-post";
 
-const editPostUrl = `/post/edit.html?id=${postData.id}`;
-dropDownItemEditPost.href = editPostUrl;
+  const editPostUrl = `/post/edit.html?id=${postData.id}`;
+  dropDownItemEditPost.href = editPostUrl;
 
   dropDownMenu.appendChild(dropDownItemEditPost);
 
@@ -125,7 +120,7 @@ dropDownItemEditPost.href = editPostUrl;
   dropDownItemDeletePost.className = "dropdown-item";
   dropDownItemDeletePost.innerText = "Delete post";
   dropDownItemDeletePost.id = "delete-post";
-  dropDownItemDeletePost.href = "#"
+  dropDownItemDeletePost.href = "#";
   dropDownItemDeletePost.addEventListener("click", () => {
     deleteConfirmationModal.style.display = "block";
     deleteConfirmationModal.dataset.postId = postData.id;
@@ -148,7 +143,7 @@ let loadingPosts = false;
  *
  * @throws {Error} - Throws an error if there's an issue during the fetch operation.
  */
-async function displayAllPostsCards() {
+const displayAllPostsCards = async () => {
   try {
     // If posts are already being loaded, return
     if (loadingPosts) {
@@ -167,7 +162,6 @@ async function displayAllPostsCards() {
 
     const posts = userObject.posts;
 
-
     // Iterate over each post data and create a card for each post
     posts.forEach((postData) => {
       // Create a card element for the current post data
@@ -184,7 +178,7 @@ async function displayAllPostsCards() {
     loadingPosts = false;
     loaderContainer.style.display = "none";
   }
-}
+};
 
 // Initial call to display blog cards
 displayAllPostsCards();

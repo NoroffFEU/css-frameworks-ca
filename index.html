@@ -5,8 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="dist/css/styles.css" />
+    <script src="./js/registerNewUser.mjs" type="module"></script>
+    <script src="./js/loginUser.mjs" type="module"></script>
+    <script src="./js/variables.mjs" type="module"></script>
     <title>Home | Dancehub</title>
-    <link rel="icon" type="image/x-icon" href="/images/dancehub.ico">
+    <link rel="icon" type="image/x-icon" href="/images/dancehub.ico" />
   </head>
   <body>
     <header>
@@ -53,14 +56,28 @@
         <h2 class="text-center py-3 px-2">Share your passion and connect with other dancers!</h2>
       </div>
       <div class="container col-6 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
-        <form action="/profile" method="get">
+        <form id="loginForm" method="get">
           <div class="mb-3">
-            <label for="inputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail1" required/>
+            <label for="inputEmailLogin" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmailLogin"
+              required
+              pattern="[\w\-.]+@(stud.)?noroff.no$"
+              title="Only @(stud.)noroff.no domains are allowed to log in"
+            />
           </div>
           <div class="mb-3">
-            <label for="inputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword1" minlength="8" required/>
+            <label for="inputPasswordLogin" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPasswordLogin"
+              minlength="8"
+              required
+              title="Password must be at least 8 characters long"
+            />
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Log in</button>
@@ -68,22 +85,48 @@
         </form>
         <h4 class="card-text text-center mt-5">Haven't signed up yet?</h4>
         <h4 class="card-text text-center mt-2 mb-3">Get started!</h4>
-        <form action="/profile" method="get">
+        <form id="registerForm" method="get">
           <div class="mb-3">
-            <label for="inputName1" class="form-label">Username</label>
-            <input type="text" class="form-control" id="inputName1" required/>
+            <label for="inputNameRegister" class="form-label">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputNameRegister"
+              required
+              minlength="3"
+              pattern="^[\w]+$"
+              title="Username must only contain lowercase and uppercase letters, numbers and underscore (_). Example: Tom_123"
+            />
           </div>
           <div class="mb-3">
-            <label for="inputEmail2" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail2" required/>
+            <label for="inputEmailRegister" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmailRegister"
+              required
+              pattern="[\w\-.]+@(stud.)?noroff.no$"
+              title="Only @(stud.)noroff.no domains are allowed to register"
+            />
           </div>
           <div class="mb-3">
-            <label for="inputPassword2" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword2" required/>
+            <label for="inputPasswordRegister" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPasswordRegister"
+              <input
+              type="password"
+              class="form-control"
+              id="inputPasswordLogin"
+              minlength="8"
+              title="Password must be at least 8 characters long"
+              required
+            />
           </div>
           <div class="mb-3">
-            <label for="inputConfirmPassword2" class="form-label">Confirm password</label>
-            <input type="password" class="form-control" id="inputConfirmPassword2" required minlength="8"/>
+            <label for="inputAvatarRegister" class="form-label">Avatar Image URL</label>
+            <input type="text" class="form-control" id="inputAvatarRegister" />
           </div>
           <div class="text-center my-3">
             <button type="submit" class="btn btn-primary">Sign up!</button>

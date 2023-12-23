@@ -11,3 +11,16 @@ $secondary: #e09cff;
 .search-button {
   border-radius: 0px 5px 5px 0px !important;
 }
+
+.back-button {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  margin: 70px auto 0px 10px;
+  padding: 10px 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #1A1D2E;
+  color: #fff;
+  border: none;
+}

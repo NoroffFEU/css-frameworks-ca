@@ -1,0 +1,13 @@
+// Primary button
+$primary: #e5acff;
+
+$btn-border-width: 0.5px;
+
+//secondary button
+$secondary: #e09cff;
+
+// The only way to get this styling to work on this button was to add  "!important"
+// I would love to know a better way to do it if there is...?
+.search-button {
+  border-radius: 0px 5px 5px 0px !important;
+}

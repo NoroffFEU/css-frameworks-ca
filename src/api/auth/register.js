@@ -1,3 +1,5 @@
+import { apiPath } from "../const.js";
+
 /**
  * Register a user.
  * 
@@ -6,16 +8,16 @@
  * @returns object with id, name, email, banner & avatar
  */
 
-import { apiPath } from "../const";
 
-export async function registerNewUser(userName, email, password, avatar) {
+
+export async function registerNewUser(name, email, password, avatar) {
     const response = await fetch(`${apiPath}/social/auth/register`, {
         method: "post",
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
         },
-        body: JSON.stringify({ userName, email, password, avatar }),
+        body: JSON.stringify({ name, email, password, avatar }),
     });
 
     const data = await response.json();

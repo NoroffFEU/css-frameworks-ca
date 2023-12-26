@@ -25,7 +25,8 @@ document.getElementById("submitBtn2").addEventListener("click", async (event) =>
 
 
 // Gets values from login module and sends them to API
-document.getElementById("submitBtn1").addEventListener("click", async () => {
+document.getElementById("submitBtn1").addEventListener("click", async (event) => {
+    event.preventDefault();
     const emailLoginValue = document.getElementById("InputEmail1").value;
     const passwordLoginValue = document.getElementById("InputPassword1").value;
 

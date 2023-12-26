@@ -4,7 +4,9 @@ import { apiPath } from "../const.js";
  * Register a user.
  * 
  * @param {string} name 
+ * @param {string} email
  * @param {string} password 
+ * @param {string} avatar
  * @returns object with id, name, email, banner & avatar
  */
 

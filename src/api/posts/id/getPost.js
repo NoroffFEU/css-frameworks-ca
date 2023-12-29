@@ -1,4 +1,4 @@
-import { apiPath } from "../../const";
+import { apiPath } from "../../const.js";
 
 /**
 * Gets posts with their title, body, tags, media, reactions, comments, when they were created and edited, id, author (and their details such as name, email & avatar) & number of comments and reactions
@@ -9,7 +9,6 @@ import { apiPath } from "../../const";
 
 export async function getPost(token, postId) {
     const response = await fetch(
-        // hvordan kan jeg hente tags????
         `${apiPath}/social/posts/${postId}?_author=true&_reactions=true&_comments=true`,
         {
             method: "get",

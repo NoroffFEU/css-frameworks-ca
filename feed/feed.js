@@ -6,7 +6,7 @@ import { isMediaValid } from "../src/tools/validMedia.js";
 window.onload = processFeed();
 
 /** 
-* This function gets token, use it to get posts from API and send them to the next function
+* Gets token, uses it to get posts from API and send them to the next function
 */
 async function processFeed() {
     const token = getAccessToken();
@@ -17,7 +17,7 @@ async function processFeed() {
 
 
 /** 
- * This function shows the posts sent from API; it also checks if there is any media included 
+ * Shows the posts sent from API; it also checks if there is any media included 
  * 
  * @param {array} posts 
  * @returns {array} array with all the posts and shows them on the site
@@ -42,7 +42,7 @@ function showPosts(posts) {
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
                 <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
-                    <p class="card-text text-start" id="cardBody">${posts[i].body}</p>
+                <a href="../singlePost/index.html?postId=${posts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>

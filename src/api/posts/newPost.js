@@ -1,4 +1,4 @@
-import { apiPath } from "../const";
+import { apiPath } from "../const.js";
 
 /**
  * Enables to write a new post with its title, body, tags and media
@@ -22,7 +22,6 @@ export async function newPost(token, title, body, tags, media) {
     });
 
     const data = await response.json();
-    localStorage.setItem("accessToken", data.accessToken);
 
     if (response.ok) {
         return data;

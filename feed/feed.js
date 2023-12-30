@@ -1,7 +1,7 @@
 import { getPosts } from "../src/api/posts/getPosts.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
-
+import { newPost } from "../src/api/posts/newPost.js";
 
 window.onload = processFeed();
 
@@ -58,3 +58,13 @@ function showPosts(posts) {
         `;
     }
 }
+
+document.getElementById("postBtn").addEventListener("click", () => {
+    const token = getAccessToken();
+    const newPostTitle = document.getElementById("newPostInput1").value;
+    const newPostMessage = document.getElementById("newPostInput2").value;
+    const newPostTags = document.getElementById("newPostInput3").value.split(",");
+    const newPostMedia = document.getElementById("newPostInput4").value.split(",");
+
+    newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
+});

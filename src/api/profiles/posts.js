@@ -1,4 +1,4 @@
-import { apiPath } from "../const";
+import { apiPath } from "../const.js";
 
 /** Gets a specific profile with posts
  * 
@@ -8,8 +8,8 @@ import { apiPath } from "../const";
  */
 export async function getProfile(token, name) {
     const response = await fetch(
-        // hvordan kan jeg hente tags????
-        `${apiPath}/social/profiles/${name}?posts?_reactions=true&_comments=true&_author=true`,
+
+        `${apiPath}/social/profiles/${name}/posts?_reactions=true&_comments=true&_author=true`,
         {
             method: "get",
             headers: {

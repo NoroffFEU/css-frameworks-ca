@@ -1,5 +1,6 @@
 import { apiPath } from "../const.js";
 import { setAccessToken } from "../../tools/accessToken.js";
+import { setUserName } from "../../tools/NameLocalStorage.js";
 
 /**
  * Logs in a user. Saves accessToken in local storage.
@@ -21,6 +22,8 @@ export async function loginUser(email, password) {
     const data = await response.json();
     //localStorage.setItem("accessToken", data.accessToken);
     setAccessToken(data.accessToken);
+    setUserName(data.name);
+
 
     if (response.ok) {
         return data;

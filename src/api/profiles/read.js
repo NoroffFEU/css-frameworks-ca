@@ -1,4 +1,4 @@
-import { apiPath } from "../const";
+import { apiPath } from "../const.js";
 
 /** Gets all profiles
  * 

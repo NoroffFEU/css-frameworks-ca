@@ -2,6 +2,7 @@ import { getPosts } from "../src/api/posts/getPosts.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { newPost } from "../src/api/posts/newPost.js";
+import { getUserName } from "../src/tools/NameLocalStorage.js";
 
 window.onload = processFeed();
 
@@ -22,6 +23,9 @@ async function processFeed() {
  * @param {array} posts 
  * @returns {array} array with all the posts and shows them on the site
  */
+
+
+
 function showPosts(posts) {
     let containerHTMLCard = document.getElementById("singleCard");
     let setImg = "";
@@ -36,6 +40,9 @@ function showPosts(posts) {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
 
+
+
+
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
@@ -48,6 +55,8 @@ function showPosts(posts) {
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${posts[i].id}" data-postid="${posts[i].id}">Edit</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${posts[i].id}" data-postid="${posts[i].id}">Delete</button>
                         </div>
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                     </div>
@@ -56,6 +65,16 @@ function showPosts(posts) {
             </div>
         </div>        
         `;
+
+        let userName = getUserName();
+        if (posts[i].author.name === userName) {
+            document.getElementById(`btnEdit${posts[i].id}`).style.display = "block";
+            document.getElementById(`btnDelete${posts[i].id}`).style.display = "block";
+        } else {
+            document.getElementById(`btnEdit${posts[i].id}`).style.display = "none";
+            document.getElementById(`btnDelete${posts[i].id}`).style.display = "none";
+        }
+
     }
 }
 

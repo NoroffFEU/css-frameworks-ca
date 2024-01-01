@@ -3,6 +3,7 @@
 import { getPost } from "../src/api/posts/id/getPost.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
+import { getUserName } from "../src/tools/NameLocalStorage.js";
 
 let params = new URLSearchParams(window.location.search);
 let postId = params.get("postId");
@@ -49,6 +50,8 @@ function showPost(post) {
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${post.author.name}</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${post.id}" data-postid="${post.id}">Comments</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${post.id}">Reactions</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${post.id}" data-postid="${post.id}">Edit</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${post.id}" data-postid="${post.id}">Delete</button>
                         </div>
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                     </div>
@@ -57,4 +60,12 @@ function showPost(post) {
             </div>
         </div>        
         `;
+    let userName = getUserName();
+    if (post.author.name === userName) {
+        document.getElementById(`btnEdit${post.id}`).style.display = "block";
+        document.getElementById(`btnDelete${post.id}`).style.display = "block";
+    } else {
+        document.getElementById(`btnEdit${post.id}`).style.display = "none";
+        document.getElementById(`btnDelete${post.id}`).style.display = "none";
+    }
 }

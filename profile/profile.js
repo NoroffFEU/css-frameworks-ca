@@ -39,9 +39,10 @@ function showUserPosts(userPosts) {
                 <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
                 <h5 class="card-title" id="cardTitle">${userPosts[i].title}</h5>
                 <div class="card-body">
-                    <p class="card-text text-start" id="cardBody">${userPosts[i].body}</p>
+                <a href="../singlePost/index.html?postId=${userPosts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${userPosts[i].author.name}</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${userPosts[i].id}" data-postid="${userPosts[i].id}">Comments</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${userPosts[i].id}" data-postid="${userPosts[i].id}">Reactions</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${userPosts[i].id}" data-postid="${userPosts[i].id}">Edit</button>

@@ -1,4 +1,4 @@
-import { apiPath } from "../../const";
+import { apiPath } from "../../const.js";
 
 /**
 * Gets posts with their title, body, tags, media, reactions, comments, when they were created and edited, id, author (and their details such as name, email & avatar) & number of comments and reactions

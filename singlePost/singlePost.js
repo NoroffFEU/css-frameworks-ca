@@ -4,10 +4,11 @@ import { getPost } from "../src/api/posts/id/getPost.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { getUserName } from "../src/tools/NameLocalStorage.js";
+import { deletePost } from "../src/api/posts/id/deletePost.js";
 
 let params = new URLSearchParams(window.location.search);
 let postId = params.get("postId");
-
+let token = getAccessToken();
 
 window.onload = processPost();
 
@@ -16,10 +17,13 @@ window.onload = processPost();
  */
 
 async function processPost() {
-    const token = getAccessToken();
+
     const post = await getPost(token, postId);
     showPost(post);
 }
+
+
+
 
 /**
  * Shows the post sent from API; it also checks if there is any media included 
@@ -68,4 +72,14 @@ function showPost(post) {
         document.getElementById(`btnEdit${post.id}`).style.display = "none";
         document.getElementById(`btnDelete${post.id}`).style.display = "none";
     }
+
+    /**
+        * Deletes user's post
+        */
+    document.getElementById(`btnDelete${post.id}`).addEventListener("click", () => {
+        deletePost(token, postId);
+        window.location.href = "../profile/index.html";
+    });
+
+
 }

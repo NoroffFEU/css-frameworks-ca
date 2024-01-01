@@ -24,3 +24,11 @@ containerHTMLCard.innerHTML += `
     </div>
 </div>
 `;
+
+
+
+
+<button type="button" class="btn btn-sm btn-secondary" id="btnEdit${posts[i].id}"
+    data-postid="${posts[i].id}">Edit</button>
+<button type="button" class="btn btn-sm btn-secondary" id="btnDelete${posts[i].id}"
+    data-postid="${posts[i].id}">Delete</button>

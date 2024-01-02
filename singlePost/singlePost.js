@@ -54,7 +54,7 @@ function showPost(post) {
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${post.author.name}</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${post.id}" data-postid="${post.id}">Comments</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${post.id}">Reactions</button>
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${post.id}" data-postid="${post.id}">Edit</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${post.id}" data-postid="${post.id} data-bs-toggle="modal" data-bs-target="#newPostModal"">Edit</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${post.id}" data-postid="${post.id}">Delete</button>
                         </div>
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
@@ -74,12 +74,13 @@ function showPost(post) {
     }
 
     /**
-        * Deletes user's post
-        */
+    * Deletes user's post
+    */
     document.getElementById(`btnDelete${post.id}`).addEventListener("click", () => {
         deletePost(token, postId);
         window.location.href = "../profile/index.html";
     });
+
 
 
 }

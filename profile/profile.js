@@ -2,18 +2,22 @@ import { getProfile } from "../src/api/profiles/posts.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { getUserName } from "../src/tools/NameLocalStorage.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
+import { deletePost } from "../src/api/posts/id/deletePost.js";
+import { newPost } from "../src/api/posts/newPost.js";
 
+let accessToken = getAccessToken();
 window.onload = processUserFeed();
 
 
 /**
  * Gets token and user's name, uses them to get user's posts from API and send them to the next function
  */
+
 async function processUserFeed() {
-    const accessToken = getAccessToken();
     const userName = getUserName();
     const userPosts = await getProfile(accessToken, userName);
     showUserPosts(userPosts);
+    showDelete();
 }
 /**
  * Gets and shows user's posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
@@ -45,7 +49,7 @@ function showUserPosts(userPosts) {
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${userPosts[i].author.name}</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${userPosts[i].id}" data-postid="${userPosts[i].id}">Comments</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${userPosts[i].id}" data-postid="${userPosts[i].id}">Reactions</button>
-                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${userPosts[i].id}" data-postid="${userPosts[i].id}">Edit</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${userPosts[i].id}" data-postid="${userPosts[i].id}"><a href="#" data-bs-toggle="modal" data-bs-target="#editPostModal">Edit</a></button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${userPosts[i].id}" data-postid="${userPosts[i].id}">Delete</button>
                         </div>
                         <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small> 
@@ -55,10 +59,45 @@ function showUserPosts(userPosts) {
             </div>
         </div>        
         `;
-
     }
 }
 
 
 
+
+/**
+ * Adds event listener to delete button in user's post
+ */
+function showDelete() {
+    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
+    for (let i = 0; i < deleteBtns.length; i++) {
+        const deleteBtn = deleteBtns[i];
+        deleteBtn.addEventListener("click", async function () {
+            const postId = deleteBtn.dataset.postid;
+            await deletePost(accessToken, postId);
+            processUserFeed();
+        });
+    }
+}
+
+
+
+
+/**
+ * Opens modal and gets the values of a new message
+ */
+document.getElementById("postBtn").addEventListener("click", () => {
+    const token = getAccessToken();
+    const newPostTitle = document.getElementById("newPostInput1").value;
+    const newPostMessage = document.getElementById("newPostInput2").value;
+    const newPostTags = document.getElementById("newPostInput3").value.split(",");
+    const newPostMedia = document.getElementById("newPostInput4").value;
+
+    newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
+    processUserFeed();
+});
+
+/**
+ * Updates user's message
+ */
 

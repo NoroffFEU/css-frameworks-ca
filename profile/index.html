@@ -36,7 +36,7 @@
                             <a class="nav-link" href="#">Groups</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">New
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#newPostModal">New
                                 Post</a>
                         </li>
                     </ul>
@@ -61,7 +61,7 @@
             </div>
         </nav>
         <!-- MODAL NEW POST -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -73,27 +73,32 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="exampleFormControlTextarea1">
+                                <input type="text" class="form-control" id="newPostInput1">
+
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea2" class="form-label">Message</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                                <textarea class="form-control" id="newPostInput2" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Tags</label>
+                                <input type="text" class="form-control" id="newPostInput3">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Media</label>
-                                <input type="text" class="form-control" id="exampleFormControlTextarea3">
+                                <input type="text" class="form-control" id="newPostInput4">
                             </div>
                         </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                                 aria-label="Close">Close</button>
-
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Post"
                                 id="postBtn">Post</button>
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
         <!-- MODAL EDIT POST -->
@@ -109,16 +114,20 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput6" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="exampleFormControlTextarea6">
+                                <input type="text" class="form-control" id="editPostInput1">
 
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea7" class="form-label">Message</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea7" rows="3"></textarea>
+                                <textarea class="form-control" id="editPostInput2" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Tags</label>
+                                <input type="text" class="form-control" id="editPostInput3">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput8" class="form-label">Media</label>
-                                <input type="text" class="form-control" id="exampleFormControlTextarea8">
+                                <input type="text" class="form-control" id="editPostInput4">
 
                             </div>
                         </div>
@@ -203,7 +212,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="profile.js" type="module"></script>
-    <script src="../singlePost/userSinglePost.js" type="module"></script>
+
 </body>
 
 </html>

@@ -23,9 +23,6 @@ async function processFeed() {
  * @param {array} posts 
  * @returns {array} array with all the posts and shows them on the site
  */
-
-
-
 function showPosts(posts) {
     let containerHTMLCard = document.getElementById("singleCard");
     let setImg = "";
@@ -77,12 +74,16 @@ function showPosts(posts) {
     }
 }
 
+/**
+ * Opens modal and gets the values of a new message
+ */
 document.getElementById("postBtn").addEventListener("click", () => {
     const token = getAccessToken();
     const newPostTitle = document.getElementById("newPostInput1").value;
     const newPostMessage = document.getElementById("newPostInput2").value;
     const newPostTags = document.getElementById("newPostInput3").value.split(",");
-    const newPostMedia = document.getElementById("newPostInput4").value.split(",");
+    const newPostMedia = document.getElementById("newPostInput4").value;
 
     newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
+    window.location.href = "../feed/index.html";
 });

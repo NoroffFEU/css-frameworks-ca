@@ -51,6 +51,7 @@ function showPost(post) {
                 <h5 class="card-title" id="cardTitle">${post.title}</h5>
                 <div class="card-body">
                 <p class="card-text text-start" id="cardBody">${post.body}</p>
+                <div class="card-text text-start" id="cardTags">${post.tags}</div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${post.author.name}</button>

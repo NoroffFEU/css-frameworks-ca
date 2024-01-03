@@ -4,6 +4,7 @@ import { getUserName } from "../src/tools/NameLocalStorage.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { deletePost } from "../src/api/posts/id/deletePost.js";
 import { newPost } from "../src/api/posts/newPost.js";
+import { editPost } from "../src/api/posts/id/editPost.js";
 
 let accessToken = getAccessToken();
 window.onload = processUserFeed();
@@ -18,6 +19,8 @@ async function processUserFeed() {
     const userPosts = await getProfile(accessToken, userName);
     showUserPosts(userPosts);
     showDelete();
+    getIdToEdit();
+
 }
 /**
  * Gets and shows user's posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
@@ -40,10 +43,12 @@ function showUserPosts(userPosts) {
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
-                <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
-                <h5 class="card-title" id="cardTitle">${userPosts[i].title}</h5>
+                <img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture${userPosts[i].id}">
+                <h5 class="card-title" id="cardTitle${userPosts[i].id}">${userPosts[i].title}</h5>
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${userPosts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
+                <p class="card-text text-start" id="cardBody${userPosts[i].id}" style="display:none;" >${userPosts[i].body}</p>
+                <div class="card-text text-start" id="cardTags${userPosts[i].id}">${userPosts[i].tags}</div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${userPosts[i].author.name}</button>
@@ -82,7 +87,6 @@ function showDelete() {
 
 
 
-
 /**
  * Opens modal and gets the values of a new message
  */
@@ -97,7 +101,67 @@ document.getElementById("postBtn").addEventListener("click", () => {
     processUserFeed();
 });
 
+
+
 /**
- * Updates user's message
+ * Gets post's id to be able to edit the post
  */
+function getIdToEdit() {
+    const editBtns = document.querySelectorAll('[id^="btnEdit"]');
+    for (let i = 0; i < editBtns.length; i++) {
+        const editBtn = editBtns[i];
+        editBtn.addEventListener("click", async function () {
+            const postId = editBtn.dataset.postid;
+            setModalInputs(getPostDataFromHtml(postId));
+            putPostUpdate(postId);
+        });
+    }
+}
+/**
+ * Puts values of user's post in inputs of the modal so the user can edit them
+ * @param {} post
+ */
+function getPostDataFromHtml(postId) {
+    let htmlTitle = document.getElementById(`cardTitle${postId}`);
+    let htmlMessage = document.getElementById(`cardBody${postId}`);
+    let htmlTags = document.getElementById(`cardTags${postId}`);
+    let htmlMedia = document.getElementById(`cardPicture${postId}`);
+
+    const postData = {
+        id: postId,
+        title: htmlTitle.innerText,
+        body: htmlMessage.innerText,
+        tags: htmlTags.innerText,
+        media: htmlMedia.currentSrc
+    }
+
+    return postData;
+}
+
+function setModalInputs(post) {
+    let htmlTitle = document.getElementById("editPostInput1");
+    htmlTitle.value = post.title;
+    let htmlMessage = document.getElementById("editPostInput2");
+    htmlMessage.value = post.body;
+    let htmlTags = document.getElementById("editPostInput3");
+    htmlTags.value = post.tags;
+    let htmlMedia = document.getElementById("editPostInput4");
+    htmlMedia.value = post.media;
+}
+
+
+
+/**
+ * Gets the values of an edited message
+ */
+function putPostUpdate(postId) {
+    document.getElementById("editPostBtn").addEventListener("click", async () => {
+        const editPostTitle = document.getElementById("editPostInput1").value;
+        const editPostMessage = document.getElementById("editPostInput2").value;
+        const editPostTags = document.getElementById("editPostInput3").value.split(",");
+        const editPostMedia = document.getElementById("editPostInput4").value;
+        const response = await editPost(accessToken, postId, editPostTitle, editPostMessage, editPostTags, editPostMedia);
+        window.location.href = `../singlePost/index.html?postId=${response.id}`;
+    });
+}
 

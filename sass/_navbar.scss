@@ -1,0 +1,17 @@
+.navbar-nav {
+    .nav-link {
+        &:hover {
+            color: $secondary;
+            background-color: $dark;
+        };
+    };
+    .nav-link {
+        &.active {
+            color: $dark;
+            &:hover {
+                color: $light;
+                background-color: $primary-bg-subtle;
+            };
+        };
+    };
+};

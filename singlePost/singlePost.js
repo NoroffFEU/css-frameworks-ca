@@ -5,6 +5,7 @@ import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { getUserName } from "../src/tools/NameLocalStorage.js";
 import { deletePost } from "../src/api/posts/id/deletePost.js";
+import { editPost } from "../src/api/posts/id/editPost.js";
 
 let params = new URLSearchParams(window.location.search);
 let postId = params.get("postId");
@@ -20,6 +21,7 @@ async function processPost() {
 
     const post = await getPost(token, postId);
     showPost(post);
+    setModalInputs(post);
 }
 
 
@@ -54,7 +56,7 @@ function showPost(post) {
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${post.author.name}</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${post.id}" data-postid="${post.id}">Comments</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${post.id}">Reactions</button>
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${post.id}" data-postid="${post.id} data-bs-toggle="modal" data-bs-target="#newPostModal"">Edit</button>
+                        <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${post.id}" data-postid="${post.id}><a href="#" data-bs-toggle="modal" data-bs-target="#editPostModal">Edit</a></button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${post.id}" data-postid="${post.id}">Delete</button>
                         </div>
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
@@ -80,7 +82,33 @@ function showPost(post) {
         deletePost(token, postId);
         window.location.href = "../profile/index.html";
     });
-
-
-
 }
+
+
+/**
+ * Puts values of user's post in inputs of the modal so the user can edit them
+ * @param {} post 
+ */
+function setModalInputs(post) {
+    let htmlTitle = document.getElementById("editPostInput1");
+    htmlTitle.value = post.title;
+    let htmlMessage = document.getElementById("editPostInput2");
+    htmlMessage.value = post.body;
+    let htmlTags = document.getElementById("editPostInput3");
+    htmlTags.value = post.tags;
+    let htmlMedia = document.getElementById("editPostInput4");
+    htmlMedia.value = post.media;
+}
+
+/**
+ * Gets the values of an edited message
+ */
+document.getElementById("editPostBtn").addEventListener("click", async () => {
+    const editPostTitle = document.getElementById("editPostInput1").value;
+    const editPostMessage = document.getElementById("editPostInput2").value;
+    const editPostTags = document.getElementById("editPostInput3").value.split(",");
+    const editPostMedia = document.getElementById("editPostInput4").value;
+
+    const response = await editPost(token, postId, editPostTitle, editPostMessage, editPostTags, editPostMedia);
+    window.location.href = `../singlePost/index.html?postId=${response.id}`;
+});

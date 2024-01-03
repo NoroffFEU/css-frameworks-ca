@@ -105,6 +105,48 @@
 
             </div>
         </div>
+
+        <!-- MODAL EDIT POST -->
+        <div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="exampleModalLabel">Please, edit your post here</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="formEditPost">
+                        <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput6" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="editPostInput1">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea7" class="form-label">Message</label>
+                                <textarea class="form-control" id="editPostInput2" rows="3"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Tags</label>
+                                <input type="text" class="form-control" id="editPostInput3">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput8" class="form-label">Media</label>
+                                <input type="text" class="form-control" id="editPostInput4">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                aria-label="Close">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Post"
+                                id="editPostBtn">Post</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
     </header>
 
     <main class="pt-5 mt-5 mx-lg-5">

@@ -75,15 +75,15 @@ function showPosts(posts) {
 }
 
 /**
- * Opens modal and gets the values of a new message
+ * Gets the values of a new message
  */
-document.getElementById("postBtn").addEventListener("click", () => {
+document.getElementById("postBtn").addEventListener("click", async () => {
     const token = getAccessToken();
     const newPostTitle = document.getElementById("newPostInput1").value;
     const newPostMessage = document.getElementById("newPostInput2").value;
     const newPostTags = document.getElementById("newPostInput3").value.split(",");
     const newPostMedia = document.getElementById("newPostInput4").value;
 
-    newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
+    await newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
     window.location.href = "../feed/index.html";
 });

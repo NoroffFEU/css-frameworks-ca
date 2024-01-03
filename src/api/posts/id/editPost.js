@@ -1,4 +1,4 @@
-import { apiPath } from "../../const";
+import { apiPath } from "../../const.js";
 
 /**
 * Updates post with their title, body, tags, media, reactions, comments, when they were created and edited, id, author (and their details such as name, email & avatar) & number of comments and reactions
@@ -7,7 +7,7 @@ import { apiPath } from "../../const";
  * @param {string} title
  * @param {string} body
  * @param {array} tags
- * @param {array} media
+ * @param {string} media
 * @returns {object} with post's new details
 */
 
@@ -18,6 +18,7 @@ export async function editPost(token, postId, title, body, tags, media) {
         {
             method: "put",
             headers: {
+                "Content-Type": "application/json",
                 Accept: "application/json",
                 Authorization: `Bearer ${token}`,
             },

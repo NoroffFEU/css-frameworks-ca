@@ -5,6 +5,7 @@ import { isMediaValid } from "../src/tools/validMedia.js";
 import { deletePost } from "../src/api/posts/id/deletePost.js";
 import { newPost } from "../src/api/posts/newPost.js";
 import { editPost } from "../src/api/posts/id/editPost.js";
+import { getUserData } from "../src/api/profiles/profileData.js";
 
 let accessToken = getAccessToken();
 window.onload = processUserFeed();
@@ -13,15 +14,46 @@ window.onload = processUserFeed();
 /**
  * Gets token and user's name, uses them to get user's posts from API and send them to the next function
  */
-
 async function processUserFeed() {
     const userName = getUserName();
     const userPosts = await getProfile(accessToken, userName);
+    const userData = await getUserData(accessToken, userName);
     showUserPosts(userPosts);
     showDelete();
     getIdToEdit();
-
+    showUserProfile(userData);
 }
+
+/**
+ * Shows user's profile
+ */
+
+function showUserProfile(userData) {
+
+    let userCardContainer = document.getElementById("contUsersCardBody");
+    userCardContainer.innerHTML = `
+  <div class="card mb-3 border " id="usersCardBody" style="max-width: 650px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="${userData.avatar}" class="img-fluid" id="profileImg"
+                alt="..." />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body" id="cardBody" >
+                <h1 class="card-title my-4">${userData.name}</h1>
+                <button class="btn btn-primary my-4 me-2" id="updateAvatarBtn" type="submit" data-bs-toggle="modal" data-bs-target="#updateModal">
+                  Change Avatar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="details mt-5 pt-5 subheader">Your auctions</p>
+  `;
+}
+
+
+
 /**
  * Gets and shows user's posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
  * @param {array} posts posts from API

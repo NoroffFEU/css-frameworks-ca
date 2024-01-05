@@ -139,7 +139,9 @@ if (accessToken) {
   profileButton.setAttribute("href", `/profile/?${JWT.name}`);
 }
 
-signOut.addEventListener("click", (event) => {
-  localStorage.removeItem("accessToken");
-  window.location.reload();
-});
+if (accessToken) {
+  signOut.addEventListener("click", (event) => {
+    localStorage.removeItem("accessToken");
+    window.location.reload();
+  });
+}

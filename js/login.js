@@ -4,13 +4,9 @@ const signUpForm = document.getElementById("signUpForm");
 const logInForm = document.getElementById("logInForm");
 const email_error = document.getElementById("email_error");
 const name_error = document.getElementById("name_error");
-const password_error = document.getElementById("password_error");
-const confirm_password_error = document.getElementById(
-  "confirm_password_error"
-);
-const registration_successful = document.getElementById(
-  "registration_successful"
-);
+const password_message = document.getElementById("password_message");
+const confirm_password_message = document.getElementById("confirm_password_message");
+const registration_successful = document.getElementById("registration_successful");
 const user_exists = document.getElementById("user_exists");
 const loginError = document.getElementById("loginError");
 
@@ -87,10 +83,10 @@ async function registerUser(url, userData) {
 function validateForm({ name, email, password, confirmPassword }, formData) {
   let isValid = true;
   if (password.length < 8) {
-    password_error.classList.remove("d-none");
+    password_message.classList.remove("d-none");
     isValid = false;
   } else {
-    password_error.classList.add("d-none");
+    password_message.classList.add("d-none");
   }
 
   const regEx = /\S+@\S+\.\S+/;
@@ -118,10 +114,10 @@ function validateForm({ name, email, password, confirmPassword }, formData) {
   }
 
   if (confirmPassword != password) {
-    confirm_password_error.classList.remove("d-none");
+    confirm_password_message.classList.remove("d-none");
     isValid = false;
   } else {
-    confirm_password_error.classList.add("d-none");
+    confirm_password_message.classList.add("d-none");
   }
 
   if (isValid) {

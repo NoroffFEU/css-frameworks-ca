@@ -37,9 +37,6 @@ function showPosts(posts) {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
 
-
-
-
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
@@ -47,9 +44,10 @@ function showPosts(posts) {
                 <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${posts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
+                <a href="../filter/tag/index.html"><div class="card-text text-start" id="cardTags${posts[i].id}" data-tagId="tag">${posts[i].tags}</div></a>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button>
+                        <a href="../profile/index.html?userName=${posts[i].author.name}"><button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button></a>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
 
@@ -61,16 +59,6 @@ function showPosts(posts) {
             </div>
         </div>        
         `;
-
-        // let userName = getUserName();
-        // if (posts[i].author.name === userName) {
-        //     document.getElementById(`btnEdit${posts[i].id}`).style.display = "block";
-        //     document.getElementById(`btnDelete${posts[i].id}`).style.display = "block";
-        // } else {
-        //     document.getElementById(`btnEdit${posts[i].id}`).style.display = "none";
-        //     document.getElementById(`btnDelete${posts[i].id}`).style.display = "none";
-        // }
-
     }
 }
 
@@ -87,3 +75,4 @@ document.getElementById("postBtn").addEventListener("click", async () => {
     await newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
     window.location.href = "../feed/index.html";
 });
+

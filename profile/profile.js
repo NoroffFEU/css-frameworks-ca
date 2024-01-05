@@ -7,15 +7,23 @@ import { newPost } from "../src/api/posts/newPost.js";
 import { editPost } from "../src/api/posts/id/editPost.js";
 import { getUserData } from "../src/api/profiles/profileData.js";
 
+
+let params = new URLSearchParams(window.location.search);
+let userName = params.get("userName");
+if (userName === null) {
+    userName = getUserName();
+}
+
 let accessToken = getAccessToken();
 window.onload = processUserFeed();
+
 
 
 /**
  * Gets token and user's name, uses them to get user's posts from API and send them to the next function
  */
 async function processUserFeed() {
-    const userName = getUserName();
+    // const userName = getUserName();
     const userPosts = await getProfile(accessToken, userName);
     const userData = await getUserData(accessToken, userName);
     showUserPosts(userPosts);
@@ -27,9 +35,7 @@ async function processUserFeed() {
 /**
  * Shows user's profile
  */
-
 function showUserProfile(userData) {
-
     let userCardContainer = document.getElementById("contUsersCardBody");
     userCardContainer.innerHTML = `
   <div class="card mb-3 border " id="usersCardBody" style="max-width: 650px;">
@@ -41,9 +47,6 @@ function showUserProfile(userData) {
             <div class="col-md-8">
               <div class="card-body" id="cardBody" >
                 <h1 class="card-title my-4">${userData.name}</h1>
-                <button class="btn btn-primary my-4 me-2" id="updateAvatarBtn" type="submit" data-bs-toggle="modal" data-bs-target="#updateModal">
-                  Change Avatar
-                </button>
               </div>
             </div>
           </div>
@@ -60,8 +63,10 @@ function showUserProfile(userData) {
 */
 function showUserPosts(userPosts) {
     let containerHTMLCard = document.getElementById("singleCardProfile");
+
     //Clear the page
     containerHTMLCard.innerHTML = "";
+
     let setImg = "";
     for (var i = 0; i < userPosts.length; i++) {
         let formattedDate = new Date(userPosts[i].updated).toLocaleDateString();
@@ -71,6 +76,8 @@ function showUserPosts(userPosts) {
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
+
+
 
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">
@@ -96,6 +103,15 @@ function showUserPosts(userPosts) {
             </div>
         </div>        
         `;
+        if (userName === getUserName()) {
+
+            document.getElementById(`btnEdit${userPosts[i].id}`).style.display = "block";
+            document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "block";
+        } else {
+            document.getElementById(`btnEdit${userPosts[i].id}`).style.display = "none";
+            document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "none";
+        }
+
     }
 }
 

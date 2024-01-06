@@ -1,0 +1,17 @@
+.auth,
+.form-control {
+  max-width: 500px;
+  height: auto;
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+.textarea::placeholder {
+  color: var(--bs-dark);
+}
+
+.form-input::placeholder {
+  color: var(--bs-primary);
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vib'n: A cool place for cool people!. Dive into a world where vibes connect, friendships form, and fun never ends. Join the community that's redefining social interaction!"
+    />
+    <title>Vib`n | Feed</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/style.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Open+Sans:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-dark h-100 m-0 d-flex flex-column">
+    <nav
+      class="navbar navbar-expand-lg bg-dark position-relative border-bottom border-2 border-primary"
+    >
+      <div class="container-fluid">
+        <div>
+          <a class="navbar-brand text-danger fs-1 fw-bold ps-4 baloo" href="#"
+            >Vib`n<span class="text-warning">!</span></a
+          >
+        </div>
+        <div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-5 mb-2 mb-lg-0">
+              <li class="nav-item ps-3">
+                <a
+                  class="nav-link disabled nav-text text-primary"
+                  aria-current="page"
+                  href="/feed"
+                  >Feed</a
+                >
+              </li>
+              <li class="nav-item ps-3">
+                <a class="nav-link nav-text text-primary" href="/profile"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item ps-3">
+                <a class="nav-link nav-text text-primary" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="container pb-3">
+      <!-- search-sort section -->
+      <section class="search-sort container mx-auto text-center">
+        <div class="mb-5">
+          <h1 class="fs-1 text-white mt-5 baloo fw-bold">Feed</h1>
+          <img src="/images/Asset 4.png" class="chat mx-auto" alt="chat icon" />
+        </div>
+
+        <div class="row">
+          <div class="col-md-8 mx-auto mx-auto">
+            <div class="search mt-5">
+              <form class="d-flex justify-content-center" role="search">
+                <div class="search-group bg-dark d-flex flex-row">
+                  <input
+                    class="form-control border-primary bg-dark text-white"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn row btn-outline-primary bg-dark"
+                    type="submit"
+                  >
+                    Search
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mt-3 mx-auto">
+            <div class="sorting">
+              <select class="form-select default" aria-label="Select sorting">
+                <option selected>Sort by</option>
+                <option value="1">Newest</option>
+                <option value="2">Latest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- new post section -->
+        <div class="row">
+          <div class="mt-3 mx-auto new-post col-md-8">
+            <p class="text-center">
+              <button
+                class="btn mb-0 btn-outline-primary mx-auto new-post-btn bg-dark"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <span class="text-nowrap"> New post +</span>
+              </button>
+            </p>
+            <div
+              class="collapse align-items-center mx-auto"
+              id="collapseExample"
+            >
+              <div class="card bg-dark card-body mx-auto">
+                <div class="mb-1">
+                  <textarea
+                    class="form-control col-md-4 textarea bg-light text-dark mx-auto"
+                    placeholder="Write something for us"
+                    id="newPost"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <div class="mb-1">
+                  <input
+                    class="form-control mx-auto"
+                    type="file"
+                    id="formFile"
+                  />
+                </div>
+                <div class="col-auto mx-auto mt-1">
+                  <button
+                    type="submit"
+                    class="btn btn-outline-primary post-btn mt-3"
+                  >
+                    Post
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- feed section -->
+      <section
+        class="feed-posts mx-auto container align-items-center text-center"
+      >
+        <div class="row">
+          <div class="col-md-8 align-items-center mx-auto">
+            <!-- post 1 -->
+            <section class="mt-5 container h-auto">
+              <div
+                class="row bg-light pt-2 text-center align-items-center justify-content-between"
+              >
+                <div class="col-auto ps-0 d-flex align-items-center">
+                  <img
+                    src="/images/profile-pic2.png"
+                    alt="user picture"
+                    class="small-user-picture m-1 p-0"
+                  />
+                  <p class="mb-0">
+                    <span class="pe-2 baloo text-primary fs-5">Code Ninja</span
+                    >1d. Reykjavik
+                  </p>
+                </div>
+                <div
+                  class="col-auto d-flex justify-content-end align-items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    class="bi bi-heart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                    />
+                  </svg>
+                  <p class="align-items-center ps-2 mb-0">2002</p>
+                </div>
+                <div>
+                  <p class="text-start text-dark pt-3">
+                    Hey everyone! 🇮🇸 Have you heard the latest from the land of
+                    fire and ice? The Reykjanes Peninsula in Iceland is buzzing
+                    with seismic activity, hinting at a possible volcanic
+                    eruption! Experts are closely monitoring the situation, as
+                    this area is known for its volcanic landscapes. Remember,
+                    this is the same region where the Fagradalsfjall volcano put
+                    on a spectacular show last year! While locals and
+                    authorities are on high alert, the world is watching with
+                    bated breath. Will we witness another awe-inspiring natural
+                    display, or will the earth remain calm? Stay tuned for more
+                    updates! 🌍
+                    <span
+                      >#IcelandVolcano #ReykjanesPeninsula #Nature'sPower</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- post 2 -->
+            <section class="mt-5 container bg-light h-auto">
+              <div
+                class="row pt-2 text-center align-items-center justify-content-between"
+              >
+                <div class="col-auto ps-0 d-flex align-items-center">
+                  <img
+                    src="/images/profile-pic3.png"
+                    alt="user picture"
+                    class="small-user-picture m-1 p-0"
+                  />
+                  <p class="mb-0">
+                    <span class="pe-2 baloo text-primary fs-5"
+                      >Geek Goddess</span
+                    >3d. London
+                  </p>
+                </div>
+                <div
+                  class="col-auto d-flex justify-content-end align-items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    class="bi bi-heart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                    />
+                  </svg>
+                  <p class="align-items-center ps-2 mb-0">210</p>
+                </div>
+                <div>
+                  <p class="text-start text-dark pt-3">
+                    🇮🇱 Just caught up with the latest updates on the
+                    Israel-Palestine conflict. It's deeply saddening to witness
+                    such turmoil and suffering. Innocent lives should never be a
+                    casualty of political strife. Sending my heartfelt thoughts
+                    and hopes for peace to everyone impacted. 💔 #PrayForPeace
+                    #HumanityFirst
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- post 3 -->
+            <section class="container mt-5 bg-light h-auto">
+              <div
+                class="row pt-2 text-center align-items-center justify-content-between"
+              >
+                <div class="col-auto d-flex ps-0 align-items-center">
+                  <img
+                    src="/images/profile-pic1.png"
+                    alt="user picture"
+                    class="small-user-picture m-1 p-0"
+                  />
+                  <p class="mb-0">
+                    <span class="pe-2 baloo text-primary fs-5">Lizz Kiss</span
+                    >4d. London
+                  </p>
+                </div>
+                <div
+                  class="col-auto d-flex justify-content-end align-items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    class="bi bi-heart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                    />
+                  </svg>
+                  <p class="ps-2 mb-0">356</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-start text-dark pt-3">
+                  On a brighter note amidst all this chaos, the aurora last
+                  night was absolutely mesmerizing. Nature has its way of
+                  reminding us of the beauty in the world. Let’s spread love and
+                  hope, not hatred and fear. 💙 #NatureHeals #AuroraDreams
+                </p>
+              </div>
+              <div class="row">
+                <img
+                  src="/images/aurora1.jpg"
+                  alt="aurora in the night sky above the mountains"
+                  class="aurora img-fluid pb-3"
+                />
+              </div>
+            </section>
+
+            <!-- post 4 -->
+            <section class="container h-auto mt-5 pt-2 pb-2 bg-light">
+              <div
+                class="row text-center align-items-center justify-content-between"
+              >
+                <div class="col d-flex ps-0 align-items-center">
+                  <img
+                    src="/images/profile-pic5.png"
+                    alt="user picture"
+                    class="small-user-picture m-1 p-0"
+                  />
+                  <p class="mb-0">
+                    <span class="pe-2 baloo text-primary fs-5">King Chong</span
+                    >5d. Oslo
+                  </p>
+                </div>
+                <div
+                  class="col-auto d-flex justify-content-end align-items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    class="bi bi-heart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                    />
+                  </svg>
+                  <p class="ps-2 mb-0">35</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-start text-dark pt-3">
+                  Hey film buffs! 🍿 I just got my hands on two tickets to
+                  Martin Scorsese's latest masterpiece, "Killers of the Flower
+                  Moon", and I'm looking for someone to join me this Friday in
+                  Oslo! It's Scorsese, so you know it's going to be epic. First
+                  come, first served! DM! #MovieNight #ScorseseFan
+                  #KillersOfTheFlowerMoon
+                </p>
+              </div>
+            </section>
+
+            <!-- post 5 -->
+            <section class="container h-auto mt-5 pt-2 pb-2 bg-light">
+              <div
+                class="row text-center align-items-center justify-content-between"
+              >
+                <div class="col d-flex ps-0 align-items-center">
+                  <img
+                    src="/images/profile-pic4.png"
+                    alt="user picture"
+                    class="small-user-picture m-1 p-0"
+                  />
+                  <p class="mb-0">
+                    <span class="pe-2 baloo text-primary fs-5">Lovely Lu</span
+                    >9d. Bergen
+                  </p>
+                </div>
+                <div
+                  class="col-auto d-flex justify-content-end align-items-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="red"
+                    class="bi bi-heart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                    />
+                  </svg>
+                  <p class="ps-2 mb-0">175</p>
+                </div>
+              </div>
+              <div>
+                <p class="text-start text-dark pt-3">
+                  👶🎉 Welcome Home, Little Miracle! 💕 🥰 Introducing our
+                  precious little angel! The journey has been incredible, and
+                  we're over the moon with joy and gratitude. 🌙✨ Every coo,
+                  every tiny movement is a moment of wonder for us. Our hearts
+                  are so full, it feels like they might burst! 🥰 The sleepless
+                  nights are here, but every second is worth it for this bundle
+                  of joy. 🍼🌟 Thank you to everyone who sent their love,
+                  prayers, and support during this journey. We're excited to
+                  start this beautiful new chapter of life. 💕 #Newborn #BabyJoy
+                  #Homecoming #BlessedFamily
+                </p>
+              </div>
+              <div class="row">
+                <img
+                  src="/images/baby.png"
+                  alt="baby sleeping"
+                  class="img-fluid pb-3"
+                />
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="py-4 border-2 border-top border-primary bg-dark">
+      <div class="container text-center">
+        <p class="mb-0 text-primary">
+          &copy; 2023
+          <span class="text-danger ps-1 baloo fs-5 fw-bold">Vib`n</span
+          ><span class="text-warning baloo fs-5 fw-bold">!</span> | Built by
+          Laura Karaliene
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

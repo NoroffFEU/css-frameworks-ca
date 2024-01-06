@@ -1,0 +1,25 @@
+.profile-background img {
+  z-index: 1;
+}
+
+.user-profile-picture {
+  margin-top: -80px;
+  z-index: 100;
+}
+
+.follow {
+  width: 150px;
+}
+
+@media screen and (max-width: 1200px) {
+  .user-profile-picture img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .user-info {
+    margin-top: 80px;
+  }
+}

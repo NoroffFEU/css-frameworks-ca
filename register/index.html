@@ -12,7 +12,7 @@
     <link rel="icon" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="icon" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-    <script src="../js/api/auth/register.mjs" defer type="module"></script>
+    <script src="../register.mjs" type="module" defer></script>
 </head>
 
 <body class="pt-4">
@@ -51,12 +51,8 @@
                             <input type="password" class="form-control border-dark text-light mt-4" id="password"
                                 placeholder="Enter your password" minlength="8" required>
                         </div>
-                        <div class="form-group">
-                            <label for="password" class="d-none">Repeat password:</label>
-                            <input type="password" class="form-control border-dark text-light mt-4" id="password"
-                                placeholder="Repeat password" minlength="8" required>
-                        </div>
-                        <button type="submit" class="btn btn-secondary col-12 mt-4 mb-4" href="../profile/">Create
+                        <button type="submit" class="register btn btn-secondary col-12 mt-4 mb-4"
+                            href="../profile/">Create
                             profile</button>
                         <p class="text-dark mt-1 text-center fs-6 fs-md-3">Email must be @noroff.no or
                             @stud.noroff.no </p>

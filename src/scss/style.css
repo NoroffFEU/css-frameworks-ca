@@ -10758,7 +10758,10 @@ body {
   margin-top: 150px;
 }
 
-.navbar-custom, .login, .border-custom-col, .card-body {
+.navbar-custom,
+.login,
+.border-custom-col,
+.card-body {
   background-color: #FFC857;
   border: #FFC857;
 }

@@ -18,8 +18,28 @@
 
     <header clas>
         <nav class="navbar navbar-expand-md navbar-custom fixed-top">
-            <div class="text-center mx-auto">
-                <h1 class="fs-4">Welcome to ApeAmigos</h1>
+            <div class="container gap-2  text-center ">
+                <img src="/images/ape-logo.png" alt="ApeAmigos logo" class="ape" width="40px" height="40px">
+                <a class="navbar-brand" href="../index.html">
+                    <h1 class="fs-4">ApeAmigos</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav container fs-5 fw-bold d-flex justify-content-around">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile/">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/feed/">Feed</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -42,7 +62,8 @@
                         </div>
                         <button type="submit" class="btn btn-secondary col-12 mt-4">Login</button>
                         <p class="text-dark mt-3 text-center fs-6 fs-md-3">Don’t have an account? <a class="text-dark"
-                                href="../register/">Register here</a>
+                                href="/signup/">Sign
+                                up.</a>
                         </p>
                 </div>
                 </form>

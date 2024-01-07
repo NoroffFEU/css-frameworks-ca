@@ -12,53 +12,39 @@
     <link rel="icon" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="icon" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <script src="../js/api/auth/register.mjs" defer type="module"></script>
 </head>
 
 <body class="pt-4">
 
     <header clas>
-        <nav class="navbar navbar-expand-md navbar-custom fixed-top">
-            <div class="container gap-2  text-center flex">
-                <img src="../images/ape-logo.png" alt="ApeAmigos logo" class="ape" width="40px" height="40px">
-                <a class="navbar-brand" href="../index.html">
-                    <h1 class="fs-4">ApeAmigos</h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav container fs-5 fw-bold d-flex justify-content-around">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/profile/">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/feed/">Feed</a>
-                        </li>
-                    </ul>
+        <header clas>
+            <nav class="navbar navbar-expand-md navbar-custom fixed-top">
+                <div class="text-center mx-auto">
+                    <h1 class="fs-4">Welcome to ApeAmigos</h1>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
     </header>
     <main>
         <h1 class="text-light text-center fs-4 fs-md-3">🌴Sign up to the social jungle!🌴</h1>
         <div class="custom-container login mx-auto rounded-4 col-md-8 col-10">
             <div class="loginform row justify-content-center mt-5 border-dark">
                 <div class="col-7">
-                    <form>
+                    <form class="formCollection">
                         <div class="form-group">
-                            <h2 class="text-center mt-3 fs-4">Sign Up</h2>
+                            <h2 class="text-center mt-3 fs-4">Register</h2>
                             <label for="username" class="d-none">Username:</label>
-                            <input type="text" class="form-control border-dark text-light mt-4" id="username"
-                                placeholder="Enter your username">
+                            <input type="name" class="form-control border-dark text-light mt-4" id="username"
+                                placeholder="Enter your username"
+                                title="A valid username must only contain lower/upper case, letters, numbers and underscore(_)."
+                                pattern="^[\w]+$">
                         </div>
                         <div class="form-group">
                             <label for="username" class="d-none">Email</label>
                             <input type="email" class="form-control border-dark text-light mt-4" id="email"
-                                placeholder="Enter your email">
+                                placeholder="Enter your email" title="Email must contain @noroff.no or @stud.noroff.no"
+                                pattern="^[\w\-.]+@(stud\.)?noroff\.no$">
                         </div>
                         <div class="form-group">
                             <label for="password" class="d-none">Password:</label>
@@ -72,6 +58,8 @@
                         </div>
                         <button type="submit" class="btn btn-secondary col-12 mt-4 mb-4" href="../profile/">Create
                             profile</button>
+                        <p class="text-dark mt-1 text-center fs-6 fs-md-3">Email must be @noroff.no or
+                            @stud.noroff.no </p>
                         <p class="text-dark text-center fs-6 fs-md-3">Already have an account? <a class="text-dark"
                                 href="../index.html">Log in here</a>
                         </p>

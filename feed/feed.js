@@ -6,12 +6,16 @@ import { getUserName } from "../src/tools/NameLocalStorage.js";
 
 window.onload = processFeed();
 
+
 /** 
 * Gets token, uses it to get posts from API and send them to the next function
 */
 async function processFeed() {
+    let params = new URLSearchParams(window.location.search);
+    let postTag = params.get("tag");
+
     const token = getAccessToken();
-    const posts = await getPosts(token);
+    const posts = await getPosts(token, postTag);
     showPosts(posts);
 }
 
@@ -44,8 +48,8 @@ function showPosts(posts) {
                 <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${posts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
-                <a href="../filter/tag/index.html"><div class="card-text text-start" id="cardTags${posts[i].id}" data-tagId="tag">${posts[i].tags}</div></a>
-                    <div class="d-flex justify-content-between align-items-center">
+               <div class="card-text text-start"> ${tagsToHtml(posts[i].tags, posts[i].id)} </div>
+                <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                         <a href="../profile/index.html?userName=${posts[i].author.name}"><button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button></a>
                         <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
@@ -61,6 +65,18 @@ function showPosts(posts) {
         `;
     }
 }
+/**
+ * Shows tags as links
+ */
+function tagsToHtml(tagsArray, postId) {
+    let aString = "";
+    for (let i = 0; i < tagsArray.length; i++) {
+        aString += `
+    <a href="../feed/index.html?tag=${tagsArray[i]}"><span class="card-text text-start" id="cardTags${postId}" data-tagId="tag">${tagsArray[i]}</span></a>
+    ` }
+    return aString;
+}
+
 
 /**
  * Gets the values of a new message

@@ -8,9 +8,13 @@ import { apiPath } from "../const.js";
 */
 
 
-export async function getPosts(token) {
+export async function getPosts(token, tag) {
+    let url = `${apiPath}/social/posts?_author=true&_reactions=true&_comments=true`;
+    if (tag !== undefined && tag !== null) {
+        url += `&_tag=${tag}`
+    }
     const response = await fetch(
-        `${apiPath}/social/posts?_author=true&_reactions=true&_comments=true`,
+        url,
         {
             method: "get",
             headers: {

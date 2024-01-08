@@ -10,3 +10,11 @@ body {
 .login-worm-green img {
   height: 170px;
 }
+
+.modal-backdrop {
+  background-color: rgba(128, 128, 128, 0.6);
+}
+
+.btn-close {
+  filter: invert(1);
+}

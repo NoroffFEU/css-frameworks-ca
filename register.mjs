@@ -51,7 +51,7 @@ form.addEventListener("submit", function (e) {
         userMessage.innerText = "Profile was successfully created.";
         setTimeout(() => {
             userMessage.innerText = " ";
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
         }, 3000);
     }
 });

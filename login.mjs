@@ -44,7 +44,7 @@ form.addEventListener("submit", function (e) {
                 userLoggedIn.innerText = "You've successfully logged in.";
                 setTimeout(() => {
                     userLoggedIn.innerText = " ";
-                    window.location.href = "index.html";
+                    window.location.href = "/profile/home";
                 }, 3000)
             }
 

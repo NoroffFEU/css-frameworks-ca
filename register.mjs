@@ -1,30 +1,57 @@
-import { API_REGISTER } from "./APIs.mjs";
+import { API_SOCIAL_URL } from "./js/api/api_constants.mjs";
 
 const form = document.querySelector(".formCollection");
 
-const usernameInput = document.querySelector("#username");
-const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
+const usernameInput = form.querySelector("#username");
+const emailInput = form.querySelector("#email");
+const passwordInput = form.querySelector("#password");
 
-document.addEventListener("register", function (event) {
-    event.preventDefault();
-    const username = usernameInput.value;
+// Function to gather form data and return an object
+function getFormData() {
+    const name = usernameInput.value;
     const email = emailInput.value;
     const password = passwordInput.value;
 
+    return {
+        name,
+        email,
+        password,
+    };
+}
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = getFormData();
+
+    const API_REGISTER = `${API_SOCIAL_URL}/auth/register`;
+
     fetch(API_REGISTER, {
-        method: "post",
-        body: JSON.stringify({
-            username,
-            email,
-            password,
-        }),
+        method: "POST",
+        body: JSON.stringify(formData),
         headers: {
-            "Content-Type": "application/json"
-        }
+            "Content-Type": "application/json",
+        },
     })
         .then(response => response.json())
-        .then(json => console.log(json))
-        .catch(error => console.error("Error:", error));
-});
+        .then(json => {
+            console.log(json);
+            if (typeof json === "object" && json.hasOwnProperty('id')) {
+                userInfo();
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
 
+        });
+
+    const userMessage = document.querySelector(".userInfo");
+
+    function userInfo() {
+        userMessage.innerText = "Profile was successfully created.";
+        setTimeout(() => {
+            userMessage.innerText = " ";
+            window.location.href = "/login";
+        }, 3000);
+    }
+});

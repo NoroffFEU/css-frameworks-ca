@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApeAmigos | Feed</title>
-    <link href="../dist/css/style.css" rel="stylesheet">
+    <link href="/dist/css/style.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
-    <link rel="icon" sizes="16x16" href="../images/favicon-16x16.png">
-    <link rel="icon" sizes="32x32" href="../images/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <script defer src="https://kit.fontawesome.com/12c76f5aa4.js" crossorigin="anonymous"></script>
+    <script src="/index.mjs" type="module" defer></script>
 </head>
 
 <body>
@@ -21,8 +22,8 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-custom fixed-top">
             <div class="container gap-2  text-center flex">
-                <img src="../images/ape-logo.png" alt="ApeAmigos logo" class="ape" width="40px" height="40px">
-                <a class="navbar-brand" href="../index.html">
+                <img src="/images/ape-logo.png" alt="ApeAmigos logo" class="ape" width="40px" height="40px">
+                <a class="navbar-brand" href="/profile/Home/">
                     <h1 class="fs-4">ApeAmigos</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -32,13 +33,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav container fs-5 fw-bold d-flex justify-content-around">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="../index.html">Home</a>
+                            <a class="nav-link " aria-current="page" href="/profile/Home/">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="/profile/">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/feed/">Feed</a>
+                            <a class="nav-link active" href="/profile/feed/">Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="logout d-flex justify-content-center px-4 border-0 mt-1">Log out</button>
                         </li>
                     </ul>
                 </div>
@@ -90,7 +94,7 @@
                 </div>
                 <div class="col-9 col-sm-5 col-xl-4 my-4 d-flex justify-content-center">
                     <div class="card border" style="width: 18rem;">
-                        <img src="../images/byy.png" alt="">
+                        <img src="/images/byy.png" alt="">
                         <div class="card-body">
                             <div class="seperator">
                                 <div class="d-flex flex-column">
@@ -100,16 +104,16 @@
                                         than just a workout routine; it's a lifestyle that promotes health, resilience,
                                         and the joy of movement.</p>
                                     <img class=" mx-auto d-block rounded-circle border border-custom-col" height="60"
-                                        src="../images/Untitled-20.png" alt="avatar profile pciture">
+                                        src="/images/Untitled-20.png" alt="avatar profile pciture">
                                 </div>
-                                <p class="m-0 d-flex justify-content-center">By username</p>
+                                <p class="m-0 d-flex justify-content-center"><span class="username"></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-9 col-sm-5 col-xl-4 my-4 d-flex justify-content-center">
                     <div class="card border" style="width: 18rem;">
-                        <img src="../images/tres.png" alt="">
+                        <img src="/images/tres.png" alt="">
                         <div class="card-body">
                             <div class="seperator">
                                 <div class="d-flex flex-column">
@@ -119,16 +123,16 @@
                                         inner peace, clarity, and mindfulness. It transcends stress and promotes a
                                         tranquil mind. </p>
                                     <img class=" mx-auto d-block rounded-circle border border-custom-col" height="60"
-                                        src="../images/Untitled-20.png" alt="avatar profile pciture">
+                                        src="/images/Untitled-20.png" alt="avatar profile pciture">
                                 </div>
-                                <p class="m-0 d-flex justify-content-center">By username</p>
+                                <p class="m-0 d-flex justify-content-center"><span class="username"></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-9 col-sm-5 col-xl-4 my-4 d-flex justify-content-center">
                     <div class="card border" style="width: 18rem;">
-                        <img src="../images/fix.png" alt="">
+                        <img src="/images/fix.png" alt="">
                         <div class="card-body">
                             <div class="seperator">
                                 <div class="d-flex flex-column">
@@ -138,16 +142,16 @@
                                         learning, and embracing the satisfaction of hands-on efforts to revive your
                                         vehicle.</p>
                                     <img class=" mx-auto d-block rounded-circle border border-custom-col" height="60"
-                                        src="../images/Untitled-20.png" alt="avatar profile pciture">
+                                        src="/images/Untitled-20.png" alt="avatar profile pciture">
                                 </div>
-                                <p class="m-0 d-flex justify-content-center">By username</p>
+                                <p class="m-0 d-flex justify-content-center"><span class="username"></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-9 col-sm-5 col-xl-4 my-4 d-flex justify-content-center">
                     <div class="card border" style="width: 18rem;">
-                        <img src="../images/nature.png" alt="">
+                        <img src="/images/nature.png" alt="">
                         <div class="card-body">
                             <div class="seperator">
                                 <div class="d-flex flex-column">
@@ -157,16 +161,16 @@
                                         nature's wonders, embracing serenity, exercise, and exploration. Each step
                                         brings joy, connecting with the outdoors and oneself.</p>
                                     <img class=" mx-auto d-block rounded-circle border border-custom-col" height="60"
-                                        src="../images/Untitled-20.png" alt="avatar profile pciture">
+                                        src="/images/Untitled-20.png" alt="avatar profile pciture">
                                 </div>
-                                <p class="m-0 d-flex justify-content-center">By username</p>
+                                <p class="m-0 d-flex justify-content-center"><span class="username"></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-9 col-sm-5 col-xl-4 my-4 d-flex justify-content-center">
                     <div class="card border" style="width: 18rem;">
-                        <img src="../images/gaming.png" alt="">
+                        <img src="/images/gaming.png" alt="">
                         <div class="card-body">
                             <div class="seperator">
                                 <div class="d-flex flex-column">
@@ -176,16 +180,16 @@
                                         virtual worlds. From strategy to immersive stories, it's a realm of
                                         entertainment, challenges, and camaraderie.</p>
                                     <img class=" mx-auto d-block rounded-circle border border-custom-col" height="60"
-                                        src="../images/Untitled-20.png" alt="avatar profile pciture">
+                                        src="/images/Untitled-20.png" alt="avatar profile pciture">
                                 </div>
-                                <p class="m-0 d-flex justify-content-center">By username</p>
+                                <p class="m-0 d-flex justify-content-center"><span class="username"></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-9 col-sm-5 col-xl-4 my-4 d-flex justify-content-center">
                     <div class="card border" style="width: 18rem;">
-                        <img src="../images/ew.png" alt="">
+                        <img src="/images/ew.png" alt="">
                         <div class="card-body">
                             <div class="seperator">
                                 <div class="d-flex flex-column">
@@ -195,9 +199,9 @@
                                         with laughter, love, and cherished moments. From cake to heartfelt wishes, it's
                                         a day of pure happiness.</p>
                                     <img class=" mx-auto d-block rounded-circle border border-custom-col" height="60"
-                                        src="../images/Untitled-20.png" alt="avatar profile pciture">
+                                        src="/images/Untitled-20.png" alt="avatar profile pciture">
                                 </div>
-                                <p class="m-0 d-flex justify-content-center">By username</p>
+                                <p class="m-0 d-flex justify-content-center"><span class="username"></span></p>
                             </div>
                         </div>
                     </div>

@@ -38,20 +38,11 @@ async function processUserFeed() {
 function showUserProfile(userData) {
     let userCardContainer = document.getElementById("contUsersCardBody");
     userCardContainer.innerHTML = `
-  <div class="card mb-3 border " id="usersCardBody" style="max-width: 650px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="${userData.avatar}" class="img-fluid" id="profileImg"
-                alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body" id="cardBody" >
-                <h1 class="card-title my-4">${userData.name}</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="details mt-5 pt-5 subheader">Your auctions</p>
+
+    <div class="col-lg-4 ">
+    <img src="${userData.avatar}" class="bd-placeholder-img rounded-circle2 border img-fluid" width="240" height="240" id="profileImg" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+    <h1 class="fw-normal  my-4">${userData.name}</h1>
+  </div>
   `;
 }
 

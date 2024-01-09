@@ -32,3 +32,25 @@ containerHTMLCard.innerHTML += `
     data-postid="${posts[i].id}">Edit</button>
 <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${posts[i].id}"
     data-postid="${posts[i].id}">Delete</button>
+
+
+
+
+function showUserProfile(userData) {
+let userCardContainer = document.getElementById("contUsersCardBody");
+userCardContainer.innerHTML = `
+<div class="card mb-3 border " id="usersCardBody" style="max-width: 650px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="${userData.avatar}" class="img-fluid" id="profileImg" alt="..." />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body" id="cardBody">
+                <h1 class="card-title my-4">${userData.name}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="details mt-5 pt-5 subheader">Your auctions</p>
+`;
+}

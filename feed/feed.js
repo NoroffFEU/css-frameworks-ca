@@ -13,11 +13,69 @@ window.onload = processFeed();
 async function processFeed() {
     let params = new URLSearchParams(window.location.search);
     let postTag = params.get("tag");
+    let searchPhrase = params.get("search");
 
     const token = getAccessToken();
     const posts = await getPosts(token, postTag);
-    showPosts(posts);
+    if (searchPhrase) {
+        const posts2 = searchesThroughPosts(posts, searchPhrase);
+        showPosts(posts2);
+
+    } else {
+        showPosts(posts);
+    }
 }
+
+/**
+ * Gets the value of search phrase provided in search input
+ */
+document.getElementById("searchBtn").addEventListener("click", () => {
+    let searchWord = document.getElementById("searchInput").value;
+    if (searchWord !== null && searchWord !== undefined && searchWord.length > 1) {
+        window.location.href = `../feed/index.html?search=${searchWord}`;
+    }
+    else {
+        alert("You have to provide a search phrase");
+    }
+
+});
+
+/**
+ * Searches through all posts 
+ * @param {*} posts 
+ * @param {*} searchWord 
+ * @returns 
+ */
+function searchesThroughPosts(posts, searchWord) {
+    let arrayWithSearchResults = [];
+    let searchWordMinuscule = searchWord.toLowerCase();
+    for (let i = 0; i < posts.length; i++) {
+        const element = posts[i];
+
+        if (posts[i].title !== null && posts[i].title.toLowerCase().includes(searchWordMinuscule)) {
+            arrayWithSearchResults.push(element);
+        }
+        if (posts[i].body !== null && posts[i].body.toLowerCase().includes(searchWordMinuscule)) {
+            arrayWithSearchResults.push(element);
+        }
+        if (posts[i].author.name !== null && posts[i].author.name.toLowerCase().includes(searchWordMinuscule)) {
+            arrayWithSearchResults.push(element);
+        }
+        if (posts[i].author.email !== null && posts[i].author.email.toLowerCase().includes(searchWordMinuscule)) {
+            arrayWithSearchResults.push(element);
+        }
+        posts[i].tags.forEach((tag) => {
+            if (tag.toLowerCase().includes(searchWordMinuscule)) {
+                arrayWithSearchResults.push(element);
+            }
+        });
+        if (posts[i].id !== null && posts[i].id.toString().includes(searchWordMinuscule)) {
+            arrayWithSearchResults.push(element);
+        }
+    }
+    return arrayWithSearchResults;
+}
+
 
 
 

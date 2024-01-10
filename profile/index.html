@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Your profile</title>
+    
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
+    <script defer src="/js/script.js"></script>
+</head>
+<body>
+
+<!---------------------------Sidebar------------------------------->
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-auto sidebar d-flex flex-column">
+            
+            <div class="icon hamburger pt-5" id="sidebarToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <a href="index.html" class="icon pt-5 mt-4 d-flex text-reset text-decoration-none align-items-center justify-content-between">
+                <i class="fa-solid fa-house home text-center"></i>
+                <span class="menu-text home pl-5">Home</span>
+            </a>
+
+            <a href="profile.html" class="icon pt-4 mt-4 d-flex text-reset text-decoration-none align-items-center justify-content-between">
+                <i class="fa-solid fa-user profile text-center"></i>
+                <span class="menu-text profile pl-5">Profile</span>
+            </a>
+
+            <a href="#" class="icon pt-4 mt-4 d-flex text-reset text-decoration-none align-items-center justify-content-between">
+                <i class="fa-solid fa-layer-group groups text-center"></i>
+                <span class="menu-text groups pl-5">Groups</span>
+            </a>
+
+            <a href="#" class="icon pt-4 mt-4 d-flex text-reset text-decoration-none align-items-center justify-content-between">
+                <i class="fa-solid fa-gear settings text-center"></i>
+                <span class="menu-text settings pl-5">Settings</span>
+            </a>
+
+            <a href="#" class="icon pt-4 mt-4 d-flex text-reset text-decoration-none align-items-center justify-content-between">
+                <i class="fa-solid fa-envelope inbox text-center"></i>
+                <span class="menu-text inbox pl-5">Inbox</span>
+            </a>
+        </nav>
+
+<!---------------------------Header------------------------------->
+
+        <div class="col p-0">
+            <div class="main-content">
+                <header class="container-fluid py-5">
+                    <div class="wrapper row d-flex justify-content-between align-items-center">
+                  
+                      <div class="logo w-25">
+                        <a href="#" class="text-reset text-decoration-none d-inline-block">
+                          <strong class="h4">CodeUnity</strong>
+                        </a>
+                        <span class="text-muted px-4">|</span>
+                        <a href="profile.html" class="text-muted text-decoration-none">Your profile</a> 
+                      </div>
+                  
+                      <div class="w-25">
+                        <form class="d-flex gap-2">
+                          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </form>
+                      </div>
+                    </div>
+                  </header>
+
+<!---------------------------Upper part------------------------------->
+
+                  <div class="container-fluid banner position-relative p-0 d-flex justify-content-center">
+                    <img src="/images/profile.png" alt="" class="rounded-circle position-absolute border">
+                  </div>
+
+                  <section class="row wrapper d-flex justify-content-between align-items-center py-5 mt-4">
+                    <div class="col-4">
+                        <h1 class="h2">Martine Midttveit</h1>
+                        <p class="text-muted">martinemidttveit@hotmail.com</p>
+
+                        <div class="container w-75 m-0 py-4">
+                            <div class="row">
+                              <div class="col p-0 d-flex justify-content-between">
+                                <div class="d-flex flex-column text-center">
+                                  <strong class="p-0">5</strong>
+                                  <span class="text-muted p-0 m-0">Posts</span>
+                                </div>
+
+                                <div class="d-flex flex-column text-center">
+                                    <strong class="p-0">15</strong>
+                                    <span class="text-muted p-0 m-0">Followers</span>
+                                </div>
+
+                                <div class="d-flex flex-column text-center">
+                                    <strong class="p-0">15</strong>
+                                    <span class="text-muted p-0 m-0">Followers</span>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edit">
+                        <button class="btn btn-outline-primary rounded mr-2">
+                            <i class="fa-solid fa-user-pen pr-1"></i>
+                            Edit profile
+                        </button>
+                        <button class="btn btn-primary rounded">
+                            <i class="fa-solid fa-plus pr-2"></i>
+                            New post
+                        </button>
+                    </div>
+                  </section>
+
+<!---------------------------Cards------------------------------->
+
+                  <section class="container-fluid wrapper">
+                    <div class="card mb-5">
+                        <div class="row no-gutters">
+                            <button class="btn position-absolute options d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                            <div class="col-md-4">
+                                <img src="/images/profile.png" class="card-img" alt="..." style="height: 480px;">
+                            </div>
+                            <div class="col-md-8 d-flex align-items-center">
+                                <div class="card-body d-flex ml-2">
+                                    <div class="col-1">
+                                        <img src="/images/profile.png" alt="" class="rounded-circle img-fluid profile-img">
+                                    </div>
+                                    
+                                    <div class="col-11 pl-4">
+                                        <h5 class="card-title">Martine Midttveit in <a href="#" class="card-link"><u>CodingBuddies</u></a></h5>
+                                        <h6 class="card-subtitle text-muted pt-2">
+                                            <i class="fa-solid fa-lock pr-3"></i>
+                                            Private group
+                                        </h6>
+                                        <p class="card-text mt-4 col-11 p-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+
+                                        <div class="row pl-3 pt-3">
+                                            <div class="container p-0 col-7">
+                                                <textarea name="comment" class="comment rounded form-control" placeholder="Leave a comment..." rows="3"></textarea>
+                                            </div>
+    
+                                            <div class="container col-5 d-flex flex-column justify-content-center">
+                                                <small><a href="#">Kristian</a> and 4 others contributed</small>
+                                                <div class="icons"><i class="fa-solid fa-comment mr-3 mt-3"></i>21 comments</div>
+                                                <div class="icons"><i class="fa-solid fa-thumbs-up mr-3"></i>6 likes</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="container p-0 mt-3">
+                                            <button class="btn btn-outline-primary"><i class="fa-solid fa-thumbs-up mr-3"></i>Like</button>
+                                            <button class="btn btn-outline-primary"><i class="fa-regular fa-share-from-square mr-3"></i>Share</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+
+                  <section class="container-fluid wrapper">
+                    <div class="card mb-5">
+                        <div class="row no-gutters">
+                            <button class="btn position-absolute options d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                            <div class="col-md-4">
+                                <img src="/images/profile.png" class="card-img" alt="..." style="height: 480px;">
+                            </div>
+                            <div class="col-md-8 d-flex align-items-center">
+                                <div class="card-body d-flex ml-2">
+                                    <div class="col-1">
+                                        <img src="/images/profile.png" alt="" class="rounded-circle img-fluid profile-img">
+                                    </div>
+                                    
+                                    <div class="col-11 pl-4">
+                                        <h5 class="card-title">Martine Midttveit in <a href="#" class="card-link"><u>Studygroup 2</u></a></h5>
+                                        <h6 class="card-subtitle text-muted pt-2">
+                                            <i class="fa-solid fa-lock pr-3"></i>
+                                            Private group
+                                        </h6>
+                                        <p class="card-text mt-4 col-11 p-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+
+                                        <div class="row pl-3 pt-3">
+                                            <div class="container p-0 col-7">
+                                                <textarea name="comment" class="comment rounded form-control" placeholder="Leave a comment..." rows="3"></textarea>
+                                            </div>
+    
+                                            <div class="container col-5 d-flex flex-column justify-content-center">
+                                                <small><a href="#">Kristian</a> and 4 others contributed</small>
+                                                <div class="icons"><i class="fa-solid fa-comment mr-3 mt-3"></i>21 comments</div>
+                                                <div class="icons"><i class="fa-solid fa-thumbs-up mr-3"></i>6 likes</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="container p-0 mt-3">
+                                            <button class="btn btn-outline-primary"><i class="fa-solid fa-thumbs-up mr-3"></i>Like</button>
+                                            <button class="btn btn-outline-primary"><i class="fa-regular fa-share-from-square mr-3"></i>Share</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+
+                  <section class="container-fluid wrapper">
+                    <div class="card mb-5">
+                        <div class="row no-gutters">
+                            <button class="btn position-absolute options d-flex align-items-center justify-content-center">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                            <div class="col-md-4">
+                                <img src="/images/profile.png" class="card-img" alt="..." style="height: 480px;">
+                            </div>
+                            <div class="col-md-8 d-flex align-items-center">
+                                <div class="card-body d-flex ml-2">
+                                    <div class="col-1">
+                                        <img src="/images/profile.png" alt="" class="rounded-circle img-fluid profile-img">
+                                    </div>
+                                    
+                                    <div class="col-11 pl-4">
+                                        <h5 class="card-title">Martine Midttveit in <a href="#" class="card-link"><u>FED 23 - Noroff</u></a></h5>
+                                        <h6 class="card-subtitle text-muted pt-2">
+                                            <i class="fa-solid fa-lock pr-3"></i>
+                                            Private group
+                                        </h6>
+                                        <p class="card-text mt-4 col-11 p-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+
+                                        <div class="row pl-3 pt-3">
+                                            <div class="container p-0 col-7">
+                                                <textarea name="comment" class="comment rounded form-control" placeholder="Leave a comment..." rows="3"></textarea>
+                                            </div>
+    
+                                            <div class="container col-5 d-flex flex-column justify-content-center">
+                                                <small><a href="#">Kristian</a> and 4 others contributed</small>
+                                                <div class="icons"><i class="fa-solid fa-comment mr-3 mt-3"></i>21 comments</div>
+                                                <div class="icons"><i class="fa-solid fa-thumbs-up mr-3"></i>6 likes</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="container p-0 mt-3">
+                                            <button class="btn btn-outline-primary"><i class="fa-solid fa-thumbs-up mr-3"></i>Like</button>
+                                            <button class="btn btn-outline-primary"><i class="fa-regular fa-share-from-square mr-3"></i>Share</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

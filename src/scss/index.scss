@@ -1,1 +1,113 @@
 
+$primary: #F7F7F7;
+$secondary: #0B4B66;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.span { 
+    margin: 50px 0 25px 0;
+    padding: 8px 15px!important;
+    font-size: 1rem!important;
+    font-weight: normal!important;
+}
+
+.container-fluid {
+    background-color: #F7F7F7;
+}
+
+.wrapper {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.sidebar {
+    width: 100px;
+    background-color: #0D0D25;
+    align-items: center;
+}
+
+.banner {
+    background: linear-gradient(180deg, #DFBAA1 0%, #909FB5 100%);
+    height: 25rem;
+}
+
+.banner img {
+    height: 400px;
+    max-width: 400px;
+    top: 15%;
+}
+
+img {
+    object-fit: cover;
+}
+
+.icon {
+    font-size: 1.1rem;
+    max-width: 130px;
+    min-width: 20px;
+}
+
+.home {
+    color: #C7FCFF;
+}
+
+.profile {
+    color: #D3FFE8;
+}
+
+.groups {
+    color: #FFE1A9;
+}
+
+.settings {
+    color: #FFB05B;
+}
+
+.inbox {
+    color: #FF8411;
+}
+
+.hamburger {
+    color: #F7F7F7;
+    cursor: pointer;
+}
+
+.sidebar.expanded {
+    width: 260px; 
+    align-items: unset;
+    padding-left: 2%;
+}
+
+.menu-text {
+    display: none; 
+    margin: 0;
+    width: 100px;
+}
+
+.visible {
+    display: inline-block !important; 
+}
+
+.comment {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    resize: none; 
+    height: 100px;
+}
+
+.options {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #F7F7F7;
+    top: 10%;
+    right: 3%;
+    font-size: 1.2rem;
+}
+
+.profile-img {
+    min-height: 62px;
+}

@@ -34,19 +34,6 @@ $dark: #0D0D25;
     top: 18%;
 }
 
-@media (max-width: 950px) {
-    .banner {
-        height: 20rem;
-    }
-    .profile-image img {
-        height: 300px;
-        width: 300px;
-    }
-    .wrapper {
-        padding: 0 8%;
-    }
-}
-
 img {
     object-fit: cover;
 }
@@ -129,4 +116,21 @@ img {
 .card-link:hover {
     color: $secondary;
     opacity: .7;
+}
+
+@media (max-width: 950px) {
+    .banner {
+        height: 20rem;
+    }
+    .profile-image img {
+        height: 300px;
+        width: 300px;
+    }
+    .wrapper {
+        padding: 0 8%;
+    }
+   .profile-img {
+        height: 55px;
+        width: 55px;
+    }
 }

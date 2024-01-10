@@ -6,6 +6,10 @@ $dark: #0D0D25;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+html {
+    color: $dark;
+}
+
 .span { 
     margin: 50px 0 25px 0;
     padding: 8px 15px!important;
@@ -118,6 +122,14 @@ img {
     opacity: .7;
 }
 
+.interaction {
+    color: $dark;
+}
+
+.card-img {
+    border-right: 1px solid #0d0d2545;
+}
+
 @media (max-width: 950px) {
     .banner {
         height: 20rem;
@@ -140,5 +152,10 @@ img {
 
     h6 {
         font-size: .75rem;
+    }
+
+    .card-img {
+        border-right: none;
+        border-bottom: 1px solid #0d0d2545;
     }
 }

@@ -27,6 +27,30 @@ async function processFeed() {
 }
 
 /**
+ * Shows today's posts 
+ */
+document.getElementById("todaysPosts").addEventListener("click", async () => {
+    const token = getAccessToken();
+    const posts = await getPosts(token);
+
+    let date = new Date();
+    let dateToday = date.toLocaleDateString();
+    debugger;
+    const todaysPosts = posts.filter((post) => {
+        if (dateToday === new Date(post.updated).toLocaleDateString()) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    showPosts(todaysPosts);
+});
+
+
+
+
+
+/**
  * Gets the value of search phrase provided in search input
  */
 document.getElementById("searchBtn").addEventListener("click", () => {
@@ -42,8 +66,8 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 /**
  * Searches through all posts 
- * @param {*} posts 
- * @param {*} searchWord 
+ * @param {array} posts 
+ * @param {string} searchWord 
  * @returns 
  */
 function searchesThroughPosts(posts, searchWord) {
@@ -123,6 +147,12 @@ function showPosts(posts) {
         `;
     }
 }
+
+
+
+
+
+
 /**
  * Shows tags as links
  */

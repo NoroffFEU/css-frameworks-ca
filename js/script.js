@@ -13,3 +13,4 @@ sidebarToggle.addEventListener('click', function() {
     text.classList.toggle('visible');
   });
 });
+

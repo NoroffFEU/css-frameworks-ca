@@ -2,6 +2,7 @@
 $primary: #F7F7F7;
 $secondary: #0B4B66;
 $info: #B8EFF3;
+$dark: #0D0D25;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -17,15 +18,9 @@ $info: #B8EFF3;
 }
 
 .wrapper {
-    max-width: 2000px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 5%;
-}
-
-.sidebar {
-    width: 100px;
-    background-color: #0D0D25;
-    align-items: center;
 }
 
 .banner {
@@ -33,10 +28,23 @@ $info: #B8EFF3;
     height: 25rem;
 }
 
-.banner img {
+.profile-image img {
     height: 400px;
-    max-width: 400px;
-    top: 15%;
+    width: 400px;
+    top: 18%;
+}
+
+@media (max-width: 950px) {
+    .banner {
+        height: 20rem;
+    }
+    .profile-image img {
+        height: 300px;
+        width: 300px;
+    }
+    .wrapper {
+        padding: 0 8%;
+    }
 }
 
 img {
@@ -75,7 +83,6 @@ img {
 }
 
 .sidebar.expanded {
-    width: 260px; 
     align-items: unset;
     padding-left: 2%;
 }
@@ -93,7 +100,6 @@ img {
 .comment {
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    padding: 0.5rem;
     font-size: 1rem;
     resize: none; 
     height: 100px;
@@ -110,7 +116,8 @@ img {
 }
 
 .profile-img {
-    min-height: 62px;
+    height: 65px;
+    width: 65px;
 }
 
 .card-link, u {

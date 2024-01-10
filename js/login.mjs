@@ -1,4 +1,4 @@
-import { API_SOCIAL_URL } from "./js/api/api_constants.mjs";
+import { API_SOCIAL_URL } from "./api/api_constants.mjs";
 
 
 const form = document.querySelector(".formLogin");
@@ -41,11 +41,11 @@ form.addEventListener("submit", function (e) {
                 const profileName = data.name;
                 localStorage.setItem("accessToken", accessToken)
                 localStorage.setItem("name", profileName);
-                userLoggedIn.innerText = "You've successfully logged in.";
+                userLoggedIn.innerText = "Login successful";
                 setTimeout(() => {
                     userLoggedIn.innerText = " ";
                     window.location.href = "/profile/home";
-                }, 3000)
+                }, 2000)
             }
 
         })

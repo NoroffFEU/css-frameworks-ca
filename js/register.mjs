@@ -1,4 +1,4 @@
-import { API_SOCIAL_URL } from "./js/api/api_constants.mjs";
+import { API_SOCIAL_URL } from "./api/api_constants.mjs";
 
 const form = document.querySelector(".formCollection");
 
@@ -48,10 +48,10 @@ form.addEventListener("submit", function (e) {
     const userMessage = document.querySelector(".userInfo");
 
     function userInfo() {
-        userMessage.innerText = "Profile was successfully created.";
+        userMessage.innerText = "Profile was successfully created";
         setTimeout(() => {
             userMessage.innerText = " ";
             window.location.href = "/index.html";
-        }, 3000);
+        }, 2000);
     }
 });

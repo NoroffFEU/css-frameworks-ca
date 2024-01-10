@@ -1,6 +1,7 @@
 
 $primary: #F7F7F7;
 $secondary: #0B4B66;
+$info: #B8EFF3;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -110,4 +111,15 @@ img {
 
 .profile-img {
     min-height: 62px;
+}
+
+.card-link, u {
+    color: $secondary;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: $secondary;
+    opacity: .7;
 }

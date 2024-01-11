@@ -2,11 +2,16 @@ $primary: #f7f7f7;
 $secondary: #0b4b66;
 $info: #b8eff3;
 $dark: #0d0d25;
+$orange: #F5841A;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 html {
   color: $dark;
+}
+
+body {
+  font-family: 'Questrial', sans-serif;
 }
 
 .span {

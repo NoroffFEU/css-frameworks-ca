@@ -17,6 +17,9 @@ async function processFeed() {
 
     const token = getAccessToken();
     const posts = await getPosts(token, postTag);
+
+
+
     if (searchPhrase) {
         const posts2 = searchesThroughPosts(posts, searchPhrase);
         showPosts(posts2);
@@ -24,6 +27,8 @@ async function processFeed() {
     } else {
         showPosts(posts);
     }
+    showComments();
+    showReactions();
 }
 
 /**
@@ -141,8 +146,12 @@ function showPosts(posts) {
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                     </div>
                 </div>
-
+               
             </div>
+            <div class="showComments" id="showComments${posts[i].id}" style="display:none;">
+            ${processCommentsForPost(posts[i].comments)}</div>
+            <div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">
+            ${processReactionsForPost(posts[i].reactions)}</div>
         </div>        
         `;
     }
@@ -180,3 +189,72 @@ document.getElementById("postBtn").addEventListener("click", async () => {
     window.location.href = "../feed/index.html";
 });
 
+/** 
+ * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
+ * 
+ * @param {array} comments 
+ * @returns {array} array with comments and puts them in Html, if there are none it creates the message that there are no comments
+ */
+function processCommentsForPost(comments) {
+    let commentsHtml = "";
+    if (comments.length === 0) {
+        commentsHtml = `
+        <div>There are no comments</div>
+         `;
+    }
+    for (let i = 0; i < comments.length; i++) {
+        commentsHtml += `
+        <div>${comments[i].body}</div>
+        `;
+    }
+    return commentsHtml;
+}
+
+
+/** 
+ * Checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
+ * 
+ * @param {array} reactions 
+ * @returns {array} array with reactions and puts them in Html, if there are none it creates the message that there are no reactions
+ */
+function processReactionsForPost(reactions) {
+    let reactionsHtml = "";
+    if (reactions.length === 0) {
+        reactionsHtml = `
+        <div>There are no reactions</div>
+         `;
+    }
+    for (let i = 0; i < reactions.length; i++) {
+        reactionsHtml += `
+        <div>${reactions[i].symbol}</div>
+        `;
+    }
+    return reactionsHtml;
+}
+
+
+
+/** 
+ * Shows the post's comments or a message that there are none after the button is pressed
+ */
+function showComments() {
+    const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
+    commentBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}
+
+
+/** 
+ * Shows the post's reactions or a message that there are none after the button is pressed
+ */
+function showReactions() {
+    const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
+    reactionsBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}

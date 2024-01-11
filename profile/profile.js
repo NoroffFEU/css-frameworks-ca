@@ -20,16 +20,17 @@ window.onload = processUserFeed();
 
 
 /**
- * Gets token and user's name, uses them to get user's posts from API and send them to the next function
+ * Processes profile site and starts other functions
  */
 async function processUserFeed() {
-    // const userName = getUserName();
     const userPosts = await getProfile(accessToken, userName);
     const userData = await getUserData(accessToken, userName);
     showUserPosts(userPosts);
     showDelete();
     getIdToEdit();
     showUserProfile(userData);
+    showComments();
+    showReactions();
 }
 
 /**
@@ -38,7 +39,6 @@ async function processUserFeed() {
 function showUserProfile(userData) {
     let userCardContainer = document.getElementById("contUsersCardBody");
     userCardContainer.innerHTML = `
-
     <div class="col-lg-4 ">
     <img src="${userData.avatar}" class="bd-placeholder-img rounded-circle2 border img-fluid" width="240" height="240" id="profileImg" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
     <h1 class="fw-normal  my-4">${userData.name}</h1>
@@ -78,31 +78,35 @@ function showUserPosts(userPosts) {
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${userPosts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
                 <p class="card-text text-start" id="cardBody${userPosts[i].id}" style="display:none;" >${userPosts[i].body}</p>
-                <div class="card-text text-start" id="cardTags${userPosts[i].id}">${userPosts[i].tags}</div>
-                    <div class="d-flex justify-content-between align-items-center">
+                <div class="card-text text-start py-2" id="cardTags${userPosts[i].id}">${userPosts[i].tags}</div>
+                <div class="d-flex justify-content-between align-items-start" id="btnAndDate">
+                    <div class="py-2">
                         <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${userPosts[i].author.name}</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${userPosts[i].author.name}</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${userPosts[i].id}" data-postid="${userPosts[i].id}">Comments</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${userPosts[i].id}" data-postid="${userPosts[i].id}">Reactions</button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnEdit${userPosts[i].id}" data-postid="${userPosts[i].id}"><a href="#" data-bs-toggle="modal" data-bs-target="#editPostModal">Edit</a></button>
                             <button type="button" class="btn btn-sm btn-secondary" id="btnDelete${userPosts[i].id}" data-postid="${userPosts[i].id}">Delete</button>
                         </div>
+                    </div>
+                    <div class="py-2">
                         <small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}</small> 
                     </div>
                 </div>
-                
+                <div class="showComments" id="showComments${userPosts[i].id}" style="display:none;">
+                ${processCommentsForPost(userPosts[i].comments)}</div>
+                <div class="showReactions" id="showReactions${userPosts[i].id}" style="display:none;">
+                ${processReactionsForPost(userPosts[i].reactions)}</div>
             </div>
         </div>        
         `;
         if (userName === getUserName()) {
-
             document.getElementById(`btnEdit${userPosts[i].id}`).style.display = "block";
             document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "block";
         } else {
             document.getElementById(`btnEdit${userPosts[i].id}`).style.display = "none";
             document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "none";
         }
-
     }
 }
 
@@ -156,6 +160,8 @@ function getIdToEdit() {
         });
     }
 }
+
+
 /**
  * Puts values of user's post in inputs of the modal so the user can edit them
  * @param {} post
@@ -165,7 +171,6 @@ function getPostDataFromHtml(postId) {
     let htmlMessage = document.getElementById(`cardBody${postId}`);
     let htmlTags = document.getElementById(`cardTags${postId}`);
     let htmlMedia = document.getElementById(`cardPicture${postId}`);
-
     const postData = {
         id: postId,
         title: htmlTitle.innerText,
@@ -173,9 +178,9 @@ function getPostDataFromHtml(postId) {
         tags: htmlTags.innerText,
         media: htmlMedia.currentSrc
     }
-
     return postData;
 }
+
 
 function setModalInputs(post) {
     let htmlTitle = document.getElementById("editPostInput1");
@@ -204,3 +209,74 @@ function putPostUpdate(postId) {
     });
 }
 
+
+/** 
+ * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
+ * 
+ * @param {array} comments 
+ * @returns {array} array with comments and puts them in Html, if there are none it creates the message that there are no comments
+ */
+function processCommentsForPost(comments) {
+    let commentsHtml = "";
+    if (comments.length === 0) {
+        commentsHtml = `
+        <div>There are no comments</div>
+         `;
+    }
+    for (let i = 0; i < comments.length; i++) {
+        commentsHtml += `
+        <div>${comments[i].body}</div>
+        `;
+    }
+    return commentsHtml;
+}
+
+
+/** 
+ * Checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
+ * 
+ * @param {array} reactions 
+ * @returns {array} array with reactions and puts them in Html, if there are none it creates the message that there are no reactions
+ */
+function processReactionsForPost(reactions) {
+    let reactionsHtml = "";
+    if (reactions.length === 0) {
+        reactionsHtml = `
+        <div>There are no reactions</div>
+         `;
+    }
+    for (let i = 0; i < reactions.length; i++) {
+        reactionsHtml += `
+        <div>${reactions[i].symbol}</div>
+        `;
+    }
+    return reactionsHtml;
+}
+
+
+
+
+/** 
+ * Shows the post's comments or a message that there are none after the button is pressed
+ */
+function showComments() {
+    const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
+    commentBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showComments${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}
+
+
+/** 
+ * Shows the post's reactions or a message that there are none after the button is pressed
+ */
+function showReactions() {
+    const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
+    reactionsBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
+        })
+    })
+}

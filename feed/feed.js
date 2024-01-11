@@ -8,22 +8,17 @@ window.onload = processFeed();
 
 
 /** 
-* Gets token, uses it to get posts from API and send them to the next function
+* Processes user's feed and starts others functions
 */
 async function processFeed() {
     let params = new URLSearchParams(window.location.search);
     let postTag = params.get("tag");
     let searchPhrase = params.get("search");
-
     const token = getAccessToken();
     const posts = await getPosts(token, postTag);
-
-
-
     if (searchPhrase) {
         const posts2 = searchesThroughPosts(posts, searchPhrase);
         showPosts(posts2);
-
     } else {
         showPosts(posts);
     }
@@ -37,7 +32,6 @@ async function processFeed() {
 document.getElementById("todaysPosts").addEventListener("click", async () => {
     const token = getAccessToken();
     const posts = await getPosts(token);
-
     let date = new Date();
     let dateToday = date.toLocaleDateString();
     debugger;
@@ -50,7 +44,6 @@ document.getElementById("todaysPosts").addEventListener("click", async () => {
     });
     showPosts(todaysPosts);
 });
-
 
 
 
@@ -69,6 +62,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 });
 
+
 /**
  * Searches through all posts 
  * @param {array} posts 
@@ -80,7 +74,6 @@ function searchesThroughPosts(posts, searchWord) {
     let searchWordMinuscule = searchWord.toLowerCase();
     for (let i = 0; i < posts.length; i++) {
         const element = posts[i];
-
         if (posts[i].title !== null && posts[i].title.toLowerCase().includes(searchWordMinuscule)) {
             arrayWithSearchResults.push(element);
         }
@@ -119,7 +112,6 @@ function showPosts(posts) {
     let setImg = "";
     containerHTMLCard.innerHTML = "";
     for (let i = 0; i < posts.length; i++) {
-
         let formattedDate = new Date(posts[i].updated).toLocaleDateString();
         let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
         if (isMediaValid(posts[i].media)) {
@@ -127,7 +119,6 @@ function showPosts(posts) {
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
-
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
@@ -135,23 +126,24 @@ function showPosts(posts) {
                 <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${posts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
-               <div class="card-text text-start"> ${tagsToHtml(posts[i].tags, posts[i].id)} </div>
-                <div class="d-flex justify-content-between align-items-center">
+               <div class="card-text text-start py-2"> ${tagsToHtml(posts[i].tags, posts[i].id)} </div>
+                <div class="d-flex justify-content-between align-items-start" id="btnAndDate">
+                    <div class="py-2">       
                         <div class="btn-group">
-                        <a href="../profile/index.html?userName=${posts[i].author.name}"><button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button></a>
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
-                        <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
-
+                            <a href="../profile/index.html?userName=${posts[i].author.name}"><button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}</button></a>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments</button>
+                            <button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions</button>
                         </div>
+                    </div>
+                    <div class="py-2">
                         <small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}</small>
                     </div>
                 </div>
-               
+                <div class="showComments" id="showComments${posts[i].id}" style="display:none;">
+                ${processCommentsForPost(posts[i].comments)}</div>
+                <div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">
+                ${processReactionsForPost(posts[i].reactions)}</div>
             </div>
-            <div class="showComments" id="showComments${posts[i].id}" style="display:none;">
-            ${processCommentsForPost(posts[i].comments)}</div>
-            <div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">
-            ${processReactionsForPost(posts[i].reactions)}</div>
         </div>        
         `;
     }
@@ -184,10 +176,11 @@ document.getElementById("postBtn").addEventListener("click", async () => {
     const newPostMessage = document.getElementById("newPostInput2").value;
     const newPostTags = document.getElementById("newPostInput3").value.split(",");
     const newPostMedia = document.getElementById("newPostInput4").value;
-
     await newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
     window.location.href = "../feed/index.html";
 });
+
+
 
 /** 
  * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
@@ -237,7 +230,7 @@ function processReactionsForPost(reactions) {
 /** 
  * Shows the post's comments or a message that there are none after the button is pressed
  */
-function showComments() {
+export function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
     commentBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
@@ -250,7 +243,7 @@ function showComments() {
 /** 
  * Shows the post's reactions or a message that there are none after the button is pressed
  */
-function showReactions() {
+export function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
     reactionsBtns.forEach((btn) => {
         btn.addEventListener("click", function () {

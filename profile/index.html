@@ -33,23 +33,27 @@
                             <a class="nav-link " aria-current="page" href="../feed/index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Groups</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#newPostModal">New
                                 Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn nav-link" data-bs-toggle="button" id="todaysPosts">Today's
+                                posts</button>
                         </li>
                     </ul>
                     <div class="d-flex">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                            <li class="nav-item">
-                                <form role="search" class="me-3">
-                                    <input class="form-control" id="searchInput" type="search" placeholder="Search"
-                                        aria-label="Search">
-                                </form>
-                            </li>
-                            <li class="nav-item ">
-                                <button type="button" class="btn btn-primary me-2" id="searchBtn">Search</button>
+                            <li class="nav-item" id="searchFieldResp">
+                                <div class="d-flex">
+                                    <form role="search" class="me-3" id="searchForm">
+                                        <input class="form-control" id="searchInput" type="search" placeholder="Search"
+                                            aria-label="Search">
+                                    </form>
+                                    <div id="searchBtnResp">
+                                        <button type="button" class="btn btn-primary me-2"
+                                            id="searchBtn">Search</button>
+                                    </div>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="./index.html" id="profileBtn"
@@ -151,12 +155,10 @@
     <main class="mt-5 pt-5">
         <div class="container pt-5 d-flex justify-content-center" id="contUsersCardBody">
         </div>
-
-
         <div class="d-flex justify-content-center">
             <!-- Feed -->
             <div class="py-5 container mx-lg-5">
-                <h2 class="pb-2 border-bottom text-start">Your Posts</h2>
+                <h2 class="pb-2 border-bottom text-start">Posts</h2>
                 <div class="pt-1 mt-1 mx-lg-5">
                     <div class="d-flex">
                         <!-- Posts -->

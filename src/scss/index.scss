@@ -331,10 +331,6 @@ h6 {
   color: $color-font !important;
 }
 
-// form {
-//     display: inline-block;
-// }
-
 .navbar {
   padding: 0.75rem 0;
 }
@@ -386,22 +382,6 @@ h6 {
   }
 }
 
-// #profileImg {
-//   border-top-left-radius: 5px;
-//   border-bottom-left-radius: 0px;
-//   border-top-right-radius: 5px;
-//   border-bottom-right-radius: 0px;
-// }
-
-// @media (min-width: 768px) {
-//   #profileImg {
-//     border-top-left-radius: 5px;
-//     border-bottom-left-radius: 5px;
-//     border-top-right-radius: 0px;
-//     border-bottom-right-radius: 0px;
-//   }
-// }
-
 .rounded-circle2 {
   object-fit: cover !important;
   height: 240px;
@@ -422,5 +402,17 @@ h6 {
     border-bottom-left-radius: 0px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-item .d-flex {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  #btnAndDate {
+    flex-direction: column;
   }
 }

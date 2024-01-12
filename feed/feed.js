@@ -2,7 +2,6 @@ import { getPosts } from "../src/api/posts/getPosts.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { newPost } from "../src/api/posts/newPost.js";
-import { getUserName } from "../src/tools/NameLocalStorage.js";
 
 window.onload = processFeed();
 
@@ -34,7 +33,6 @@ document.getElementById("todaysPosts").addEventListener("click", async () => {
     const posts = await getPosts(token);
     let date = new Date();
     let dateToday = date.toLocaleDateString();
-    debugger;
     const todaysPosts = posts.filter((post) => {
         if (dateToday === new Date(post.updated).toLocaleDateString()) {
             return true;

@@ -25,6 +25,7 @@ window.onload = processUserFeed();
 async function processUserFeed() {
     const userPosts = await getProfile(accessToken, userName);
     const userData = await getUserData(accessToken, userName);
+
     showUserPosts(userPosts);
     showDelete();
     getIdToEdit();
@@ -32,6 +33,24 @@ async function processUserFeed() {
     showComments();
     showReactions();
 }
+
+/**
+ * Gets the value of search phrase provided in search input
+ */
+document.getElementById("searchBtn").addEventListener("click", () => {
+    let searchWord = document.getElementById("searchInput").value;
+    if (searchWord !== null && searchWord !== undefined && searchWord.length > 1) {
+        window.location.href = `../feed/index.html?search=${searchWord}`;
+    }
+    else {
+        alert("You have to provide a search phrase");
+    }
+
+});
+
+
+
+
 
 /**
  * Shows user's profile
@@ -54,8 +73,6 @@ function showUserProfile(userData) {
 */
 function showUserPosts(userPosts) {
     let containerHTMLCard = document.getElementById("singleCardProfile");
-
-    //Clear the page
     containerHTMLCard.innerHTML = "";
 
     let setImg = "";
@@ -67,8 +84,6 @@ function showUserPosts(userPosts) {
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
-
-
 
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">

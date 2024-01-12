@@ -25,7 +25,19 @@ async function processPost() {
     showReactions();
 }
 
+/**
+ * Gets the value of search phrase provided in search input
+ */
+document.getElementById("searchBtn").addEventListener("click", () => {
+    let searchWord = document.getElementById("searchInput").value;
+    if (searchWord !== null && searchWord !== undefined && searchWord.length > 1) {
+        window.location.href = `../feed/index.html?search=${searchWord}`;
+    }
+    else {
+        alert("You have to provide a search phrase");
+    }
 
+});
 
 
 /**

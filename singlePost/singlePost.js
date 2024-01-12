@@ -60,7 +60,7 @@ function showPost(post) {
                 <h5 class="card-title" id="cardTitle">${post.title}</h5>
                 <div class="card-body">
                 <p class="card-text text-start" id="cardBody">${post.body}</p>
-                <div class="card-text text-start py-2" id="cardTags">${post.tags}</div>
+                <div class="card-text text-start py-2" id="cardTags">${tagsToHtml(post.tags, post.id)}</div>
                     <div class="d-flex justify-content-between align-items-start" id="btnAndDate">
                     <div class="py-2">   
                         <div class="btn-group">
@@ -99,6 +99,22 @@ function showPost(post) {
         window.location.href = "../profile/index.html";
     });
 }
+
+
+/**
+ * Shows tags as links
+ */
+function tagsToHtml(tagsArray, postId) {
+
+    let aString = "";
+    for (let i = 0; i < tagsArray.length; i++) {
+        aString += `
+    <a href="../feed/index.html?tag=${tagsArray[i]}"><span class="card-text text-start" id="cardTags${postId}" data-tagId="tag">${tagsArray[i]}</span></a>
+    ` }
+    return aString;
+}
+
+
 
 /**
  * Opens modal and gets the values of a new message

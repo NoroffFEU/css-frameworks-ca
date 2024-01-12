@@ -124,7 +124,9 @@ function showPosts(posts) {
                 <h5 class="card-title" id="cardTitle">${posts[i].title}</h5>
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${posts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
-               <div class="card-text text-start py-2"> ${tagsToHtml(posts[i].tags, posts[i].id)} </div>
+                <div class="card-text text-start py-2">
+                    ${tagsToHtml(posts[i].tags, posts[i].id)}
+                </div>
                 <div class="d-flex justify-content-between align-items-start" id="btnAndDate">
                     <div class="py-2">       
                         <div class="btn-group">
@@ -156,6 +158,7 @@ function showPosts(posts) {
  * Shows tags as links
  */
 function tagsToHtml(tagsArray, postId) {
+
     let aString = "";
     for (let i = 0; i < tagsArray.length; i++) {
         aString += `
@@ -228,7 +231,7 @@ function processReactionsForPost(reactions) {
 /** 
  * Shows the post's comments or a message that there are none after the button is pressed
  */
-export function showComments() {
+function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
     commentBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
@@ -241,7 +244,7 @@ export function showComments() {
 /** 
  * Shows the post's reactions or a message that there are none after the button is pressed
  */
-export function showReactions() {
+function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
     reactionsBtns.forEach((btn) => {
         btn.addEventListener("click", function () {

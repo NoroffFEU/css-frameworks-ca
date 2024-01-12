@@ -7,7 +7,6 @@ import { newPost } from "../src/api/posts/newPost.js";
 import { editPost } from "../src/api/posts/id/editPost.js";
 import { getUserData } from "../src/api/profiles/profileData.js";
 
-
 let params = new URLSearchParams(window.location.search);
 let userName = params.get("userName");
 if (userName === null) {
@@ -93,7 +92,9 @@ function showUserPosts(userPosts) {
                 <div class="card-body">
                 <a href="../singlePost/index.html?postId=${userPosts[i].id}"><p class="card-text text-start" id="singlePost">Read more...</p></a>
                 <p class="card-text text-start" id="cardBody${userPosts[i].id}" style="display:none;" >${userPosts[i].body}</p>
-                <div class="card-text text-start py-2" id="cardTags${userPosts[i].id}">${userPosts[i].tags}</div>
+                <div class="card-text text-start py-2" id="cardTags${userPosts[i].id}">
+                    ${tagsToHtml(userPosts[i].tags, userPosts[i].id)}
+                </div>
                 <div class="d-flex justify-content-between align-items-start" id="btnAndDate">
                     <div class="py-2">
                         <div class="btn-group">
@@ -123,6 +124,19 @@ function showUserPosts(userPosts) {
             document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "none";
         }
     }
+}
+
+/**
+ * Shows tags as links
+ */
+function tagsToHtml(tagsArray, postId) {
+
+    let aString = "";
+    for (let i = 0; i < tagsArray.length; i++) {
+        aString += `
+    <a href="../feed/index.html?tag=${tagsArray[i]}"><span class="card-text text-start" id="cardTags${postId}" data-tagId="tag">${tagsArray[i]}</span></a>
+    ` }
+    return aString;
 }
 
 

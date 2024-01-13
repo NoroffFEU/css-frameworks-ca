@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/api/posts/id/getPost.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,41 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/api/posts/id/getPost.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { apiPath } from "../../const.js";
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+* Gets posts with their title, body, tags, media, reactions, comments, when they were created and edited, id, author (and their details such as name, email &amp; avatar) &amp; number of comments and reactions
+*@param {string} token 
+*@param {integer} postId
+* @returns {object} with post's details
+*/
+export async function getPost(token, postId) {
+    const response = await fetch(
+        `${apiPath}/social/posts/${postId}?_author=true&amp;_reactions=true&amp;_comments=true`,
+        {
+            method: "get",
+            headers: {
+                Accept: "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        },
+    );
+    if (response.ok) {
+        return await response.json();
+    }
+    throw new Error(response.statusText);
+}</code></pre>
+        </article>
+    </section>
 
 
 

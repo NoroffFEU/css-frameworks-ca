@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/tools/signOut.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,30 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/tools/signOut.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { getAccessToken } from "./accessToken.js";
+import { getUserName } from "./nameLocalStorage.js";
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * Signs out user and removes all data from local storage
+ */
+export function signOut() {
+    getAccessToken();
+    getUserName();
+    localStorage.removeItem("userName");
+    localStorage.removeItem("accessToken");
+    window.location.href = "./index.html";
+}</code></pre>
+        </article>
+    </section>
 
 
 

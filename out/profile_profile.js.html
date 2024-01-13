@@ -26,222 +26,282 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { getData } from "../mjs/getData.mjs";
-import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost, searchElement } from "../mjs/helpers.mjs";
+            <pre class="prettyprint source linenums"><code>import { getProfile } from "../src/api/profiles/posts.js";
+import { getAccessToken } from "../src/tools/accessToken.js";
+import { getUserName } from "../src/tools/nameLocalStorage.js";
+import { isMediaValid } from "../src/tools/validMedia.js";
+import { deletePost } from "../src/api/posts/id/deletePost.js";
+import { newPost } from "../src/api/posts/newPost.js";
+import { editPost } from "../src/api/posts/id/editPost.js";
+import { getUserData } from "../src/api/profiles/profileData.js";
+import { signOut } from "../src/tools/signOut.js";
 
-const token = localStorage.getItem("accessToken");
-const mainApiUrl = "https://api.noroff.dev/api/v1";
-//const getMyPosts = `${mainApiUrl}/social/profiles/:name/posts`;
-// const postsUrl = `${mainApiUrl}/social/posts`;
-const myName = localStorage.getItem("name");
-const getMyPosts = `${mainApiUrl}/social/profiles/${myName}/posts`;
-const myPostsUrl = `${mainApiUrl}/social/posts`;
-let profilePosts = undefined;
-let postIdEdit = undefined;
-
-const requestParam = {
-    _author: true,
-    _comments: true,
-    _reactions: true
-    // offset: 100
-};
-
-const queryString = new URLSearchParams(requestParam).toString();
-
-window.onload = fetchPostsFromApi();
-
-/** 
- * This function 
- * 
- * @param {array} posts posts from API
- */
-function renderPage(posts) {
-    showMyPosts(posts);
-    showComments();
-    showReactions();
-    showEdit();
-    showDelete();
+let params = new URLSearchParams(window.location.search);
+let userName = params.get("userName");
+if (userName === null) {
+    userName = getUserName();
 }
 
-
-/** 
-* This function gets posts from API and send them to next function that shows them on the site
-*/
-async function fetchPostsFromApi() {
-    profilePosts = await getData(`${getMyPosts}?${queryString}`);
-    renderPage(profilePosts);
-}
-
-//This event listener open the module that enables to write a new post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
-const formPost = document.getElementById("formPost");
-document.getElementById("postBtn").addEventListener("click", (event) => {
-    event.preventDefault();
-
-    const titlePost = formPost.elements[0];
-    const messagePost = formPost.elements[1];
-    const mediaPost = formPost.elements[2];
-
-    const userTitlePost = titlePost.value;
-    const userMessagePost = messagePost.value;
-    const userMediaPost = mediaPost.value;
-
-    const newPost = newPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-    newPostToApiFunksjon(postsUrl, newPost);
-});
-
+let accessToken = getAccessToken();
+window.onload = processUserFeed();
 
 /**
- * This function gets and shows my posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
+ * Processes profile site and starts other functions
+ */
+async function processUserFeed() {
+    const userPosts = await getProfile(accessToken, userName);
+    const userData = await getUserData(accessToken, userName);
+    showUserPosts(userPosts);
+    showDelete();
+    getIdToEdit();
+    showUserProfile(userData);
+    showComments();
+    showReactions();
+}
+
+/**
+ * Starts function that deletes all data from LocalStorage
+ */
+document.getElementById("signOut").addEventListener("click", signOut);
+
+/**
+ * Gets the value of search phrase provided in search input
+ */
+document.getElementById("searchBtn").addEventListener("click", () => {
+    let searchWord = document.getElementById("searchInput").value;
+    if (searchWord !== null &amp;&amp; searchWord !== undefined &amp;&amp; searchWord.length > 1) {
+        window.location.href = `../feed/index.html?search=${searchWord}`;
+    }
+    else {
+        alert("You have to provide a search phrase");
+    }
+
+});
+
+/**
+ * Shows user's profile
+ * @param {object} userData object that includes user's name and avatar
+ */
+function showUserProfile(userData) {
+    let userCardContainer = document.getElementById("contUsersCardBody");
+    userCardContainer.innerHTML = `
+    &lt;div class="col-lg-4 ">
+    &lt;img src="${userData.avatar}" class="bd-placeholder-img rounded-circle2 border img-fluid" width="240" height="240" id="profileImg" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">&lt;title>Placeholder&lt;/title>&lt;rect width="100%" height="100%" fill="var(--bs-secondary-color)">&lt;/rect>&lt;/svg>
+    &lt;h1 class="fw-normal  my-4">${userData.name}&lt;/h1>
+  &lt;/div>
+  `;
+}
+
+/**
+ * Gets and shows user's posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
  * @param {array} posts posts from API
 */
-function showMyPosts(posts) {
+function showUserPosts(userPosts) {
     let containerHTMLCard = document.getElementById("singleCardProfile");
-    //Clear the page
     containerHTMLCard.innerHTML = "";
     let setImg = "";
-    for (var i = 0; i &lt; posts.length; i++) {
-        let formattedDate = new Date(posts[i].updated).toLocaleDateString();
-        let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
-        if (isMediaValid(posts[i].media)) {
-            setImg = posts[i].media;
+    for (var i = 0; i &lt; userPosts.length; i++) {
+        let formattedDate = new Date(userPosts[i].updated).toLocaleDateString();
+        let formattedTime = new Date(userPosts[i].updated).toLocaleTimeString();
+        if (isMediaValid(userPosts[i].media)) {
+            setImg = userPosts[i].media;
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
-
         containerHTMLCard.innerHTML += `
         &lt;div class="my-2 col col-lg-10 w-100">
             &lt;div class="card shadow-sm"> 
-                &lt;img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
-                &lt;h5 class="card-title" id="cardTitle">${posts[i].title}&lt;/h5>
+                &lt;img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture${userPosts[i].id}">
+                &lt;h5 class="card-title" id="cardTitle${userPosts[i].id}">${userPosts[i].title}&lt;/h5>
                 &lt;div class="card-body">
-                    &lt;p class="card-text text-start" id="cardBody">${posts[i].body}&lt;/p>
-                    &lt;div class="d-flex justify-content-between align-items-center">
+                &lt;a href="../singlePost/index.html?postId=${userPosts[i].id}">&lt;p class="card-text text-start" id="singlePost">Read more...&lt;/p>&lt;/a>
+                &lt;p class="card-text text-start" id="cardBody${userPosts[i].id}" style="display:none;" >${userPosts[i].body}&lt;/p>
+                &lt;div class="card-text text-start py-2" id="cardTags${userPosts[i].id}">
+                    ${tagsToHtml(userPosts[i].tags, userPosts[i].id)}
+                &lt;/div>
+                &lt;div class="d-flex justify-content-between align-items-start" id="btnAndDate">
+                    &lt;div class="py-2">
                         &lt;div class="btn-group">
-                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments&lt;/button>
-                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${posts[i].id}" data-postid="${posts[i].id}">Reactions&lt;/button>
-                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnEdit${posts[i].id}" data-postid="${posts[i].id}">Edit&lt;/button>
-                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnDelete${posts[i].id}" data-postid="${posts[i].id}">Delete&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${userPosts[i].author.name}&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${userPosts[i].id}" data-postid="${userPosts[i].id}">Comments&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions${userPosts[i].id}" data-postid="${userPosts[i].id}">Reactions&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnEdit${userPosts[i].id}" data-postid="${userPosts[i].id}">&lt;a href="#" data-bs-toggle="modal" data-bs-target="#editPostModal">Edit&lt;/a>&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnDelete${userPosts[i].id}" data-postid="${userPosts[i].id}">Delete&lt;/button>
                         &lt;/div>
+                    &lt;/div>
+                    &lt;div class="py-2">
                         &lt;small class="text-muted" id="cardUpdated">${formattedDate} ${formattedTime}&lt;/small> 
                     &lt;/div>
                 &lt;/div>
-                &lt;div class="showComments" id="showComments${posts[i].id}" style="display:none;">${processCommentsForPost(posts[i].comments)}&lt;/div>
-                &lt;div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">${processReactionsForPost(posts[i].reactions)}&lt;/div>
+                &lt;div class="showComments" id="showComments${userPosts[i].id}" style="display:none;">
+                ${processCommentsForPost(userPosts[i].comments)}&lt;/div>
+                &lt;div class="showReactions" id="showReactions${userPosts[i].id}" style="display:none;">
+                ${processReactionsForPost(userPosts[i].reactions)}&lt;/div>
             &lt;/div>
         &lt;/div>        
         `;
-
+        if (userName === getUserName()) {
+            document.getElementById(`btnEdit${userPosts[i].id}`).style.display = "block";
+            document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "block";
+        } else {
+            document.getElementById(`btnEdit${userPosts[i].id}`).style.display = "none";
+            document.getElementById(`btnDelete${userPosts[i].id}`).style.display = "none";
+        }
     }
 }
 
+/**
+ * Shows tags as links
+ * @param {array} array of tags
+ * @param {number} post's Id
+ * @returns {string} shows tags as links
+ */
+function tagsToHtml(tagsArray, postId) {
+    let aString = "";
+    for (let i = 0; i &lt; tagsArray.length; i++) {
+        aString += `
+    &lt;a href="../feed/index.html?tag=${tagsArray[i]}">&lt;span class="card-text text-start" id="cardTags${postId}" data-tagId="tag">${tagsArray[i]}&lt;/span>&lt;/a>
+    ` }
+    return aString;
+}
 
 /**
- * This function deletes the post
- * 
- * @param {number} id 
+ * Adds event listener to delete button in user's post
  */
-async function deletePost(id) {
-    const deletePost = {
-        method: "DELETE",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-        },
-    };
-    try {
-        await fetch(`${myPostsUrl}/${id}`, deletePost);
-    } catch (error) {
-        console.log(error);
+function showDelete() {
+    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
+    for (let i = 0; i &lt; deleteBtns.length; i++) {
+        const deleteBtn = deleteBtns[i];
+        deleteBtn.addEventListener("click", async function () {
+            const postId = deleteBtn.dataset.postid;
+            await deletePost(accessToken, postId);
+            processUserFeed();
+        });
     }
 }
 
-
 /**
- * This function shows the modal and fills the modal post with post's details
- * 
- * @param {number} id 
+ * Opens modal and gets the values of a new message
  */
-function editPost(id) {
-    const editPostModal = document.getElementById("editPostModal");
-    var myModal = new bootstrap.Modal(editPostModal, {
-        backdrop: 'static', // You can set the backdrop behavior (static or true/false)
-        keyboard: false,    // You can control whether the modal can be closed with the keyboard
-        focus: true
-    })
-    const tmp = profilePosts.find(x => x.id == id);
-    document.getElementById("exampleFormControlTextarea6").value = tmp.title;
-    document.getElementById("exampleFormControlTextarea7").value = tmp.body;
-    document.getElementById("exampleFormControlTextarea8").value = tmp.media;
-    postIdEdit = id;
-    myModal.show();
-}
-
-
-//This event listener open the module that enables to edit a post by taking the values of a title, message(body) and media; it also starts functions get those values and send them to API
-document.getElementById("editPostBtn").addEventListener("click", async (event) => {
-    event.preventDefault();
-
-    const titlePost = formEditPost.elements[0];
-    const messagePost = formEditPost.elements[1];
-    const mediaPost = formEditPost.elements[2];
-
-    const userTitlePost = titlePost.value;
-    const userMessagePost = messagePost.value;
-    const userMediaPost = mediaPost.value;
-
-    const editedPost = editedPostValuesToObject(userTitlePost, userMessagePost, userMediaPost);
-    await editedPostToApiFunksjon(`${myPostsUrl}/${postIdEdit}`, editedPost);
-    postIdEdit = undefined;
-    await fetchPostsFromApi();
-    renderPage(profilePosts);
+document.getElementById("postBtn").addEventListener("click", () => {
+    const token = getAccessToken();
+    const newPostTitle = document.getElementById("newPostInput1").value;
+    const newPostMessage = document.getElementById("newPostInput2").value;
+    const newPostTags = document.getElementById("newPostInput3").value.split(",");
+    const newPostMedia = document.getElementById("newPostInput4").value;
+    newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
+    processUserFeed();
 });
 
-
-/** 
- * This function puts the values of a title, message(body) and media in an object
- * 
- * @param {string} title 
- * @param {string} message 
- * @param {string} media 
- * @returns {object} object with key-value pairs of title, message(body) and media
+/**
+ * Gets post's id to be able to edit the post
  */
-function editedPostValuesToObject(title, message, media) {
-    const postToApi = {
-        "title": title,
-        "body": message,
-        "media": media
-    };
-    return postToApi;
-}
-
-
-/** 
- * This function sends a created object (and assigned token) to API and replace the old one
- * 
- * @param {string} url 
- * @param {object} post 
- */
-async function editedPostToApiFunksjon(url, post) {
-    try {
-        const token = localStorage.getItem("accessToken");
-        const postData = {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(post),
-        };
-        let response = await fetch(url, postData);
-        await response.json();
-    } catch (error) {
-        console.log(error)
+function getIdToEdit() {
+    const editBtns = document.querySelectorAll('[id^="btnEdit"]');
+    for (let i = 0; i &lt; editBtns.length; i++) {
+        const editBtn = editBtns[i];
+        editBtn.addEventListener("click", async function () {
+            const postId = editBtn.dataset.postid;
+            setModalInputs(getPostDataFromHtml(postId));
+            putPostUpdate(postId);
+        });
     }
 }
 
+/**
+ * Puts values of user's post in inputs of the modal so the user can edit them
+ * @param {string} postId
+ * @returns {object} object with value of post's id, title, body, tags and media
+ */
+function getPostDataFromHtml(postId) {
+    let htmlTitle = document.getElementById(`cardTitle${postId}`);
+    let htmlMessage = document.getElementById(`cardBody${postId}`);
+    let htmlTags = document.getElementById(`cardTags${postId}`);
+    let htmlMedia = document.getElementById(`cardPicture${postId}`);
+    const postData = {
+        id: postId,
+        title: htmlTitle.innerText,
+        body: htmlMessage.innerText,
+        tags: htmlTags.innerText,
+        media: htmlMedia.currentSrc
+    }
+    return postData;
+}
+
+/**
+ * Puts values of user's post in inputs of the modal so the user can edit them
+ * @param {object} post 
+ */
+function setModalInputs(post) {
+    let htmlTitle = document.getElementById("editPostInput1");
+    htmlTitle.value = post.title;
+    let htmlMessage = document.getElementById("editPostInput2");
+    htmlMessage.value = post.body;
+    let htmlTags = document.getElementById("editPostInput3");
+    htmlTags.value = post.tags;
+    let htmlMedia = document.getElementById("editPostInput4");
+    htmlMedia.value = post.media;
+}
+
+/**
+ * Gets the values of an edited message
+ * @param {string} postId
+ */
+function putPostUpdate(postId) {
+    document.getElementById("editPostBtn").addEventListener("click", async () => {
+        const editPostTitle = document.getElementById("editPostInput1").value;
+        const editPostMessage = document.getElementById("editPostInput2").value;
+        const editPostTags = document.getElementById("editPostInput3").value.split(",");
+        const editPostMedia = document.getElementById("editPostInput4").value;
+        const response = await editPost(accessToken, postId, editPostTitle, editPostMessage, editPostTags, editPostMedia);
+        window.location.href = `../singlePost/index.html?postId=${response.id}`;
+    });
+}
 
 /** 
- * This functions shows the post's comments or a message that there are none after the button is pressed
+ * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
+ * 
+ * @param {array} comments 
+ * @returns {array} array with comments and puts them in Html, if there are none it creates the message that there are no comments
+ */
+function processCommentsForPost(comments) {
+    let commentsHtml = "";
+    if (comments.length === 0) {
+        commentsHtml = `
+        &lt;div>There are no comments&lt;/div>
+         `;
+    }
+    for (let i = 0; i &lt; comments.length; i++) {
+        commentsHtml += `
+        &lt;div>${comments[i].body}&lt;/div>
+        `;
+    }
+    return commentsHtml;
+}
+
+/** 
+ * Checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
+ * 
+ * @param {array} reactions 
+ * @returns {array} array with reactions and puts them in Html, if there are none it creates the message that there are no reactions
+ */
+function processReactionsForPost(reactions) {
+    let reactionsHtml = "";
+    if (reactions.length === 0) {
+        reactionsHtml = `
+        &lt;div>There are no reactions&lt;/div>
+         `;
+    }
+    for (let i = 0; i &lt; reactions.length; i++) {
+        reactionsHtml += `
+        &lt;div>${reactions[i].symbol}&lt;/div>
+        `;
+    }
+    return reactionsHtml;
+}
+
+/** 
+ * Shows the post's comments or a message that there are none after the button is pressed
  */
 function showComments() {
     const commentBtns = document.querySelectorAll('[id^="btnShowComments"]');
@@ -253,7 +313,7 @@ function showComments() {
 }
 
 /** 
- * This functions shows the post's reactions or a message that there are none after the button is pressed
+ * Shows the post's reactions or a message that there are none after the button is pressed
  */
 function showReactions() {
     const reactionsBtns = document.querySelectorAll('[id^="btnShowReactions"]');
@@ -262,49 +322,7 @@ function showReactions() {
             document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
         })
     })
-}
-/**
- * This function adds event listener to edit button in all posts
- */
-function showEdit() {
-    const editBtns = document.querySelectorAll('[id^="btnEdit"]');
-    for (let i = 0; i &lt; editBtns.length; i++) {
-        const editBtn = editBtns[i];
-        editBtn.addEventListener("click", function () {
-            const postId = editBtn.dataset.postid;
-            editPost(postId);
-        });
-    }
-}
-
-
-/**
- * This function adds event listener to delete button in all posts
- */
-function showDelete() {
-    const deleteBtns = document.querySelectorAll('[id^="btnDelete"]');
-    for (let i = 0; i &lt; deleteBtns.length; i++) {
-        const deleteBtn = deleteBtns[i];
-        deleteBtn.addEventListener("click", async function () {
-            const postId = deleteBtn.dataset.postid;
-            await deletePost(postId);
-            await fetchPostsFromApi();
-            renderPage(profilePosts);
-        });
-    }
-}
-
-// This event listener sends search value from search field when Enter is pressed to a function that will check it
-const searchField = document.getElementById("searchInput");
-searchField.addEventListener("keydown", (event) => {
-
-    if (event.key === "Enter") {
-
-        const result = searchElement(profilePosts, searchField.value);
-        renderPage(result);
-    }
-});
-</code></pre>
+}</code></pre>
         </article>
     </section>
 
@@ -314,13 +332,13 @@ searchField.addEventListener("keydown", (event) => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#deletePost">deletePost</a></li><li><a href="global.html#editPost">editPost</a></li><li><a href="global.html#editedPostToApiFunksjon">editedPostToApiFunksjon</a></li><li><a href="global.html#editedPostValuesToObject">editedPostValuesToObject</a></li><li><a href="global.html#fetchPostsFromApi">fetchPostsFromApi</a></li><li><a href="global.html#logInUser">logInUser</a></li><li><a href="global.html#registerUser">registerUser</a></li><li><a href="global.html#renderPage">renderPage</a></li><li><a href="global.html#showComments">showComments</a></li><li><a href="global.html#showDelete">showDelete</a></li><li><a href="global.html#showEdit">showEdit</a></li><li><a href="global.html#showMyPosts">showMyPosts</a></li><li><a href="global.html#showPosts">showPosts</a></li><li><a href="global.html#showReactions">showReactions</a></li><li><a href="global.html#userToLogInFunksjon">userToLogInFunksjon</a></li><li><a href="global.html#userToRegisterFunksjon">userToRegisterFunksjon</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#deletePost">deletePost</a></li><li><a href="global.html#editPost">editPost</a></li><li><a href="global.html#followUser">followUser</a></li><li><a href="global.html#getIdToEdit">getIdToEdit</a></li><li><a href="global.html#getPost">getPost</a></li><li><a href="global.html#getPostDataFromHtml">getPostDataFromHtml</a></li><li><a href="global.html#getPosts">getPosts</a></li><li><a href="global.html#getPostsWithTag">getPostsWithTag</a></li><li><a href="global.html#getProfile">getProfile</a></li><li><a href="global.html#getProfiles">getProfiles</a></li><li><a href="global.html#getUserData">getUserData</a></li><li><a href="global.html#isMediaValid">isMediaValid</a></li><li><a href="global.html#loginUser">loginUser</a></li><li><a href="global.html#newPost">newPost</a></li><li><a href="global.html#processCommentsForPost">processCommentsForPost</a></li><li><a href="global.html#processFeed">processFeed</a></li><li><a href="global.html#processPost">processPost</a></li><li><a href="global.html#processReactionsForPost">processReactionsForPost</a></li><li><a href="global.html#processUserFeed">processUserFeed</a></li><li><a href="global.html#putPostUpdate">putPostUpdate</a></li><li><a href="global.html#registerNewUser">registerNewUser</a></li><li><a href="global.html#searchesThroughPosts">searchesThroughPosts</a></li><li><a href="global.html#setModalInputs">setModalInputs</a></li><li><a href="global.html#showComments">showComments</a></li><li><a href="global.html#showDelete">showDelete</a></li><li><a href="global.html#showPost">showPost</a></li><li><a href="global.html#showPosts">showPosts</a></li><li><a href="global.html#showReactions">showReactions</a></li><li><a href="global.html#showUserPosts">showUserPosts</a></li><li><a href="global.html#showUserProfile">showUserProfile</a></li><li><a href="global.html#signOut">signOut</a></li><li><a href="global.html#tagsToHtml">tagsToHtml</a></li><li><a href="global.html#unfollowUser">unfollowUser</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Oct 15 2023 11:51:22 GMT+0200 (Central European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sat Jan 13 2024 21:04:53 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

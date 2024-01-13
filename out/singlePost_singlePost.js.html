@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: feed/feed.js</title>
+    <title>JSDoc: Source: singlePost/singlePost.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: feed/feed.js</h1>
+    <h1 class="page-title">Source: singlePost/singlePost.js</h1>
 
     
 
@@ -26,29 +26,28 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { getPosts } from "../src/api/posts/getPosts.js";
+            <pre class="prettyprint source linenums"><code>import { getPost } from "../src/api/posts/id/getPost.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
+import { getUserName } from "../src/tools/nameLocalStorage.js";
+import { deletePost } from "../src/api/posts/id/deletePost.js";
+import { editPost } from "../src/api/posts/id/editPost.js";
 import { newPost } from "../src/api/posts/newPost.js";
 import { signOut } from "../src/tools/signOut.js";
 
-window.onload = processFeed();
+let params = new URLSearchParams(window.location.search);
+let postId = params.get("postId");
+let token = getAccessToken();
 
-/** 
-* Processes user's feed and starts others functions
-*/
-async function processFeed() {
-    let params = new URLSearchParams(window.location.search);
-    let postTag = params.get("tag");
-    let searchPhrase = params.get("search");
-    const token = getAccessToken();
-    const posts = await getPosts(token, postTag);
-    if (searchPhrase) {
-        const posts2 = searchesThroughPosts(posts, searchPhrase);
-        showPosts(posts2);
-    } else {
-        showPosts(posts);
-    }
+window.onload = processPost();
+
+/**
+ * Gets token and postId , uses it to get post's details from API and starts others functions
+ */
+async function processPost() {
+    const post = await getPost(token, postId);
+    showPost(post);
+    setModalInputs(post);
     showComments();
     showReactions();
 }
@@ -57,24 +56,6 @@ async function processFeed() {
  * Starts function that deletes all data from LocalStorage
  */
 document.getElementById("signOut").addEventListener("click", signOut);
-
-/**
- * Shows today's posts 
- */
-document.getElementById("todaysPosts").addEventListener("click", async () => {
-    const token = getAccessToken();
-    const posts = await getPosts(token);
-    let date = new Date();
-    let dateToday = date.toLocaleDateString();
-    const todaysPosts = posts.filter((post) => {
-        if (dateToday === new Date(post.updated).toLocaleDateString()) {
-            return true;
-        } else {
-            return false;
-        }
-    });
-    showPosts(todaysPosts);
-});
 
 /**
  * Gets the value of search phrase provided in search input
@@ -91,100 +72,71 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 });
 
 /**
- * Searches through all posts 
- * @param {array} posts 
- * @param {string} searchWord 
- * @returns {array} array with posts that matches the search word
+ * Shows the post sent from API; it also checks if there is any media included 
+ * @param {object} object with post's details
  */
-function searchesThroughPosts(posts, searchWord) {
-    let arrayWithSearchResults = [];
-    let searchWordMinuscule = searchWord.toLowerCase();
-    for (let i = 0; i &lt; posts.length; i++) {
-        const element = posts[i];
-        if (posts[i].title !== null &amp;&amp; posts[i].title.toLowerCase().includes(searchWordMinuscule)) {
-            arrayWithSearchResults.push(element);
-            continue;
-        }
-        if (posts[i].body !== null &amp;&amp; posts[i].body.toLowerCase().includes(searchWordMinuscule)) {
-            arrayWithSearchResults.push(element);
-            continue;
-        }
-        if (posts[i].author.name !== null &amp;&amp; posts[i].author.name.toLowerCase().includes(searchWordMinuscule)) {
-            arrayWithSearchResults.push(element);
-            continue;
-        }
-        if (posts[i].author.email !== null &amp;&amp; posts[i].author.email.toLowerCase().includes(searchWordMinuscule)) {
-            arrayWithSearchResults.push(element);
-            continue;
-        }
-        posts[i].tags.forEach((tag) => {
-            if (tag.toLowerCase().includes(searchWordMinuscule)) {
-                arrayWithSearchResults.push(element);
-            }
-        });
-        if (posts[i].id !== null &amp;&amp; posts[i].id.toString().includes(searchWordMinuscule)) {
-            arrayWithSearchResults.push(element);
-            continue;
-        }
-    }
-    return arrayWithSearchResults;
-}
-
-/** 
- * Shows the posts sent from API; it also checks if there is any media included 
- * 
- * @param {array} posts 
- * @returns {array} array with all the posts and shows them on the site
- */
-function showPosts(posts) {
+function showPost(post) {
     let containerHTMLCard = document.getElementById("singleCard");
     let setImg = "";
-    containerHTMLCard.innerHTML = "";
-    for (let i = 0; i &lt; posts.length; i++) {
-        let formattedDate = new Date(posts[i].updated).toLocaleDateString();
-        let formattedTime = new Date(posts[i].updated).toLocaleTimeString();
-        if (isMediaValid(posts[i].media)) {
-            setImg = posts[i].media;
-        } else {
-            setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
-        }
-        containerHTMLCard.innerHTML += `
+    let formattedDate = new Date(post.updated).toLocaleDateString();
+    let formattedTime = new Date(post.updated).toLocaleTimeString();
+    if (isMediaValid(post.media)) {
+        setImg = post.media;
+    } else {
+        setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
+    }
+    containerHTMLCard.innerHTML = `
         &lt;div class="my-2 col col-lg-10 w-100">
             &lt;div class="card shadow-sm"> 
                 &lt;img src="${setImg}" alt="Hanks of wool" class="bd-placeholder-img card-img-top" id="cardPicture">
-                &lt;h5 class="card-title" id="cardTitle">${posts[i].title}&lt;/h5>
+                &lt;h5 class="card-title" id="cardTitle">${post.title}&lt;/h5>
                 &lt;div class="card-body">
-                &lt;a href="../singlePost/index.html?postId=${posts[i].id}">&lt;p class="card-text text-start" id="singlePost">Read more...&lt;/p>&lt;/a>
-                &lt;div class="card-text text-start py-2">
-                    ${tagsToHtml(posts[i].tags, posts[i].id)}
-                &lt;/div>
-                &lt;div class="d-flex justify-content-between align-items-start" id="btnAndDate">
-                    &lt;div class="py-2">       
+                &lt;p class="card-text text-start" id="cardBody">${post.body}&lt;/p>
+                &lt;div class="card-text text-start py-2" id="cardTags">${tagsToHtml(post.tags, post.id)}&lt;/div>
+                    &lt;div class="d-flex justify-content-between align-items-start" id="btnAndDate">
+                    &lt;div class="py-2">   
                         &lt;div class="btn-group">
-                            &lt;a href="../profile/index.html?userName=${posts[i].author.name}">&lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${posts[i].author.name}&lt;/button>&lt;/a>
-                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${posts[i].id}" data-postid="${posts[i].id}">Comments&lt;/button>
-                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${posts[i].id}">Reactions&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowAuthor">${post.author.name}&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowComments${post.id}" data-postid="${post.id}">Comments&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnShowReactions" data-postid="${post.id}">Reactions&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnEdit${post.id}" data-postid="${post.id}>&lt;a href="#" data-bs-toggle="modal" data-bs-target="#editPostModal">Edit&lt;/a>&lt;/button>
+                            &lt;button type="button" class="btn btn-sm btn-secondary" id="btnDelete${post.id}" data-postid="${post.id}">Delete&lt;/button>
                         &lt;/div>
                     &lt;/div>
                     &lt;div class="py-2">
                         &lt;small class="text-muted p-2" id="cardUpdated">${formattedDate} ${formattedTime}&lt;/small>
                     &lt;/div>
                 &lt;/div>
-                &lt;div class="showComments" id="showComments${posts[i].id}" style="display:none;">
-                ${processCommentsForPost(posts[i].comments)}&lt;/div>
-                &lt;div class="showReactions" id="showReactions${posts[i].id}" style="display:none;">
-                ${processReactionsForPost(posts[i].reactions)}&lt;/div>
+                &lt;div class="showComments" id="showComments${post.id}" style="display:none;">
+                ${processCommentsForPost(post.comments)}&lt;/div>
+                &lt;div class="showReactions" id="showReactions${post.id}" style="display:none;">
+                ${processReactionsForPost(post.reactions)}&lt;/div>
             &lt;/div>
         &lt;/div>        
         `;
+    let userName = getUserName();
+    if (post.author.name === userName) {
+        document.getElementById(`btnEdit${post.id}`).style.display = "block";
+        document.getElementById(`btnDelete${post.id}`).style.display = "block";
+    } else {
+        document.getElementById(`btnEdit${post.id}`).style.display = "none";
+        document.getElementById(`btnDelete${post.id}`).style.display = "none";
     }
+
+    /**
+    * Deletes user's post
+    */
+    document.getElementById(`btnDelete${post.id}`).addEventListener("click", () => {
+        deletePost(token, postId);
+        window.location.href = "../profile/index.html";
+    });
 }
 
 /**
  * Shows tags as links
- * @param {array}  array with tags
- * @param {number}  post's Id
- * @returns {string} tags' links
+ * @param {array} array of tags
+ * @param {number} post's Id
+ * @returns {string} shows tags as links
  */
 function tagsToHtml(tagsArray, postId) {
     let aString = "";
@@ -196,16 +148,43 @@ function tagsToHtml(tagsArray, postId) {
 }
 
 /**
- * Gets the values of a new message
+ * Opens modal and gets the values of a new message
  */
-document.getElementById("postBtn").addEventListener("click", async () => {
+document.getElementById("postBtn").addEventListener("click", () => {
     const token = getAccessToken();
     const newPostTitle = document.getElementById("newPostInput1").value;
     const newPostMessage = document.getElementById("newPostInput2").value;
     const newPostTags = document.getElementById("newPostInput3").value.split(",");
     const newPostMedia = document.getElementById("newPostInput4").value;
-    await newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
-    window.location.href = "../feed/index.html";
+    newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
+    processUserFeed();
+});
+
+/**
+ * Puts values of user's post in inputs of the modal so the user can edit them
+ * @param {} post 
+ */
+function setModalInputs(post) {
+    let htmlTitle = document.getElementById("editPostInput1");
+    htmlTitle.value = post.title;
+    let htmlMessage = document.getElementById("editPostInput2");
+    htmlMessage.value = post.body;
+    let htmlTags = document.getElementById("editPostInput3");
+    htmlTags.value = post.tags;
+    let htmlMedia = document.getElementById("editPostInput4");
+    htmlMedia.value = post.media;
+}
+
+/**
+ * Gets the values of an edited message
+ */
+document.getElementById("editPostBtn").addEventListener("click", async () => {
+    const editPostTitle = document.getElementById("editPostInput1").value;
+    const editPostMessage = document.getElementById("editPostInput2").value;
+    const editPostTags = document.getElementById("editPostInput3").value.split(",");
+    const editPostMedia = document.getElementById("editPostInput4").value;
+    const response = await editPost(token, postId, editPostTitle, editPostMessage, editPostTags, editPostMedia);
+    window.location.href = `../singlePost/index.html?postId=${response.id}`;
 });
 
 /** 
@@ -228,6 +207,7 @@ function processCommentsForPost(comments) {
     }
     return commentsHtml;
 }
+
 
 /** 
  * Checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
@@ -272,9 +252,7 @@ function showReactions() {
             document.getElementById(`showReactions${btn.dataset.postid}`).style.display = "block";
         })
     })
-}
-
-</code></pre>
+}</code></pre>
         </article>
     </section>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/api/auth/register.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,44 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/api/auth/register.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { apiPath } from "../const.js";
 
+/**
+ * Register a user.
+ * 
+ * @param {string} name 
+ * @param {string} email
+ * @param {string} password 
+ * @param {string} avatar
+ * @returns object with id, name, email, banner &amp; avatar
+ */
+export async function registerNewUser(name, email, password, avatar) {
+    const response = await fetch(`${apiPath}/social/auth/register`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify({ name, email, password, avatar }),
+    });
 
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    const data = await response.json();
+    if (response.ok) {
+        return data;
+    }
+    throw new Error(JSON.stringify(data));
+}</code></pre>
+        </article>
+    </section>
 
 
 

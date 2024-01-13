@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/api/posts/newPost.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,45 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/api/posts/newPost.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { apiPath } from "../const.js";
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * Enables to write a new post with its title, body, tags and media
+ * 
+ * @param {string} token
+ * @param {string} title
+ * @param {string} body
+ * @param {array} tags
+ * @param {array} media
+ * @returns object with title, body, tags, media, reactions, comments, when they were created and edited, id, author (and their details such as name, email &amp; avatar) &amp; number of comments and reactions
+ */
+export async function newPost(token, title, body, tags, media) {
+    const response = await fetch(`${apiPath}/social/posts?_author=true&amp;_reactions=true&amp;_comments=true`, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ title, body, tags, media }),
+    });
+    const data = await response.json();
+    if (response.ok) {
+        return data;
+    }
+    throw new Error(JSON.stringify(data));
+}</code></pre>
+        </article>
+    </section>
 
 
 

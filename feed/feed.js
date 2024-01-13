@@ -2,6 +2,7 @@ import { getPosts } from "../src/api/posts/getPosts.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { newPost } from "../src/api/posts/newPost.js";
+import { signOut } from "../src/tools/signOut.js";
 
 window.onload = processFeed();
 
@@ -23,6 +24,11 @@ async function processFeed() {
     showComments();
     showReactions();
 }
+
+/**
+ * Starts function that deletes all data from LocalStorage
+ */
+document.getElementById("signOut").addEventListener("click", signOut);
 
 /**
  * Shows today's posts 
@@ -234,3 +240,4 @@ function showReactions() {
         })
     })
 }
+

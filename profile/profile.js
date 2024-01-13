@@ -1,11 +1,12 @@
 import { getProfile } from "../src/api/profiles/posts.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
-import { getUserName } from "../src/tools/NameLocalStorage.js";
+import { getUserName } from "../src/tools/nameLocalStorage.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
 import { deletePost } from "../src/api/posts/id/deletePost.js";
 import { newPost } from "../src/api/posts/newPost.js";
 import { editPost } from "../src/api/posts/id/editPost.js";
 import { getUserData } from "../src/api/profiles/profileData.js";
+import { signOut } from "../src/tools/signOut.js";
 
 let params = new URLSearchParams(window.location.search);
 let userName = params.get("userName");
@@ -29,6 +30,11 @@ async function processUserFeed() {
     showComments();
     showReactions();
 }
+
+/**
+ * Starts function that deletes all data from LocalStorage
+ */
+document.getElementById("signOut").addEventListener("click", signOut);
 
 /**
  * Gets the value of search phrase provided in search input

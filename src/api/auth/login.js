@@ -18,10 +18,7 @@ export async function loginUser(email, password) {
         },
         body: JSON.stringify({ email, password }),
     });
-
     const data = await response.json();
-    //TODO: Fjern avkommenter kode
-    //localStorage.setItem("accessToken", data.accessToken);
     setAccessToken(data.accessToken);
     setUserName(data.name);
     if (response.ok) {

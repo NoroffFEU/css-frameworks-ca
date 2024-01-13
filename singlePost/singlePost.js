@@ -1,10 +1,11 @@
 import { getPost } from "../src/api/posts/id/getPost.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
-import { getUserName } from "../src/tools/NameLocalStorage.js";
+import { getUserName } from "../src/tools/nameLocalStorage.js";
 import { deletePost } from "../src/api/posts/id/deletePost.js";
 import { editPost } from "../src/api/posts/id/editPost.js";
 import { newPost } from "../src/api/posts/newPost.js";
+import { signOut } from "../src/tools/signOut.js";
 
 let params = new URLSearchParams(window.location.search);
 let postId = params.get("postId");
@@ -24,6 +25,11 @@ async function processPost() {
 }
 
 /**
+ * Starts function that deletes all data from LocalStorage
+ */
+document.getElementById("signOut").addEventListener("click", signOut);
+
+/**
  * Gets the value of search phrase provided in search input
  */
 document.getElementById("searchBtn").addEventListener("click", () => {
@@ -32,7 +38,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         window.location.href = `../feed/index.html?search=${searchWord}`;
     }
     else {
-        //TODO: Bruk boostrap modal?
         alert("You have to provide a search phrase");
     }
 

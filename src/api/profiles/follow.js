@@ -9,9 +9,6 @@ import { apiPath } from "../const";
 export async function followUser(token, nameOfFollowed) {
     const response = await fetch(`${apiPath}/social/profiles/${nameOfFollowed}/follow`, {
         method: "put",
-        //   body: JSON.stringify({
-        //TODO: Fjern avkommentert kode
-        //   }),
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const mainApiUrl = "https://api.noroff.dev/api/v1";
+const registerUrl = `${mainApiUrl}/social/auth/register`;
+const logInUrl = `${mainApiUrl}/social/auth/login`;
+const formReg = document.getElementById("formRegister");
+const formLogin = document.getElementById("formLogin");
+const getPostsUrl = `${mainApiUrl}/social/posts`;
+
+
+// This eventListener gets the values of name, email and password and send them to the next function 
+document.getElementById("submitBtn2").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const nameReg = formReg.elements[0];
+    const mailReg = formReg.elements[1];
+    const passwordReg = formReg.elements[2];
+
+    const userName = nameReg.value;
+    const userEmail = mailReg.value;
+    const userPassword = passwordReg.value;
+
+    const user = userToRegisterFunksjon(userName, userEmail, userPassword);
+    registerUser(registerUrl, user);
+});
+
+
+//This function puts the values from the previous function to the object
+/**
+ * 
+ * @param {string} name 
+ * @param {string} email 
+ * @param {string} password 
+ * @returns {object} name, email, password
+ */
+function userToRegisterFunksjon(name, email, password) {
+    const userToRegister = {
+        "name": name,
+        "email": email,
+        "password": password
+    };
+    return userToRegister;
+}
+
+
+/**
+ * This function sends object to the server or shows that something is wrong
+ * @param {string} url 
+ * @param {object} userData 
+ */
+async function registerUser(url, userData) {
+    try {
+        const postData = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        };
+        const response = await fetch(url, postData);
+        await response.json();
+        window.location.href = "./feed/index.html";
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+// This event listener gets the values of email address and password when the user logs in
+document.getElementById("submitBtn1").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const mailLogin = formLogin.elements[0];
+    const passwordLogin = formLogin.elements[1];
+
+    const userEmail = mailLogin.value;
+    const userPassword = passwordLogin.value;
+
+    const user = userToLogInFunksjon(userEmail, userPassword);
+    logInUser(logInUrl, user);
+});
+
+
+/** This function gets the values of email and password and put them in the object that is returned
+ * 
+ * @param {string} email 
+ * @param {string} password 
+ * @returns {object} email and password
+ */
+function userToLogInFunksjon(email, password) {
+    const userToLogIn = {
+        "email": email,
+        "password": password
+    };
+    return userToLogIn;
+}
+
+
+/** This function sends the object from the previous function to the server and receives token that is stored in local storage. The user is sent to feed-site.
+ * 
+ * @param {string} url 
+ * @param {object} userData 
+ * @returns {token} user's token
+ */
+async function logInUser(url, userData) {
+    try {
+        const postData = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        };
+        const response = await fetch(url, postData);
+        const json = await response.json();
+        const accessToken = json.accessToken;
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("name", json.name);
+        window.location.href = "./feed/index.html";
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#deletePost">deletePost</a></li><li><a href="global.html#editPost">editPost</a></li><li><a href="global.html#editedPostToApiFunksjon">editedPostToApiFunksjon</a></li><li><a href="global.html#editedPostValuesToObject">editedPostValuesToObject</a></li><li><a href="global.html#fetchPostsFromApi">fetchPostsFromApi</a></li><li><a href="global.html#logInUser">logInUser</a></li><li><a href="global.html#registerUser">registerUser</a></li><li><a href="global.html#renderPage">renderPage</a></li><li><a href="global.html#showComments">showComments</a></li><li><a href="global.html#showDelete">showDelete</a></li><li><a href="global.html#showEdit">showEdit</a></li><li><a href="global.html#showMyPosts">showMyPosts</a></li><li><a href="global.html#showPosts">showPosts</a></li><li><a href="global.html#showReactions">showReactions</a></li><li><a href="global.html#userToLogInFunksjon">userToLogInFunksjon</a></li><li><a href="global.html#userToRegisterFunksjon">userToRegisterFunksjon</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sun Oct 15 2023 11:51:22 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

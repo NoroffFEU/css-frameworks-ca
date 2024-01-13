@@ -75,15 +75,19 @@ function searchesThroughPosts(posts, searchWord) {
         const element = posts[i];
         if (posts[i].title !== null && posts[i].title.toLowerCase().includes(searchWordMinuscule)) {
             arrayWithSearchResults.push(element);
+            continue;
         }
         if (posts[i].body !== null && posts[i].body.toLowerCase().includes(searchWordMinuscule)) {
             arrayWithSearchResults.push(element);
+            continue;
         }
         if (posts[i].author.name !== null && posts[i].author.name.toLowerCase().includes(searchWordMinuscule)) {
             arrayWithSearchResults.push(element);
+            continue;
         }
         if (posts[i].author.email !== null && posts[i].author.email.toLowerCase().includes(searchWordMinuscule)) {
             arrayWithSearchResults.push(element);
+            continue;
         }
         posts[i].tags.forEach((tag) => {
             if (tag.toLowerCase().includes(searchWordMinuscule)) {
@@ -92,6 +96,7 @@ function searchesThroughPosts(posts, searchWord) {
         });
         if (posts[i].id !== null && posts[i].id.toString().includes(searchWordMinuscule)) {
             arrayWithSearchResults.push(element);
+            continue;
         }
     }
     return arrayWithSearchResults;

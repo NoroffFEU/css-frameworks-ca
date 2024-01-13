@@ -6,8 +6,6 @@ import { apiPath } from "../const.js";
  * @param {string} token 
  * @returns {array} with objects/posts
 */
-
-
 export async function getPosts(token, tag) {
     let url = `${apiPath}/social/posts?_author=true&_reactions=true&_comments=true`;
     if (tag !== undefined && tag !== null) {
@@ -23,7 +21,6 @@ export async function getPosts(token, tag) {
             },
         },
     );
-
     if (response.ok) {
         return await response.json();
     }

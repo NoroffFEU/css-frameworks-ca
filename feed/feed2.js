@@ -1,3 +1,5 @@
+//TODO: Slett fil
+
 import { getData } from "../mjs/getData.mjs";
 import { newPostValuesToObject, newPostToApiFunksjon, isMediaValid, processCommentsForPost, processReactionsForPost, searchElement } from "../mjs/helpers.mjs";
 

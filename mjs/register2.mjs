@@ -2,7 +2,7 @@ const mainApiUrl = "https://api.noroff.dev";
 const registerUrl = `${mainApiUrl}/social/auth/register`;
 const formReg = document.getElementById("formRegister");
 
-
+//TODO: Brukes ikke -- kan slettes?
 async function registerUser(url, userData) {
     try {
         console.log(url, userData);
@@ -32,5 +32,5 @@ const userToRegister = {
 formReg.addEventListener("submit", registerUser(registerUrl, userToRegister));
 
 
-
+//TODO: Kan slettes også?
 export { registerUser };

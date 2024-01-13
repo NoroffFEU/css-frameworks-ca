@@ -9,9 +9,6 @@ import { apiPath } from "../const.js";
  * @param {string} avatar
  * @returns object with id, name, email, banner & avatar
  */
-
-
-
 export async function registerNewUser(name, email, password, avatar) {
     const response = await fetch(`${apiPath}/social/auth/register`, {
         method: "post",
@@ -23,10 +20,8 @@ export async function registerNewUser(name, email, password, avatar) {
     });
 
     const data = await response.json();
-
     if (response.ok) {
         return data;
     }
-
     throw new Error(JSON.stringify(data));
 }

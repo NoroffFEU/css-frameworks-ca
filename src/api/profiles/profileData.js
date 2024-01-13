@@ -8,7 +8,6 @@ import { apiPath } from "../const.js";
  */
 export async function getUserData(token, name) {
     const response = await fetch(
-
         `${apiPath}/social/profiles/${name}`,
         {
             method: "get",
@@ -18,7 +17,6 @@ export async function getUserData(token, name) {
             },
         },
     );
-
     if (response.ok) {
         return await response.json();
     }

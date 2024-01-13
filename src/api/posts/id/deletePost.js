@@ -6,10 +6,8 @@ import { apiPath } from "../../const.js";
 *@param {integer} postId
 * @returns {} 
 */
-
 export async function deletePost(token, postId) {
     const response = await fetch(
-
         `${apiPath}/social/posts/${postId}`,
         {
             method: "delete",
@@ -19,7 +17,6 @@ export async function deletePost(token, postId) {
             },
         },
     );
-
     if (response.ok) {
         return await response.json();
     }

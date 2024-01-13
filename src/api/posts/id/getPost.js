@@ -6,7 +6,6 @@ import { apiPath } from "../../const.js";
 *@param {integer} postId
 * @returns {object} with post's details
 */
-
 export async function getPost(token, postId) {
     const response = await fetch(
         `${apiPath}/social/posts/${postId}?_author=true&_reactions=true&_comments=true`,
@@ -18,7 +17,6 @@ export async function getPost(token, postId) {
             },
         },
     );
-
     if (response.ok) {
         return await response.json();
     }

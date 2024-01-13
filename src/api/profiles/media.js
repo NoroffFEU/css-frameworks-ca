@@ -18,7 +18,6 @@ export async function followUser(token, userName, avatarUrl) {
             Authorization: `Bearer ${token}`,
         },
     });
-
     if (response.ok) {
         return await response.json();
     }

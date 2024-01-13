@@ -20,12 +20,9 @@ export async function newPost(token, title, body, tags, media) {
         },
         body: JSON.stringify({ title, body, tags, media }),
     });
-
     const data = await response.json();
-
     if (response.ok) {
         return data;
     }
-
     throw new Error(JSON.stringify(data));
 }

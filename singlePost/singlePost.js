@@ -1,5 +1,3 @@
-// import { getPosts } from "../src/api/posts/getPosts";
-// import { getPost } from "../src/api/posts/id/getPost";
 import { getPost } from "../src/api/posts/id/getPost.js";
 import { getAccessToken } from "../src/tools/accessToken.js";
 import { isMediaValid } from "../src/tools/validMedia.js";
@@ -34,14 +32,15 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         window.location.href = `../feed/index.html?search=${searchWord}`;
     }
     else {
+        //TODO: Bruk boostrap modal?
         alert("You have to provide a search phrase");
     }
 
 });
 
-
 /**
  * Shows the post sent from API; it also checks if there is any media included 
+ * @param {object} object with post's details
  */
 function showPost(post) {
     let containerHTMLCard = document.getElementById("singleCard");
@@ -100,12 +99,13 @@ function showPost(post) {
     });
 }
 
-
 /**
  * Shows tags as links
+ * @param {array} array of tags
+ * @param {number} post's Id
+ * @returns {string} shows tags as links
  */
 function tagsToHtml(tagsArray, postId) {
-
     let aString = "";
     for (let i = 0; i < tagsArray.length; i++) {
         aString += `
@@ -113,8 +113,6 @@ function tagsToHtml(tagsArray, postId) {
     ` }
     return aString;
 }
-
-
 
 /**
  * Opens modal and gets the values of a new message
@@ -125,14 +123,9 @@ document.getElementById("postBtn").addEventListener("click", () => {
     const newPostMessage = document.getElementById("newPostInput2").value;
     const newPostTags = document.getElementById("newPostInput3").value.split(",");
     const newPostMedia = document.getElementById("newPostInput4").value;
-
     newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
     processUserFeed();
 });
-
-
-
-
 
 /**
  * Puts values of user's post in inputs of the modal so the user can edit them
@@ -149,7 +142,6 @@ function setModalInputs(post) {
     htmlMedia.value = post.media;
 }
 
-
 /**
  * Gets the values of an edited message
  */
@@ -158,12 +150,9 @@ document.getElementById("editPostBtn").addEventListener("click", async () => {
     const editPostMessage = document.getElementById("editPostInput2").value;
     const editPostTags = document.getElementById("editPostInput3").value.split(",");
     const editPostMedia = document.getElementById("editPostInput4").value;
-
     const response = await editPost(token, postId, editPostTitle, editPostMessage, editPostTags, editPostMedia);
     window.location.href = `../singlePost/index.html?postId=${response.id}`;
 });
-
-
 
 /** 
  * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
@@ -208,8 +197,6 @@ function processReactionsForPost(reactions) {
     return reactionsHtml;
 }
 
-
-
 /** 
  * Shows the post's comments or a message that there are none after the button is pressed
  */
@@ -221,7 +208,6 @@ function showComments() {
         })
     })
 }
-
 
 /** 
  * Shows the post's reactions or a message that there are none after the button is pressed

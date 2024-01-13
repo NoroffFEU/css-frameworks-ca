@@ -10,10 +10,8 @@ import { apiPath } from "../../const.js";
  * @param {string} media
 * @returns {object} with post's new details
 */
-
 export async function editPost(token, postId, title, body, tags, media) {
     const response = await fetch(
-        // hvordan kan jeg hente tags????
         `${apiPath}/social/posts/${postId}?_author=true&_reactions=true&_comments=true`,
         {
             method: "put",
@@ -25,7 +23,6 @@ export async function editPost(token, postId, title, body, tags, media) {
             body: JSON.stringify({ title, body, tags, media }),
         },
     );
-
     if (response.ok) {
         return await response.json();
     }

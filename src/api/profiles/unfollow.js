@@ -9,16 +9,12 @@ import { apiPath } from "../const";
 export async function unfollowUser(token, nameOfFollowed) {
     const response = await fetch(`${apiPath}/social/profiles/${nameOfFollowed}/unfollow`, {
         method: "put",
-        //   body: JSON.stringify({
-
-        //   }),
         headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
             Authorization: `Bearer ${token}`,
         },
     });
-
     if (response.ok) {
         return await response.json();
     }

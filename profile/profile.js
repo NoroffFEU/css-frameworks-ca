@@ -16,15 +16,12 @@ if (userName === null) {
 let accessToken = getAccessToken();
 window.onload = processUserFeed();
 
-
-
 /**
  * Processes profile site and starts other functions
  */
 async function processUserFeed() {
     const userPosts = await getProfile(accessToken, userName);
     const userData = await getUserData(accessToken, userName);
-
     showUserPosts(userPosts);
     showDelete();
     getIdToEdit();
@@ -47,12 +44,9 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 });
 
-
-
-
-
 /**
  * Shows user's profile
+ * @param {object} userData object that includes user's name and avatar
  */
 function showUserProfile(userData) {
     let userCardContainer = document.getElementById("contUsersCardBody");
@@ -64,8 +58,6 @@ function showUserProfile(userData) {
   `;
 }
 
-
-
 /**
  * Gets and shows user's posts sent from API; it also checks if there is any media included and start functions that enable to show comments and reactions if the buttons are pressed
  * @param {array} posts posts from API
@@ -73,7 +65,6 @@ function showUserProfile(userData) {
 function showUserPosts(userPosts) {
     let containerHTMLCard = document.getElementById("singleCardProfile");
     containerHTMLCard.innerHTML = "";
-
     let setImg = "";
     for (var i = 0; i < userPosts.length; i++) {
         let formattedDate = new Date(userPosts[i].updated).toLocaleDateString();
@@ -83,7 +74,6 @@ function showUserPosts(userPosts) {
         } else {
             setImg = "../pics/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg";
         }
-
         containerHTMLCard.innerHTML += `
         <div class="my-2 col col-lg-10 w-100">
             <div class="card shadow-sm"> 
@@ -128,9 +118,11 @@ function showUserPosts(userPosts) {
 
 /**
  * Shows tags as links
+ * @param {array} array of tags
+ * @param {number} post's Id
+ * @returns {string} shows tags as links
  */
 function tagsToHtml(tagsArray, postId) {
-
     let aString = "";
     for (let i = 0; i < tagsArray.length; i++) {
         aString += `
@@ -138,9 +130,6 @@ function tagsToHtml(tagsArray, postId) {
     ` }
     return aString;
 }
-
-
-
 
 /**
  * Adds event listener to delete button in user's post
@@ -157,8 +146,6 @@ function showDelete() {
     }
 }
 
-
-
 /**
  * Opens modal and gets the values of a new message
  */
@@ -168,12 +155,9 @@ document.getElementById("postBtn").addEventListener("click", () => {
     const newPostMessage = document.getElementById("newPostInput2").value;
     const newPostTags = document.getElementById("newPostInput3").value.split(",");
     const newPostMedia = document.getElementById("newPostInput4").value;
-
     newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
     processUserFeed();
 });
-
-
 
 /**
  * Gets post's id to be able to edit the post
@@ -190,10 +174,10 @@ function getIdToEdit() {
     }
 }
 
-
 /**
  * Puts values of user's post in inputs of the modal so the user can edit them
- * @param {} post
+ * @param {string} postId
+ * @returns {object} object with value of post's id, title, body, tags and media
  */
 function getPostDataFromHtml(postId) {
     let htmlTitle = document.getElementById(`cardTitle${postId}`);
@@ -210,7 +194,10 @@ function getPostDataFromHtml(postId) {
     return postData;
 }
 
-
+/**
+ * Puts values of user's post in inputs of the modal so the user can edit them
+ * @param {object} post 
+ */
 function setModalInputs(post) {
     let htmlTitle = document.getElementById("editPostInput1");
     htmlTitle.value = post.title;
@@ -222,10 +209,9 @@ function setModalInputs(post) {
     htmlMedia.value = post.media;
 }
 
-
-
 /**
  * Gets the values of an edited message
+ * @param {string} postId
  */
 function putPostUpdate(postId) {
     document.getElementById("editPostBtn").addEventListener("click", async () => {
@@ -237,7 +223,6 @@ function putPostUpdate(postId) {
         window.location.href = `../singlePost/index.html?postId=${response.id}`;
     });
 }
-
 
 /** 
  * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
@@ -260,7 +245,6 @@ function processCommentsForPost(comments) {
     return commentsHtml;
 }
 
-
 /** 
  * Checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
  * 
@@ -282,9 +266,6 @@ function processReactionsForPost(reactions) {
     return reactionsHtml;
 }
 
-
-
-
 /** 
  * Shows the post's comments or a message that there are none after the button is pressed
  */
@@ -296,7 +277,6 @@ function showComments() {
         })
     })
 }
-
 
 /** 
  * Shows the post's reactions or a message that there are none after the button is pressed

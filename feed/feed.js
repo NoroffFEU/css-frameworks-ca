@@ -5,7 +5,6 @@ import { newPost } from "../src/api/posts/newPost.js";
 
 window.onload = processFeed();
 
-
 /** 
 * Processes user's feed and starts others functions
 */
@@ -43,9 +42,6 @@ document.getElementById("todaysPosts").addEventListener("click", async () => {
     showPosts(todaysPosts);
 });
 
-
-
-
 /**
  * Gets the value of search phrase provided in search input
  */
@@ -60,12 +56,11 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 });
 
-
 /**
  * Searches through all posts 
  * @param {array} posts 
  * @param {string} searchWord 
- * @returns 
+ * @returns {array} array with posts that matches the search word
  */
 function searchesThroughPosts(posts, searchWord) {
     let arrayWithSearchResults = [];
@@ -95,9 +90,6 @@ function searchesThroughPosts(posts, searchWord) {
     }
     return arrayWithSearchResults;
 }
-
-
-
 
 /** 
  * Shows the posts sent from API; it also checks if there is any media included 
@@ -149,16 +141,13 @@ function showPosts(posts) {
     }
 }
 
-
-
-
-
-
 /**
  * Shows tags as links
+ * @param {array}  array with tags
+ * @param {number}  post's Id
+ * @returns {string} tags' links
  */
 function tagsToHtml(tagsArray, postId) {
-
     let aString = "";
     for (let i = 0; i < tagsArray.length; i++) {
         aString += `
@@ -166,7 +155,6 @@ function tagsToHtml(tagsArray, postId) {
     ` }
     return aString;
 }
-
 
 /**
  * Gets the values of a new message
@@ -180,8 +168,6 @@ document.getElementById("postBtn").addEventListener("click", async () => {
     await newPost(token, newPostTitle, newPostMessage, newPostTags, newPostMedia);
     window.location.href = "../feed/index.html";
 });
-
-
 
 /** 
  * Checks if a post has any comments and if it does, it puts them in Html; otherwise it creates the message that there are no comments
@@ -204,7 +190,6 @@ function processCommentsForPost(comments) {
     return commentsHtml;
 }
 
-
 /** 
  * Checks if a post has any reactions and if it does, it puts them in Html; otherwise it creates the message that there are no reactions
  * 
@@ -226,8 +211,6 @@ function processReactionsForPost(reactions) {
     return reactionsHtml;
 }
 
-
-
 /** 
  * Shows the post's comments or a message that there are none after the button is pressed
  */
@@ -239,7 +222,6 @@ function showComments() {
         })
     })
 }
-
 
 /** 
  * Shows the post's reactions or a message that there are none after the button is pressed

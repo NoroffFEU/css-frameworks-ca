@@ -6,7 +6,6 @@ import { apiPath } from "../const.js";
  * @returns {array} with objects/posts
 */
 
-
 export async function getPostsWithTag(token, tagWord) {
     const response = await fetch(
         `${apiPath}/social/posts?_tag=${tagWord}&_author=true&_reactions=true&_comments=true`,
@@ -18,7 +17,6 @@ export async function getPostsWithTag(token, tagWord) {
             },
         },
     );
-
     if (response.ok) {
         return await response.json();
     }

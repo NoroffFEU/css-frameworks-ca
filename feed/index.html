@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Your profile</title>
+    <title>Feed</title>
 
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/dist/css/index.css" />
@@ -79,21 +79,16 @@
 
 <!---------------------------Innhold under------------------------------->
             <div class="row wrapper d-flex">
-                <h1 class="px-0 h3 py-4">Filters</h1>
-                <div class="col d-flex px-0">
+                <h1 class="px-0 h3 py-4">All posts</h1>
+                <div class="col d-flex flex-lg-row px-0">
                     <div class="col d-flex gap-3">
-                        <button class="btn btn-secondary">All posts</button>
-                        <button class="btn btn-outline-secondary">HTML</button>
-                        <button class="btn btn-outline-secondary">CSS</button>
-                        <button class="btn btn-outline-secondary">JavaScript</button>
-                        <button class="btn btn-outline-secondary">Bootstrap</button>
-                        <button class="btn btn-outline-secondary">+</button>
+                        <button class="btn btn-outline-secondary d-flex gap-3 align-items-center"><i class="fa-solid fa-sliders"></i>Filter</button>
                     </div>
 
-                    <form class="col-3">
-                        <div class="form-group d-flex gap-3 align-items-center justify-content-end">
+                    <form class="col-9 col-lg-3">
+                        <div class="form-group d-flex gap-lg-3 gap-2 align-items-center justify-content-end">
                           <label for="sortByDropdown">Sort by:</label>
-                          <select class="form-control w-75" id="sortByDropdown">
+                          <select class="form-control w-lg-75 w-50" id="sortByDropdown">
                             <option selected>All posts</option>
                             <option>Alphabetical A-Z</option>
                             <option>Latest posts</option>

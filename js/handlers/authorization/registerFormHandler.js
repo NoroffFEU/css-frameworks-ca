@@ -3,10 +3,10 @@ import { messageForUser } from "../../ui/messageForUser.js";
 
 export function registerFormHandler() {
   const form = document.querySelector("#registerForm");
-  form.addEventListener("submit", handleRegisterForm);
+  form.addEventListener("submit", registerForm);
 }
 
-async function handleRegisterForm(event) {
+async function registerForm(event) {
   event.preventDefault();
   console.log(event);
 
@@ -15,10 +15,9 @@ async function handleRegisterForm(event) {
   const entries = formData.entries();
   const userDetails = Object.fromEntries(entries);
 
-  // const fieldset = form.querySelector("fieldset");
+  console.log(userDetails);
 
   try {
-    // fieldset.disabled = true;
     await registerUser(userDetails);
     messageForUser("#message", "success", "You are registered. Please login!");
     form.reset();
@@ -29,7 +28,5 @@ async function handleRegisterForm(event) {
   } catch (error) {
     console.log(error);
     messageForUser("#message", "danger", error.message);
-  } finally {
-    // fieldset.disabled = false;
   }
 }

@@ -24,6 +24,7 @@
       href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Open+Sans:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+    <script src="js/script.js" type="module"></script>
   </head>
   <body class="bg-dark h-100 m-0 d-flex flex-column">
     <nav class="navbar navbar-expand-lg bg-dark position-relative border-bottom border-2 border-primary">
@@ -46,19 +47,20 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-5 mb-2 mb-lg-0">
-              <li class="nav-item ps-3">
+            <ul class="navbar-nav text-center me-1 mb-2 mb-lg-0 ms-auto">
+              <li class="nav-item">
                 <a class="nav-link nav-text text-primary" href="/feed">Feed</a>
               </li>
-              <li class="nav-item ps-3">
+              <li class="nav-item">
                 <a class="nav-link disabled nav-text text-primary" aria-current="page" href="/profile">Profile</a>
               </li>
-              <li class="nav-item ps-3">
+              <li class="nav-item">
                 <a class="nav-link nav-text text-primary" href="#">Contact</a>
               </li>
-              <li class="nav-item ps-3">
+              <!-- <li class="nav-item ps-3">
                 <a class="nav-link nav-text text-primary" href="/">Log out</a>
-              </li>
+              </li> -->
+              <button class="bg-dark border-0 ps-0 pe-0 pt-2 pb-2 text-primary" id="logout">Log out</button>
             </ul>
           </div>
         </div>
@@ -73,7 +75,7 @@
       <section class="container">
         <div class="row d-flex flex-sm-row justify-content-between px-2">
           <div class="col-sm-4 col-md-3 col-lg-2 text-start d-flex flex-column mt-5">
-            <h1 class="mb-1 user-info fs-1 baloo text-primary fw-bold">Lizz Kiss</h1>
+            <h1 class="mb-1 user-info your-profile-name fs-1 baloo text-primary fw-bold">Your Name</h1>
             <button class="btn follow btn-primary mb-3 mt-0 ms-1">Follow me!</button>
           </div>
           <div class="user-profile-picture position-relative d-flex justify-content-center col-sm-4 col-md-3 col-lg-2">
@@ -142,7 +144,7 @@
             <div class="row bg-light pt-2 text-center align-items-center justify-content-between">
               <div class="col-auto ps-0 d-flex align-items-center">
                 <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0" />
-                <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Lizz Kiss</span>3d. London</p>
+                <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Your Name</span>3d. London</p>
               </div>
               <div class="col-auto d-flex justify-content-end align-items-center">
                 <svg
@@ -174,7 +176,7 @@
           <div class="row text-center align-items-center justify-content-between">
             <div class="col-auto d-flex ps-0 align-items-center">
               <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0" />
-              <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Lizz Kiss</span>4d. London</p>
+              <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Your Name</span>4d. London</p>
             </div>
             <div class="col-auto d-flex justify-content-end align-items-center">
               <svg
@@ -209,7 +211,7 @@
           <div class="row text-center align-items-center justify-content-between">
             <div class="col-auto d-flex ps-0 align-items-center">
               <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0" />
-              <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Lizz Kiss</span>4d. London</p>
+              <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Your Name</span>4d. London</p>
             </div>
             <div class="col-auto d-flex justify-content-end align-items-center">
               <svg

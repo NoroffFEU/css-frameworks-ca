@@ -64,7 +64,7 @@ const loginForm = document.querySelector("#loginForm");
  * loginForm.addEventListener("submit", login);
  */
 const login = (event) => {
-  // Preventing default form submission bahaviour to handle it manually
+  // Preventing default form submission behavior to handle it manually
   event.preventDefault();
   // Destructuring the form elements to get value for email and password
   const [email, password] = event.target.elements;
@@ -83,5 +83,5 @@ const login = (event) => {
   password.value = "";
 };
 
-// Adding an event listner to the form to call the loginUser function on form submission
+// Adding an event listener to the form to call the loginUser function on form submission
 loginForm.addEventListener("submit", login);

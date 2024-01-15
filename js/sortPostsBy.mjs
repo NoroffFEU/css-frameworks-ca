@@ -6,7 +6,7 @@ import { createCardElement } from "./createCards.mjs";
 let posts = [];
 
 // URL to the fetch API
-const APIURL = `${apiBaseUrl}${allPostsApi}?_author=true`;
+const API_URL = `${apiBaseUrl}${allPostsApi}?_author=true`;
 
 /**
  * Sorts an array of posts in descending order based on their update timestamps.
@@ -83,7 +83,7 @@ sortButtonsContainer.addEventListener("click", function (event) {
 const initializeSortPosts = async () => {
   try {
     // Fetch posts from the API
-    posts = await fetchWithToken(APIURL);
+    posts = await fetchWithToken(API_URL);
     // Render the fetched posts
     createCardElement(posts);
   } catch (error) {

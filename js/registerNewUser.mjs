@@ -1,7 +1,7 @@
 import { apiBaseUrl, registerUrl } from "./variables.mjs";
 
 /**
- * Fuction to register a new user
+ * Function to register a new user
  * @param {string} url The URL to which the registration request will be sent.
  * @param {Object} data The user data to be included in the registration request.
  * @returns {Promise<Object>} The function returns a Promise, when Promise is fulfilled, it provides the parsed JSON response received from the server.
@@ -31,7 +31,7 @@ const registerUser = async (url, data) => {
     const json = await response.json();
 
     // Alert for successful register
-    alert("You are now registerd, please log in with your email and password!");
+    alert("You are now registered, please log in with your email and password!");
 
     // Redirect to the top of the page after successful register
     window.location.href = "#";

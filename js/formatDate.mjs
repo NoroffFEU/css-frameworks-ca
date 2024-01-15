@@ -18,7 +18,7 @@ export const formatDateString = (timestamp) => {
     "July",
     "August",
     "September",
-    "Oktober",
+    "October",
     "November",
     "December",
   ];

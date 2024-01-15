@@ -6,11 +6,11 @@ I am a front-end developer student at Noroff and a UX designer, please check out
 
 ## Description
 
-I made the design and wireframes in Figma, followed by building a fully responsive website using Bootstrap and styling it with SASS and making it functionable with vanilla JS.
+I made the design and wireframes in Figma, followed by building a fully responsive website using Bootstrap and styling it with SASS and making it functional with vanilla JS.
 
 I had to use custom classes on a couple of places where I couldn't figure out how to style it with Bootstrap and SASS. If you find a way to fix it using Bootstrap and SASS, let me know!
 
-Check out my Trello board for the JS2 assigment [Social-app JS2_CA](https://trello.com/b/oGbiICo7/social-app-js2ca)
+Check out my Trello board for the JS2 assignment [Social-app JS2_CA](https://trello.com/b/oGbiICo7/social-app-js2ca)
 
 ## Built With
 
@@ -62,4 +62,4 @@ Please contact me through:
 
 ## Acknowledgments
 
-I would like to ackowledge my mentor, Eric Pretzinger - for guiding me and making me a better Front-End Developer, and also my fellow FED students at Noroff for helping me when I got stuck!
+I would like to acknowledge my mentor, Eric Pretzinger - for guiding me and making me a better Front-End Developer, and also my fellow FED students at Noroff for helping me when I got stuck!

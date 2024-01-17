@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Your profile</title>
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <script src="https://kit.fontawesome.com/b515e79b0f.js" crossorigin="anonymous"></script>
+    <script defer src="/js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    
+<!---------------------------Sidebar------------------------------->
+
+<div class="container-fluid">
+      <div>
+        <nav class="bg-dark d-flex flex-md-column sidebar">
+          <div class="icon hamburger pt-md-5 my-md-3 my-4" id="sidebarToggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+
+          <a href="/feed/index.html" class="d-none icon my-5 d-md-flex text-reset text-decoration-none justify-content-between align-items-center">
+            <i class="fa-solid fa-house home text-center"></i>
+            <span class="menu-text home pl-5">Home</span>
+          </a>
+
+          <a href="/profile/index.html" class="d-none icon my-5 d-md-flex text-reset text-decoration-none justify-content-between align-items-center">
+            <i class="fa-solid fa-user profile text-center"></i>
+            <span class="menu-text profile pl-5">Profile</span>
+          </a>
+
+          <a href="#" class="d-none icon my-5 d-md-flex text-reset text-decoration-none justify-content-between align-items-center">
+            <i class="fa-solid fa-layer-group groups text-center"></i>
+            <span class="menu-text groups pl-5">Groups</span>
+          </a>
+
+          <a href="#" class="d-none icon my-5 d-md-flex text-reset text-decoration-none justify-content-between align-items-center">
+            <i class="fa-solid fa-gear settings text-center"></i>
+            <span class="menu-text settings pl-5">Settings</span>
+          </a>
+
+          <a href="#" class="d-none icon my-5 d-md-flex text-reset text-decoration-none justify-content-between align-items-center">
+            <i class="fa-solid fa-envelope inbox text-center"></i>
+            <span class="menu-text inbox pl-5">Inbox</span>
+          </a>
+        </nav>
+
+<!---------------------------Header------------------------------->
+
+        <div class="p-0">
+          <div class="main-content">
+            <header class="container-fluid py-5 px-0">
+              <div class="wrapper row justify-content-md-between flex-md-row flex-column-reverse">
+                <div class="col-md-6 col-lg-5 order-md-1 order-2 mb-lg-0 mb-3 p-0">
+                  <a href="/feed/index.html" class="text-reset text-decoration-none d-inline-block">
+                    <strong class="h4">CodeUnity</strong>
+                  </a>
+                  <span class="text-muted px-2">|</span>
+                  <a href="/profile/index.html" class="text-muted text-decoration-none">Your profile</a>
+                </div>
+
+                <div class="col-lg-5 order-md-2 order-1 p-0">
+                  <form class="d-flex gap-2">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                      Search
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </header>
+
+    <!---------------------------Upper part------------------------------->
+
+            <div class="container-fluid banner position-relative p-0 d-flex justify-content-center profile-image">
+              <img src="/images/profile.png" alt="" class="rounded-circle position-absolute border">
+            </div>
+
+        <section class="row wrapper py-5 mt-4 flex-column">
+            <div class="col px-0">
+                <h1 class="h2">Martine Midttveit</h1>
+                <p class="text-muted">martinemidttveit@hotmail.com</p>
+            </div>
+
+            <div class="col d-flex flex-column flex-lg-row justify-content-lg-between my-md-4 px-0">
+                <div class="col-5 m-0 py-0 d-flex gap-5">
+                  <div class="d-flex flex-column text-center">
+                    <strong class="py-0">5</strong>
+                    <span class="text-muted p-0 m-0">Posts</span>
+                  </div>
+
+                  <div class="d-flex flex-column text-center">
+                    <strong class="p-0">15</strong>
+                    <span class="text-muted p-0 m-0">Followers</span>
+                  </div>
+
+                  <div class="d-flex flex-column text-center">
+                    <strong class="p-0">18</strong>
+                    <span class="text-muted p-0 m-0">Following</span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-6 d-flex justify-content-lg-end mt-5 mt-lg-0 gap-3 px-0">
+                    <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-user-pen"></i>
+                        Edit profile
+                    </button>
+                    <button class="btn btn-secondary d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-plus"></i>
+                        New post
+                    </button>
+                </div>
+            </div>
+        </section>
+
+<!---------------------------Cards------------------------------->
+
+        <section class="container wrapper">
+            <div class="card mb-4 mb-md-5 d-lg-flex-row">
+                <div class="row">
+                  <div class="col-lg-5">
+                    <img src="/images/bilde2.png" class="card-img h-100" alt="...">
+                  </div>
+                  <div class="col-lg-7 py-5 px-5 px-lg-0">
+                    <div class="container d-flex gap-md-5 px-lg-5 p-0">
+                      <div class="col-3 col-md-1 p-0">
+                        <img src="/images/profile.png" alt="" class="rounded-circle profile-img">
+                      </div>
+
+                      <div class="col-9 ml-2">
+                        <h5 class="card-title">
+                          Martine Midttveit in <a href="#" class="card-link"><u>CodingBuddies</u>
+                          </a>
+                        </h5>
+                        <small class="card-subtitle text-muted pt-2 d-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-lock pr-3"></i>Private group
+                        </small>
+                      </div>
+                    </div>
+
+                    <div class="container card-body py-4 pt-lg-3 px-0 px-lg-5">
+                      <h5 class="card-title p-0">Portfolio project done!</h5>
+                      <p class="card-text mt-4 col-11 p-0">
+                        I'm thrilled to announce the completion of my portfolio project and would greatly appreciate feedback from
+                        fellow students. This comprehensive portfolio showcases my skills and accomplishments in a clear, organized
+                        manner. I invite you to review the content and layout, providing constructive criticism and suggestions for
+                        improvement. Your insights are invaluable in refining this portfolio to effectively highlight my abilities.
+                        Thank you in advance for taking the time to offer your feedback - it will immensely contribute to enhancing my
+                        professional presentation.
+                      </p>
+                      <p class="card-text p-0">
+                        <small class="text-muted">Published 2 hours ago</small>
+                      </p>
+                    </div>
+
+                    <div class="container d-flex flex-column flex-lg-row px-0 px-lg-5">
+                      <div class="col-12 col-lg-7 p-0">
+                        <textarea name="comment" class="comment rounded form-control" placeholder="Leave a comment..."></textarea>
+                      </div>
+
+                      <div class="col-12 col-lg-5 d-flex flex-column justify-content-center mt-3 mt-lg-0 px-lg-4">
+                        <small><a href="#" class="card-link">Kristian</a> and 4 others contributed</small>
+                        <div class="icons d-flex flex-column my-2 my-md-3">
+                          <span class="d-flex align-items-center gap-3 interaction"><i class="fa-solid fa-comment"></i>21 comments</span>
+                          <span class="d-flex align-items-center gap-3 interaction"><i class="fa-solid fa-thumbs-up"></i>6 likes</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container px-0 px-lg-5 mt-3 d-flex gap-3">
+                      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-thumbs-up mr-3"></i>Like
+                      </button>
+                      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fa-regular fa-share-from-square mr-3"></i>Share
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="container wrapper">
+              <div class="card mb-4 mb-md-5 d-md-flex-row">
+                <div class="row">
+                  <div class="col-lg-5">
+                    <img src="/images/bilde3.png" class="card-img h-100" alt="...">
+                  </div>
+                  <div class="col-lg-7 py-5 px-5 px-lg-0">
+                    <div class="container d-flex gap-md-5 px-lg-5 p-0">
+                      <div class="col-3 col-md-1 p-0">
+                        <img src="/images/profile.png" alt="" class="rounded-circle profile-img">
+                      </div>
+
+                      <div class="col-9 col-md-9">
+                        <h5 class="card-title">
+                          Martine Midttveit in
+                          <a href="#" class="card-link">
+                            <u>Studygroup 2</u>
+                          </a>
+                        </h5>
+                        <small class="card-subtitle text-muted pt-2 d-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-lock pr-3"></i>Private group
+                        </small>
+                      </div>
+                    </div>
+
+                    <div class="container card-body py-4 pt-lg-3 px-0 px-lg-5">
+                      <h5 class="card-title p-0">
+                        Recommandation: Course in Bootstrap.
+                      </h5>
+                      <p class="card-text mt-4 col-11 p-0">
+                        I highly recommend the Bootstrap course on Utdannet.no to fellow students. It's a concise yet comprehensive
+                        program offering in-depth insights into Bootstrap's essentials for creating responsive websites. The course
+                        structure is clear, and instructors provide practical examples, making complex concepts easily understandable.
+                        It's an invaluable resource for both beginners and those aiming to advance their web development skills.
+                      </p>
+                      <p class="card-text p-0">
+                        <small class="text-muted">Published 3 days ago</small>
+                      </p>
+                    </div>
+
+                    <div class="container d-flex flex-column flex-lg-row px-0 px-lg-5">
+                      <div class="col-12 col-lg-7 p-0">
+                        <textarea name="comment" class="comment rounded form-control" placeholder="Leave a comment..."></textarea>
+                      </div>
+
+                      <div class="col-12 col-lg-5 d-flex flex-column justify-content-center mt-3 mt-lg-0 px-lg-4">
+                        <small><a href="#" class="card-link">Maik C.</a> and 6 others contributed</small>
+                        <div class="icons d-flex flex-column my-2 my-md-3">
+                          <span class="d-flex align-items-center gap-3 interaction"><i class="fa-solid fa-comment"></i>21 comments</span>
+                          <span class="d-flex align-items-center gap-3 interaction"><i class="fa-solid fa-thumbs-up"></i>6 likes</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container px-0 px-lg-5 mt-3 d-flex gap-3">
+                      <button
+                        class="btn btn-secondary d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-thumbs-up mr-3"></i>Liked
+                      </button>
+                      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fa-regular fa-share-from-square mr-3"></i>Share
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="container wrapper pb-5">
+              <div class="card mb-4 mb-md-5 d-md-flex-row">
+                <div class="row">
+                  <div class="col-lg-5">
+                    <img src="/images/bilde1.png" class="card-img h-100" alt="...">
+                  </div>
+                  <div class="col-lg-7 py-4 py-lg-5 px-5 px-lg-0">
+                    <div class="container d-flex gap-md-5 px-lg-5 p-0">
+                      <div class="col-3 col-md-1 p-0">
+                        <img src="/images/profile.png" alt="" class="rounded-circle profile-img">
+                      </div>
+
+                      <div class="col-9 col-md-9">
+                        <h5 class="card-title">
+                          Martine Midttveit in
+                          <a href="#" class="card-link">
+                            <u>FED 23 Jan - Noroff</u>
+                          </a>
+                        </h5>
+                        <small class="card-subtitle text-muted pt-2 d-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-lock pr-3"></i>Private group
+                        </small>
+                      </div>
+                    </div>
+
+                    <div class="container card-body py-4 pt-lg-3 px-0 px-lg-5">
+                      <h5 class="card-title p-0">
+                        Anyone know how to fix this problem I'm facing?
+                      </h5>
+                      <p class="card-text mt-4 col-11 p-0">
+                        I'm grappling with aligning columns in Bootstrap's grid layout for a project, struggling to achieve the desired
+                        arrangement. Seeking guidance from anyone experienced in Bootstrap to help troubleshoot this issue. If you have
+                        insights or solutions on structuring columns effectively within the grid system, your expertise would be greatly
+                        appreciated. Any advice or tips you can offer will be immensely helpful in overcoming this obstacle. Thank you
+                        in advance for your assistance — it'll make a significant difference in resolving this challenge in my
+                        project.
+                      </p>
+                      <p class="card-text p-0">
+                        <small class="text-muted">Published January 20th</small>
+                      </p>
+                    </div>
+
+                    <div class="container d-flex flex-column flex-lg-row px-0 px-lg-5" >
+                      <div class="col-12 col-lg-7 p-0">
+                        <textarea name="comment" class="comment rounded form-control" placeholder="Leave a comment..."></textarea>
+                      </div>
+
+                      <div class="col-12 col-lg-5 d-flex flex-column justify-content-center mt-3 mt-lg-0 px-lg-4">
+                        <small><a href="#" class="card-link">Veronica</a> and 8 others contributed</small>
+                        <div class="icons d-flex flex-column my-2 my-md-3">
+                          <span class="d-flex align-items-center gap-3 interaction"><i class="fa-solid fa-comment"></i>21 comments</span>
+                          <span class="d-flex align-items-center gap-3 interaction"><i class="fa-solid fa-thumbs-up"></i>6 likes</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container px-0 px-lg-5 mt-3 d-flex gap-3">
+                      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-thumbs-up mr-3"></i>Like
+                      </button>
+                      <button class="btn btn-outline-secondary d-flex align-items-center gap-2">
+                        <i class="fa-regular fa-share-from-square mr-3"></i>Share
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+<!---------------------------Footer------------------------------->
+<footer class="bg-dark py-5">
+  <div class="row wrapper">
+      <div class="col">
+          <a href="/index.html" class="h4 text-decoration-none footer-logo">CodeUnity</a>
+      </div>
+
+      <div class="col d-flex justify-content-end">
+          <p class="footer-text">© Copyright 2023</p>
+      </div>
+  </div>
+</footer> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

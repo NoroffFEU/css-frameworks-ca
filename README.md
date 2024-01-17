@@ -17,7 +17,7 @@ After figuring out which kind of application I wanted to make, I made wireframes
 ### Installing
 1. Clone the repo:
 ```bash   
-git clone git@github.com:MartineMidttveit/Rainydays.git
+git clone git@github.com:MartineMidttveit/css-frameworks-ca.git
 ```
 2. Install the dependencies:
 ```

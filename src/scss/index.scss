@@ -136,6 +136,19 @@ u {
   color: $primary;
 }
 
+.fa-image {
+  color: #d6d6d6;
+  font-size: 8rem;
+}
+
+textarea {
+  resize: none;
+}
+
+#description {
+  height: 200px;
+}
+
 @media (max-width: 950px) {
   .banner {
     height: 20rem;

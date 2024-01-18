@@ -17,9 +17,7 @@ import { accessToken, signOut, postsContainer } from "./constants.js";
 export function jwtDecoder(token) {
   if (accessToken) {
     const tokenParts = token.split(".");
-    const header = tokenParts[0];
     const payload = tokenParts[1];
-    const signature = tokenParts[2];
 
     const base64UrlPayload = payload;
     const base64Payload = base64UrlPayload.replace(/-/g, "+").replace(/_/g, "/");

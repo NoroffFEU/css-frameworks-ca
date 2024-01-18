@@ -1,4 +1,4 @@
-import { API_BASE_URL, registerUrl, loginUrl } from "./constants.js";
+import { registerUrl, loginUrl } from "./constants.js";
 
 const signUpForm = document.getElementById("signUpForm");
 const logInForm = document.getElementById("logInForm");
@@ -27,7 +27,6 @@ async function loginUser(url, userData) {
   const json = await response.json();
   if (json.accessToken) {
     const { accessToken } = json;
-    console.log(accessToken);
     localStorage.setItem("accessToken", accessToken);
     window.location.href = "../";
   } else {
@@ -56,7 +55,6 @@ logInForm.addEventListener("submit", function (event) {
  */
 async function registerUser(url, userData) {
   try {
-    console.log(url, userData);
     const methodOptions = {
       method: "POST",
       headers: {
@@ -71,7 +69,9 @@ async function registerUser(url, userData) {
     } else {
       loginUser(loginUrl, userData);
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 /**
@@ -91,7 +91,6 @@ function validateForm({ name, email, password, confirmPassword }, formData) {
 
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);
-  console.log(email);
   if (!patternMatches) {
     email_error.classList.remove("d-none");
     isValid = false;

@@ -24,18 +24,18 @@ const imageSrcs = imageFilenames.map(filename => `${filename}`);
 function addPosts(displayCount){
 console.log("dsfsdf")
     const feedContainer = document.getElementById('feedContainer');
+let count = 0
     for(let i = 0; i<displayCount; i++){
-        let src
-        if(!imageSrcs[i]){
-            src=imageSrcs[i-imageSrcs.length]
-        }else{
-            src=imageSrcs[i]
+        if(!imageSrcs[count]){
+            count-=imageSrcs.length
         }
-
+        let src=imageSrcs[count]
+        count ++
         feedContainer.innerHTML+=`
             <a href="../profile/index.html" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                 <img class="img-thumbnail" src="../images/${src}">
             </a>
         `
+        
     }
 }

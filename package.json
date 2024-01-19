@@ -26,5 +26,8 @@
   "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }

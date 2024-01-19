@@ -5,33 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication page</title>
     <link rel="stylesheet" href="dist/css/main.css">
-    <script defer src="bootstrap.js"></script>
+    <script defer src="js/bootstrap.js"></script>
+<link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
 </head>
 <header>
 
 </header>
 <body>
-    <h1 class="container-sm"> PLease log into your account</h1>
-    <div class="container-sm ">
-        <form class="col g-3 needs-validation" novalidate>
-            <div class="m-5 col">
-                <label for="validationCustom01" class="form-label">Username</label>
-                <input required type="text" class="form-control" id="validationCustom01" value="Mark">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+    
+    <div class="container-sm d-flex justify-content-center align-items-center flex-column mt-5">
+        <h1 class="text-center">Please log into your account</h1>
+        <form class="col-12 col-md-6 g-3 needs-validation novalidate d-flex  align-items-center flex-column">
+        <div class="m-3">
+            <label for="validationCustom01" class="form-label">Username</label>
+            <input required type="text" class="form-control" id="validationCustom01" value="Jenn32">
+            <div class="valid-feedback">
+            Looks good!
             </div>
-            <div class="m-5 col">
-                <label for="validationPassword">Password</label>
-		        <input required minlength="8" type="password" class="form-control"> </input>
-                <div class="invalid-feedback">
-                    Please write minimum 8.
-                </div>
+        </div>
+        <div class="m-3">
+            <label for="validationPassword">Password</label>
+            <input required minlength="8" type="password" class="form-control">
+            <div class="invalid-feedback">
+            Password did not match, please try again
             </div>
-            <div class="m-5 col-12">
-                <button class="gx-5 btn btn-primary" type="submit">Submit form</button>
-            </div>
+        </div>
+
+            <button class="btn btn-primary" type="submit">Submit form</button>
+
         </form>
-    </div>
+   </div>
+
 </body>
+<footer>
+</footer>
 </html>

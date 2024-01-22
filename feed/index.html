@@ -7,227 +7,335 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Feed</title>
 </head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Feed</title>
+</head>
 
 <body>
+    <header class="bg-dark 3 text-light m-2 py-5">
+        <div class="container">
+            <div class="p-5 text-center ">
+                <h1>Lore Paro Saul</h1>
+            </div>
+        </div>
+    </header>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-10">
+            <div class="col-12">
 
-                <div class="card-body mb-3">
-                    <div class="row no-gutters">
-                        <div class="col-2">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="card-img" alt="...">
-                        </div>
-                        <div class="card col-10 bg-light text-dark">
-                            <div class="card-body">
-                                <p class="font-weight-bold mb-0">Jermy Roldasol</p>
-                                <p class="small text-muted">January 21- 10:20</p>
-                                <p class="card-text">
-                                    <img src="../image/art-IMG_0191.JPG" class="card-img "
-                                        alt="Painting of a woman in profile">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                                </p>
-                                <div class="btn-group">
-                                    <button class="btn btn-light btn-sm"><i class="fa fa-thumbs-up"></i> Like this!
-                                    </button>
-                                    <button class="btn btn-light btn-sm"><i class="fa fa-comments"></i> Comment</button>
-                                </div>
-                            </div>
-                            <!-- answer -->
-                            <div class="card-body bg-white m-2">
-                                <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" class="card-img"
-                                            alt="...">
-                                    </div>
-                                    <div class="row col-10">
-                                        <p class="font-weight-bold mb-0">Rammy Smith</p>
-                                        <p class="small text-muted">January 21- 10:26</p>
-                                        Suspendisse sed nisi lacus sed. Aliquet lectus proin nibh nisl condimentum id
-                                        venenatis a condimentum.
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like this!
-                                        </button>
-                                        <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                                            Comment</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- answer -->
-                            <div class="card-body bg-white m-2">
-                                <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png" class="card-img"
-                                            alt="...">
-                                    </div>
-                                    <div class="row col-10">
-                                        <p class="font-weight-bold mb-0">Mike Johnson</p>
-                                        <p class="small text-muted">January 23- 09:42</p>
-                                        Rhoncus est pellentesque elit ullamcorper. Tortor id aliquet lectus proin nibh
-                                        nisl
-                                        condimentum id venenatis.
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like this!
-                                        </button>
-                                        <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                                            Comment</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- answer -->
-                            <div class="card-body bg-white m-2">
-                                <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="card-img"
-                                            alt="...">
-                                    </div>
-                                    <div class="row col-10">
-                                        <p class="font-weight-bold mb-0">Emily White</p>
-                                        <p class="small text-muted">January 23- 14:28</p>
-                                        Consectetur adipiscing elit pellentesque habitant morbi. Amet massa vitae tortor
-                                        condimentum lacinia. Mus mauris vitae ultricies leo integer malesuada. Proin
-                                        fermentum leo vel orci porta. Rhoncus est pellentesque elit ullamcorper. Tortor
-                                        id aliquet lectus proin nibh nisl
-                                        condimentum id venenatis.
-                                    </div>
-                                    <div class="btn-group">
-                                        <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like this!
-                                        </button>
-                                        <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                                            Comment</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Write a comment section -->
-                            <div class="card-body bg-white m-2">
-                                <div class="row no-gutters">
-                                    <div class="col-2">
-                                        <img src="../image/IMG_9921.JPG" class="card-img" alt="...">
-                                    </div>
-                                    <div class="col-10">
-                                        <textarea class="form-control" placeholder="Write a comment..."></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Search Bar -->
+                <div class="input-group mb-3 col-6 ">
+                    <input type="text" class="form-control" placeholder="Search for posts..."
+                        aria-label="Search for posts" aria-describedby="button-search">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-search">Search</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                <!-- End Search Bar -->
 
-    <body>
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-10">
+                <!-- Sort Options -->
+                <div class="form-group col-2">
+                    <label for="sortOptions">Sort By:</label>
+                    <select class="form-control" id="sortOptions">
+                        <option>Newest</option>
+                        <option>Oldest</option>
+                        <option>Most Liked</option>
+                        <!-- Add more sort options if needed -->
+                    </select>
+                </div>
+                <!-- End Sort Options -->
 
-                    <div class="card-body mb-3">
-                        <div class="row no-gutters">
-                            <div class="col-2">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png" class="card-img"
-                                    alt="...">
-                            </div>
-                            <div class="card col-10 bg-light text-dark">
-                                <div class="card-body">
-                                    <p class="font-weight-bold mb-0">Taron Falster</p>
-                                    <p class="small text-muted">January 19- 19:43</p>
-                                    <p class="card-text">
-                                        <img src="../image/artIMG_0198.JPG" class="card-img "
-                                            alt="exploding purple blue green yellow background with a person walking - art">
-                                        Risus commodo viverra manneriso vestibulum lexctus!
-                                    </p>
-                                    <div class="btn-group">
-                                        <button class="btn btn-light btn-sm"><i class="fa fa-thumbs-up"></i> Like this!
-                                        </button>
-                                        <button class="btn btn-light btn-sm"><i class="fa fa-comments"></i>
-                                            Comment</button>
-                                    </div>
-                                </div>
+                <body>
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-10">
 
-                                <!-- answer -->
-                                <div class="card-body bg-white m-2">
+                                <div class="card-body mb-3">
                                     <div class="row no-gutters">
                                         <div class="col-2">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                                                class="card-img" alt="...">
+                                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                                                class="img-thumbnail" alt="...">
                                         </div>
-                                        <div class="row col-10">
-                                            <p class="font-weight-bold mb-0">Terron Lassor</p>
-                                            <p class="small text-muted">January 19- 21:42</p>
-                                            Tristique netus sencuts. Et malesuada fames nam libjosto laoret. Viverra
-                                            neque CONVALLIS!
-                                        </div>
-                                        <div class="btn-group">
-                                            <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like
-                                                this!
-                                            </button>
-                                            <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                                                Comment</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- answer -->
-                                <div class="card-body bg-white m-2">
-                                    <div class="row no-gutters">
-                                        <div class="col-2">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                                class="card-img" alt="...">
-                                        </div>
-                                        <div class="row col-10">
-                                            <p class="font-weight-bold mb-0">Emily White</p>
-                                            <p class="small text-muted">January 20- 14:28</p>
-                                            Consectetur pellentesque habitant. Tortor Lid aliPROIN! quet lectus
-                                            proinni albusl condimentum id venenatis.
-                                        </div>
-                                        <div class="btn-group">
-                                            <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like
-                                                this!
-                                            </button>
-                                            <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                                                Comment</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- answer -->
-                                <div class="card-body bg-white m-2">
-                                    <div class="row no-gutters">
-                                        <div class="col-2">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                                class="card-img" alt="...">
-                                        </div>
-                                        <div class="row col-10">
-                                            <p class="font-weight-bold mb-0">Rammy Smith</p>
-                                            <p class="small text-muted">January 22- 10:28</p>
-                                            Sed viverra suspendise bibendum! Malesuada maes ac TUPRIS!
-                                        </div>
-                                        <div class="btn-group">
-                                            <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like
-                                                this!
-                                            </button>
-                                            <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                                                Comment</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Write a comment section -->
-                                <div class="card-body bg-white m-2">
-                                    <div class="row no-gutters">
-                                        <div class="col-2">
-                                            <img src="../image/IMG_9921.JPG" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-10">
-                                            <textarea class="form-control" placeholder="Write a comment..."></textarea>
+                                        <div class="card col-10 bg-light text-dark">
+                                            <div class="card-body">
+                                                <p class="font-weight-bold mb-0">Jermy Roldasol</p>
+                                                <p class="small text-muted">January 21- 10:20</p>
+                                                <p class="card-text">
+                                                    <img src="../image/art-IMG_0191.JPG" class="img-thumbnail "
+                                                        alt="Painting of a woman in profile">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+                                                    odio.
+                                                </p>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-light btn-sm"><i class="fa fa-thumbs-up"></i>
+                                                        Like this!
+                                                    </button>
+                                                    <button class="btn btn-light btn-sm"><i class="fa fa-comments"></i>
+                                                        Comment</button>
+                                                </div>
+                                            </div>
+                                            <!-- answer -->
+                                            <div class="card-body bg-white m-2">
+                                                <div class="row no-gutters">
+                                                    <div class="col-2">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                            class="img-thumbnail" alt="...">
+                                                    </div>
+                                                    <div class="row col-10">
+                                                        <p class="font-weight-bold mb-0">Rammy Smith</p>
+                                                        <p class="small text-muted">January 21- 10:26</p>
+                                                        Suspendisse sed nisi lacus sed. Aliquet lectus proin nibh nisl
+                                                        condimentum id
+                                                        venenatis a condimentum.
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-link btn-sm"><i
+                                                                class="fa fa-thumbs-up"></i> Like this!
+                                                        </button>
+                                                        <button class="btn btn-link btn-sm"><i
+                                                                class="fa fa-comments"></i>
+                                                            Comment</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- answer -->
+                                            <div class="card-body bg-white m-2">
+                                                <div class="row no-gutters">
+                                                    <div class="col-2">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar4.png"
+                                                            class="img-thumbnail" alt="...">
+                                                    </div>
+                                                    <div class="row col-10">
+                                                        <p class="font-weight-bold mb-0">Mike Johnson</p>
+                                                        <p class="small text-muted">January 23- 09:42</p>
+                                                        Rhoncus est pellentesque elit ullamcorper. Tortor id aliquet
+                                                        lectus proin nibh
+                                                        nisl
+                                                        condimentum id venenatis.
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-link btn-sm"><i
+                                                                class="fa fa-thumbs-up"></i> Like this!
+                                                        </button>
+                                                        <button class="btn btn-link btn-sm"><i
+                                                                class="fa fa-comments"></i>
+                                                            Comment</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- answer -->
+                                            <div class="card-body bg-white m-2">
+                                                <div class="row no-gutters">
+                                                    <div class="col-2">
+                                                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                            class="img-thumbnail" alt="...">
+                                                    </div>
+                                                    <div class="row col-10">
+                                                        <p class="font-weight-bold mb-0">Emily White</p>
+                                                        <p class="small text-muted">January 23- 14:28</p>
+                                                        Consectetur adipiscing elit pellentesque habitant morbi. Amet
+                                                        massa vitae tortor
+                                                        condimentum lacinia. Mus mauris vitae ultricies leo integer
+                                                        malesuada. Proin
+                                                        fermentum leo vel orci porta. Rhoncus est pellentesque elit
+                                                        ullamcorper. Tortor
+                                                        id aliquet lectus proin nibh nisl
+                                                        condimentum id venenatis.
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-link btn-sm"><i
+                                                                class="fa fa-thumbs-up"></i> Like this!
+                                                        </button>
+                                                        <button class="btn btn-link btn-sm"><i
+                                                                class="fa fa-comments"></i>
+                                                            Comment</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Write a comment section -->
+                                            <div class="card-body bg-white m-2">
+                                                <div class="row no-gutters">
+                                                    <div class="col-2">
+
+                                                        <img src="../image/userIMG1.JPG" class="img-thumbnail"
+                                                            alt="a drawn monkey infront of a colorfull background">
+                                                    </div>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control"
+                                                            placeholder="Write a comment..."></textarea>
+                                                        <button type="submit"
+                                                            class="btn btn-primary btn-sm co-2 m-1">Post</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <body>
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div class="col-10">
+
+                                    <div class="card-body mb-3">
+                                        <div class="row no-gutters">
+                                            <div class="col-2">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png"
+                                                    class="img-thumbnail" alt="...">
+                                            </div>
+                                            <div class="card col-10 bg-light text-dark">
+                                                <div class="card-body">
+                                                    <p class="font-weight-bold mb-0">Taron Falster</p>
+                                                    <p class="small text-muted">January 19- 19:43</p>
+                                                    <p class="card-text">
+                                                        <img src="../image/artIMG_0198.JPG" class="img-thumbnail "
+                                                            alt="exploding purple blue green yellow background with a person walking - art">
+                                                        Risus commodo viverra manneriso vestibulum lexctus!
+                                                    </p>
+                                                    <div class="btn-group">
+                                                        <button class="btn btn-light btn-sm"><i
+                                                                class="fa fa-thumbs-up"></i> Like this!
+                                                        </button>
+                                                        <button class="btn btn-light btn-sm"><i
+                                                                class="fa fa-comments"></i>
+                                                            Comment</button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- answer -->
+                                                <div class="card-body bg-white m-2">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-2">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                                                class="img-thumbnail" alt="...">
+                                                        </div>
+                                                        <div class="row col-10">
+                                                            <p class="font-weight-bold mb-0">Terron Lassor</p>
+                                                            <p class="small text-muted">January 19- 21:42</p>
+                                                            Tristique netus sencuts. Et malesuada fames nam libjosto
+                                                            laoret. Viverra
+                                                            neque CONVALLIS!
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-link btn-sm"><i
+                                                                    class="fa fa-thumbs-up"></i> Like
+                                                                this!
+                                                            </button>
+                                                            <button class="btn btn-link btn-sm"><i
+                                                                    class="fa fa-comments"></i>
+                                                                Comment</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- answer -->
+                                                <div class="card-body bg-white m-2">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-2">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png"
+                                                                class="img-thumbnail" alt="...">
+                                                        </div>
+                                                        <div class="row col-10">
+                                                            <p class="font-weight-bold mb-0">Emily White</p>
+                                                            <p class="small text-muted">January 20- 14:28</p>
+                                                            Consectetur pellentesque habitant. Tortor Lid aliPROIN! quet
+                                                            lectus
+                                                            proinni albusl condimentum id venenatis.
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-link btn-sm"><i
+                                                                    class="fa fa-thumbs-up"></i> Like
+                                                                this!
+                                                            </button>
+                                                            <button class="btn btn-link btn-sm"><i
+                                                                    class="fa fa-comments"></i>
+                                                                Comment</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- answer -->
+                                                <div class="card-body bg-white m-2">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-2">
+                                                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
+                                                                class="img-thumbnail" alt="...">
+                                                        </div>
+                                                        <div class="row col-10">
+                                                            <p class="font-weight-bold mb-0">Rammy Smith</p>
+                                                            <p class="small text-muted">January 22- 10:28</p>
+                                                            Sed viverra suspendise bibendum! Malesuada maes ac TUPRIS!
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <button class="btn btn-link btn-sm"><i
+                                                                    class="fa fa-thumbs-up"></i> Like
+                                                                this!
+                                                            </button>
+                                                            <button class="btn btn-link btn-sm"><i
+                                                                    class="fa fa-comments"></i>
+                                                                Comment</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Write a comment section -->
+                                                <div class="card-body bg-white m-2">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-2">
+
+                                                            <img src="../image/userIMG1.JPG" class="img-thumbnail"
+                                                                alt="a drawn monkey infront of a colorfull background">
+                                                        </div>
+                                                        <div class="col-10">
+                                                            <textarea class="form-control"
+                                                                placeholder="Write a comment..."></textarea>
+                                                            <button type="submit"
+                                                                class="btn btn-primary btn-sm co-2 m-1 ">Post</button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- New Post Form -->
+                        <div class="card mb-3 col-10 ">
+                            <div class="card-body ">
+                                <h5 class="card-title">Create a New Post</h5>
+                                <form>
+
+                                    <div class="form-group ''">
+                                        <label for="postContent">Post Content:</label>
+                                        <div class="row no-gutters ">
+                                            <div class="col-2">
+                                                <img src="../image/userIMG1.JPG" class="img-thumbnail"
+                                                    alt="a drawn monkey infront of a colorfull background">
+                                            </div>
+                                            <textarea class="form-control col-8" id="postContent" rows="3"
+                                                placeholder="What's on your mind?"></textarea>
+
+                                            <div class="form-group ms-2 >
+                                        <label for=" postImage">Upload Image (optional):</label>
+                                                <input type="file" class="form-control-file col-6" id="postImage">
+                                            </div>
+                                            <div class="d-flex">
+                                            <button type="submit" class="btn btn-primary col-2">Post</button>
+                                </form>
+                            </div>
+                        </div>
             </div>
-        </div>
-    </body>
+</body>
 
 </html>

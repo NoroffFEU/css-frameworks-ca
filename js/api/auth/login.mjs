@@ -3,9 +3,7 @@
 import { BASE_URL } from "../api.mjs";
 import * as storage from "../../handler/storage.mjs";
 
-
 const action = "auth/login";
-
 const method = "post";
 
 export async function login(profile){
@@ -19,8 +17,8 @@ export async function login(profile){
     "Content-Type": "application/json"
     },
     method,
-    body
-  })
+    body,
+  });
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);

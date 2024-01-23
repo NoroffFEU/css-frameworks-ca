@@ -2,17 +2,16 @@ body {
   margin-top: 150px;
   font-family: 'Jost', sans-serif;
   height: 100%;
-
 }
 
 h4 {
   font-weight: 300;
-
 }
 
 h5 {
 color: $primary;
 }
+
 
 nav {
   margin-bottom: 50px;
@@ -23,7 +22,6 @@ nav {
 h1 {
 color: $primary;
 }
-
 
 .display-4 {
   font-weight: 200;
@@ -42,7 +40,6 @@ width: 12em;
   margin: 1.5rem 2rem;
   font-size: 30px;
   font-weight: 900;
-
 }
 
 .navbar-nav {
@@ -51,7 +48,8 @@ width: 12em;
 }
 
 .divider {
-  border-top: solid 3px $gray-300;
+  border-top: solid 2px $gray-300;
+
   max-height: 500px;
 }
 
@@ -60,7 +58,6 @@ width: 12em;
 
 .crown {
   margin: 0px auto 10px -30px !important;
-
 }
 
 .container img {

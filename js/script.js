@@ -2,22 +2,26 @@ import { registerFormHandler } from "./handlers/authorization/registerFormHandle
 import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 
-document.getElementById("createNewAccount").addEventListener("click", function () {
-  registerFormHandler();
-});
-
 function route() {
   const path = window.location.pathname;
   console.log(path);
 
   switch (path) {
     case "/":
-      loginFormHandler();
+    case "/index.html":
+      document.getElementById("createNewAccount").addEventListener("click", function () {
+        try {
+          registerFormHandler();
+          loginFormHandler();
+        } catch (error) {
+          console.log(error);
+        }
+      });
       break;
-    case "/profile":
+    case "/profile/":
       logoutHandler();
       break;
-    case "/feed":
+    case "/feed/":
       logoutHandler();
       break;
   }

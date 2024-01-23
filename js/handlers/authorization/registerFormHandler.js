@@ -28,5 +28,6 @@ async function registerForm(event) {
   } catch (error) {
     console.log(error);
     messageForUser("#message", "danger", error.message);
+    throw error;
   }
 }

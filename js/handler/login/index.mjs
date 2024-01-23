@@ -1,4 +1,4 @@
-// DENNE ER NY ETTER Å FØLGE OLIVER PÅ YOUTUBE
+// DENNE ER NY 
 import { login } from "../../api/auth/login.mjs";
 
 export function loginFormListener() {

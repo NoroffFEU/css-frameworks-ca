@@ -1,4 +1,4 @@
-// DENNE ER NY ETTER Å FØLGE OLIVER PÅ YOUTUBE
+// DENNE ER NY
 
 import { BASE_URL } from "../api.mjs";
 
@@ -9,6 +9,8 @@ export async function register(profile){
   const registerURL = BASE_URL + action;
   const body = JSON.stringify(profile);
 
+
+
   const response = await fetch(registerURL, {
     headers: {
     "Content-Type": "application/json"
@@ -17,6 +19,13 @@ export async function register(profile){
     body
   })
 
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
   const result = await response.json()
-  console.log(result)
+
+  window.location.href = "../../../profile/index.html";
+  
+  return result
 }

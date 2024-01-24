@@ -1,1 +1,9 @@
+@import "variables";
 
+body {
+    background-color: $white;
+}
+
+.btn-custom {
+    color: $main;
+}

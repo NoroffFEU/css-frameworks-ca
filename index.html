@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <title>ZenZone</title>
+</head>
+
+<body class="bg-dark">
+    <div class="container d-flex vh-100">
+        <div class="row flex-grow-1 my-auto">
+            <div class="col d-flex align-items-center justify-content-center gap-3">
+                <h1 class="text-center text-secondary">ZenZone</h1>
+                <i class="bi-chat-square-heart"></i>
+            </div>
+            <div class="col d-flex align-items-center justify-content-center">
+                <form action="/profile/index.html" method="post" class="auth-form col-8">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                    <div class="flex-shrink-0 mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="col-12 btn btn-primary mb-1">Log In</button>
+                    <hr>
+                    <p class="m-0">Don't have an account?</p>
+                    <button formaction="/registration/index.html" type="submit"
+                        class="col-12 btn btn-secondary mt-1">Create new account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

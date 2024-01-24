@@ -1,9 +1,7 @@
-// DENNE ER NY
-
 import { BASE_URL } from "../api.mjs";
 
 const action = "auth/register";
-const method = "post";
+const method = "POST";
 
 export async function register(profile){
   const registerURL = BASE_URL + action;

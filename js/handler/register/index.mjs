@@ -17,7 +17,7 @@ export function registerFormListener() {
         await register(profile);
         // This display a message if the user is successfully registered
         form.reset();
-        displayMessage("#message", "success", 'You have successfully created an account. <a href="../../../index.html">You can now log in.</a>')
+        displayMessage("#message", "success", 'You have successfully created an account. <a href="/">You can now log in.</a>')
       } catch (error) {
         displayMessage("#message", "danger", error.message);     
         // This display a message if the user is not successfully registered

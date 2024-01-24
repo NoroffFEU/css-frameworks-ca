@@ -100,39 +100,24 @@
           <div class="container my-5">
             <div class="row justify-content-center">
               <div class="col-6">
+
                 <form id="loginForm" action="/feed/">
+
+                  <div id="message"></div>
+
                   <div class="mb-3">
                     <label for="inputEmail1" class="form-label">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      class="form-control"
-                      id="email"
-                      required />
+                    <input type="email" name="email" class="form-control" id="email" required />
                   </div>
 
                   <div class="mb-3">
-                    <label for="inputPassword1" class="form-label"
-                      >Password</label
-                    >
-                    <input
-                      type="password"
-                      name="password"
-                      class="form-control"
-                      id="password"
-                      minlength="8"
-                      required />
+                    <label for="inputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password"
+                      class="form-control" id="password" minlength="8" required />
                   </div>
 
-                  <button type="submit" class="btn btn-primary mb-3 me-3">
-                    Sign me in
-                  </button>
-                  <a
-                    href="/create-account/index.html"
-                    role="button"
-                    class="btn btn-outline-secondary mb-3">
-                    Create an account
-                  </a>
+                  <button type="submit" class="btn btn-primary mb-3 me-3">Sign me in</button>
+                  <a href="/create-account/" role="button" class="btn btn-outline-secondary mb-3">Create an account</a>
                 </form>
               </div>
             </div>

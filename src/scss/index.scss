@@ -1,10 +1,6 @@
 // $enable-negative-margins: true;
 
 
-
-// @import "components/variables.scss";
-
-
 // Configuration
 @import "../../node_modules/bootstrap/scss/functions";
 @import "components/variables";
@@ -17,3 +13,17 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 
+
+
+body {
+  font-family: "Montserrat";
+}
+
+.login-logo {
+  background-color: $dark-green;
+  font-size: $h1-font-size;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+}

@@ -1,6 +1,6 @@
-# css-frameworks-ca | CrocheME
+# css-frameworks-ca | CrochetME
 
-`CrocheME` is a responsive web application which goal is to keep in contact lovers of handmade crochet.
+`CrochetME` is a responsive web application which goal is to keep in contact lovers of handmade crochet.
 
 [Figma design]
 [Brief]

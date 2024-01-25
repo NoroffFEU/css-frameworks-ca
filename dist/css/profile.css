@@ -1,0 +1,11 @@
+.img {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.custom-border {
+  position: relative;
+  border-left: 1px solid purple;
+}

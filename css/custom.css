@@ -57,14 +57,30 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     width: 20%;
-    padding-left: 20px;
+    padding: 0px 10px;
+  }
+}
+@media (max-width: 767px) and (max-width: 540px) {
+  .navbar-card {
+    font-size: 16px;
+    left: 70%;
+    width: 25%;
   }
 }
 @media (max-width: 767px) and (max-width: 380px) {
   .navbar-card {
     font-size: 14px;
-    width: 40%;
   }
+}
+@media (max-width: 380px) {
+  .navbar-card {
+    font-size: 14px;
+    width: 25%;
+  }
+}
+
+.profile-img {
+  width: 50%;
 }
 
 @media (max-width: 500px) {
@@ -73,8 +89,10 @@ body {
   }
 }
 
-.score-text {
-  font-size: 11px;
+@media (max-width: 767px) {
+  .score-text {
+    font-size: 11px;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */

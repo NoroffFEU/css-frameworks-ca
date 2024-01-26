@@ -3,8 +3,9 @@
 `CrochetME` is a responsive web application which goal is to keep in contact lovers of handmade crochet.
 
 ![figma](https://github.com/FP22FD/css-frameworks-ca/assets/112474910/f04e6456-9af3-435d-a9a4-f6fbad42f1e8)
-- [Brief](css-frameworks-brief.pdf)
-- [Criteria](css-frameworks-criteria.pdf)
+
+- [Brief](docs/css-frameworks-brief.pdf)
+- [Criteria](docs/css-frameworks-criteria.pdf)
 
 ## Live app
 
@@ -43,3 +44,25 @@ The `profile page` should have a profile image, username, list of user posts, fo
 ## Customization
 
 The `Bootstrap` customization is restricted to the `$primary` color and other few variables.
+
+<!-- - Describe any prerequisites, libraries, OS version, etc., needed before installing the program.
+- ex. Windows 10 -->
+
+## Validation
+
+The web application code has been validated using the following tools:
+
+- check html validity: <https://validator.w3.org/>
+
+- check css validity: <https://jigsaw.w3.org/css-validator/>
+
+- check redirect links: <https://validator.w3.org/checklink>
+
+- check accessibility: <https://www.accessibilitychecker.org/>
+
+NB: some empty CSS classes are flagged as errors by the [W3 validator](http://validator.w3.org).
+The issue is probably caused by [a bug](https://github.com/twbs/bootstrap/issues/36508) in the web tool.
+
+## Dependencies
+
+To develop the web application I have used `Visual Studio Code` with `Prettier` formatter extension.

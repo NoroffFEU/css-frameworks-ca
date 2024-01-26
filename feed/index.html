@@ -18,18 +18,19 @@
                     <img src="../images/logo.png" style="width: 48px;" alt="FriendLink">
                 </a>
                 <form role="search" class="position-relative">
-                    <button class="position-absolute top-50 start-0 translate-middle-y btn">
+                    <button class="position-absolute top-50 start-0 translate-middle-y btn" aria-label="search">
                         <i class="fas fa-magnifying-glass"></i>
                     </button>
-                    <input type="search" class="form-control ps-5" placeholder="Search">
+                    <input type="search" class="form-control ps-5" placeholder="Search" aria-label="search field">
                 </form>
                 <a href="../profile/index.html">
-                    <img src="../images/logo.png" class="user-icon align-item-end" alt="">
+                    <img src="../images/logo.png" class="user-icon align-item-end" alt="profile">
                 </a>    
             </div>
         </nav>
     </header>
     <main>
+        <h1 class="sr-only">FriendLink Feed</h1>
         <div class="container">
             <div class="row">
                 <div class="offcanvas-lg offcanvas-start custom-offcanvas col-lg-3" id="offcanvasResponsive">

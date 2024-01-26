@@ -18,13 +18,13 @@
                     <img src="../images/logo.png" style="width: 48px;" alt="FriendLink">
                 </a>
                 <form role="search" class="position-relative">
-                    <button class="position-absolute top-50 start-0 translate-middle-y btn">
+                    <button class="position-absolute top-50 start-0 translate-middle-y btn" aria-label="search">
                         <i class="fas fa-magnifying-glass"></i>
                     </button>
-                    <input type="search" class="form-control ps-5" placeholder="Search">
+                    <input type="search" class="form-control ps-5" placeholder="Search" aria-label="search field">
                 </form>
                 <a href="">
-                    <img src="../images/logo.png" style="width: 48px;" class="rounded-circle border border-primary align-item-end" alt="">
+                    <img src="../images/logo.png" style="width: 48px;" class="rounded-circle border border-primary align-item-end" alt="Profile">
                 </a>    
             </div>
         </nav>
@@ -44,7 +44,7 @@
                     <div class="bg-primary rounded-5 rounded-top-0 p-3">
                         <div class="row text-center">
                             <div class="col mb-3">
-                                <button class="btn" data-bs-toggle="modal" data-bs-target="#followersModal">Followers
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#followersModal">Followers
                                     <span>40</span>
                                 </button>
                                 <div class="d-none d-lg-flex gap-2">
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col mb-3">
-                                <button class="btn" data-bs-toggle="modal" data-bs-target="#followingModal">Following
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#followingModal">Following
                                     <span>300</span>
                                 </button>
                                 <div class="d-none d-lg-flex gap-2">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-grid">
+                        <div class="d-grid shadow-lg">
                             <button class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#collapseOne" >Write a new post</button>
                         </div>
                     </div>

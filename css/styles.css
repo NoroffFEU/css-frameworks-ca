@@ -24327,12 +24327,81 @@ textarea.form-control-lg {
 
 body {
   margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.header-text {
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  font-family: "Georgia", serif;
+}
+@media (max-width: 320px) {
+  .header-text {
+    font-size: 22px;
+  }
+}
+
+.header-image {
+  background: url("../../image/HeaderImg2.JPG");
+  height: 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+}
+
+.nav-link {
+  color: rgb(35, 34, 34);
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 1500px) {
+  .nav-link {
+    font-size: 20px;
+    text-shadow: none;
+    color: black;
+  }
+}
+
+.nav-link:hover {
+  color: black;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 576px) {
+  .navbar-toggler-icon {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-card {
+    position: absolute;
+    top: 100%;
+    left: 75%;
+    background: url("../../image/HeaderImg2.JPG");
+    background-size: cover;
+    background-position: 50% 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: 20%;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 767px) and (max-width: 380px) {
+  .navbar-card {
+    font-size: 14px;
+    width: 40%;
+  }
 }
 
 @media (max-width: 500px) {
   .sort-small {
     font-size: 15px;
   }
+}
+
+.score-text {
+  font-size: 11px;
 }
 
 /*# sourceMappingURL=styles.css.map */

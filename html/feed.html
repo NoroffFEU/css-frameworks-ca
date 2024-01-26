@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Feed</title>
 </head>
 <body>
@@ -10,15 +11,24 @@
         <img src="/images/mt_logo.png" alt="logo">
         <nav>
             <ul>
-                <li><a href="#">Profile</a></li>
                 <li><a href="#">Feed</a></li>
+                <li><a href="#">Profile</a></li>
             </ul>
     </header>
     <main>
-        <button type="button" class="btn btn-link">Create Post</button>
+        <div>
+            <textarea name="post" id="post" placeholder="Tell us what you created!"></textarea>
+            <button type="button" class="btn btn-link">Upload Image</button>
+            <button type="button" class="btn btn-link">Create Post</button>
+        </div>
+        
         <section>
             <div>
-                <!--search bar and sorting-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                <input type="text" name="search" class="rounded-5" placeholder="Search for posts...">
+                  </svg>
             </div>
             <div>
                 <!--post-->

@@ -29,6 +29,7 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.11.3",
     "live-server": "^1.2.2"
   },
   "devDependencies": {

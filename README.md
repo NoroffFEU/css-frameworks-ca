@@ -6,12 +6,7 @@ Simple and effective
 
 ## Description
 
-A simple and effective page combining products and blogs in a fast and convinient way
-
-- Good combination of blogs and products
-- Quick loadspeed and instant load capabilities
-- Seperate loads for initial view and hidden view for fast response
-- Created with modules for easy adjustments by anyone
+A simple and effective page displaying blogs and images from people
 
 ## Built With
 

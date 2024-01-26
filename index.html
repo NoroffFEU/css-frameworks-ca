@@ -16,54 +16,50 @@
                 <div class="col-lg-8 d-none d-lg-flex bg-image justify-content-center align-items-center" style="background-image: url(images/logo.png); height: 100vh; background-repeat: no-repeat; background-position: center;">
                     <p class="m-5 fs-1 fw-bold">Forge Bonds, Share Moments Your Ultimate Social Destination</p>
                 </div>
-                
                 <div class="col container border border-primary rounded-4 custom-linear-bg p-3 m-3 shadow-costum" id="accordionParent">
-                        <div class="text-center">
-                            <h1>FriendLink</h1>
-                            <ul class="nav nav-underline justify-content-center">
-                                <li class="nav-item">
-                                    <button class="nav-link active" type="button" data-bs-toggle="tab" data-bs-target="#loginForm">Sign in</button>
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#registerForm">Register</button>
-                                </li>
-                            </ul>
+                    <div class="text-center">
+                        <h1>FriendLink</h1>
+                        <ul class="nav nav-underline justify-content-center">
+                            <li class="nav-item">
+                                <button class="nav-link active" type="button" data-bs-toggle="tab" data-bs-target="#loginForm">Sign in</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#registerForm">Register</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <form action="/profile/index.html" id="signinForm" data-bs-parent="#accordionParent" class="collapse show">
+                        <div class="mb-3">
+                            <label for="signinEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="signinEmail">
                         </div>
-                        <form action="/feed/index.html" id="loginForm" data-bs-parent="#accordionParent" class="collapse show">
-                            <div class="mb-3">
-                                <label for="userid" class="form-label">Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control"  minlength="8" maxlength="20" required>
-                            </div>
-                            <div class="d-grid mb-3">
-                                <button class="btn btn-primary">Sign in</button>
-                            </div>
-                        </form>
-                        <form action="/feed/index.html" id="registerForm" data-bs-parent="#accordionParent" class="collapse">
-                            <div class="mb-3">
-                                <label for="userid" class="form-label">Email</label>
-                                <input type="email" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control"  minlength="8" maxlength="20" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="passwordRepeat" class="form-label">Repeat Password</label>
-                                <input type="password" class="form-control" minlength="8" maxlength="20" required>
-                            </div>
-                            <div class="d-grid mb-3">
-                                <button class="btn btn-primary">Continue</button>
-                            </div>
-                        </form>
+                        <div class="mb-3">
+                            <label for="signinPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="signinPassword"  minlength="8" maxlength="20" required>
+                        </div>
                         <div class="d-grid mb-3">
-                            <button class="btn btn-outline-primary">
-                                Forgot Password?
-                            </button>
+                            <button class="btn btn-primary">Sign in</button>
                         </div>
+                    </form>
+                    <form action="/profile/index.html" id="registerForm" data-bs-parent="#accordionParent" class="collapse">
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword"  minlength="8" maxlength="20" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPasswordRepeat" class="form-label">Repeat Password</label>
+                            <input type="password" class="form-control" id="registerPasswordRepeat" minlength="8" maxlength="20" required>
+                        </div>
+                        <div class="d-grid mb-3">
+                            <button class="btn btn-primary">Continue</button>
+                        </div>
+                    </form>
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-outline-primary">Forgot Password?</button>
                     </div>
                 </div>
             </div>

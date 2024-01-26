@@ -1,0 +1,21 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100px;
+  justify-content: center;
+}
+
+.form-customize {
+  max-width: 600px;
+}
+
+/*# sourceMappingURL=styles.css.map */

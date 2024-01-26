@@ -1,0 +1,16 @@
+@import "sub-files/variables";
+@import "sub-files/components";
+@import "sub-files/layout";
+@import "sub-files/nav";
+@import "sub-files/main";
+
+body {
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0; 
+}
+
+main {
+    margin-top: 50px;
+}

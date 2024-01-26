@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../dist/css/main.css">
+    <title>NexNet | Feed</title>
+    <meta name="description" content="This is the feed of NexNet.">
+    <meta name="keywords" content="NexNet, Home, Feed">
+    <meta name="author" content="Marius Bjeglerud">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-sm-auto bg-light sticky-top">
+                <nav>
+                    <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top nav-menu">
+                        <i class="fs-1 letter-n">N</i>
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                            <li class="nav-item">
+                                <a href="../feed/" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Home" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi-house fs-1"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="../profile/" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Profile" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-person-circle fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-gear fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Log Out" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-box-arrow-left fs-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main class="col-sm p-3 min-vh-100">
+                <div>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12 mx-auto">
+                            <p class="text-purple fs-3 fw-bold">Welcome Back Marius</p>
+                            <div class="container">
+                                <div class="dropdown">
+                                    <button class="btn btn-4 dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Sort by
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                                        <a class="dropdown-item">Latest</a>
+                                        <a class="dropdown-item">Oldest</a>
+                                        <a class="dropdown-item">Relevant</a>
+                                        <a class="dropdown-item">Popular</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-primary container rounded row mt-3 mx-auto">
+                                <form action="" class="row align-items-start py-2 px-2">
+                                    <i class="bi bi-person-circle col-md-1 fs-1"></i>
+                                    <div class="col-md-11">
+                                        <input class="form-control mb-2" type="text" name="" id="" placeholder="Is there something you want to share to your friends?">
+                                        <button class="btn btn-3">Post</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="bg-primary container rounded mt-4 row  mx-auto">
+                                <i class="bi bi-person-circle col-md-1 fs-1 mt-2"></i>
+                                <div class="col-md-11 row align-items-start py-2 px-2">
+                                    <div>
+                                        <h2 class="fs-4 mb-0 text-purple">Harry Potter</h2>
+                                        <p class="mt-0 fs-6 text-purple">3min</p>
+                                    </div>
+                                    <p class="text-primary">Just aced my DADA exam! 📚🔮 Butterbeer with Ron and Hermione at Three Broomsticks was epic! 🍻🏰 Quidditch practice later – aiming for that Quidditch Cup! 🏆Dobby keeps gifting socks... not complaining! 🧦</p>
+                                    <p class="mt-2 text-primary">#WizardsLife #HogwartsAdventures #MagicalDays</p>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">772</p>
+                                        <i class="bi bi-chat text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">32</p>
+                                    </div>                               
+                                </div>
+                            </div>
+                            <div class="bg-primary container rounded mt-4 row  mx-auto">
+                                <i class="bi bi-person-circle col-md-1 fs-1 mt-2"></i>
+                                <div class="col-md-11 row align-items-start py-2 px-2">
+                                    <div>
+                                        <h2 class="fs-4 mb-0 text-purple">Draco Malfoy</h2>
+                                        <p class="mt-0 fs-6 text-purple">2h</p>
+                                    </div>
+                                    <p class="text-primary">🐍 Pureblood Pride: A Malfoy Update 🌟
+    
+                                        Greetings to my fellow purebloods and those with refined taste. Draco Malfoy here, giving you a glimpse into the extraordinary life of a Slytherin Prince. 🏰✨<br><br>
+                                        
+                                        Just dominated Potions class – Professor Snape is finally recognizing true talent. 💼✨ Slytherin Quidditch team is gearing up for victory; naturally, I'm leading the way as Seeker. 🏁🔍<br><br>
+                                        
+                                        Spent the weekend at the Malfoy Manor, surrounded by opulence and grandeur. 🏰💎 Awaiting the arrival of some pureblood guests for a sophisticated <br><br>
+                                        
+                                        Remember, it's quality, not quantity, that matters. Stay elite, my friends. 🐍✨</p>
+                                    <p class="mt-2 text-primary">#PurebloodPride #SlytherinSupremacy #MalfoyLegacy</p>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">312</p>
+                                        <i class="bi bi-chat text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">21</p>
+                                    </div>                               
+                                </div>
+                            </div>
+                            <div class="bg-primary container rounded mt-4 row  mx-auto">
+                                <i class="bi bi-person-circle col-md-1 fs-1 mt-2"></i>
+                                <div class="col-md-11 row align-items-start py-2 px-2">
+                                    <div>
+                                        <h2 class="fs-4 mb-0 text-purple">Albus Dombledore</h2>
+                                        <p class="mt-0 fs-6 text-purple">14h</p>
+                                    </div>
+                                    <p class="text-primary">Greetings, magical beings! Today's lesson: find magic in the everyday. Objects, like people, can transform with a bit of care. 🍃✨<br><br>
+    
+                                        Reflecting in my office, the enchantment of life never ceases. Embrace kindness and love—it's the purest magic of all. 💙🌈<br><br>
+                                        
+                                        Wishing you enchanting dreams tonight! 🌙🔮</p>
+                                    <p class="mt-2 text-primary">#MagicWithin #WisdomFromDumbledore</p>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">2k</p>
+                                        <i class="bi bi-chat text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">513</p>
+                                    </div>                               
+                                </div>
+                            </div>
+                            <div class="bg-primary container rounded mt-4 row  mx-auto">
+                                <i class="bi bi-person-circle col-md-1 fs-1 mt-2"></i>
+                                <div class="col-md-11 row align-items-start py-2 px-2">
+                                    <div>
+                                        <h2 class="fs-4 mb-0 text-purple">Rubeus Hagrid</h2>
+                                        <p class="mt-0 fs-6 text-purple">1d</p>
+                                    </div>
+                                    <p class="text-primary">Hey y'all! Just finished feedin' Buckbeak and the dragons. Time for a well-deserved pint at the Three Broomsticks! 🍻
+                                    </p>
+                                    <p class="mt-2 text-primary">#MagicalCreatureCare #HagridLife</p>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">1.4k</p>
+                                        <i class="bi bi-chat text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">243</p>
+                                    </div>                               
+                                </div>
+                            </div>
+                            <div class="bg-primary container rounded mt-4 row  mx-auto">
+                                <i class="bi bi-person-circle col-md-1 fs-1 mt-2"></i>
+                                <div class="col-md-11 row align-items-start py-2 px-2">
+                                    <div>
+                                        <h2 class="fs-4 mb-0 text-purple">Donald Trump</h2>
+                                        <p class="mt-0 fs-6 text-purple">3d</p>
+                                    </div>
+                                    <p class="text-primary">Hey folks! Trump here, making social media great again. Just closed a tremendous deal, the best deal! 💰👍<br><br>
+    
+                                        The Trump Tower is looking incredible – gold everywhere, just the way it should be. 🏰✨<br>
+                                        Remember, success is the only option. Stay classy, stay winning! 🎩🌟</p>
+                                    <p class="mt-2 text-primary">#TrumpStyle #WinningBigly #SuccessIsMyMiddleName</p>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">3.2m</p>
+                                        <i class="bi bi-chat text-primary"></i>
+                                        <p class="my-0 mx-1 text-purple">21k</p>
+                                    </div>                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer  class="footer d-flex justify-content-center align-items-center bg-light">
+                <p>© 2024 NexNet</p>
+            </footer>
+        </div>
+    </div>
+    <script src="../src/js/sidebar.js"></script>
+</body>
+</html>

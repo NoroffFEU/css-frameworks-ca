@@ -1,0 +1,26 @@
+@import "variables";
+
+.nav-link {
+    color: $gray;
+
+    &:hover {
+        color: $lightpurple;
+    }
+
+    &:active {
+        color: $lightpurple;
+    }
+
+    &:after {
+        color: $lightpurple;
+    }
+}
+
+
+.tooltip-inner {
+    background-color: $lightpurple;
+}
+
+.letter-n {
+    color: $lightpurple;
+}

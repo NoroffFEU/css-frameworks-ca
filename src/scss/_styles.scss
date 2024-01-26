@@ -1,0 +1,89 @@
+@import "variables";
+
+.bg-primary {
+    background-color: $main !important;
+}
+
+.text-primary {
+    color: $gray !important;
+}
+
+.text-purple {
+    color: $lightpurple !important;
+}
+
+.btn-primary {
+    background-color: $lightpurple;
+    border-color: $lightpurple;
+    color: $gray;
+
+    &:hover {
+        background-color: $darkpurple;
+        border-color: $darkpurple;
+        color: $white;
+    }
+}
+
+.btn-sec {
+    background-color: $darkpurple;
+    border-color: $darkpurple;
+    color: $white;
+
+    &:hover {
+        background-color: $lightpurple;
+        border-color: $lightpurple;
+        color: $gray;
+    }
+}
+
+.form-control {
+    border-color: $gray;
+    background-color: $main;
+
+    &:focus {
+        border-color: $gray;
+        box-shadow: 0 0 0 0.25rem $lightpurple;
+        background-color: $main;
+    }
+}
+
+.btn-3 {
+    background-color: $darkpurple;
+    color: $white;
+
+    &:hover {
+        background-color: $lightpurple;
+        color: $gray;
+    }
+}
+
+.btn-4 {
+    background-color: $main;
+    color: $gray;
+
+    &:active {
+        background-color: $main;
+    }
+}
+
+.profile-picture {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn-outline-secondary {
+    background-color: $lightpurple;
+    color: #fff;
+    border-color: $lightpurple;
+
+    &:focus {
+        background-color: $lightpurple;
+        color: #fff;
+        border-color: $lightpurple;
+    }
+}
+
+
+li {
+    list-style-type: none;
+}

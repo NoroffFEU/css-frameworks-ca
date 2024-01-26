@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../dist/css/main.css">
+    <title>NexNet | Profile</title>
+    <meta name="description" content="View and manage your NexNet profile. Showcase your interests, achievements, and connect with like-minded individuals. Personalize your profile, share updates, and be a part of the vibrant NexNet community.">
+    <meta name="keywords" content="NexNet, Profile, User">
+    <meta name="author" content="Marius Bjeglerud">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-sm-auto bg-light sticky-top">
+                <nav>
+                    <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top nav-menu">
+                        <i class="fs-1 letter-n">N</i>
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                            <li class="nav-item">
+                                <a href="../feed/" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Home" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi-house fs-1"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Profile" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-person-circle fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-gear fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Log Out" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-box-arrow-left fs-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <section class="col-sm p-3 min-vh-100 container">
+                <div class="row center-content">
+                    <div class="col-md-8 col-sm-12 offset-md-2 row mt-5 bg-primary rounded justify-content-center  mx-auto">
+                        <div class="col-md-5 mt-5">
+                            <svg class="profile-picture" xmlns="http://www.w3.org/2000/svg" width="240" height="240" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                              </svg>
+                        </div>
+                        <div class="col-md-4">
+                            <h1 class="fs-2 text-purple mt-5">Marius Bjeglerud</h1>
+                            <div class="row flex-md-row flex-column-reverse">
+                                <ul class="col-md-12 col-4">
+                                    <li class="fw-bold">Posts</li>
+                                    <li>1</li>
+                                </ul>
+                                <ul class="col-md-12 col-lg-4">
+                                    <li class="fw-bold">Followers</li>
+                                    <li>12</li>
+                                </ul>
+                                <ul class="col-md-12 col-lg-4">
+                                    <li class="fw-bold">Following</li>
+                                    <li>285</li>
+                                </ul>
+                            </div>
+                            <p class="mt-3">This is a short description</p>
+                        </div>                                               
+                        <div class="col-md-11 mt-5 mb-5">
+                            <button class="col-12 btn btn-primary fw-bold fs-5">Follow</button>
+                            <button class="col-12 mt-3 btn btn-sec fw-bold fs-5">Add as Friend</button>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row center-content">
+                    <div class="col-md-8 col-sm-12 offset-md-2 row bg-primary rounded justify-content-center mt-4  mx-auto">
+                        <div class=" container rounded mt-4 row">
+                            <i class="bi bi-person-circle col-md-1 fs-1 mt-2"></i>
+                            <div class="col-md-11 row align-items-start py-2 px-2">
+                                <div>
+                                    <h2 class="fs-4 mb-0 text-purple">Marius Bjeglerud</h2>
+                                    <p class="mt-0 fs-6 text-purple">24d</p>
+                                </div>
+                                <p class="text-primary">Hello World!
+                                </p>
+                                <p class="mt-2 text-primary">#HelloWorld</p>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                    <p class="my-0 mx-1 text-purple">5</p>
+                                    <i class="bi bi-chat text-primary"></i>
+                                    <p class="my-0 mx-1 text-purple">2</p>
+                                </div>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer  class="footer d-flex justify-content-center align-items-center bg-light">
+                <p>© 2024 NexNet</p>
+            </footer>
+            </div>
+        </div>
+    </div>
+    <script src="../src/js/sidebar.js"></script>
+</body>
+</html>

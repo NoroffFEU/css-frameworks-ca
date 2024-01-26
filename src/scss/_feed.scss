@@ -1,0 +1,9 @@
+@import "variables";
+
+
+@media (min-width: 1250px) {
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

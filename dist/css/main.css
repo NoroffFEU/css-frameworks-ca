@@ -1,0 +1,153 @@
+.nav-link {
+  color: #333333;
+}
+.nav-link:hover {
+  color: #AF7AC5;
+}
+.nav-link:active {
+  color: #AF7AC5;
+}
+.nav-link:after {
+  color: #AF7AC5;
+}
+
+.tooltip-inner {
+  background-color: #AF7AC5;
+}
+
+.letter-n {
+  color: #AF7AC5;
+}
+
+.bg-primary {
+  background-color: #E6E6FA !important;
+}
+
+.text-primary {
+  color: #333333 !important;
+}
+
+.text-purple {
+  color: #AF7AC5 !important;
+}
+
+.btn-primary {
+  background-color: #AF7AC5;
+  border-color: #AF7AC5;
+  color: #333333;
+}
+.btn-primary:hover {
+  background-color: #6C3483;
+  border-color: #6C3483;
+  color: #ffffff;
+}
+
+.btn-sec {
+  background-color: #6C3483;
+  border-color: #6C3483;
+  color: #ffffff;
+}
+.btn-sec:hover {
+  background-color: #AF7AC5;
+  border-color: #AF7AC5;
+  color: #333333;
+}
+
+.form-control {
+  border-color: #333333;
+  background-color: #E6E6FA;
+}
+.form-control:focus {
+  border-color: #333333;
+  box-shadow: 0 0 0 0.25rem #AF7AC5;
+  background-color: #E6E6FA;
+}
+
+.btn-3 {
+  background-color: #6C3483;
+  color: #ffffff;
+}
+.btn-3:hover {
+  background-color: #AF7AC5;
+  color: #333333;
+}
+
+.btn-4 {
+  background-color: #E6E6FA;
+  color: #333333;
+}
+.btn-4:active {
+  background-color: #E6E6FA;
+}
+
+.profile-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-outline-secondary {
+  background-color: #AF7AC5;
+  color: #fff;
+  border-color: #AF7AC5;
+}
+.btn-outline-secondary:focus {
+  background-color: #AF7AC5;
+  color: #fff;
+  border-color: #AF7AC5;
+}
+
+li {
+  list-style-type: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  height: 30vh;
+  flex-shrink: 0;
+}
+
+.custom-mt {
+  margin-top: 20vh;
+}
+
+.container.auth-main {
+  text-align: center;
+}
+.container.auth-main h1 {
+  color: #AF7AC5;
+  font-weight: 700;
+  font-size: 36px;
+}
+.container.auth-main p {
+  color: #333333;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.card {
+  background-color: #E6E6FA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*# sourceMappingURL=main.css.map */

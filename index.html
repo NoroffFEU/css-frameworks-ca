@@ -88,16 +88,17 @@
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input type="email" name="EmailAddress" required minlength="8"
-                                            class="form-control" id="registerEmail" placeholder="name@example.com">
+                                            pattern="^[\w\-.]+@(stud\.)?noroff\.no$" class="form-control"
+                                            id="registerEmail" placeholder="name@example.com">
                                         <label for="registerEmail">Email address</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" name="password" required min="8" class="form-control"
-                                            id="registerPassword" placeholder="Password">
+                                        <input type="password" name="password" required minlength="8"
+                                            class="form-control" id="registerPassword" placeholder="Password">
                                         <label for="registerPassword">Password</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" name="confirmPassword" required min="8"
+                                        <input type="password" name="confirmPassword" required minlength="8"
                                             class="form-control" id="confirmPassword" placeholder="Password">
                                         <label for="confirmPassword">Confirm password</label>
                                     </div>

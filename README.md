@@ -2,8 +2,7 @@
 
 `CrochetME` is a responsive web application which goal is to keep in contact lovers of handmade crochet.
 
-[Figma design]
-
+![figma](https://github.com/FP22FD/css-frameworks-ca/assets/112474910/f04e6456-9af3-435d-a9a4-f6fbad42f1e8)
 - [Brief](css-frameworks-brief.pdf)
 - [Criteria](css-frameworks-criteria.pdf)
 

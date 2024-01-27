@@ -24349,17 +24349,20 @@ body {
   background-position: 100% 80%;
 }
 
+.nav-link {
+  color: black;
+}
 @media (min-width: 576px) {
   .nav-link {
-    color: rgb(0, 0, 0);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
   }
 }
-@media (min-width: 576px) and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .nav-link {
     font-size: 20px;
   }
 }
+
 .nav-link:hover {
   color: rgb(37, 37, 37);
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
@@ -24417,7 +24420,7 @@ body {
 }
 
 @media (max-width: 500px) {
-  .sort-small {
+  .text-small {
     font-size: 15px;
   }
 }
@@ -24425,6 +24428,15 @@ body {
 @media (max-width: 767px) {
   .score-text {
     font-size: 13px;
+  }
+}
+
+.form-group {
+  font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+  .form-group {
+    font-size: 1rem;
   }
 }
 

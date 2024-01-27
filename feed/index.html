@@ -12,47 +12,47 @@
 <body class="m-0 ">
 
     <header class="col-12">
-      <nav class="navbar navbar-expand-md navbar-light header-image">
-        <div class="container align-items-center col-11 ">
-          <h1 class=" header-text text-center col-6 col-sm-3 col-md-5">ArtConnect</h1>
-          <a class="navbar-brand text-center col-2 col-md-1 " href="../feed/index.html">
-            <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid  ">
-          </a>
-  
-          <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-          </button>
-  
-          <div class="collapse navbar-collapse justify-content-md-start text-nowrap z-1" id="navbarNav">
-            <ul class="navbar-card ms-auto navbar-nav text-start ">
-              <li class="nav-item  z-1">
-                <a class="nav-link fs-md-5" href="../feed/index.html">Feed</a>
-              </li>
-              <li class="nav-item z-1">
-                <a class="nav-link  fs-md-3" href="#">My Friends</a>
-              </li>
-              <li class="nav-item z-1">
-                <a class="nav-link" href="#">Messages</a>
-              </li>
-              <li class="nav-item z-1">
-                <a class="nav-link" href="/profile/index.html">My Profile</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+        <nav class="navbar navbar-expand-md navbar-light header-image">
+            <div class="container align-items-center col-11 ">
+                <h1 class=" header-text text-center col-6 col-sm-3 col-md-5">ArtConnect</h1>
+                <a class="navbar-brand text-center col-2 col-md-1 " href="../feed/index.html">
+                    <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid  ">
+                </a>
+
+                <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-md-start text-nowrap z-1" id="navbarNav">
+                    <ul class="navbar-card ms-auto navbar-nav text-start ">
+                        <li class="nav-item  z-1">
+                            <a class="nav-link fs-md-5" href="../feed/index.html">Feed</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="/profile/index.html">My Profile</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Messages</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link  fs-md-3" href="../index.html">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <div class="container mt-5">
         <div class="row justify-content-evenly">
-            <div class="col-10 col-sm-6 d-flex mb-2">
+            <div class="col-8 col-sm-6 d-flex mb-2">
                 <!-- Search Bar -->
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for posts..."
+                <div class="input-group ">
+                    <input type="text" class="form-control form-group" placeholder="Search for posts..."
                         aria-label="Search for posts" aria-describedby="button-search">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-search">Search</button>
+                        <button class="btn btn-outline-success z-0" type="button" id="button-search">Search</button>
                     </div>
                 </div>
                 <!-- End Search Bar -->
@@ -60,7 +60,7 @@
 
             <!-- Sort Options -->
             <div class="col-10 col-sm-5 ">
-                <div class="form-group d-flex align-items-center">
+                <div class="d-flex align-items-center">
                     <label for="sortOptions" class="col-3 col-sm-4 col-md-3 col-lg-2 sort-small">Sort By:</label>
                     <select class="form-control w-50 w-sm-25" id="sortOptions">
                         <option>Newest</option>
@@ -72,9 +72,9 @@
             <!-- End Sort Options -->
         </div>
 
-        <div class="container mt-5">
+        <div class="container mt-5 justify-content-center m-auto col-12 col-lg-8">
             <div class="row">
-                <div class="col-10">
+                <div class=" m-auto ">
                     <!-- Post 1 -->
                     <div class="card-body mb-3">
                         <div class="row g-0">
@@ -188,10 +188,10 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- new post -->
                 <div class="container mt-5">
                     <div class="row">
-                        <div class="col-10">
+                        <div class="">
 
                             <div class="card-body mb-3">
                                 <div class="row g-0">
@@ -308,63 +308,63 @@
                             </div>
                         </div>
                     </div>
-                    <!-- New Post Form -->
-                    <div class="container col-8">
-                        <div class="card my-3  me-4">
-                            <div class="card-body">
-                                <h5 class="card-title">Create a New Post</h5>
-                                <form>
-
-                                    <div class="form-group">
-                                        <label for="postContent">Post Content:</label>
-                                        <div class="row g-0 d-flex">
-                                            <div class="d-flex col-9">
-                                                <div class="col-3">
-                                                    <img src="../image/userIMG1.JPG" class="card-img"
-                                                        alt="a drawn monkey in front of a colorful background">
-                                                </div>
-
-                                                <textarea class="form-control col-8" id="postContent" rows="3"
-                                                    placeholder="What's on your mind?"></textarea>
-                                            </div>
-                                            <div class="form-group ms-2 mt-2">
-                                                <label for="postImage">Upload Image (optional):</label>
-                                                <input type="file" class="form-control-file col-6" id="postImage">
-                                            </div>
-                                            <div class="d-flex">
-                                                <button type="submit"
-                                                    class="btn btn-primary col-4 col-md-2">Post</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="m-0">
-        <div
-            class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
-            <p class="col-md-4 mb-0 text-muted text-center text-md-start">© 2024 Art-company-inc</p>
 
-            <div class=" col-2 text-center mb-3 mb-md-0">
-                <img src="../image/logo-art.PNG" alt="art Logo" class="img-small col-5 ">
-            </div>
+    <!-- New Post Form -->
+    <div class="container col-12 col-sm-10 ">
+        <div class="card my-3  ">
+            <div class="card-body">
+                <h5 class="card-title">Create a New Post</h5>
+                <form>
 
-            <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
-                <li class="nav-item"><a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
-                </li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">My Friends</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Messages</a></li>
-                <li class="nav-item"><a href="/profile/index.html" class="nav-link px-2 text-muted">My
-                        Profile</a></li>
-            </ul>
+                        <label for="postContent">Post Content:</label>
+                        <div class="row g-0 d-flex">
+                            <div class="d-flex col-9">
+                                <div class="col-3">
+                                    <img src="../image/userIMG1.JPG" class="card-img"
+                                        alt="a drawn monkey in front of a colorful background">
+                                </div>
+
+                                <textarea class="form-control col-8" id="postContent" rows="3"
+                                    placeholder="What's on your mind?"></textarea>
+                            </div>
+                            <div class="form-group ms-2 mt-2">
+                                <label for="postImage">Upload Image:</label>
+                                <input type="file" class="form-control-file col-8" id="postImage">
+                            </div>
+                            <div class="d-flex">
+                                <button type="submit" class="btn btn-primary col-4 col-md-2">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+          
         </div>
+        </div>
+        </div>
+                <footer class="m-0">
+                    <div
+                        class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
+                        <p class="col-md-4 mb-0 text-muted text-center text-md-start">© 2024 Art-company-inc</p>
 
-    </footer>
+                        <div class=" col-2 text-center mb-3 mb-md-0">
+                            <img src="../image/logo-art.PNG" alt="art Logo" class="img-small col-5 ">
+                        </div>
+
+                        <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
+                            <li class="nav-item"><a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">My Friends</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Messages</a></li>
+                            <li class="nav-item"><a href="/profile/index.html" class="nav-link px-2 text-muted">My
+                                    Profile</a></li>
+                        </ul>
+                    </div>
+
+                </footer>
 
 </body>
+
 </html>

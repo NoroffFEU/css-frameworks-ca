@@ -1,22 +1,12 @@
 /* Error: Undefined mixin.
  *    ,
- * 38 | / @include media-breakpoint-up(sm) {
- * 39 | |   
- * 40 | | 
- * 41 | | .nav-link {
- * 42 | |     
+ * 42 | /         @include media-breakpoint-up(sm) {
  * 43 | | 
- * 44 | |     color: rgb(0, 0, 0);
- * 45 | |     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
- * 46 | |     
- * 47 | |     @include media-breakpoint-up(xl) {
- * 48 | |     
- * 49 | |         font-size: 20px;
- * 50 | | }
- * 51 | | }
- * 52 | \ }
+ * 44 | |         
+ * 45 | |         text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+ * 46 | \         }
  *    '
- *   src\scss\custom.scss 38:1  root stylesheet */
+ *   src\scss\custom.scss 42:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -26,5 +16,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 38 \2502  \250c  @include media-breakpoint-up(sm) {\a 39 \2502  \2502    \a 40 \2502  \2502  \a 41 \2502  \2502  .nav-link {\a 42 \2502  \2502      \a 43 \2502  \2502  \a 44 \2502  \2502      color: rgb(0, 0, 0);\a 45 \2502  \2502      text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);\a 46 \2502  \2502      \a 47 \2502  \2502      @include media-breakpoint-up(xl) {\a 48 \2502  \2502      \a 49 \2502  \2502          font-size: 20px;\a 50 \2502  \2502  }\a 51 \2502  \2502  }\a 52 \2502  \2514  }\a    \2575 \a   src\\scss\\custom.scss 38:1  root stylesheet";
+  content: "Error: Undefined mixin.\a    \2577 \a 42 \2502  \250c          @include media-breakpoint-up(sm) {\a 43 \2502  \2502  \a 44 \2502  \2502          \a 45 \2502  \2502          text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);\a 46 \2502  \2514          }\a    \2575 \a   src\\scss\\custom.scss 42:9  root stylesheet";
 }

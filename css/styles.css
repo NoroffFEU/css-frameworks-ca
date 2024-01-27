@@ -24349,28 +24349,20 @@ body {
   background-position: 100% 80%;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 576px) {
   .nav-link {
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
   }
 }
-@media (min-width: 1300px) {
+@media (min-width: 576px) and (min-width: 1200px) {
   .nav-link {
     font-size: 20px;
   }
 }
-
 .nav-link:hover {
   color: rgb(37, 37, 37);
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
-}
-
-@media (max-width: 576px) {
-  .navbar-toggler-icon {
-    width: 1em;
-    height: 1em;
-  }
 }
 
 @media (max-width: 767px) {
@@ -24410,6 +24402,20 @@ body {
   width: 50%;
 }
 
+@media (max-width: 767px) {
+  .profile-btn {
+    font-size: 11px;
+    padding: 3px;
+  }
+}
+
+.profile-hero {
+  background-image: url(../../image/powderIMG_0181.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 60%;
+}
+
 @media (max-width: 500px) {
   .sort-small {
     font-size: 15px;
@@ -24418,7 +24424,7 @@ body {
 
 @media (max-width: 767px) {
   .score-text {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
 

@@ -1,4 +1,12 @@
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
 body {
     margin: 0;
@@ -27,17 +35,21 @@ body {
   
 }
 
+@include media-breakpoint-up(sm) {
+  
+
 .nav-link {
-@media (max-width: 767px) {
+    
+
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
     
-}
-    @media (min-width: 1300px){
+    @include media-breakpoint-up(xl) {
+    
         font-size: 20px;
-    }
 }
-
+}
+}
 
 
 .nav-link:hover {
@@ -45,13 +57,6 @@ body {
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
 }
 
-
-.navbar-toggler-icon {
-    @media (max-width:576px) {
-        width: 1em;
-        height: 1em;
-    }
-}
 
 .navbar-card {
     @media (max-width: 767px) {
@@ -85,6 +90,20 @@ body {
     width: 50%;
 }
 
+.profile-btn{
+    @media (max-width:767px){
+    font-size: 11px;
+    padding: 3px;
+}
+}
+
+.profile-hero{
+    background-image: url(../../image/powderIMG_0181.JPG);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: 100% 60%;
+
+}
 .sort-small {
     @media (max-width:500px) {
         font-size: 15px;
@@ -97,6 +116,6 @@ body {
 
 .score-text {
     @media (max-width: 767px) {
-    font-size: 11px;
+    font-size: 13px;
     }
 }

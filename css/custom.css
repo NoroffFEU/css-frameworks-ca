@@ -1,98 +1,30 @@
-body {
-  margin: 0;
-  font-family: "Arial", sans-serif;
-}
+/* Error: Undefined mixin.
+ *    ,
+ * 38 | / @include media-breakpoint-up(sm) {
+ * 39 | |   
+ * 40 | | 
+ * 41 | | .nav-link {
+ * 42 | |     
+ * 43 | | 
+ * 44 | |     color: rgb(0, 0, 0);
+ * 45 | |     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+ * 46 | |     
+ * 47 | |     @include media-breakpoint-up(xl) {
+ * 48 | |     
+ * 49 | |         font-size: 20px;
+ * 50 | | }
+ * 51 | | }
+ * 52 | \ }
+ *    '
+ *   src\scss\custom.scss 38:1  root stylesheet */
 
-.header-text {
-  color: rgb(0, 0, 0);
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
-  font-family: "Georgia", serif;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 38 \2502  \250c  @include media-breakpoint-up(sm) {\a 39 \2502  \2502    \a 40 \2502  \2502  \a 41 \2502  \2502  .nav-link {\a 42 \2502  \2502      \a 43 \2502  \2502  \a 44 \2502  \2502      color: rgb(0, 0, 0);\a 45 \2502  \2502      text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);\a 46 \2502  \2502      \a 47 \2502  \2502      @include media-breakpoint-up(xl) {\a 48 \2502  \2502      \a 49 \2502  \2502          font-size: 20px;\a 50 \2502  \2502  }\a 51 \2502  \2502  }\a 52 \2502  \2514  }\a    \2575 \a   src\\scss\\custom.scss 38:1  root stylesheet";
 }
-@media (max-width: 320px) {
-  .header-text {
-    font-size: 22px;
-  }
-}
-
-.header-image {
-  background: url("../../image/HeaderImg2.JPG");
-  height: 10%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 100% 80%;
-}
-
-@media (max-width: 767px) {
-  .nav-link {
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
-  }
-}
-@media (min-width: 1300px) {
-  .nav-link {
-    font-size: 20px;
-  }
-}
-
-.nav-link:hover {
-  color: rgb(37, 37, 37);
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
-}
-
-@media (max-width: 576px) {
-  .navbar-toggler-icon {
-    width: 1em;
-    height: 1em;
-  }
-}
-
-@media (max-width: 767px) {
-  .navbar-card {
-    position: absolute;
-    top: 100%;
-    left: 75%;
-    background: url("../../image/nav-bg-1.JPG");
-    background-position: 50% 100%;
-    background-size: 200%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    width: 20%;
-    padding: 0px 10px;
-  }
-}
-@media (max-width: 767px) and (max-width: 540px) {
-  .navbar-card {
-    font-size: 16px;
-    left: 70%;
-    width: 25%;
-  }
-}
-@media (max-width: 767px) and (max-width: 380px) {
-  .navbar-card {
-    font-size: 14px;
-  }
-}
-@media (max-width: 380px) {
-  .navbar-card {
-    font-size: 14px;
-    width: 25%;
-  }
-}
-
-.profile-img {
-  width: 50%;
-}
-
-@media (max-width: 500px) {
-  .sort-small {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 767px) {
-  .score-text {
-    font-size: 11px;
-  }
-}
-
-/*# sourceMappingURL=custom.css.map */

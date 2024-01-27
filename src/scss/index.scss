@@ -25,5 +25,13 @@
   max-width: 50px;
 }
 
+i {
+    font-size: 1.5rem;
+}
+
+.fa-user-plus {
+    font-size: 1rem;
+}
+
 //Bootstrap main file
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

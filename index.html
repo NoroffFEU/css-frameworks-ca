@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>Log in</title>
 </head>
 <body class="bg-warning">
     <main class="d-flex min-vh-100 justify-content-center flex-column">
@@ -12,8 +13,8 @@
         <div class="d-flex flex-column align-self-center bg-danger p-5 rounded-5">
             <h1>Login</h1>
             <form action="includes/login.inc.php" method="post">
-                <input type="text" name="uid" class="form-control mt-3" placeholder="Username/Email...">
-                <input type="password" name="pwd" class="form-control mt-3" placeholder="Password...">
+                <input type="text" name="uid" class="form-control mt-3" placeholder="Username/Email..." required>
+                <input type="password" name="pwd" class="form-control mt-3" placeholder="Password..." minlength="8" required>
                 <p class="mt-1">Trouble logging in?
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <a href="/html/feed.html" class="btn btn-primary">Login</a>
@@ -21,19 +22,6 @@
             </form>
             <button type="button" class="btn btn-link">Don't have an account? Sign up!</button>
         </div>
-        <!--<div class="container">
-            <h1>Sign Up</h1>
-            <form action="includes/signup.inc.php" method="post">
-                <input type="text" name="name" class="form-control" placeholder="Full name...">
-                <input type="text" name="email" class="form-control" placeholder="Email...">
-                <input type="text" name="uid" class="form-control" placeholder="Username...">
-                <input type="password" name="pwd" class="form-control" placeholder="Password...">
-                <input type="password" name="pwdrepeat" class="form-control" placeholder="Repeat password...">
-                <p>*Password must be at least 8 characters long.</p>
-                <button type="button" class="btn btn-primary">Sign Up</button>
-            </form>
-            <button type="button" class="btn btn-link">Already have an account? Login!</button>
-        </div>-->
     </main>
 </body>
 </html>

@@ -5,30 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/css/index.css">
-    <title>ZenZone</title>
+    <title>ZenZone | Register</title>
 </head>
 
 <body class="bg-dark">
     <div class="container d-flex vh-100">
         <div class="row flex-grow-1 my-auto">
-            <div class="col d-flex align-items-center justify-content-center">
-                <form action="/profile/index.html" method="post" class="auth-form col-4">
+            <div class="col d-flex align-items-center justify-content-center gap-3 mb-3">
+                <a href="../index.html" class="text-decoration-none">
+                    <h1 class="display-2 text-center text-secondary">ZenZone</h1>
+                </a>
+                <i class="bi-water text-light"></i>
+            </div>
+            <div class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                <form action="/profile/index.html" method="post" class="auth-form">
                     <h2>Join ZenZone</h2>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="username" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="username">
+                            <input type="text" class="form-control" placeholder="First Name" aria-label="First-name"
+                                required autofocus="1">
                         </div>
                         <div class="col mb-3">
-                            <label for="username" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="username">
+                            <input type="text" class="form-control" placeholder="Last Name" aria-label="last-name"
+                                required>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 mb-3">
-                        <label for="password" class="form-label">New Password</label>
-                        <input type="password" class="form-control" id="password">
+                    <div class="col mb-3">
+                        <input type="text" class="form-control" placeholder="Mobile number or email"
+                            aria-label="Mobile number or email" required>
                     </div>
-                    <button type="submit" class="col-12 btn btn-primary mb-1">Sign Up</button>
+                    <div class="col mb-3">
+                        <input type="password" pattern=".{8,}" required
+                            title="Password must have a minimum length of 8 characters!" class="form-control"
+                            placeholder="New password" aria-label="New password" id="newpassword">
+                        <div id="newpassword" class="form-text">Password must have a minimum length of 8 characters.
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <label for="birthday" class="mb-1">Birthday</label>
+                        <div class="col d-flex gap-3">
+                            <select class="col form-select" aria-label="Month">
+                                <option selected>Jan</option>
+                                <option value="1">Feb</option>
+                                <option value="2">Mar</option>
+                                <option value="3">Apr</option>
+                                <option value="4">May</option>
+                                <option value="5">Jun</option>
+                                <option value="6">Jul</option>
+                                <option value="7">Aug</option>
+                                <option value="8">Sep</option>
+                                <option value="9">Oct</option>
+                                <option value="10">Nov</option>
+                                <option value="11">Dec</option>
+                            </select>
+                            <select class="col form-select" aria-label="Date">
+                                <option selected>1</option>
+                                <option value="1">2</option>
+                                <option value="2">etc...</option>
+
+                            </select>
+                            <select class="col form-select" aria-label="Year">
+                                <option selected>2024</option>
+                                <option value="1">2023</option>
+                                <option value="2">2023</option>
+                                <option value="3">2021</option>
+                                <option value="4">2020</option>
+                                <option value="5">etc...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label for="male" class="mb-1">Gender</label>
+                    <div class="col d-flex mb-3">
+                        <div class="col form-check">
+                            <input class="form-check-input" type="radio" name="male" id="male">
+                            <label class="form-check-label" for="male">
+                                Male
+                            </label>
+                        </div>
+                        <div class="col form-check">
+                            <input class="form-check-input" type="radio" name="female" id="female" checked>
+                            <label class="form-check-label" for="female">
+                                Female
+                            </label>
+                        </div>
+                        <div class="col form-check">
+                            <input class="form-check-input" type="radio" name="custom" id="custom" checked>
+                            <label class="form-check-label" for="custom">
+                                Custom
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="col-12 btn btn-secondary mb-1">Sign Up</button>
                 </form>
             </div>
         </div>

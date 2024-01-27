@@ -11,22 +11,24 @@
 <body class="bg-dark">
     <div class="container d-flex vh-100">
         <div class="row flex-grow-1 my-auto">
-            <div class="col d-flex align-items-center justify-content-center gap-3">
-                <h1 class="text-center text-secondary">ZenZone</h1>
-                <i class="bi-chat-square-heart"></i>
+            <div class="col d-flex align-items-center justify-content-center gap-3 mb-3">
+                <h1 class="display-1 text-center text-secondary">ZenZone</h1>
+                <i class="bi-water text-light"></i>
             </div>
-            <div class="col d-flex align-items-center justify-content-center">
-                <form action="/profile/index.html" method="post" class="auth-form col-8">
+            <div class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                <form action="/profile/index.html" method="post" class="auth-form col-12 col-md-8 col-lg-6">
                     <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username">
+                        <input type="text" placeholder="Username" class="form-control" aria-label="Username"
+                            autofocus="1">
                     </div>
                     <div class="flex-shrink-0 mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password">
+                        <input type="password" placeholder="Password" class="form-control" aria-label="Password"
+                            pattern=".{8,}" required title="Password must have a minimum length of 8 characters!">
                     </div>
                     <button type="submit" class="col-12 btn btn-primary mb-1">Log In</button>
                     <hr>
+                </form>
+                <form action="/registration/index.html" class="auth-form col-12 col-md-8 col-lg-6">
                     <p class="m-0">Don't have an account?</p>
                     <button formaction="/registration/index.html" type="submit"
                         class="col-12 btn btn-secondary mt-1">Create new account</button>

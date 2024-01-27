@@ -7,14 +7,25 @@ $grid-breakpoints: (
     xxl: 1400px
 );
 
+$shaddow-bright: 2px 2px 3px rgba(255, 255, 255, 0.5);
+$shaddow-dark: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+
+
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
 
+
+footer{
+    background-color: rgb(204, 202, 202);
+}
+
 .header-text {
     color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    text-shadow: $shaddow-bright;
 
     font-family: 'Georgia', serif;
 
@@ -42,7 +53,7 @@ body {
         @include media-breakpoint-up(sm) {
 
         
-        text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+        text-shadow: $shaddow-bright;
         }
         @include media-breakpoint-up(xl) {
 
@@ -54,7 +65,7 @@ body {
 
 .nav-link:hover {
     color: rgb(37, 37, 37);
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    text-shadow: $shaddow-bright;
 }
 
 
@@ -134,4 +145,43 @@ body {
     @include media-breakpoint-up(md) {
         font-size: 1rem;
     }
+}
+
+
+// login
+
+.login-img {
+    @include media-breakpoint-up(xs) {
+    background-image: url(../../image/nav-bg-1.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 10%;
+    }
+    @include media-breakpoint-up(lg){
+    
+      background-image: none;
+
+    }
+}
+
+.login-img2{
+    display: none;
+    background-image: url(../../image/nav-bg-1.JPG);
+    background-size:230%;
+    background-repeat: no-repeat;
+    background-position: 100% 60%;
+
+    
+
+    p, h2{
+        color: rgb(255, 255, 255);
+        text-shadow: $shaddow-dark;
+       
+    }
+ 
+    @include media-breakpoint-up(lg){
+    
+        display: block;
+  
+      }
 }

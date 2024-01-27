@@ -1,12 +1,12 @@
 /* Error: Undefined mixin.
  *    ,
- * 42 | /         @include media-breakpoint-up(sm) {
- * 43 | | 
- * 44 | |         
- * 45 | |         text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
- * 46 | \         }
+ * 53 | /         @include media-breakpoint-up(sm) {
+ * 54 | | 
+ * 55 | |         
+ * 56 | |         text-shadow: $shaddow-bright;
+ * 57 | \         }
  *    '
- *   src\scss\custom.scss 42:9  root stylesheet */
+ *   src\scss\custom.scss 53:9  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -16,5 +16,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 42 \2502  \250c          @include media-breakpoint-up(sm) {\a 43 \2502  \2502  \a 44 \2502  \2502          \a 45 \2502  \2502          text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);\a 46 \2502  \2514          }\a    \2575 \a   src\\scss\\custom.scss 42:9  root stylesheet";
+  content: "Error: Undefined mixin.\a    \2577 \a 53 \2502  \250c          @include media-breakpoint-up(sm) {\a 54 \2502  \2502  \a 55 \2502  \2502          \a 56 \2502  \2502          text-shadow: $shaddow-bright;\a 57 \2502  \2514          }\a    \2575 \a   src\\scss\\custom.scss 53:9  root stylesheet";
 }

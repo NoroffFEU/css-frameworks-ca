@@ -7,8 +7,10 @@ body {
 
 .header-text {
     color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+
     font-family: 'Georgia', serif;
+    
 
     @media (max-width:320px) {
         font-size: 22px;
@@ -21,23 +23,25 @@ body {
     height: 10%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 90% 0%;
-
+    background-position: 100% 80%;
+  
 }
 
 .nav-link {
-    color: rgb(35, 34, 34);
+@media (max-width: 767px) {
+    color: rgb(0, 0, 0);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
-    @media (min-width: 1500px){
+    
+}
+    @media (min-width: 1300px){
         font-size: 20px;
-        text-shadow: none;
-        color: black;
-
     }
 }
 
+
+
 .nav-link:hover {
-    color: black;
+    color: rgb(37, 37, 37);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
 }
 
@@ -50,15 +54,13 @@ body {
 }
 
 .navbar-card {
-
-
     @media (max-width: 767px) {
         position: absolute;
         top: 100%;
         left: 75%;
-        background: url("../../image/HeaderImg2.JPG");
-        background-size: cover;
-        background-position: 50% 10%;
+        background: url("../../image/nav-bg-1.JPG");
+        background-position: 50% 100%;
+        background-size:200%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 8px;
         width: 20%;

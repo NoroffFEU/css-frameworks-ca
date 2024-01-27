@@ -1,4 +1,14 @@
-$primary: rgb(241, 214, 111);
+$blue:    #142664;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #d63384;
+$red:     #dc3545;
+$orange:  #F0D6BD;
+$yellow:  #F1D66F;
+$green:   #198754;
+$teal:    #20c997;
+$cyan:    #0dcaf0;
 
+$info:      $orange;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -6,24 +6,23 @@ function route() {
   const path = window.location.pathname;
   console.log(path);
 
+  // document.getElementById("createNewAccount").addEventListener("click", function () );
+
   switch (path) {
     case "/":
     case "/index.html":
-      document.getElementById("createNewAccount").addEventListener("click", function () {
-        try {
-          registerFormHandler();
-          loginFormHandler();
-        } catch (error) {
-          console.log(error);
-        }
-      });
+      registerFormHandler();
+      loginFormHandler();
       break;
     case "/profile/":
       logoutHandler();
+      // add posts handler with user id. where user can add, edit, delete posts
       break;
     case "/feed/":
       logoutHandler();
+      // add posts handler
       break;
+    default:
   }
 }
 

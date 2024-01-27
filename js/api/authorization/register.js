@@ -1,5 +1,6 @@
 const baseUrl = "https://api.noroff.dev/api/v1/";
 export const registerUrl = `${baseUrl}social/auth/register`;
+// import { registerUrl } from "../../constants/api";
 
 export async function registerUser(userDetails) {
   const options = {

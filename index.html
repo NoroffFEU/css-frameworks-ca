@@ -38,49 +38,51 @@
         </div> -->
 
           <!-- 2nd column -->
-           <!-- Login -->
+          <!-- Login -->
           <div class="mx-auto">
             <h1 class="login-h1 mx-auto bg-dark baloo text-danger text-center fw-bold px-2">
               Vib`n<span class="text-warning">!</span>
             </h1>
             <form class="auth mx-auto align-items-center d-flex flex-column" id="loginForm" action="/profile/">
-              <div id="loginMessage"></div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"></label>
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  class="form-control form-input bg-dark border-2 border-primary"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                  placeholder="user@stud.noroff.no"
-                  pattern=".+@(noroff\.no|stud\.noroff\.no)$"
-                />
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"></label>
-                <input
-                  required
-                  minlength="8"
-                  type="password"
-                  name="password"
-                  class="form-control form-input bg-dark border-2 border-primary"
-                  id="exampleInputPassword1"
-                  placeholder="Password"
-                />
-              </div>
-              <button type="submit" class="btn btn-primary mb-3 mt-3 login-form-button">Login</button>
-              <div class="mt-3 mb-5">
-                <a
-                  class="text-decoration-none bg-dark p-3"
-                  href="#"
-                  id="createNewAccount"
-                  data-bs-toggle="modal"
-                  data-bs-target="#registerModal"
-                  >Create new account</a
-                >
-              </div>
+              <fieldset>
+                <div id="loginMessage"></div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"></label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    class="form-control form-input bg-dark border-2 border-primary"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="user@stud.noroff.no"
+                    pattern=".+@(noroff\.no|stud\.noroff\.no)$"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"></label>
+                  <input
+                    required
+                    minlength="8"
+                    type="password"
+                    name="password"
+                    class="form-control form-input bg-dark border-2 border-primary"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary mb-3 mt-3 login-form-button">Login</button>
+                <div class="mt-3 mb-5">
+                  <a
+                    class="text-decoration-none bg-dark p-3"
+                    href="#"
+                    id="createNewAccount"
+                    data-bs-toggle="modal"
+                    data-bs-target="#registerModal"
+                    >Create new account</a
+                  >
+                </div>
+              </fieldset>
             </form>
           </div>
 
@@ -106,48 +108,46 @@
         <div class="modal-content bg-dark">
           <div class="modal-header">
             <h1 class="modal-title fs-3 text-white baloo" id="registerModalLabel">Sign Up</h1>
-
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="message" class="ps-3 pe-3 pt-3"></div>
+          <div class="modal-body">
+            <form class="registration-form" id="registerForm">
               <fieldset>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div id="message" class="ps-3 pe-3 pt-3"></div>
-                  <div class="modal-body">
-                    <form class="registration-form" id="registerForm">
-                      <div class="mb-3">
-                        <input
-                          required
-                          type="name"
-                          name="name"
-                          class="form-control form-input"
-                          id="name"
-                          aria-describedby="nameHelp"
-                          placeholder="Name"
-                        />
-                      </div>
+                <div class="mb-3">
+                  <input
+                    required
+                    type="name"
+                    name="name"
+                    class="form-control form-input"
+                    id="name"
+                    aria-describedby="nameHelp"
+                    placeholder="Name"
+                  />
+                </div>
 
-                      <div class="mb-3">
-                        <input
-                          required
-                          type="email"
-                          name="email"
-                          class="form-control form-input"
-                          id="email"
-                          aria-describedby="emailHelp"
-                          placeholder="user@stud.noroff.no"
-                        
-                        />
-                      </div>
-                      <div class="mb-3 text-white">
-                        <input
-                          required
-                          minlength="8"
-                          type="password"
-                          name="password"
-                          class="form-control form-input"
-                          id="password"
-                          placeholder="*******"
-                        />
-                      </div>
+                <div class="mb-3">
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    class="form-control form-input"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="user@stud.noroff.no"
+                  />
+                </div>
+                <div class="mb-3 text-white">
+                  <input
+                    required
+                    minlength="8"
+                    type="password"
+                    name="password"
+                    class="form-control form-input"
+                    id="password"
+                    placeholder="*******"
+                  />
+                </div>
                 <button type="submit" class="btn btn-primary mt-2 baloo fs-6">Let's Vibe!</button>
               </fieldset>
             </form>

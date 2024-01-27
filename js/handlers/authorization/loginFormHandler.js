@@ -13,22 +13,29 @@ async function loginForm(event) {
 
   const form = event.target;
   const formData = new FormData(form);
-
   const entries = formData.entries();
   const userData = Object.fromEntries(entries);
+  const fieldset = form.querySelector("fieldset");
+
+  console.log(fieldset);
 
   try {
-    const response = await loginUser(userData);
-    console.log(response);
-    if (response && response.accessToken) {
-      utils.save("token", response.accessToken);
-      // console.log(utils.get("token"));
+    fieldset.disabled = true;
+    const { accessToken, name, email } = await loginUser(userData);
+
+    if (accessToken) {
+      utils.save("token", accessToken);
+      utils.save("userName", name);
+      utils.save("email", email);
+      console.log(accessToken, name, email);
       form.reset();
-      window.location.href = "/profile";
+      window.location.href = "/feed";
+      // window.location.href = "/profile";
     }
   } catch (error) {
     console.error("Login error:", error.message);
     messageForUser("#loginMessage", "danger", error.message);
   } finally {
+    fieldset.disabled = false;
   }
 }

@@ -4,6 +4,7 @@ $dark-green: #A4B3B0;
 
 
 
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -1615,7 +1616,7 @@ $list-group-action-active-bg:       var(--#{$prefix}secondary-bg) ;
 // Image thumbnails
 
 // scss-docs-start thumbnail-variables
-$thumbnail-padding:                 .25rem ;
+$thumbnail-padding:                 0 ;
 $thumbnail-bg:                      var(--#{$prefix}body-bg) ;
 $thumbnail-border-width:            var(--#{$prefix}border-width) ;
 $thumbnail-border-color:            var(--#{$prefix}border-color) ;

@@ -1,37 +1,285 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon/water.ico" type="image/x-icon">
     <link rel="stylesheet" href="/dist/css/index.css">
     <title>ZenZone | Profile</title>
 </head>
 
-<body class="bg-dark">
-    <div class="container d-flex vh-100">
-        <div class="row flex-grow-1 my-auto">
-            <div class="col d-flex align-items-center justify-content-center">
-                <h1 class="text-center">ZenZone</h1>
-            </div>
-            <div class="col d-flex align-items-center justify-content-center">
-                <form action="/profile/index.html" method="post" class="auth-form">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" aria-describedby="passwordHelpBlock">
-                        <div id="passwordHelpBlock" class="form-text">
-                            Password must have a minimum length of 8 characters.
-                        </div>
-                    </div>
-                    <button type="submit" class="col-12 btn btn-primary mb-1">Login</button>
-                    <hr>
-                    <p class="m-0">Don't have an account?</p>
-                    <button type="submit" class="col-12 btn btn-secondary mt-1">Register</button>
+<body class="bg-light" data-bs-theme="light">
+    <nav data-bs-theme="dark" class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/feed/index.html">
+                <i class="bi-water text-white"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/feed/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            petternikolai
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4 mb-4">
+        <!-- Profile Section -->
+        <div class="row">
+            <div class="col bg-dark rounded p-3 d-flex flex-column align-items-center">
+                <img src="/images/meg.jpg" alt="Profile Image" class="custom-image-size rounded-circle">
+                <h3 class="text-white">Petter-Nikolai Kristoffersen</h3>
+                <h4 class="text-white">@petternikolai</h4>
+                <p class="text-light mb-0">Followers: <span class="fw-bold text-white">256k</span></p>
+                <p class="text-light">Following: <span class="fw-bold text-white">3</span></p>
+                <button class="col-2 btn btn-secondary text-white">Follow</button>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+        <div class="row">
+            <div class="col-8">
+                <!-- Posts Section -->
+                <div class="user-posts">
+                    <h3>Posts</h3>
+                    <!-- Dynamically list posts here -->
+                    <ul class="list-group">
+                        <li class="list-group-item p-3">
+                            <div class="col d-flex gap-2 align-items-center mb-3">
+                                <img src="/images/meg.jpg" class="feed-picture rounded-circle " alt="Profile picture">
+                                <h5 class="m-0">@petternikolai</h5>
+                                <p class="m-0 text-secondary">Jan 27</p>
+                            </div>
+                            <p>Going to see Architects in Oslo Spektrum on Jan 30th - who else is going?</p>
+                            <div class="row">
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-chat"></i></button>
+                                </div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-arrow-repeat"></i></button></div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-3">
+                            <div class="col d-flex gap-2 align-items-center mb-3">
+                                <img src="/images/meg.jpg" class="feed-picture rounded-circle " alt="Profile picture">
+                                <h5 class="m-0">@petternikolai</h5>
+                                <p class="m-0 text-secondary">Jan 26</p>
+                            </div>
+                            <p>Free Palestine! 💔🇵🇸</p>
+                            <div class="row">
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-chat"></i></button>
+                                </div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-arrow-repeat"></i></button></div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-3">
+                            <div class="col d-flex gap-2 align-items-center mb-3">
+                                <img src="/images/meg.jpg" class="feed-picture rounded-circle " alt="Profile picture">
+                                <h5 class="m-0">@petternikolai</h5>
+                                <p class="m-0 text-secondary">Jan 26</p>
+                            </div>
+                            <p>Wow! I posted a picture of myself and gained 256k followers. I must be really good
+                                looking or something 🤡</p>
+                            <div class="row">
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-chat"></i></button>
+                                </div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-arrow-repeat"></i></button></div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-3">
+                            <div class="col d-flex gap-2 align-items-center mb-3">
+                                <img src="/images/meg.jpg" class="feed-picture rounded-circle " alt="Profile picture">
+                                <h5 class="m-0">@petternikolai</h5>
+                                <p class="m-0 text-secondary">Jan 20</p>
+                            </div>
+                            <img src="/images/meg.jpg" class="w-100 rounded-1 mb-3" alt="Profile picture">
+                            <p>I added a new profile picture 🤟🏼</p>
+                            <div class="row">
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-chat"></i></button>
+                                </div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-arrow-repeat"></i></button></div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item p-3">
+                            <div class="col d-flex gap-2 align-items-center mb-3">
+                                <img src="/images/meg.jpg" class="feed-picture rounded-circle " alt="Profile picture">
+                                <h5 class="m-0">@petternikolai</h5>
+                                <p class="m-0 text-secondary">Jan 26</p>
+                            </div>
+                            <p>Just joined this page. Who else thinks it looks like it's been made by an amateur
+                                developer? LOL 😅</p>
+                            <div class="row">
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-chat"></i></button>
+                                </div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-arrow-repeat"></i></button></div>
+                                <div class="col text-center"><button class="btn"><i
+                                            class="small-icons bi-heart"></i></button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-4">
+                <!-- Following/Followers Section -->
+                <div class="following-followers text-center">
+                    <div class="following mb-2">
+                        <h3>Following</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/oliver-dipple.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@oliverdipple</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/talitha.jpeg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@talithakruger</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/nelly.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@nellymoseki</h5>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="followers">
+                        <h3>Followers</h3>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/musk.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@elonmusk</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/obama.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@barackobama</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/tor.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@torbergseng</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/marte.png" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@marteboe</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/prs.png" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@prsguitars</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/kvelertak.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@kvelertakofficial</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/whitehouse.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@thewhitehouse</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/pst.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@pst</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/oliver-dipple.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@oliverdipple</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/talitha.jpeg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@talithakruger</h5>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="col d-flex gap-2 align-items-center">
+                                    <img src="/images/nelly.jpg" class="feed-picture rounded-circle "
+                                        alt="Profile picture">
+                                    <h5 class="m-0">@nellymoseki</h5>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="col-12 btn btn-secondary">See all</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

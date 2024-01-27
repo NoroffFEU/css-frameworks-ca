@@ -11,8 +11,21 @@
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
 @import "bootstrap-icons";
 
-// Variable overrides
+// Custom variables
 
+.custom-image-size {
+  width: 100%;
+  max-width: 200px;
+}
+
+.small-icons::before {
+  font-size: 1.5rem;
+}
+
+.feed-picture {
+  width: 100%;
+  max-width: 50px;
+}
 
 //Bootstrap main file
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

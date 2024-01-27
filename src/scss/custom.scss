@@ -1,0 +1,278 @@
+/*Custom scss*/
+
+
+/*Index page*/
+
+//header
+.header-img {
+    width: 100%;
+    height: 180px;
+}
+
+//Navbar
+.sidebar-nav {
+    .nav-link {
+        color: $green;
+
+        &:hover {
+            color: $darkgreen; 
+            text-decoration: underline; 
+        }
+    }
+}
+
+.dropdown-menu {
+    background-color: $lightgreen;
+
+    .dropdown-item {
+        &:hover, &:focus {
+            background-color: $teal; 
+        }
+    }
+}
+
+
+@media (min-width: 992px) { 
+    .sidebar-nav {
+        position: fixed;
+        top: 10%;
+        left: 0;
+        bottom: 20%;
+        width: 250px; /* bredde på sidebar */
+        padding: 2px;
+        line-height: 30px;
+    }
+
+    .main-content {
+        margin-left: 250px; /* skyv hovedinnholdet til høyre */
+    }
+
+    header .navbar {
+        display: none; /* Skjuler kun toppnavigasjonsbaren på store skjermer */
+    }   
+}
+
+
+
+//Footer
+.social-icon {
+    margin: 0 10px; 
+}
+
+
+//Buttons, Icons
+.btn {
+    &-success {
+        @extend .btn-success;
+        padding: 2px;
+        font-size: $h6-font-size;
+        background-color: rgba($success, 0.8); 
+    }
+
+    &-secondary {
+        @extend .btn-secondary;
+        padding: 2px;
+        font-size: $h6-font-size;
+        background-color: rgba($success, 0.8); 
+    }
+
+    &-custom-search {
+        @include button-variant (
+            $darkgreen, 
+            $bordercolor,
+            $customtext
+            );
+
+    &:hover {
+        background-color: lighten($darkgreen, 20%);
+    }
+
+    }
+}
+
+.btn {
+    &-custom-other {
+        @include button-variant (
+            $teal,
+            $green-400,           
+        );
+    
+    &:hover {
+        background-color: lighten($teal, 10%);
+    }
+
+    }
+}
+
+
+
+// Definerer variabler
+$header-img-height: 200px;
+$custom-background-height: 400px;
+$custom-background-image: url('../../images/homebackround.jpg');
+
+
+
+// Definerer en mixin for bakgrunnsstil
+@mixin background-cover($image) {
+    background-image: $image;
+    background-size: cover;
+    background-position: center;
+}
+
+// Bruker mixin for .custom-background
+.custom-background {
+    @include background-cover($custom-background-image);
+    height: $custom-background-height;
+}
+
+
+
+
+
+/*Feed page*/
+
+.custom-form-input {
+    @extend .form-control; 
+    font-size: $font-size-base; 
+    border: 1px solid $gray-400; 
+    border-radius: $border-radius-pill; 
+    background-color: rgba($lightgreen, 0.8); 
+
+    &:focus {
+        border-color: $primary; 
+        box-shadow: 0 0 0 0.2rem rgba($primary, 0.25); 
+    }
+
+    &::placeholder { 
+        color: $gray-900;
+        opacity: 1;
+        
+    }
+}
+
+
+// _variables.scss
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$img-max-width: 500px;
+
+
+// _mixins.scss
+@mixin responsive-image($max-width,) {
+    width: 100%;
+    max-width: $max-width;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(65%);
+}
+
+
+// _images.scss
+.custom-img {
+    @include responsive-image(
+    $img-max-width, 
+    );
+}
+
+.custom-img-container {
+    position: relative;
+    padding: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        vertical-align: bottom;
+    }
+
+    h4, p {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: $customtext;
+        z-index: 10;
+
+        &.p {
+            background-color: $overlay-bg-color;
+            padding: 5px;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// _responsive.scss
+@media (max-width: 768px) {
+    .custom-h4 {
+        font-size: $h5-font-size;
+    }
+
+}
+
+.hover-sign {
+    display: none;
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 10px; 
+    transition: opacity 0.5s ease, left 0.5s ease; 
+}
+
+.plus-sign:hover + .hover-sign {
+    display: inline;
+}
+
+.plus-sign {
+    cursor: pointer;
+}
+
+
+
+/*Profile*/
+
+// _variables.scss
+$hover-background-color: rgba(0, 0, 0, 0.5);
+
+
+.custom-img-profile {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+
+    .hover-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        padding: 10%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: $h4-font-size;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s ease-in-out;
+        background-color: $hover-background-color;
+        cursor: pointer;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+    }
+
+    &:hover .hover-text {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.fa-envelope {
+    font-size: $h1-font-size;
+}
+
+

@@ -38,17 +38,17 @@
         top: 10%;
         left: 0;
         bottom: 20%;
-        width: 250px; /* bredde på sidebar */
+        width: 250px; 
         padding: 2px;
         line-height: 30px;
     }
 
     .main-content {
-        margin-left: 250px; /* skyv hovedinnholdet til høyre */
+        margin-left: 250px;
     }
 
     header .navbar {
-        display: none; /* Skjuler kun toppnavigasjonsbaren på store skjermer */
+        display: none; 
     }   
 }
 
@@ -105,27 +105,17 @@
 }
 
 
-
-// Definerer variabler
-$header-img-height: 200px;
-$custom-background-height: 400px;
-$custom-background-image: url('../../images/homebackround.jpg');
-
-
-
-// Definerer en mixin for bakgrunnsstil
 @mixin background-cover($image) {
     background-image: $image;
     background-size: cover;
     background-position: center;
 }
 
-// Bruker mixin for .custom-background
+
 .custom-background {
     @include background-cover($custom-background-image);
     height: $custom-background-height;
 }
-
 
 
 
@@ -152,12 +142,7 @@ $custom-background-image: url('../../images/homebackround.jpg');
 }
 
 
-// _variables.scss
-$overlay-bg-color: rgba(0, 0, 0, 0.5);
-$img-max-width: 500px;
 
-
-// _mixins.scss
 @mixin responsive-image($max-width,) {
     width: 100%;
     max-width: $max-width;
@@ -167,7 +152,6 @@ $img-max-width: 500px;
 }
 
 
-// _images.scss
 .custom-img {
     @include responsive-image(
     $img-max-width, 
@@ -202,7 +186,6 @@ $img-max-width: 500px;
     }
 }
 
-// _responsive.scss
 @media (max-width: 768px) {
     .custom-h4 {
         font-size: $h5-font-size;
@@ -229,9 +212,6 @@ $img-max-width: 500px;
 
 
 /*Profile*/
-
-// _variables.scss
-$hover-background-color: rgba(0, 0, 0, 0.5);
 
 
 .custom-img-profile {

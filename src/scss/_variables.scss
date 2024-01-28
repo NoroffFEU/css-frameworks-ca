@@ -1,12 +1,7 @@
 // Variables
-//
-// Variables should follow the `$component-state-property-size` formula for
-// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-
-
-// scss-docs-start color-variables
+// color-variables
 $blue:    #0d6efd ;
 $indigo:  #6610f2 ;
 $purple:  #6f42c1 ;
@@ -23,10 +18,7 @@ $customtext: white;
 $teal:    #93c1b3 ;
 $cyan:    #0dcaf0 ;
 
-
-// scss-docs-end color-variables
-
-// scss-docs-start colors-map
+// colors-map
 $colors: (
   "blue":       $blue,
   "indigo":     $indigo,
@@ -47,8 +39,7 @@ $colors: (
   "lightgreen": $lightgreen
 ) ;
 
-
-// scss-docs-start theme-color-variables
+// theme-color-variables
 $primary:       $blue ;
 $secondary:     $gray-600 ;
 $success:       $green ;
@@ -59,10 +50,8 @@ $light:         $gray-100 ;
 $dark:          $gray-900 ;
 $login:         $brown ;
 $other:         $teal ;
-// scss-docs-end theme-color-variables
 
-
-// scss-docs-start theme-colors-map
+// theme-colors-map
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
@@ -77,8 +66,8 @@ $theme-colors: (
 ) ;
 
 
-
-// scss-docs-start grid-breakpoints
+// Breakpoints
+// grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -87,19 +76,20 @@ $grid-breakpoints: (
   xl: 1200px,
   xxl: 1400px
 ) ;
-// scss-docs-end grid-breakpoints
-
-// scss-docs-start font-variables
-// stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" ;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace ;
 
 
+// Fonts
+// font-variables
 $font-family-base: 'kanit, sans-serif';
 
-// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
-// $font-size-base affects the font size of the body text
-$font-size-root:              null ;
-$font-size-base:              1rem ; // Assumes the browser , typically `16px`
-$font-size-sm:                $font-size-base * .875 ;
-$font-size-lg:                $font-size-base * 1.25 ;
+
+//Images
+// custom made img variables
+$header-img-height: 200px;
+$custom-background-height: 400px;
+$custom-background-image: url('../../images/homebackround.jpg');
+$img-max-width: 500px;
+
+
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$hover-background-color: rgba(0, 0, 0, 0.5);

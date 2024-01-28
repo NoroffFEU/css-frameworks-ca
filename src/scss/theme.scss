@@ -1,0 +1,194 @@
+$primary: #87ceeb;
+$secondary: #0da6a6;
+$info: #eee0df;
+$btn-dark: #223240;
+$dark: #333333;
+$i: #333333;
+$customHoverColor: $secondary;
+
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/bootstrap/scss/_variables-dark";
+@import "variables";
+@import "variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "buttons";
+
+// Override Bootstrap button styles
+@font-face {
+  font-family: "Arimo";
+  src: url("path/to/arimo.woff2") format("woff2"),
+    url("path/to/arimo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Edu TAS Beginner";
+  src: url("path/to/edu-tas-beginner.woff2") format("woff2"),
+    url("path/to/edu-tas-beginner.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("path/to/montserrat.woff2") format("woff2"),
+    url("path/to/montserrat.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("path/to/open-sans.woff2") format("woff2"),
+    url("path/to/open-sans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Override Bootstrap variables
+$font-family-base: "Arimo", sans-serif;
+
+.btn {
+  &-light {
+    &:hover {
+      background-color: darken($light, 5%);
+      border-color: $secondary;
+    }
+  }
+  &-outline-secondary {
+    &:hover {
+      color: $light;
+      background-color: $light;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    @extend a;
+    color: $customHoverColor !important;
+    border: none;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span {
+  font-family: "Montserrat", sans-serif;
+}
+
+i {
+  color: $i;
+}
+
+span {
+  color: $dark;
+}
+.custom-login-box {
+  width: 100%;
+  max-width: 31.25em; /* 500px / 16px */
+  margin: 0 auto;
+}
+
+.logo-size {
+  width: 9.375em; /* 150px / 16px */
+  height: auto;
+}
+
+.very-small {
+  font-size: 0.8em;
+}
+
+.img-styling {
+  width: auto;
+  height: 100vh;
+}
+
+/* Profile Page */
+
+.mt-custom {
+  margin-top: 1em;
+}
+
+.custom-img-hover:hover,
+.custom-img-hover:active {
+  transform: scale(1.1);
+  transition: transform 0.1s ease;
+}
+
+.max-width-gallery {
+  max-width: 75em; /* 1200px / 16px */
+}
+
+.profile-img {
+  width: 12.5em; /* 200px / 16px */
+  height: 12.5em; /* 200px / 16px */
+}
+
+.stories-width {
+  height: 4.375em; /* 70px / 16px */
+  width: 4.375em; /* 70px / 16px */
+}
+
+.stories-width-profile {
+  height: 1.875em; /* 30px / 16px */
+  width: 1.875em; /* 30px / 16px */
+}
+
+#sidebar {
+  min-width: 13.75em; /* 220px / 16px */
+  max-width: 13.75em; /* 220px / 16px */
+  transition: all 0.3s;
+}
+
+.custom-height {
+  height: 3.125em; /* 50px / 16px */
+}
+
+/* CONTENT STYLE */
+
+#content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+/* Feed */
+
+.img-feed {
+  width: 37.5em;
+}
+
+.max-width-content {
+  max-width: 50em;
+}
+
+.custom-navbar-collapse {
+  max-width: 12.5em; /* 200px / 16px */
+  padding: 0.625em; /* 10px / 16px */
+}
+
+.stories-width-feed {
+  width: 3.125em; /* 50px / 16px */
+  height: 3.125em; /* 50px / 16px */
+}

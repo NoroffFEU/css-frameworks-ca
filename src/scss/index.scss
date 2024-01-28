@@ -1,1 +1,77 @@
+@import "variables";
 
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// --Bootstrap Variables
+$primary: #17a2b8; 
+$body-bg: #f0fcfa; 
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+//Mixin for White text. black hover
+@mixin text-hover {
+  color: $white; 
+  &:hover {
+    color: darken($white, 80%); 
+  }
+}
+
+// --Custom navbar styles
+.navbar-custom {
+  background-color: $primary; 
+  height: 100px;
+
+  .navbar-brand,
+  .nav-link {
+    @include text-hover; 
+  }
+}
+
+//makes the content appear in the middle for smaller screens
+.m-hight {
+  min-height: 100vh;
+}
+
+// --Border line on profile/index.html and feed/index.html
+//The line that splits the page 25% left 75% right
+.custom-border {
+  position: relative; 
+
+  &::before {
+    content: ""; 
+    position: absolute; 
+    top: -50px; 
+    right: 0; 
+    bottom: -50px;  
+    width: 1px;  
+    background-color: var(--bs-primary);  
+  }
+}
+
+// --Feed form
+//Input for File
+.custom-file-input {
+  width: 100%;
+}
+
+// Placeholder styling
+.form-control, 
+.custom-file-input {
+  &::placeholder {
+    color: $black; 
+  }
+}
+//fontawsome
+.fa-magnifying-glass {
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+//Index.html
+.line {
+  background-color: $primary;
+  height: 1px;
+}

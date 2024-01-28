@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/index.css" />
+    <title>ConnectifyNow - Profile </title>
+</head>
+
+
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../feed/index.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../profile/index.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container align-items-center">
+
+<!-- for card -->
+<section class="container mt-4 text-center">
+    <div class="card p-3">
+        <div class="d-flex align-items-center">
+            <div class="image"> <img src="/images/passfoto.jpg" class="rounded" width="155"> </div>
+            <div class="ml-3 w-100">
+                <h4 class="mb-0 mt-0">Zico Sebastian</h4> <span>Front-end developer</span>
+                <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                    <div class="d-flex flex-column"> <span class="articles">Articles</span> <span class="number1">10</span> </div>
+                    <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">1010</span> </div>
+                    <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">9.9</span> </div>
+                </div>
+                <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-primary w-100">Chat</button> <button class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- for card end-->
+
+
+          <section class="container align-items-center">
+            <div class="container cen mt-4">
+                <div class="card px-3 pt-3" style="max-width: 32rem">
+                    <!-- News block -->
+                    <div>
+                      <!-- Featured image -->
+                      <div class="bg-image hover-overlay shadow-1-strong ripple rounded-5 mb-4" data-mdb-ripple-color="light">
+                        <img src="/images/IMAG0150.jpg" class="img-fluid" />
+                        <a href="/feed/index.html">
+                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </a>
+                      </div>
+                  
+                      <!-- Article data -->
+                      <div class="row mb-3">
+                        <div class="col-6">
+                          <a href="/feed/index.html" class="text-info">
+                            <i class="fas fa-plane"></i>
+                            Recent posts
+                          </a>
+                        </div>
+                  
+                        <div class="col-6 text-end">
+                          <u> 40 minutes ago</u>
+                        </div>
+                      </div>
+                  
+                      <!-- Article title and description -->
+                      <a href="/feed/index.html" class="text-dark">
+                        <h5>Mr. Kitty is...</h5>
+                  
+                        <p>
+                            <div class="p-2 px-3"><span>My profound affection for cats stems from the irresistible combination of their endearing playfulness, gentle purrs, and unwavering companionship. Their independent yet affectionate nature captures my heart, making each moment spent with them a source of joy and warmth in my life.
+                        </p>
+                      </a>
+                  
+                      <hr />
+                  
+                      <!-- News -->
+                      <a href="/feed/index.html" class="text-dark">
+                        <div class="row mb-4 border-bottom pb-2">
+                          <div class="col-3">
+                            <img src="/images/IMAG0146.jpg"
+                              class="img-fluid shadow-1-strong rounded" alt="Hollywood Sign on The Hill" />
+                          </div>
+                  
+                          <div class="col-9">
+                            <p class="mb-2"><strong>Mr. Kitty is ready to travel</strong></p>
+                            <p>
+                              <u> read more</u>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                  
+                      <!-- News -->
+                      <a href="/feed/index.html" class="text-dark">
+                        <div class="row mb-4 border-bottom pb-2">
+                          <div class="col-3">
+                            <img src="/images/IMAG0144.jpg"
+                              class="img-fluid shadow-1-strong rounded" alt="Palm Springs Road" />
+                          </div>
+                  
+                          <div class="col-9">
+                            <p class="mb-2"><strong>Mr. Kitty missed the fligth</strong></p>
+                            <p>
+                              <u> read more</u>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                  
+                      <!-- News -->
+                      <a href="/feed/index.html" class="text-dark">
+                        <div class="row mb-4 border-bottom pb-2">
+                          <div class="col-3">
+                            <img src="/images/IMAG0332.jpg"
+                              class="img-fluid shadow-1-strong rounded" alt="Los Angeles Skyscrapers" />
+                          </div>
+                  
+                          <div class="col-9">
+                            <p class="mb-2"><strong>Get ready for summer.</strong></p>
+                            <p>
+                              <u> read more</u>
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+
+                    </div>
+                    <!-- News block -->
+                  </div>
+            </div>
+            </section>
+    </main>
+
+
+    <footer class="text-center py-3 bottom">
+        © 2024 Zico, CSS Framework CA.
+    </footer>
+
+</body>
+</html>

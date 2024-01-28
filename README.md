@@ -11,8 +11,7 @@
 My platform, ConnectifyNow, is a social networking space crafted to unite individuals globally. Developed with HTML, SCSS, and Bootstrap, it presents a responsive and intuitive interface, fostering effortless social engagement.
 
 ## Built With
-
-![317755_badge_html_html5_achievement_award_icon (1)](https://github.com/Tinberg/Rainydays/assets/126072224/38fa6731-648a-4696-a360-2333939feb36)  ![317756_badge_css_css3_achievement_award_icon](https://github.com/Tinberg/Rainydays/assets/126072224/1f673d3c-9820-481f-9610-3d22010c8359) ![bootstrap](https://github.com/Tinberg/css-frameworks-ca/assets/126072224/c9dd8196-af4b-440e-847a-d43f5b1f17fb)![sass](https://github.com/Tinberg/css-frameworks-ca/assets/126072224/f0fd1e63-9e5a-4b43-a038-df57a4136287)
+HTML,CSS,BOOTSTRAP,Sass
 
 ## Getting Started
 

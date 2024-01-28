@@ -1,0 +1,24 @@
+.card-body {
+   background: $white;
+   border-radius: $border-radius-lg;
+}
+
+.card-link {
+   transition: $transition-base;
+   &:hover {
+      color: $primary;
+   }
+}
+
+.card-title {
+   font-weight: $font-weight-bold;
+   font-size: $h4-font-size;
+}
+
+.card-body div:first-child {
+   transition: $transition-base;
+   cursor: pointer;
+   &:hover {
+      color: $gray-700;
+   }
+}

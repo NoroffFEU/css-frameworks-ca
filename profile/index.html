@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Connectivity - Feed</title>
+   <link rel="stylesheet" href="../dist/css/index.css">
+   <script defer src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+   <script src="https://kit.fontawesome.com/801ba823f5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <header>
+      <nav class="navbar bg-primary navbar-expand-md shadow-lg p-md-0">
+         <div class="container">
+            <div class="d-flex align-items-center gap-2">
+               <i class="fa-solid fa-globe fa-xl"></i>
+               <a class="navbar-brand h1 fs-2 mb-1" href="../index.html">Connectify</a>
+            </div>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+               <div class="offcanvas-header bg-primary shadow-lg">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               </div>
+               <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                     <li class="nav-item d-flex align-items-center gap-1">
+                        <a href="../feed/index.html" class="nav-link p-md-4" aria-current="page" href="#">
+                           <i class="fa-solid fa-house fa-lg"></i>
+                           <span class="mb-0 h5">Home</span>
+                        </a>
+                     </li>
+                     <li class="nav-item d-flex align-items-center gap-1">
+                        <a class="nav-link p-md-4 active" href="#">
+                           <i class="fa-solid fa-circle-user fa-lg"></i>
+                           <span class="mb-0 h5">Profile</span>
+                        </a>
+                     </li>
+                     <li class="nav-item d-flex align-items-center gap-1">
+                        <a class="nav-link p-md-4" href="#">
+                           <i class="fa-solid fa-envelope fa-lg"></i>
+                           <span class="mb-0 h5">Support</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+      <div class="container mx-auto my-5 row">
+         
+         <div class="card col-lg-5 h-100 sticky-lg-top p-0 shadow">
+            <img src="../images/istockphoto-498478219-612x612.jpg" alt="..." class="card-img-top">
+            <div class="card-body p-lg-4">
+               <img src="../images/4914815.jpg" alt="..." class="profile-img rounded-circle border border-primary border-3">
+               <div class="mt-3">
+                  <h1 class="card-title h2">Username</h1>
+                  <h2 class="h6">Registered: 2024</h2>
+                  <div class="d-sm-flex justify-content-between align-items-center mt-4">
+                     <div>
+                        <h3 class="h5 fw-bold">100<span class="fw-normal ms-2 h6">Followers</span></h3>
+                     </div>
+                     <button class="btn btn-primary px-5">Follow</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-lg-1"></div>
+
+         <div class="p-4 bg-white mt-5 rounded-3 col-lg-6">
+            <h2 class="h2 mb-4">Username's Posts</h2>
+            
+            <div class="d-flex flex-column justify-content-center gap-7 "> 
+            
+               <div class="card shadow">
+                  <img src="../images/istockphoto-498478219-612x612.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                        <h5 class="card-title mt-2">Username</h5>
+                     </div>
+                     <p class="card-text pt-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <hr class="my-1 border-2"/>
+                     <div class="d-flex flex-column flex-sm-row gap-2 mt-3 justify-content-sm-around">
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
+                           <i class="fa-regular fa-heart"></i>
+                           <h5 class="h6 mb-1">Like</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-comment"></i>
+                           <h5 class="h6 mb-1">Comments</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-share-nodes"></i>
+                           <h5 class="h6 mb-1">Share</h5>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            
+               <div class="card shadow">
+                  <img src="../images/istockphoto-498478219-612x612.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                        <h5 class="card-title mt-2">Username</h5>
+                     </div>
+                     <p class="card-text pt-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <hr class="my-1 border-2"/>
+                     <div class="d-flex flex-column flex-sm-row gap-2 mt-3 justify-content-sm-around">
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
+                           <i class="fa-regular fa-heart"></i>
+                           <h5 class="h6 mb-1">Like</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-comment"></i>
+                           <h5 class="h6 mb-1">Comments</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-share-nodes"></i>
+                           <h5 class="h6 mb-1">Share</h5>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="card shadow">
+                  <img src="../images/istockphoto-498478219-612x612.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                     <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                        <h5 class="card-title mt-2">Username</h5>
+                     </div>
+                     <p class="card-text pt-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <hr class="my-1 border-2"/>
+                     <div class="d-flex flex-column flex-sm-row gap-2 mt-3 justify-content-sm-around">
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
+                           <i class="fa-regular fa-heart"></i>
+                           <h5 class="h6 mb-1">Like</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-comment"></i>
+                           <h5 class="h6 mb-1">Comments</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-share-nodes"></i>
+                           <h5 class="h6 mb-1">Share</h5>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="card shadow">
+                  <div class="card-body">
+                     <div class="d-flex align-items-center gap-2">
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                        <h5 class="card-title mt-2">Username</h5>
+                     </div>
+                     <p class="card-text pt-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <hr class="my-1 border-2"/>
+                     <div class="d-flex flex-column flex-sm-row gap-2 mt-3 justify-content-sm-around">
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white">
+                           <i class="fa-regular fa-heart"></i>
+                           <h5 class="h6 mb-1">Like</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-comment"></i>
+                           <h5 class="h6 mb-1">Comments</h5>
+                        </button>
+                        <button class="card-link d-flex align-items-center gap-1 border-0 bg-white ms-0">
+                           <i class="fa-solid fa-share-nodes"></i>
+                           <h5 class="h6 mb-1">Share</h5>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </main>
+
+</body>
+</html>

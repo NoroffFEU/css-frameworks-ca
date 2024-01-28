@@ -1,0 +1,5 @@
+.btn-primary {
+   &:hover {
+      box-shadow: $box-shadow-primary-hover;
+   }
+}

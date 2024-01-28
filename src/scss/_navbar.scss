@@ -1,0 +1,19 @@
+@mixin nav-link-border($color) {
+   border-bottom: 2px solid $color;
+}
+
+.navbar {
+   i {
+      color: $black;
+   }
+
+   .nav-link {
+      font-weight: $font-weight-medium;
+      @include nav-link-border($primary);
+      transition: 300ms ease;
+
+      &:hover {
+         @include nav-link-border($black);
+      }
+   }
+}

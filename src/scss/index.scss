@@ -1,1 +1,65 @@
+@import "../../node_modules/bootstrap/scss/functions";
 
+@import "variables";
+@import "card";
+@import "navbar";
+@import "buttons";
+@import "profile";
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap');
+
+:root {
+   --bs-body-font-family: 'Montserrat', sans-serif;
+}
+
+.h1 {
+   font-family: 'Kanit', 'Montserrat', sans-serif;
+   font-weight: $font-weight-bold;
+   letter-spacing: 1.25px;
+   text-transform: uppercase;
+}
+
+.feed-create-info {
+   background-image: url("/images/spikes.webp");
+   background-repeat: none;
+   background-size: cover;
+
+   &-post {
+      height: 160px !important;
+   }
+}
+
+.connectify-info-bg {
+   background-image: url("/images/756713527745.jpg");
+   background-repeat: none;
+   background-size: cover;
+
+   @include media-breakpoint-up(md) {
+      border-radius: $border-radius-lg 0 0 $border-radius-lg !important;
+   }
+}
+
+.connectify-login-bg {
+   @extend .feed-create-info;
+
+   @include media-breakpoint-up(md) {
+      border-radius: 0 $border-radius-lg $border-radius-lg 0 !important;
+   }
+}
+
+.connectify-info {
+   background: rgba($black,  0.8);
+}
+
+hr {
+   opacity: 1;
+}

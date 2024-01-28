@@ -152,18 +152,20 @@
 
         <section class="profile-right container col-2">
           <div class="d-flex flex-wrap align-items-center gap-3">
-            <h2>Amy the Elf</h2>
-            <img
+            <a href="/profile/index.html" class="profile-name"><h2>Amy the Elf</h2></a>
+            <a href="/profile/index.html"><img
               class="rounded-circle img-fluid profile-img-sidebar mb-5"
               src="/images/sal.png"
               alt="userimage"
-            />
+            /></a>
           </div>
-          <ul class="d-flex gap-2 flex-column">
-            <li>Feed</li>
-            <li>Saved posts</li>
-            <li>Inbox</li>
-            <li>Settings</li>
+          <ul class="list-group d-flex gap-3 flex-column container">
+            <li class="list-group-item list-group-item-action">
+              <a href="/feed/index.html"> Feed</a>
+            </li>
+            <li class="list-group-item list-group-item-action">Saved posts</li>
+            <li class="list-group-item list-group-item-action">Inbox</li>
+            <li class="list-group-item list-group-item-action">Settings</li>
           </ul>
         </section>
       </div>

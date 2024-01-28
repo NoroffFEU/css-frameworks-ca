@@ -7,5 +7,10 @@
 
 .custom-border {
   position: relative;
-  border-left: 1px solid purple;
+  border-top: 1px solid purple;
+  padding-top: 40px;
+}
+
+.hidden {
+  display: none;
 }

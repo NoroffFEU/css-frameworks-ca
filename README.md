@@ -1,6 +1,10 @@
 # Your project title
 
+<<<<<<< HEAD
 ![image]
+=======
+![image])
+>>>>>>> 1a866907074e57a24158c4614fdd0d1e5239ba62
 
 Simple and effective
 
@@ -34,4 +38,7 @@ You can contact me here
 - [LinkedIn profile](https://www.linkedin.com/in/martin-sk%C3%A5la-nyg%C3%A5rd-0a6120263)
 - [Facebook](https://www.facebook.com/meeplegalaxymartin)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a866907074e57a24158c4614fdd0d1e5239ba62

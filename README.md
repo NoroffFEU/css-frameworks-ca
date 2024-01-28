@@ -53,8 +53,4 @@ Feel free to contact me for questions, feedback, or collaborations:
 
 I would like to thank teacher Oliver with all his knowledge teaching me about bootstrap.
 
-<<<<<<< HEAD
 I would also like to thank other fellow students for help and feedback in the class chat in moodle.
-=======
-I would also like to thank other fellow students for help and feedback in the class chat in moodle.
->>>>>>> e34be08f250d63ea12f534a91b948dd90cbff22a

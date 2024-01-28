@@ -14,9 +14,12 @@ $brown:   rgb(113, 76, 76);
 $darkgreen: rgb(56, 90, 84);
 $lightgreen: rgb(140, 179, 172);
 $bordercolor: rgb(46, 74, 69); 
-$customtext: white;
 $teal:    #93c1b3 ;
 $cyan:    #0dcaf0 ;
+
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$hover-background-color: rgba(0, 0, 0, 0.5);
+$customtext: white;
 
 // colors-map
 $colors: (
@@ -86,10 +89,8 @@ $font-family-base: 'kanit, sans-serif';
 //Images
 // custom made img variables
 $header-img-height: 200px;
-$custom-background-height: 400px;
-$custom-background-image: url('../../images/homebackround.jpg');
 $img-max-width: 500px;
 
+$custom-background-height: 400px;
+$custom-background-image: url('../../images/homebackround.jpg');
 
-$overlay-bg-color: rgba(0, 0, 0, 0.5);
-$hover-background-color: rgba(0, 0, 0, 0.5);

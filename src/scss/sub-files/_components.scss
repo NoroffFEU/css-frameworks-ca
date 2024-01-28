@@ -1,0 +1,93 @@
+.logo {
+    width: 150px;
+    padding: 20px;
+
+    @media (min-width: 500px) {
+      width: 250px; 
+    }
+  }
+
+.min-logo {
+  width: 100px; 
+  padding: 20px;
+  padding-bottom: 0px; 
+}
+
+.btn-custom, .btn-custom:focus {
+    background-color: $primary;
+    border-color: $primary;
+    color: $secondary;
+    margin: 20px; 
+  
+    &:hover, &:disabled {
+      background-color: $tertiary;
+      border-color: $tertiary;
+    }
+
+    &:active {
+      background-color: $tertiary !important;
+
+    }
+  }
+
+  .follow-btn {
+    position: absolute;
+    bottom: -15px; 
+    left: 30%;
+    font-size: 0.8em;
+    padding: 5px; 
+    background-color: $secondary; 
+    color: #000; 
+    border-color: rgba(0, 0, 0, 0.5); 
+
+    &:hover {
+      background-color: $tertiary;
+      border-color: $tertiary;
+    }
+
+    &:active {
+      background-color: $tertiary !important;
+
+
+    }
+}
+
+ .card-img {
+  border-radius: 5px;
+ }
+
+.card-custom {
+  background-color: $secondary;
+}
+
+.load-box {
+  border: 0.1em solid rgba(0, 0, 0, 0.2); 
+  background-color: $secondary;
+  border-radius: 20px;
+
+  input {
+      padding: 10px; 
+
+  }
+
+  textarea {
+      border-radius: 20px;
+      background-color: $secondary;
+  }
+}
+
+.search {
+  .search-bar{
+    border-radius: 10px !important; 
+  }
+
+  button {
+    border-radius: 10px !important; 
+}
+}
+
+
+.sortby{
+  margin-top: 15px;
+}
+  

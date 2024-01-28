@@ -1,16 +1,29 @@
+@import "sub-files/layout";
 @import "sub-files/variables";
 @import "sub-files/components";
-@import "sub-files/layout";
 @import "sub-files/nav";
 @import "sub-files/main";
 
 body {
-    background-color: #fff;
+    background-color: $secondary;
     width: 100%;
     margin: 0;
     padding: 0; 
 }
 
 main {
-    margin-top: 50px;
+    margin-top: 0px;
+}
+
+.profile-section {
+    border-top: 0.1em solid rgba(0, 0, 0, 0.2); 
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0.2);
+    border-left: 0.1em solid rgba(0, 0, 0, 0.2);
+    padding: 20px; 
+    border-radius: 20px 0px 0px 20px;
+
+    @media (max-width: 992px) {
+        border: none; 
+        padding: 0; 
+    }
 }

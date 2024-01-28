@@ -4,7 +4,8 @@
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
     "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
-    "build": "sass src/scss:dist/css",
+    "copyJS": "copyfiles -f node_modules/bootstrap/dist/js/bootstrap.bundle.min.js dist",
+    "build": "sass src/scss:dist/css && npm run copyJS",
     "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
@@ -29,6 +30,7 @@
     "bootstrap": "^5.3.2"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "live-server": "^1.2.2",
     "sass": "^1.70.0"
   }

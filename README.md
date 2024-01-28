@@ -39,7 +39,7 @@ Use the live server to open the website in the browser by clicking on "open in l
 
 ## Contributing
 
-Open a pull request so that the code can be reviewed.
+Unfortunately, I have only worked in the main branch on this task, so my pull request is not available at the moment. I will fix the issue as soon as possible.
 
 ## Contact
 

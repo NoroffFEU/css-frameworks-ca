@@ -13,22 +13,33 @@
   </head>
   <body>
     <nav class="navbar sticky-top navbar-expand-sm navbar-light d-print">
-      <a href="#" class="navbar-brand ps-5">MemeQueen</a>
+      <a href="#" class="navbar-brand ps-5"
+        ><h1>Memequeen</h1>
+        MemeQueen</a
+      >
     </nav>
 
     <main>
-      <div class="wrapping row container-fluid mx-auto mt-5 login-form gap-md-5 gap-sm-5">
+      <div
+        class="wrapping row container-fluid mx-auto mt-5 login-form gap-md-5 gap-sm-5"
+      >
         <div class="d-flex justify-content-center col-lg-6 align-self-center">
           <h1>Discover and share memes</h1>
         </div>
-        <div class="col-lg-4 form-container container border rounded d-flex justify-content-center p-5">
+        <div
+          class="col-lg-4 form-container container border rounded d-flex justify-content-center p-5"
+        >
           <form
             class="front-form container d-flex flex-column align-items-center gap-4"
             action="/profile/index.html"
             method="get"
           >
             <label for="name">E-mail or username</label>
-            <input class="border border-primary border-2 rounded" type="text" name="name" />
+            <input
+              class="border border-primary border-2 rounded"
+              type="text"
+              name="name"
+            />
             <label for="password">Password</label>
             <input
               class="border border-primary border-2 rounded"
@@ -36,8 +47,14 @@
               name="password"
               minlength="8"
             />
-            <input class="border border-primary border-2 log-in rounded" type="submit" value="Log in" />
-            <a onclick="toggleForm()" class="register">Don't have a user? Register here</a>
+            <input
+              class="border border-primary border-2 log-in rounded"
+              type="submit"
+              value="Log in"
+            />
+            <a onclick="toggleForm()" class="register"
+              >Don't have a user? Register here</a
+            >
           </form>
         </div>
       </div>
@@ -47,17 +64,49 @@
           <h1>Discover and share memes</h1>
         </div>
         <div class="col-4 form-container container border rounded">
-          <form class="container d-flex flex-column align-items-center gap-3" action="profile/index.html" method="get">
+          <form
+            class="container d-flex flex-column align-items-center gap-3"
+            action="profile/index.html"
+            method="get"
+          >
             <label for="register-mail">E-mail</label>
-            <input class="border border-primary border-2 rounded" type="text" name="register-mail" id="register-mail" />
+            <input
+              class="border border-primary border-2 rounded"
+              type="text"
+              name="register-mail"
+              id="register-mail"
+            />
             <label for="register-username">Username</label>
-            <input class="border border-primary border-2 rounded" type="text" name="register-mail" id="register-mail" />
+            <input
+              class="border border-primary border-2 rounded"
+              type="text"
+              name="register-mail"
+              id="register-mail"
+            />
             <label for="register-password">New password</label>
-            <input class="border border-primary border-2 rounded" type="password" name="register-password" id="register-password" minlength="8"/>
+            <input
+              class="border border-primary border-2 rounded"
+              type="password"
+              name="register-password"
+              id="register-password"
+              minlength="8"
+            />
             <label for="repeat-password">Repeat Password</label>
-            <input class="border border-primary border-2 rounded" type="password" name="repeat-password" id="repeat-password" minlength="8"/>
-            <input class="border border-primary border-2 log-in rounded" type="submit" value="Register" />
-            <a href="/profile/index.html" onclick="toggleForm()">Already have a user? Log in</a>
+            <input
+              class="border border-primary border-2 rounded"
+              type="password"
+              name="repeat-password"
+              id="repeat-password"
+              minlength="8"
+            />
+            <input
+              class="border border-primary border-2 log-in rounded"
+              type="submit"
+              value="Register"
+            />
+            <a href="/profile/index.html" onclick="toggleForm()"
+              >Already have a user? Log in</a
+            >
           </form>
         </div>
       </div>

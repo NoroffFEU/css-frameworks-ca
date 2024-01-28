@@ -1,7 +1,10 @@
+
+$primary: #CD7BFF;
+$secondary: #ab46ea;
+
 @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
-@import "variables"; 
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../node_modules/bootstrap/scss/functions";
+
 
 .front-form{
     padding: 150px;

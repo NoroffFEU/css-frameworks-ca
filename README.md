@@ -2,7 +2,7 @@
 
 prinscreen of the design of my project
 
-## The 
+## The Some app
 
 The purpose of this project was to apply knowledge of Bootstrap and SASS in building a responsive front end for a social media application.
 

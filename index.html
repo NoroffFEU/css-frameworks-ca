@@ -28,15 +28,15 @@
             method="get"
           >
             <label for="name">E-mail or username</label>
-            <input class=" rounded" type="text" name="name" />
+            <input class="border border-primary border-2 rounded" type="text" name="name" />
             <label for="password">Password</label>
             <input
-              class=" rounded"
+              class="border border-primary border-2 rounded"
               type="password"
               name="password"
               minlength="8"
             />
-            <input class="log-in rounded" type="submit" value="Log in" />
+            <input class="border border-primary border-2 log-in rounded" type="submit" value="Log in" />
             <a onclick="toggleForm()" class="register">Don't have a user? Register here</a>
           </form>
         </div>
@@ -47,17 +47,17 @@
           <h1>Discover and share memes</h1>
         </div>
         <div class="col-4 form-container container border rounded">
-          <form class="container d-flex flex-column align-items-center" action="profile/index.html" method="get">
+          <form class="container d-flex flex-column align-items-center gap-3" action="profile/index.html" method="get">
             <label for="register-mail">E-mail</label>
-            <input class=" rounded" type="text" name="register-mail" id="register-mail" />
+            <input class="border border-primary border-2 rounded" type="text" name="register-mail" id="register-mail" />
             <label for="register-username">Username</label>
-            <input class=" rounded" type="text" name="register-mail" id="register-mail" />
+            <input class="border border-primary border-2 rounded" type="text" name="register-mail" id="register-mail" />
             <label for="register-password">New password</label>
-            <input class=" rounded" type="password" name="register-password" id="register-password" minlength="8"/>
+            <input class="border border-primary border-2 rounded" type="password" name="register-password" id="register-password" minlength="8"/>
             <label for="repeat-password">Repeat Password</label>
-            <input class=" rounded" type="password" name="repeat-password" id="repeat-password" minlength="8"/>
-            <input class="log-in rounded" type="submit" value="Register" />
-            <a href="/profile/index.html" onclick="toggleForm()" class="register">Already have a user? Log in</a>
+            <input class="border border-primary border-2 rounded" type="password" name="repeat-password" id="repeat-password" minlength="8"/>
+            <input class="border border-primary border-2 log-in rounded" type="submit" value="Register" />
+            <a href="/profile/index.html" onclick="toggleForm()">Already have a user? Log in</a>
           </form>
         </div>
       </div>

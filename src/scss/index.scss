@@ -13,7 +13,6 @@ $secondary: #ab46ea;
 
 form input, .profile-img, .meme-post{
     background-color: white;
-    border: #CD7BFF solid 2px;
 }
 
 .form-container{
@@ -53,27 +52,12 @@ form input, .profile-img, .meme-post{
     font-family: "Koulen", sans-serif;
 }
 
-
-
 .profile-img{
     max-width: 200px;
 }
 
 .profile-img-sidebar{
     max-width: 120px;
-}
-
-.profile-right{
-    border-left: #CD7BFF solid 3px;
-}
-
-.profile-right li{
-    list-style-type: none;
-}
-
-.register{
-    text-decoration: underline;
-    color: #ab46ea;
 }
 
 .register:hover{
@@ -87,14 +71,4 @@ form input, .profile-img, .meme-post{
 ul a{
     color: initial;
     text-decoration: none;
-}
-
-.your-groups{
-    border-right: #CD7BFF solid 3px;
-}
-
-@media (max-width: 767px){
-    .col-sm-9{
-        margin-bottom: 50px;
-    }
 }

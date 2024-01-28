@@ -28,7 +28,7 @@
 
       <div class="wrapping-for-3-main row container-fluid">
         <section
-          class="your-groups container col-2 d-flex flex-column align-items-center gap-3 mr-md-5"
+          class="border-end border-primary border-3 container col-2 d-flex flex-column align-items-center gap-3 mr-md-5"
         >
           <h2>Your groups</h2>
           <ul class="d-flex flex-column gap-3">
@@ -40,7 +40,9 @@
         </section>
 
         <section class="col-8">
-          <section class="d-flex flex-wrap flex-column align-items-center gap-3">
+          <section
+            class="d-flex flex-wrap flex-column align-items-center gap-3"
+          >
             <img
               class="rounded-circle img-fluid profile-img"
               src="/images/sal.png"
@@ -52,7 +54,9 @@
               <p>Sally Spongebob</p>
               <p>200 | 411</p>
               <p>Sally | 26 yrs old | Spongebob square pants memes</p>
-              <button id="followBtn" class="btn btn-primary">Follow</button>
+              <button id="followBtn" class="btn btn-primary text-white">
+                Follow
+              </button>
             </div>
           </section>
 
@@ -80,7 +84,7 @@
             class="section-3 container-fluid mt-5 d-flex flex-column gap-5"
           >
             <div class="d-flex justify-content-center row">
-              <div class="col-lg-4 col-md-5 col-sm-9">
+              <div class="col-lg-4 col-md-5 col-sm-9 mb-5">
                 <div
                   class="card container-fluid meme-post d-flex justify-content-center flex-column gap-2 pt-2"
                 >
@@ -96,7 +100,7 @@
                   <p>YESSS</p>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-5 col-sm-9">
+              <div class="col-lg-4 col-md-5 col-sm-9 mb-5">
                 <div
                   class="card container-fluid meme-post d-flex justify-content-center flex-column gap-2 pt-2"
                 >
@@ -114,7 +118,7 @@
               </div>
             </div>
             <div class="d-flex justify-content-center row">
-              <div class="col-lg-4 col-md-5 col-sm-9">
+              <div class="col-lg-4 col-md-5 col-sm-9 mb-5">
                 <div
                   class="card container-fluid meme-post d-flex justify-content-center flex-column gap-2 pt-2"
                 >
@@ -130,7 +134,7 @@
                   <p>YESSS</p>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-5 col-sm-9">
+              <div class="col-lg-4 col-md-5 col-sm-9 mb-5">
                 <div
                   class="card container-fluid meme-post d-flex justify-content-center flex-column gap-2 pt-2"
                 >
@@ -150,22 +154,29 @@
           </section>
         </section>
 
-        <section class="profile-right container col-2">
+        <section class="border-start border-primary border-3 container col-2">
           <div class="d-flex flex-wrap align-items-center gap-3">
-            <a href="/profile/index.html" class="profile-name"><h2>Amy the Elf</h2></a>
-            <a href="/profile/index.html"><img
-              class="rounded-circle img-fluid profile-img-sidebar mb-5"
-              src="/images/sal.png"
-              alt="userimage"
+            <h2>Amy the Elf</h2>
+            <a href="/profile/index.html"
+              ><img
+                class="rounded-circle img-fluid profile-img-sidebar mb-5"
+                src="/images/sal.png"
+                alt="userimage"
             /></a>
           </div>
           <ul class="list-group d-flex gap-3 flex-column container">
+            <li class="list-group-item list-group-item-action">
+              <a href="/profile/index.html"> Profile</a>
+            </li>
             <li class="list-group-item list-group-item-action">
               <a href="/feed/index.html"> Feed</a>
             </li>
             <li class="list-group-item list-group-item-action">Saved posts</li>
             <li class="list-group-item list-group-item-action">Inbox</li>
             <li class="list-group-item list-group-item-action">Settings</li>
+            <li class="list-group-item list-group-item-action">
+              <a href="/index.html"> Log out</a>
+            </li>
           </ul>
         </section>
       </div>

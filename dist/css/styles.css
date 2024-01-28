@@ -177,8 +177,20 @@
   height: 20vh;
 }
 
+footer {
+  margin-top: 20px;
+}
 footer .min-logo {
   padding: 20px;
+}
+footer .footer-text {
+  height: fit-content;
+  width: fit-content;
+}
+@media (max-width: 768px) {
+  footer {
+    margin-bottom: 40px;
+  }
 }
 
 @font-face {

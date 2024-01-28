@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <script defer src="javascript/authentication.js"></script>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-sm navbar-light d-print">
+      <a href="#" class="navbar-brand ps-5">MemeQueen</a>
+    </nav>
+
+    <main>
+      <div class="wrapping row container-fluid mx-auto mt-5 login-form">
+        <div class="d-flex justify-content-center col-6 align-self-center">
+          <h1>Discover and share memes</h1>
+        </div>
+        <div class="col-4 form-container container border rounded">
+          <form
+            class="front-form container d-flex flex-column align-items-center"
+            action="/profile/index.html"
+            method="get"
+          >
+            <label for="name">E-mail or username</label>
+            <input class=" rounded" type="text" name="name" />
+            <label for="password">Password</label>
+            <input
+              class=" rounded"
+              type="password"
+              name="password"
+              minlength="8"
+            />
+            <input class="log-in rounded" type="submit" value="Log in" />
+            <a onclick="toggleForm()" class="register">Don't have a user? Register here</a>
+          </form>
+        </div>
+      </div>
+
+      <div class="wrapping row container-fluid mx-auto mt-5 register-form">
+        <div class="d-flex justify-content-center col-6 align-self-center">
+          <h1>Discover and share memes</h1>
+        </div>
+        <div class="col-4 form-container container border rounded">
+          <form class="container d-flex flex-column align-items-center" action="profile/index.html" method="get">
+            <label for="register-mail">E-mail</label>
+            <input class=" rounded" type="text" name="register-mail" id="register-mail" />
+            <label for="register-username">Username</label>
+            <input class=" rounded" type="text" name="register-mail" id="register-mail" />
+            <label for="register-password">New password</label>
+            <input class=" rounded" type="password" name="register-password" id="register-password" minlength="8"/>
+            <label for="repeat-password">Repeat Password</label>
+            <input class=" rounded" type="password" name="repeat-password" id="repeat-password" minlength="8"/>
+            <input class="log-in rounded" type="submit" value="Register" />
+            <a href="/profile/index.html" onclick="toggleForm()" class="register">Already have a user? Log in</a>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

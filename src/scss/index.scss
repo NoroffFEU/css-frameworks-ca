@@ -1,1 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 
+.front-form{
+    padding: 150px;
+    gap: 15px;
+}
+
+form input, .profile-img, .meme-post{
+    background-color: white;
+    border: #CD7BFF solid 2px;
+}
+
+.form-container{
+    background-color: #F6E7FF;
+}
+
+.log-in{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.log-in:hover{
+    background-color: rgb(214, 131, 255);
+}
+
+.login-form, .register-form{
+    display: none;
+}
+
+.login-form.show, .register-form.show{
+    display: flex;
+}
+
+.meme-collection{
+    width: 150px;
+    height: 130px;  
+    padding: 0px 20px 0px 20px
+}
+
+.meme-user{
+    max-width: 60px;
+    max-height: 60px;
+}
+
+.navbar{
+    background-color: #EDD1FF;
+    font-family: "Koulen", sans-serif;
+}
+
+
+
+.profile-img{
+    max-width: 200px;
+}
+
+.profile-img-sidebar{
+    max-width: 120px;
+}
+
+.profile-right{
+    border-left: #CD7BFF solid 3px;
+}
+
+.profile-right li{
+    list-style-type: none;
+}
+
+.register{
+    text-decoration: underline;
+    color: #ab46ea;
+}
+
+.register:hover{
+    color: black;
+}
+
+.search input{
+    width: 600px;
+}
+
+ul a{
+    color: initial;
+    text-decoration: none;
+}
+
+.your-groups{
+    border-right: #CD7BFF solid 3px;
+}
+
+@media (max-width: 767px){
+    .col-sm-9{
+        margin-bottom: 50px;
+    }
+}

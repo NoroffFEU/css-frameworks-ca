@@ -21,9 +21,9 @@ const imageFilenames = [
 const imageSrcs = imageFilenames.map(filename => `${filename}`);
 
 // Display the images in the gallery
-function addPosts(displayCount){
+function addPosts(displayCount,id){
 console.log("dsfsdf")
-    const feedContainer = document.getElementById('feedContainer');
+    const feedContainer = document.getElementById(`${id}`);
 let count = 0
     for(let i = 0; i<displayCount; i++){
         if(!imageSrcs[count]){
@@ -32,10 +32,9 @@ let count = 0
         let src=imageSrcs[count]
         count ++
         feedContainer.innerHTML+=`
-            <a href="../profile/index.html" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+            <a href="../profile/index.html" alt="blog-image" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
                 <img class="img-thumbnail" src="../images/${src}">
             </a>
         `
-        
     }
 }

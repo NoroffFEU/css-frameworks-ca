@@ -12,6 +12,8 @@ document.querySelector('footer').innerHTML+=`
 
 const topMenuSelector = document.getElementById('top-menu')
 topMenuSelector.innerHTML=`
+
+    <div class="text-bg-light">
         <div class="row justify-content-between align-items-center text-bg-primary p-3">
             <div class="col-auto">
                 <a href="/feed/index.html">
@@ -26,6 +28,22 @@ topMenuSelector.innerHTML=`
                     <i class="bi bi-bell fs-1"></i>
                 </a>
             </div>
+        </div>
+    <div id="addPostMenu" class="${onlyMb} m-1 d-none">
+        <div class="mb-2 ms-2 row justify-content-between">
+            <button type="button" class="col-6  btn btn-primary">Upload image</button>
+            <button onclick="toggleAddPostMenu()" class=" col-4 nav-link">
+                <i class="bi bi-x-lg"></i>
+                <span class="${onlyPc}">Add post</span>
+            </button>
+        </div>
+        <div class="m-2">
+            <textarea class="mb-2 form-control border-primary" rows="4" placeholder="Enter description"></textarea>
+        </div>
+        <div class="ms-2">
+            <button type="button" class="btn btn-primary" disabled>Post</button>
+        </div>
+    </div>
     </div>
 `
 
@@ -93,20 +111,25 @@ return`
     </a>
 </li>
 <li class="nav-item ${onlyMb}">
-    <a class="nav-link" href="#">
+    <button onclick="toggleAddPostMenu()" class="nav-link">
         <i class="bi bi-plus-circle ${size}"></i>
         <span class="${size} ${onlyPc}">Add post</span>
-    </a>
+    </button>
 </li>
 <div class="${onlyPc}">
-    <button type="button col-12" class="mt-5 mb-2 btn btn-primary">Upload image</button>
-    <textarea class="mb-2 form-control border-primary" rows="4" placeholder="Enter description"></textarea>
+    <button type="button" class="mt-5 mb-2 btn btn-primary">Upload image</button>
+    <textarea class="mb-2 form-control border-primary" rows="2" placeholder="Description"></textarea>
     <button type="button" class="btn btn-primary" disabled>Post</button>
 <div>
 
 `
 }
 
+const addPostMenu = document.getElementById('addPostMenu')
+function toggleAddPostMenu(){
+    addPostMenu.classList.toggle('d-none')
+    updateMainMargin()
+}
 
 function chechMenuForActive(){
     const navItems = navContainer.querySelectorAll('a');
@@ -123,9 +146,14 @@ function chechMenuForActive(){
     }
     });
 }
-const headerHeight = document.getElementById('top-menu').offsetHeight;
-const footerHeight = document.getElementById('mobile-nav-menu').offsetHeight;
+
 const mainSelector = document.querySelector('main')
-mainSelector.style.paddingTop = headerHeight+10 + 'px';
-mainSelector.style.paddingBottom = footerHeight+10 + 'px';
-mainSelector
+
+function updateMainMargin(){
+    const headerHeight = document.getElementById('top-menu').offsetHeight;
+    const footerHeight = document.getElementById('mobile-nav-menu').offsetHeight;
+    mainSelector.style.paddingTop = headerHeight+10 + 'px';
+    mainSelector.style.paddingBottom = footerHeight+10 + 'px';
+}
+
+updateMainMargin()

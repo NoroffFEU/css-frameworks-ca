@@ -2,40 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Log in page for SocialMediaApp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication page</title>
     <link rel="stylesheet" href="dist/css/main.css">
-    <script defer src="js/bootstrap.js"></script>
-<link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
 
+    <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <script defer src="js/bootstrap.js"></script>
 </head>
 <header>
 
 </header>
 <body>
     
-    <div class="container-sm d-flex justify-content-center align-items-center flex-column mt-5">
-        <h1 class="text-center">Please log into your account</h1>
-        <form class="col-12 col-md-6 g-3 needs-validation novalidate d-flex  align-items-center flex-column">
+<div class="container-sm d-flex justify-content-center align-items-center flex-column mt-5">
+    <h1 class="text-center">Please log into your account</h1>
+    <form class="col-12 col-md-6 g-3 needs-validation m-3" action="/profile" method="get" novalidate>
         <div class="m-3">
             <label for="validationCustom01" class="form-label">Username</label>
-            <input required type="text" class="form-control" id="validationCustom01" value="Jenn32">
+            <input required type="text" class="form-control" id="validationCustom01" name="username" value="Jenn32">
             <div class="valid-feedback">
-            Looks good!
+                Looks good!
             </div>
         </div>
         <div class="m-3">
-            <label for="validationPassword">Password</label>
-            <input required minlength="8" type="password" class="form-control">
+            <label for="password" class="form-label">Password</label>
+            <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                placeholder="Password"
+                pattern=".{8,}"
+                title="Password must be at least 8 characters long."
+                required
+            />
             <div class="invalid-feedback">
-            Password did not match, please try again
+                Password must be at least 8 characters long.
             </div>
         </div>
+        <button class="btn btn-primary m-3" type="submit">Submit form</button>
+    </form>
+</div>
 
-            <button class="btn btn-primary" type="submit">Submit form</button>
 
-        </form>
-   </div>
 
 </body>
 <footer>

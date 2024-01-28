@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Feed in SocialMediaApp">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feed page</title>
   <link rel="stylesheet" href="../dist/css/main.css">
   <script src="../js/addposts.js"></script>
   <script defer src="../js/header&footer.js"></script>
   <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
 
 </head>
-<body class="text-bg-light container-fluid">
+<body class="text-bg-light container-fluid mt-3">
 <header>
 </header>
 <main>
@@ -28,13 +33,14 @@
             <select class="form-control col-6 text-center border-primary">
                 <option value="newest">Newest</option>
                 <option value="oldest">Oldest</option>
+                <option value="popularity">Popularity</option>
             </select>
           </div>
                 
 
         </section>
         <section id="feedContainer" class="row">
-          <script>addPosts(36)</script>
+          <script>addPosts(36,'feedContainer')</script>
         </section>
 </div>
   </div>

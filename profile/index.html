@@ -2,29 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Profile page in SocialMediaApp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile page</title>
     <link rel="stylesheet" href="../dist/css/main.css">
     <script src="../js/addPosts.js"></script>
     <script defer src="../js/header&footer.js"></script>
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
 
 </head>
-<body class="text-bg-light">
+<body class="text-bg-light container-fluid mt-3">
 <header>
 </header>
-<main class=" container-fluid">
+<main class="">
     <div class="row flex-nowrap">
-            <div class="sticky-top col-auto col d-none d-sm-inline">
+        <div class="sticky-top col-auto col d-none d-sm-inline">
             <nav id="nav-menu" class="navbar"></nav>
         </div>
         <div class="col">
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4">
-                    <img class="img-thumbnail" src="../images/woman-1274056_1280.jpg">
+                    <img class="img-thumbnail" alt="Profile image" src="../images/woman-1274056_1280.jpg">
                 </div>
-                <div class="col-12 col-md-8 m-2">
-                    <div class="m-2">
+                <div class="col-12 col-md-8 mb-1 mt-1">
+                    <div>
                         <span>Jenn32</span>
                         <button type="button" class="ms-3 btn btn-primary">Follow</button>
                     </div>
@@ -34,13 +39,15 @@
                         <span class="col">869 following</span>
                     </div>
                     <div>
-                        <span>Some text where I try representing myself as perfect, but in reality, it is my faults that would make you care.</span>
+                        
+                        <p>Some text where I try representing myself as perfect, but in reality, it is my faults that would make you care.</p>
                     </div>
                 </div>
             </div>
             <div class=" mt-5">
+                <h5>More of my posts</h5>
                 <div id="feedContainer" class="row"></div>
-                <script>addPosts(3)</script>
+                <script defer>addPosts(3,'feedContainer')</script>
             </div>
         </div>
     </div>

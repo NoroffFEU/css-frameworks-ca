@@ -1,4 +1,10 @@
 @charset "UTF-8";
+.cus-thum {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+}
+
 /*!
  * Bootstrap  v5.2.0 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

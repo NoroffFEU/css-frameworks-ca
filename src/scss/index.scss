@@ -13,5 +13,10 @@ $brown:   #F0AD6D;
 $info:      $orange;
 $danger:    $brown;
 
+.cus-thum{
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+}
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

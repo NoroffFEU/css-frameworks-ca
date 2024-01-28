@@ -2,12 +2,12 @@
   "name": "css-frameworks-ca",
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
+    "test": "echo \"Error: no stest specified\" && exit 1",
     "build": "sass src/scss:css",
     "watch": "sass --watch src/scss:css",
-    "start": "live-server",
-    "dev": "npm-run-all --parallel watch start"
+    "dev": "npm run watch & live-server"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "SASS"
   ],
   "author": "Kristine T",
- 
+
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
@@ -33,6 +33,7 @@
     "bootstrap": "^5.3.2"
   },
   "devDependencies": {
+    "live-server": "^1.2.2",
     "sass": "^1.70.0"
-  }
+}
 }

@@ -51,8 +51,8 @@ footer {
     top: 80%;
     left: 75%;
     background: url("../../image/nav-bg-1.JPG");
-    background-position: 60% 100%;
-    background-size: 100%;
+    background-position: 100% 70%;
+    background-size: 200%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     width: 20%;
@@ -66,16 +66,10 @@ footer {
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
   }
 }
-@media (max-width: 767px) and (max-width: 540px) {
+@media (max-width: 767px) and (max-width: 480px) {
   .navbar-card {
-    font-size: 16px;
-    left: 70%;
-    width: 25%;
-  }
-}
-@media (max-width: 767px) and (max-width: 380px) {
-  .navbar-card {
-    font-size: 14px;
+    font-size: 15px;
+    background-position: 100% 65%;
   }
 }
 @media (max-width: 380px) {

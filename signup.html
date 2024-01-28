@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/index.css" />
+    <title>ConnectifyNow - Login and Registration</title>
+</head>
+
+
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../feed/index.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../profile/index.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pb-4">
+        <section class="container authentication-form">
+            <h1 class="text-center mb-3">SIGN UP</h1>
+            <div class="d-flex justify-content-center">
+
+                <form id="member-registration" action="/feed/index.html" method="post" class="form-validate form-horizontal well" enctype="multipart/form-data">
+			<fieldset>
+				<legend>User Registration</legend>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Name *</label>
+					<input type="text" class="form-control" id="exampleInputPassword1">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Username *</label>
+					<input type="text" class="form-control" id="exampleInputPassword1">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Password *</label>
+					<input type="password" class="form-control" id="exampleInputPassword1">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Confirm Password *</label>
+					<input type="password" class="form-control" id="exampleInputPassword1">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email Address *</label>
+					<input type="email" class="form-control" id="exampleInputEmail1">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Confirm Email Address *</label>
+					<input type="email" class="form-control" id="exampleInputEmail1">
+				</div>
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="form-group d-flex justify-content-start">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+					<div class="form-check form-group d-flex justify-content-end">
+						<a href="/index.html">Sign in instead</a>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+        </section>
+    </main>
+
+    <footer class="text-center py-3 fixed-bottom">
+        © 2024 Zico, CSS Framework CA.
+    </footer>
+
+</body>
+</html>

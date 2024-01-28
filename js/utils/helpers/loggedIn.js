@@ -1,6 +1,9 @@
 import * as utils from "../storage/storage.js";
 
-export function getToken() {
+export function loggedIn() {
   const token = utils.get("token");
-  return token;
+  if (token) {
+    return true;
+  }
+  return false;
 }

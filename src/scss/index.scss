@@ -1,4 +1,4 @@
-$blue:    #142664;
+$blue:    #5675DC;
 $indigo:  #6610f2;
 $purple:  #6f42c1;
 $pink:    #d63384;
@@ -8,7 +8,10 @@ $yellow:  #F1D66F;
 $green:   #198754;
 $teal:    #20c997;
 $cyan:    #0dcaf0;
+$brown:   #F0AD6D;
 
 $info:      $orange;
+$danger:    $brown;
+
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

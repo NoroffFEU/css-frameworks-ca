@@ -29,6 +29,11 @@ body {
   z-index: 10;
 }
 
+.profile-img {
+  width: 18rem;
+  margin-bottom: -50%;
+}
+
 .custom-thumbnail {
   max-width: 50px;
 }
@@ -55,3 +60,19 @@ img {
   align-items: center;
   margin-top: 1rem;
 }
+
+[type=search] {
+  appearance: textfield;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  appearance: button;
+}
+
+::file-selector-button {
+  appearance: button;
+}
+

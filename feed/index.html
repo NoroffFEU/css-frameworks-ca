@@ -19,32 +19,29 @@
 <header>
 </header>
 <main>
-  <div class="row ">
+  <div class="row">
     <div class="sticky-top col-auto col d-none d-sm-inline">
       <nav id="nav-menu" class="navbar"></nav>
     </div>
     <div class="col">
-        <section id="top-section" class="row mb-1">
-          <div class="col-6">
-            <input type="text" class="form-control border-primary text-left rounded-1"
-              placeholder="Themes, feelings, places ... ">
-          </div>
-          <div class="col-6">
-            <select class="form-control col-6 text-center border-primary">
-                <option value="newest">Newest</option>
-                <option value="oldest">Oldest</option>
-                <option value="popularity">Popularity</option>
-            </select>
-          </div>
-                
-
-        </section>
-        <section id="feedContainer" class="row">
-          <script>addPosts(36,'feedContainer')</script>
-        </section>
-</div>
+      <section id="top-section" class="row mb-1 col-lg-10 justify-content-between">
+        <div class="col-lg-5 col-6">
+          <input type="text" class="form-control border-primary text-left rounded-1"
+            placeholder="Themes, feelings, places ... ">
+        </div>
+        <div class="col-3">
+          <select class="form-control text-center  border-primary">
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+              <option value="popularity">Popularity</option>
+          </select>
+        </div>
+      </section>
+      <section id="feedContainer" class="row col-lg-10">
+        <script>addPosts(36,'feedContainer')</script>
+      </section>
+    </div>
   </div>
-
 </main>
 <footer>
 </footer>

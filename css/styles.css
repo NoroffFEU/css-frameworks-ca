@@ -24378,12 +24378,19 @@ footer {
     top: 80%;
     left: 75%;
     background: url("../../image/nav-bg-1.JPG");
-    background-position: 50% 60%;
-    background-size: 250%;
+    background-position: 60% 100%;
+    background-size: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     width: 20%;
     padding: 0px 10px;
+  }
+  .navbar-card .nav-link {
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+  .navbar-card .nav-link:hover {
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
   }
 }
 @media (max-width: 767px) and (max-width: 540px) {
@@ -24469,10 +24476,10 @@ footer {
 
 .login-img2 {
   display: none;
-  background-image: url(../../image/nav-bg-1.JPG);
-  background-size: 230%;
+  background-image: url(../../image/nav-bg-2.JPG);
+  background-size: 280%;
   background-repeat: no-repeat;
-  background-position: 100% 60%;
+  background-position: 50% 100%;
 }
 .login-img2 p, .login-img2 h2, .login-img2 .h2 {
   color: rgb(255, 255, 255);

@@ -79,17 +79,25 @@ footer{
         top: 80%;
         left: 75%;
         background: url("../../image/nav-bg-1.JPG");
-        background-position: 50% 60%;
-        background-size: 250%;
+        background-position: 60% 100%;
+        background-size: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         border-radius: 8px;
         width: 20%;
         padding: 0px 10px;
+.nav-link{
+    color: white;
+    text-shadow:$shaddow-dark;
+}
+.nav-link:hover {
+    text-shadow: $shaddow-bright;
+}
 
         @media (max-width: 540px) {
             font-size: 16px;
             left: 70%;
             width: 25%;
+
         }
 
         @media (max-width: 380px) {
@@ -180,10 +188,10 @@ height: 20px;}
 
 .login-img2{
     display: none;
-    background-image: url(../../image/nav-bg-1.JPG);
-    background-size:230%;
+    background-image: url(../../image/nav-bg-2.JPG);
+    background-size:280%;
     background-repeat: no-repeat;
-    background-position: 100% 60%;
+    background-position: 50% 100%;
 
     
 

@@ -1,1 +1,59 @@
 
+@import "variables"; /* /src/scss/_variables.scss */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.shadow-costum {
+  @extend .shadow-lg;
+  backdrop-filter: blur(20px);
+}
+.custom-bg {
+  background: $custom-bg;
+}
+.custom-linear-bg {
+  background: $custom-linear-bg;
+}
+.custom-bg-image {
+  background: url(../../images/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.user-icon {
+  @extend .rounded-circle;
+  @extend .border;
+  @extend .border-primary;
+  width: 48px;
+  height: 48px;
+
+  &-sm {
+    @extend .rounded-circle;
+    @extend .border;
+    @extend .border-primary;  
+    width: 24px;
+    height: 24px
+  }
+
+  &-lg {
+    @extend .rounded-circle;
+    @extend .border;
+    @extend .border-primary;  
+    width: 96px;
+    height: 96px
+  }
+  &-xl {
+    @extend .rounded-circle;
+    @extend .border;
+    @extend .border-primary;  
+    width: 192px;
+  }
+}
+.fa-heart {
+  color: $red;
+  @extend .fs-2;
+}
+.fa-face-smile, .fa-face-frown {
+  @extend .fs-2;
+  @extend .rounded-circle;
+  color: $yellow-500;
+  background: black;
+}

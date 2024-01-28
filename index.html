@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriendLink | Welcome</title>
+    <meta name="description" content="FriendLink - Your digital space for meaningful connections. Connect with friends, share moments, and explore a world of vibrant social experiences.">
+    <link rel="stylesheet" href="dist/css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+</head>
+<body class="custom-bg">
+    <main>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 d-none d-lg-flex custom-bg-image justify-content-center align-items-center">
+                    <p class="m-5 fs-1 fw-bold">Forge Bonds, Share Moments Your Ultimate Social Destination</p>
+                </div>
+                <div class="col container border border-primary rounded-4 custom-linear-bg p-3 m-3 shadow-costum">
+                    <div class="text-center">
+                        <h1>FriendLink</h1>
+                        <ul class="nav nav-underline justify-content-center" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" type="button" data-bs-toggle="tab" data-bs-target="#signinForm" role="tab">Sign in</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" type="button" data-bs-toggle="tab" data-bs-target="#registerForm" role="tab">Register</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div id="signinForm" class="tab-pane fade show active" role="tabpanel" tabindex="0">
+                            <form action="/profile/index.html">
+                                <div class="mb-3">
+                                    <label for="signinEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="signinEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="signinPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signinPassword"  minlength="8" maxlength="20" required>
+                                </div>
+                                <div class="d-grid mb-3">
+                                    <button class="btn btn-primary">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="registerForm" class="tab-pane fade" role="tabpanel" tabindex="0">
+                            <form action="/profile/index.html">
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword"  minlength="8" maxlength="20" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPasswordRepeat" class="form-label">Repeat Password</label>
+                                    <input type="password" class="form-control" id="registerPasswordRepeat" minlength="8" maxlength="20" required>
+                                </div>
+                                <div class="d-grid mb-3">
+                                    <button class="btn btn-primary">Continue</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <button class="btn btn-outline-primary">Forgot Password?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

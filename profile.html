@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pictuaries || profile</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="dist/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.svg" alt="logo" class="min-logo" />
+      <a class="nav-link active signin" aria-current="page" href="index.html"
+        >log in/out</a
+      >
+    </header>
+    <main class="d-flex">
+      <section
+        class="container-md col-lg-3 d-flex flex-column align-items-center d-none d-lg-block"
+      >
+        <div
+          class="container d-flex flex-column justify-content-center col-10 m-4 load-box"
+        >
+          <div class="mb-3">
+            <label for="formFile" class="form-label">upload image</label>
+            <input class="form-control" type="file" id="formFile" />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >description</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
+          </div>
+          <div class="col-auto">
+            <button
+              type="submit"
+              class="btn btn-primary mb-3 btn-custom"
+            >
+              upload
+            </button>
+          </div>
+        </div>
+
+        <div class="container d-flex flex-column align-items-center justify-content-center search-sort">
+          <div class="input-group search search-min">
+            <input
+              type="text"
+              class="form-control search-bar"
+              placeholder="search..."
+            />
+            <button
+              class="btn btn-outline-secondary mx-1 btn-custom"
+              type="button"
+            >
+              search
+            </button>
+          </div>
+
+        <div class="sort-container d-flex">
+          <button
+            type="dropdown"
+            class="btn btn-primary dropdown-toggle mb-3 btn-custom sortby"
+            data-bs-toggle="dropdown"
+          >
+            sort by
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">newest</a></li>
+            <li><a class="dropdown-item" href="#">for you</a></li>
+            <li><a class="dropdown-item" href="#">popular</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+        <div class="container feed d-flex justify-content-center flex-row flex-wrap">
+    <h2>feed</h2>
+          <div class="card mb-3 col-10 mx-1 card-custom">
+            <img
+              src="/images/zoe-gayah-jonker-13ky5Ycf0ts-unsplash.jpg"
+              class="card-img"
+              alt="orange furry cat"
+            />
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">@username</h5>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart justify-content-end"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-chat"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <p class="card-text">This is a post description.</p>
+            </div>
+          </div>
+          <div class="card mb-3 col-10 mx-1 card-custom">
+            <img
+              src="/images/alexander-andrews-KfPwby-UisA-unsplash.jpg"
+              class="card-img"
+              alt="orange cat with black background"
+            />
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">@username</h5>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart justify-content-end"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-chat"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <p class="card-text">This is a post description.</p>
+            </div>
+          </div>
+          <div class="card mb-3 col-10 mx-1 card-custom">
+            <img
+              src="/images/alicja-gancarz-HoC9ttceIGo-unsplash.jpg"
+              class="card-img"
+              alt="cat on yellow background"
+            />
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">@username</h5>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart justify-content-end"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-chat"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <p class="card-text">This is a post description.</p>
+            </div>
+          </div>
+          
+            <div class="card mb-3 col-10 mx-1 card-custom">
+            <img
+              src="/images/alvan-nee-ZCHj_2lJP00-unsplash.jpg"
+              class="card-img"
+              alt="kitten reaching upwards"
+            />
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">@username</h5>
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-heart justify-content-end"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+                    />
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-chat"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <p class="card-text">This is a post description.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="container-md col-lg-9 position-relative profile-section">
+        <div class="container-md">
+          <div class="profile-box">
+            <div class="profile-img-container position-relative">
+              <img
+                src="images/karina-vorozheeva-rW-I87aPY5Y-unsplash.jpg"
+                alt="profile image"
+                class="profile-img rounded-circle"
+              />
+              <button
+                class="btn btn-primary follow-btn d-flex justify-content-start"
+              >
+                Follow
+              </button>
+            </div>
+            <div class="profile-content">
+              <h2>@username</h2>
+              <p>Short bio goes here...</p>
+              <div class="follow-container d-flex flex-row">
+                <div class="mx-1 d-flex flex-column align-items-center">
+                  <h3>27</h3>
+                  <p>posts</p>
+                </div>
+                <div class="mx-1 d-flex flex-column align-items-center">
+                  <h3>283</h3>
+                  <p>followers</p>
+                </div>
+                <div class="mx-1 d-flex flex-column align-items-center">
+                  <h3>240</h3>
+                  <p>following</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container list-of-posts">
+          <div class="row d-flex justify-content-center flex-row flex-wrap">
+            <div class="mb-3 col-6">
+              <img
+                src="/images/zoe-gayah-jonker-13ky5Ycf0ts-unsplash.jpg"
+                class="card-img"
+                alt="orange furry cat"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/alexander-andrews-KfPwby-UisA-unsplash.jpg"
+                class="card-img"
+                alt="orange cat with black background"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/alicja-gancarz-HoC9ttceIGo-unsplash.jpg"
+                class="card-img"
+                alt="cat with yellow background"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/alvan-nee-ZCHj_2lJP00-unsplash.jpg"
+                class="card-img"
+                alt="kitte reaching upwards"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/daria-averina-_867Jy8LCkI-unsplash.jpg"
+                class="card-img"
+                alt="cat in a basket"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/daria-shatova-qBSIwo7H0qY-unsplash.jpg"
+                class="card-img"
+                alt="cat looking around the corner"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/gaelle-marcel-Qtg_270Aa_I-unsplash.jpg"
+                class="card-img"
+                alt="orange cat looking up"
+              />
+            </div>
+
+            <div class="mb-3 col-6">
+              <img
+                src="/images/jonas-vincent-xulIYVIbYIc-unsplash.jpg"
+                class="card-img"
+                alt="human and kitten high fiving"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <nav class="bottom-nav">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="feed.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-house"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="profile.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              /></svg>
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <footer class="container d-flex justify-content-center align-items-center">
+      <p class="footer-text m-3">terms and conditions</p>
+      <img src="/images/logo.svg" class="min-logo m-3">
+      <p class="footer-text m-3">COPYRIGHT © 2023 | pictuaries</p>
+    </footer>
+  </body>
+</html>

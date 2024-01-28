@@ -36,16 +36,15 @@ clone the repo and install.
 git clone https://github.com/IceGreenGalactic/css-frameworks-ca.git
 
 2. Install the dependencies:
-
 ```
+```bash
 npm install-D sass
 ```
-```
+```bash
 npm install bootstrap@5.3.2
 ```
-```
+```bash
 npm install-D live-server
-```
 ```
 ### Running
 

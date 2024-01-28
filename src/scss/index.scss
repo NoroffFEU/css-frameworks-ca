@@ -12,6 +12,12 @@
 .custom-linear-bg {
   background: $custom-linear-bg;
 }
+.custom-bg-image {
+  background: url(../../images/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
 .user-icon {
   @extend .rounded-circle;
   @extend .border;

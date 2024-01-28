@@ -1,8 +1,10 @@
 @charset "UTF-8";
 .cus-thum {
+  object-fit: cover;
+}
+.cus-thum.cus-thum-sm {
   max-width: 100px;
   max-height: 100px;
-  object-fit: cover;
 }
 
 /*!

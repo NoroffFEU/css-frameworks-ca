@@ -1,0 +1,96 @@
+// Variables
+
+// Color system
+// color-variables
+$blue:    #0d6efd ;
+$indigo:  #6610f2 ;
+$purple:  #6f42c1 ;
+$pink:    #d63384 ;
+$red:     #dc3545 ;
+$orange:  #fd7e14 ;
+$yellow:  #ffc107 ;
+$green:   rgb(69, 115, 107);  
+$brown:   rgb(113, 76, 76);
+$darkgreen: rgb(56, 90, 84);
+$lightgreen: rgb(140, 179, 172);
+$bordercolor: rgb(46, 74, 69); 
+$teal:    #93c1b3 ;
+$cyan:    #0dcaf0 ;
+
+$overlay-bg-color: rgba(0, 0, 0, 0.5);
+$hover-background-color: rgba(0, 0, 0, 0.5);
+$customtext: white;
+
+// colors-map
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800,
+  "brown":      $brown,
+  "darkgreen":  $darkgreen,
+  "lightgreen": $lightgreen
+) ;
+
+// theme-color-variables
+$primary:       $blue ;
+$secondary:     $gray-600 ;
+$success:       $green ;
+$info:          $cyan ;
+$warning:       $yellow ;
+$danger:        $red ;
+$light:         $gray-100 ;
+$dark:          $gray-900 ;
+$login:         $brown ;
+$other:         $teal ;
+
+// theme-colors-map
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "login":      $brown,
+  "other":      $teal
+) ;
+
+
+// Breakpoints
+// grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) ;
+
+
+// Fonts
+// font-variables
+$font-family-base: 'kanit, sans-serif';
+
+
+//Images
+// custom made img variables
+$header-img-height: 200px;
+$img-max-width: 500px;
+
+$custom-background-height: 400px;
+$custom-background-image: url('../../images/homebackround.jpg');
+

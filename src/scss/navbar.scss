@@ -1,0 +1,41 @@
+/*Header, Navbar*/
+
+
+
+// _header.scss
+.header-img {
+    width: 100%;
+    height: $header-img-height;
+}
+
+
+
+@media (min-width: 992px) { 
+    .sidebar-nav {
+        position: fixed;
+        top: 10%;
+        left: 0;
+        bottom: 20%;
+        width: 250px; /* bredde på sidebar */
+        padding: 2px;
+        line-height: 30px;
+    }
+
+    .main-content {
+        margin-left: 250px; /* skyv hovedinnholdet til høyre */
+    }
+
+    header .navbar {
+        display: none; /* Skjuler kun toppnavigasjonsbaren på store skjermer */
+    }
+
+    
+}
+
+// Tilpasser form-control for mobilvisninger
+@media (max-width: 768px) {
+    .form-control {
+        width: 200px; // Juster etter behov
+    }
+}
+

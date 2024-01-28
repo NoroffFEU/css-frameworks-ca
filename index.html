@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/dist/index.css" />
+    <title>BootStrap Connection - Login and Registration</title>
+</head>
+
+
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../feed/index.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="../profile/index.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pb-4">
+        <section class="container authentication-form">
+            <h1 class="text-center mb-3">LOGIN</h1>
+            <div class="d-flex justify-content-center">
+                <form action="/profile" method="get">
+                    <div class="form-group row mb-3">
+                        <label for="username" class="col-sm-3 col-form-label">Username:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control mx-auto col-md-6" id="username" name="username"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control mx-auto col-md-6" id="password" name="password"
+                                required minlength="8">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-9 offset-sm-3">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                    <p>Don't have an account? <a href="/profile">Register here</a></p>
+                </form>
+            </div>
+
+
+            <div class="modal fade" id="passwordLengthErrorModal" tabindex="-1" role="dialog"
+                aria-labelledby="passwordLengthErrorModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="passwordLengthErrorModalLabel">Error</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Password must have a minimum length of 8 characters.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-3 fixed-bottom">
+        © 2024 Zico, CSS Framework CA.
+    </footer>
+
+</body>
+</html>

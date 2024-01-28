@@ -1,1 +1,215 @@
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "variables";
+@import "variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
 
+// Bootstrap main file
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// My custom components
+
+@import "buttons";
+
+// Border-radius
+
+  // Border-radius variables
+
+$mobile-frontpage-border-radius: 50px;
+
+.rounded-custom-top {
+  border-top-left-radius: $mobile-frontpage-border-radius;
+  border-top-right-radius: $mobile-frontpage-border-radius;
+}
+
+.rounded-lg-login {
+  border-top-left-radius: $mobile-frontpage-border-radius;
+  border-top-right-radius: $mobile-frontpage-border-radius;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  @include media-breakpoint-up("lg") {
+    border-bottom-left-radius: $mobile-frontpage-border-radius;
+    border-bottom-right-radius: $mobile-frontpage-border-radius;
+  }
+}
+
+.br-frontpage-img {
+
+  border-top-left-radius: $mobile-frontpage-border-radius;
+  border-bottom-left-radius: $mobile-frontpage-border-radius;
+
+}
+
+// Sizing
+
+.frontpage-height {
+  max-height: 1920px;
+
+  @include media-breakpoint-up("lg") {
+    max-height: 614px;
+  }
+
+  @include media-breakpoint-up("xl") {
+    max-height: 727px;
+  }
+
+  @include media-breakpoint-up("xxl") {
+    max-height: 817px;
+  }
+}
+
+
+// Colors
+
+.bg-custom-green {
+  background-color: $frontpage-green;
+}
+
+// Colors varying with breakpoints
+
+.bg-login-green-white {
+  background-color: $frontpage-green;
+
+  @include media-breakpoint-up("lg") {
+    background-color: $frontpage-white;
+  }
+}
+
+.bg-login-body-green-white {
+  background-color: $frontpage-white;
+
+  @include media-breakpoint-up("lg") {
+    background-color: $frontpage-green;
+  }
+}
+
+// Text-variables
+
+.text-frontpage {
+  color: $frontpage-white;
+
+  @include media-breakpoint-up("lg") {
+    color: $frontpage-green;
+  }
+}
+
+.text-custom-white {
+  color: $frontpage-white;
+}
+
+.text-custom-green {
+  color: $frontpage-green;
+}
+
+.font-fm-mulish {
+  font-family: $font-family-mulish;
+}
+
+.text-danger-frontpage {
+  color: $frontpage-yellow;
+
+  @include media-breakpoint-up("lg") {
+    color: $frontpage-green;
+  }
+ }
+
+ .text-green-lg-white {
+  color: $frontpage-green;
+
+  @include media-breakpoint-up("lg") {
+    color: $frontpage-white;
+  }
+ }
+
+   // Font sizes - Variables
+
+   $custom-fs-0-625rem: 0.625rem;
+   $custom-fs-0-75-rem: 0.75rem;
+   $custom-fs-0-875-rem: 0.875rem;
+   $custom-fs-1-25-rem: 1.25rem;
+   $custom-fs-1-5rem: 1.5rem;
+   $custom-fs-2rem: 2rem;
+   $custom-fs-2-25rem: 2.25rem;
+   $custom-fs-2-5-rem: 2.5rem;
+ 
+
+ // Font sizes
+
+ .fs-0-75-rem {
+  font-size: $custom-fs-0-75-rem;
+ }
+
+
+ .fs-1-25-rem {
+  font-size: $custom-fs-1-25-rem;
+ }
+
+ .fs-1-5-rem {
+  font-size: $custom-fs-1-5rem;
+ }
+
+
+
+ // Font sizes with breakpoints
+
+ .fs-0-625rem-lg-0-875rem {
+  font-size: $custom-fs-0-625rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-0-875-rem;
+  }
+ }
+
+ .fs-0-75rem-lg-1rem {
+  font-size: $custom-fs-0-75-rem; 
+
+  @include media-breakpoint-up("lg") {
+    font-size: $font-size-base;
+  }
+ }
+
+ .fs-1rem-lg-1-25rem {
+  font-size: $font-size-base;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-1-25-rem;
+  }
+ }
+
+ .fs1rem-lg-1-5rem {
+  font-size: $font-size-base;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-1-5rem;
+  }
+ }
+
+ .fs-1-5rem-lg-2rem {
+  font-size: $custom-fs-1-5rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-2rem;
+  }
+ }
+
+ .fs-1-5rem-lg-2-25rem {
+  font-size: $custom-fs-1-5rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-2-25rem;
+  }
+ }
+
+ .fs-2-rem-lg-2-5-rem {
+  font-size: $custom-fs-2rem;
+
+  @include media-breakpoint-up("lg") {
+    font-size: $custom-fs-2-5-rem;
+  }
+ }

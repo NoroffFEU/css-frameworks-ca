@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login page for HikeBuddy">
+  <title>Hikebuddies - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/css/index.css">
+</head>
+<body class="bg-login-body-green-white">
+  <main>
+  <div class="text-center pt-4 d-lg-none">
+    <img src="assets/logo/HikeBuddy-logos_transparent.png" alt="Main logo for HikeBuddy">
+  </div>
+    <div class="container p-0 ">
+    <div class="row rounded-lg-login bg-login-green-white px-0 mt-md-5 frontpage-height">
+      <div class="col-lg-6 d-none d-lg-block p-0 frontpage-height">
+        <img src="assets/img/ivana-cajina-e6f8IaRQY7M-unsplash-1920.jpg" alt="" class="img-fluid br-frontpage-img frontpage-height">
+      </div>
+      <div class="col-12 col-lg-6">
+      <div class=" mx-0 px-0 vh-100 mt-4 mt-md-0">
+      <div>
+        <div class="text-center d-none d-lg-block">
+          <img src="assets/logo/HikeBuddy-logos_transparent.png" alt="" class="img-fluid">
+        </div>
+        <h1 class="text-center pt-4 pt-lg-2 text-frontpage font-fm-mulish fw-bold fs-2-rem-lg-2-5-rem">Welcome back</h1>
+        <h2 class="text-center pt-2 text-frontpage fs-1rem-lg-1-25rem font-fm-mulish">Login to your account</h2>
+      </div>
+      <form action="/profile/index.html" method="get" class="w-75 m-auto">
+        <div class="pt-3 ">
+          <label for="user-email" class="form-label text-frontpage font-fm-mulish fs-0-75-rem  mb-lg-0">Email address</label>
+          <input type="email" class="form-control" id="user-email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+          <div class="invalid-feedback">Please provide a valid email address</div>
+        </div>
+        <div class="pt-3">
+          <label for="user-password" class="form-label text-frontpage font-fm-mulish fs-0-75-rem mb-lg-0">Password</label>
+          <input type="password" class="form-control" id="user-password" aria-describedby="forgottenPassword" minlength="8" required>
+          <div id="forgottenPassword" class="form-text text-end font-fm-mulish pb-3 fs-0-75-rem"><a href="#" class="text-decoration-none text-danger-frontpage">Forgotten your password?</a></div>
+        </div>
+        <div class="text-center pt-3">
+        <button type="submit" class="btn btn-login w-75 rounded-5 font-fm-mulish fs-1-25-rem">SIGN IN</button>
+      </div>
+      </form>
+      <div class="text-center pt-3">
+      <p class="text-frontpage fs-0-75-rem">Don't have an account?<a href="#" class="text-decoration-none text-danger-frontpage"> Sign up here</a></p>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</main>
+</body>
+</html>

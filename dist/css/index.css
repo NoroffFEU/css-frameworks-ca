@@ -11911,4 +11911,8 @@ button,
   appearance: button;
 }
 
+.login-hero-img {
+  max-width: unset;
+}
+
 /*# sourceMappingURL=index.css.map */

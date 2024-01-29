@@ -2,16 +2,28 @@ export function renderPosts(parent, posts) {
   const container = document.querySelector(parent);
   const loader = document.querySelector(".loader");
 
-  posts.forEach((post) => {
-    const postContainer = createPost(post);
-    container.appendChild(postContainer);
+  //   posts.forEach((post) => {
+  //     const postContainer = createPost(post);
+  //     container.appendChild(postContainer);
+  //   });
+
+  const allPostsHtml = posts.map((post) => {
+    return createPost(post);
   });
 
+  container.append(...allPostsHtml);
+  console.log(...allPostsHtml);
+
   loader.style.display = "none";
-  console.log(container, posts);
 }
 
 function createPost(post) {
+  // Anchor element
+  const postLink = `/feed/post.html?id=${post.id}`;
+  const anchor = document.createElement("a");
+  anchor.setAttribute("href", postLink);
+  anchor.classList.add("post-link"); // Add class for styling if needed
+
   // Main container
   const postSection = document.createElement("section");
   postSection.classList.add("mt-5", "container", "bg-light", "h-auto");
@@ -28,16 +40,16 @@ function createPost(post) {
   userImage.src = "/images/profile-pic3.png"; // default user image
   userImage.alt = "user picture";
   userImage.classList.add("small-user-picture", "m-1", "p-0");
-  userInfoCol.appendChild(userImage);
+  userInfoCol.append(userImage);
 
   const userName = document.createElement("p");
   userName.classList.add("mb-0");
   userName.innerHTML = `<span class="pe-2 baloo text-primary fs-5">${post.userName || "User"}</span>${new Date(
     post.created
   ).toLocaleDateString()}`;
-  userInfoCol.appendChild(userName);
+  userInfoCol.append(userName);
 
-  row.appendChild(userInfoCol);
+  row.append(userInfoCol);
 
   // Right column for Heart icon
   const heartCol = document.createElement("div");
@@ -48,18 +60,18 @@ function createPost(post) {
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
     </svg>`;
-  heartCol.appendChild(heartIcon);
+  heartCol.append(heartIcon);
 
-  row.appendChild(heartCol);
+  row.append(heartCol);
 
   // Post text
   const postTextDiv = document.createElement("div");
   const postText = document.createElement("p");
   postText.classList.add("text-start", "text-dark", "pt-3");
   postText.textContent = post.body || "No content";
-  postTextDiv.appendChild(postText);
+  postTextDiv.append(postText);
 
-  row.appendChild(postTextDiv);
+  row.append(postTextDiv);
 
   // Check if there's media
   if (post.media) {
@@ -70,7 +82,7 @@ function createPost(post) {
     media.src = post.media;
     media.alt = "Post media";
     media.classList.add("img-fluid");
-    mediaDiv.appendChild(media);
+    mediaDiv.append(media);
 
     // Comments section
     const commentsDiv = document.createElement("div");
@@ -80,18 +92,18 @@ function createPost(post) {
       post.comments.forEach((comment) => {
         const commentElement = document.createElement("p");
         commentElement.textContent = comment.text;
-        commentsDiv.appendChild(commentElement);
+        commentsDiv.append(commentElement);
       });
     } else {
       const noComments = document.createElement("p");
       noComments.textContent = "No comments";
-      commentsDiv.appendChild(noComments);
+      commentsDiv.append(noComments);
     }
 
-    row.appendChild(mediaDiv);
+    row.append(mediaDiv);
   }
-
-  postSection.appendChild(row);
+  anchor.append(row);
+  postSection.append(anchor);
 
   return postSection;
 }

@@ -2,6 +2,7 @@ import { registerFormHandler } from "./handlers/authorization/registerFormHandle
 import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 import { createPostsHandler } from "./handlers/posts/createPostsHandler.js";
+import { createSinglePostHandler } from "./handlers/posts/createSinglePostHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -24,6 +25,9 @@ function route() {
       logoutHandler();
       // add posts handler
       createPostsHandler();
+      break;
+    case "/feed/post.html":
+      createSinglePostHandler();
       break;
     default:
   }

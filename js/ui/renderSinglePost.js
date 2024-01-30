@@ -17,7 +17,7 @@ export function renderSinglePost(parent, post) {
   userInfoCol.classList.add("col", "d-flex", "align-items-center");
 
   const userImage = document.createElement("img");
-  userImage.src = "/images/profile-pic3.png"; // Replace with actual user image source
+  userImage.src = "/images/profile-pic3.png";
   userImage.alt = "user picture";
   userImage.classList.add("small-user-picture", "m-1", "p-0");
   userInfoCol.append(userImage);
@@ -27,11 +27,18 @@ export function renderSinglePost(parent, post) {
   userName.textContent = post.userName || "User";
   userInfoCol.append(userName);
 
-  // Heart icon (modify as needed)
+  // Right column for Heart icon
   const heartCol = document.createElement("div");
   heartCol.classList.add("col-auto", "d-flex", "justify-content-end");
 
-  // ... define heartCol content ...
+  const heartIcon = document.createElement("span");
+  heartIcon.innerHTML = `
+   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+   </svg>`;
+  heartCol.append(heartIcon);
+
+  row.append(heartCol);
 
   // Post text
   const postTextDiv = document.createElement("div");

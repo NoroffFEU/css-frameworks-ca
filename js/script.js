@@ -3,6 +3,8 @@ import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 import { createPostsHandler } from "./handlers/posts/createPostsHandler.js";
 import { createSinglePostHandler } from "./handlers/posts/createSinglePostHandler.js";
+import { createProfilePostsHandler } from "./handlers/posts/createProfilePostsHandler.js";
+import { handleScrollButton } from "./utils/helpers/handleScrollButton.js";
 
 function route() {
   const path = window.location.pathname;
@@ -18,12 +20,13 @@ function route() {
       break;
     case "/profile/":
       logoutHandler();
+      createProfilePostsHandler();
       // add posts handler with user id. where user can add, edit, delete posts
       break;
     case "/feed/":
     case "/feed/index.html":
+      handleScrollButton();
       logoutHandler();
-      // add posts handler
       createPostsHandler();
       break;
     case "/feed/post.html":

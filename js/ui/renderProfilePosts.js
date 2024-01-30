@@ -1,25 +1,19 @@
-export function renderPosts(parent, posts) {
+export function renderProfilePosts(parent, posts) {
   const container = document.querySelector(parent);
   const loader = document.querySelector(".loader");
 
-  //   posts.forEach((post) => {
-  //     const postContainer = createPost(post);
-  //     container.appendChild(postContainer);
-  //   });
-
   const allPostsHtml = posts.map((post) => {
-    return createPost(post);
+    return createProfilePost(post);
   });
 
   container.append(...allPostsHtml);
   // console.log(...allPostsHtml);
-
   loader.style.display = "none";
 }
 
-function createPost(post) {
+function createProfilePost(post) {
   // Anchor element
-  const postLink = `/feed/post.html?id=${post.id}`;
+  const postLink = `/profile/post.html?id=${post.id}`;
   const anchor = document.createElement("a");
   anchor.setAttribute("href", postLink);
   anchor.classList.add("post-link"); // Add class for styling if needed
@@ -57,9 +51,9 @@ function createPost(post) {
 
   const heartIcon = document.createElement("span");
   heartIcon.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-    </svg>`;
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+      </svg>`;
   heartCol.append(heartIcon);
 
   row.append(heartCol);
@@ -83,22 +77,6 @@ function createPost(post) {
     media.alt = "Post media";
     media.classList.add("img-fluid");
     mediaDiv.append(media);
-
-    // Comments section
-    // const commentsDiv = document.createElement("div");
-    // commentsDiv.classList.add("comments-section");
-
-    // if (post.comments && post.comments.length > 0) {
-    //   post.comments.forEach((comment) => {
-    //     const commentElement = document.createElement("p");
-    //     commentElement.textContent = comment.text;
-    //     commentsDiv.append(commentElement);
-    //   });
-    // } else {
-    //   const noComments = document.createElement("p");
-    //   noComments.textContent = "No comments";
-    //   commentsDiv.append(noComments);
-    // }
 
     row.append(mediaDiv);
   }

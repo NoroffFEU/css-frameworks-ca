@@ -131,15 +131,60 @@
           </div>
         </section>
 
+         <!-- new post section -->
+         <div class="row">
+          <div class="mt-5 mx-auto new-post col-md-8">
+            <p class="text-center">
+              <button
+                class="btn mb-0 btn-outline-primary mx-auto new-post-btn bg-dark"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <span class="text-nowrap"> New post +</span>
+              </button>
+            </p>
+            <div class="collapse align-items-center mx-auto" id="collapseExample">
+              <div class="card bg-dark card-body mx-auto">
+                <div class="mb-1">
+                  <textarea
+                    class="form-control col-md-4 textarea bg-light text-dark mx-auto"
+                    placeholder="Write something for us"
+                    id="newPost"
+                    rows="4"
+                  ></textarea>
+                </div>
+                <div class="mb-1">
+                  <input class="form-control mx-auto" type="file" id="formFile" />
+                </div>
+                <div class="col-auto mx-auto mt-1">
+                  <button type="submit" class="btn btn-outline-primary post-btn mt-3">Post</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
         <section class="container mt-5">
           <div class="row justify-content-between">
             <div class="col ps-0">
-              <p class="text-white text-start">Posts</p>
+              <p class="text-white ps-2 text-start">Posts</p>
             </div>
             <div class="col pe-0">
-              <p class="text-white text-end">Show All</p>
+              <p class="text-white pe-2 text-end">Show All</p>
             </div>
           </div>
+
+          <!-- fetched API posts -->
+          <section>
+            <div class="loader">Loading...</div>
+            <div id="postsContainer"></div>
+          </section>
+
+          <!-- hardcoded posts -->
           <section>
             <div class="row bg-light pt-2 text-center align-items-center justify-content-between">
               <div class="col-auto ps-0 d-flex align-items-center">

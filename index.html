@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body class="d-flex h-100 text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+      <!-- Navbar -->
+      <header class="mb-auto text-center">
+        <div>
+          <h2>Noroff Social</h2>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" aria-current="page" href="#">Log in</a>
+            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="#">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <!-- Form -->
+        <div class="container login-container">
+          <form>
+            <div class="mb-2">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-2">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                minlength="8"
+              />
+            </div>
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="remind-check"
+              />
+              <label class="form-check-label" for="remind-check"
+                >Remember me</label
+              >
+            </div>
+            <button type="submit" class="w-100 btn btn-primary">Log in</button>
+          </form>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="mt-auto text-white">
+        <p>Noroff Social 2024</p>
+      </footer>
+    </div>
+  </body>
+</html>

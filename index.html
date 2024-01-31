@@ -12,7 +12,9 @@
     <link rel="icon" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="icon" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <script src="/js/login.mjs" type="module" defer></script>
+    <script src="js/api/auth/login.mjs" type="module" defer></script>
+    <script src="js/index.mjs" type="module" defer></script>
+
 </head>
 
 <body class="pt-4">
@@ -32,7 +34,7 @@
                     <form class="formLogin">
                         <div class="form-group">
                             <h2 class="text-center mt-3 fs-4">Member Login</h2>
-                            <label for="username" class="d-none">Email</label>
+                            <label for="email" class="d-none">Email</label>
                             <input type="email" class="form-control border-dark text-light mt-4" id="email"
                                 placeholder="Enter your email" title="Email must contain @noroff.no or @stud.noroff.no"
                                 pattern="^[\w\-.]+@(stud\.)?noroff\.no$">

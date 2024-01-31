@@ -22,6 +22,6 @@
 // Bootstrap styles
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-.login-container {
-    max-width: 400px;
-}
+// Custom styles
+@import "./index";
+

@@ -40,7 +40,7 @@ $blue:    #0d6efd ;
 $indigo:  #6610f2 ;
 $purple:  #6f42c1 ;
 $pink:    #d63384 ;
-$red:     #dc3545 ;
+$red:     #DE1D17 ;
 $orange:  #fd7e14 ;
 $yellow:  #ffc107 ;
 $green:   #198754 ;
@@ -298,8 +298,8 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue ;
-$secondary:     $gray-600 ;
+$primary:       $red ;
+$secondary:     $black ;
 $success:       $green ;
 $info:          $cyan ;
 $warning:       $yellow ;
@@ -452,7 +452,7 @@ $body-emphasis-color:       $black ;
 
 $link-color:                              $primary ;
 $link-decoration:                         underline ;
-$link-shade-percentage:                   20% ;
+$link-shade-percentage:                   15% ;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) ;
 $link-hover-decoration:                   null ;
 
@@ -483,9 +483,9 @@ $paragraph-margin-bottom:   1rem ;
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
+  sm: 500px,
+  md: 700px,
+  lg: 900px,
   xl: 1200px,
   xxl: 1400px
 ) ;
@@ -539,7 +539,7 @@ $border-widths: (
   5: 5px
 ) ;
 $border-style:                solid ;
-$border-color:                $gray-300 ;
+$border-color:                $gray-500 ;
 $border-color-translucent:    rgba($black, .175) ;
 // scss-docs-end border-variables
 
@@ -1160,7 +1160,7 @@ $nav-link-padding-y:                .5rem ;
 $nav-link-padding-x:                1rem ;
 $nav-link-font-size:                null ;
 $nav-link-font-weight:              null ;
-$nav-link-color:                    var(--#{$prefix}link-color) ;
+$nav-link-color:                    $white ;
 $nav-link-hover-color:              var(--#{$prefix}link-hover-color) ;
 $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out ;
 $nav-link-disabled-color:           var(--#{$prefix}secondary-color) ;
@@ -1218,7 +1218,7 @@ $navbar-light-brand-hover-color:    $navbar-light-active-color ;
 // scss-docs-end navbar-variables
 
 // scss-docs-start navbar-dark-variables
-$navbar-dark-color:                 rgba($white, .55) ;
+$navbar-dark-color:                 rgba($white, .8) ;
 $navbar-dark-hover-color:           rgba($white, .75) ;
 $navbar-dark-active-color:          $white ;
 $navbar-dark-disabled-color:        rgba($white, .25) ;

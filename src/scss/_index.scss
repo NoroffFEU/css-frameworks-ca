@@ -1,0 +1,20 @@
+#landing-page {
+    background-color: $red;
+}
+
+.login-container {
+    max-width: 400px;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.btn-custom {
+    border-color: $black;
+
+    &:hover {
+        background-color: $black;
+        border-color: $white;
+    }
+}

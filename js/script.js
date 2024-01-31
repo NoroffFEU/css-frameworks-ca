@@ -4,7 +4,7 @@ import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
 import { createPostsHandler } from "./handlers/posts/createPostsHandler.js";
 import { createSinglePostHandler } from "./handlers/posts/createSinglePostHandler.js";
 import { createProfilePostsHandler } from "./handlers/posts/createProfilePostsHandler.js";
-import { handleScrollButton } from "./utils/helpers/handleScrollButton.js";
+import { handleScrollButton } from "./handlers/posts/handleScrollButton.js";
 
 function route() {
   const path = window.location.pathname;

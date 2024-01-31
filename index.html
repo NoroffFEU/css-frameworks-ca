@@ -10,7 +10,7 @@
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     ></script>
   </head>
-  <body class="d-flex h-100 text-bg-dark">
+  <body class="d-flex h-100 text-white" id="landing-page">
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
       <!-- Navbar -->
       <header class="mb-auto text-center">
@@ -19,7 +19,7 @@
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" aria-current="page" href="#">Log in</a>
             <a class="nav-link" href="#">Register</a>
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/feed/">Feed</a>
           </nav>
         </div>
       </header>
@@ -31,6 +31,7 @@
             <div class="mb-2">
               <label for="email" class="form-label">Email address</label>
               <input
+                placeholder="Email address"
                 type="email"
                 class="form-control"
                 id="email"
@@ -40,6 +41,7 @@
             <div class="mb-2">
               <label for="password" class="form-label">Password</label>
               <input
+                placeholder="Password should be at least 8 characters"
                 type="password"
                 class="form-control"
                 id="password"
@@ -56,13 +58,15 @@
                 >Remember me</label
               >
             </div>
-            <button type="submit" class="w-100 btn btn-primary">Log in</button>
+            <button type="submit" class="w-100 btn btn-secondary">
+              Log in
+            </button>
           </form>
         </div>
       </main>
 
       <!-- Footer -->
-      <footer class="mt-auto text-white">
+      <footer class="mt-auto text-white text-center">
         <p>Noroff Social 2024</p>
       </footer>
     </div>

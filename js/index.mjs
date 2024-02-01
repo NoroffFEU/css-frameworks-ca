@@ -1,7 +1,10 @@
 import { registerFormListener } from "./handler/register/index.mjs";
 import { loginFormListener } from "./handler/login/index.mjs";
 
-import { createPost } from "./posts/create.mjs";
+import * as templates from "./templates/index.mjs";
+import * as postMethod from "./posts/index.mjs";
+import { renderPostTemplate } from "./templates/index.mjs"; 
+
 
 const path = location.pathname;
 
@@ -16,8 +19,12 @@ switch (path) {
   default:
 }
 
-createPost({
-  
-  title: "My first post YOYO",
-  body: "This is my YOYO",
-})
+
+async function testTemplate() {
+  const posts = await postMethod.getPosts();
+  const post = posts[1];
+  const container = document.querySelector('#post');
+  renderPostTemplate(post, container);
+}
+
+testTemplate();

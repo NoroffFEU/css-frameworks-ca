@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Frameworks CA | Profile page</title>
+    <title>Javascript2 CA | Profile page</title>
 
     <link
       rel="apple-touch-icon"
@@ -74,8 +74,7 @@
     </header>
     <main>
       <section>
-        <div class="container">
-          <div class="row mb-5">
+        <div class="container text-center">
             <div class="row mb-5 justify-content-center">
               <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-5 m-3">
                 <div class="col mb-5">
@@ -84,34 +83,32 @@
                     class="profile-pic"
                     alt="This is a picture of Lori" />
                 </div>
-                <h1 class="mb-3 fw-bold">Hi I'm Lori.</h1>
-                <h3 class="fw-light">
+                <h1 class="mb-3 fw-bold" id="userName">Lori_80</h1>
+                <h3 class="fw-light about">
                   I have been an active CrossFit athlete for nine years. I am a
                   certified level 2 coach and love what I do!
                 </h3>
 
                 <a href="#" class="btn btn-primary follow-btn mt-4"
-                  >FOLLOW ME</a
-                >
-
-                <h4 class="mt-5 fw-bold">Essentials</h4>
+                  >FOLLOW ME</a>
+                <!-- <h4 class="mt-5 fw-bold">Essentials</h4>
                 <p class="my-1">Nickname: Lori_80</p>
                 <p class="my-1">Member: @VB_Athletics</p>
                 <p class="my-1">Active: 9 years</p>
-                <p class="mb-1">competitons: CrossFit-Open in '21, '22, '23</p>
+                <p class="mb-1">competitons: CrossFit-Open in '21, '22, '23</p> -->
               </div>
             </div>
              <div class="container d-flex flex-row justify-content-center gap-4 divider">
-                <div class="d-flex flex-row align-items-center mt-5">
+                <div class="d-flex flex-row align-items-center my-4">
                   <h5 class="mx-1 me-2 fs-6">Following:</h5>
                   <h4 class="followingCount">52</h4>
                 </div>
-                <div class="d-flex flex-row align-items-center mt-5">
+                <div class="d-flex flex-row align-items-center my-4">
                   <h5 class="mx-1 me-2 fs-6">Following:</h5>
                   <h4 class="followersCount">28</h4>
                 </div>
               </div>
-            </div>
+           
           </div>
         </div>
         <div id="modalDelete" class="modal">
@@ -205,13 +202,13 @@
                     height="60" />
                   <div class="d-flex justify-content-between align-items-start">
                     <div class="text-start">
-                      <h6 class="fw-bold text-primary mb-1">Lori_80</h6>
-                      <p class="text-muted small mb-0">WOD || 11.08.2023</p>
+                      <h6 class="fw-bold text-primary mb-1" id="userName">Lori_80</h6>
+                      <p class="text-muted small mb-0" id="datePosted">11.08.2023</p>
                     </div>
                   </div>
                 </div>
 
-                <p class="mt-3 mb-4 pb-2">
+                <p class="mt-3 mb-4 pb-2" id="">
                   Today was fun! Who else did this one? <br />EMOM 12 minutes: 5
                   Burpees • 10 Air Squats • 5 Pull-ups <br />
                   AMRAP 10 minutes: 15 Push-ups • 20 Box Jumps • 10 Pull-ups •

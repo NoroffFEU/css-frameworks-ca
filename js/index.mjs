@@ -20,12 +20,12 @@ switch (path) {
   case "/feed/index.html":
     displayPostsHandler();
     break;
-  case "/create/":
-  case "/create/index.html":
+  case "feed/create/":
+  case "feed/create/index.html":
     createPostFormListener();
     break;
-  case "/edit/":
-  case "/edit/index.html":
+  case "feed/edit/":
+  case "feed/edit/index.html":
     updatePostFormListener();
     break;
   default:

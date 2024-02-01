@@ -1,6 +1,6 @@
 import { updatePost } from "../../posts/index.mjs";
 
-export function loginFormListener() {
+export function updatePostFormListener() {
   const form = document.querySelector("#updatePost");
 
 const url = new URL(location.href);

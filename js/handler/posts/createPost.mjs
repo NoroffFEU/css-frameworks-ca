@@ -1,6 +1,6 @@
 import { createPost } from "../../posts/index.mjs";
 
-export function loginFormListener() {
+export function createPostFormListener() {
   const form = document.querySelector("#createPost");
 
   if (form) {
@@ -10,12 +10,9 @@ export function loginFormListener() {
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      try {
-        const response = await createPost(post);
-        console.log(response); // Log the response
-      } catch (error) {
-        console.error('Error:', error);
-      }
+      const response = await createPost(post);
+
+      createPost(response);
     });
   }
 }

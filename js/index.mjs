@@ -1,8 +1,9 @@
 import { registerFormListener } from "./handler/register/index.mjs";
 import { loginFormListener } from "./handler/login/index.mjs";
 import { displayPostsHandler } from "./handler/posts/index.mjs";
-import { createPost } from "./posts/create.mjs";
-import { updatePost } from "./posts/update.mjs";
+import { createPostFormListener } from "./handler/posts/index.mjs";
+import { updatePostFormListener } from "./handler/posts/index.mjs";
+
 
 
 const path = location.pathname;
@@ -19,13 +20,14 @@ switch (path) {
   case "/feed/index.html":
     displayPostsHandler();
     break;
-  case "/createpost/":
-  case "/createpost/index.html":
-    createPost();
+  case "/create/":
+  case "/create/index.html":
+    createPostFormListener();
     break;
-  case "/updatepost/":
-  case "/updatepost/index.html":
-    updatePost();
+  case "/edit/":
+  case "/edit/index.html":
+    updatePostFormListener();
     break;
   default:
 }
+

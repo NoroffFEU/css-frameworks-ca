@@ -10,9 +10,12 @@ export function loginFormListener() {
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      const response = await createPost(post);
-
-      createPost(response);
+      try {
+        const response = await createPost(post);
+        console.log(response); // Log the response
+      } catch (error) {
+        console.error('Error:', error);
+      }
     });
   }
 }

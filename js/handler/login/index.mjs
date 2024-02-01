@@ -24,7 +24,7 @@ async function dologin(event) {
           storage.save("token", accessToken);
           storage.save("username", name);
 
-          location.href = "/feed/";
+          location.href = "/feed/create";
       } catch (error) {
         displayMessage("#message", "danger", error.message);
       }

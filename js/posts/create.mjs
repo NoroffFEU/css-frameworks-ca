@@ -6,7 +6,6 @@ const method = "POST";
 
 export async function createPost(postData) {
   const createPostURL = BASE_URL + action;
-  // const token = get("token");
 
   const response = await fetchToken(createPostURL, {
     method,

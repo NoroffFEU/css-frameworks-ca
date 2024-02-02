@@ -1,6 +1,6 @@
 
-import { BASE_URL } from "../api/api.mjs";
-import { fetchToken } from "../api/fetchToken.mjs";
+import { BASE_URL } from "../api.mjs";
+import { fetchToken } from "../fetchToken.mjs";
 
 const action = "posts";
 

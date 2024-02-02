@@ -5,8 +5,9 @@ import { createPostFormListener } from "./handler/posts/index.mjs";
 import { updatePostFormListener } from "./handler/posts/index.mjs";
 
 
-
 const path = location.pathname;
+
+console.log(path);
 
 switch (path) {
   case '/':
@@ -20,12 +21,12 @@ switch (path) {
   case "/feed/index.html":
     displayPostsHandler();
     break;
-  case "feed/create/":
-  case "feed/create/index.html":
+  case "/feed/create/":
+  case "/feed/create/index.html":
     createPostFormListener();
     break;
-  case "feed/edit/":
-  case "feed/edit/index.html":
+  case "/feed/edit/":
+  case "/feed/edit/index.html":
     updatePostFormListener();
     break;
   default:

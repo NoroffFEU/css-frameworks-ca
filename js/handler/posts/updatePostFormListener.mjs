@@ -1,4 +1,4 @@
-import { updatePost } from "../../posts/index.mjs";
+import { updatePost } from "../../api/posts/index.mjs";
 
 export function updatePostFormListener() {
   const form = document.querySelector("#updatePost");

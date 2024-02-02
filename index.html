@@ -50,45 +50,49 @@
       <main class="">
         <!-- Form -->
         <div class="container login-container">
-          <h1>Log in to your Noroff Social account</h1>
-          <form class="mt-3">
-            <div class="mb-2">
-              <label for="email" class="form-label">Email address</label>
-              <input
-                placeholder="Email address"
-                type="email"
-                class="form-control"
-                id="email"
-                pattern="[\w\-.]+@(stud\.)?noroff\.no$"
-                title="Only @(stud.)noroff.no domains are allowed to register."
-                required
-              />
+          <div class="card">
+            <h1 class="card-header">Log in to your Noroff Social account</h1>
+            <div class="card-body">
+              <form class="mt-3">
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email address</label>
+                  <input
+                    placeholder="Email address"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    pattern="[\w\-.]+@(stud\.)?noroff\.no$"
+                    title="Only @(stud.)noroff.no domains are allowed to register."
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                    placeholder="Password should be at least 8 characters"
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    minlength="8"
+                    required
+                  />
+                </div>
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="remind-check"
+                  />
+                  <label class="form-check-label" for="remind-check"
+                    >Remember me</label
+                  >
+                </div>
+                <button type="submit" class="w-100 btn btn-secondary">
+                  Log in
+                </button>
+              </form>
             </div>
-            <div class="mb-2">
-              <label for="password" class="form-label">Password</label>
-              <input
-                placeholder="Password should be at least 8 characters"
-                type="password"
-                class="form-control"
-                id="password"
-                minlength="8"
-                required
-              />
-            </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="remind-check"
-              />
-              <label class="form-check-label" for="remind-check"
-                >Remember me</label
-              >
-            </div>
-            <button type="submit" class="w-100 btn btn-secondary">
-              Log in
-            </button>
-          </form>
+          </div>
         </div>
       </main>
 

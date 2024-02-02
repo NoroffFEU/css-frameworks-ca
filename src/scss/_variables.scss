@@ -46,6 +46,7 @@ $yellow:  #ffc107 ;
 $green:   #198754 ;
 $teal:    #20c997 ;
 $cyan:    #0dcaf0 ;
+$border:  #c8d0dac2 ;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -63,7 +64,8 @@ $colors: (
   "black":      $black,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "gray-dark":  $gray-800,
+  "border":     $border
 ) ;
 // scss-docs-end colors-map
 
@@ -306,6 +308,7 @@ $warning:       $yellow ;
 $danger:        $red ;
 $light:         $gray-100 ;
 $dark:          $gray-900 ;
+$border:        $border ;    
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -874,7 +877,7 @@ $form-text-color:                       var(--#{$prefix}secondary-color) ;
 // scss-docs-end form-text-variables
 
 // scss-docs-start form-label-variables
-$form-label-margin-bottom:              .5rem ;
+$form-label-margin-bottom:              .2rem ;
 $form-label-font-size:                  null ;
 $form-label-font-style:                 null ;
 $form-label-font-weight:                null ;
@@ -1160,8 +1163,8 @@ $nav-link-padding-y:                .5rem ;
 $nav-link-padding-x:                1rem ;
 $nav-link-font-size:                null ;
 $nav-link-font-weight:              null ;
-$nav-link-color:                    $white ;
-$nav-link-hover-color:              var(--#{$prefix}link-hover-color) ;
+$nav-link-color:                    $green ;
+$nav-link-hover-color:              rgb(13, 230, 60) ;
 $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out ;
 $nav-link-disabled-color:           var(--#{$prefix}secondary-color) ;
 $nav-link-focus-box-shadow:         $focus-ring-box-shadow ;
@@ -1219,7 +1222,7 @@ $navbar-light-brand-hover-color:    $navbar-light-active-color ;
 
 // scss-docs-start navbar-dark-variables
 $navbar-dark-color:                 rgba($white, .8) ;
-$navbar-dark-hover-color:           rgba($white, .75) ;
+$navbar-dark-hover-color:           rgba($black, .75) ;
 $navbar-dark-active-color:          $white ;
 $navbar-dark-disabled-color:        rgba($white, .25) ;
 $navbar-dark-icon-color:            $navbar-dark-color ;
@@ -1345,7 +1348,7 @@ $card-title-spacer-y:               $spacer * .5 ;
 $card-title-color:                  null ;
 $card-subtitle-color:               null ;
 $card-border-width:                 var(--#{$prefix}border-width) ;
-$card-border-color:                 var(--#{$prefix}border-color-translucent) ;
+$card-border-color:                 $border ;
 $card-border-radius:                var(--#{$prefix}border-radius) ;
 $card-box-shadow:                   null ;
 $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) ;

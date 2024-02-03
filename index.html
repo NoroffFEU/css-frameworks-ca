@@ -32,57 +32,63 @@
         <div class="col">
           <!-- first column -->
           <!-- <div class="col">
-          <div class="login-worm-red ms-5">
-            <img src="/images/login-red.png" alt="red animated worm" />
-          </div>
-        </div> -->
+            <div class="login-worm-red ms-5">
+              <img src="/images/login-red.png" alt="red animated worm" />
+            </div>
+          </div> -->
 
           <!-- 2nd column -->
+
           <!-- Login -->
           <div class="mx-auto">
             <h1 class="login-h1 mx-auto bg-dark baloo text-danger text-center fw-bold px-2">
               Vib`n<span class="text-warning">!</span>
             </h1>
-            <form class="auth mx-auto align-items-center d-flex flex-column" id="loginForm" action="/profile/">
-              <fieldset>
-                <div id="loginMessage"></div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label"></label>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    class="form-control form-input bg-dark border-2 border-primary"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                    placeholder="user@stud.noroff.no"
-                    pattern=".+@(noroff\.no|stud\.noroff\.no)$"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label"></label>
-                  <input
-                    required
-                    minlength="8"
-                    type="password"
-                    name="password"
-                    class="form-control form-input bg-dark border-2 border-primary"
-                    id="exampleInputPassword1"
-                    placeholder="Password"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary mb-3 mt-3 login-form-button">Login</button>
-                <div class="mt-3 mb-5">
-                  <a
-                    class="text-decoration-none bg-dark p-3"
-                    href="#"
-                    id="createNewAccount"
-                    data-bs-toggle="modal"
-                    data-bs-target="#registerModal"
-                    >Create new account</a
-                  >
-                </div>
-              </fieldset>
+            <form class="auth mx-auto d-flex flex-column" id="loginForm" action="/profile/">
+              <div class="form-group">
+                <fieldset>
+                  <div id="loginMessage"></div>
+                  <div class="mb-3 w-100">
+                    <label for="exampleInputEmail1" class="form-label"></label>
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      class="form-control form-input bg-dark border-2 border-primary"
+                      id="exampleInputEmail1"
+                      aria-describedby="emailHelp"
+                      placeholder="user@stud.noroff.no"
+                      pattern=".+@(noroff\.no|stud\.noroff\.no)$"
+                      title="Only registered noroff.no emails allowed to login"
+                    />
+                  </div>
+                  <div class="mb-3 w-100">
+                    <label for="exampleInputPassword1" class="form-label"></label>
+                    <input
+                      required
+                      minlength="8"
+                      type="password"
+                      name="password"
+                      class="form-control form-input bg-dark border-2 border-primary"
+                      id="exampleInputPassword1"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn login-btn btn-primary mb-3 mt-3">Login</button>
+                  </div>
+                  <div class="mt-3 mb-5 text-center">
+                    <a
+                      class="text-decoration-none bg-dark p-3"
+                      href="#"
+                      id="createNewAccount"
+                      data-bs-toggle="modal"
+                      data-bs-target="#registerModal"
+                      >Create new account</a
+                    >
+                  </div>
+                </fieldset>
+              </div>
             </form>
           </div>
 
@@ -117,8 +123,10 @@
                 <div class="mb-3">
                   <input
                     required
-                    type="name"
+                    type="text"
                     name="name"
+                    pattern="^[\w]+$"
+                    title="User name must only contain upper case and lower case letters, numbers and underscore!"
                     class="form-control form-input"
                     id="name"
                     aria-describedby="nameHelp"

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css\general.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       
+    </header>
+    <main class="d-flex align-items-center justify-content-center my-3">
+        <div class="hero col d-flex" >
+            <div class="welcome d-flex flex-column align-items-center justify-content-center m-4">
+                <h1 class="display-1 text-center pb-5 font-weight-bold">
+                    Welcome to <span> Viral Vibe</span>
+                </h1>
+                <p class="lead text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et omnis odit atque, praesentium tempora in corporis porro enim accusamus veniam perspiciatis, id nemo eaque tempore est facere. Blanditiis, sequi vitae!</p>
+            </div>
+           
+            <div class="login container col d-flex text-center  align-items-center p-2">
+                <form action="/profile/index.html"  class="login-container form-group container p-3 d-flex flex-column justify-content-center  ">
+                    <div class="form-row">
+                        <label for="name"></label>
+                        <input class="form-control p-2" id="name" type="text" required placeholder="E-mail, username or phone nr.">
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        <div class="invalid-feedback">
+                            Please enter a valid username
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label for="password"><p class="d-none errormessage">Please enter a valid password (8 characters)</p></label>
+                        <input class="form-control p-2 mt-4" id="password" type="password" required placeholder="Password">
+                        <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        <div class="invalid-feedback">
+                            Please enter a valid password (at least 8 characters)
+                        </div>
+                    </div>
+                    <div class="form-row mt-5">
+                        <a type="link" class="btn d-flex align-items-center justify-content-center p-2" href="/profile/index.html">Log in</a>
+                    </div>
+                    <div class="form-row mt-5"><p class="text-white">or sign up with:</p></div>
+                    <ul class="list-unstyled form-row d-flex justify-content-evenly">
+                        <li><img src="/images/Icons/facebookIcon.png"></li>
+                        <li><img src="/images/Icons/githubIcon.png"></li>
+                        <li><img src="/images/Icons/twitterIcon.png"></li>
+                        <li><img src="/images/Icons/google-plusIcon.png"></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-center">
+        <ul class="links list-unstyled d-flex text-center justify-content-center mt-2 flex-wrap p-0">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Language</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Api</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </footer>
+    
+</body>
+<script src="/js/functions.js"></script>
+</html>

@@ -1,0 +1,75 @@
+
+$primaryGreen:  #00E6A8;
+$primaryGreenHover: #02daa0;
+$secondaryGreen: #087F8C;
+$secondaryGreenHover: #076d79;
+$whiteText: white;
+$blackText: #342E37;
+$footerColor: #F6F6F6;
+$barcolor: #9448BC;
+
+html {
+    padding: 0;
+    margin: 0;
+}
+p, a, span, input, .btn {
+    font-family: Mukta Vaani;
+}
+h1 {
+    font-family: Source Code Pro;
+}
+.hero {
+    max-width: 700px;
+    flex-direction: column;
+    gap: 25px;
+    
+}
+span {
+    color: $primaryGreen;
+}
+.login {
+    background-image: url(/images/background.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    & .login-container {
+        width: 90%;
+        height: auto;
+        
+        backdrop-filter: blur(20px);
+        background-color: rgba(137, 137, 137, 0.4);
+        border-radius: 5px;
+        & .btn {
+                background-color: $primaryGreen;
+            }
+        }
+    }
+
+.feedbar {
+    background-color: $primaryGreen;
+    height: 90px; 
+    & .feedstarter {
+        min-width: 300px;
+        max-width: 500px;
+        & .dummyinput {
+            border-radius: 0 5px 5px 0;
+            height: 60px;
+            outline: none;
+            border: none;
+            box-sizing: border-box;
+        }
+        & img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        & .userImage {
+            border-radius: 5px 0 0 5px;
+            background-color: white;
+            height: 60px;
+            width: 70px;
+        }
+    }
+
+}

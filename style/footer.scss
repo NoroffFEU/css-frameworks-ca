@@ -1,0 +1,13 @@
+@import  "general.scss";
+footer {
+    background-color: $footerColor;
+}  
+.links {
+    text-decoration: none;
+    max-width: 300px;
+    gap: 20px;
+    &.links a {
+        text-decoration: none;
+        color: $blackText;
+    }
+}

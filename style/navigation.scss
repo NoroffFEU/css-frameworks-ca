@@ -1,0 +1,9 @@
+@import  "general.scss";
+
+.navbar {
+    background-color: $barcolor;
+    & .material-symbols-outlined {
+        font-size: 2.5em;
+        color: white;
+    }
+}

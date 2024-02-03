@@ -12,65 +12,74 @@
 </head>
 <body>
     <header class="container">
-        <div class=" row d-flex justify-content-left">
+        <div class="row d-flex justify-content-left">
             <div class="col-md-12">
                 <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class="img-fluid"></a>
             </div>
         </div>
     </header>
-<Main class="container-fluid">
-    <section class="row mt-5">
-        <div class="col-md-2">
-            <nav>
-                <ul>
-                    <li><a href="feed.html" class="m-4">Feed</a></li>
-                    <li><a href="profile.html" class="m-4">Profile</a></li>
-                    <li><button>Add recipe</button></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="col-md-5">
-            <h1>latest recipes</h1>
-            <div class="card mt-4">
-                <div class="shareContent d-flex justify-content-left align-items-center">
-                    <img src="img/panguin.png" alt="Your profile image" class="img-fluid">
-                    <div class="d-flex ms-5">
-                        <form action="share" class="d-flex flex-column" >
-                            <div class="d-flex justify-content-between">
-                                <input type="text" id="yourContet" name="yourContet" value="What are you eating about...">
-                                <input type="submit" value="share">
-                            </div>
-                            <div> 
-                                <i class="fa-solid fa-image"></i>
-                                <i class="fa-solid fa-video"></i>
-                            </div>                       
-                        </form>             
-                    </div>
+
+    <main class="container-fluid">
+        <section class="row mt-5">
+            <div class="col-md-2">
+                <div class="d-flex flex-column">
+                    <input type="search" placeholder="Search..." class="form-control m-2">
+                    <select name="sort" id="sortBy" class="dropdown m-2">
+                        <option value="">Sort by</option>
+                        <option value="">Vegetarian</option>
+                        <option value="">Meat</option>
+                    </select>
+                    <a href="feed.html" class="m-2">Feed</a>
+                    <a href="profile.html" class="m-2">Profile</a>
+                    <button class="btn btn-primary m-2">Add recipe</button>                    
                 </div>
             </div>
-            <div class="post mt-4 card">
-                <div class="d-flex justify-content-between align-items-center">
-                    <img src="img/kitten.jpg" alt="Profile image">
-                    <a href="profile.html">Kavinsky</a>
-                    <button>Follow</button>
-                </div>
-                <div class="postContent d-flex mt-2 card">
-                    <img src="img/soup-2006317_640.jpg" alt="picture of food presented" class="img-fluid">
-                    <div>
-                        <h3>My moms old carrot soup</h3>
-                        <p>
-                            I still remember the wonderful smells
-                            that came from the kitchen when my mother
-                            made her famous carrot Soup....
-                        </p>
+            <div class="col-md-6 ms-5">
+                <h1>latest recipes</h1>
+                <div class="card mt-4">
+                    <div class="shareContent d-flex justify-content-left align-items-center m-4">
+                        <img src="img/panguin.png" alt="Your profile image" class="img-fluid">
+                        <div class="d-flex ms-5">
+                            <form action="share" class="d-flex flex-column " >
+                                <div class="d-flex justify-content-between flex-wrap ">
+                                    <input type="text" id="yourContet" name="yourContet" value="What are you eating about...">
+                                    <input type="submit" value="share" class="btn btn-primary ms-4">
+                                </div>
+                                <div> 
+                                    <i class="fa-solid fa-image"></i>
+                                    <i class="fa-solid fa-video"></i>
+                                </div>                       
+                            </form>             
+                        </div>
                     </div>
                 </div>
-            </div>
                 <div class="post mt-4 card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <img src="img/kitten.jpg" alt="Profile image">
-                        <a href="profile.html">SebAstian</a>
-                        <button>Follow</button>
+                    <div class="d-flex justify-content-between align-items-center m-4">
+                        <div>
+                            <img src="img/kitten.jpg" alt="Profile image">
+                            <a href="profile.html">Kavinsky</a>
+                        </div>
+                        <button class="btn btn-secondary">Follow</button>
+                    </div>
+                    <div class="postContent d-flex mt-2 card">
+                        <img src="img/soup-2006317_640.jpg" alt="picture of food presented" class="img-fluid">
+                        <div>
+                            <h3>My mom's old carrot soup</h3>
+                            <p>
+                                I still remember the wonderful smells
+                                that came from the kitchen when my mother
+                                made her famous carrot Soup....
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post mt-4 card">
+                    <div class="d-flex justify-content-between align-items-center m-4">
+                        <div>
+                            <img src="img/kitten.jpg" alt="Profile image">
+                            <a href="profile.html">SebAstian</a>
+                        </div>
+                        <button class="btn btn-secondary">Follow</button>
                     </div>
                     <div class="postContent d-flex mt-2 card">
                         <img src="img/pea-soup-2786118_640.jpg" alt="picture of food presented" class="img-fluid">
@@ -83,10 +92,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2">
-                    <input type="search" value="Search">
-                </div>
+            </div>
+
         </section>
-    </Main>   
+    </main>
 </body>
 </html>

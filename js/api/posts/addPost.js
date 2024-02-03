@@ -34,23 +34,3 @@ export async function addPost(postData) {
   }
   return results;
 }
-
-const newPostText = document.querySelector("#newPost").value;
-const newPostFile = document.querySelector("#formFile").files[0];
-const newPostTitle = document.querySelector("#formTitle").value;
-
-const newPostData = {
-  title: newPostTitle,
-  body: newPostText,
-  media: newPostFile,
-  tags: [""],
-};
-
-console.log("newPostData:", newPostData);
-
-try {
-  await addPost(newPostData);
-  event.target.reset();
-} catch (error) {
-  console.error(error);
-}

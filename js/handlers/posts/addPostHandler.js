@@ -3,14 +3,30 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { renderAddedPost } from "../../ui/renderAddedPost.js";
 
 export async function addPostHandler(postData) {
-  document.querySelector("#newPostForm").addEventListener("submit", async (event) => {
-    event.preventDefault();
-    try {
-      const newPost = await addPost(postData);
-      renderAddedPost(newPost);
-    } catch (error) {
-      console.log(error);
-      messageForUser("#postsContainer", "danger", error.message);
-    }
-  });
+  const newPostForm = document.querySelector("#newPostForm");
+  if (newPostForm) {
+    newPostForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const newPostText = document.querySelector("#newPost").value;
+      const newPostFile = document.querySelector("#formFile").files[0];
+      const newPostTitle = document.querySelector("#formTitle").value;
+
+      const newPostData = {
+        title: newPostTitle,
+        body: newPostText,
+        media: newPostFile,
+        tags: [""],
+      };
+
+      console.log("newPostData:", newPostData);
+
+      try {
+        await addPost(newPostData);
+        event.target.reset();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  }
 }

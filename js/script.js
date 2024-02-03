@@ -5,12 +5,11 @@ import { createPostsHandler } from "./handlers/posts/createPostsHandler.js";
 import { createSinglePostHandler } from "./handlers/posts/createSinglePostHandler.js";
 import { createProfilePostsHandler } from "./handlers/posts/createProfilePostsHandler.js";
 import { handleScrollButton } from "./handlers/posts/handleScrollButton.js";
+import { addPostHandler } from "./handlers/posts/addPostHandler.js";
 
 function route() {
   const path = window.location.pathname;
   console.log(path);
-
-  // document.getElementById("createNewAccount").addEventListener("click", function () );
 
   switch (path) {
     case "/":
@@ -21,13 +20,14 @@ function route() {
     case "/profile/":
       logoutHandler();
       createProfilePostsHandler();
-      // add posts handler with user id. where user can add, edit, delete posts
+      addPostHandler();
       break;
     case "/feed/":
     case "/feed/index.html":
       handleScrollButton();
       logoutHandler();
       createPostsHandler();
+      // addPostHandler();
       break;
     case "/feed/post.html":
       createSinglePostHandler();

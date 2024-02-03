@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShaRecipes | share your recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/d9245988cf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="container">
+        <div class=" row d-flex justify-content-left">
+            <div class="col-md-12">
+                <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class="img-fluid"></a>
+            </div>
+        </div>
+    </header>
+<Main class="container-fluid">
+    <section class="row mt-5">
+        <div class="col-md-2">
+            <nav>
+                <ul>
+                    <li><a href="feed.html" class="m-4">Feed</a></li>
+                    <li><a href="profile.html" class="m-4">Profile</a></li>
+                    <li><button>Add recipe</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-5">
+            <h1>latest recipes</h1>
+            <div class="card mt-4">
+                <div class="shareContent d-flex justify-content-left align-items-center">
+                    <img src="img/panguin.png" alt="Your profile image" class="img-fluid">
+                    <div class="d-flex ms-5">
+                        <form action="share" class="d-flex flex-column" >
+                            <div class="d-flex justify-content-between">
+                                <input type="text" id="yourContet" name="yourContet" value="What are you eating about...">
+                                <input type="submit" value="share">
+                            </div>
+                            <div> 
+                                <i class="fa-solid fa-image"></i>
+                                <i class="fa-solid fa-video"></i>
+                            </div>                       
+                        </form>             
+                    </div>
+                </div>
+            </div>
+            <div class="post mt-4 card">
+                <div class="d-flex justify-content-between align-items-center">
+                    <img src="img/kitten.jpg" alt="Profile image">
+                    <a href="profile.html">Kavinsky</a>
+                    <button>Follow</button>
+                </div>
+                <div class="postContent d-flex mt-2 card">
+                    <img src="img/soup-2006317_640.jpg" alt="picture of food presented" class="img-fluid">
+                    <div>
+                        <h3>My moms old carrot soup</h3>
+                        <p>
+                            I still remember the wonderful smells
+                            that came from the kitchen when my mother
+                            made her famous carrot Soup....
+                        </p>
+                    </div>
+                </div>
+            </div>
+                <div class="post mt-4 card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <img src="img/kitten.jpg" alt="Profile image">
+                        <a href="profile.html">SebAstian</a>
+                        <button>Follow</button>
+                    </div>
+                    <div class="postContent d-flex mt-2 card">
+                        <img src="img/pea-soup-2786118_640.jpg" alt="picture of food presented" class="img-fluid">
+                        <div>
+                            <h3>Soupe crémeuse aux pois</h3>
+                            <p>                               
+                                Une super bonne soupe que j'ai faite samedi
+                                dernier. C'est fantastique...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="search" value="Search">
+                </div>
+        </section>
+    </Main>   
+</body>
+</html>

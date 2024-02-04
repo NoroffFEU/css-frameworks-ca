@@ -12,21 +12,22 @@ html {
     padding: 0;
     margin: 0;
 }
+* {
+    box-sizing: border-box;
+}
 p, a, span, input, .btn {
     font-family: Mukta Vaani;
+    text-decoration: none;
 }
 h1 {
     font-family: Source Code Pro;
     font-weight: 900;
     font-size: 4em;
 }
-.hero {
-    max-width: 700px;
-    flex-direction: column;
-}
 span {
     color: $primaryGreen;
 }
+
 .login {
     background-image: url(/images/background.JPG);
     background-position: center;
@@ -34,8 +35,6 @@ span {
     background-size: cover;
     
     & .login-container {
-        width: 90%;
-        height: auto;
         backdrop-filter: blur(20px);
         background-color: rgba(137, 137, 137, 0.4);
         border-radius: 5px;
@@ -44,32 +43,7 @@ span {
 .btn {
     background-color: $primaryGreen;
 }
-.feedbar {
-    background-color: $primaryGreen;
-    height: 90px; 
-    & .feedstarter {
-        min-width: 300px;
-        max-width: 500px;
-        & .dummyinput {
-            border-radius: 0 5px 5px 0;
-            height: 60px;
-            outline: none;
-            border: none;
-            box-sizing: border-box;
-        }
-        & img {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-        }
-        & .userImage {
-            border-radius: 5px 0 0 5px;
-            background-color: white;
-            height: 60px;
-            width: 70px;
-        }
-    }
-}
+
 .profilebanner {
     background-color: $secondaryGreen;
     height: 100px;

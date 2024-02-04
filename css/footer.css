@@ -3,19 +3,19 @@ html {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 p, a, span, input, .btn {
   font-family: Mukta Vaani;
+  text-decoration: none;
 }
 
 h1 {
   font-family: Source Code Pro;
   font-weight: 900;
   font-size: 4em;
-}
-
-.hero {
-  max-width: 700px;
-  flex-direction: column;
 }
 
 span {
@@ -29,8 +29,6 @@ span {
   background-size: cover;
 }
 .login .login-container {
-  width: 90%;
-  height: auto;
   backdrop-filter: blur(20px);
   background-color: rgba(137, 137, 137, 0.4);
   border-radius: 5px;
@@ -40,33 +38,6 @@ span {
   background-color: #00E6A8;
 }
 
-.feedbar {
-  background-color: #00E6A8;
-  height: 90px;
-}
-.feedbar .feedstarter {
-  min-width: 300px;
-  max-width: 500px;
-}
-.feedbar .feedstarter .dummyinput {
-  border-radius: 0 5px 5px 0;
-  height: 60px;
-  outline: none;
-  border: none;
-  box-sizing: border-box;
-}
-.feedbar .feedstarter img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-}
-.feedbar .feedstarter .userImage {
-  border-radius: 5px 0 0 5px;
-  background-color: white;
-  height: 60px;
-  width: 70px;
-}
-
 .profilebanner {
   background-color: #087F8C;
   height: 100px;
@@ -74,16 +45,6 @@ span {
 
 footer {
   background-color: #F6F6F6;
-}
-
-.links {
-  text-decoration: none;
-  max-width: 300px;
-  gap: 20px;
-}
-.links.links a {
-  text-decoration: none;
-  color: #342E37;
 }
 
 /*# sourceMappingURL=footer.css.map */

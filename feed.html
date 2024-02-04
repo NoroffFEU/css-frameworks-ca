@@ -13,17 +13,17 @@
 <body>
     <header class="container">
         <div class="row d-flex justify-content-left">
-            <div class="col-md-12">
-                <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class="img-fluid"></a>
+            <div class="col-md-12 position-relative">
+                <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class="position-relative top-50 start-50 translate-middle mt-1 mb-2""></a>
             </div>
         </div>
     </header>
 
     <main class="container-fluid">
-        <section class="row mt-5">
-            <div class="col-md-2">
-                <div class="d-flex flex-column">
-                    <input type="search" placeholder="Search..." class="form-control m-2">
+        <section class="row">
+            <div class="col-md-2 mt-5">
+                <div class="d-flex flex-column mb-5">
+                    <input type="search" placeholder="Search..." class="form-select m-2">
                     <select name="sort" id="sortBy" class="dropdown m-2">
                         <option value="">Sort by</option>
                         <option value="">Vegetarian</option>
@@ -34,21 +34,25 @@
                     <button class="btn btn-primary m-2">Add recipe</button>                    
                 </div>
             </div>
-            <div class="col-md-6 ms-5">
+            <div class="col-md-7 ">
                 <h1>latest recipes</h1>
-                <div class="card mt-4">
+                <div class="card mt-2">
                     <div class="shareContent d-flex justify-content-left align-items-center m-4">
                         <img src="img/panguin.png" alt="Your profile image" class="img-fluid">
                         <div class="d-flex ms-5">
-                            <form action="share" class="d-flex flex-column " >
+                        <form action="share" >
                                 <div class="d-flex justify-content-between flex-wrap ">
-                                    <input type="text" id="yourContet" name="yourContet" value="What are you eating about...">
-                                    <input type="submit" value="share" class="btn btn-primary ms-4">
+                                    <textarea name="Share" id="yourContet" cols="40" rows="1" class="form-control" placeholder="What are you eating about..."></textarea>
                                 </div>
-                                <div> 
-                                    <i class="fa-solid fa-image"></i>
-                                    <i class="fa-solid fa-video"></i>
-                                </div>                       
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <div > 
+                                        <i class="fa-solid fa-image"></i>
+                                        <i class="fa-solid fa-video ms-2"></i>
+                                    </div>  
+                                    <div>
+                                        <input type="submit" value="Post" class="btn btn-primary ms-4">
+                                    </div>  
+                                </div>                     
                             </form>             
                         </div>
                     </div>

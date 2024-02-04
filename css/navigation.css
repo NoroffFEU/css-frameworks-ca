@@ -9,12 +9,13 @@ p, a, span, input, .btn {
 
 h1 {
   font-family: Source Code Pro;
+  font-weight: 900;
+  font-size: 4em;
 }
 
 .hero {
   max-width: 700px;
   flex-direction: column;
-  gap: 25px;
 }
 
 span {
@@ -34,7 +35,8 @@ span {
   background-color: rgba(137, 137, 137, 0.4);
   border-radius: 5px;
 }
-.login .login-container .btn {
+
+.btn {
   background-color: #00E6A8;
 }
 
@@ -63,6 +65,11 @@ span {
   background-color: white;
   height: 60px;
   width: 70px;
+}
+
+.profilebanner {
+  background-color: #087F8C;
+  height: 100px;
 }
 
 .navbar {

@@ -17,12 +17,12 @@ p, a, span, input, .btn {
 }
 h1 {
     font-family: Source Code Pro;
+    font-weight: 900;
+    font-size: 4em;
 }
 .hero {
     max-width: 700px;
     flex-direction: column;
-    gap: 25px;
-    
 }
 span {
     color: $primaryGreen;
@@ -36,16 +36,14 @@ span {
     & .login-container {
         width: 90%;
         height: auto;
-        
         backdrop-filter: blur(20px);
         background-color: rgba(137, 137, 137, 0.4);
         border-radius: 5px;
-        & .btn {
-                background-color: $primaryGreen;
-            }
-        }
     }
-
+}
+.btn {
+    background-color: $primaryGreen;
+}
 .feedbar {
     background-color: $primaryGreen;
     height: 90px; 
@@ -71,5 +69,8 @@ span {
             width: 70px;
         }
     }
-
+}
+.profilebanner {
+    background-color: $secondaryGreen;
+    height: 100px;
 }

@@ -7,6 +7,7 @@ export async function createPostsHandler() {
     // console.log("posts handler");
     const posts = await getAllPosts();
     renderPosts("#posts", posts);
+    // filterPostsHandler(posts);
   } catch (error) {
     console.log(error);
     messageForUser("#posts", "danger", error.message);

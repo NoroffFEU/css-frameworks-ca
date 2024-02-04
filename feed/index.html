@@ -75,15 +75,16 @@
         <div class="row">
           <div class="col-lg-5 col-10 col-md-6 mx-auto mx-auto">
             <div class="search mt-5">
-              <form class="d-flex justify-content-center" role="search">
+              <form class="d-flex justify-content-center" role="search" id="searchForm">
                 <div class="search-group bg-dark d-flex flex-row">
                   <input
                     class="form-control border-primary bg-dark text-white"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
+                    id="search"
                   />
-                  <button class="btn row btn-outline-primary bg-dark" type="submit">Search</button>
+                  <button class="btn row ms-1 btn-outline-primary search-button" type="submit">Search</button>
                 </div>
               </form>
             </div>
@@ -93,16 +94,16 @@
         <div class="row">
           <div class="col-lg-5 col-10 col-md-6 mt-3 mx-auto">
             <div class="sorting">
-              <select class="form-select default" aria-label="Select sorting">
-                <option selected>Sort by</option>
+              <select class="form-select default" aria-label="Select sorting" id="sorting">
+                <option>Sort by</option>
                 <option value="1">Newest</option>
-                <option value="2">Latest</option>
+                <option value="2">Oldest</option>
               </select>
             </div>
           </div>
         </div>
 
-        <!-- new post section -->
+        <!-- add new post section -->
         <!-- <div class="row">
           <div class="mt-3 mx-auto new-post col-md-8">
             <p class="text-center">
@@ -150,45 +151,6 @@
             <!-- loading indicators -->
             <div class="loader">Loading...</div>
             <div id="posts"></div>
-
-
-            <!-- hardcoded post example -->
-
-            <!-- <section class="mt-5 container h-auto">
-              <div class="row bg-light pt-2 text-center align-items-center justify-content-between">
-                <div class="col-auto ps-0 d-flex align-items-center">
-                  <img src="/images/profile-pic2.png" alt="user picture" class="small-user-picture m-1 p-0" />
-                  <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Code Ninja</span>1d. Reykjavik</p>
-                </div>
-                <div class="col-auto d-flex justify-content-end align-items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="red"
-                    class="bi bi-heart-fill"
-                    viewBox="0 0 16 16">
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                    />
-                  </svg>
-                  <p class="align-items-center ps-2 mb-0">2002</p>
-                </div>
-                <div>
-                  <p class="text-start text-dark pt-3">
-                    Hey everyone! 🇮🇸 Have you heard the latest from the land of fire and ice? The Reykjanes Peninsula in
-                    Iceland is buzzing with seismic activity, hinting at a possible volcanic eruption! Experts are
-                    closely monitoring the situation, as this area is known for its volcanic landscapes. Remember, this
-                    is the same region where the Fagradalsfjall volcano put on a spectacular show last year! While
-                    locals and authorities are on high alert, the world is watching with bated breath. Will we witness
-                    another awe-inspiring natural display, or will the earth remain calm? Stay tuned for more updates!
-                    🌍
-                    <span>#IcelandVolcano #ReykjanesPeninsula #Nature'sPower</span>
-                  </p>
-                </div>
-              </div>
-            </section> -->
           </div>
         </div>
       </section>

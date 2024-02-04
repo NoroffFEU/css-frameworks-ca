@@ -29,3 +29,14 @@
   background-color: var(--primary);
   color: var(--dark);
 }
+
+.search-button:hover,
+.search-button:active {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+.search-button {
+  background-color: var(--dark);
+  color: var(--primary);
+}

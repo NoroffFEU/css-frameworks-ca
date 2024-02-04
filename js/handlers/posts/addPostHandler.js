@@ -1,6 +1,6 @@
 import { addPost } from "../../api/posts/addPost.js";
-import { messageForUser } from "../../ui/messageForUser.js";
-import { renderAddedPost } from "../../ui/renderAddedPost.js";
+import { messageForUser } from "../../ui/messageForUser.js"; //do i need this?
+import { renderAddedPost } from "../../ui/renderAddedPost.js"; //do i need this?
 
 export async function addPostHandler(postData) {
   const newPostForm = document.querySelector("#newPostForm");

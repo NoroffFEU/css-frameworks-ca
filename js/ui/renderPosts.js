@@ -2,11 +2,9 @@ export function renderPosts(parent, posts) {
   const container = document.querySelector(parent);
   const loader = document.querySelector(".loader");
 
-  //   posts.forEach((post) => {
-  //     const postContainer = createPost(post);
-  //     container.appendChild(postContainer);
-  //   });
+  console.log(posts);
 
+  container.innerHTML = "";
   const allPostsHtml = posts.map((post) => {
     return createPost(post);
   });

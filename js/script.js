@@ -6,6 +6,8 @@ import { createSinglePostHandler } from "./handlers/posts/createSinglePostHandle
 import { createProfilePostsHandler } from "./handlers/posts/createProfilePostsHandler.js";
 import { handleScrollButton } from "./handlers/posts/handleScrollButton.js";
 import { addPostHandler } from "./handlers/posts/addPostHandler.js";
+import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
+import { sortingPostsHandler } from "./handlers/posts/sortingPostsHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -27,6 +29,8 @@ function route() {
       handleScrollButton();
       logoutHandler();
       createPostsHandler();
+      searchPostsHandler();
+      sortingPostsHandler();
       break;
     case "/feed/post.html":
       createSinglePostHandler();

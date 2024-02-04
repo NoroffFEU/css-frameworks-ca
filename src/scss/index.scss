@@ -1,1 +1,77 @@
+// $enable-negative-margins: true;
 
+
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "components/variables";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+
+
+.login-logo {
+  background-color: $dark-green;
+  font-size: $h1-font-size;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.profile-img {
+  width: 18rem;
+  margin-bottom: -50%;
+}
+
+.custom-thumbnail {
+  max-width: 58px;
+}
+
+.font-icon {
+  font-size: 1.5rem;
+  color: $body-color;
+
+  &:hover {
+    color: $link-color;
+  }
+}
+
+.image-card {
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.custom-list-group-item {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+[type=search] {
+  appearance: textfield;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  appearance: button;
+}
+
+::file-selector-button {
+  appearance: button;
+}
+
+.login-hero-img {
+  max-width: unset;
+}

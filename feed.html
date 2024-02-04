@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mobile Photography SoMe app. Share your best tips and mobile photos with others.">
+  <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+  <script defer src="/dist/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="dist/css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/777383031e.js" crossorigin="anonymous"></script>
+  <title>Mobile Photography | Feed</title>
+</head>
+<body>
+  <header>
+    <div class="container-fluid bg-secondary">
+      <div class="container p-1">
+        <div class="row align-items-center">
+          <div class="col d-flex justify-content-start order-1">
+            <a href="/profile.html"><img src="/images/AS.jpg" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+            <p class="ms-2 mb-0 d-flex align-items-center">@AnneSerine</p>
+          </div>
+          <div class="col-12 col-lg-8 d-flex justify-content-center order-3 order-lg-2 mx-auto">
+            <nav class="navbar">
+              <form class="d-flex" role="search">
+                <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+              </form>
+            </nav>
+          </div>
+          <div class="col d-flex justify-content-end order-2 order-lg-3">
+            <p class="me-2 mb-0 d-flex align-items-center">log out</p>
+            <a href="/index.html"><i class="fa-solid fa-arrow-right-from-bracket font-icon"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="container mt-3 mb-5">
+
+    <div class="row column-gap-5">
+      <div class="col d-flex justify-content-center d-none d-xl-block">
+        <h2 class="h4 col">Mobile Photography Tips</h2>
+        <div class="card image-card mb-2">
+          <div class="row">
+            <div class="col d-flex justify-content-start m-2">
+              <a href="#"><img src="/images/AS.jpg" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+              <p class="ms-2 mb-0 d-flex align-items-center">@AnneSerine</p>
+            </div>
+            <img src="/images/ocean.jpg" alt="the ocean at the coast of Haugesund">
+            <div class="row m-2">
+              <h3 class="h5">Blue Coast</h3>
+              <p>Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque...</p>
+            </div>
+          </div>
+        </div>
+        <div class="card image-card mb-2">
+          <div class="row">
+            <div class="col d-flex justify-content-start m-2">
+              <a href="#"><img src="/images/AS.jpg" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+              <p class="ms-2 mb-0 d-flex align-items-center">@AreKetil</p>
+            </div>
+            <img src="/images/feather-forest.jpg" alt="the ocean at the coast of Haugesund">
+            <div class="row m-2">
+              <h3 class="h5">In the Forest</h3>
+              <p>Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque...</p>
+            </div>
+          </div>
+        </div>
+        <a href="#">View more tips</a>
+      </div>
+
+      <div class="col-lg-6 col-md-8 col-sm-10 col mx-auto">
+        <h1 class="h3">Create new content</h1>
+        <form action="#" class="card bg-dark p-4">
+          <div class="row">
+            <div class="col input-group mb-3">
+              <input type="file" class="form-control" id="inputFile">
+              <label class="input-group" for="inputFile"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col input-group mb-3">
+              <span class="input-group-text" id="authorInput">@</span>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="authorInput">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col input-group mb-3">
+              <label for="textarea" class="input-group text-white">Textarea/Content</label>
+              <textarea class="form-control" aria-label="textarea" id="textarea"></textarea>
+            </div>
+          </div>
+          <div class="row mb-1">
+            <div class="col d-flex">
+              <span class="input-group-text" id="tagInput1">#</span>
+              <input type="text" class="form-control" placeholder="tag" aria-label="tag" aria-describedby="tagInput1">
+            </div>
+            <div class="col d-flex">
+              <span class="input-group-text" id="tagInput2">#</span>
+              <input type="text" class="form-control" placeholder="tag" aria-label="tag" aria-describedby="tagInput2">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col d-flex">
+              <span class="input-group-text" id="tagInput3">#</span>
+              <input type="text" class="form-control" placeholder="tag" aria-label="tag" aria-describedby="tagInput3">
+            </div>
+            <div class="col d-flex">
+              <span class="input-group-text" id="tagInput4">#</span>
+              <input type="text" class="form-control" placeholder="tag" aria-label="tag" aria-describedby="tagInput4">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        <div class="dropdown mt-4 mb-5">
+          <button class="btn btn-secondary dropdown-toggle col-6" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort by
+          </button>
+        
+          <ul class="dropdown-menu col-6">
+            <li><a class="dropdown-item" href="#">Newest</a></li>
+            <li><a class="dropdown-item" href="#">Date</a></li>
+            <li><a class="dropdown-item" href="#">Title</a></li>
+            <li><a class="dropdown-item" href="#">Name</a></li>
+          </ul>
+        </div>
+
+        <h2 class="h3">Latest posts</h2>
+
+        <div class="card image-card p-3 d-flex justify-content-center mb-2">
+          <div class="row">
+            <div class="col-6">
+              <img src="/images/yellow-flowers.jpg" class="img-fluid rounded-circle" alt="a girl with a flower wreath">
+            </div>
+            <div class="col-6 d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <h3 class="h4">Yellow Spring</h3>
+                </div>
+                <div class="row">
+                  <p>@ Betty</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>#spring #flowers #yellow</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+
+        <div class="card image-card p-3 d-flex justify-content-center mb-2">
+          <div class="row">
+            <div class="col-6">
+              <img src="/images/mushroom.jpg" class="img-fluid rounded-circle" alt="a girl with a flower wreath">
+            </div>
+            <div class="col-6 d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <h3 class="h4">Into the Forest</h3>
+                </div>
+                <div class="row">
+                  <p>@ Kara</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. content content</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>#mushroom #forest #red</p>
+                </div>
+              </div> 
+            </div> 
+          </div>
+        </div>
+
+        <div class="card image-card p-3 d-flex justify-content-center mb-2">
+          <div class="row">
+            <div class="col-6">
+              <img src="/images/dandelion-end.jpg" class="img-fluid rounded-circle" alt="a girl with a flower wreath">
+            </div>
+            <div class="col-6 d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <h3 class="h4">The End</h3>
+                </div>
+                <div class="row">
+                  <p>@ Pixie</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. content</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>#dandelion #end</p>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+
+        <div class="card image-card p-3 d-flex justify-content-center mb-2">
+          <div class="row">
+            <div class="col-6">
+              <img src="/images/fall.jpg" class="img-fluid rounded-circle" alt="a girl with a flower wreath">
+            </div>
+            <div class="col-6 d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <h3 class="h4">Fall is Here</h3>
+                </div>
+                <div class="row">
+                  <p>@ AnneSerine</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. content</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>#fall &orange</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card image-card mb-2">
+          <div class="row">
+            <div class="col d-flex justify-content-start m-2">
+              <a href="#"><img src="/images/AS.jpg" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+              <p class="ms-2 mb-0 d-flex align-items-center">@AnneSerine</p>
+            </div>
+            <img src="/images/ocean.jpg" alt="the ocean at the coast of Haugesund">
+            <div class="row m-2">
+              <h3 class="h4">Blue Coast</h3>
+              <p>Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque.</p>
+              <a href="#">Read more...</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card image-card p-3 d-flex justify-content-center mb-2">
+          <div class="row">
+            <div class="col-6">
+              <img src="/images/lighthouse.jpg" class="img-fluid rounded-circle" alt="a girl with a flower wreath">
+            </div>
+            <div class="col-6 d-flex align-items-center">
+              <div class="container">
+                <div class="row">
+                  <h3 class="h4">Sunset</h3>
+                </div>
+                <div class="row">
+                  <p>@ Lisa</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. content content</p>
+                </div>
+                <div class="row d-none d-md-block">
+                  <p>#lighthouse &coast #sunset</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col d-flex justify-content-center d-none d-xl-block mb-5">
+        <div>
+          <img src="/images/mmp.svg" class="w-85" alt="#">
+        </div>
+        <ul class="list-group list-group-flush sticky-lg-top mt-2">
+          <li class="list-group-item d-flex">
+            <a href="#"><img src="/images/user.png" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+            <p class="ms-2 mb-0 d-flex align-items-center">@Matty</p></li>
+          <li class="list-group-item d-flex">
+            <a href="#"><img src="/images/user.png" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+            <p class="ms-2 mb-0 d-flex align-items-center">@Laura</p></li>
+          <li class="list-group-item d-flex">
+            <a href="#"><img src="/images/user.png" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+            <p class="ms-2 mb-0 d-flex align-items-center">@Christian</p></li>
+          <li class="list-group-item d-flex">
+            <a href="#"><img src="/images/user.png" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+            <p class="ms-2 mb-0 d-flex align-items-center">@Frida</p></li>
+          <li class="list-group-item d-flex">
+            <a href="#"><img src="/images/user.png" class="img-thumbnail custom-thumbnail rounded-circle" alt="a profile picture thumbnail"></a>
+            <p class="ms-2 mb-0 d-flex align-items-center">@Mindy</p></li>
+          <li class="list-group-item">
+            <a href="#">View all connections</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark sticky-bottom">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col d-flex justify-content-center p-2">
+          <a href="#" aria-label="search button">
+            <i class="text-white fa-solid fa-magnifying-glass border rounded-circle p-3 fs-4" >
+            </i>
+          </a>
+        </div>
+        <div class="col d-flex justify-content-center p-2">
+          <a href="/profile.html" aria-label="home page button">
+            <img src="/images/AS.jpg" class="img-thumbnail custom-thumbnail rounded-circle">
+          </a>
+        </div>
+        <div class="col d-flex justify-content-center p-2">
+          <a href="#" aria-label="write a message button">
+            <i class="text-white fa-solid fa-pen border rounded-circle p-3 fs-4">
+            </i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

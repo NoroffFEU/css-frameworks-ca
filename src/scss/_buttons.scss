@@ -1,0 +1,22 @@
+
+.btn-primary {
+    background-color: $green;
+    border: $green;
+    @include round-radius;
+}
+
+.btn-primary:hover {
+    background-color: $lightgreen;
+    border: $lightgreen;
+}
+
+.btn-secondary {
+    background-color: $blue;
+    border: $blue;
+    @include round-radius;
+}
+
+.btn-secondary:hover {
+    background-color: $lightblue;
+    border: $lightblue;
+}

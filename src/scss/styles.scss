@@ -1,6 +1,19 @@
-@import "variables"; /* /src/scss/_variables.scss */
+@import "variables";
+@import "mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "buttons";
+@import "images";
 
-.btn-primary {
-    background-color: green;
+
+body {
+    font-family: "Noto Sans HK", sans-serif;
+}
+
+p {
+    max-width: 500px;
+}
+
+.userContent {
+    background-color: $gray;
+    
 }

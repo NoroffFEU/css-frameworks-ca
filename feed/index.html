@@ -43,8 +43,7 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -58,16 +57,14 @@
               <li class="nav-item">
                 <a class="nav-link ps-3 nav-text text-primary" href="#">Contact</a>
               </li>
-              <!-- <li class="nav-item ps-3">
-                <a class="nav-link nav-text text-primary" href="/">Log out</a>
-              </li> -->
               <button class="bg-dark border-0 ps-2 pe-0 pt-2 pb-2 text-primary" id="logout">Logout</button>
             </ul>
           </div>
         </div>
       </div>
     </nav>
-    <main class="container pb-3">
+    <main class="container pb-3 col-12 col-lg-8  flex-grow-1 o">
+      
       <!-- search-sort section -->
       <section class="search-sort container mx-auto text-center">
         <div class="mb-5">
@@ -76,7 +73,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-8 mx-auto mx-auto">
+          <div class="col-lg-5 col-10 col-md-6 mx-auto mx-auto">
             <div class="search mt-5">
               <form class="d-flex justify-content-center" role="search">
                 <div class="search-group bg-dark d-flex flex-row">
@@ -94,7 +91,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4 mt-3 mx-auto">
+          <div class="col-lg-5 col-10 col-md-6 mt-3 mx-auto">
             <div class="sorting">
               <select class="form-select default" aria-label="Select sorting">
                 <option selected>Sort by</option>
@@ -154,7 +151,8 @@
             <div class="loader">Loading...</div>
             <div id="posts"></div>
 
-            <!-- post 1 -->
+
+            <!-- hardcoded post example -->
 
             <!-- <section class="mt-5 container h-auto">
               <div class="row bg-light pt-2 text-center align-items-center justify-content-between">
@@ -169,8 +167,7 @@
                     height="16"
                     fill="red"
                     class="bi bi-heart-fill"
-                    viewBox="0 0 16 16"
-                  >
+                    viewBox="0 0 16 16">
                     <path
                       fill-rule="evenodd"
                       d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
@@ -192,161 +189,13 @@
                 </div>
               </div>
             </section> -->
-
-            <!-- post 2 -->
-            <!-- <section class="mt-5 container bg-light h-auto">
-              <div class="row pt-2 text-center align-items-center justify-content-between">
-                <div class="col-auto ps-0 d-flex align-items-center">
-                  <img src="/images/profile-pic3.png" alt="user picture" class="small-user-picture m-1 p-0" />
-                  <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Geek Goddess</span>3d. London</p>
-                </div>
-                <div class="col-auto d-flex justify-content-end align-items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="red"
-                    class="bi bi-heart-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                    />
-                  </svg>
-                  <p class="align-items-center ps-2 mb-0">210</p>
-                </div>
-                <div>
-                  <p class="text-start text-dark pt-3">
-                    🇮🇱 Just caught up with the latest updates on the Israel-Palestine conflict. It's deeply saddening to
-                    witness such turmoil and suffering. Innocent lives should never be a casualty of political strife.
-                    Sending my heartfelt thoughts and hopes for peace to everyone impacted. 💔 #PrayForPeace
-                    #HumanityFirst
-                  </p>
-                </div>
-              </div>
-            </section>
-
-             post 3 
-             <section class="container mt-5 bg-light h-auto">
-              <div class="row pt-2 text-center align-items-center justify-content-between"> -->
-                <!-- <div class="col-auto d-flex ps-0 align-items-center">
-                  <img src="/images/profile-pic1.png" alt="user picture" class="small-user-picture m-1 p-0" />
-                  <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Lizz Kiss</span>4d. London</p>
-                </div>
-                <div class="col-auto d-flex justify-content-end align-items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="red"
-                    class="bi bi-heart-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                    />
-                  </svg>
-                  <p class="ps-2 mb-0">356</p>
-                </div>
-              </div>
-              <div>
-                <p class="text-start text-dark pt-3">
-                  On a brighter note amidst all this chaos, the aurora last night was absolutely mesmerizing. Nature has
-                  its way of reminding us of the beauty in the world. Let’s spread love and hope, not hatred and fear.
-                  💙 #NatureHeals #AuroraDreams
-                </p>
-              </div>
-              <div class="row">
-                <img
-                  src="/images/aurora1.jpg"
-                  alt="aurora in the night sky above the mountains"
-                  class="aurora img-fluid pb-3"
-                />
-              </div>
-            </section> --> 
-
-            <!-- post 4 -->
-            <!-- <section class="container h-auto mt-5 pt-2 pb-2 bg-light">
-              <div class="row text-center align-items-center justify-content-between">
-                <div class="col d-flex ps-0 align-items-center">
-                  <img src="/images/profile-pic5.png" alt="user picture" class="small-user-picture m-1 p-0" />
-                  <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">King Chong</span>5d. Oslo</p>
-                </div>
-                <div class="col-auto d-flex justify-content-end align-items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="red"
-                    class="bi bi-heart-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                    />
-                  </svg>
-                  <p class="ps-2 mb-0">35</p>
-                </div>
-              </div>
-              <div>
-                <p class="text-start text-dark pt-3">
-                  Hey film buffs! 🍿 I just got my hands on two tickets to Martin Scorsese's latest masterpiece,
-                  "Killers of the Flower Moon", and I'm looking for someone to join me this Friday in Oslo! It's
-                  Scorsese, so you know it's going to be epic. First come, first served! DM! #MovieNight #ScorseseFan
-                  #KillersOfTheFlowerMoon
-                </p>
-              </div>
-            </section> -->
-
-            <!-- post 5 -->
-            <!-- <section class="container h-auto mt-5 pt-2 pb-2 bg-light">
-              <div class="row text-center align-items-center justify-content-between">
-                <div class="col d-flex ps-0 align-items-center">
-                  <img src="/images/profile-pic4.png" alt="user picture" class="small-user-picture m-1 p-0" />
-                  <p class="mb-0"><span class="pe-2 baloo text-primary fs-5">Lovely Lu</span>9d. Bergen</p>
-                </div>
-                <div class="col-auto d-flex justify-content-end align-items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="red"
-                    class="bi bi-heart-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                    />
-                  </svg>
-                  <p class="ps-2 mb-0">175</p>
-                </div>
-              </div>
-              <div>
-                <p class="text-start text-dark pt-3">
-                  👶🎉 Welcome Home, Little Miracle! 💕 🥰 Introducing our precious little angel! The journey has been
-                  incredible, and we're over the moon with joy and gratitude. 🌙✨ Every coo, every tiny movement is a
-                  moment of wonder for us. Our hearts are so full, it feels like they might burst! 🥰 The sleepless
-                  nights are here, but every second is worth it for this bundle of joy. 🍼🌟 Thank you to everyone who
-                  sent their love, prayers, and support during this journey. We're excited to start this beautiful new
-                  chapter of life. 💕 #Newborn #BabyJoy #Homecoming #BlessedFamily
-                </p>
-              </div>
-              <div class="row">
-                <img src="/images/baby.png" alt="baby sleeping" class="img-fluid pb-3" />
-              </div>
-            </section>  -->
           </div>
         </div>
       </section>
     </main>
     <footer class="py-4 border-2 border-top border-primary bg-dark">
       <div class="container text-center">
-        <p class="mb-0 text-primary">
-          &copy; 2023
+        <p class="mb-0 text-primary">&copy; 2023
           <span class="text-danger ps-1 baloo fs-5 fw-bold">Vib`n</span
           ><span class="text-warning baloo fs-5 fw-bold">!</span> | Built by Laura Karaliene
         </p>

@@ -1,42 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Social media application">
-    <meta name="author" content="Liban-M1">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/_variables.scss">
-    <link rel="stylesheet" href="styles/feed.scss">
-    <title>Feed - Socially</title>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Social media application">
+  <meta name="author" content="Liban-M1">
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/src/styles/main.min.css">
+  <title>Feed - Socially</title>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <header>
+  <section>
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Socially</a>
+        <button class="navbar-toggler bg-alt-secondary" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bg-alt-secondary rounded p-1 m-2" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><b>Feed</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../profile/index.html">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../portal/index.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
+</header>
+<body class="bg-alt-light">
+  <main>
     <section>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Socially</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Feed</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../portal/index.html">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../portal/index.html">Logout</a>
-                  </li>
-                </ul>
+      <div class="container rounded bg-alt-secondary p-3 mb-5">
+        <div class="my-3">
+          <form>
+            <div class="form-group">
+              <label for="postTitle">Title</label>
+              <input type="text" class="form-control" id="postTitle" placeholder="Enter a title">
+            </div>
+            <div class="form-group">
+              <label for="postText">Text</label>
+              <textarea class="form-control" id="postText" placeholder="What's on your mind? (Optional)"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="postImage">Image URL</label>
+              <input type="text" class="form-control" id="postImage" placeholder="Paste image URL">
+            </div>
+            <button type="submit" class="btn btn-alt-primary mt-2">Post</button>
+          </form>
+        </div>
+        <div class="container rounded bg-alt-dark p-3 mb-5">
+          <div class="row">
+            <div class="col-md-6 my-3">
+              <select class="form-control">
+                <option>Sort by latest</option>
+                <option>Sort by oldest</option>
+                <option>Sort by most liked</option>
+              </select>
+            </div>
+            <div class="col-md-6 my-3">
+              <input class="form-control" type="text" placeholder="Search">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
               </div>
             </div>
-          </nav>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Post title</h5>
+                  <img src="/assets/img/elementor-placeholder-image.webp" alt="Placeholder" class="img-fluid">
+                  <button type="submit" class="btn btn-alt-primary mt-2">View more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-</header>
-<body>
-    
+  </main>
 </body>
 </html>

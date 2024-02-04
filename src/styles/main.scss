@@ -1,0 +1,22 @@
+// custom variables
+$primary: #2e6f4d;
+$secondary: #5fb997;
+$light: #f2fff9;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$custom-theme-colors: (
+  "alt-primary": #5fb997,
+  "alt-secondary": #a2dbc6,
+  "alt-light": #f2fff9,
+  "alt-dark": #2e6f4d
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+// import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+// path: src/styles/main.scss

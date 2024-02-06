@@ -1,18 +1,31 @@
 import { updatePost } from "../../api/posts/index.mjs";
+import { getPost } from "../../api/posts/index.mjs";
 
-export function updatePostFormListener() {
+export async function updatePostFormListener() {
   const form = document.querySelector("#updatePost");
 
 const url = new URL(location.href);
 const id = url.searchParams.get("id");
 
+  console.log('ID:', id);
+
   if (form) {
+    
+    const post = await getPost(id);
+    
+    form.title.value = post.title;
+    form.body.value = post.body;
+    form.tags.value = post.tags;
+    form.media.value = post.media;
+
     form.addEventListener ("submit", (event) => {
         event.preventDefault()
         const form = event.target;
         const formData = new FormData(form);
         const post = Object.fromEntries(formData.entries())
         post.id = id;
+
+        console.log('NEW post:', post);
 
         updatePost(post)
       })

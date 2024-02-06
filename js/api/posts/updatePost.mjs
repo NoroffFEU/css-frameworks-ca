@@ -7,14 +7,17 @@ const method = "PUT";
 export async function updatePost(postData) {
   if (!postData.id) {
     throw new Error("Update requires a postID");
-}
+  }
   const updatePostURL = `${BASE_URL}${action}/${postData.id}`;
+
+  console.log('Update Post URL:', updatePostURL);
 
   const response = await fetchToken(updatePostURL, {
     method,
-    body:JSON.stringify(postData),
-  })
-  
-  return await response.json();
+    body: JSON.stringify(postData),
+  });
 
-  }
+  const jsonResponse = await response.json();
+  
+  return jsonResponse;
+}

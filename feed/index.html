@@ -43,7 +43,8 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -63,8 +64,7 @@
         </div>
       </div>
     </nav>
-    <main class="container pb-3 col-12 col-lg-8  flex-grow-1 o">
-      
+    <main class="container pb-3 col-12 col-lg-8 flex-grow-1 o">
       <!-- search-sort section -->
       <section class="search-sort container mx-auto text-center">
         <div class="mb-5">
@@ -93,52 +93,14 @@
 
         <div class="row">
           <div class="col-lg-5 col-10 col-md-6 mt-3 mx-auto">
-            <div class="sorting">
-              <select class="form-select default" aria-label="Select sorting" id="sorting">
-                <option>Sort by</option>
-                <option value="1">Newest</option>
-                <option value="2">Oldest</option>
-              </select>
-            </div>
+            <select class="form-select Default" aria-label="select sorting" id="sorting">
+              <option selected>Sort by</option>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+            </select>
           </div>
         </div>
-
-        <!-- add new post section -->
-        <!-- <div class="row">
-          <div class="mt-3 mx-auto new-post col-md-8">
-            <p class="text-center">
-              <button
-                class="btn mb-0 btn-outline-primary mx-auto new-post-btn bg-dark"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseExample"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <span class="text-nowrap"> New post +</span>
-              </button>
-            </p>
-            <div class="collapse align-items-center mx-auto" id="collapseExample">
-              <div class="card bg-dark card-body mx-auto">
-                <div class="mb-1">
-                  <textarea
-                    class="form-control col-md-4 textarea bg-light text-dark mx-auto"
-                    placeholder="Write something for us"
-                    id="newPost"
-                    rows="4"
-                  ></textarea>
-                </div>
-                <div class="mb-1">
-                  <input class="form-control mx-auto" type="file" id="formFile" />
-                </div>
-                <div class="col-auto mx-auto mt-1">
-                  <button type="submit" class="btn btn-outline-primary post-btn mt-3">Post</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
+      </section>
 
       <!-- feed section -->
       <section class="feed-posts mx-auto container align-items-center text-center">
@@ -157,8 +119,8 @@
     </main>
     <footer class="py-4 border-2 border-top border-primary bg-dark">
       <div class="container text-center">
-        <p class="mb-0 text-primary">&copy; 2023
-          <span class="text-danger ps-1 baloo fs-5 fw-bold">Vib`n</span
+        <p class="mb-0 text-primary">
+          &copy; 2023 <span class="text-danger ps-1 baloo fs-5 fw-bold">Vib`n</span
           ><span class="text-warning baloo fs-5 fw-bold">!</span> | Built by Laura Karaliene
         </p>
       </div>

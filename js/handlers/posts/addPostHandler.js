@@ -1,5 +1,6 @@
 import { addPost } from "../../api/posts/addPost.js";
-import { messageForUser } from "../../ui/messageForUser.js"; //do i need this?
+import { messageForUser } from "../../ui/messageForUser.js";
+import { getToken } from "../../utils/helpers/token.js";
 import { renderAddedPost } from "../../ui/renderAddedPost.js"; //do i need this?
 
 export async function addPostHandler(postData) {
@@ -9,23 +10,31 @@ export async function addPostHandler(postData) {
       event.preventDefault();
 
       const newPostText = document.querySelector("#newPost").value;
-      const newPostFile = document.querySelector("#formFile").files[0];
-      const newPostTitle = document.querySelector("#formTitle").value;
+      const newPostFile = document.querySelector("#formFile")
+        ? document.querySelector("#formFile").files[0]
+        : undefined;
+      const newPostTitle = document.querySelector("#formTitle").value
+        ? document.querySelector("#formTitle").value
+        : "Default Title";
 
-      const newPostData = {
+      const postData = {
         title: newPostTitle,
         body: newPostText,
-        media: newPostFile,
+        // media: newPostFile,
+        media: newPostFile ? newPostFile : undefined,
         tags: [""],
       };
 
-      console.log("newPostData:", newPostData);
+      console.log("newPostData:", postData);
 
       try {
-        await addPost(newPostData);
+        const results = await addPost(postData);
         event.target.reset();
+        // renderAddedPost(newPostData);
+        messageForUser("#messageForUser", "Post added successfully", "success");
       } catch (error) {
         console.error(error);
+        messageForUser("#messageForUser", "Post failed to add", "danger");
       }
     });
   }

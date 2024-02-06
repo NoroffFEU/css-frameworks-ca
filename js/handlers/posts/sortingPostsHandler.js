@@ -19,20 +19,25 @@ import { renderPosts } from "../../ui/renderPosts.js";
 
 // is this ok?????????
 export function sortingPostsHandler(posts) {
+  if (!Array.isArray(posts)) {
+    console.error("Invalid argument: posts must be an array");
+    return;
+  }
+
   const sortingSelect = document.querySelector("#sorting");
   // Add an event listener
   sortingSelect.addEventListener("change", function () {
     // Get the selected option
     const selectedOption = sortingSelect.value;
 
-    let sortedPosts;
+    let sortedPosts = [...posts];
     // Sort the posts based on the selected option
     if (selectedOption === "Newest") {
       sortedPosts = posts.sort((a, b) => new Date(b.created) - new Date(a.created));
     } else if (selectedOption === "Oldest") {
       sortedPosts = posts.sort((a, b) => new Date(a.created) - new Date(b.created));
     }
-    // Render the sorted posts
+
     renderPosts("#posts", sortedPosts);
   });
 }

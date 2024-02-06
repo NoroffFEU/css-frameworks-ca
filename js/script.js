@@ -29,8 +29,8 @@ function route() {
       handleScrollButton();
       logoutHandler();
       createPostsHandler();
-      searchPostsHandler();
-      sortingPostsHandler();
+      searchPostsHandler(posts);
+      sortingPostsHandler(posts);
       break;
     case "/feed/post.html":
       createSinglePostHandler();

@@ -16,6 +16,17 @@
 // }
 
 import { renderPosts } from "../../ui/renderPosts.js";
+import { getAllPosts } from "../../api/posts/getAllPosts.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const posts = await getAllPosts();
+    sortingPostsHandler(posts); // Initialize sorting with fetched posts
+  } catch (error) {
+    console.error(error);
+    // Handle the error appropriately
+  }
+});
 
 // is this ok?????????
 export function sortingPostsHandler(posts) {

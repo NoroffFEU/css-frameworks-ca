@@ -10,13 +10,17 @@ const id = url.searchParams.get("id");
   console.log('ID:', id);
 
   if (form) {
-    
+    const button = form.querySelector("updatePostBtn");
+    button.disabled = true;
+
     const post = await getPost(id);
     
     form.title.value = post.title;
     form.body.value = post.body;
     form.tags.value = post.tags;
     form.media.value = post.media;
+
+    button.disabled = false;
 
     form.addEventListener ("submit", (event) => {
         event.preventDefault()

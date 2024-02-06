@@ -29,6 +29,8 @@ const id = url.searchParams.get("id");
         const post = Object.fromEntries(formData.entries())
         post.id = id;
 
+      // post.tags = post.tags.split(",").map((tag) => tag.trim());
+
         console.log('NEW post:', post);
 
         updatePost(post)

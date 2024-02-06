@@ -1,0 +1,27 @@
+
+.login-container {
+    max-width: 400px;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.btn-custom {
+    border-color: $black;
+
+    &:hover {
+        background-color: $black;
+        border-color: $white;
+    }
+}
+
+.new-post-header {
+    background-color: $primary;
+    color: $white;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+}

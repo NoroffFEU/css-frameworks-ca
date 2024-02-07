@@ -1,10 +1,6 @@
 
-$primaryGreen:  #00E6A8;
-$primaryGreenHover: #02daa0;
-$secondaryGreen: #087F8C;
-$secondaryGreenHover: #076d79;
-$whiteText: white;
-$blackText: #342E37;
+$primary:  #00E6A8;
+$secondary: #087F8C;
 $footerColor: #F6F6F6;
 $barcolor: #9448BC;
 
@@ -25,7 +21,7 @@ h1 {
     font-size: 4em;
 }
 span {
-    color: $primaryGreen;
+    color: $primary;
 }
 
 .login {
@@ -37,14 +33,12 @@ span {
     & .login-container {
         backdrop-filter: blur(20px);
         background-color: rgba(137, 137, 137, 0.4);
-        border-radius: 5px;
     }
 }
 .btn {
-    background-color: $primaryGreen;
+    background-color: $primary;
 }
-
 .profilebanner {
-    background-color: $secondaryGreen;
+    background-color: $secondary;
     height: 100px;
 }

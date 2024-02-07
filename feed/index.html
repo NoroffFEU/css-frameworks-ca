@@ -1,78 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/footer.css">
-    <link rel="stylesheet" href="/css/media.css">
-    <link rel="stylesheet" href="/css/navigation.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..38,100..700,0..1,-50..200"/>
+       
+        <title>Viral Vibe | Feed</title>
+    </head>
 <body>
     <header>
-        <section class="headbar d-flex justify-content-center align-items-center text-center">
-            <img class="logo" src="/images/logo.png" height="70px">
-        </section>
+        <nav class="navbar px-3">
+            <div class="container-fluid p-0 justify-content-center gap-3">
+            <a class="navbar-brand" href="/feed/index.html">
+              <img src="/images/logo.png" width="130" height="50" alt="Viral Vibe logo">
+            </a>
+            <form class="d-flex input-group w-auto">
+                  <input type="search" class="form-control rounded" placeholder="Looking for something?"/>
+                  <span class="material-symbols-outlined input-group-text">
+                    search
+                    </span>
+                </form>
+              </div>
+          </nav>
     </header>
     <main>
-        <section class="feedbar d-flex justify-content-center">
-            <div class="feedstarter d-flex justify-content-center align-items-center">
-                <div class="userImage d-flex justify-content-center align-items-center">
-                    <img src="/images/user 1.JPG" alt="Image of profileuser">
+        <section class="container mt-3 d-flex gap-3 flex-wrap justify-content-center">
+            <!--profilebox-->
+            <div class="col-11 col-lg-3" >
+                <div class="col border border-1 border-black rounded text-center py-3 mb-3">
+                    <img src="/images/user 2.JPG" class="rounded-circle mb-3" height="150px" alt="Profile picture">
+                    <h3>Eddie Spagetti</h3>
+                    <p class="text-muted border-bottom">Unemployed web developer</p>
+                    <a href="/profile/index.html"><button  class="btn p-2 w-50" >View my profile</button></a>
                 </div>
-                <label for="message"></label>
-                <input class="form-control dummyinput" id="message" type="text"  placeholder="What`s on your mind ?">
+                    <!--photogallery-->
+                    <div class="grid border border-1 border-black rounded justify-content-center text-center p-3">
+                        <h2 class="mb-3">Photos</h2>
+                        <div class="row">
+                            <img src="/images/user 9.JPG" class="col-4 p-0"   alt="Profile picture">
+                            <img src="/images/user 5.JPG" class="col-4 p-0"   alt="Profile picture">
+                            <img src="/images/user 12.JPG" class="col-4 p-0"   alt="Profile picture">
+                        </div>
+                        <div class="row">
+                            <img src="/images/user 7.JPG" class="col-4 p-0"   alt="Profile picture">
+                            <img src="/images/user 3.JPG" class="col-4 p-0"   alt="Profile picture">
+                            <img src="/images/user 11.JPG" class="col-4 p-0"   alt="Profile picture">
+                        </div>
+                        <div class="row">
+                            <img src="/images/user 9.JPG" class="col-4 p-0"   alt="Profile picture">
+                            <img src="/images/user 12.JPG" class="col-4 p-0"   alt="Profile picture">
+                            <img src="/images/user 6.JPG" class="col-4 p-0"   alt="Profile picture">
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </section>
-        <div class="feed-headbar row  text-center">
-            <h2 class="col m-0">Feeds</h2>
-            <div class="col dropdown">
-                <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown button
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Date</a>
-                  <a class="dropdown-item" href="#">Likes</a>
-                  <a class="dropdown-item" href="#">Views</a>
+            <div class="col-11 col-lg-5">
+                <!--feedform-->
+                <div class="col  border border-1 border-black rounded  py-5 px-2">
+                    <div class="d-flex gap-2 mb-2 border-bottom border-black">
+                        <img src="/images/user 2.JPG" class="rounded-circle mb-3" height="60px" alt="Profile picture">
+                        <textarea class="form-control border border-0" rows="2" cols="3"   placeholder="What`s on your mind ?"></textarea>
+                    </div>
+                    <button type="button" class="btn float-end">Publish your post</button>
                 </div>
-              </div>
-        </div> 
-    </main>
-    <footer class="d-flex justify-content-center">
-        <ul class="links d-flex text-center justify-content-center mt-2 flex-wrap p-0">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Language</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Api</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Contact</a></li>
+                <!--feed-->
+                <div class="d-flex my-5 justify-content-between flex-wrap">
+                    <h2 class="">Feed</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-white dropdown-toggle" type="button" data-toggle="dropdown">Sort<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Date</a></li>
+                          <li><a href="#">Likes</a></li>
+                          <li><a href="#">Views</a></li>
+                        </ul>
+                    </div>
+                    <hr class="col-12 hr" />
+                </div>
+            
+                <div class="post col border border-black border-1 rounded p-2 mb-3">
+                    <div class="d-flex gap-2">
+                        <img src="/images/user 10.JPG" class="rounded-circle " height="60px">
+                        <div class="">
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <div class="d-flex">
+                                <span class="material-symbols-outlined">favorite</span>
+                                <p class="text-muted mx-2">322</p>
+                                <span class="material-symbols-outlined">visibility</span>
+                                <p class="text-muted mx-2">1028</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post col border border-black border-1 rounded p-2 mb-3">
+                    <div class="d-flex gap-2">
+                        <img src="/images/user 11.JPG" class="rounded-circle " height="60px">
+                        <div class="">
+                            <p class="mb-1">dolor sit amet consectetur adipisicing elit...</p>
+                            <div class="d-flex">
+                                <span class="material-symbols-outlined">favorite</span>
+                                <p class="text-muted mx-2">322</p>
+                                <span class="material-symbols-outlined">visibility</span>
+                                <p class="text-muted mx-2">1028</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post col border border-black border-1 rounded p-2 mb-3">
+                    <div class="d-flex gap-2">
+                        <img src="/images/user 12.JPG" class="rounded-circle " height="60px">
+                        <div class="">
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <div class="d-flex">
+                                <span class="material-symbols-outlined">favorite</span>
+                                <p class="text-muted mx-2">322</p>
+                                <span class="material-symbols-outlined">visibility</span>
+                                <p class="text-muted mx-2">1028</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post col border border-black border-1 rounded p-2">
+                    <div class="d-flex gap-2">
+                        <img src="/images/user 10.JPG" class="rounded-circle " height="60px">
+                        <div class="">
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                            <div class="d-flex">
+                                <span class="material-symbols-outlined">favorite</span>
+                                <p class="text-muted mx-2">322</p>
+                                <span class="material-symbols-outlined">visibility</span>
+                                <p class="text-muted mx-2">1028</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-11 col-lg-3">
+                <div class="col border border-1 border-black rounded text-center  p-3">
+                    <h3>People you might know</h3>
+                    <div class=" d-flex mt-3 align-items-center justify-content-between">
+                        <img src="/images/user 5.JPG" class="rounded-circle " height="60px" alt="Profile picture">
+                        <p class=" d-flex align-items-center m-0">Zwiebelliese</p>
+                        <span class="text-black material-symbols-outlined">person_add</span>
+                    </div>
+                    <div class=" d-flex mt-3 align-items-center justify-content-between ">
+                        <img src="/images/user 6.JPG" class="rounded-circle" height="60px" alt="Profile picture">
+                        <p class="d-flex align-items-center m-0">Max Power</p>
+                        <span class="text-black material-symbols-outlined">person_add</span>
+                    </div>
+                    <div class=" d-flex mt-3 align-items-center justify-content-between">
+                        <img src="/images/user 7.JPG" class="rounded-circle" height="60px" alt="Profile picture">
+                        <p class=" d-flex align-items-center m-0">Boss Bossington</p>
+                        <span class="text-black material-symbols-outlined">person_add</span>
+                    </div>
+                    <div class=" d-flex mt-3 align-items-center justify-content-between">
+                        <img src="/images/user 8.JPG" class="rounded-circle" height="60px" alt="Profile picture">
+                        <p class=" d-flex align-items-center m-0">Brotspinne</p>
+                        <span class="text-black material-symbols-outlined ">person_add</span>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+     </main>   
+    <footer class="container-fluid d-flex justify-content-center  ">
+        <ul class="links list-unstyled d-flex gap-3 col-12 col-sm-3 justify-content-center mt-2 flex-wrap p-0 ">
+                <li><a class="text-black" href="#">About</a></li>
+                <li><a class="text-black" href="#">Language</a></li>
+                <li><a class="text-black" href="#">Jobs</a></li>
+                <li><a class="text-black" href="#">Press</a></li>
+                <li><a class="text-black" href="#">Api</a></li>
+                <li><a class="text-black" href="#">Help</a></li>
+                <li><a class="text-black" href="#">Support</a></li>
+                <li><a class="text-black" href="#">Contact</a></li>
         </ul>
-        
     </footer>
-    <nav class="navbar d-flex justify-content-center px-1 ">
-        <div class="d-flex container icons justify-content-between">
-        <span class="material-symbols-outlined">
-            account_circle
-            </span>
-        <span class="material-symbols-outlined">
-            mystery
-            </span>
-        <span class="material-symbols-outlined">
-                arrow_circle_up
-            </span>
-        </div>
-    </nav>
+    
 </body>
 </html>

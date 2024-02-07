@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css\general.css">
-    <link rel="stylesheet" href="css/media.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mukta+Vaani&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <title>Viral Vibe | Homepage</title>
+    </head>
 <body>
     <header>
        
@@ -25,31 +26,22 @@
                 </h1>
                 <p class="lead text-left">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et omnis odit atque, praesentium tempora in corporis porro enim accusamus veniam perspiciatis, id nemo eaque tempore est facere. Blanditiis, sequi vitae!</p>
             </div>
-           
+           <!--login form with authentication-->
             <div class="login col-12 col-lg-6 d-flex text-center justify-content-center  align-items-center py-5">
-                <form action="/profile/index.html"  class="login-container form-group container text-center d-flex flex-column justify-content-center py-5">
+                <form action="/profile/index.html"  class="login-container form-group container text-center d-flex flex-column justify-content-center rounded py-5">
                     <div class="form-row">
                         <label for="name"></label>
-                        <input class="form-control p-2" id="name" type="text" required placeholder="E-mail, username or phone nr.">
-                        <div class="valid-feedback">
-                            Looks good!
-                          </div>
-                        <div class="invalid-feedback">
-                            Please enter a valid username
-                        </div>
+                        <input class="form-control p-2 " id="name" type="text" required placeholder="E-mail, username or phone nr.">
+                        
                     </div>
                     <div class="form-row">
-                        <label for="password"><p class="d-none errormessage">Please enter a valid password (8 characters)</p></label>
-                        <input class="form-control p-2 mt-4" id="password" type="password" required placeholder="Password">
-                        <div class="valid-feedback">
-                            Looks good!
-                          </div>
-                        <div class="invalid-feedback">
-                            Please enter a valid password (at least 8 characters)
+                        <label for="password"></label>
+                        <input class="form-control p-2 mt-4" id="password" type="password" minlength="8" required placeholder="Password">
+                       
                         </div>
                     </div>
-                    <div class="form-row mt-5">
-                        <a type="link" class="btn d-flex align-items-center justify-content-center p-2" href="/profile/index.html">Log in</a>
+                    <div class="form-row mt-5 ">
+                        <a href="/profile/index.html"><button  class="btn p-2 w-50" >Log in</button></a>
                     </div>
                     <div class="form-row mt-5"><p class="text-white">or sign up with:</p></div>
                     <ul class="list-unstyled form-row d-flex justify-content-evenly">

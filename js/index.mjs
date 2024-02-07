@@ -4,17 +4,16 @@ import { displayPostsHandler } from "./handler/posts/index.mjs";
 import { createPostFormListener } from "./handler/posts/index.mjs";
 import { updatePostFormListener } from "./handler/posts/index.mjs";
 
-
 const path = location.pathname;
 
 console.log(path);
 
 switch (path) {
-  case '/':
-  case '/index.html':
+  case "/":
+  case "/index.html":
     loginFormListener();
     break;
-  case '/create-account/index.html':
+  case "/create-account/index.html":
     registerFormListener();
     break;
   // case "/feed/":
@@ -32,4 +31,3 @@ switch (path) {
     break;
   default:
 }
-

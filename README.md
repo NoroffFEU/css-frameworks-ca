@@ -1,36 +1,34 @@
 # Viral Vibe - CSS frameworks course assignment
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](https://github.com/Nightfox77/css-frameworks/blob/8e48d079b2c6856eb7749ccce2de9c248463258c/images/Screenshots/Viral-Vibe-Homepage.png)
 
-A simple overview of the use/purpose of the project.
+
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
+Viral Vibe is a social media application and part of the css-frameworks course assignment.
 
-You can add some bullet points if you'd like to:
+The application holds 3 pages:
 
-- List item 1
-- List item 2
-- List item 3
+- The homepage with a login/sign-in form and simple HTML authentification 
+- The profile page with a user pic, user name, and posts, a search bar as part of the navigation, and a followers box
+- The feed page with thumbnail posts, a form to create new posts and a sort option
 
 ## Built With
 
-You can list a the tech stack that you've used over here
-
-- [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
+- Html / Bootstrap
+- Css / Scss
 
 ## Getting Started
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
+
 
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone https://github.com/Nightfox77/css-frameworks.git
 ```
 
 2. Install the dependencies:
@@ -41,7 +39,7 @@ npm install
 
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
+If you want to run the code on your Pc make sure node is installed
 
 To run the app, run the following commands:
 
@@ -51,20 +49,16 @@ npm run start
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+Feel free to contribute...if you do, please fork from the repository and make a new branch.
+Make your changes and commit with a detailed message!
+Push to your branch and send a pull request.
+Thx
 
 ## Contact
 
 This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
-[My Twitter page](www.twitter.com)
+[My Facebook page](https://www.facebook.com/micha.baeuml))
 
-[My LinkedIn page](www.linkedin.com)
 
-## License
 
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
-
-## Acknowledgments
-
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.

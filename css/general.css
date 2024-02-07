@@ -31,7 +31,6 @@ span {
 .login .login-container {
   backdrop-filter: blur(20px);
   background-color: rgba(137, 137, 137, 0.4);
-  border-radius: 5px;
 }
 
 .btn {

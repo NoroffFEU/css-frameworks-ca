@@ -853,7 +853,8 @@ $btn-border-radius:           var(--#{$prefix}border-radius) ;
 $btn-border-radius-sm:        var(--#{$prefix}border-radius-sm) ;
 $btn-border-radius-lg:        var(--#{$prefix}border-radius-lg) ;
 
-$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out ;
+// $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out ;
+   $btn-transition:           background-color 2s ease-out 100ms;
 
 $btn-hover-bg-shade-amount:       15% ;
 $btn-hover-bg-tint-amount:        15% ;
@@ -1163,8 +1164,8 @@ $nav-link-padding-y:                .5rem ;
 $nav-link-padding-x:                1rem ;
 $nav-link-font-size:                null ;
 $nav-link-font-weight:              null ;
-$nav-link-color:                    $green ;
-$nav-link-hover-color:              rgb(13, 230, 60) ;
+$nav-link-color:                    rgba($white, .9) ;
+$nav-link-hover-color:              $black ;
 $nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out ;
 $nav-link-disabled-color:           var(--#{$prefix}secondary-color) ;
 $nav-link-focus-box-shadow:         $focus-ring-box-shadow ;
@@ -1221,9 +1222,9 @@ $navbar-light-brand-hover-color:    $navbar-light-active-color ;
 // scss-docs-end navbar-variables
 
 // scss-docs-start navbar-dark-variables
-$navbar-dark-color:                 rgba($white, .8) ;
+$navbar-dark-color:                 rgba($white, .9) ;
 $navbar-dark-hover-color:           rgba($black, .75) ;
-$navbar-dark-active-color:          $white ;
+$navbar-dark-active-color:          rgba($white, .9) ;
 $navbar-dark-disabled-color:        rgba($white, .25) ;
 $navbar-dark-icon-color:            $navbar-dark-color ;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") ;

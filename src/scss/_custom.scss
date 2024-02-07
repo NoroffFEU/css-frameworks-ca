@@ -3,9 +3,20 @@
     max-width: 400px;
 }
 
-.active {
-    text-decoration: underline;
+.nav-link {
+    color: rgba($white, .9);
+    transition: color .5s ease-in-out 50ms;
+
+    &-active {
+        text-decoration: underline;
+        color: $white;
+    }
+
+    &-active:hover {
+        color: $black;
+    }
 }
+
 
 .btn-custom {
     border-color: $black;
@@ -24,4 +35,5 @@
 .profile-img {
     width: 140px;
     height: 140px;
+    object-fit: cover;
 }

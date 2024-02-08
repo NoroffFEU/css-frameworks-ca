@@ -1,0 +1,55 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p, a, span, input, .btn {
+  font-family: Mukta Vaani;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Source Code Pro;
+  font-weight: 900;
+  font-size: 4em;
+}
+
+span {
+  color: #00E6A8;
+}
+
+.login {
+  background-image: url(/images/background.JPG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login .login-container {
+  backdrop-filter: blur(20px);
+  background-color: rgba(137, 137, 137, 0.4);
+}
+
+.btn {
+  background-color: #00E6A8;
+}
+
+.profilebanner {
+  background-color: #087F8C;
+  height: 100px;
+}
+
+.imagerow img {
+  max-width: 33%;
+  height: 90px;
+  object-fit: cover;
+}
+
+header {
+  background-color: #9448BC;
+}
+
+/*# sourceMappingURL=header.css.map */

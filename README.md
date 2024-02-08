@@ -44,7 +44,7 @@ If you want to run the code on your Pc make sure node is installed
 To run the app, use the following commands:
 
 ```bash
-npm run start
+npm  start
 ```
 
 ## Contributing

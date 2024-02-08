@@ -15,5 +15,9 @@ As of right now the project includes a small amount custom scss but a few bootst
 
 ## Clone the repo and run it
 Clone this link
-```https://github.com/ebejmo/css-frameworks-ca.git```
-
+```
+$ npm install --save @github/clipboard-copy-element
+```
+```
+https://github.com/ebejmo/css-frameworks-ca.git
+```

@@ -42,4 +42,10 @@ span {
   height: 100px;
 }
 
+.imagerow img {
+  max-width: 33%;
+  height: 90px;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=general.css.map */

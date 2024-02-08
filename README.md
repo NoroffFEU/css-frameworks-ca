@@ -33,7 +33,7 @@ git clone https://github.com/Nightfox77/css-frameworks.git
 
 2. Install the dependencies:
 
-```
+```bash
 npm install
 ```
 
@@ -41,7 +41,7 @@ npm install
 
 If you want to run the code on your Pc make sure node is installed
 
-To run the app, run the following commands:
+To run the app, use the following commands:
 
 ```bash
 npm run start

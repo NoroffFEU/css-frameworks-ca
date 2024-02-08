@@ -5,23 +5,24 @@ const action = "posts";
 const method = "POST";
 
 export async function createPost(postData) {
+  if (!postData || Object.keys(postData).length === 0) {
+    throw new Error("Post data cannot be empty");
+  }
+
   try {
     const createPostURL = BASE_URL + action;
-
-    const formData = new FormData();
-    formData.append("title", postData.title);
-    formData.append("body", postData.body);
-    formData.append("media", postData.media);
-
-    console.log("FormData:", formData); 
 
     const response = await fetchToken(createPostURL, {
       method,
       body: formData,
+      body: JSON.stringify(postData),
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json();
+      throw new Error(
+        `HTTP error! status: ${response.status}, message: ${errorData.message}`
+      );
     }
     return await response.json();
   } catch (error) {

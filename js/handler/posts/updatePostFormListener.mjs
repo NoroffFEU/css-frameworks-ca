@@ -1,20 +1,19 @@
-import { updatePost } from "../../api/posts/index.mjs";
 import { getPost } from "../../api/posts/index.mjs";
 
 export async function updatePostFormListener() {
   const form = document.querySelector("#updatePost");
 
-const url = new URL(location.href);
-const id = url.searchParams.get("id");
+  const url = new URL(location.href);
+  const id = url.searchParams.get("id");
 
-  console.log('ID:', id);
+  console.log("ID:", id);
 
   if (form) {
     const button = form.querySelector("updatePostBtn");
     button.disabled = true;
 
     const post = await getPost(id);
-    
+
     form.title.value = post.title;
     form.body.value = post.body;
     form.tags.value = post.tags;
@@ -22,18 +21,18 @@ const id = url.searchParams.get("id");
 
     button.disabled = false;
 
-    form.addEventListener ("submit", (event) => {
-        event.preventDefault()
-        const form = event.target;
-        const formData = new FormData(form);
-        const post = Object.fromEntries(formData.entries())
-        post.id = id;
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const post = Object.fromEntries(formData.entries());
+      post.id = id;
 
-      // post.tags = post.tags.split(",").map((tag) => tag.trim());
+      post.tags = post.tags.split(",").map((tag) => tag.trim());
 
-        console.log('NEW post:', post);
+      console.log("NEW post:", post);
 
-        updatePost(post)
-      })
-    }
+      updatePost(post);
+    });
+  }
 }

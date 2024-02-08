@@ -13,11 +13,20 @@ As of right now the project includes a small amount custom scss but a few bootst
 * HTML
 * Bootrap and Sass
 
-## Clone the repo and run it
-Clone this link
-```
-$ npm install --save @github/clipboard-copy-element
-```
+## Clone the repo and install dependencies
+Clone this link: (You will be asked where on your machine you want to save the project.)
 ```
 https://github.com/ebejmo/css-frameworks-ca.git
 ```
+
+### Run
+You'll need node installed on your machine to run the project locally. Open the terminal at the projects root and insert the following comands:
+```
+npm install
+```
+```
+npm run watch
+```
+
+
+

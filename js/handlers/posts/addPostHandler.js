@@ -20,7 +20,7 @@ export async function addPostHandler(postData) {
       const postData = {
         title: newPostTitle,
         body: newPostText,
-        // media: newPostFile,
+        media: newPostFile,
         media: newPostFile ? newPostFile : undefined,
         tags: [""],
       };
@@ -30,7 +30,7 @@ export async function addPostHandler(postData) {
       try {
         const results = await addPost(postData);
         event.target.reset();
-        // renderAddedPost(newPostData);
+        renderAddedPost(postData);
         messageForUser("#messageForUser", "Post added successfully", "success");
       } catch (error) {
         console.error(error);

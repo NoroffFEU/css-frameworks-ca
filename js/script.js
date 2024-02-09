@@ -30,7 +30,7 @@ function route() {
       logoutHandler();
       createPostsHandler();
       searchPostsHandler(posts);
-      sortingPostsHandler(posts);
+      sortingPostsHandler();
       break;
     case "/feed/post.html":
       createSinglePostHandler();

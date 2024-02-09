@@ -19,10 +19,10 @@ export async function addPost(postData) {
   const options = {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json", // should i delete this line??
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(postData),
+    body: JSON.stringify(postData), // should i delete this line??
     body: formData,
   };
 
@@ -31,6 +31,7 @@ export async function addPost(postData) {
 
   if (!response.ok) {
     throw new Error(results.errors[0].message);
+    messageForUser("#messageForUser", "Post failed to add", "danger");
   }
   return results;
 }

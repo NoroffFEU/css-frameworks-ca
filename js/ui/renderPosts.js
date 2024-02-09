@@ -62,6 +62,16 @@ function createPost(post) {
 
   row.append(heartCol);
 
+  // Post title
+  const postTitleDiv = document.createElement("div");
+  postTitleDiv.classList.add("mt-2");
+  const postTitle = document.createElement("h2");
+  postTitle.classList.add("text-start", "text-dark", "pt-3", "fs-5", "fw-bold");
+  postTitle.textContent = post.title || "Default Title"; // Use "Default Title" as the default value
+  postTitleDiv.append(postTitle);
+
+  row.append(postTitleDiv);
+
   // Post text
   const postTextDiv = document.createElement("div");
   const postText = document.createElement("p");

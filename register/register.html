@@ -92,12 +92,12 @@
                                         <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
                                             Create your ArtConnect account
                                         </h2>
-                                        <form id="registerForm" action="#">
+                                        <form id="registerForm" method="post" action="/auth/register">
                                             <div class="row gy-2 overflow-hidden">
                                                 <div class="col-12">
                                                     <div class="form-floating mb-3">
                                                         <input type="text" class="form-control" name="userName"
-                                                            id="userName" placeholder="Username" required />
+                                                            id="userName" placeholder="Username" required pattern="^[\w]+s" />
                                                         <label for="userName"
                                                             class="form-label text-secondary">Username</label>
                                                     </div>

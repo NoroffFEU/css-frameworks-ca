@@ -1,0 +1,19 @@
+// COLOURS
+$light-blue: #F0F8FF!default;
+$medium-blue: #1095C1!default;
+$dark-blue: #082359!default;
+
+$primary:       $light-blue;
+$secondary:     $medium-blue;
+$success:       $dark-blue;
+
+
+
+
+
+
+// IMPORT BOOTSTRAP
+@import"../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// IMPORT ICONS
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css';

@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "buttons";
+@import "images";
+
+body {
+    font-family: "Noto Sans HK", sans-serif;
+    background: linear-gradient( white, $gray);
+}
+
+p {
+    max-width: 500px;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    font-weight:500;
+}
+
+.card {
+    border-radius: 0;
+}
+
+.followingfollowers{
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.followImg {
+width: 40px;
+}

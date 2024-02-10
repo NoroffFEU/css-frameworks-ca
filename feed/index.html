@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed | Noroff Social</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body class="h-100 d-flex flex-column">
+    <header class="mb-auto">
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html">Noroff Social</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link nav-link-active" aria-current="page" href="#"
+                  >Feed</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile/">Profile</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-dark text-white btn-custom"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mb-5">
+      <div class="container mt-4">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Most relevant</a></li>
+            <li><a class="dropdown-item" href="#">Latest</a></li>
+            <li><a class="dropdown-item" href="#">Oldest</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container mt-4">
+        <div class="row">
+          <!-- Publish Post -->
+          <div class="col-lg-5 mb-4 order-first order-lg-last">
+            <div class="row">
+              <form>
+                <div class="card">
+                  <h5 class="card-header new-post-header">Create new post</h5>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label"
+                        >Title of post</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                        placeholder="Title"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="exampleFormControlTextarea1"
+                        class="form-label"
+                        >Write down your thoughts</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                    <button type="submit" class="w-100 btn btn-outline-dark">
+                      Post thoughts
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Posts -->
+          <div class="col-lg-7 mb-4 mb-lg-0 d-flex flex-column gap-3">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="d-none d-sm-block col-4 col-md-3 col-lg-4">
+                  <img src="/img/ice-cream.jpg" class="img-fluid" alt="..." />
+                </div>
+                <div class="col-12 col-sm-8 col-md-9 col-lg-8">
+                  <h5 class="card-header">Post title</h5>
+                  <div class="card-body">
+                    <p class="card-text">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Est eligendi neque magnam, voluptates temporibus fugit
+                      quidem fugiat.
+                    </p>
+                    <a href="#" class="primary">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="d-none d-sm-block col-4 col-md-3 col-lg-4">
+                  <img
+                    src="/img/ice-cream.jpg"
+                    class="img-fluid"
+                    alt="melting ice cream cone"
+                  />
+                </div>
+                <div class="col-12 col-sm-8 col-md-9 col-lg-8">
+                  <h5 class="card-header">Post title</h5>
+                  <div class="card-body">
+                    <p class="card-text">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Est eligendi neque magnam, voluptates temporibus fugit
+                      quidem fugiat.
+                    </p>
+                    <a href="#" class="primary">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="d-none d-sm-block col-4 col-md-3 col-lg-4">
+                  <img
+                    src="/img/ice-cream.jpg"
+                    class="img-fluid"
+                    alt="melting ice cream cone"
+                  />
+                </div>
+                <div class="col-12 col-sm-8 col-md-9 col-lg-8">
+                  <h5 class="card-header">Post title</h5>
+                  <div class="card-body">
+                    <p class="card-text">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Est eligendi neque magnam, voluptates temporibus fugit
+                      quidem fugiat.
+                    </p>
+                    <a href="#" class="primary">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="d-none d-sm-block col-4 col-md-3 col-lg-4">
+                  <img
+                    src="/img/ice-cream.jpg"
+                    class="img-fluid"
+                    alt="melting ice cream cone"
+                  />
+                </div>
+                <div class="col-12 col-sm-8 col-md-9 col-lg-8">
+                  <h5 class="card-header">Post title</h5>
+                  <div class="card-body">
+                    <p class="card-text">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Est eligendi neque magnam, voluptates temporibus fugit
+                      quidem fugiat.
+                    </p>
+                    <a href="#" class="primary">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="d-none d-sm-block col-4 col-md-3 col-lg-4">
+                  <img
+                    src="/img/ice-cream.jpg"
+                    class="img-fluid"
+                    alt="melting ice cream cone"
+                  />
+                </div>
+                <div class="col-12 col-sm-8 col-md-9 col-lg-8">
+                  <h5 class="card-header">Post title</h5>
+                  <div class="card-body">
+                    <p class="card-text">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Est eligendi neque magnam, voluptates temporibus fugit
+                      quidem fugiat.
+                    </p>
+                    <a href="#" class="primary">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-grid col-5 col-sm-4 mx-auto">
+              <button class="btn btn-outline-primary">Show more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="mt-auto text-center bg-primary-subtle">
+      <h3 class="pt-3">Noroff Social</h3>
+      <p>CSS Frameworks CA</p>
+      <p>2024</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in | Noroff Social</title>
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <script
+      defer
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+  <body class="d-flex h-100" id="landing-page">
+    <div class="cover-container d-flex w-100 mx-auto flex-column">
+      <!-- Navbar -->
+      <header class="mb-auto">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Noroff Social</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link nav-link-active"
+                    aria-current="page"
+                    href="#"
+                    >Log in</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/feed/">Feed</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main class="">
+        <!-- Form -->
+        <div class="container mt-lg-4 mb-lg-4 login-container">
+          <div class="card">
+            <h1 class="card-header">Log in to your Noroff Social account</h1>
+            <div class="card-body">
+              <form action="/profile/" class="mt-3">
+                <div class="mb-2">
+                  <label for="email" class="form-label">Email address</label>
+                  <input
+                    placeholder="Email address"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    pattern="[\w\-.]+@(stud\.)?noroff\.no$"
+                    title="Only @(stud.)noroff.no domains are allowed to register."
+                    required
+                  />
+                </div>
+                <div class="mb-2">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                    placeholder="Password should be at least 8 characters"
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    minlength="8"
+                    required
+                  />
+                </div>
+                <div class="mb-3 form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="remind-check"
+                  />
+                  <label class="form-check-label" for="remind-check"
+                    >Remember me</label
+                  >
+                </div>
+                <button type="submit" class="w-100 btn btn-secondary">
+                  Log in
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="mt-auto text-center bg-primary-subtle">
+        <h3 class="pt-3">Noroff Social</h3>
+        <p>CSS Frameworks CA</p>
+        <p>2024</p>
+      </footer>
+    </div>
+  </body>
+</html>

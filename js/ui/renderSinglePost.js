@@ -1,5 +1,8 @@
 export function renderSinglePost(parent, post) {
   console.log("Post data:", post);
+
+  const { title, body, created, media, id } = post;
+
   const container = document.querySelector(parent);
   container.innerHTML = "";
   const loader = document.querySelector(".loader");
@@ -26,7 +29,7 @@ export function renderSinglePost(parent, post) {
   userName.classList.add("mb-0");
   const authorName = post.author && post.author.name ? post.author.name : "Anonymous User";
   userName.innerHTML = `<span class="pe-2 baloo text-primary fs-5">${authorName}</span>${new Date(
-    post.created
+    created
   ).toLocaleDateString()}`;
   userInfoCol.append(userName);
   topRow.append(userInfoCol);
@@ -52,7 +55,7 @@ export function renderSinglePost(parent, post) {
   postTitleDiv.classList.add("mt-2");
   const postTitle = document.createElement("h2");
   postTitle.classList.add("text-start", "text-dark", "pt-3", "fs-5", "fw-bold");
-  postTitle.textContent = post.title || "Default Title";
+  postTitle.textContent = title ?? "Default Title";
   postTitleDiv.append(postTitle);
 
   titleRow.append(postTitleDiv);
@@ -65,7 +68,7 @@ export function renderSinglePost(parent, post) {
   const postTextDiv = document.createElement("div");
   const postText = document.createElement("p");
   postText.classList.add("text-start", "text-dark", "pt-3");
-  postText.textContent = post.body || "No content";
+  postText.textContent = body ?? "No content";
   postTextDiv.append(postText);
 
   textRow.append(postTextDiv);

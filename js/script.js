@@ -8,6 +8,7 @@ import { handleScrollButton } from "./handlers/posts/handleScrollButton.js";
 import { addPostHandler } from "./handlers/posts/addPostHandler.js";
 import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
 import { sortingPostsHandler } from "./handlers/posts/sortingPostsHandler.js";
+import { deletePostHandler } from "./handlers/posts/deletePostHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -20,6 +21,7 @@ function route() {
       loginFormHandler();
       break;
     case "/profile/":
+    case "/profile/index.html":
       logoutHandler();
       displayProfilePostsHandler();
       addPostHandler();

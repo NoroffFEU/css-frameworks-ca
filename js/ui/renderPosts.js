@@ -17,8 +17,10 @@ export function renderPosts(parent, posts) {
 function createPost(post) {
   console.log("Author Data:", post.author);
 
+  const { title, body, created, media, id } = post;
+
   // Anchor element
-  const postLink = `/feed/post.html?id=${post.id}`;
+  const postLink = `/feed/post.html?id=${id}`;
 
   // Main container
   const postSection = document.createElement("section");
@@ -41,8 +43,8 @@ function createPost(post) {
   const userName = document.createElement("p");
   userName.classList.add("mb-0");
   const authorName = post.author && post.author.name ? post.author.name : "Anonymous User";
-  userName.innerHTML = `<span class="pe-2 baloo text-primary fs-5">${authorName}</span>${new Date(
-    post.created
+  userName.innerHTML = `<span class="pe-2 baloo mx-2 text-primary fs-5">${authorName}</span>${new Date(
+    created
   ).toLocaleDateString()}`;
 
   userInfoCol.append(userName);
@@ -70,7 +72,7 @@ function createPost(post) {
   postTitleDiv.classList.add("mt-2");
   const postTitle = document.createElement("h2");
   postTitle.classList.add("text-start", "text-dark", "pt-3", "fs-5", "fw-bold");
-  postTitle.textContent = post.title || "Default Title";
+  postTitle.textContent = title ?? "Default Title";
   postTitleDiv.append(postTitle);
 
   titleRow.append(postTitleDiv);
@@ -83,7 +85,7 @@ function createPost(post) {
   const postTextDiv = document.createElement("div");
   const postText = document.createElement("p");
   postText.classList.add("text-start", "text-dark", "pt-3");
-  postText.textContent = post.body || "No content";
+  postText.textContent = body ?? "No content";
   postTextDiv.append(postText);
 
   textRow.append(postTextDiv);
@@ -98,12 +100,12 @@ function createPost(post) {
     mediaDiv.classList.add("col-12", "mb-3");
 
     const mediaAnchor = document.createElement("a");
-    mediaAnchor.setAttribute("href", postLink); // Link to single post
+    mediaAnchor.setAttribute("href", postLink);
     const media = document.createElement("img");
     media.src = post.media;
     media.alt = "Post media";
     media.classList.add("img-fluid");
-    mediaAnchor.append(media); // Append image to anchor
+    mediaAnchor.append(media);
     mediaDiv.append(mediaAnchor);
 
     mediaRow.append(mediaDiv);
@@ -121,22 +123,6 @@ function createPost(post) {
 
   buttonDiv.append(viewPostButton);
   postSection.append(buttonDiv);
-
-  // Comments section
-  // const commentsDiv = document.createElement("div");
-  // commentsDiv.classList.add("comments-section");
-
-  // if (post.comments && post.comments.length > 0) {
-  //   post.comments.forEach((comment) => {
-  //     const commentElement = document.createElement("p");
-  //     commentElement.textContent = comment.text;
-  //     commentsDiv.append(commentElement);
-  //   });
-  // } else {
-  //   const noComments = document.createElement("p");
-  //   noComments.textContent = "No comments";
-  //   commentsDiv.append(noComments);
-  // }
 
   return postSection;
 }

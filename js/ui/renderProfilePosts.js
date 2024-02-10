@@ -12,6 +12,10 @@ export function renderProfilePosts(parent, posts) {
 }
 
 function createProfilePost(post) {
+  console.log("post", post);
+
+  const { title, body, author, created, media, id } = post;
+
   // Anchor element
   const postLink = `/profile/post.html?id=${post.id}`;
 
@@ -35,8 +39,8 @@ function createProfilePost(post) {
 
   const userName = document.createElement("p");
   userName.classList.add("mb-0");
-  userName.innerHTML = `<span class="pe-2 baloo text-primary fs-5">${post.userName || "User"}</span>${new Date(
-    post.created
+  userName.innerHTML = `<span class="pe-2 baloo mx-2 text-primary fs-5">${author.name ?? "User"}</span>${new Date(
+    created
   ).toLocaleDateString()}`;
   userInfoCol.append(userName);
 
@@ -64,7 +68,7 @@ function createProfilePost(post) {
   postTitleDiv.classList.add("mt-2");
   const postTitle = document.createElement("h2");
   postTitle.classList.add("text-start", "text-dark", "pt-3", "fs-5", "fw-bold");
-  postTitle.textContent = post.title || "Default Title";
+  postTitle.textContent = title ?? "Default Title";
   postTitleDiv.append(postTitle);
 
   titleRow.append(postTitleDiv);
@@ -77,7 +81,7 @@ function createProfilePost(post) {
   const postTextDiv = document.createElement("div");
   const postText = document.createElement("p");
   postText.classList.add("text-start", "text-dark", "pt-3");
-  postText.textContent = post.body || "No content";
+  postText.textContent = body ?? "No content";
   postTextDiv.append(postText);
 
   textRow.append(postTextDiv);
@@ -92,7 +96,7 @@ function createProfilePost(post) {
     mediaDiv.classList.add("col-12", "mb-3");
 
     const media = document.createElement("img");
-    media.src = post.media;
+    media.src = media;
     media.alt = "Post media";
     media.classList.add("img-fluid");
     mediaDiv.append(media);
@@ -104,43 +108,33 @@ function createProfilePost(post) {
 
   // buttons row
   const buttonsRow = document.createElement("div");
-  buttonsRow.classList.add("row", "pt-2", "align-items-start", "justify-content-between");
+  buttonsRow.classList.add("row", "d-flex", "justify-content-start", "pt-2", "mt-3", "mb-3");
+
+  // Column for the "Edit" button
+  const editButtonCol = document.createElement("div");
+  editButtonCol.classList.add("col-auto", "mb-2");
 
   // Adding a "edit" button
-  const editButtonDiv = document.createElement("div");
-  editButtonDiv.classList.add("d-flex", "justify-content-start", "mt-3", "mb-3");
-
-  const editPostButton = document.createElement("a");
-  editPostButton.setAttribute("href", postLink);
-  editPostButton.classList.add("btn", "btn-light", "border-primary", "mb-3", "view-post-button", "pt-1", "pb-1"); // Add classes for styling
-  editPostButton.textContent = "Edit Post";
-  editPostButton.style.display = "inline-block";
-  console.log(editPostButton);
-
-  editButtonDiv.append(editPostButton);
+  const editButtonLink = document.createElement("a");
+  editButtonLink.setAttribute("href", postLink);
+  editButtonLink.classList.add("btn", "btn-light", "border-primary", "view-post-button", "pt-1", "pb-1");
+  editButtonLink.textContent = "Edit Post";
+  editButtonCol.append(editButtonLink);
 
   // Adding a "delete" button
-  const deleteButtonDiv = document.createElement("div");
-  deleteButtonDiv.classList.add("d-flex", "justify-content-start", "mt-3", "mb-3");
+  const deleteButtonCol = document.createElement("div");
+  deleteButtonCol.classList.add("col-auto", "mb-2");
+  const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("type", "button");
+  deleteButton.setAttribute("data-id", id);
+  deleteButton.setAttribute("data-action", "delete");
+  deleteButton.classList.add("btn", "btn-light", "border-primary", "view-post-button", "pt-1", "pb-1");
+  deleteButton.textContent = "Delete Post";
+  deleteButtonCol.append(deleteButton);
 
-  const deletePostButton = document.createElement("a");
-  deletePostButton.setAttribute("href", postLink);
-  deletePostButton.classList.add(
-    "btn",
-    "btn-light",
-    "border-primary",
-    "mb-3",
-    "view-post-button",
-    "pt-1",
-    "pb-1",
-    "test-button"
-  );
-  deletePostButton.textContent = "Delete Post";
-  deletePostButton.style.display = "inline-block";
+  buttonsRow.append(editButtonCol, deleteButtonCol);
 
-  deleteButtonDiv.append(deletePostButton);
-
-  buttonsRow.append(editButtonDiv, deleteButtonDiv);
+  postSection.append(buttonsRow);
 
   return postSection;
 }

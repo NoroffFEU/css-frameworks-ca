@@ -11,10 +11,10 @@
     <script src="https://kit.fontawesome.com/d9245988cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="container">
-        <div class="row d-flex justify-content-left">
-            <div class="col-md-12 position-relative">
-                <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class="position-relative top-50 start-50 translate-middle mt-1 mb-2""></a>
+    <header class="container-fluid header">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class=" ms-2 mt-3"></a>
             </div>
         </div>
     </header>
@@ -23,7 +23,7 @@
             <div class="col-md-2 mt-5">
                 <div class="d-flex flex-column mb-5">
                     <input type="search" placeholder="Search..." class="form-select m-2">
-                    <select name="sort" id="sortBy" class="dropdown m-2">
+                    <select name="sort" id="sortBy" class="form-select m-2">
                         <option value="">Sort by</option>
                         <option value="">Vegetarian</option>
                         <option value="">Meat</option>
@@ -37,7 +37,7 @@
                 <h1>latest recipes</h1>
                 <div class="card mt-2">
                     <div class="shareContent d-flex justify-content-left align-items-center m-4">
-                        <img src="img/panguin.png" alt="Your profile image" class="img-fluid">
+                        <img src="img/panguin.png" alt="Your profile image">
                         <div class="d-flex ms-5">
                         <form action="share" >
                                 <div class="d-flex justify-content-between flex-wrap ">
@@ -57,12 +57,12 @@
                     </div>
                 </div>
                 <div class="post mt-4 card">
-                    <div class="d-flex justify-content-between align-items-center m-4">
+                    <div class="userContent d-flex justify-content-between align-items-center">
                         <div>
-                            <img src="img/kitten.jpg" alt="Profile image" class="profileImage">
+                            <img src="img/kitten.jpg" alt="Profile image" class="rounded-circle m-2">
                             <a href="profile.html">Kavinsky</a>
                         </div>
-                        <button class="btn btn-secondary">Follow</button>
+                        <button class="btn btn-secondary m-2">Follow</button>
                     </div>
                     <div class="postContent d-flex align-items-center card">
                         <img src="img/soup-2006317_640.jpg" alt="picture of food presented" class="img-fluid">
@@ -76,15 +76,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="post mt-4 card">
-                    <div class=" userContent d-flex justify-content-between align-items-center m-4">
+                <div class="post card">
+                    <div class=" userContent d-flex justify-content-between align-items-center">
                         <div>
-                            <img src="img/kitten.jpg" alt="Profile image" class="profileImage">
+                            <img src="img/kitten.jpg" alt="Profile image" class="rounded-circle m-2">
                             <a href="profile.html">SebAstian</a>
                         </div>
-                        <button class="btn btn-secondary">Follow</button>
+                        <button class="btn btn-secondary m-2">Follow</button>
                     </div>
-                    <div class="postContent d-flex align-items-center mt-2 card">
+                    <div class="postContent d-flex align-items-center card">
                         <img src="img/pea-soup-2786118_640.jpg" alt="picture of food presented" class="img-fluid">
                         <div>
                             <h3>Soupe crémeuse aux pois</h3>

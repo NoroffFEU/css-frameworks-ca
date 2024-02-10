@@ -11999,15 +11999,12 @@ textarea.form-control-lg {
 }
 
 .img-fluid {
-  max-width: 500px;
-}
-
-.profileImage {
-  border-radius: 5rem;
+  width: 500px;
 }
 
 body {
   font-family: "Noto Sans HK", sans-serif;
+  background: linear-gradient(white, #E6E4E4);
 }
 
 p {
@@ -12016,4 +12013,24 @@ p {
 
 .userContent {
   background-color: #E6E4E4;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.card {
+  border-radius: 0;
+}
+
+.followingfollowers {
+  min-width: 200px;
+  max-width: 350px;
+}
+
+.followImg {
+  width: 40px;
 }/*# sourceMappingURL=styles.css.map */

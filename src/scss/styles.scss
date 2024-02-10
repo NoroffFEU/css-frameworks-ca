@@ -7,6 +7,7 @@
 
 body {
     font-family: "Noto Sans HK", sans-serif;
+    background: linear-gradient( white, $gray);
 }
 
 p {
@@ -15,5 +16,24 @@ p {
 
 .userContent {
     background-color: $gray;
-    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: medium;
+    font-weight:500;
+}
+
+.card {
+    border-radius: 0;
+}
+
+.followingfollowers{
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.followImg {
+width: 40px;
 }

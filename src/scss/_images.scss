@@ -1,7 +1,4 @@
 .img-fluid {
-    max-width: 500px;
+    width: 500px;
 }
 
-.profileImage {
-    @include round-radius;
-}

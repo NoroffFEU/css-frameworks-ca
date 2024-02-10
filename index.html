@@ -15,24 +15,24 @@
             <div class="col-md-6">
             </div>
             <div class="col-md-6 d-flex justify-content-center ">
-                <a href="feed.html" class="m-4">Feed</a>
-                <a href="profile.html" class="m-4">Profile</a>
+                <a href="feed.html" class="mt-2">Feed</a>
+                <a href="profile.html" class="ms-4 mt-2">Profile</a>
             </div>
         </div>
     </header>
 <Main class="container-fluid ">
-    <section class="row d-flex align-items-center justify-content-around">
+    <section class="row vh-100 d-flex align-items-center justify-content-center ">
         <div class="col-md-6">
-            <a href="index.html"><img src="img/Component 2 – 1@2x.png" alt="ShaRecipes logo" class="img-fluid mt-5"></a>
+            <a href="index.html"><img src="img/Component 2 – 1@2x.png" alt="ShaRecipes logo" class="img-fluid"></a>
         </div>
-        <div class="col-md-5 mt-5 ms-4">
+        <div class="col-md-5 ms-4">
             <h1 class="t-4">A world of taste</h1>
             <h2 class="mt-4">Register today</h2>
-            <form action="/feed.html" class="form-group d-flex flex-column">
+            <form action="/profile.html" class="form-group d-flex flex-column">
                 <label for="userName">Username</label>
-                <input type="text" id="userName" name="userName" placeholder="Enter username" class="form-control w-50">
-                <label for="pass">Password</label>
-                <input type="password" id="pass" name="password" placeholder="Enter password" class="form-control w-50">
+                <input type="text" id="email" name="email" placeholder="Enter email" class="form-control w-50" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password"  minlength="8" class="form-control w-50" required>
                 <input type="submit" value="Sign in" class="btn btn-primary mt-4 w-50"/>
             </form>
         </div>

@@ -2,7 +2,7 @@ import { getAllPosts } from "../../api/posts/getAllPosts.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 import { renderPosts } from "../../ui/renderPosts.js";
 
-export async function createPostsHandler() {
+export async function displayPostsHandler() {
   try {
     // console.log("posts handler");
     const posts = await getAllPosts();

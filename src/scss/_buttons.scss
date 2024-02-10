@@ -40,3 +40,13 @@
   background-color: var(--dark);
   color: var(--primary);
 }
+
+.view-post-button {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.view-post-button:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}

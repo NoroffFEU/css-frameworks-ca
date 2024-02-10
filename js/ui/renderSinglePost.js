@@ -9,8 +9,8 @@ export function renderSinglePost(parent, post) {
   postSection.classList.add("mt-5", "container", "bg-light", "h-auto");
 
   // Main row
-  const row = document.createElement("div");
-  row.classList.add("row", "pt-2", "align-items-center", "justify-content-between");
+  const topRow = document.createElement("div");
+  topRow.classList.add("row", "pt-2", "align-items-center", "justify-content-between", "post-row");
 
   // Left column for User info
   const userInfoCol = document.createElement("div");
@@ -24,8 +24,12 @@ export function renderSinglePost(parent, post) {
 
   const userName = document.createElement("p");
   userName.classList.add("mb-0");
-  userName.textContent = post.userName || "User";
+  const authorName = post.author && post.author.name ? post.author.name : "Anonymous User";
+  userName.innerHTML = `<span class="pe-2 baloo text-primary fs-5">${authorName}</span>${new Date(
+    post.created
+  ).toLocaleDateString()}`;
   userInfoCol.append(userName);
+  topRow.append(userInfoCol);
 
   // Right column for Heart icon
   const heartCol = document.createElement("div");
@@ -37,8 +41,25 @@ export function renderSinglePost(parent, post) {
      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
    </svg>`;
   heartCol.append(heartIcon);
+  topRow.append(heartCol);
 
-  row.append(heartCol);
+  // title row
+  const titleRow = document.createElement("div");
+  titleRow.classList.add("row", "pt-2", "align-items-start");
+
+  // Post title
+  const postTitleDiv = document.createElement("div");
+  postTitleDiv.classList.add("mt-2");
+  const postTitle = document.createElement("h2");
+  postTitle.classList.add("text-start", "text-dark", "pt-3", "fs-5", "fw-bold");
+  postTitle.textContent = post.title || "Default Title";
+  postTitleDiv.append(postTitle);
+
+  titleRow.append(postTitleDiv);
+
+  // text row
+  const textRow = document.createElement("div");
+  textRow.classList.add("row", "pt-2", "align-items-start");
 
   // Post text
   const postTextDiv = document.createElement("div");
@@ -47,7 +68,11 @@ export function renderSinglePost(parent, post) {
   postText.textContent = post.body || "No content";
   postTextDiv.append(postText);
 
-  row.append(userInfoCol, heartCol, postTextDiv);
+  textRow.append(postTextDiv);
+
+  // media row
+  const mediaRow = document.createElement("div");
+  mediaRow.classList.add("row", "pt-2", "align-items-center");
 
   // Append the constructed elements to the postSection
   if (post.media) {
@@ -60,10 +85,10 @@ export function renderSinglePost(parent, post) {
     media.classList.add("img-fluid");
     mediaDiv.append(media);
 
-    row.append(mediaDiv);
+    mediaRow.append(mediaDiv);
   }
 
-  postSection.append(row);
+  postSection.append(topRow, titleRow, textRow, mediaRow);
   container.append(postSection);
   if (loader) {
     loader.style.display = "none";

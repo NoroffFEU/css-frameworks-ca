@@ -3,7 +3,7 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { renderProfilePosts } from "../../ui/renderProfilePosts.js";
 import { getUserName } from "../../utils/helpers/getUserName.js";
 
-export async function createProfilePostsHandler() {
+export async function displayProfilePostsHandler() {
   try {
     console.log("posts handler");
     const userName = getUserName();

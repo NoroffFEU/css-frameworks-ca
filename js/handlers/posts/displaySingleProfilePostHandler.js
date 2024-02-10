@@ -1,9 +1,8 @@
-import { getSinglePost } from "../../api/posts/getSinglePost.js";
+import { getSingleProfilePost } from "../../api/posts/getSingleProfilePost.js";
 import { messageForUser } from "../../ui/messageForUser.js";
-import { renderSinglePost } from "../../ui/renderSinglePost.js";
+import { renderSingleProfilePost } from "../../ui/renderSingleProfilePost.js";
 
-export async function createSinglePostHandler() {
-  //get the id from the querystring
+export async function displaySinglePostHandler() {
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
@@ -12,11 +11,11 @@ export async function createSinglePostHandler() {
       throw new Error("Sorry, we couldn't find the post you're looking for.");
     }
 
-    const post = await getSinglePost(id);
+    const post = await getSingleProfilePost(id);
 
     if (post) {
       document.title = `Vib'n | ${post.title}`;
-      renderSinglePost("#post", post);
+      renderSingleProfilePost("#post", post);
     }
   } catch (error) {
     console.log(error);

@@ -17,19 +17,11 @@ export async function getProfilePosts(username) {
     },
   };
 
-  try {
-    const response = await fetch(
-      `${profilesUrl}${username}/posts?_author=true&_comments=true&_reactions=true`,
-      options
-    );
+  const response = await fetch(`${profilesUrl}${username}/posts?_author=true&_comments=true&_reactions=true`, options);
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch posts");
-    }
-    const posts = await response.json();
-    return posts;
-  } catch (error) {
-    console.error("Error fetching profile posts:", error);
-    throw error;
+  if (!response.ok) {
+    throw new Error("Failed to fetch posts");
   }
+  const posts = await response.json();
+  return posts;
 }

@@ -19,3 +19,8 @@
   color: var(--dark);
   z-index: 100;
 }
+
+.post-row {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 5px;
+}

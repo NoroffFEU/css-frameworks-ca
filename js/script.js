@@ -1,9 +1,9 @@
 import { registerFormHandler } from "./handlers/authorization/registerFormHandler.js";
 import { loginFormHandler } from "./handlers/authorization/loginFormHandler.js";
 import { logoutHandler } from "./handlers/authorization/logoutHandler.js";
-import { createPostsHandler } from "./handlers/posts/createPostsHandler.js";
-import { createSinglePostHandler } from "./handlers/posts/createSinglePostHandler.js";
-import { createProfilePostsHandler } from "./handlers/posts/createProfilePostsHandler.js";
+import { displayPostsHandler } from "./handlers/posts/displayPostsHandler.js";
+import { displaySinglePostHandler } from "./handlers/posts/displaySinglePostHandler.js";
+import { displayProfilePostsHandler } from "./handlers/posts/displayProfilePostsHandler.js";
 import { handleScrollButton } from "./handlers/posts/handleScrollButton.js";
 import { addPostHandler } from "./handlers/posts/addPostHandler.js";
 import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
@@ -21,19 +21,19 @@ function route() {
       break;
     case "/profile/":
       logoutHandler();
-      createProfilePostsHandler();
+      displayProfilePostsHandler();
       addPostHandler();
       break;
     case "/feed/":
     case "/feed/index.html":
       handleScrollButton();
       logoutHandler();
-      createPostsHandler();
+      displayPostsHandler();
       searchPostsHandler(posts);
       sortingPostsHandler();
       break;
     case "/feed/post.html":
-      createSinglePostHandler();
+      displaySinglePostHandler();
       break;
     default:
   }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShaRecipes | share your recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/scss/styles.css">
+    <script src="https://kit.fontawesome.com/d9245988cf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="container-fluid header">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="index.html"><img src="img/logo.png" alt="ShaRecipes logo" class=" ms-2 mt-3"></a>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <section class="row">
+            <div class="col-md-2 mt-5">
+                <div class="d-flex flex-column mb-5">
+                    <input type="search" placeholder="Search..." class="form-select m-2">
+                    <select name="sort" id="sortBy" class="form-select m-2">
+                        <option value="">Sort by</option>
+                        <option value="">Vegetarian</option>
+                        <option value="">Meat</option>
+                    </select>
+                    <a href="feed.html" class="m-2">Feed</a>
+                    <a href="profile.html" class="m-2">Profile</a>
+                    <button class="btn btn-primary m-2">Add recipe</button>                    
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h1>latest recipes</h1>
+                <div class="card mt-2">
+                    <div class="shareContent d-flex justify-content-left align-items-center m-4">
+                        <img src="img/panguin.png" alt="Your profile image">
+                        <div class="d-flex ms-5">
+                        <form action="share" >
+                                <div class="d-flex justify-content-between flex-wrap ">
+                                    <textarea name="Share" id="yourContet" cols="40" rows="1" class="form-control" placeholder="What are you eating about..."></textarea>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <div > 
+                                        <i class="fa-solid fa-image"></i>
+                                        <i class="fa-solid fa-video ms-2"></i>
+                                    </div>  
+                                    <div>
+                                        <input type="submit" value="Post" class="btn btn-primary ms-4">
+                                    </div>  
+                                </div>                     
+                            </form>             
+                        </div>
+                    </div>
+                </div>
+                <div class="post mt-2 card">
+                    <div class="userContent d-flex justify-content-between align-items-center">
+                        <div>
+                            <img src="img/kitten.jpg" alt="Profile image" class="rounded-circle m-2">
+                            <a href="profile.html">Kavinsky</a>
+                        </div>
+                        <button class="btn btn-secondary m-2">Follow</button>
+                    </div>
+                    <div class="postContent d-flex align-items-center card">
+                        <img src="img/soup-2006317_640.jpg" alt="picture of food presented" class="img-fluid">
+                        <div>
+                            <h3>My mom's old carrot soup</h3>
+                            <p>
+                                I still remember the wonderful smells
+                                that came from the kitchen when my mother
+                                made her famous carrot Soup....
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="post mt-2 card">
+                    <div class=" userContent d-flex justify-content-between align-items-center">
+                        <div>
+                            <img src="img/kitten.jpg" alt="Profile image" class="rounded-circle m-2">
+                            <a href="profile.html">SebAstian</a>
+                        </div>
+                        <button class="btn btn-secondary m-2">Follow</button>
+                    </div>
+                    <div class="postContent d-flex align-items-center card">
+                        <img src="img/pea-soup-2786118_640.jpg" alt="picture of food presented" class="img-fluid">
+                        <div>
+                            <h3>Soupe crémeuse aux pois</h3>
+                            <p>                               
+                                Une super bonne soupe que j'ai faite samedi
+                                dernier. C'est fantastique...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

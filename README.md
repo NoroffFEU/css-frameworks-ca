@@ -1,2 +1,2 @@
 # css-frameworks-ca
-This is my contirbute to the CSS Frameworks course assignment
+This is my contribute to the CSS Frameworks course assignment

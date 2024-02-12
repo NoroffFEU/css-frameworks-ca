@@ -18,10 +18,10 @@
     <header class="col-12">
         <nav class="navbar navbar-expand-md navbar-light header-image">
             <div class="container align-items-center col-11">
-                <h1 class="header-text text-center col-6 col-sm-3 col-md-5">
+                <h1 class="header-text text-center col-6 col-sm-3 col-md-">
                     ArtConnect
                 </h1>
-                <a class="navbar-brand text-center col-2 col-md-1" href="#">
+                <a class="navbar-brand text-center col-2 col-md-1" href="../index.html">
                     <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid" />
                 </a>
 
@@ -30,10 +30,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-md-start text-nowrap z-1" id="navbarNav">
-                    <ul class="navbar-card ms-auto navbar-nav text-start">
+                <div class="collapse navbar-collapse text-nowrap z-1 " id="navbarNav">
+                    <ul class="navbar-card ms-auto navbar-nav text-end ">
                         <li class="nav-item z-1">
-                            <a class="nav-link fs-md-5" href="#">Feed</a>
+                            <a class="nav-link" href="#">Feed</a>
                         </li>
                         <li class="nav-item z-1">
                             <a class="nav-link" href="#">My Profile</a>
@@ -42,7 +42,7 @@
                             <a class="nav-link" href="#">Messages</a>
                         </li>
                         <li class="nav-item z-1">
-                            <a class="nav-link fs-md-3" href="#">Log out</a>
+                            <a class="nav-link" href="#">Log out</a>
                         </li>
                     </ul>
                 </div>
@@ -54,86 +54,71 @@
         <section class="py-5 login-img">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-8 col-md-6 col-lg-12 col-xl-10">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-12 col-xl-10">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5 login-img2">
-                                <h2 class="text-center mt-3 header-text">
-                                    WELCOME BACK <br />to ArtConnect!
-                                </h2>
-                                <div class="col-10 mt-3 mx-auto">
-                                    <p>
-                                        Immerse yourself in the vibrant world of art and
-                                        creativity.
-                                    </p>
-                                    <p>
-                                        Connect with fellow artists, share your latest creations,
-                                        and explore a community passionate about artistic
-                                        expression.
-                                    </p>
-                                    <p>canvas of inspiration awaits.</p>
-                                    <p>
-                                        Login to your account and start connecting with the art
-                                        community.
-                                    </p>
-
-                                    <p>
-                                        New to ArtConnect? Join us and start your artistic
-                                        journey.
-                                    </p>
-                                </div>
-                            </div>
                             <div class="col-lg-5 bg-light card border-light-subtle shadow">
-                                <div>
-                                    <div class="p-3">
-                                        <div class="text-center mb-3">
-                                            <img src="../image/ProfileImg  (1).JPG" alt="avatar of a woman with glasses"
-                                                class="w-25 mt-5 img-fluid rounded-circle" />
-                                        </div>
-                                        <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
-                                            Create your ArtConnect account
-                                        </h2>
-                                        <form id="registerForm" method="post" action="/auth/register">
-                                            <div class="row gy-2 overflow-hidden">
-                                                <div class="col-12">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control" name="userName"
-                                                            id="userName" placeholder="Username" required pattern="^[\w]+s" />
-                                                        <label for="userName"
-                                                            class="form-label text-secondary">Username</label>
-                                                    </div>
+                                <div class="p-3">
+                                    <div class="text-center mb-3">
+                                        <img src="../image/ProfileImg  (1).JPG"
+                                            alt="profile picture of a woman with glasses and black hair"
+                                            class="w-25 mt-5 img-fluid rounded-circle">
+                                    </div>
+                                    <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
+                                        Create your account
+                                    </h2>
+                                    <form action="/profile">
+                                        <div class="row gy-2 overflow-hidden">
+                                            <div class="col-12">
+                                                <div class="form-floating mb-2">
+                                                    <input type="text" class="form-control" name="username"
+                                                        id="username" placeholder="Enter your username" required>
+                                                    <label for="username"
+                                                        class="form-label text-secondary">Username</label>
+
                                                 </div>
-                                                <div class="col-12">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="email" class="form-control" name="email" id="email"
-                                                            placeholder="name@example.com" required />
-                                                        <label for="email"
-                                                            class="form-label text-secondary">Email</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="form-floating mb-3">
-                                                        <input type="password" class="form-control" name="password"
-                                                            id="password" placeholder="Password" pattern=".{8,}"
-                                                            title="Must be at least 8 or more characters" required />
-                                                        <label for="password"
-                                                            class="form-label text-secondary">Password</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <div class="d-grid my-3">
-                                                        <button class="btn btn-primary btn-lg" type="submit">
-                                                            Sign Up
-                                                        </button>
-                                                    </div>
+
+                                                <div class="form-floating mb-2">
+                                                    <input type="email" class="form-control" name="email" id="email"
+                                                        placeholder="Enter your email" required>
+                                                    <label for="email" class="form-label text-secondary">Email</label>
+
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
+                                            <div class="col-12">
+                                                <div class="form-floating mb-2">
+                                                    <input type="password" class="form-control" name="password"
+                                                        id="password" value="" placeholder="Password" pattern=".{8,}"
+                                                        title="Must be at least 8 or more characters" required>
+                                                    <label for="password"
+                                                        class="form-label text-secondary ">Password</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-12">
+                                                <div class="d-grid my-3">
+                                                    <button class="btn btn-primary btn-md" type="submit">
+                                                        Sign up
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                         
+                                              <div class="col-12">
+                                                <p class="m-0 text-secondary text-center">
+                                                  Allready have an account?
+                                                  <a href="../index.html" class="link-primary text-decoration-none">Sign in</a>
+                                                </p>
+                                              </div>
+                                        </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            </div>
             </div>
         </section>
     </main>
@@ -151,7 +136,7 @@
 
             <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
                 <li class="nav-item">
-                    <a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
+                    <a href="#" class="nav-link px-2 text-muted">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link px-2 text-muted">My Friends</a>
@@ -160,12 +145,11 @@
                     <a href="#" class="nav-link px-2 text-muted">Messages</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/login/index.html" class="nav-link px-2 text-muted">Login</a>
+                    <a href="#" class="nav-link px-2 text-muted">My Profile</a>
                 </li>
             </ul>
         </div>
     </footer>
-
 </body>
 
 </html>

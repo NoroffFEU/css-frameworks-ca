@@ -2,215 +2,170 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore the profile of [Username] on ArtConnect. View their art, bio, and more.">
-  <meta name="keywords" content="art, profile, artist, portfolio, creativity">
-  <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../css/styles.css">
-  <script src="../js/hamburger.js"></script>
-  <title>Profile</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign up for ArtConnect: A social platform for sharing and appreciating art." />
+    <meta name="keywords" content="art, social media, sign up, artist, creativity" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
+    <script src="../js/hamburger.js"></script>
+    <script type="module" src="register.js"></script>
+
+    <title>Sign Up</title>
 </head>
 
-<body class="m-0 ">
+<body class="m-0 vh-100">
+    <header class="col-12">
+        <nav class="navbar navbar-expand-md navbar-light header-image">
+            <div class="container align-items-center col-11">
+                <h1 class="header-text text-center col-6 col-sm-3 col-md-5">
+                    ArtConnect
+                </h1>
+                <a class="navbar-brand text-center col-2 col-md-1" href="#">
+                    <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid" />
+                </a>
 
-  <header class="col-12">
-    <nav class="navbar navbar-expand-md navbar-light header-image">
-      <div class="container align-items-center col-11 ">
-        <h1 class=" header-text text-center col-6 col-sm-3 col-md-5">ArtConnect</h1>
-        <a class="navbar-brand text-center col-2 col-md-1 " href="../feed/index.html">
-          <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid  ">
-        </a>
+                <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon "></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-start text-nowrap z-1" id="navbarNav">
-          <ul class="navbar-card ms-auto navbar-nav text-start ">
-            <li class="nav-item  z-1">
-              <a class="nav-link fs-md-5" href="../feed/index.html">Feed</a>
-            </li>
-            <li class="nav-item z-1">
-              <a class="nav-link" href="/profile/index.html">My Profile</a>
-            </li>
-            <li class="nav-item z-1">
-              <a class="nav-link" href="#">Messages</a>
-            </li>
-            <li class="nav-item z-1">
-              <a class="nav-link  fs-md-3" href="../index.html">Log out</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="h-100 ">
-      <div class="container py-5 h-100 ">
-        <div class="row d-flex justify-content-center align-items-center h-100 ">
-          <div class="col-12 col-md-10 col-lg-8 ">
-            <div class="card d-flex">
-              <!--  profile image -->
-              <div class="rounded-top z-10 profile-hero ">
-                <div class="ms-4 mt-5 d-flex flex-column col-7">
-                  <img src="../image/userIMG1.JPG" alt="a drawn monkey in front of a colorful background"
-                    class=" img-thumbnail profile-img mt-4 z-10">
+                <div class="collapse navbar-collapse justify-content-md-start text-nowrap z-1" id="navbarNav">
+                    <ul class="navbar-card ms-auto navbar-nav text-start">
+                        <li class="nav-item z-1">
+                            <a class="nav-link fs-md-5" href="#">Feed</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">My Profile</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Messages</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link fs-md-3" href="#">Log out</a>
+                        </li>
+                    </ul>
                 </div>
-              </div>
-              <div class=" d-flex flex-column flex-sm-row ">
-                <!-- Main content (name, city, buttons, and score) -->
-                <div class="col-12 col-sm-3 col-md-5 card-body">
-                  <!-- Name, city, buttons -->
-                  <div class="col-12 row text-center  text-nowrap mb-sm-3">
-                    <h3 class=" header-text">Petra Tairno</h3>
-                    <p class="text-secondary">Oslo</p>
-                    <div class="mx-auto">
-                      <button class="btn profile-btn btn-outline-primary mb-3 btn-sm">Follow</button>
-                      <button class="btn profile-btn btn-outline-primary mb-3 btn-sm">Message</button>
-                    </div>
-                  </div>
-                </div>
+            </div>
+        </nav>
+    </header>
 
-                <!-- Score text and info -->
-                <div class="col-12 col-md-10 d-flex flex-column card-body">
-                  <div class="card-body col-12 d-flex  justify-content-center score-text">
-                    <div class="me-md-3 me-2">
-                      <p class="mb-1 fw-bold ms-3">239</p>
-                      <p class="small text-muted mb-0 me-2 text-nowrap">Art-projects</p>
-                    </div>
-                    <div class="me-md-3 me-2">
-                      <p class="mb-1 me-2 ms-2 fw-bold">1374</p>
-                      <p class="small text-muted mb-0">Followers</p>
-                    </div>
-                    <div>
-                      <p class="mb-1 me-2 ms-2 fw-bold">539</p>
-                      <p class="small text-muted mb-0">Following</p>
-                    </div>
-                  </div>
+    <main>
+        <section class="py-5 login-img">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-8 col-md-6 col-lg-12 col-xl-10">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 login-img2">
+                                <h2 class="text-center mt-3 header-text">
+                                    WELCOME BACK <br />to ArtConnect!
+                                </h2>
+                                <div class="col-10 mt-3 mx-auto">
+                                    <p>
+                                        Immerse yourself in the vibrant world of art and
+                                        creativity.
+                                    </p>
+                                    <p>
+                                        Connect with fellow artists, share your latest creations,
+                                        and explore a community passionate about artistic
+                                        expression.
+                                    </p>
+                                    <p>canvas of inspiration awaits.</p>
+                                    <p>
+                                        Login to your account and start connecting with the art
+                                        community.
+                                    </p>
 
-                  <div class="col-12 text-center mb-sm-3  ">
-                    <p>
-                      Hey there! I'm Petra Tairno, a visionary digital artist based in Oslo. Join me on a journey
-                      through the boundless world of my creations, where each piece is a unique blend of creativity and
-                      magic.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- Recent art -->
-              <div class="d-flex justify-content-between align-items-center  ms-4">
-                <p class="lead fw-normal mb-0">Recent Art</p>
-              </div>
-              <div class="row g-2 col-12 card-body">
-                <div class="col mb-2">
-                  <img src="../image/lion_039.JPG" alt="colorfull lion image" class="w-100 rounded-3">
-                </div>
-                <div class="col mb-2">
-                  <img src="../image/animal_0435.JPG"
-                    alt="a fox like animal with a lot of colors and paint shooting out in the background"
-                    class="w-100 rounded-3">
-                </div>
-
-                <div class="col">
-                  <img src="../image/Rose_0345.JPG" alt="a colorfull rose with paint shooting out from it"
-                    class="w-100 rounded-3">
-                </div>
-                <div class="col">
-                  <img src="../image/IMG_0200.JPG" alt="colorfull lines" class="w-100 rounded-3">
-                </div>
-                <p class="text-center"><a href="#!" class="text-muted">Show all (239)</a></p>
-              </div>
-
-              <!-- recent posts -->
-              <p class=" fw-normal mb-0 ms-4">Recent Posts</p>
-              <!-- post 1 -->
-              <div class="card-body mb-3">
-                <div class="row g-0">
-                  <div class="col-3 col-sm-2">
-                    <img src="../image/userIMG1.JPG" class="img-thumbnail"
-                      alt="a drawn monkey infront of a colorfull background">
-
-                  </div>
-                  <div class="card col-9 col-sm-10 bg-light text-dark">
-                    <div class="card-body">
-                      <p class="font-weight-bold mb-0">Petra Tairno</p>
-                      <p class="small text-muted">January 21- 10:20</p>
-                      <div class="col-8 m-auto">
-                        <img src="../image/lion_039.JPG" class="card-img" alt="colorfull lion image">
-                      </div>
-                      <p class="card-text text-center mt-1">
-                        Parto seliovo fercso dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-                      </p>
-                      <div class="btn-group">
-                        <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like
-                          this!
-                        </button>
-                        <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                          Comment</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- post 2 -->
-                  <div class="card-body mb-3">
-                    <div class="row g-0">
-                      <div class="col-3 col-sm-2">
-                        <img src="../image/userIMG1.JPG" class="img-thumbnail"
-                          alt="a drawn monkey infront of a colorfull background">
-
-                      </div>
-                      <div class="card col-9 col-sm-10 bg-light text-dark">
-                        <div class="card-body">
-                          <p class="font-weight-bold mb-0">Petra Tairno</p>
-                          <p class="small text-muted">January 12- 14:32</p>
-                          <div class="col-8 m-auto">
-                            <img src="../image/Rose_0345.JPG" class="card-img"
-                              alt="a colorfull rose with paint shooting out from it">
-                          </div>
-                          <p class="card-text text-center mt-1">
-                            Voralo selia trolvi porsitos verriona lisko ferriav.
-                          </p>
-                          <div class="btn-group">
-                            <button class="btn btn-link btn-sm"><i class="fa fa-thumbs-up"></i> Like
-                              this!
-                            </button>
-                            <button class="btn btn-link btn-sm"><i class="fa fa-comments"></i>
-                              Comment</button>
-                          </div>
+                                    <p>
+                                        New to ArtConnect? Join us and start your artistic
+                                        journey.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 bg-light card border-light-subtle shadow">
+                                <div>
+                                    <div class="p-3">
+                                        <div class="text-center mb-3">
+                                            <img src="../image/ProfileImg  (1).JPG" alt="profile picture of a woman with glasses "
+                                                class="w-25 mt-5 img-fluid rounded-circle" />
+                                        </div>
+                                        <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
+                                            Create your ArtConnect account
+                                        </h2>
+                                        <form id="registerForm" method="post" action="/auth/register">
+                                            <div class="row gy-2 overflow-hidden">
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" name="userName"
+                                                            id="userName" placeholder="Username" required pattern="^[\w]+s" />
+                                                        <label for="userName"
+                                                            class="form-label text-secondary">Username</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" name="email" id="email"
+                                                            placeholder="name@example.com" required />
+                                                        <label for="email"
+                                                            class="form-label text-secondary">Email</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="password" class="form-control" name="password"
+                                                            id="password" placeholder="Password" pattern=".{8,}"
+                                                            title="Must be at least 8 or more characters" required />
+                                                        <label for="password"
+                                                            class="form-label text-secondary">Password</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-grid my-3">
+                                                        <button class="btn btn-primary btn-lg" type="submit">
+                                                            Sign Up
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-    </section>
-  </main>
+            </div>
+        </section>
+    </main>
 
-  <footer class="m-0">
-    <div
-      class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
-      <p class="col-md-4 mb-0 text-muted text-center text-md-start">© 2024 Art-company-inc</p>
+    <footer class="m-0 p-1 pb-md-4 pb-lg-0">
+        <div
+            class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
+            <p class="col-md-4 mb-0 text-muted text-center text-md-start">
+                © 2024 Art-company-inc
+            </p>
 
-      <div class=" col-2 text-center mb-3 mb-md-0">
-        <img src="../image/logo-art.PNG" alt="art Logo" class="col-5 ">
-      </div>
+            <div class="col-2 text-center mb-0">
+                <img src="../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
+            </div>
 
-      <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
-        <li class="nav-item"><a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
-        </li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">My Friends</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Messages</a></li>
-        <li class="nav-item"><a href="/profile/index.html" class="nav-link px-2 text-muted">My
-            Profile</a></li>
-      </ul>
-    </div>
+            <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
+                <li class="nav-item">
+                    <a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">My Friends</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/login/index.html" class="nav-link px-2 text-muted">Login</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
-  </footer>
 </body>
 
 </html>

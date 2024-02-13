@@ -18,12 +18,13 @@ async function dologin(event) {
 
   try {
     const response = await login(profile);
-    const { accessToken, name } = response;
+    const { accessToken, name, email } = response;
 
     storage.save("token", accessToken);
     storage.save("username", name);
+    storage.save("email", email);
 
-    location.href = "/feed/post/";
+    location.href = "/feed/posts/";
   } catch (error) {
     displayMessage("#message", "danger", error.message);
   }

@@ -28,3 +28,13 @@ export function get(key) {
 export function remove(key) {
   localStorage.removeItem(key);
 }
+
+
+/**
+ * Removes multiple items from localStorage.
+ *
+ * @param {string[]} keys - An array of keys for the items to remove.
+ */
+export function removeMultiple(keys) {
+  keys.forEach((key) => localStorage.removeItem(key));
+}

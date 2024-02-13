@@ -3,6 +3,7 @@ import { registerFormListener } from "./handler/register/index.mjs";
 import { createPostFormListener } from "./handler/posts/index.mjs";
 import { displayPostsHandler } from "./handler/posts/index.mjs";
 import { updatePostFormListener } from "./handler/posts/index.mjs";
+import { logoutHandler } from "./handler/logout/logout.mjs";
 
 function router() {
   const path = location.pathname;
@@ -17,15 +18,24 @@ function router() {
     case "/create-account/index.html":
       registerFormListener();
       break;
-    case "/feed/post/":
-    case "/feed/post/index.html":
+    case "/feed/posts/":
+    case "/feed/posts/index.html":
       createPostFormListener();
       displayPostsHandler();
+      logoutHandler();
       break;
     case "/feed/edit/":
     case "/feed/edit/index.html":
+      createPostFormListener();
+      updatePostFormListener();
+      logoutHandler();
+      break;
+    case "/profile/":
+    case "/profile/index.html":
+      logoutHandler();
       updatePostFormListener();
       break;
+
     default:
   }
 }

@@ -10,11 +10,10 @@ export async function createPost(postData) {
   }
 
   try {
-    const createPostURL = BASE_URL + action;
+    const createPostURL = `${BASE_URL}${action}`;
 
     const response = await fetchToken(createPostURL, {
       method,
-      body: formData,
       body: JSON.stringify(postData),
     });
 

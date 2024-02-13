@@ -20,7 +20,7 @@ export async function addPostHandler(postData) {
       const postData = {
         title: newPostTitle,
         body: newPostText,
-        media: newPostFile,
+        // media: newPostFile,
         media: newPostFile ? newPostFile : undefined,
         tags: [""],
       };

@@ -46,7 +46,25 @@ export function renderAddedPost(post) {
   postContent.textContent = post.body;
   postSection.append(postContent);
 
+  // media row
+  const mediaRow = document.createElement("div");
+  mediaRow.classList.add("row", "pt-2", "align-items-center");
+
+  // Check if there's media
+  if (post.media) {
+    const mediaDiv = document.createElement("div");
+    mediaDiv.classList.add("col-12", "mb-3");
+
+    const media = document.createElement("img");
+    media.src = post.media;
+    media.alt = "Post media";
+    media.classList.add("img-fluid");
+    mediaDiv.append(media);
+
+    mediaRow.append(mediaDiv);
+  }
+
   // Add the post to the DOM
   const postsContainer = document.querySelector("#postsContainer");
-  postsContainer.prepend(postSection);
+  postsContainer.append(postSection);
 }

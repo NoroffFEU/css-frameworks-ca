@@ -35,7 +35,7 @@
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
   --bs-success: rgb(69, 115, 107);
-  --bs-info: #0dcaf0;
+  --bs-info: rgb(140, 179, 172);
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
@@ -45,7 +45,7 @@
   --bs-primary-rgb: 13, 110, 253;
   --bs-secondary-rgb: 108, 117, 125;
   --bs-success-rgb: 69, 115, 107;
-  --bs-info-rgb: 13, 202, 240;
+  --bs-info-rgb: 140, 179, 172;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
@@ -2856,19 +2856,19 @@ textarea.form-control-lg {
 
 .btn-info {
   --bs-btn-color: #000;
-  --bs-btn-bg: #0dcaf0;
-  --bs-btn-border-color: #0dcaf0;
+  --bs-btn-bg: rgb(140, 179, 172);
+  --bs-btn-border-color: rgb(140, 179, 172);
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #31d2f2;
-  --bs-btn-hover-border-color: #25cff2;
-  --bs-btn-focus-shadow-rgb: 11, 172, 204;
+  --bs-btn-hover-bg: #9dbeb8;
+  --bs-btn-hover-border-color: #98bbb4;
+  --bs-btn-focus-shadow-rgb: 119, 152, 146;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #3dd5f3;
-  --bs-btn-active-border-color: #25cff2;
+  --bs-btn-active-bg: #a3c2bd;
+  --bs-btn-active-border-color: #98bbb4;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #0dcaf0;
-  --bs-btn-disabled-border-color: #0dcaf0;
+  --bs-btn-disabled-bg: rgb(140, 179, 172);
+  --bs-btn-disabled-border-color: rgb(140, 179, 172);
 }
 
 .btn-warning {
@@ -3025,19 +3025,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-info {
-  --bs-btn-color: #0dcaf0;
-  --bs-btn-border-color: #0dcaf0;
+  --bs-btn-color: rgb(140, 179, 172);
+  --bs-btn-border-color: rgb(140, 179, 172);
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #0dcaf0;
-  --bs-btn-hover-border-color: #0dcaf0;
-  --bs-btn-focus-shadow-rgb: 13, 202, 240;
+  --bs-btn-hover-bg: rgb(140, 179, 172);
+  --bs-btn-hover-border-color: rgb(140, 179, 172);
+  --bs-btn-focus-shadow-rgb: 140, 179, 172;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #0dcaf0;
-  --bs-btn-active-border-color: #0dcaf0;
+  --bs-btn-active-bg: rgb(140, 179, 172);
+  --bs-btn-active-border-color: rgb(140, 179, 172);
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #0dcaf0;
+  --bs-btn-disabled-color: rgb(140, 179, 172);
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #0dcaf0;
+  --bs-btn-disabled-border-color: rgb(140, 179, 172);
   --bs-gradient: none;
 }
 
@@ -4710,12 +4710,12 @@ textarea.form-control-lg {
 }
 
 .alert-info {
-  --bs-alert-color: #055160;
-  --bs-alert-bg: #cff4fc;
-  --bs-alert-border-color: #b6effb;
+  --bs-alert-color: #546b67;
+  --bs-alert-bg: #e8f0ee;
+  --bs-alert-border-color: #dde8e6;
 }
 .alert-info .alert-link {
-  color: #04414d;
+  color: #435652;
 }
 
 .alert-warning {
@@ -5107,17 +5107,17 @@ textarea.form-control-lg {
 }
 
 .list-group-item-info {
-  color: #055160;
-  background-color: #cff4fc;
+  color: #546b67;
+  background-color: #e8f0ee;
 }
 .list-group-item-info.list-group-item-action:hover, .list-group-item-info.list-group-item-action:focus {
-  color: #055160;
-  background-color: #badce3;
+  color: #546b67;
+  background-color: #d1d8d6;
 }
 .list-group-item-info.list-group-item-action.active {
   color: #fff;
-  background-color: #055160;
-  border-color: #055160;
+  background-color: #546b67;
+  border-color: #546b67;
 }
 
 .list-group-item-warning {
@@ -6686,7 +6686,7 @@ textarea.form-control-lg {
 
 .text-bg-info {
   color: #000 !important;
-  background-color: RGBA(13, 202, 240, var(--bs-bg-opacity, 1)) !important;
+  background-color: RGBA(140, 179, 172, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-warning {
@@ -6741,10 +6741,10 @@ textarea.form-control-lg {
 }
 
 .link-info {
-  color: #0dcaf0 !important;
+  color: rgb(140, 179, 172) !important;
 }
 .link-info:hover, .link-info:focus {
-  color: #3dd5f3 !important;
+  color: #a3c2bd !important;
 }
 
 .link-warning {
@@ -10889,9 +10889,33 @@ textarea.form-control-lg {
 }
 /*Custom scss*/
 /*Index page*/
+Header .header-img {
+  width: 100vw; /* Bredden av viewporten */
+  height: 100vh; /* Høyden av viewporten */
+  object-fit: cover; /* Sørger for at bildet dekker hele området */
+  object-position: center; /* Sentrerer bildet */
+}
+
+.custom-background {
+  background-image: url("../../images/homebackround.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .header-img {
-  width: 100%;
-  height: 180px;
+  object-fit: cover; /* Sørger for at bildet dekker hele området */
+}
+
+.login-text-container {
+  background-color: rgba(140, 179, 172, 0.5);
+}
+
+.friend-img {
+  width: 30px; /* eller en annen passende størrelse */
+  height: 30px; /* eller en annen passende størrelse */
+  border-radius: 50%; /* For å gjøre bildene sirkulære */
+  margin-right: 10px; /* Litt mellomrom mellom bildet og teksten */
+  margin-bottom: 10px;
 }
 
 .sidebar-nav .nav-link {
@@ -10980,13 +11004,6 @@ textarea.form-control-lg {
   background-color: #b3d4ca;
 }
 
-.custom-background {
-  background-image: url("../../images/homebackround.jpg");
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-}
-
 /*Feed page*/
 .custom-form-input {
   font-size: 0.875rem;
@@ -11003,6 +11020,41 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
+.modal {
+  display: none; /* Skjult som standard */
+  position: fixed; /* Bli på plass */
+  z-index: 1; /* Sitte på toppen */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full bredde */
+  height: 100%; /* Full høyde */
+  overflow: auto; /* Aktiver skroll hvis nødvendig */
+  background-color: rgb(0, 0, 0); /* Fallback-farge */
+  background-color: rgba(0, 0, 0, 0.4); /* Svart med opasitet */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% fra toppen og sentrert */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Kunne være mer eller mindre, avhengig av skjermstørrelse */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .custom-img {
   width: 100%;
   max-width: 500px;
@@ -11013,6 +11065,7 @@ textarea.form-control-lg {
 
 .custom-img-container {
   position: relative;
+  display: inline-block;
   padding: 0;
 }
 .custom-img-container img {
@@ -11020,16 +11073,15 @@ textarea.form-control-lg {
   height: auto;
   vertical-align: bottom;
 }
-.custom-img-container h4, .custom-img-container .h4, .custom-img-container p {
+.custom-img-container .overlay-text {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 40px;
+  left: 40px;
   color: white;
   z-index: 10;
-}
-.custom-img-container h4.p, .custom-img-container .p.h4, .custom-img-container p.p {
+  padding: 2px;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
+  border-radius: 8px;
 }
 .custom-img-container:hover {
   cursor: pointer;
@@ -11058,7 +11110,7 @@ textarea.form-control-lg {
 
 /*Profile*/
 .custom-img-profile {
-  width: 150px;
+  width: 100px;
   border-radius: 50%;
 }
 

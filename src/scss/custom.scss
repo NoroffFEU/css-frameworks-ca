@@ -3,11 +3,39 @@
 
 /*Index page*/
 
-//Header
+Header
 .header-img {
-    width: 100%;
-    height: 180px;
+    width: 100vw; /* Bredden av viewporten */
+    height: 100vh; /* Høyden av viewporten */
+    object-fit: cover; /* Sørger for at bildet dekker hele området */
+    object-position: center; /* Sentrerer bildet */
 }
+
+.custom-background {
+    background-image: $custom-background-image;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-img {
+    object-fit: cover; /* Sørger for at bildet dekker hele området */
+}
+
+.login-text-container {
+    background-color: rgba($lightgreen, 0.5);
+
+}
+
+.friend-img {
+    width: 30px;  /* eller en annen passende størrelse */
+    height: 30px; /* eller en annen passende størrelse */
+    border-radius: 50%; /* For å gjøre bildene sirkulære */
+    margin-right: 10px; /* Litt mellomrom mellom bildet og teksten */
+    margin-bottom: 10px;
+}
+
+
+
 
 //Navbar
 .sidebar-nav {
@@ -104,12 +132,12 @@
     }
 }
 
-.custom-background {
-    background-image: $custom-background-image;
-    height: $custom-background-height;
-    background-size: cover;
-    background-position: center;
-}
+// .custom-background {
+//     background-image: $custom-background-image;
+//     height: $custom-background-height;
+//     background-size: cover;
+//     background-position: center;
+// }
 
 
 
@@ -136,7 +164,48 @@
     }
 }
 
+.modal {
+    display: none; /* Skjult som standard */
+    position: fixed; /* Bli på plass */
+    z-index: 1; /* Sitte på toppen */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full bredde */
+    height: 100%; /* Full høyde */
+    overflow: auto; /* Aktiver skroll hvis nødvendig */
+    background-color: rgb(0,0,0); /* Fallback-farge */
+    background-color: rgba(0,0,0,0.4); /* Svart med opasitet */
+}
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% fra toppen og sentrert */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Kunne være mer eller mindre, avhengig av skjermstørrelse */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ 
+// @media (min-width: 992px) {
+//     .friend-container {
+//         position: fixed;
+//     }
+    
+// }
 
 @mixin responsive-image($max-width,) {
     width: 100%;
@@ -155,6 +224,7 @@
 
 .custom-img-container {
     position: relative;
+    display: inline-block;
     padding: 0;
 
     img {
@@ -163,17 +233,23 @@
         vertical-align: bottom;
     }
 
-    h4, p {
+    .overlay-text {
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        bottom: 40px;
+        left: 40px;
+        // transform: translate(-50%, -50%);
         color: $customtext;
         z-index: 10;
+        padding: 2px;
+        background-color: $overlay-bg-color;
+        border-radius: 8px;
+        
 
-        &.p {
-            background-color: $overlay-bg-color;
-            padding: 5px;
-        }
+        // h4 {
+        //     background-color: $overlay-bg-color;
+            
+        //     border-radius: 10px;
+        // }
     }
 
     &:hover {
@@ -210,7 +286,7 @@
 
 
 .custom-img-profile {
-    width: 150px;
+    width: 100px;
     border-radius: 50%;
 }
 

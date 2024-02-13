@@ -1,0 +1,1 @@
+// Hjelpefunksjoner som kan brukes på tvers av appen (datoformatering, validering osv.)

@@ -1,4 +1,5 @@
 import { deletePost } from "../../api/posts/deletePost.js";
+import { messageForUser } from "../../ui/messageForUser.js";
 
 export function deletePostHandler() {
   const deleteButtons = document.querySelectorAll(`[data-action="delete"]`);
@@ -18,5 +19,10 @@ async function handleDeletePost(event) {
   if (shouldYouDelete) {
     await deletePost(id);
     parentElement.remove();
+    messageForUser("#post", "success", "Post deleted successfully");
+
+    setTimeout(() => {
+      window.location.href = "/profile/";
+    }, 3000);
   }
 }

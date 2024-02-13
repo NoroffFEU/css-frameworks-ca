@@ -1,5 +1,6 @@
 import { postsUrl } from "../../constants/api.js";
 import { getToken } from "../../utils/helpers/token.js";
+import { messageForUser } from "../../ui/messageForUser.js";
 
 export async function addPost(postData) {
   const token = getToken();

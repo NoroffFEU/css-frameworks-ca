@@ -3,7 +3,6 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { renderSinglePost } from "../../ui/renderSinglePost.js";
 
 export async function displaySinglePostHandler() {
-  //get the id from the querystring
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");

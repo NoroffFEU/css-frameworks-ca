@@ -12,7 +12,7 @@ export function renderAddedPost(post) {
   userInfoCol.classList.add("col", "d-flex", "align-items-center");
 
   const userImage = document.createElement("img");
-  userImage.src = post.author.avatar || "/images/profile-pic3.png"; // default user image
+  userImage.src = "/images/profile-pic3.png"; // default user image
   userImage.alt = "user picture";
   userImage.classList.add("small-user-picture", "m-1", "p-0");
   userInfoCol.append(userImage);

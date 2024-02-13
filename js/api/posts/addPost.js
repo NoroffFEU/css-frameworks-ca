@@ -23,7 +23,7 @@ export async function addPost(postData) {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(postData), // should i delete this line??
-    body: formData,
+    // body: formData,
   };
 
   const response = await fetch(postsUrl, options);

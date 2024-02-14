@@ -1,5 +1,8 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
+import { removePost } from "./deletePost.mjs";
+
 const urlParams = new URLSearchParams(window.location.search);
+
 const postId = urlParams.get('id');
 
 
@@ -13,7 +16,7 @@ fetch(`${API_SOCIAL_URL}/posts/${postId}?_author=true`, {
 })
 .then(response => response.json())
 .then(post => { 
-    // Display the post details on the page
+    
     const singlePageContainer = document.getElementById("single-page-container");
     const singlePageContent = document.createElement('div');
     singlePageContent.classList.add("card");
@@ -47,9 +50,6 @@ fetch(`${API_SOCIAL_URL}/posts/${postId}?_author=true`, {
                 </div>
                 <p class="m-0 d-flex justify-content-center">${post.author && post.author.name}</p>
                 <div class="d-flex justify-content-right py-3 gap-2">
-                <button type="button" class="btn btn-success" id="editpost">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-                </div>
             </div>
             
         </div>`;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +13,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <script src="/js/handler/index.mjs" type="module" defer></script>
     <script src="/js/logout.js" defer></script>
-    <script src="/js/index.mjs" type="module" defer></script>
-
 </head>
-
 <body>
-
     <header>
         <nav class="navbar navbar-expand-md navbar-custom fixed-top">
-            <div class="container gap-2  text-center ">
+            <div class="container gap-2  text-center">
                 <img src="/images/ape-logo.png" alt="ApeAmigos logo" class="ape" width="40px" height="40px">
                 <a class="navbar-brand" href="/profile/home/">
                     <h1 class="fs-4">ApeAmigos</h1>
@@ -43,7 +38,7 @@
                             <a class="nav-link" href="/profile/feed/">Feed</a>
                         </li>
                         <li class="nav-item">
-                            <button class="logout d-flex justify-content-center px-4 border-0 mt-1">Log out</button>
+                            <button class="logout text-light d-flex justify-content-center px-4 border-0 mt-1 bg-danger">Log out</button>
                         </li>
                     </ul>
                 </div>
@@ -51,20 +46,15 @@
         </nav>
     </header>
     <main>
-        <h1 class="text-light text-center fs-4 fs-md-3">Welcome, <span class="username"></span>!</h1>
+        <h1 class="text-light text-center fs-4 fs-md-3">Welcome to ApeAmigos, <span class="username"></span>!</h1>
         <div class="container">
-            <img class=" mx-auto d-block rounded-circle border border-custom-col mt-5" height="200" ;
-                src="/images/Untitled-20.png" alt="avatar profile picture">
+                <p class=" text-light text-center mt-4 mx-auto col-8 col-md-6 ">ApeAmigos is a social media application designed for Noroff students to
+            interact and communicate with each other. Go and check out what the other students are posting about in the
+            <i>Feed</i> section!</p>
         </div>
-        <div class="mb-3 col-md-4 col-6 col-lg-3 mx-auto text-light fs-5 mt-4">
-            <label for="formFile" class="form-label ">Upload your image here</label>
-            <input class="form-control text-light" type="file" id="formFile">
-        </div>
-    </main> 
-        <footer class="pt-4">
-            <p class="text-center text-light mt-4">Copyright 2023 © Ephraim Djeket</p>
-        </footer>
-
+    </main>
+    <footer class="pt-4">
+        <p class="text-center text-light mt-4">Copyright 2023 © Ephraim Djeket</p>
+    </footer>
 </body>
-
 </html>

@@ -12,7 +12,6 @@
     <link rel="icon" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="icon" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <script defer src="https://kit.fontawesome.com/12c76f5aa4.js" crossorigin="anonymous"></script>
     <script src="/js/handler/index.mjs" type="module" defer></script>
     <script src="/js/api/posts/updatePost.mjs" type="module" defer></script>
     <script src="/js/logout.js" defer></script>
@@ -42,7 +41,7 @@
                         <a class="nav-link active" href="/profile/feed/">Feed</a>
                     </li>
                     <li class="nav-item">
-                        <button class="logout d-flex justify-content-center px-4 border-0 mt-1">Log out</button>
+                        <button class="logout text-light d-flex justify-content-center px-4 border-0 mt-1 bg-danger">Log out</button>
                     </li>
                 </ul>
             </div>
@@ -52,11 +51,11 @@
 <main>   
 
     <div class="container">    
-        <a class="text-decoration-none" href="/profile/feed/"><p class="text-light text-left d-flex align-items-center mt-4 fs-5 return-btn"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+        <a class="text-decoration-none" href="/profile/"><p class="text-light text-left d-flex align-items-center mt-4 fs-5 return-btn"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
       </svg>Back</p></a>
         <h1 class="text-light text-center">Edit post</h1>
-        <form class="validated">
+        <form class="validated" id="single-page-container">
             <div class="mb-3 col-md-5 col-10 mx-auto text-light fs-5 mt-4">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
                 <input type="text" class="form-control text-light" id="exampleFormControlInput1"
@@ -72,7 +71,7 @@
                 <input type="text" class="form-control text-light" id="exampleFormControlInput2"
                     placeholder="Upload image URL">
     </div>
-    <button type="submit" class="btn btn-primary d-flex mx-auto mt-4">Submit</button>
+    <button type="submit" class="btn btn-primary d-flex mx-auto mt-4">Post</button>
     </form>
 </main>
 

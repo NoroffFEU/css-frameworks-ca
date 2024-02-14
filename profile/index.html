@@ -14,6 +14,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <script defer src="https://kit.fontawesome.com/12c76f5aa4.js" crossorigin="anonymous"></script>
     <script src="/js/handler/index.mjs" type="module" defer></script>
+    <script src="/js/api/posts/deletePost.mjs" type="module" defer></script>
+    <script src="/js/api/auth/authorPosts.mjs" type="module" defer></script>
+
+
+    <script src="/js/logout.js" defer></script>
 </head>
 
 <body>
@@ -40,7 +45,9 @@
                             <a class="nav-link" href="/profile/feed/">Feed</a>
                         </li>
                         <li class="nav-item">
-                            <button class="logout d-flex justify-content-center px-4 border-0 mt-1">Log out</button>
+                            <button
+                                class="logout text-light d-flex justify-content-center px-4 border-0 mt-1 bg-danger">Log
+                                out</button>
                         </li>
                     </ul>
                 </div>
@@ -49,12 +56,10 @@
     </header>
     <main>
         <div class="container">
-            <img class=" mx-auto d-block rounded-circle border border-custom-col mt-5" height="200" ;
-                src="/images/Untitled-20.png" alt="avatar profile picture">
+            <img class=" mx-auto d-block rounded-circle mt-5 pb-3" height="100" ; src="/images/ape-logo.png"
+                alt="avatar profile picture">
 
-            <p class="text-center mt-2 fs-3 text-light fw-bold username">
-
-            </p>
+            <p class="text-center mt-2 fs-3 text-light fw-bold username"></p>
             <div class="wrapper d-flex justify-content-center text-center">
                 <div class="d-flex flex-row text-light gap-1 fs-6 text-center">
                     <div class="follow d-flex flex-row gap-2">
@@ -64,96 +69,16 @@
 
                 </div>
             </div>
+
             <div class="container d-flex">
-                <!-- ROW 1 begins here-->
                 <div class="row d-flex flex-lg-row mx-auto justify-content-center gap-4 gap-lg-0">
                     <h2 class="d-flex justify-content-center text-light my-3 fs-2">Latest post</h2>
-
+                    <div class="row flex-lg-row mx-auto justify-content-center gap-4 gap-lg-0 container-profile"></div>
                     <div class="col-12 col-md-5 col-xl-4 my-4 d-flex justify-content-center">
-                        <div class="card border" style="width: 18rem;">
-                            <img src="../images/byy.png" alt="">
-                            <div class="card-body">
-                                <div class="seperator">
-                                    <div class="s">
-                                        <p class="card-text fs-5">Trying out calisthenics.</p>
-                                    </div>
-                                    <p class="m-0 fs-6">#fitness #discipline</p>
-                                    <p class="text-end m-0">11.11.2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-xl-4 my-4 d-flex justify-content-center">
-                        <div class="card border" style="width: 18rem;">
-                            <img src="../images/tres.png" alt="">
-                            <div class="card-body">
-                                <div class="seperator">
-                                    <div class="s">
-                                        <p class="card-text fs-5">I just love to meditate.</p>
-                                    </div>
-                                    <p class="m-0 fs-6">#meditation #focus</p>
-                                    <p class="text-end m-0">11.11.2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-xl-4 my-4 d-flex justify-content-center">
-                        <div class="card border" style="width: 18rem;">
-                            <img src="../images/fix.png" alt="">
-                            <div class="card-body">
-                                <div class="seperator">
-                                    <div class="s">
-                                        <p class="card-text fs-5">Fixing my car.</p>
-                                    </div>
-                                    <p class="m-0 fs-6">#hardwork #car-repair</p>
-                                    <p class="text-end m-0">11.11.2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-xl-4 my-4 d-flex justify-content-center">
-                        <div class="card border" style="width: 18rem;">
-                            <img src="../images/nature.png" alt="">
-                            <div class="card-body">
-                                <div class="seperator">
-                                    <div class="s">
-                                        <p class="card-text fs-5">Hiking with my friends❤️</p>
-                                    </div>
-                                    <p class="m-0 fs-6">#love #nature</p>
-                                    <p class="text-end m-0">11.11.2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-xl-4 my-4 d-flex justify-content-center">
-                        <div class="card border" style="width: 18rem;">
-                            <img src="../images/gaming.png" alt="">
-                            <div class="card-body">
-                                <div class="seperator">
-                                    <div class="s">
-                                        <p class="card-text fs-5">I love gaming!</p>
-                                    </div>
-                                    <p class="m-0 fs-6">#gaming</p>
-                                    <p class="text-end m-0">11.11.2023</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-xl-4 my-4 d-flex justify-content-center">
-                        <div class="card border" style="width: 18rem;">
-                            <img src="../images/ew.png" alt="">
-                            <div class="card-body">
-                                <div class="seperator">
-                                    <div class="s">
-                                        <p class="card-text fs-5">Just turned 29!</p>
-                                    </div>
-                                    <p class="m-0 fs-6">#birthday #party</p>
-                                    <p class="text-end m-0">11.11.2023</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </main>
     <footer class="py-4">
         <p class="text-center text-light mt-4">Copyright 2023 © Ephraim Djeket</p>

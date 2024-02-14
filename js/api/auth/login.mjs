@@ -6,7 +6,6 @@ const form = document.querySelector(".formLogin");
 const emailInput = form.querySelector("#email");
 const passwordInput = form.querySelector("#password");
 
-// Function to gather form data and return an object
 function getFormData() {
     const email = emailInput.value;
     const password = passwordInput.value;
@@ -39,6 +38,7 @@ form.addEventListener("submit", function (e) {
             if (typeof data === "object" && data.hasOwnProperty("accessToken")) {
                 const accessToken = data.accessToken;
                 const profileName = data.name;
+                const profilePicture = data.avatar;
                 localStorage.setItem("accessToken", accessToken)
                 localStorage.setItem("name", profileName);
                     window.location.href = "/profile/home";

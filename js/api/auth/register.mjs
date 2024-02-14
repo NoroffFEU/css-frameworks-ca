@@ -5,8 +5,8 @@ const form = document.querySelector(".formCollection");
 const usernameInput = form.querySelector("#username");
 const emailInput = form.querySelector("#email");
 const passwordInput = form.querySelector("#password");
+const userMessage = document.querySelector(".userInfo");
 
-// Function to gather form data and return an object
 function getFormData() {
     const name = usernameInput.value;
     const email = emailInput.value;
@@ -19,33 +19,35 @@ function getFormData() {
     };
 }
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const formData = getFormData();
 
     const API_REGISTER = `${API_SOCIAL_URL}/auth/register`;
 
-    fetch(API_REGISTER, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-        .then(response => response.json())
-        .then(json => {
-            console.log(json);
-            if (typeof json === "object" && json.hasOwnProperty('id')) {
-                userInfo();
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-
+    try {
+        const response = await fetch(API_REGISTER, {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json",
+            },
         });
 
-    const userMessage = document.querySelector(".userInfo");
+        const json = await response.json();
+
+        if (typeof json === "object" && json.hasOwnProperty('id')) {
+            userInfo();
+        } else {
+            userFailed();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+
+  
 
     function userInfo() {
         userMessage.innerText = "Profile was successfully created";
@@ -54,4 +56,15 @@ form.addEventListener("submit", function (e) {
             window.location.href = "/index.html";
         }, 2000);
     }
+
+    function userFailed(error) {
+        let errorMessage = "An error has occured.";
+        userMessage.innerText = errorMessage;
+        setTimeout(() => {
+            userMessage.innerText = "";
+        }, 2000);
+    }
+
+
 });
+

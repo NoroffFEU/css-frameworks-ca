@@ -1,22 +1,50 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
+import { getPosts } from "./getPost.mjs";
 
 const action = "/posts";
 
-export async function createPost(postData) {
-    const createPostUrl = API_SOCIAL_URL + action;
-    
-    // Retrieve the access token from localStorage
-    const accessToken = localStorage.getItem("accessToken");
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form.validated');
 
-    const response = await fetch(createPostUrl, {
-        method: 'POST', // Assuming you're creating a new post
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${accessToken}` // Use the retrieved access token
-        },
-        body: JSON.stringify(postData)
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); 
+
+        const postTitle = document.querySelector("#exampleFormControlInput1").value;
+        const postBody = document.querySelector("#validationTextarea").value;
+        const postMedia = document.querySelector("#exampleFormControlInput2").value;
+
+        try {
+            const accessToken = localStorage.getItem("accessToken");
+            const createPostUrl = API_SOCIAL_URL + action;
+
+            const response = await fetch(createPostUrl, {
+                method: 'POST', 
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${accessToken}` 
+                },
+                body: JSON.stringify({ title: postTitle, body: postBody, media: postMedia }) 
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to create post');
+            }
+
+            const responseData = await response.json();
+            form.reset(); 
+            getPosts();
+        } catch (error) {
+            console.error('Error creating post:', error.message);
+        }
     });
+});
 
-    return await response.json();
 
-}
+
+
+
+
+
+
+
+

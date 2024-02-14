@@ -1,15 +1,20 @@
 const currentProfileNames = document.querySelectorAll(".username");
-const bodyMessage = document.querySelector("main");
+const bodyMessage = document.querySelector("main, .container-feed");
 
-// Prevents from accessing pages through URL
+
 currentProfileNames.forEach(text => {
-    const accessToken = localStorage.getItem("accessToken")
+    const accessToken = localStorage.getItem("accessToken");
     const storedName = localStorage.getItem("name");
-    if (storedName && accessToken !== null) {
+    if (accessToken !== null) {
+        
         text.innerText = storedName;
     } else {
-        bodyMessage.innerHTML = `<div class="alert alert-danger text-center w-50 mx-auto" role="alert">
-            Unauthorized access
-        </div>`;
+        const errorMessage = "Unauthorized access";
+        bodyMessage.innerHTML = `
+            <div class="alert alert-danger text-center w-50 mx-auto" role="alert">
+                ${errorMessage}
+            </div>`;
     }
 });
+
+

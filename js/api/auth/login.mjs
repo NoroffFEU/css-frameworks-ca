@@ -16,10 +16,17 @@ export async function login(profile) {
     body,
   });
 
-  const {accessToken, ...user} = await response.json();
-
-  storage.save("token", accessToken);
-  storage.save("profile", user);
-
-  result.accessToken
+  console.log(response);
+  const { accessToken, ...user } = await response.json();
+  
+    storage.save("token", accessToken);
+    storage.save("profile", user);
+    if (accessToken) {
+    
+    setTimeout(() => {
+      window.location.href = "../../../profile/index.html";
+    }, 2000);
+  } else {
+    throw new Error("No access token provided, please register");
+  }
 }

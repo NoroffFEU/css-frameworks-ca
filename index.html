@@ -2,150 +2,128 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Log in to ArtConnect: A social platform for sharing and appreciating art." />
-  <meta name="keywords" content="art, social media, login, artist, creativity" />
-  <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
-  <script src="./js/hamburger.js"></script>
-  <link rel="stylesheet" href="css/styles.css" />
-  <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Log in to ArtConnect: A social platform for sharing and appreciating art." />
+    <meta name="keywords" content="art, social media, login, artist, creativity" />
+    <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
+    <script src="./js/hamburger.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Login</title>
 </head>
 
 <body class="m-0 vh-100">
-  <header class="col-12">
-    <nav class="navbar navbar-expand-md navbar-light header-image">
-      <div class="container align-items-center col-11">
-        <h1 class="header-text text-center col-6 col-sm-3 col-md-">
-          ArtConnect
-        </h1>
-        <a class="navbar-brand text-center col-2 col-md-1" href="#">
-          <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid" />
-        </a>
+    <header class="col-12">
+        <nav class="navbar navbar-expand-md navbar-light header-image">
+            <div class="container align-items-center col-11">
+                <h1 class="header-text text-center col-6 col-sm-3 col-md-5">
+                    ArtConnect
+                </h1>
+                <a class="navbar-brand text-center col-2 col-md-1" href="#">
+                    <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid" />
+                </a>
 
-        <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse text-nowrap z-1 " id="navbarNav">
-          <ul class="navbar-card ms-auto navbar-nav text-end ">
-            <li class="nav-item z-1">
-              <a class="nav-link" href="#">Feed</a>
-            </li>
-            <li class="nav-item z-1">
-              <a class="nav-link" href="#">My Profile</a>
-            </li>
-            <li class="nav-item z-1">
-              <a class="nav-link" href="#">Messages</a>
-            </li>
-            <li class="nav-item z-1">
-              <a class="nav-link" href="#">Log out</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="py-5 login-img">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-10 col-sm-8 col-md-6 col-lg-12 col-xl-10">
-            <div class="row justify-content-center">
-              <div class="col-lg-5 bg-light card border-light-subtle shadow">
-                <div class="p-3">
-                  <div class="text-center mb-3">
-
-                    <img src="image/userIMG1.JPG" alt="profile picture of a woman with glasses and pink hair" class="w-25 mt-5 img-fluid rounded-circle">
-
-                  </div>
-                  <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
-                    Sign in to your account
-                  </h2>
-                  <form action="/profile">
-                    <div class="row gy-2 overflow-hidden">
-                      <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input type="text" class="form-control" name="username" id="username"
-                            placeholder="Enter your username" required>
-                          <label for="username" class="form-label text-secondary">Username</label>
-
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-floating mb-3">
-                          <input type="password" class="form-control" name="password" id="password" value=""
-                            placeholder="Password" pattern=".{8,}" title="Must be at least 8 or more characters"
-                            required>
-                          <label for="password" class="form-label text-secondary ">Password</label>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-between">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="rememberMe" id="rememberMe">
-                            <label class="form-check-label text-secondary" for="rememberMe">
-                              Keep me logged in
-                            </label>
-                          </div>
-                          <a href="#!" class="link-primary text-decoration-none ms-4 ms-sm-0">Forgot password?</a>
-                        </div>
-                      </div>
-
-                      <div class="col-12">
-                        <div class="d-grid my-3">
-                          <button class="btn btn-primary btn-md" type="submit">
-                            Log in
-                          </button>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <p class="m-0 text-secondary text-center">
-                          Don't have an account?
-                          <a href="register/register.html" class="link-primary text-decoration-none">Sign up</a>
-                        </p>
-                      </div>
-                    </div>
-                  </form>
+                <div class="collapse navbar-collapse text-nowrap z-1 " id="navbarNav">
+                    <ul class="navbar-card ms-auto navbar-nav text-end ">
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Feed</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">My Profile</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Messages</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Log out</a>
+                        </li>
+                    </ul>
                 </div>
-              </div>
             </div>
-          </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-5 login-img">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-10 col-sm-8 col-md-6 col-lg-12 col-xl-10">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 bg-light card border-light-subtle shadow">
+                                <div class="p-3">
+                                    <div class="text-center mb-3">
+
+                                        <img src="image/logo-art.PNG" alt="Logo for ArtConnect"
+                                            class="w-25 mt-5 img-fluid rounded-circle">
+
+                                    </div>
+                                    <div class="text-center mb-4">
+                                        <h2 class="header-text mb-4">
+                                            Welcome to ArtConnect
+                                        </h2>
+                                        <div class=" header-text text-secondary mb-4">
+                                            <p>ArtConnect is a vibrant online community where
+                                                artists and art enthusiasts come together to showcase their work,
+                                                discover new talents, and engage in creative discussions.</p> If you
+                                            already have an account, you can log in below. Otherwise, you're invited to
+                                            create an account and join us!</p>
+
+                                        </div>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                            <a href="profile/login/index.html" class=" btn btn-outline-primary">
+                                                Log in
+                                            </a>
+                                            <a href="profile/register/index.html" class="btn btn-outline-success">
+                                                Sign up
+                                            </a>
+                                        </div>
+                                        <p class="m-0 text-secondary text-center mt-3">
+                                            If you'd like to get in touch with us, <a href="#"
+                                                class="link-primary text-decoration-none">contact us here</a>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="m-0 p-1 pb-md-4 pb-lg-0">
+        <div
+            class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
+            <p class="col-md-4 mb-0 text-muted text-center text-md-start">
+                © 2024 Art-company-inc
+            </p>
+
+            <div class="col-2 text-center mb-0">
+                <img src="../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
+            </div>
+
+            <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
+                <li class="nav-item">
+                    <a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">My Friends</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/profile/index.html" class="nav-link px-2 text-muted">My Profile</a>
+                </li>
+            </ul>
         </div>
-      </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="m-0 p-1 pb-md-4 pb-lg-0">
-    <div
-      class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
-      <p class="col-md-4 mb-0 text-muted text-center text-md-start">
-        © 2024 Art-company-inc
-      </p>
-
-      <div class="col-2 text-center mb-0">
-        <img src="../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
-      </div>
-
-      <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
-        <li class="nav-item">
-          <a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link px-2 text-muted">My Friends</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link px-2 text-muted">Messages</a>
-        </li>
-        <li class="nav-item">
-          <a href="/profile/index.html" class="nav-link px-2 text-muted">My Profile</a>
-        </li>
-      </ul>
-    </div>
-  </footer>
+    </footer>
 </body>
 
 </html>

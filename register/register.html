@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Sign up for ArtConnect: A social platform for sharing and appreciating art." />
     <meta name="keywords" content="art, social media, sign up, artist, creativity" />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
-    <script src="../js/hamburger.js"></script>
-    <script type="module" src="register.js"></script>
+    <script src="/js/hamburger.js" defer type="module"></script>
+    <script src="/js/index.mjs" defer type="module"></script>
+
 
     <title>Sign Up</title>
 </head>
@@ -66,58 +67,61 @@
                                     <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
                                         Create your account
                                     </h2>
-                                    <form action="/profile">
+                                    <form id="registrationForm" >
                                         <div class="row gy-2 overflow-hidden">
                                             <div class="col-12">
                                                 <div class="form-floating mb-2">
-                                                    <input type="text" class="form-control" name="username"
-                                                        id="username" placeholder="Enter your username" required>
+                                                    <input type="text" class="form-control" name="name" required
+                                                        pattern="^[\w]+$"
+                                                        title=" username must only contain lower case and upper case letters, numbeers and underscore (_). example: Username_456"
+                                                        id="username" placeholder="Enter your username">
                                                     <label for="username"
                                                         class="form-label text-secondary">Username</label>
-
                                                 </div>
 
                                                 <div class="form-floating mb-2">
                                                     <input type="email" class="form-control" name="email" id="email"
-                                                        placeholder="Enter your email" required>
+                                                        placeholder="Enter your @noroff.no or @stud.noroff.no email"
+                                                        required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Please enter a valid @noroff.no or @stud.noroff.no email
+                                                        address">
                                                     <label for="email" class="form-label text-secondary">Email</label>
 
                                                 </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="form-floating mb-2">
-                                                    <input type="password" class="form-control" name="password"
-                                                        id="password" value="" placeholder="Password" pattern=".{8,}"
-                                                        title="Must be at least 8 or more characters" required>
-                                                    <label for="password"
-                                                        class="form-label text-secondary ">Password</label>
+
+                                                <div class="col-12">
+                                                    <div class="form-floating mb-2">
+                                                        <input type="password" class="form-control" name="password"
+                                                            id="password" value="" placeholder="Password" required
+                                                            minLength="8" title="Must be at least 8 or more characters">
+                                                        <label for="password"
+                                                            class="form-label text-secondary ">Password</label>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-12">
+                                                    <div class="d-grid my-3">
+                                                        <button class="btn btn-primary btn-md" type="submit">
+                                                            Sign up
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <p class="m-0 text-secondary text-center">
+                                                        Allready have an account?
+                                                        <a href="../index.html"
+                                                            class="link-primary text-decoration-none">Sign in</a>
+                                                    </p>
                                                 </div>
                                             </div>
-
-
-                                            <div class="col-12">
-                                                <div class="d-grid my-3">
-                                                    <button class="btn btn-primary btn-md" type="submit">
-                                                        Sign up
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                         
-                                              <div class="col-12">
-                                                <p class="m-0 text-secondary text-center">
-                                                  Allready have an account?
-                                                  <a href="../index.html" class="link-primary text-decoration-none">Sign in</a>
-                                                </p>
-                                              </div>
                                         </div>
+                                    </form>
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
             </div>
         </section>

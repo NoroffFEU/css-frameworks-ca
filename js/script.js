@@ -9,7 +9,7 @@ import { handleScrollButton } from "./handlers/posts/handleScrollButton.js";
 import { addPostHandler } from "./handlers/posts/addPostHandler.js";
 import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
 import { sortingPostsHandler } from "./handlers/posts/sortingPostsHandler.js";
-// import { deletePostHandler } from "./handlers/posts/deletePostHandler.js";
+import { editPostHandler } from "./handlers/posts/editPostHandler.js";
 
 function route() {
   const path = window.location.pathname;
@@ -32,6 +32,9 @@ function route() {
       displaySingleProfilePostHandler();
       logoutHandler();
       break;
+    case "profile/edit-post.html":
+      logoutHandler();
+      editPostHandler();
     case "/feed/":
     case "/feed/index.html":
       handleScrollButton();

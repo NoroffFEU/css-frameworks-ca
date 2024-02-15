@@ -64,11 +64,15 @@ function createProfilePost(post) {
 
   // Edit option
   const editOption = document.createElement("li");
-  const editLink = document.createElement("a");
-  editLink.classList.add("dropdown-item");
-  editLink.setAttribute("href", postLink);
-  editLink.textContent = "Edit Post";
-  editOption.append(editLink);
+  const editButton = document.createElement("a");
+  editButton.classList.add("dropdown-item");
+  // editButton.setAttribute("type", "button");
+  // editButton.setAttribute("data-id", id);
+  // editButton.setAttribute("data-action", "edit");
+  editButton.href = `/profile/edit-post.html?id=${id}`;
+  // editLink.setAttribute("href", postLink);
+  editButton.textContent = "Edit Post";
+  editOption.append(editButton);
 
   // Delete option
   const deleteOption = document.createElement("li");

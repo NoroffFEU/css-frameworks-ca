@@ -1,6 +1,4 @@
-const baseUrl = "https://api.noroff.dev/api/v1/";
-export const loginUrl = `${baseUrl}social/auth/login`;
-// import { loginUrl } from "../constants/api";
+import { loginUrl } from "../../constants/api.js";
 
 export async function loginUser(userDetails) {
   const options = {

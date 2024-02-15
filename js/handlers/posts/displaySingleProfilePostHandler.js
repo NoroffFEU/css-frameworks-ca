@@ -3,11 +3,13 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { renderSingleProfilePost } from "../../ui/renderSingleProfilePost.js";
 import { getUserName } from "../../utils/helpers/getUserName.js";
 import { deletePostHandler } from "./deletePostHandler.js";
+import { getParamFromUrl } from "../../utils/helpers/getParams.js";
 
 export async function displaySingleProfilePostHandler() {
   try {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get("id");
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const id = urlParams.get("id");
+    const id = getParamFromUrl("id");
     const userName = getUserName();
 
     if (!id) {

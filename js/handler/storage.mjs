@@ -29,7 +29,6 @@ export function remove(key) {
   localStorage.removeItem(key);
 }
 
-
 /**
  * Removes multiple items from localStorage.
  *

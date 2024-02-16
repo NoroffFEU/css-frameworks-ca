@@ -1,6 +1,8 @@
+import * as storage from "../handler/storage.mjs";
+
 export function renderAllPosts(posts) {
   const container = document.querySelector("#card");
-  const loader = document.querySelector(".loader");
+  const spinner = document.querySelector(".spinner-border");
 
   container.innerHTML = "";
   const allPostsHtml = posts.map((post) => {
@@ -9,7 +11,7 @@ export function renderAllPosts(posts) {
 
   container.append(...allPostsHtml);
 
-  loader.style.display = "none";
+  spinner.style.display = "none";
 }
 
 function displayPost(post) {
@@ -25,6 +27,7 @@ function displayPost(post) {
   // Main post section
   const postSection = document.createElement("div");
   postSection.classList.add("card", "p-3", "my-3");
+  postSection.dataset.userId = post.userId;
 
   // Post header
   const row = document.createElement("div");
@@ -44,13 +47,16 @@ function displayPost(post) {
   userImage.setAttribute("height", "60");
   userInformation.append(userImage);
 
-  // User name - NOT WORKING
-  const userName = document.createElement("p");
-  userName.classList.add("user-name", "text-primary");
-  userName.innerHTML = `<span class="pe-3 fs-5 text-dark">${
-    post.userName || "Username"
+  // User name - NOT DISPLAYING USER NAME
+
+  let userName = storage.get("username");
+
+  const userNameElement = document.createElement("p");
+  userNameElement.classList.add("user-name", "text-primary");
+  userNameElement.innerHTML = `<span class="pe-3 fs-5 text-dark">${
+    userName || "Username"
   }</span>${new Date(post.created).toLocaleDateString()}`;
-  userInformation.append(userName);
+  userInformation.append(userNameElement);
 
   row.append(userInformation);
 
@@ -60,7 +66,7 @@ function displayPost(post) {
     mediaElement.classList.add("col-12", "mt-3");
     const media = document.createElement("img");
     media.src = post.media;
-    media.alt = "Post media";
+    media.alt = "Post image";
     media.classList.add("img-fluid");
     mediaElement.append(media);
 
@@ -69,6 +75,14 @@ function displayPost(post) {
 
   // Post text
   const postColumn = document.createElement("div");
+
+  // Post title
+  const postTitle = document.createElement("h5");
+  postTitle.classList.add("text-start", "text-dark", "mt-3");
+  postTitle.textContent = post.title || "No title";
+  postColumn.prepend(postTitle);
+
+  // post body
   const postText = document.createElement("p");
   postText.classList.add("text-start", "text-dark", "mt-3");
   postText.textContent = post.body || "No content";

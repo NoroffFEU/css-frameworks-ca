@@ -12,6 +12,7 @@ export function createPostFormListener() {
       const post = Object.fromEntries(formData.entries());
 
       post.tags = post.tags.split(",").map((tag) => tag.trim());
+      console.log(post);
 
       try {
         await createPost(post);
@@ -19,10 +20,10 @@ export function createPostFormListener() {
         displayMessage(
           "#message",
           "success",
-          'You have successfully created a post. <a href="/">View your post.</a>'
+          "You have successfully created a post."
         );
       } catch (error) {
-        displayMessage("#message", "danger", error.message);
+        displayMessage("#message", "danger", "Please log in to create a post.");
       }
     });
   }

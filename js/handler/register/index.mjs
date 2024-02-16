@@ -12,10 +12,6 @@ export function registerFormListener() {
       const formData = new FormData(form);
       const profile = Object.fromEntries(formData.entries());
 
-      console.log(profile);
-
-      // sent to the API
-
       try {
         await register(profile);
         // This display a message if the user is successfully registered

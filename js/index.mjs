@@ -13,12 +13,6 @@ if (path === "/profile/login/index.html") {
   setRegisterFormListener();
 }
 
-updatePost({
-    id: 10470,
-    title: "example Post UPDATED",
-    body: "example nr 2 UPDATED"
-})
-
 
 
 // posts.createPost();
@@ -26,6 +20,6 @@ updatePost({
 // posts.removePost();
 // posts.getPost();
 // posts.getPosts().then(console.log);
-posts.removePost(10470)
+// posts.removePost(10470)
 
 

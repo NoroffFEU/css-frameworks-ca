@@ -1,5 +1,3 @@
-import * as storage from "../handler/storage.mjs";
-
 export function renderAllPosts(posts) {
   const container = document.querySelector("#card");
   const spinner = document.querySelector(".spinner-border");
@@ -47,15 +45,14 @@ function displayPost(post) {
   userImage.setAttribute("height", "60");
   userInformation.append(userImage);
 
-  // User name - NOT DISPLAYING USER NAME
-
-  let userName = storage.get("username");
+  // User name
 
   const userNameElement = document.createElement("p");
   userNameElement.classList.add("user-name", "text-primary");
-  userNameElement.innerHTML = `<span class="pe-3 fs-5 text-dark">${
-    userName || "Username"
-  }</span>${new Date(post.created).toLocaleDateString()}`;
+  const authorName = post.author.name || "Anonymous";
+  userNameElement.innerHTML = `<span class="pe-3 fs-5 text-dark">${authorName}</span>${new Date(
+    post.created
+  ).toLocaleDateString()}`;
   userInformation.append(userNameElement);
 
   row.append(userInformation);

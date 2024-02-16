@@ -11,7 +11,7 @@ export async function getAllPosts() {
     throw new Error("You must be logged in to continue.");
   }
 
-  const getPostURL = `${BASE_URL}${action}`;
+  const getPostURL = `${BASE_URL}${action}?_author=true`;
 
   try {
     const response = await fetchToken(getPostURL, { method: "GET" });

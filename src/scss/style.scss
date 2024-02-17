@@ -8,6 +8,10 @@
 @import "buttons";
 @import "loader";
 
+main {
+  flex: 1 0 auto;
+}
+
 // why not working on hover?????
 .new-post-btn:hover {
   background-color: var(--dark);
@@ -32,4 +36,8 @@
 
 .pink {
   color: var(--pink);
+}
+
+.sticky-footer {
+  margin-top: auto;
 }

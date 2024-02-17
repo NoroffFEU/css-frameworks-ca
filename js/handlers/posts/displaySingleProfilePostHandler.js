@@ -7,8 +7,6 @@ import { getParamFromUrl } from "../../utils/helpers/getParams.js";
 
 export async function displaySingleProfilePostHandler() {
   try {
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const id = urlParams.get("id");
     const id = getParamFromUrl("id");
     const userName = getUserName();
 

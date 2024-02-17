@@ -15,8 +15,6 @@ export function renderPosts(parent, posts) {
 }
 
 function createPost(post) {
-  console.log("Author Data:", post.author);
-
   const { title, body, created, media, id, likes, author } = post;
 
   // Anchor element for the post link

@@ -28,7 +28,7 @@ export function renderSinglePost(parent, post) {
 
   const userName = document.createElement("p");
   userName.classList.add("mb-0");
-  const authorName = author && author.name ? author.name : "Anonymous User";
+  const authorName = author && author.name ? author.name : "User";
   userName.innerHTML = `<span class="pe-2 baloo mx-2 text-primary fs-5">${authorName}</span>${new Date(
     created
   ).toLocaleDateString()}`;

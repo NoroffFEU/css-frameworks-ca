@@ -19,7 +19,7 @@ function createProfilePost(post) {
   const postSection = document.createElement("section");
   postSection.classList.add("mt-5", "container", "bg-light", "h-auto");
 
-  // Top row for User info and Date
+  // Top row for User info, date asd options
   const topRow = document.createElement("div");
   topRow.classList.add("row", "pt-2", "align-items-center", "justify-content-between", "post-row-bottom");
 
@@ -27,12 +27,16 @@ function createProfilePost(post) {
   const userInfoCol = document.createElement("div");
   userInfoCol.classList.add("col");
   userInfoCol.innerHTML = `
-    <img src="/images/profile-pic3.png" alt="user picture" class="small-user-picture m-1 p-0">
-    <span class="pe-2 baloo mx-2 text-primary fs-5">${author.name ?? "User"}</span>
-    ${new Date(created).toLocaleDateString()}`;
+  <div class="d-flex align-items-center pb-1">
+    <img src="/images/profile-pic3.png" alt="user picture" class="small-user-picture m-1 p-0" style="height: 45px; width: 45px">
+    <div>
+      <span class="pe-2 baloo mx-2 text-primary fs-5">${author.name ?? "User"}</span>
+      <div class="ms-1">${new Date(created).toLocaleDateString()}</div>
+    </div>
+  </div>`;
   topRow.append(userInfoCol);
 
-  // At the end of setting up the top row in the createProfilePost function
+  // options column
   const optionsCol = document.createElement("div");
   optionsCol.classList.add("col-auto", "d-flex", "align-items-center", "justify-content-end");
 
@@ -44,10 +48,10 @@ function createProfilePost(post) {
   const dropdownToggle = document.createElement("button");
   dropdownToggle.classList.add("btn", "btn-light", "dropdown-toggle");
   dropdownToggle.setAttribute("type", "button");
-  dropdownToggle.setAttribute("id", "dropdownMenuButton" + id); // Ensure unique ID
+  dropdownToggle.setAttribute("id", "dropdownMenuButton" + id);
   dropdownToggle.setAttribute("data-bs-toggle", "dropdown");
   dropdownToggle.setAttribute("aria-expanded", "false");
-  dropdownToggle.innerHTML = `<img src="/images/vertical-dots.png" alt="Options" style="height: 20px;"> Options`;
+  dropdownToggle.innerHTML = `<img src="/images/vertical-dots.png" alt="Options" style="height: 15px;"> Options`;
 
   // Dropdown menu
   const dropdownMenu = document.createElement("ul");
@@ -66,11 +70,7 @@ function createProfilePost(post) {
   const editOption = document.createElement("li");
   const editButton = document.createElement("a");
   editButton.classList.add("dropdown-item");
-  // editButton.setAttribute("type", "button");
-  // editButton.setAttribute("data-id", id);
-  // editButton.setAttribute("data-action", "edit");
   editButton.href = `/profile/edit-post.html?id=${id}`;
-  // editLink.setAttribute("href", postLink);
   editButton.textContent = "Edit Post";
   editOption.append(editButton);
 
@@ -97,7 +97,9 @@ function createProfilePost(post) {
     <p class="text-start text-dark pt-3">${body ?? "No content"}</p>`;
   if (media) {
     contentSection.innerHTML += `
-      <img src="${media}" alt="Post media" class="img-fluid mb-3">`;
+    <a href="${postLink}" target="_blank">
+    <img src="${media}" alt="Post media" class="img-fluid mb-3">
+  </a>`;
   }
 
   // Bottom row for actions and reactions
@@ -141,31 +143,3 @@ function createProfilePost(post) {
 
   return postSection;
 }
-
-//  // buttons row
-//  const buttonsRow = document.createElement("div");
-//  buttonsRow.classList.add("row", "d-flex", "justify-content-start", "pt-2", "mt-3", "mb-3");
-
-//  // Column for the "Edit" button
-//  const editButtonCol = document.createElement("div");
-//  editButtonCol.classList.add("col-auto", "mb-2");
-
-//  // Adding a "edit" button
-//  const editButtonLink = document.createElement("a");
-//  editButtonLink.setAttribute("href", postLink);
-//  editButtonLink.classList.add("btn", "btn-light", "border-primary", "view-post-button", "pt-1", "pb-1");
-//  editButtonLink.textContent = "Edit Post";
-//  editButtonCol.append(editButtonLink);
-
-//  // Adding a "delete" button
-//  const deleteButtonCol = document.createElement("div");
-//  deleteButtonCol.classList.add("col-auto", "mb-2");
-//  const deleteButton = document.createElement("button");
-//  deleteButton.setAttribute("type", "button");
-//  deleteButton.setAttribute("data-id", id);
-//  deleteButton.setAttribute("data-action", "delete");
-//  deleteButton.classList.add("btn", "btn-light", "border-primary", "view-post-button", "pt-1", "pb-1");
-//  deleteButton.textContent = "Delete Post";
-//  deleteButtonCol.append(deleteButton);
-
-//  buttonsRow.append(editButtonCol, deleteButtonCol);

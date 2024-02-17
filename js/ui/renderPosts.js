@@ -59,7 +59,7 @@ function createPost(post) {
   dropdownToggle.setAttribute("id", "dropdownMenuButton" + id);
   dropdownToggle.setAttribute("data-bs-toggle", "dropdown");
   dropdownToggle.setAttribute("aria-expanded", "false");
-  dropdownToggle.innerHTML = `<img src="/images/vertical-dots.png" alt="Options" style="height: 20px;"> Options`;
+  dropdownToggle.innerHTML = `<img src="/images/vertical-dots.png" alt="Options" style="height: 15px;"> Options`;
 
   const dropdownMenu = document.createElement("ul");
   dropdownMenu.classList.add("dropdown-menu");

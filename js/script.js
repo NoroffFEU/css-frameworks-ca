@@ -10,6 +10,7 @@ import { addPostHandler } from "./handlers/posts/addPostHandler.js";
 import { searchPostsHandler } from "./handlers/posts/searchPostsHandler.js";
 import { sortingPostsHandler } from "./handlers/posts/sortingPostsHandler.js";
 import { editPostHandler } from "./handlers/posts/editPostHandler.js";
+import { displayUserName } from "./ui/displayUserName.js";
 
 function route() {
   const path = window.location.pathname;
@@ -23,6 +24,7 @@ function route() {
       break;
     case "/profile/":
     case "/profile/index.html":
+      displayUserName();
       logoutHandler();
       displayProfilePostsHandler();
       addPostHandler();

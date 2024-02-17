@@ -3,7 +3,7 @@ export function handleScrollButton() {
 
   if (scrollTopButton) {
     window.addEventListener("scroll", function () {
-      if (document.documentElement.scrollTop > 100) {
+      if (document.documentElement.scrollTop > 300) {
         scrollTopButton.classList.add("show");
       } else {
         scrollTopButton.classList.remove("show");

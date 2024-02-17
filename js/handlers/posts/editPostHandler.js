@@ -22,7 +22,7 @@ export async function editPostHandler() {
     form.addEventListener("submit", editPost);
   } catch {
     console.log(Error);
-    messageForUser("#messageForUser", "danger", "sorry, we couldn't load editing form.");
+    // messageForUser("#messageForUser", "danger", "sorry, we couldn't load editing form.");
   }
 }
 

@@ -1,6 +1,13 @@
 import { profilesUrl } from "../../constants/api.js";
 import { getToken } from "../../utils/helpers/token.js";
-// https://api.noroff.dev/api/v1/social/profiles/${username}/posts?_author=true&_comments=true&_reactions=true
+
+/**
+ * Retrieves all posts for a specific user profile.
+ *
+ * @param {string} username - The username of the profile.
+ * @returns {Promise<Object>} The response from the server.
+ * @throws {Error} If the user is not logged in or the server response is not ok.
+ */
 
 export async function getProfilePosts(username) {
   const token = getToken();

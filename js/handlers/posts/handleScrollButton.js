@@ -1,3 +1,10 @@
+/**
+ * Handles the scroll to top button.
+ *
+ * When the window is scrolled more than 300px from the top, it shows the scroll to top button.
+ * When the scroll to top button is clicked, it smoothly scrolls the page to the top.
+ */
+
 export function handleScrollButton() {
   const scrollTopButton = document.getElementById("scrollTopButton");
 

@@ -1,6 +1,18 @@
 import { getToken } from "../../utils/helpers/token.js";
 import { postsUrl } from "../../constants/api.js";
 
+/**
+ * Updates an existing post.
+ *
+ * @param {Object} post - The post's data.
+ * @param {string} post.id - The post's ID.
+ * @param {string} post.title - The post's title.
+ * @param {string} post.body - The post's body.
+ * @param {File} post.media - The post's media file.
+ * @returns {Promise<Object>} The response from the server.
+ * @throws {Error} If the user is not logged in, the post data is empty, or the server response is not ok.
+ */
+
 export async function updatePost(post) {
   const token = getToken();
 

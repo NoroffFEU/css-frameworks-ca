@@ -27,7 +27,7 @@
     />
     <script src="/js/script.js" type="module"></script>
   </head>
-  <body class="bg-dark h-100 m-0 d-flex flex-column">
+  <body class="bg-dark min-vh-100 m-0 d-flex flex-column">
     <nav class="navbar navbar-expand-lg bg-dark position-relative border-bottom border-2 border-primary">
       <div class="container-fluid">
         <div>
@@ -64,14 +64,13 @@
         </div>
       </div>
     </nav>
-    <main class="container pb-3 col-12 col-lg-8 flex-grow-1 o">
+    <main class="container pb-3 col-12 col-lg-8 flex-grow-1">
       <!-- search-sort section -->
       <section class="search-sort container mx-auto text-center">
         <div class="mb-5">
           <h1 class="fs-1 text-white mt-5 baloo fw-bold">Feed</h1>
           <img src="/images/Asset 4.png" class="chat mx-auto" alt="chat icon" />
         </div>
-
         <div class="row">
           <div class="col-lg-5 col-10 col-md-6 mx-auto mx-auto">
             <div class="search mt-5">
@@ -90,7 +89,6 @@
             </div>
           </div>
         </div>
-
         <div class="row">
           <div class="col-lg-5 col-10 col-md-6 mt-3 mx-auto">
             <select class="form-select Default" aria-label="select sorting" id="sorting">
@@ -101,11 +99,10 @@
           </div>
         </div>
       </section>
-
       <!-- feed section -->
-      <section class="feed-posts mx-auto container align-items-center text-center">
+      <section class="feed-posts mx-auto container align-items-center text-center mx-auto">
         <div class="row">
-          <div class="col-md-8 align-items-center mx-auto">
+          <div class="col-lg-7 col-11 align-items-center mx-auto">
             <!-- displayed posts from API -->
             <div id="messageForUser" class="mt-3 mb-1"></div>
             <!-- scroll to top button -->

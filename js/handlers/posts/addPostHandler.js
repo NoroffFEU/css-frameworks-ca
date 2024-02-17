@@ -1,6 +1,14 @@
 import { addPost } from "../../api/posts/addPost.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 
+/**
+ * Handles the new post form submission.
+ *
+ * When the form is submitted, it prevents the default form submission, retrieves the form data, and attempts to add a new post.
+ * If the post is added successfully, it displays a success message to the user, resets the form, and reloads the page after 2 seconds.
+ * If the post fails to add, it displays an error message to the user.
+ */
+
 export async function addPostHandler() {
   const newPostForm = document.querySelector("#newPostForm");
   if (newPostForm) {
@@ -20,12 +28,13 @@ export async function addPostHandler() {
         tags: [""],
       };
 
-      console.log("newPostData:", postData);
-
       try {
         const results = await addPost(postData);
-        event.target.reset();
         messageForUser("#messageForUser", "success", "Post added successfully");
+        setTimeout(() => {
+          event.target.reset();
+          location.reload();
+        }, 2000);
       } catch (error) {
         console.error(error);
         messageForUser("#messageForUser", "danger", "Post failed to add");

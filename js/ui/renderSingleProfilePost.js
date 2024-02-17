@@ -1,3 +1,14 @@
+/**
+ * Renders a single profile post.
+ *
+ * It takes a post object and creates a section element for the post.
+ * It sets up the structure of the post, including the user info, options, title, text, and media.
+ * The post is then appended to the parent element.
+ * It also provides options to edit and delete the post.
+ *
+ * @param {Object} post - The post to be rendered. It should have an id, author with a name, created date, title, text, and media.
+ */
+
 import { getUserName } from "../utils/helpers/getUserName.js";
 
 export function renderSingleProfilePost(parent, post) {
@@ -84,7 +95,7 @@ export function renderSingleProfilePost(parent, post) {
   if (media) {
     contentSection.innerHTML += `
      <a href="${postLink}" target="_blank">
-     <img src="${media}" alt="Post media" class="img-fluid mb-3">
+     <img src="${media}" alt="Post media" class="img-fluid mb-3 post-image mx-auto">
    </a>`;
   }
 

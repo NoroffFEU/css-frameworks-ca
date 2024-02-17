@@ -3,10 +3,15 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { renderSinglePost } from "../../ui/renderSinglePost.js";
 import { getParamFromUrl } from "../../utils/helpers/getParams.js";
 
+/**
+ * Handles the display of a single post.
+ *
+ * It retrieves the post ID from the URL, fetches the post with that ID, and renders it.
+ * If the fetch fails or the post ID is not found in the URL, it displays an error message to the user.
+ */
+
 export async function displaySinglePostHandler() {
   try {
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const id = urlParams.get("id");
     const id = getParamFromUrl("id");
 
     if (!id) {

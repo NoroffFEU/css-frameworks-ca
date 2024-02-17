@@ -1,3 +1,13 @@
+/**
+ * Renders a post that has been added.
+ *
+ * It takes a post object and creates a section element for the post.
+ * It sets up the structure of the post, including the user info and the heart icon.
+ * The post is then appended to the parent element.
+ *
+ * @param {Object} post - The post to be rendered. It should have an author with a name and a created date.
+ */
+
 export function renderAddedPost(post) {
   // Main post section
   const postSection = document.createElement("section");

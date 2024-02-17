@@ -1,3 +1,13 @@
+/**
+ * Renders a single post.
+ *
+ * It takes a post object and creates a section element for the post.
+ * It sets up the structure of the post, including the user info, options, title, and text.
+ * The post is then appended to the parent element.
+ *
+ * @param {Object} post - The post to be rendered. It should have an id, author with a name, created date, title, and text.
+ */
+
 export function renderSinglePost(parent, post) {
   console.log("Post data:", post);
 
@@ -18,21 +28,16 @@ export function renderSinglePost(parent, post) {
 
   // User info column
   const userInfoCol = document.createElement("div");
-  userInfoCol.classList.add("col", "d-flex", "align-items-center");
-
-  const userImage = document.createElement("img");
-  userImage.src = "/images/profile-pic3.png";
-  userImage.alt = "user picture";
-  userImage.classList.add("small-user-picture", "m-1", "p-0");
-  userInfoCol.append(userImage);
-
-  const userName = document.createElement("p");
-  userName.classList.add("mb-0");
-  const authorName = author && author.name ? author.name : "User";
-  userName.innerHTML = `<span class="pe-2 baloo mx-2 text-primary fs-5">${authorName}</span>${new Date(
-    created
-  ).toLocaleDateString()}`;
-  userInfoCol.append(userName);
+  userInfoCol.classList.add("col");
+  userInfoCol.innerHTML = `
+  <div class="d-flex align-items-center pb-1">
+    <img src="/images/profile-pic3.png" alt="user picture" class="small-user-picture m-1 p-0" style="height: 45px; width: 45px">
+    <div>
+      <span class="baloo text-primary fs-5">User</span>
+      <div class="ms-4">${new Date(created).toLocaleDateString()}</div>
+    </div>
+  </div>`;
+  topRow.append(userInfoCol);
 
   // Options dropdown (right column)
   const optionsCol = document.createElement("div");
@@ -73,7 +78,8 @@ export function renderSinglePost(parent, post) {
   dropdown.append(dropdownToggle, dropdownMenu);
   optionsCol.append(dropdown);
 
-  topRow.append(userInfoCol, optionsCol);
+  // topRow.append(userInfoCol, optionsCol);
+  topRow.append(userInfoCol);
 
   // title row
   const titleRow = document.createElement("div");
@@ -116,7 +122,7 @@ export function renderSinglePost(parent, post) {
     const media = document.createElement("img");
     media.src = post.media;
     media.alt = "Post media";
-    media.classList.add("img-fluid");
+    media.classList.add("img-fluid", "mx-auto", "post-image");
     mediaAnchor.append(media);
     mediaDiv.append(mediaAnchor);
     mediaRow.append(mediaDiv);

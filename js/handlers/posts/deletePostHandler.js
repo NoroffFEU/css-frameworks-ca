@@ -1,9 +1,17 @@
 import { deletePost } from "../../api/posts/deletePost.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 
+/**
+ * Handles the delete post button click.
+ *
+ * When the delete post button is clicked, it confirms if the user wants to delete the post.
+ * If the user confirms, it attempts to delete the post.
+ * If the post is deleted successfully, it displays a success message to the user and redirects the user to the profile page after 3 seconds.
+ * If the post fails to delete, it displays an error message to the user.
+ */
+
 export function deletePostHandler() {
   const deleteButtons = document.querySelectorAll(`[data-action="delete"]`);
-  console.log(deleteButtons);
   deleteButtons.forEach((button) => {
     button.addEventListener("click", handleDeletePost);
   });
@@ -11,7 +19,6 @@ export function deletePostHandler() {
 
 async function handleDeletePost(event) {
   const { id } = event.target.dataset;
-  console.log(id);
 
   const parentElement = event.target.parentElement;
 

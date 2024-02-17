@@ -3,9 +3,15 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { updatePost } from "../../api/posts/updatePost.js";
 import { getParamFromUrl } from "../../utils/helpers/getParams.js";
 
+/**
+ * Handles the editing of a post.
+ *
+ * It retrieves the post ID from the URL, fetches the post with that ID, and populates the edit form with the post's data.
+ * If the fetch fails, the post ID is not found in the URL, or the form is not found, it displays an error message to the user.
+ */
+
 export async function editPostHandler() {
   const id = getParamFromUrl("id");
-  console.log(id);
 
   if (!id) {
     throw new Error("Sorry, we couldn't find the post you're looking for.");
@@ -22,13 +28,13 @@ export async function editPostHandler() {
     form.addEventListener("submit", editPost);
   } catch {
     console.log(Error);
-    // messageForUser("#messageForUser", "danger", "sorry, we couldn't load editing form.");
+    messageForUser("#messageForUser", "danger", "sorry, we couldn't load editing form.");
   }
 }
 
 document.addEventListener("DOMContentLoaded", editPostHandler);
 
-//should i move this function ??????
+//should i move this function out??????
 async function editPost(event) {
   event.preventDefault();
 

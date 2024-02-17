@@ -1,6 +1,14 @@
 import { postsUrl } from "../../constants/api.js";
 import { getToken } from "../../utils/helpers/token.js";
 
+/**
+ * Retrieves a single post.
+ *
+ * @param {string} id - The ID of the post to retrieve.
+ * @returns {Promise<Object>} The response from the server.
+ * @throws {Error} If the user is not logged in or the server response is not ok.
+ */
+
 export async function getSinglePost(id) {
   const token = getToken();
 

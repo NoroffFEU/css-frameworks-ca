@@ -1,5 +1,12 @@
 // import { updatePost } from "../../api.js";
 
+/**
+ * Edits an existing post.
+ *
+ * @param {Event} event - The form submission event.
+ * @throws {Error} If the post ID is not found in the URL.
+ */
+
 // export async function editPost(event) {
 //   event.preventDefault();
 

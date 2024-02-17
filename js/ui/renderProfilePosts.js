@@ -1,3 +1,13 @@
+/**
+ * Renders a list of profile posts.
+ *
+ * It takes an array of post objects and creates a section element for each post.
+ * It sets up the structure of the post, including the user info, options, title, text, and media.
+ * Each post is then appended to the parent element.
+ *
+ * @param {Array} posts - The posts to be rendered. Each post should have an id, author with a name, created date, title, text, and media.
+ */
+
 export function renderProfilePosts(parent, posts) {
   const container = document.querySelector(parent);
   const loader = document.querySelector(".loader");
@@ -97,8 +107,8 @@ function createProfilePost(post) {
     <p class="text-start text-dark pt-3">${body ?? "No content"}</p>`;
   if (media) {
     contentSection.innerHTML += `
-    <a href="${postLink}" target="_blank">
-    <img src="${media}" alt="Post media" class="img-fluid mb-3">
+    <a href="${postLink}">
+    <img src="${media}" alt="Post media" class="img-fluid mb-3 mx-auto post-image">
   </a>`;
   }
 

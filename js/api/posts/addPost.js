@@ -2,6 +2,17 @@ import { postsUrl } from "../../constants/api.js";
 import { getToken } from "../../utils/helpers/token.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 
+/**
+ * Adds a new post.
+ *
+ * @param {Object} postData - The post's data.
+ * @param {string} postData.title - The post's title.
+ * @param {string} postData.body - The post's body.
+ * @param {File} postData.media - The post's media file.
+ * @returns {Promise<Object>} The response from the server.
+ * @throws {Error} If the user is not logged in, the post data is empty, or the server response is not ok.
+ */
+
 export async function addPost(postData) {
   const token = getToken();
 
@@ -20,11 +31,10 @@ export async function addPost(postData) {
   const options = {
     method: "POST",
     headers: {
-      "Content-Type": "application/json", // should i delete this line??
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(postData), // should i delete this line??
-    // body: formData,
+    body: JSON.stringify(postData),
   };
 
   const response = await fetch(postsUrl, options);

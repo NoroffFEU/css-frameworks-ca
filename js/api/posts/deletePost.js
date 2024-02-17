@@ -1,6 +1,14 @@
 import { postsUrl } from "../../constants/api.js";
 import { getToken } from "../../utils/helpers/token.js";
 
+/**
+ * Deletes a post.
+ *
+ * @param {string} id - The ID of the post to delete.
+ * @returns {Promise<Object>} The response from the server.
+ * @throws {Error} If the user is not logged in or the server response is not ok.
+ */
+
 export async function deletePost(id) {
   const token = getToken();
 

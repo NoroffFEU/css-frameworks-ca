@@ -2,6 +2,14 @@ import { searchPosts } from "../../api/posts/searchPosts.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 import { renderPosts } from "../../ui/renderPosts.js";
 
+/**
+ * Handles the search form submission.
+ *
+ * When the form is submitted, it prevents the default form submission, retrieves the search query, and attempts to search for posts with the provided query.
+ * If the search is successful, it displays the found posts.
+ * If the search fails or no posts are found, it displays an appropriate message to the user.
+ */
+
 export function searchPostsHandler() {
   const searchForm = document.querySelector("#searchForm");
   if (searchForm) {

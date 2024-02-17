@@ -8,9 +8,9 @@
     <meta name="keywords" content="art, profile, artist, portfolio, creativity">
     <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../css/styles.css">
-    <script src="../../js/hamburger.js"></script>
+    <script src="../../js/hamburger.js" defer type=" module"></script>
     <script src="../../js/index.mjs" defer type="module"></script>
-    <title>Edit post</title>
+    <title>Create post</title>
 </head>
 
 <body class="m-0 d-flex flex-column min-vh-100">
@@ -19,8 +19,8 @@
         <nav class="navbar navbar-expand-md navbar-light header-image">
             <div class="container align-items-center col-11 ">
                 <h1 class=" header-text text-center col-6 col-sm-3 col-md-5">ArtConnect</h1>
-                <a class="navbar-brand text-center col-2 col-md-1 " href="../feed/index.html">
-                    <img src="../image/logo-art.PNG" alt="art Logo" class="img-fluid  ">
+                <a class="navbar-brand text-center col-2 col-md-1 " href="../../feed/index.html">
+                    <img src="../../image/logo-art.PNG" alt="art Logo" class="img-fluid  ">
                 </a>
 
                 <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -31,16 +31,16 @@
                 <div class="collapse navbar-collapse justify-content-md-start text-nowrap z-1" id="navbarNav">
                     <ul class="navbar-card ms-auto navbar-nav text-start ">
                         <li class="nav-item  z-1">
-                            <a class="nav-link fs-md-5" href="../feed/index.html">Feed</a>
+                            <a class="nav-link fs-md-5" href="../../feed/index.html">Feed</a>
                         </li>
                         <li class="nav-item z-1">
-                            <a class="nav-link" href="/profile/index.html">My Profile</a>
+                            <a class="nav-link" href="../../profile/index.html">My Profile</a>
                         </li>
                         <li class="nav-item z-1">
                             <a class="nav-link" href="#">Messages</a>
                         </li>
                         <li class="nav-item z-1">
-                            <a class="nav-link  fs-md-3" href="../index.html">Log out</a>
+                            <a class="nav-link  fs-md-3" href="../../index.html">Log out</a>
                         </li>
                     </ul>
                 </div>
@@ -51,49 +51,44 @@
     <main class="flex-grow-1 bg-dark text-light">
         <div class="container-fluid" id="post">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
-                    <form id="editPost">
-                        <div class="row gy-2 overflow-hidden">
-                            <div class="col-12">
-                                <div class="form-floating mb-2">
-                                    <label for="title" class="form-label text-secondary">Title</label>
-                                    <input type="text" class="form-control" name="title" required>
-                                </div>
-                            </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-5">
+
+
+                    <form id="createPost">
+
+                        <div class="form-floating mb-2">
+                            <label for="title" class="form-label text-secondary">Title</label>
+                            <input type="text" class="form-control" name="title" required>
                         </div>
 
-                        <div class="row gy-2 overflow-hidden">
-                            <div class="col-12">
-                                <div class="form-floating mb-2">
-                                    <label for="" class="form-label text-secondary">Body</label>
-                                    <textarea class="form-control" name="body" required></textarea>
-                                </div>
-                            </div>
+
+
+
+                        <div class="form-floating mb-2">
+                            <label for="body" class="form-label text-secondary">Body</label>
+                            <textarea class="form-control" name="body" required></textarea>
                         </div>
 
-                    
 
-                        <div class="row gy-2 overflow-hidden">
-                            <div class="col-12">
-                                <div class="form-floating mb-2">
-                                    <label for="" class="form-label text-secondary">tags</label>
-                                    <input class="form-control" type="text" name="tags"></input>
-                                </div>
-                            </div>
+
+                        <div class="form-floating mb-2">
+                            <label for="tags" class="form-label text-secondary">tags</label>
+                            <input class="form-control" type="text" name="tags"></input>
                         </div>
 
-                        <div class="row gy-2 overflow-hidden">
-                            <div class="col-12">
-                                <div class="form-floating mb-2">
-                                    <label for="Media" class="form-label text-secondary">Media</label>
-                                    <input class="form-control" type="url" name="media"></input>
-                                </div>
-                            </div>
+
+
+
+                        <div class="form-floating mb-2">
+                            <label for="Media" class="form-label text-secondary">Media</label>
+                            <input class="form-control" type="url" name="media"></input>
                         </div>
+
+
                         <div class="col-12">
                             <div class="d-grid my-3">
                                 <button class="btn btn-primary btn-md" type="submit">
-                                    Update Post
+                                    Create
                                 </button>
                             </div>
                         </div>
@@ -113,12 +108,12 @@
             </p>
 
             <div class="col-2 text-center mb-0">
-                <img src="../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
+                <img src="../../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
             </div>
 
             <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
                 <li class="nav-item">
-                    <a href="../feed/index.html" class="nav-link px-2 text-muted">Home</a>
+                    <a href="../../feed/index.html" class="nav-link px-2 text-muted">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link px-2 text-muted">My Friends</a>
@@ -127,7 +122,7 @@
                     <a href="#" class="nav-link px-2 text-muted">Messages</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/profile/index.html" class="nav-link px-2 text-muted">My Profile</a>
+                    <a href="../profile/index.html" class="nav-link px-2 text-muted">My Profile</a>
                 </li>
             </ul>
         </div>

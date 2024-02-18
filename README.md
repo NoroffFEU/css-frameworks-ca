@@ -16,7 +16,7 @@ The primary goal was to leverage JavaScript to enrich the front-end functionalit
 ### API Integration
 The project utilizes the Noroff API, specifically the Social Endpoints, to interact with social media content. This integration required:
 
-- Authentication with JWT tokens and an API Key, necessitating user registration and login processes.
+- Authentication with JWT tokens, necessitating user registration and login processes.
 - Utilizing GET, POST, PUT, and DELETE HTTP methods to enable full CRUD (Create, Read, Update, Delete) capabilities for social media content.
 
 ### Required Features

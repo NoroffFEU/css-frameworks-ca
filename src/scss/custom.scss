@@ -3,105 +3,104 @@ $shaddow-dark: 2px 2px 2px rgba(0, 0, 0, 0.5);
 $primary-color: rgb(0, 187, 255);
 $seconary-color: rgb(94, 212, 255);
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  font-family: "Arial", sans-serif;
 }
 
 footer {
-    background-color: rgb(204, 202, 202);
+  width: 100%;
+
+  background-color: rgb(204, 202, 202);
 }
 
 .header-text {
-    color: black;
-    text-shadow: $shaddow-bright;
-    font-family: 'Georgia', serif;
+  color: black;
+  text-shadow: $shaddow-bright;
+  font-family: "Georgia", serif;
 }
 
 .header-image {
-    background: url("../../image/HeaderImg2.JPG");
-    height: 10%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 80%;
+  background: url("../../image/HeaderImg2.JPG");
+  height: 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 80%;
 }
 
-
 .profile-img {
-    width: 50%;
+  width: 50%;
 }
 
 .profile-btn {
-    font-size: 11px;
-    padding: 3px;
+  font-size: 11px;
+  padding: 3px;
 }
 
 .profile-hero {
-    background-image: url(../../image/powderIMG_0181.JPG);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 60%;
+  background-image: url(../../image/powderIMG_0181.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 60%;
 }
 
 .text-small {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .score-text {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .form-group {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .login-img {
-    background-image: url(../../image/nav-bg-1.JPG);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 10%;
+  background-image: url(../../image/nav-bg-1.JPG);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 10%;
 }
-
-
 
 .form-control:disabled{
    opacity: 70%;
     cursor: not-allowed;
 }
 
+
 .btn-primary {
-    background-color: $primary-color;
-    border-color: $seconary-color; 
-    color: black;
+  background-color: $primary-color;
+  border-color: $seconary-color;
+  color: black;
 }
-.btn:hover{
-    background-color: $seconary-color;
-    border-color: $primary-color;;
-    
+.btn:hover {
+  background-color: $seconary-color;
+  border-color: $primary-color;
 }
-.btn-link:hover{
-    color: white;
+.btn-link:hover {
+  color: white;
 }
-
-
 
 .card {
-    box-shadow: $shaddow-dark; 
-    border: 2px solid #ccc; 
+  box-shadow: $shaddow-dark;
+  border: 2px solid #ccc;
 }
 
-
-
 .nav-link {
-    color: black;
+  color: black;
 }
 
 .nav-link:hover {
-    color: rgb(37, 37, 37);
-    text-shadow: $shaddow-bright;
+  color: rgb(37, 37, 37);
+  text-shadow: $shaddow-bright;
 }
 
 .form-control {
-    border-color: $primary-color; 
-    border-radius: 10px; 
+  border-color: $primary-color;
+  border-radius: 10px;
 }

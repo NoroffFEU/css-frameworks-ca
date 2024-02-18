@@ -1,9 +1,15 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
 }
 
 footer {
+  width: 100%;
   background-color: rgb(204, 202, 202);
 }
 

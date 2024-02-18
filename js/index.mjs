@@ -1,8 +1,11 @@
+
 import * as templates from "./templates/index.mjs";
 import * as postsMethods from "./api/posts/index.mjs";
+
 import * as listeners from "./handlers/index.mjs";
 
 const path = location.pathname;
+console.log(path)
 
 if (path === "/profile/login/index.html") {
   listeners.setLoginFormListener();
@@ -12,17 +15,14 @@ if (path === "/profile/login/index.html") {
   listeners.setCreatePostListener();
 } else if (path === `/post/edit/`) {
   listeners.setUpdatePostListener();
+} else if (path === "/profile/edit/") {
+  listeners.setUpdateProfileListener();
 }
 
-async function testTemplate() {
-  const posts = await postsMethods.getPosts();
-  const container = document.querySelector("#posts");
-  templates.renderPostTemplates(posts, container);
-}
-testTemplate();
-// posts.createPost();
-// posts.updatePost();
-// posts.removePost();
-// posts.getPost();
-// posts.getPosts().then(console.log);
-// posts.removePost(10470)
+// async function testTemplate() {
+//   const posts = await postsMethods.getPosts();
+//   const container = document.querySelector("#posts");
+//   templates.renderPostTemplates(posts, container);
+// }
+// testTemplate();
+

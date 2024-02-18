@@ -67,6 +67,12 @@ footer {
   background-position: 100% 10%;
 }
 
+.form-control:disabled{
+   opacity: 70%;
+    cursor: not-allowed;
+}
+
+
 .btn-primary {
   background-color: $primary-color;
   border-color: $seconary-color;

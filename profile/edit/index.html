@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Log in to ArtConnect: A social platform for sharing and appreciating art." />
+    <meta name="keywords" content="art, social media, login, artist, creativity" />
+    <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
+    <script src="../../js/hamburger.js"></script>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/index.mjs" defer type="module"></script>
+
+    <title>Edit Profile</title>
+</head>
+
+<body class="m-0 vh-100">
+    <header class="col-12">
+        <nav class="navbar navbar-expand-md navbar-light header-image">
+            <div class="container align-items-center col-11">
+                <h1 class="header-text text-center col-6 col-sm-3 col-md-5">
+                    ArtConnect
+                </h1>
+                <a class="navbar-brand text-center col-2 col-md-1" href="../../index.html">
+                    <img src="../../image/logo-art.PNG" alt="art Logo" class="img-fluid" />
+                </a>
+
+                <button class="navbar-toggler ms-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-nowrap z-1 " id="navbarNav">
+                    <ul class="navbar-card ms-auto navbar-nav text-end ">
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Feed</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">My Profile</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Messages</a>
+                        </li>
+                        <li class="nav-item z-1">
+                            <a class="nav-link" href="#">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow-1 bg-dark text-light">
+        <div class="container-fluid">
+
+            <form id="editProfile">
+                <div class="form-floating mb-2">
+                    <label for="Name" class="form-label text-secondary">Name</label>
+                    <input type="text" class="form-control" name="name" disabled>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <label for="email" class="form-label text-secondary">Email</label>
+                    <input type="email" class="form-control" name="email" disabled>
+                </div>
+
+
+                <div class="form-floating mb-2">
+                    <label for="title" class="form-label text-secondary">Banner</label>
+                    <input type="url" class="form-control" name="banner">
+                </div>
+
+
+                <div class="form-floating mb-2">
+                    <label for="" class="form-label text-secondary">Avatar</label>
+                    <input type="url" class="form-control" name="avatar"></input>
+                </div>
+
+
+                <div class="col-12">
+                    <div class="d-grid my-3">
+                        <button class="btn btn-primary btn-md" type="submit">
+                            Update Profile
+                        </button>
+                    </div>
+                </div>
+            </form>
+    </main>
+
+    <footer class="m-0 p-1 pb-md-4 pb-lg-0">
+        <div
+            class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
+            <p class="col-md-4 mb-0 text-muted text-center text-md-start">
+                © 2024 Art-company-inc
+            </p>
+
+            <div class="col-2 text-center mb-0">
+                <img src="../../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
+            </div>
+
+            <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">My Friends</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-muted">My Profile</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

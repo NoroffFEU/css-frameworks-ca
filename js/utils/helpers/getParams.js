@@ -9,11 +9,11 @@
  * @throws {Error} If the parameter is not found in the URL.
  */
 
-export function getParamFromUrl(paramName) {
+export function getParams(paramName) {
   const urlParams = new URLSearchParams(window.location.search);
   const paramValue = urlParams.get(paramName);
   if (!paramValue) {
-    throw new Error(`Sorry, we couldn't find the ${paramName} you're looking for.`);
+    return null;
   }
   return paramValue;
 }

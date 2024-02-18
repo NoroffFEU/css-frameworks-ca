@@ -1,7 +1,7 @@
 import { getSinglePost } from "../../api/posts/getSinglePost.js";
 import { messageForUser } from "../../ui/messageForUser.js";
 import { renderSinglePost } from "../../ui/renderSinglePost.js";
-import { getParamFromUrl } from "../../utils/helpers/getParams.js";
+import { getParams } from "../../utils/helpers/getParams.js";
 
 /**
  * Handles the display of a single post.
@@ -12,7 +12,7 @@ import { getParamFromUrl } from "../../utils/helpers/getParams.js";
 
 export async function displaySinglePostHandler() {
   try {
-    const id = getParamFromUrl("id");
+    const id = getParams("id");
 
     if (!id) {
       throw new Error("Sorry, we couldn't find the post you're looking for.");

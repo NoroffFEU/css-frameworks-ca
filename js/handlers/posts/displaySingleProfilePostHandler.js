@@ -3,7 +3,7 @@ import { messageForUser } from "../../ui/messageForUser.js";
 import { renderSingleProfilePost } from "../../ui/renderSingleProfilePost.js";
 import { getUserName } from "../../utils/helpers/getUserName.js";
 import { deletePostHandler } from "./deletePostHandler.js";
-import { getParamFromUrl } from "../../utils/helpers/getParams.js";
+import { getParams } from "../../utils/helpers/getParams.js";
 
 /**
  * Handles the display of a single profile post.
@@ -14,7 +14,7 @@ import { getParamFromUrl } from "../../utils/helpers/getParams.js";
 
 export async function displaySingleProfilePostHandler() {
   try {
-    const id = getParamFromUrl("id");
+    const id = getParams("id");
     const userName = getUserName();
 
     if (!id) {

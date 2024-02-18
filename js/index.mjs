@@ -14,12 +14,12 @@ if (path === "/profile/login/index.html") {
   listeners.setUpdatePostListener();
 }
 
-// async function testTemplate() {
-//   const posts = await postsMethods.getPosts();
-//   const container = document.querySelector("#post");
-//   templates.renderPostTemplates(posts, container);
-// }
-// testTemplate();
+async function testTemplate() {
+  const posts = await postsMethods.getPosts();
+  const container = document.querySelector("#posts");
+  templates.renderPostTemplates(posts, container);
+}
+testTemplate();
 // posts.createPost();
 // posts.updatePost();
 // posts.removePost();

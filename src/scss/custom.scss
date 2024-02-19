@@ -1,7 +1,7 @@
 $shaddow-bright: 2px 2px 3px rgba(255, 255, 255, 0.5);
 $shaddow-dark: 2px 2px 2px rgba(0, 0, 0, 0.5);
-$primary-color: rgb(0, 187, 255);
-$seconary-color: rgb(94, 212, 255);
+$primary-color: rgb(1, 154, 210);
+$seconary-color: rgb(47, 200, 255);
 
 html {
   position: relative;
@@ -72,21 +72,26 @@ footer {
     cursor: not-allowed;
 }
 
-
+.btn-outline-primary{
+    border-color: $primary-color;
+    color: $primary-color;
+    &:hover{ background-color: $seconary-color;
+        border-color: $primary-color;}
+}
 .btn-primary {
   background-color: $primary-color;
   border-color: $seconary-color;
   color: black;
+  &:hover{  background-color: $seconary-color;
+    border-color: $primary-color;}
 }
-.btn-primary:hover {
-  background-color: $seconary-color;
-  border-color: $primary-color;
-}
+
 .btn:hover {
   color: white;
 }
-.btn-link:hover{
+.btn-link{
     color: $primary-color;
+    &:hover{ color: $seconary-color}
 }
 
 .card {

@@ -15,7 +15,7 @@
     <title>Sign Up</title>
 </head>
 
-<body class="m-0 vh-100">
+<body class="m-0 d-flex flex-column min-vh-100">
     <header class="col-12">
         <nav class="navbar navbar-expand-md navbar-light header-image">
             <div class="container align-items-center col-11">
@@ -60,9 +60,9 @@
                             <div class="col-lg-5 bg-light card border-light-subtle shadow">
                                 <div class="p-3">
                                     <div class="text-center mb-3">
-                                        <img src="../../image/ProfileImg  (1).JPG"
-                                            alt="profile picture of a woman with glasses and black hair"
-                                            class="w-25 mt-5 img-fluid rounded-circle">
+                                        <img src="../../image/default-avatar.JPG"
+                                            alt="profile picture default"
+                                            class="w-25 mt-5 img-fluid rounded-circle ">
                                     </div>
                                     <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
                                         Create your account
@@ -97,7 +97,15 @@
                                                             class="form-label text-secondary ">Password</label>
                                                     </div>
                                                 </div>
-
+                                                <div class="form-floating mb-2">
+                                                    <input type="url" class="form-control" name="avatar" id="avatar" placeholder="Enter URL for avatar image">
+                                                    <label for="avatar" class="form-label text-secondary">Avatar URL (optional)</label>
+                                                </div>
+                                                
+                                                <div class="form-floating mb-2">
+                                                    <input type="url" class="form-control" name="banner" id="banner" placeholder="Enter URL for banner image">
+                                                    <label for="banner" class="form-label text-secondary">Banner URL (optional)</label>
+                                                </div>
 
                                                 <div class="col-12">
                                                     <div class="d-grid my-3">

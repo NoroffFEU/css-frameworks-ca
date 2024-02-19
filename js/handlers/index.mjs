@@ -5,4 +5,3 @@ export * from "./register.mjs";
 export * from "./updatePost.mjs";
 
 export * from "./updateProfile.mjs";
-

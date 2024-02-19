@@ -6,8 +6,6 @@ export async function updatePostFormListener() {
   const url = new URL(location.href);
   const id = url.searchParams.get("id");
 
-  console.log("ID:", id);
-
   if (form) {
     const button = form.querySelector("updatePostBtn");
     button.disabled = true;

@@ -4,6 +4,7 @@ import { createPostFormListener } from "./handler/posts/index.mjs";
 import { displayPostsHandler } from "./handler/posts/index.mjs";
 import { updatePostFormListener } from "./handler/posts/index.mjs";
 import { logoutHandler } from "./handler/logout/logout.mjs";
+import { displayProfilePostHandler } from "./handler/posts/index.mjs";
 
 function router() {
   const path = location.pathname;
@@ -34,6 +35,7 @@ function router() {
     case "/profile/index.html":
       logoutHandler();
       updatePostFormListener();
+      displayProfilePostHandler();
       break;
 
     default:

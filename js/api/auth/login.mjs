@@ -1,11 +1,17 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
 
-
+/**
+ * Getting the login form, email and password input and initializing them into the variables.
+ */
 const form = document.querySelector(".formLogin");
-
 const emailInput = form.querySelector("#email");
 const passwordInput = form.querySelector("#password");
 
+/**
+ * Retrieves the email and password from the input fields.
+ * 
+ * @returns {Object} An object containing the user's email and password.
+ */
 function getFormData() {
     const email = emailInput.value;
     const password = passwordInput.value;
@@ -15,6 +21,12 @@ function getFormData() {
         password,
     };
 }
+
+/**
+ * This is the event listener for the login form. The .preventDefault() prevents the submit buttons default behaviour when clicked upon.
+ * If successful, it'll send the user to the home section. 
+ * @param {Event} e submit event object.
+ */
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();

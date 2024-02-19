@@ -2,25 +2,12 @@ import { API_SOCIAL_URL } from "../api_constants.mjs";
 
 const action = "/posts";
 
-export async function removePost(id) {
-    const deletePostUrl = `${API_SOCIAL_URL}${action}/${id}`;
-    
-    
-    const accessToken = localStorage.getItem("accessToken");
-
-    try {
-        const response = await fetch(deletePostUrl, {
-            method: 'DELETE', 
-            headers: {
-                "Authorization": `Bearer ${accessToken}`  
-            },
-        });
-
-        return await response.json(); 
-    } catch (error) {
-        throw error; 
-    }
-}
+/**
+ * 
+ * 
+ * @param {*} id 
+ * @returns 
+ */
 
 document.addEventListener('click', async function(event) {
     if (event.target.classList.contains('btn-danger')) {
@@ -44,3 +31,24 @@ document.addEventListener('click', async function(event) {
         }
     }
 });
+
+
+export async function removePost(id) {
+    const deletePostUrl = `${API_SOCIAL_URL}${action}/${id}`;
+    
+    
+    const accessToken = localStorage.getItem("accessToken");
+
+    try {
+        const response = await fetch(deletePostUrl, {
+            method: 'DELETE', 
+            headers: {
+                "Authorization": `Bearer ${accessToken}`  
+            },
+        });
+
+        return await response.json(); 
+    } catch (error) {
+        throw error; 
+    }
+}

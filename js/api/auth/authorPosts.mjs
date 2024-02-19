@@ -1,36 +1,18 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
 
-async function getPosts() {
-  const action = "/posts";
+/**
+ * This function takes posts as a parameter that is an array containing post objects. The function then iterates over each post object
+ * using a forEach method. Each post object with its properties is created, styled and displayed to the user.
+ * 
+ * @param {String} container The container of where the post cards will be displayed.
+ * @param {Array} posts An array displaying post objects.
+ * @param {Object} post An object containing {Image, title, date, avatar and name}.
+ * @param {String} mediaImg Uses the ternary operator to see if user uploaded an image. If not, a default image will be assigned.
+ * @param {String} avatarImg Uses the ternary operator to see if user uploaded an avatar image. If not, a default image will be assigned.
+ */
 
-  const authorName = localStorage.getItem("name");
-  const accessToken = localStorage.getItem("accessToken");
-  const getPostsUrl = `${API_SOCIAL_URL}/profiles/${authorName}${action}?_author=true`;
-
-  try {
-    const response = await fetch(getPostsUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch posts");
-    }
-
-    const posts = await response.json();
-    displayPosts(posts);
-  } catch (error) {
-    console.error("Error fetching posts:", error.message);
-    throw error;
-  }
-}
-
-export function displayPosts(posts) {
+function displayPosts(posts) {
   const container = document.querySelector(".container-profile");
-  container.innerHTML = "";
 
   posts.forEach((post) => {
     const postElement = document.createElement("div");
@@ -39,12 +21,23 @@ export function displayPosts(posts) {
     postElement.style.marginTop = "50px";
     postElement.style.marginBottom = "20px";
 
-    let mediaIMG = post.media
+    let mediaImg = post.media
       ? `<img class="card-img-top" src="${post.media}" alt="Post media">`
       : '<img class="card-img-top" src="https://www.wellingmobilityscooters.co.uk/wp-content/uploads/2016/04/dummy-post-horisontal-thegem-blog-default-large.jpg">';
-    let avatarIMG = post.avatar
+    let avatarImg = post.avatar
       ? `<img class="mx-auto d-block rounded-circle border border-custom-col height="60" src="${post.avatar}" alt="avatar profile">`
       : '<img class="mx-auto d-block rounded-circle" height="30" src="/images/ape-logo.png">';
+
+    /**
+    * Fetching the user post creation date and formatting it into a readable date.
+    * 
+    * @var {Number} date Storing the fetched date into date variable.
+    * @var {Number} year Will return the year of the date data.
+    * @var {Number} month Will return the month of the date. Since .getMonth() returns a zero based value, I added +1 so 1 represents January.
+    * .toString() method converts the month from a number to a string value. This is needed because the .padStart() method only accepts string values.
+    * @var {Number} day Similar to month, expect we don't need to change the initial value. Since .getMonth() returns a zero based value, I added +1 so 1 represents January.
+    * @var {String} newDate The entire date formatted with template literals.
+    */
 
     const date = new Date(post.created);
     const year = date.getFullYear();
@@ -53,13 +46,13 @@ export function displayPosts(posts) {
     const newDate = `${day}.${month}.${year}`;
 
     postElement.innerHTML = `
-      ${mediaIMG}
+      ${mediaImg}
       <div class="card-body">
         <div class="seperator">
           <div class="d-flex flex-column">
             <h4 class="card-title">${post.title}</h4>
             <p>${newDate}</p>
-            ${avatarIMG}
+            ${avatarImg}
           </div>
           <p class="m-0 d-flex justify-content-center">${post.author.name}</p>
         </div>
@@ -70,23 +63,60 @@ export function displayPosts(posts) {
     container.appendChild(postElement);
 
     postElement.addEventListener("click", function (event) {
-    
       if (!event.target.closest('button')) {
         event.preventDefault();
         window.location.href = `/post/index.html?id=${post.id}`;
       }
     });
   });
-
-  
-  document.addEventListener('click', function(event) {
+  document.addEventListener('click', function (event) {
     if (event.target.classList.contains('btn-success')) {
       const id = event.target.dataset.id;
       window.location.href = `/post/edit/index.html?id=${id}`;
     }
   });
 }
+getPosts();
 
-document.addEventListener("DOMContentLoaded", function() {
-  getPosts();
-});
+/**
+ * This function will fetch post(s) only from the logged in user. 
+ * If there's an issue with the API, the function will catch and display the error to the user.
+ * 
+ * @param {String} action API endpoint.
+ * @param {String} authorName Retrieving the user name from the localstorage.
+ * @param {String} accessToken Retrieving the JWT token from the localstorage.
+ * @param {String} getPostUrl The entire API link stored in the variable.
+ * @param {String} response The response sends a GET request method to the API to fetch the posts
+ * @throws {Error} Throws an error if there's an issue with fetching the posts.
+ */
+
+async function getPosts() {
+  const action = "/posts";
+
+  const authorName = localStorage.getItem("name");
+  const accessToken = localStorage.getItem("accessToken");
+  const getPostsUrl = `${API_SOCIAL_URL}/profiles/${authorName}${action}?_author=true`;
+  const bodyMessage = document.querySelector("main");
+
+  try {
+    const response = await fetch(getPostsUrl, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    if (response.ok) {
+      const posts = await response.json();
+      displayPosts(posts);
+    } else {
+      throw new Error("Failed to fetch posts 😔");
+    }
+
+  } catch (error) {
+    bodyMessage.innerHTML = `
+    <div class="alert alert-danger text-center w-50 mx-auto fs-4" role="alert">
+        ${error}<br><a class="text-dark text-center mx-auto fs-4" href="/profile/">`;
+  }
+}

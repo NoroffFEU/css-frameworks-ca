@@ -10767,9 +10767,18 @@ body {
 }
 
 .card {
-  background-color: #323031;
+  width: 18rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: none;
 }
 
 .custom-container {
   max-width: 600px;
+}
+
+a.card-link, div {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }/*# sourceMappingURL=style.css.map */

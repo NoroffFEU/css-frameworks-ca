@@ -11,7 +11,7 @@ export function setRegisterFormListener(){
     const profile = Object.fromEntries(formData.entries());
   
 
-    // Send it to the API
+    // Send registration request to the API
     register (profile)
   });
 }

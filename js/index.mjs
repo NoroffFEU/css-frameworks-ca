@@ -18,9 +18,6 @@ if (path === "/profile/login/index.html") {
   listeners.setUpdateProfileListener();
 }
 
-
-
-
 // async function testTemplate() {
 //   const posts = await postsMethods.getPosts();
 //   const container = document.querySelector("#posts");

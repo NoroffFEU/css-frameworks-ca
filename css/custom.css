@@ -1,9 +1,15 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
 }
 
 footer {
+  width: 100%;
   background-color: rgb(204, 202, 202);
 }
 
@@ -54,6 +60,11 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 100% 10%;
+}
+
+.form-control:disabled {
+  opacity: 70%;
+  cursor: not-allowed;
 }
 
 .btn-primary {

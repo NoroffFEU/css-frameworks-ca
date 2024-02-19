@@ -9,7 +9,8 @@
     <meta name="keywords" content="art, feed, social media, posts, creativity">
     <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/hamburger.js"></script>
+    <script src="../js/hamburger.js" defer type="module"></script>
+    <script src="../js/index.mjs" defer type="module"></script>
     <title>Feed</title>
 </head>
 
@@ -193,7 +194,7 @@
                                         <div class="row g-0">
                                             <div class="col-2">
                                                 <img src="../image/userIMG1.JPG" class="card-img"
-                                                    alt="a drawn monkey in front of a colorful background">
+                                                    alt="profile image of a woman with pink hair">
                                             </div>
                                             <div class="col-10">
                                                 <textarea class="form-control"
@@ -314,7 +315,7 @@
                                                 <div class="row g-0">
                                                     <div class="col-2">
                                                         <img src="../image/userIMG1.JPG" class="card-img"
-                                                            alt="a drawn monkey in front of a colorful background">
+                                                            alt="profile image of a woman with pink hair">
                                                     </div>
                                                     <div class="col-10">
                                                         <textarea class="form-control"
@@ -338,14 +339,14 @@
                 <div class="card my-3  ">
                     <div class="card-body">
                         <h5 class="card-title">Create a New Post</h5>
-                        <form>
+                        <form id="newPostForm">
 
                             <label for="postContent">Post Content:</label>
                             <div class="row g-0 d-flex">
                                 <div class="d-flex col-9">
                                     <div class="col-3">
                                         <img src="../image/userIMG1.JPG" class="card-img"
-                                            alt="a drawn monkey in front of a colorful background">
+                                            alt="profile image of a woman with pink hair">
                                     </div>
 
                                     <textarea class="form-control col-8" id="postContent" rows="3"

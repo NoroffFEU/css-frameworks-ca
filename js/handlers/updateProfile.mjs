@@ -14,11 +14,13 @@ export async function setUpdateProfileListener() {
     const button = form.querySelector("button");
     button.disabled = true;
 
+
     try {
       const profile = await getProfile(name);
 
       form.banner.value = profile.banner;
       form.avatar.value = profile.avatar;
+
 
       button.disabled = false;
 
@@ -26,6 +28,7 @@ export async function setUpdateProfileListener() {
         event.preventDefault();
         const formData = new FormData(form);
         const mediaData = Object.fromEntries(formData.entries());
+
 
         console.log("Media data:", mediaData);
 

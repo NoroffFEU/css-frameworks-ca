@@ -17,13 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Replace "img" with the user's avatar image URL or default avatar if not provided
     const elementsWithAvatar = document.querySelectorAll(".replace-avatar");
     elementsWithAvatar.forEach((element) => {
-        const avatarImage = userProfile.avatar ? userProfile.avatar : "../../image/default-avatar.JPG";
-        element.src = avatarImage;
-        if (!userProfile.avatar) {
-            element.alt = "profile picture default - silhouette of a person in profile with paint around head";
-        } else {
-            element.alt = "profile image";
-        }
+      const avatarImage = userProfile.avatar ? userProfile.avatar : "../../image/default-avatar.JPG";
+      element.src = avatarImage;
+      element.alt = "profile picture default - silhouette of a person in profile with paint around head";
     });
 
     // Set banner image

@@ -78,12 +78,15 @@ footer {
   border-color: $seconary-color;
   color: black;
 }
-.btn:hover {
+.btn-primary:hover {
   background-color: $seconary-color;
   border-color: $primary-color;
 }
-.btn-link:hover {
+.btn:hover {
   color: white;
+}
+.btn-link:hover{
+    color: $primary-color;
 }
 
 .card {
@@ -94,6 +97,7 @@ footer {
 .nav-link {
   color: black;
 }
+
 
 .nav-link:hover {
   color: rgb(37, 37, 37);

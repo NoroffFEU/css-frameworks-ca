@@ -12543,13 +12543,17 @@ footer {
   color: black;
 }
 
-.btn:hover {
+.btn-primary:hover {
   background-color: rgb(94, 212, 255);
   border-color: rgb(0, 187, 255);
 }
 
-.btn-link:hover {
+.btn:hover {
   color: white;
+}
+
+.btn-link:hover {
+  color: rgb(0, 187, 255);
 }
 
 .card {

@@ -7,12 +7,14 @@ export async function setUpdateProfileListener() {
 
   if (form) {
     const {name, email} = load("profile");
+    console.log("Profile data:", name, email);
     form.name.value = name;
     form.email.value = email;
 
     const button = form.querySelector ("button");
     button.disabled = true;
 
+    try{
     const profile = await getProfile(name);
     
 
@@ -29,6 +31,10 @@ export async function setUpdateProfileListener() {
 
       // Send it to the API
       updateProfile(profile);
+      
     });
-  }
+  } catch (error) {
+    console.error('Error fetching profile:', error);
+}
+}
 }

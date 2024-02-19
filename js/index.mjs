@@ -1,4 +1,3 @@
-
 import * as templates from "./templates/index.mjs";
 import * as postsMethods from "./api/posts/index.mjs";
 
@@ -19,11 +18,9 @@ if (path === "/profile/login/index.html") {
   listeners.setUpdateProfileListener();
 }
 
-// Add event listener for DOMContentLoaded
-document.addEventListener("DOMContentLoaded", () => {
-    // Call the setUpdateProfileListener function when DOM content is loaded
-    listeners.setUpdateProfileListener();
-});
+
+
+
 // async function testTemplate() {
 //   const posts = await postsMethods.getPosts();
 //   const container = document.querySelector("#posts");

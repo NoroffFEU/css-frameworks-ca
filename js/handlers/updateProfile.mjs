@@ -1,5 +1,6 @@
 import { getProfile, updateProfile } from "../api/profiles/index.mjs";
 import { load, save } from "../storage/index.mjs";
+import { showMessage } from "../utils/messages.mjs";
 
 export async function setUpdateProfileListener() {
   const form = document.querySelector("#editProfile");
@@ -38,12 +39,14 @@ export async function setUpdateProfileListener() {
         const savedProfile = load("profile") || {};
         const updatedProfile = { ...savedProfile, ...mediaData };
         save("profile", updatedProfile);
+        showMessage("Profile updated successfully!", "success");
       });
     } catch (error) {
       console.error("Error fetching profile:", error);
     }
   }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Call the setUpdateProfileListener function when DOM content is loaded

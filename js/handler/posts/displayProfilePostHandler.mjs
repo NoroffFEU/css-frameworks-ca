@@ -4,7 +4,7 @@ import { getUserName } from "../storage.mjs";
 
 export async function displayProfilePostHandler() {
   const username = getUserName();
-  const posts = await postMethod.getAllPosts();
+  const posts = await postMethod.getPost();
   const userPosts = posts.filter((post) => post.author.name === username);
   const container = document.querySelector("#card");
   renderProfilePosts(userPosts, container);

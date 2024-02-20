@@ -52,7 +52,7 @@
 
 
 
-export async function doFetch(url, options = {}) {
+export async function doFETCH(url, options = {}) {
     try {
         const headers = {
             'Content-Type': 'application/json',
@@ -64,8 +64,8 @@ export async function doFetch(url, options = {}) {
         return json;
 
     } catch (error) {
-        console.log(error);
         throw error;
+        console.log(error);
 
     } finally {
 

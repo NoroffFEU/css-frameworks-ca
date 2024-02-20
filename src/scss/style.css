@@ -4157,15 +4157,7 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
-  cursor: pointer;
 }
-
-.card-img-top {
-  height: 250px; 
-  object-fit: cover; 
-}
-
-
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -10778,6 +10770,13 @@ body {
   margin-top: 50px;
   margin-bottom: 20px;
   border: none;
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .custom-container {

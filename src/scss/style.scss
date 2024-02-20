@@ -1,4 +1,5 @@
 @import "variables";
+@import "card";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss"; 
 
 body {
@@ -13,5 +14,27 @@ body {
   border: $border-color;
 }
 
+.card {
+  width: 18rem;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border: none; 
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.custom-container {
+  max-width: 600px;
+}
+
+a.card-link, div {
+  display: block; 
+  text-decoration: none; 
+  color: inherit; 
+}
 
 

@@ -1,6 +1,8 @@
 # Javascript 2
 
-Trello board: https://trello.com/invite/b/ZHXY4q0r/ATTI43015e6048e4d5dd9b30e852e8b7e82fA85AF72E/noroff-javascript-2
+Trello board: 
+
+https://trello.com/invite/b/ZHXY4q0r/ATTI43015e6048e4d5dd9b30e852e8b7e82fA85AF72E/noroff-javascript-2
 
 ## Course assignment
 

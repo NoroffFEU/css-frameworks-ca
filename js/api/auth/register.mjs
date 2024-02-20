@@ -1,6 +1,6 @@
-import { API_SOCIAL_URL } from "../api_constants.mjs";
+import { registerURL } from "../api_constants.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
-const action = "/auth/register";
 const method = "post";
 
 /**
@@ -15,7 +15,7 @@ const method = "post";
  * @returns {Promise<void>} A promise that resolves when the registration is successful or rejects with an error.
  */
 export async function register(profile) {
-  const registerURL = API_SOCIAL_URL + action;
+ 
   const body = JSON.stringify(profile);
 
   try {
@@ -25,26 +25,24 @@ export async function register(profile) {
       body,
     });
     const result = await response.json();
-    console.log(result);
 
     if (response.ok) {
-      alert("Registration successful! Please log in to continue.");
-      setTimeout(() => {
-        window.location.href = "/profile/login/index.html";
-      }, 3000);
-    } else {
-      const errorMessage =
-        result?.errors?.[0]?.message ||
-        "Registration failed. Please try again.";
-      alert(`Registration failed: ${errorMessage}`);
-      if (errorMessage === "Profile already exists. Please login") {
+        showMessage("Registration successful! Please log in to continue.", "success");
         setTimeout(() => {
           window.location.href = "/profile/login/index.html";
         }, 3000);
+      } else {
+        const errorMessage =
+          result?.errors?.[0]?.message || "Registration failed. Please try again." ;
+        showMessage(`Registration failed: ${errorMessage}`, errorMessage === "Profile already exists. Please login" ? "error" : "warning");
+        if (errorMessage === "Profile already exists. Please login", "warning") {
+          setTimeout(() => {
+            window.location.href = "/profile/login/index.html";
+          }, 3000);
+        }
       }
+    } catch (error) {
+      console.error("Error during registration:", error);
+      showMessage("Registration failed. Please try again.", "error");
     }
-  } catch (error) {
-    console.error("Error during registration:", error);
-    alert("Registration failed. Please try again.");
   }
-}

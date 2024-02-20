@@ -114,3 +114,21 @@ footer {
   border-color: $primary-color;
   border-radius: 10px;
 }
+
+
+//messages modal
+
+
+
+
+.modal-body {
+  padding: 10% 20px;
+  color: white;
+ text-shadow: $shaddow-dark;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  word-wrap: break-word;
+}

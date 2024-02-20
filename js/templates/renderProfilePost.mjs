@@ -88,3 +88,4 @@ function displayPost(post) {
 
   return postSection;
 }
+

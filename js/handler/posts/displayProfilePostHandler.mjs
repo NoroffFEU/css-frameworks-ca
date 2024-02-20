@@ -10,4 +10,4 @@ export async function displayProfilePostHandler() {
   renderProfilePosts(userPosts, container);
 }
 
-displayProfilePostHandler();
+// displayProfilePostHandler();

@@ -9,7 +9,7 @@ const userMessage = document.querySelector(".userInfo");
 
 /**
  * This is a function that takes the users name, email and password input.
- * @returns {Object} returns an object with the user name, email and password.
+ * @returns {Object} Returns an object with the user name, email and password.
  */
 
 function getFormData() {
@@ -27,7 +27,8 @@ function getFormData() {
 /**
  * This is the event listener for the login form. The .preventDefault() prevents the submit buttons default behaviour when clicked upon.
  * If successful, it'll send the user to the home section. 
- * @param {Event} e submit event object.
+ * 
+ * @param {Event} e Submit event object.
  */
 
 form.addEventListener("submit", async function (e) {
@@ -71,11 +72,12 @@ form.addEventListener("submit", async function (e) {
         }, 2000);
     }
 
-        /**
-     * This function displays a message to the user that an error has occured during the profile creation.
-     * @function userFailed
-     * @param {String} error display error message to user.
-     */
+    /**
+ * This function displays a message to the user that an error has occured during the profile creation.
+ * 
+ * @function userFailed
+ * @param {String} error Display error message to user.
+ */
 
     function userFailed(error) {
         let errorMessage = "An error has occured.";

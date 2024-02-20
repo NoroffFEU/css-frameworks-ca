@@ -3,11 +3,13 @@ import { API_SOCIAL_URL } from "../api_constants.mjs";
 export const action = "/posts";
 export const accessToken = localStorage.getItem("accessToken");
 
-
-
+/**
+ * Fetches posts from the Noroff social media API and displays them.
+ * @returns {Promise} A promise that resolves once posts are fetched and displayed.
+ * @throws {Error} If there is an issue fetching or displaying posts.
+ */
 export async function getPosts() {
-    
-const updatePostUrl = `${API_SOCIAL_URL}${action}?_author=true`;
+    const updatePostUrl = `${API_SOCIAL_URL}${action}?_author=true`;
 
     try {
         const response = await fetch(updatePostUrl, {
@@ -30,6 +32,11 @@ const updatePostUrl = `${API_SOCIAL_URL}${action}?_author=true`;
     }
 }
 
+/**
+ * Displays the fetched posts on the webpage.
+ * @param {Array} posts An array of posts to be displayed.
+ * @returns {void}
+ */
 export function displayPosts(posts) {
     const container = document.getElementById("post");
     container.innerHTML = "";
@@ -73,6 +80,8 @@ export function displayPosts(posts) {
     });
 }
 
-
 getPosts();
+
+
+
 

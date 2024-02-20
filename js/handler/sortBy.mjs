@@ -4,8 +4,17 @@ import { displayPosts } from "../api/posts/getPost.mjs";
 import { getPosts } from "../api/posts/getPost.mjs";
 
 
+/**
+ * Represents an array of posts.
+ * @type {Array} posts
+ */
+
 let posts = [];
 
+/**
+ * Fetches and displays posts from the Noroff social media API.
+ * @returns {Promise} A promise that resolves once posts are fetched and displayed.
+ */
 async function fetchAndDisplayPosts() {
     try {
         const response = await fetchPosts();
@@ -16,7 +25,11 @@ async function fetchAndDisplayPosts() {
     }
 }
 
-
+/**
+ * Fetches posts from the Noroff social media API.
+ * @returns {Promise} A promise that resolves with the fetched posts.
+ * @throws {Error} If fetching posts fails.
+ */
 async function fetchPosts() {
     const updatePostUrl = `${API_SOCIAL_URL}${action}?_author=true`;
 
@@ -39,6 +52,10 @@ fetchAndDisplayPosts();
 
 const sortSelect = document.getElementById("inputState");
 
+/**
+ * Handles sorting of posts based on user-selected option.
+ * @returns {void}
+ */
 
 async function handleSort() {
     const selectedOption = sortSelect.value;
@@ -52,6 +69,7 @@ async function handleSort() {
     displayPosts(posts);
 }
 
+// Event listener for sorting select element
 sortSelect.addEventListener("change", handleSort);
 
 

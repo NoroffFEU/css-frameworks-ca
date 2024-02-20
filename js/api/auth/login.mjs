@@ -25,7 +25,8 @@ function getFormData() {
 /**
  * This is the event listener for the login form. The .preventDefault() prevents the submit buttons default behaviour when clicked upon.
  * If successful, it'll send the user to the home section. 
- * @param {Event} e submit event object.
+ * 
+ * @param {Event} e Submit event object.
  */
 
 form.addEventListener("submit", function (e) {

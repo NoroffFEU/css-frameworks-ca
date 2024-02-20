@@ -3,12 +3,11 @@ import { API_SOCIAL_URL } from "../api_constants.mjs";
 const action = "/posts";
 
 /**
- * 
- * 
- * @param {*} id 
- * @returns 
+ * Listens for click events on the document. If the clicked element has the class btn-danger,
+ * it prompts the user to confirm the deletion of a post. If confirmed, it disables the button,
+ * shows a success message, and attempts to delete the post.
+ * @param {Event} event - The click event object.
  */
-
 document.addEventListener('click', async function(event) {
     if (event.target.classList.contains('btn-danger')) {
         const confirmed = confirm("Are you sure you want to delete this post?");
@@ -32,11 +31,13 @@ document.addEventListener('click', async function(event) {
     }
 });
 
-
+/**
+ * Removes a post from the social media platform.
+ * @param {String} id The ID of the post to be deleted.
+ * @returns {Object} A Promise that resolves with the response data from the server.
+ */
 export async function removePost(id) {
     const deletePostUrl = `${API_SOCIAL_URL}${action}/${id}`;
-    
-    
     const accessToken = localStorage.getItem("accessToken");
 
     try {

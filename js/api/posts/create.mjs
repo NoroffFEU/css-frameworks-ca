@@ -7,8 +7,8 @@ const action = "/posts";
  * A form with an eventlistener that sends a request to the API after the user has inputed a title, description and an image (optional).
  * Uses async fetch and sends stringified data of title, body and media. Will throw an error if there's an error in creation of the post.
  * If post is successfully created, it calls on the getPost() function to reload and display all posts.
- * @param {Event} e submit event object.
- * @throws {error} throws an error if there's an issue with creating post.
+ * @param {Event} e Submit event object.
+ * @throws {error} Throws an error if there's an issue with creating post.
  */
 
 document.addEventListener('DOMContentLoaded', () => {

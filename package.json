@@ -27,7 +27,7 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.2.0",
-    "jsdocs": "^1.0.0"
+    "jsdocs": "^0.0.1"
   },
   "devDependencies": {
     "sass": "^1.71.0"

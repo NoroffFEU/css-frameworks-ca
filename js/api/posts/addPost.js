@@ -8,7 +8,7 @@ import { messageForUser } from "../../ui/messageForUser.js";
  * @param {Object} postData - The post's data.
  * @param {string} postData.title - The post's title.
  * @param {string} postData.body - The post's body.
- * @param {File} postData.media - The post's media file.
+ * @param {string} postData.media - The URL of the post's media.
  * @returns {Promise<Object>} The response from the server.
  * @throws {Error} If the user is not logged in, the post data is empty, or the server response is not ok.
  */

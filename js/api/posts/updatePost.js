@@ -5,10 +5,10 @@ import { postsUrl } from "../../constants/api.js";
  * Updates an existing post.
  *
  * @param {Object} post - The post's data.
- * @param {string} post.id - The post's ID.
+ * @param {number} post.id - The ID of the post to update.
  * @param {string} post.title - The post's title.
  * @param {string} post.body - The post's body.
- * @param {File} post.media - The post's media file.
+ * @param {string} post.media - The URL of the post's media.
  * @returns {Promise<Object>} The response from the server.
  * @throws {Error} If the user is not logged in, the post data is empty, or the server response is not ok.
  */

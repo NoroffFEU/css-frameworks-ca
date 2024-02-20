@@ -8,6 +8,8 @@ import { editPost } from "../../api/posts/editPost.js";
  *
  * This function is executed when the DOM is fully loaded. If the current URL path is not the edit post page, it returns immediately.
  *
+ * @param {number} id - The ID of the post to display.
+ *
  * It retrieves the post id from the URL parameters. If the id is not found, it throws an error.
  *
  * If the id is found, it retrieves the post data using the `getSingleProfilePost` function and fills the form with the post data.

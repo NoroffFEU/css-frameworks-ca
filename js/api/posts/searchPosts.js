@@ -6,7 +6,7 @@ import { getToken } from "../../utils/helpers/token.js";
  *
  * @param {string} tag - The tag to search for.
  * @returns {Promise<Array<Object>>} The posts with the provided tag.
- * @throws {Error} If no posts are found with the provided tag or the server response is not ok.
+ * @throws {Error} If no posts are found with the provided tag.
  */
 
 export async function searchPosts(tag) {

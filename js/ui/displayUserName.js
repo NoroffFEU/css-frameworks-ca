@@ -17,6 +17,6 @@ export function displayUserName() {
       console.error("Element with class .your-profile-name not found");
     }
   } else {
-    console.log("User name not found in storage.");
+    console.warn("User name not found in storage.");
   }
 }

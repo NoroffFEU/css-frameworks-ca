@@ -5,7 +5,9 @@
  * It sets up the structure of the post, including the user info, options, title, and text.
  * The post is then appended to the parent element.
  *
+ * @param {string} parent - The selector of the parent element where the post will be rendered.
  * @param {Object} post - The post to be rendered. It should have an id, author with a name, created date, title, and text.
+ * @returns {HTMLElement} - The created post section element.
  */
 
 export function renderSinglePost(parent, post) {

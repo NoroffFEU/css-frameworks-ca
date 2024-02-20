@@ -55,7 +55,7 @@ function route() {
       handleScrollButton();
       logoutHandler();
       displayPostsHandler();
-      searchPostsHandler(posts);
+      searchPostsHandler();
       sortingPostsHandler();
       break;
     case "/feed/post.html":

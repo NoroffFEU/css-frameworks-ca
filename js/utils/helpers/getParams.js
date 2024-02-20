@@ -1,11 +1,8 @@
 /**
- * Retrieves a parameter value from the URL.
+ * Retrieves a parameter value from the URL's query string.
  *
- * It takes a parameter name and retrieves its value from the URL's query string.
- * If the parameter is not found, it throws an error.
- *
- * @param {string} paramName - The name of the parameter to retrieve from the URL.
- * @returns {string} The value of the parameter.
+ * @param {string} paramName - The name of the parameter to retrieve.
+ * @returns {string|null} The value of the parameter, or null if not found.
  * @throws {Error} If the parameter is not found in the URL.
  */
 

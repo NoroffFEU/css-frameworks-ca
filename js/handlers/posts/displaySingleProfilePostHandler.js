@@ -10,6 +10,8 @@ import { getParams } from "../../utils/helpers/getParams.js";
  *
  * It retrieves the post ID from the URL, fetches the post with that ID, and renders it.
  * If the fetch fails, the post ID is not found in the URL, or user information is not found, it displays an error message to the user.
+ *
+ * @param {number} id - The ID of the post to display.
  */
 
 export async function displaySingleProfilePostHandler() {

@@ -1,9 +1,10 @@
 import { dateSortingHandler } from "../../handlers/posts/dateSortingHandler.js";
 
 /**
- * Adds an event listener to the sorting select element to sort posts.
+ * Attaches an event listener to the sorting select element,
+ * which sorts posts based on the selected option.
  *
- * @param {Array<Object>} posts - The posts to sort.
+ * @param {Array<Object>} posts - The posts to be sorted when the select option changes.
  */
 
 export async function getSortedPosts(posts) {

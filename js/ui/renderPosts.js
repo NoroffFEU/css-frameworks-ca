@@ -5,6 +5,7 @@
  * It sets up the structure of the post, including the user info, options, title, and text.
  * Each post is then appended to the parent element.
  *
+ * @param {string} parent - The selector of the parent element where the posts will be rendered.
  * @param {Array} posts - The posts to be rendered. Each post should have an id, author with a name, created date, title, and text.
  */
 

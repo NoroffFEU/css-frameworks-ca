@@ -4,13 +4,16 @@ Trello board: https://trello.com/invite/b/ZHXY4q0r/ATTI43015e6048e4d5dd9b30e852e
 
 ## Course assignment
 
-Goal
+Goal:
+
 To apply knowledge of JavaScript techniques to implement the front-end functionality for a social media application.
 
-API
+API:
+
 The API you are using for this project can be found under Social Endpoints in the Noroff API documentation.
 
-Brief
+Brief:
+
 You have been tasked with producing a new JavaScript front-end client for an existing social media platform. The client application must be attractive and responsive, but you have an otherwise blank slate in terms of theme design language.
 
 Using the provided API and API documentation, create a functioning user interface that allows for viewing, posting, editing and deleting social media content.

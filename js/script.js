@@ -19,7 +19,7 @@ import { displayUserName } from "./ui/displayUserName.js";
  * If the path is "/", "/index.html", it registers the form handler and login form handler.
  * If the path is "/profile/", "/profile/index.html", it displays the user name, logout handler, displays profile posts handler, adds post handler, and handles the scroll button.
  * If the path is "/profile/post.html", it displays the single profile post handler and logout handler.
- * If the path is "profile/edit-post.html", it logs out handler and edits post handler.
+ * If the path is "/profile/edit-post.html", it logs out handler and edits post handler.
  * If the path is "/feed/", "/feed/index.html", it handles the scroll button, logout handler, displays posts handler, searches posts handler, and sorts posts handler.
  * If the path is "/feed/post.html", it does not do anything.
  */
@@ -46,9 +46,10 @@ function route() {
       displaySingleProfilePostHandler();
       logoutHandler();
       break;
-    case "profile/edit-post.html":
+    case "/profile/edit-post.html":
       logoutHandler();
       editPostHandler();
+      break;
     case "/feed/":
     case "/feed/index.html":
       handleScrollButton();

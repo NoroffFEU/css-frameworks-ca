@@ -38,10 +38,10 @@ export function removeMultiple(keys) {
   keys.forEach((key) => localStorage.removeItem(key));
 }
 
-/**
- * Retrieves the username from localStorage.
- * @returns {string} The retrieved username, or null if an error occurred.
- */
+// /**
+//  * Retrieves the username from localStorage.
+//  * @returns {string} The retrieved username, or null if an error occurred.
+//  */
 export function getUserName() {
-  return get("userName");
+  return get("username");
 }

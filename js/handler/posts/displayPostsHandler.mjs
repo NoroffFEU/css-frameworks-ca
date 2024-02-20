@@ -6,5 +6,3 @@ export async function displayPostsHandler() {
   const container = document.querySelector("#card");
   renderAllPosts(posts, container);
 }
-
-displayPostsHandler();

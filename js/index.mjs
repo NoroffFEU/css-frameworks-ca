@@ -5,6 +5,7 @@ import { displayPostsHandler } from "./handler/posts/index.mjs";
 import { updatePostFormListener } from "./handler/posts/index.mjs";
 import { logoutHandler } from "./handler/logout/logout.mjs";
 import { displayProfilePostHandler } from "./handler/posts/index.mjs";
+import { removePostsHandler } from "./handler/posts/index.mjs";
 
 function router() {
   const path = location.pathname;
@@ -36,6 +37,7 @@ function router() {
       logoutHandler();
       updatePostFormListener();
       displayProfilePostHandler();
+      removePostsHandler();
       break;
 
     default:

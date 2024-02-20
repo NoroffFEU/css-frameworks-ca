@@ -6,6 +6,9 @@ export function renderProfilePosts(posts) {
   const container = document.querySelector("#card");
   const spinner = document.querySelector(".spinner-border");
 
+  const showUserName = document.querySelector("#show-username");
+  showUserName.textContent = username;
+
   // container.innerHTML = "";
   const allPostsHtml = userPosts.map((post) => {
     return displayPost(post);
@@ -22,6 +25,45 @@ function displayPost(post) {
   // Main post section
   const postSection = document.createElement("div");
   postSection.classList.add("card", "p-3", "my-3");
+
+  // handle post miniMenu
+  const dropdown = document.createElement("div");
+  dropdown.classList.add("dropdown", "position-absolute", "end-0", "me-3");
+
+  // handle button
+  const dropdownButton = document.createElement("button");
+  dropdownButton.classList.add("btn", "btn-sm", "text-dark", "dropdown-toggle");
+  dropdownButton.setAttribute("type", "button");
+  dropdownButton.setAttribute("id", "dropdown-mini");
+  dropdownButton.setAttribute("data-bs-toggle", "dropdown");
+  dropdownButton.setAttribute("aria-expanded", "false");
+  dropdownButton.innerHTML = `<i class="bi bi-gear"></i>`;
+
+  // handle menu
+  const dropdownMenu = document.createElement("ul");
+  dropdownMenu.classList.add("dropdown-menu", "dropdown-menu-end");
+  dropdownMenu.setAttribute("aria-labelledby", "dropdown-mini");
+
+  // handle edit post click
+  const editPostClick = document.createElement("li");
+  const editPostLink = document.createElement("a");
+  editPostLink.classList.add("dropdown-item");
+  editPostLink.href = "#";
+  editPostLink.innerHTML = "Edit Post";
+  editPostClick.append(editPostLink);
+
+  // handle delete post click
+  const deletePostClick = document.createElement("li");
+  const deletePostLink = document.createElement("button");
+  deletePostLink.classList.add("dropdown-item");
+  deletePostLink.setAttribute("type", "button");
+  deletePostLink.setAttribute("data-action", "delete");
+  deletePostLink.innerHTML = "Delete Post";
+  deletePostClick.append(deletePostLink);
+
+  dropdownMenu.append(editPostClick, deletePostClick);
+  dropdown.append(dropdownButton, dropdownMenu);
+  postSection.append(dropdown);
 
   // Post header
   const row = document.createElement("div");
@@ -88,4 +130,3 @@ function displayPost(post) {
 
   return postSection;
 }
-

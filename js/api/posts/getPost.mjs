@@ -17,6 +17,6 @@ export async function getPost(id) {
     return post;
   } catch (error) {
     console.error("Failed to get post:", error);
-    throw error; // Re-throw the error for the caller to handle
+    throw error;
   }
 }

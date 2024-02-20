@@ -16,9 +16,7 @@ You have been tasked with producing a new JavaScript front-end client for an exi
 Using the provided API and API documentation, create a functioning user interface that allows for viewing, posting, editing and deleting social media content.
 
 Social API routes require both a JWT token and an API Key. You will need to register an account and login to access your token.
-
 --------------------------------------------------------------------------------------------------------------------------------------------
-
 To complete the required features, you will also need to make use of GET, POST, PUT, and DELETE HTTP methods.
 
 Using localStorage is highly recommended, especially for storing JWT tokens.
@@ -28,17 +26,58 @@ A finished project fulfils the requirements below with an easy to use and error-
 Required features
 The following user stories are required for a passing submission:
 
-* User with @noroff.no or @stud.noroff.no email can register profile
-* Registered user can login
-* User can view a post content feed
-* User can filter the post content feed
-* User can search the post content feed
-* User can view a post content item by ID
-* User can create a post content item
-* User can update a post content item
-* User can delete a post content item
+User with @noroff.no or @stud.noroff.no email can register profile
+Registered user can login
+User can view a post content feed
+User can filter the post content feed
+User can search the post content feed
+User can view a post content item by ID
+User can create a post content item
+User can update a post content item
+User can delete a post content item
 
+Getting Started with ApeAmigos
 --------------------------------------------------------------------------------------------------------------------------------------------
 
+Prerequisites
+Before you begin, ensure you have the following installed on your system:
+Node.js (https://nodejs.org/) - Make sure Node.js is installed on your machine.
+
+Installation
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Clone the repository to your local machine:
+
+Git clone:
+```
+https://github.com/ephraimdjeket/css-frameworks-ca.git
+```
+
+Navigate to the project directory:
+```
+cd css-frameworks-ca
+```
+Install dependencies:
+```
+npm install -d sass
+```
+
+Running the Project
+Once the installation is complete, you can run the project using the following steps:
+
+Compile SASS files:
+```
+npm run build
+```
+
+Open the project in your preferred browser.
+
+Development
+If you want to make changes to the SASS files and see them reflected immediately, you can use the following command to watch for changes and recompile SASS:
+```
+npm run watch
+```
+
+Additionally, if you're using Visual Studio Code, you can install the Live Server extension to easily run your project.
 
 

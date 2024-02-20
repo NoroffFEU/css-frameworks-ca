@@ -16,10 +16,10 @@ function displayPosts(posts) {
 
   posts.forEach((post) => {
     const postElement = document.createElement("div");
-    postElement.classList.add("card");
-    postElement.style.width = "23rem";
-    postElement.style.marginTop = "50px";
-    postElement.style.marginBottom = "20px";
+    postElement.classList.add("card-body");
+    postElement.classList.add("m-2");
+    postElement.style.width = "10rem";
+    postElement.classList.add("cursor-pointer");
 
     let mediaImg = post.media
       ? `<img class="card-img-top" src="${post.media}" alt="Post media">`
@@ -47,8 +47,7 @@ function displayPosts(posts) {
 
     postElement.innerHTML = `
       ${mediaImg}
-      <div class="card-body">
-        <div class="seperator">
+        <div class="seperator p-4">
           <div class="d-flex flex-column">
             <h4 class="card-title">${post.title}</h4>
             <p>${newDate}</p>
@@ -56,9 +55,8 @@ function displayPosts(posts) {
           </div>
           <p class="m-0 d-flex justify-content-center">${post.author.name}</p>
         </div>
-        <button type="button" class="btn btn-success" data-id="${post.id}">Edit</button>
-        <button type="button" class="btn btn-danger" data-id="${post.id}">Delete</button>
-      </div>`;
+        <button type="button" class="btn btn-success m-4" data-id="${post.id}">Edit</button>
+        <button type="button" class="btn btn-danger " data-id="${post.id}">Delete</button>`;
 
     container.appendChild(postElement);
 

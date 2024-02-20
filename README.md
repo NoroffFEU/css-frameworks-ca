@@ -1,4 +1,5 @@
 # Javascript 2
+![image](https://github.com/ephraimdjeket/css-frameworks-ca/assets/45997915/eccfc76b-ea1e-4bd0-9895-7e9439c06276)
 
 Trello board: 
 

@@ -16,7 +16,7 @@ You have been tasked with producing a new JavaScript front-end client for an exi
 Using the provided API and API documentation, create a functioning user interface that allows for viewing, posting, editing and deleting social media content.
 
 Social API routes require both a JWT token and an API Key. You will need to register an account and login to access your token.
---------------------------------------------------------------------------------------------------------------------------------------------
+
 To complete the required features, you will also need to make use of GET, POST, PUT, and DELETE HTTP methods.
 
 Using localStorage is highly recommended, especially for storing JWT tokens.
@@ -24,6 +24,8 @@ Using localStorage is highly recommended, especially for storing JWT tokens.
 A finished project fulfils the requirements below with an easy to use and error-free user interface.
 
 Required features
+--------------------------------------------------------------------------------------------------------------------------------------------
+
 The following user stories are required for a passing submission:
 
 User with @noroff.no or @stud.noroff.no email can register profile

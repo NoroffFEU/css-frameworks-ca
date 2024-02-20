@@ -39,9 +39,10 @@ User can delete a post content item
 Getting Started with ApeAmigos
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-Prerequisites
+Prerequisites:
+
 Before you begin, ensure you have the following installed on your system:
-Node.js (https://nodejs.org/) - Make sure Node.js is installed on your machine.
+Node.js (https://nodejs.org/)
 
 Installation
 --------------------------------------------------------------------------------------------------------------------------------------------

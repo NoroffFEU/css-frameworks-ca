@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     elementsWithAvatar.forEach((element) => {
       const avatarImage = userProfile.avatar ? userProfile.avatar : "../../image/default-avatar.JPG";
       element.src = avatarImage;
+      element.alt = "profile picture default - silhouette of a person in profile with paint around head";
     });
 
     // Set banner image

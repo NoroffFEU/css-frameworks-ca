@@ -1,40 +1,54 @@
-import { getProfile,updateProfile } from "../api/profiles/index.mjs";
-import { load } from "../storage/index.mjs";
-
+import { getProfile, updateProfile } from "../api/profiles/index.mjs";
+import { load, save } from "../storage/index.mjs";
+import { showMessage } from "../utils/messages.mjs";
 
 export async function setUpdateProfileListener() {
   const form = document.querySelector("#editProfile");
 
   if (form) {
-    const {name, email} = load("profile");
-    console.log("Profile data:", name, email);
+    const { name, email } = load("profile");
+
     form.name.value = name;
     form.email.value = email;
 
-    const button = form.querySelector ("button");
+    const button = form.querySelector("button");
     button.disabled = true;
 
-    try{
-    const profile = await getProfile(name);
-    
 
-    form.banner.value = profile.banner;
-    form.avatar.value = profile.avatar;
+    try {
+      const profile = await getProfile(name);
 
-    button.disabled = false;
-    
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.target;
-      const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
+      form.banner.value = profile.banner;
+      form.avatar.value = profile.avatar;
 
-      // Send it to the API
-      updateProfile(profile);
-      
-    });
-  } catch (error) {
-    console.error('Error fetching profile:', error);
+
+      button.disabled = false;
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const mediaData = Object.fromEntries(formData.entries());
+
+
+        console.log("Media data:", mediaData);
+
+        // Send media update to the API
+        await updateProfile(name, mediaData);
+
+        // Update the saved profile in local storage with only the media-related data
+        const savedProfile = load("profile") || {};
+        const updatedProfile = { ...savedProfile, ...mediaData };
+        save("profile", updatedProfile);
+        showMessage("Profile updated successfully!", "success");
+      });
+    } catch (error) {
+      console.error("Error fetching profile:", error);
+    }
+  }
 }
-}
-}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Call the setUpdateProfileListener function when DOM content is loaded
+  setUpdateProfileListener();
+});

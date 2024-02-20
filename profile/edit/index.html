@@ -10,20 +10,18 @@
     <script src="../../js/hamburger.js"></script>
     <link rel="stylesheet" href="../../css/styles.css" />
     <script src="../../js/index.mjs" defer type="module"></script>
-    <script src="../../js/handlers/updateProfile.mjs" defer type="module"></script>
 
     <title>Edit Profile</title>
 </head>
 
-<body class="m-0 d-flex flex-column min-vh-100">
-
+<body class="m-0 vh-100">
     <header class="col-12">
         <nav class="navbar navbar-expand-md navbar-light header-image">
             <div class="container align-items-center col-11">
                 <h1 class="header-text text-center col-6 col-sm-3 col-md-5">
                     ArtConnect
                 </h1>
-                <a class="navbar-brand text-center col-2 col-md-1" href="../../profile/index.html">
+                <a class="navbar-brand text-center col-2 col-md-1" href="../../feed/index.html">
                     <img src="../../image/logo-art.PNG" alt="art Logo" class="img-fluid" />
                 </a>
 
@@ -52,53 +50,52 @@
         </nav>
     </header>
 
-    <main class="flex-grow-1 mt-5 text-light">
-        <div class="container-fluid bg-dark" id="post">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4 mt-5">
-                    <form id="editProfile">
-                        <div class="mb-2">
-                            <label for="Name" class="form-label text-secondary">Name</label>
-                            <input type="text" class="form-control" name="name" disabled>
-                        </div>
+    <main class="flex-grow-1 bg-dark text-light">
+        <div class="container-fluid">
 
-                        <div class="mb-2">
-                            <label for="email" class="form-label text-secondary">Email</label>
-                            <input type="email" class="form-control" name="email" disabled>
-                        </div>
-
-                        <div class="mb-2">
-                            <label for="title" class="form-label text-secondary">Banner</label>
-                            <input type="url" class="form-control" name="banner">
-                        </div>
-
-                        <div class="mb-2">
-                            <label for="avatar" class="form-label text-secondary">Avatar</label>
-                            <input type="url" class="form-control" name="avatar">
-                        </div>
-
-                        <div class="col-12">
-                            <div class="d-grid my-3">
-                                <button class="btn btn-primary btn-md" type="submit">
-                                    Update Profile
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            <form id="editProfile">
+                <div class="form-floating mb-2">
+                    <label for="Name" class="form-label text-secondary">Name</label>
+                    <input type="text" class="form-control" name="name" disabled>
                 </div>
-            </div>
+
+                <div class="form-floating mb-2">
+                    <label for="email" class="form-label text-secondary">Email</label>
+                    <input type="email" class="form-control" name="email" disabled>
+                </div>
+
+
+                <div class="form-floating mb-2">
+                    <label for="title" class="form-label text-secondary">Banner</label>
+                    <input type="url" class="form-control" name="banner">
+                </div>
+
+
+                <div class="form-floating mb-2">
+                    <label for="" class="form-label text-secondary">Avatar</label>
+                    <input type="url" class="form-control" name="avatar"></input>
+                </div>
+
+
+                <div class="col-12">
+                    <div class="d-grid my-3">
+                        <button class="btn btn-primary btn-md" type="submit">
+                            Update Profile
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div id="messageBox" ></div>
         </div>
     </main>
 
-    <footer class="m-0 p-1 pb-md-4 pb-lg-0">
+    <footer class="m-0">
         <div
             class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">
-            <p class="col-md-4 mb-0 text-muted text-center text-md-start">
-                © 2024 Art-company-inc
-            </p>
+            <p class="col-md-4 mb-0 text-muted text-center text-md-start">© 2024 Art-company-inc</p>
 
-            <div class="col-2 text-center mb-0">
-                <img src="../../image/logo-art.PNG" alt="art Logo" class="img-small col-5" />
+            <div class=" col-4 col-sm-3 col-md-2 text-center mb-md-0">
+                <img src="../../image/logo-art.PNG" alt="art Logo" class="col-5 ">
             </div>
 
             <ul class="nav col-12 col-md-6 justify-content-center justify-content-md-end">

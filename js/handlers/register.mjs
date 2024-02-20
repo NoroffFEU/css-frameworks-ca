@@ -26,7 +26,7 @@ export function setRegisterFormListener() {
 
 // Call the function inside the DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("Script loaded");
+
 
   // Call the function to set up the listener
   setRegisterFormListener();

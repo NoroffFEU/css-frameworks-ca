@@ -4,18 +4,13 @@ import { authFetch } from "../authFetch.mjs";
 const action = "/profiles";
 const method = "put";
 
-export async function updateProfile(ProfileData) {
-
-    if(!profileData.name){
-        throw new Error ("update requires a name")
-    }
-  const updateProfileURL = `${API_SOCIAL_URL}${action}/${profileData.name}`;
+export async function updateProfile(name, profileData) {
+  const updateProfileURL = `${API_SOCIAL_URL}${action}/${name}/media`;
 
   const response = await authFetch(updateProfileURL, {
     method,
     body: JSON.stringify(profileData),
   });
-  
+
   return await response.json();
-  
 }

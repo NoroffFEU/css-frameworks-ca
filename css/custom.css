@@ -24,7 +24,7 @@ footer {
   height: 10%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 100% 80%;
+  background-position: 0% 80%;
 }
 
 .profile-img {
@@ -66,23 +66,34 @@ footer {
   cursor: not-allowed;
 }
 
-.btn-primary {
-  background-color: rgb(0, 187, 255);
-  border-color: rgb(94, 212, 255);
-  color: black;
+.btn-outline-primary {
+  border-color: rgb(1, 154, 210);
+  color: rgb(1, 154, 210);
+}
+.btn-outline-primary:hover {
+  background-color: rgb(47, 200, 255);
+  border-color: rgb(1, 154, 210);
 }
 
+.btn-primary {
+  background-color: rgb(1, 154, 210);
+  border-color: rgb(47, 200, 255);
+  color: black;
+}
 .btn-primary:hover {
-  background-color: rgb(94, 212, 255);
-  border-color: rgb(0, 187, 255);
+  background-color: rgb(47, 200, 255);
+  border-color: rgb(1, 154, 210);
 }
 
 .btn:hover {
   color: white;
 }
 
+.btn-link {
+  color: rgb(1, 154, 210);
+}
 .btn-link:hover {
-  color: rgb(0, 187, 255);
+  color: rgb(47, 200, 255);
 }
 
 .card {
@@ -100,8 +111,20 @@ footer {
 }
 
 .form-control {
-  border-color: rgb(0, 187, 255);
+  border-color: rgb(1, 154, 210);
   border-radius: 10px;
+}
+
+.modal-body {
+  padding: 10% 20px;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  word-wrap: break-word;
 }
 
 /*# sourceMappingURL=custom.css.map */

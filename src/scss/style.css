@@ -11982,9 +11982,9 @@ body {
 }
 
 .form-control:focus {
-  border-color: #6c757d; /* Set the desired border color when focused */
-  background-color: white; /* Set the background color to transparent when focused */
-  color: black; /* Set the text color when focused */
+  border-color: #6c757d;
+  background-color: white;
+  color: black;
 }
 
 .card-body {

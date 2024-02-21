@@ -33,20 +33,20 @@ fetch(`${API_SOCIAL_URL}/posts/${postId}?_author=true`, {
     .then(response => response.json())
     .then(post => {
         const singlePageContainer = document.getElementById("single-page-container");
-        const singlePageContent = document.createElement('div');
+        const singlePageContent = document.createElement("div");
         singlePageContent.classList.add("card");
         singlePageContent.style.width = "23rem";
         singlePageContent.style.marginTop = "20px";
         singlePageContent.style.marginBottom = "20px";
-        singlePageContent.classList.add('single-page-content');
+        singlePageContent.classList.add("single-page-content");
 
         const mediaIMG = post.media ? `<img class="card-img-top" src="${post.media}" alt="Post media">` : '<img class="card-img-top" src="https://www.wellingmobilityscooters.co.uk/wp-content/uploads/2016/04/dummy-post-horisontal-thegem-blog-default-large.jpg">';
         const avatarIMG = post.avatar ? `<img class="mx-auto d-block rounded-circle border border-custom-col height="60" src="${post.avatar}" alt="avatar profile">` : '<img class="mx-auto d-block rounded-circle" height="30" src="/images/ape-logo.png">';
 
         const date = new Date(post.created);
         const year = date.getFullYear();
-        const month = (date.getMonth() + 1).toString().padStart(2, '0');
-        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, "0");
+        const day = date.getDate().toString().padStart(2, "0");
         const newDate = `${day}.${month}.${year}`;
 
         singlePageContent.innerHTML = `
@@ -72,6 +72,6 @@ fetch(`${API_SOCIAL_URL}/posts/${postId}?_author=true`, {
         singlePageContainer.appendChild(singlePageContent);
     })
     .catch(error => {
-        console.error('Error fetching post:', error);
+        console.error("Error fetching post:", error);
     });
 

@@ -18,7 +18,7 @@ function displayPosts(posts) {
     const postElement = document.createElement("div");
     postElement.classList.add("card-body");
     postElement.classList.add("m-2");
-    postElement.style.width = "10rem";
+    postElement.style.width = "23rem";
     postElement.classList.add("cursor-pointer");
 
     let mediaImg = post.media

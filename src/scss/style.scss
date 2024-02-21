@@ -8,10 +8,21 @@ body {
 
 .navbar-custom,
 .login,
-.border-custom-col, .card-body {
+ .card-body {
   background-color: $primary;
   border: $border-color;
 }
+
+.form-control {
+  background-color: white;
+}
+
+.form-control:focus {
+  border-color: #6c757d; /* Set the desired border color when focused */
+  background-color: white; /* Set the background color to transparent when focused */
+  color: black; /* Set the text color when focused */
+}
+
 
 .card-body {
   cursor: pointer;

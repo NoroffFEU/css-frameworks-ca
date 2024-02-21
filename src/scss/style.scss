@@ -8,9 +8,13 @@ body {
 
 .navbar-custom,
 .login,
-.border-custom-col {
+.border-custom-col, .card-body {
   background-color: $primary;
   border: $border-color;
+}
+
+.card-body {
+  cursor: pointer;
 }
 
 .card-img-top {

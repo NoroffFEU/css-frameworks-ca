@@ -4153,7 +4153,6 @@ textarea.form-control-lg {
   min-width: 0;
   height: var(--bs-card-height);
   word-wrap: break-word;
-  background-color: var(--bs-card-bg);
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
@@ -10759,17 +10758,12 @@ body {
 
 .navbar-custom,
 .login,
-.border-custom-col,
-.card-body {
+.border-custom-col, .card-body {
   background-color: #FFC857;
   border: #FFC857;
 }
 
-.card {
-  width: 18rem;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  border: none;
+.card-body {
   cursor: pointer;
 }
 

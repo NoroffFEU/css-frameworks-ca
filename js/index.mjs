@@ -8,7 +8,6 @@ import { displayProfilePostHandler } from "./handler/posts/index.mjs";
 import { removePostsHandler } from "./handler/posts/index.mjs";
 import { handleEditForm } from "./handler/posts/handleEditForm.mjs";
 
-
 function router() {
   const path = location.pathname;
   console.log(path);
@@ -40,7 +39,6 @@ function router() {
       updatePostFormListener();
       displayProfilePostHandler();
       removePostsHandler();
-      // handlePostSort();
       break;
     case "/profile/edit.html":
       handleEditForm();

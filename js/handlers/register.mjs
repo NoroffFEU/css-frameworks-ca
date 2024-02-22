@@ -5,7 +5,7 @@ export function setRegisterFormListener() {
   
   const form = document.querySelector("#registrationForm");
 
-
+if (form){
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = new FormData(form);
@@ -23,7 +23,7 @@ export function setRegisterFormListener() {
   
   });
 }
-
+}
 // Call the function inside the DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", function() {
 

@@ -19,6 +19,7 @@ export function displayPost(post) {
   const postSection = document.createElement("div");
   postSection.classList.add("card", "p-3", "my-3");
 
+
   // Post header
   const row = document.createElement("div");
   row.classList.add("row", "align-items-center");

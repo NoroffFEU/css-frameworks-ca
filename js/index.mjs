@@ -41,6 +41,7 @@ function router() {
       updatePostFormListener();
       displayProfilePostHandler();
       removePostsHandler();
+      handlePostSort();
       break;
     case "/profile/edit.html":
       handleEditForm();

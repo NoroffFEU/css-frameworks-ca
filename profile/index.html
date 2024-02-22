@@ -42,7 +42,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet" />
 
-      <script src="../js/index.mjs" type="module"></script>
+    <script src="../js/index.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -69,7 +69,7 @@
               <li class="nav-item mb-3">
                 <a class="nav-link" href="/feed/posts/">The feed</a>
               </li>
-                  <li class="nav-item my-4">
+              <li class="nav-item my-4">
                 <button id="logout" class="btn btn-outline-dark">
                   Log me out
                 </button>
@@ -82,116 +82,113 @@
     <main>
       <section>
         <div class="container text-center">
-            <div class="row mb-5 justify-content-center">
-              <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-5 m-3">
-                <div class="col mb-5">
-                  <img
-                    src="/assets/pic-2.webp"
-                    class="profile-pic"
-                    alt="This is a picture of Lori" />
-                </div>
-                <h1 class="mb-3 fw-bold" id="show-username"></h1>
-
-
-                <a href="#" class="btn btn-secondary follow-btn mt-4">FOLLOW ME</a>
-
+          <div class="row mb-5 justify-content-center">
+            <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-5 m-3">
+              <div class="col mb-5">
+                <img
+                  src="/assets/pic-2.webp"
+                  class="profile-pic"
+                  alt="This is a picture of Lori" />
               </div>
+              <h1 class="mb-3 fw-bold" id="show-username"></h1>
+
+              <a href="#" class="btn btn-secondary follow-btn mt-4"
+                >FOLLOW ME</a
+              >
             </div>
-             <div class="container d-flex flex-row justify-content-center gap-4 divider">
-                <div class="d-flex flex-row align-items-center my-4">
-                  <h5 class="mx-1 me-2 fs-6">Following:</h5>
-                  <h4 class="followingCount">52</h4>
-                </div>
-                <div class="d-flex flex-row align-items-center my-4">
-                  <h5 class="mx-1 me-2 fs-6">Following:</h5>
-                  <h4 class="followersCount">28</h4>
-                </div>
-              </div>
-           
           </div>
-      
-        <div id="modalDelete" class="modal">
-
+          <div
+            class="container d-flex flex-row justify-content-center gap-4 divider">
+            <div class="d-flex flex-row align-items-center my-4">
+              <h5 class="mx-1 me-2 fs-6">Following:</h5>
+              <h4 class="followingCount">52</h4>
+            </div>
+            <div class="d-flex flex-row align-items-center my-4">
+              <h5 class="mx-1 me-2 fs-6">Following:</h5>
+              <h4 class="followersCount">28</h4>
+            </div>
+          </div>
         </div>
+
+        <div id="modalDelete" class="modal"></div>
         <div class="container divider mb-5">
           <h5 class="text-center mt-4">My posts</h5>
-          </div>
-          <div class="container">
-            <div class="row justify-content-center mb-5">
-              <div class="col-sm-10 col-md-8 col-lg-6 custom-container">
-                <div id="message"></div>
-                <button
-                  class="form-control btn btn-primary mb-4"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#createPost"
-                  aria-controls="createPost"
-                  aria-expanded="false"
-                  aria-label="Toggle create post">
-                  <span>Create a new post +</span>
-                </button>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-sm-10 col-md-8 col-lg-6 custom-container">
+              <div id="message"></div>
+              <button
+                class="form-control btn btn-primary mb-4"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#createPost"
+                aria-controls="createPost"
+                aria-expanded="false"
+                aria-label="Toggle create post">
+                <span>Create a new post +</span>
+              </button>
 
-                <form id="createPost" class="collapse">
-                  <div class="form-group my-2">
-                    <label for="">Title</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      name="title"
-                      required />
-                  </div>
-                  <div class="form-group my-2">
-                    <label for="">Message</label>
-                    <textarea class="form-control" name="body"></textarea>
-                  </div>
-
-                  <div class="form-group my-2">
-                    <label for="">Tags</label>
-                    <input class="form-control" type="text" name="tags" />
-                  </div>
-
-                  <div class="form-group my-2">
-                    <label for="">Media</label>
-                    <input class="form-control" type="url" name="media" />
-                  </div>
-
-                  <div class="row mb-5 mt-3">
-                    <div class="col-10 col-md-10">
-                      <button
-                        type="submit"
-                        class="btn btn-primary btn-md btn-block custom-btn"
-                        value="post-comment">
-                        Create post
-                      </button>
-                    </div>
-                  </div>
-                </form>
-
-                <div class="input-group col-sm-3 col-mb-6 mb-2">
-                  <label class="input-group-text" for="orderby">Order by</label>
-                  <select class="form-select" id="orderby">
-                    <option value="newest">Latest posts</option>
-                    <option value="oldest">Oldest posts</option>
-                  </select>
+              <form id="createPost" class="collapse">
+                <div class="form-group my-2">
+                  <label for="">Title</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="title"
+                    required />
+                </div>
+                <div class="form-group my-2">
+                  <label for="">Message</label>
+                  <textarea class="form-control" name="body"></textarea>
                 </div>
 
-                <div class="input-group col">
-                  <label class="input-group-text" for="search">Search</label>
-                  <input type="search" class="form-control" id="search" />
+                <div class="form-group my-2">
+                  <label for="">Tags</label>
+                  <input class="form-control" type="text" name="tags" />
                 </div>
+
+                <div class="form-group my-2">
+                  <label for="">Media</label>
+                  <input class="form-control" type="url" name="media" />
+                </div>
+
+                <div class="row mb-5 mt-3">
+                  <div class="col-10 col-md-10">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-md btn-block custom-btn"
+                      value="post-comment">
+                      Create post
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <div class="input-group col-sm-3 col-mb-6 mb-2">
+                <label class="input-group-text" for="orderby">Order by</label>
+                <select class="form-select" id="orderby">
+                  <option value="newest">Latest posts</option>
+                  <option value="oldest">Oldest posts</option>
+                </select>
+              </div>
+
+              <div class="input-group col">
+                <label class="input-group-text" for="search">Search</label>
+                <input type="search" class="form-control" id="search" />
               </div>
             </div>
+          </div>
         </div>
 
         <div class="d-flex justify-content-center">
           <div class="spinner-border" role="status">
-          <span class="visually-hidden"></span>
+            <span class="visually-hidden"></span>
           </div>
         </div>
         <div class="container">
           <div class="row mb-5 justify-content-center mx-1">
-            <div id="card" class="col-sm-10 col-md-8 col-lg-6 mb-5">
-            </div>
+            <div id="card" class="col-sm-12 col-md-12 col-lg-12 mb-5">
           </div>
         </div>
       </section>

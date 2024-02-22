@@ -6,10 +6,10 @@ export function postTemplate(postData) {
   row.classList.add("row", "g-0");
 
   const profileImgCol = document.createElement("div");
-  profileImgCol.classList.add("col-2");
+  profileImgCol.classList.add("col-2", "d-flex", "justify-content-center", "align-items-start"); // Align items to the top
 
   const profileImg = document.createElement("img");
-  profileImg.src = postData.profileImageUrl || "../../image/default-avatar.JPG"; // Uses default image if no profile image is provided
+  profileImg.src = postData.profileImageUrl || "../../image/default-avatar.JPG";
   profileImg.classList.add("img-thumbnail");
   profileImg.alt = "Profile image";
 
@@ -31,11 +31,15 @@ export function postTemplate(postData) {
 
   const timestamp = document.createElement("p");
   timestamp.classList.add("small", "text-muted", "ms-3");
-  timestamp.textContent = postData.timestamp || "time stamp";;
+  timestamp.textContent = postData.timestamp || "time stamp";
+
+  const title = document.createElement("h4");
+  title.classList.add("card-title", "text-center");
+  title.textContent = postData.title || "Title";
 
   const image = document.createElement("img");
   image.src = postData.media;
-  image.classList.add("card-img", "text-center", "w-50");
+  image.classList.add("card-img", "text-center", "w-50", "mx-auto", "d-block"); // Center the image horizontally
   image.alt = "Post image";
 
   const body = document.createElement("p");
@@ -58,6 +62,7 @@ export function postTemplate(postData) {
 
   innerContent.appendChild(username);
   innerContent.appendChild(timestamp);
+  innerContent.appendChild(title);
   innerContent.appendChild(image);
   innerContent.appendChild(body);
   innerContent.appendChild(actionsDiv);

@@ -5,3 +5,4 @@ export * from "./updatePostFormListener.mjs";
 export * from "./removePostsHandler.mjs";
 export * from "./handlePostDate.mjs";
 export * from "./sortPosts.mjs";
+export * from "./searchPostsHandler.mjs";

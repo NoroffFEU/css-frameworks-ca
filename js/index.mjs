@@ -7,6 +7,7 @@ import { logoutHandler } from "./handler/logout/logout.mjs";
 import { displayProfilePostHandler } from "./handler/posts/index.mjs";
 import { removePostsHandler } from "./handler/posts/index.mjs";
 import { handleEditForm } from "./handler/posts/handleEditForm.mjs";
+import { searchPostsHandler } from "./handler/posts/index.mjs";
 
 function router() {
   const path = location.pathname;
@@ -25,6 +26,7 @@ function router() {
     case "/feed/posts/index.html":
       createPostFormListener();
       displayPostsHandler();
+      searchPostsHandler();
       logoutHandler();
       break;
     case "/feed/edit/":

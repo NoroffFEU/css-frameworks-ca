@@ -134,17 +134,20 @@
               </form>
 
               <div class="input-group col-sm-3 col-md-6 mb-2">
-                <label class="input-group-text" for="orderby">Order by</label>
                 <select class="form-select" id="orderby">
                   <option value="newest">Latest posts</option>
                   <option value="oldest">Oldest posts</option>
                 </select>
               </div>
 
-              <div class="input-group col">
-                <label class="input-group-text" for="search">Search</label>
-                <input type="search" class="form-control" id="search" />
-              </div>
+              <form class="input-group col" id="search-form">
+                <input type="search" class="form-control search-form" id="search" placeholder="Search"/>
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  id="search-btn">
+                  <i class="bi bi-search"></i>
+              </form>
             </div>
         <div class="d-flex justify-content-center">
           <div class="spinner-border" role="status">

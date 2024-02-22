@@ -7,7 +7,7 @@ import { logoutHandler } from "./handler/logout/logout.mjs";
 import { displayProfilePostHandler } from "./handler/posts/index.mjs";
 import { removePostsHandler } from "./handler/posts/index.mjs";
 import { handleEditForm } from "./handler/posts/handleEditForm.mjs";
-import { handlePostSort } from "../js/handler/posts/index.mjs";
+
 
 function router() {
   const path = location.pathname;
@@ -26,7 +26,6 @@ function router() {
     case "/feed/posts/index.html":
       createPostFormListener();
       displayPostsHandler();
-      handlePostSort();
       logoutHandler();
       break;
     case "/feed/edit/":
@@ -41,7 +40,7 @@ function router() {
       updatePostFormListener();
       displayProfilePostHandler();
       removePostsHandler();
-      handlePostSort();
+      // handlePostSort();
       break;
     case "/profile/edit.html":
       handleEditForm();

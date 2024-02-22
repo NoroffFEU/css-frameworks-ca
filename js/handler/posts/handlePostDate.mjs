@@ -8,13 +8,9 @@ export function handlePostDate(posts, selectedOption) {
 
   let sortedPosts = [...posts];
   if (selectedOption === "newest") {
-    console.log("Before sorting:", sortedPosts);
     sortedPosts.sort((a, b) => new Date(b.created) - new Date(a.created));
-    console.log("After sorting:", sortedPosts);
   } else if (selectedOption === "oldest") {
-    console.log("Before sorting:", sortedPosts);
     sortedPosts.sort((a, b) => new Date(a.created) - new Date(b.created));
-    console.log("After sorting:", sortedPosts);
   }
-  renderAllPosts("#card", sortedPosts);
+  renderAllPosts(sortedPosts);
 }

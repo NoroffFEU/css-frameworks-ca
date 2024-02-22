@@ -24,7 +24,7 @@ async function dologin(event) {
     storage.save("username", name);
     storage.save("email", email);
 
-    location.href = "/feed/posts/";
+    location.href = "/profile/";
   } catch (error) {
     displayMessage("#message", "danger", error.message);
   }

@@ -19,6 +19,9 @@ export function renderProfilePosts(posts) {
   spinner.style.display = "none";
 }
 
+//   postLink.append(row);
+//  postSection.append(postLink);
+
 function displayPost(post) {
   const postLink = document.createElement("div");
 
@@ -48,7 +51,7 @@ function displayPost(post) {
   const editPostClick = document.createElement("li");
   const editPostLink = document.createElement("a");
   editPostLink.classList.add("dropdown-item");
-  editPostLink.href = "#";
+  editPostLink.href = "/profile/edit.html?id=" + post.id;
   editPostLink.innerHTML = "Edit Post";
   editPostClick.append(editPostLink);
 
@@ -56,7 +59,7 @@ function displayPost(post) {
   const deletePostClick = document.createElement("li");
   const deletePostLink = document.createElement("button");
   deletePostLink.classList.add("dropdown-item");
-  deletePostLink.setAttribute("type", "button");
+  deletePostLink.setAttribute("data-id", post.id);
   deletePostLink.setAttribute("data-action", "delete");
   deletePostLink.innerHTML = "Delete Post";
   deletePostClick.append(deletePostLink);

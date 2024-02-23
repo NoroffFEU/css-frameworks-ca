@@ -15,7 +15,6 @@ export async function displayPostsHandler() {
     const container = document.querySelector("#card");
     renderAllPosts(posts, container);
     sortPosts(posts);
-
   } catch (error) {
     displayMessage(
       "#message",

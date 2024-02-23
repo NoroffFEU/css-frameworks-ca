@@ -19,7 +19,6 @@ export async function displayPostHandler() {
     const post = await getPost(id);
 
     if (post) {
-      document.title = `DIP/DRIVE | ${post.title}`;
       renderSinglePost(post, "#card");
     }
   } catch (error) {

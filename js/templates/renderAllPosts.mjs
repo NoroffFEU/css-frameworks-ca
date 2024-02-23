@@ -6,6 +6,7 @@
  */
 
 export function renderAllPosts(posts) {
+  
   const container = document.querySelector("#card");
   const spinner = document.querySelector(".spinner-border");
 
@@ -65,7 +66,7 @@ export function displayPost(post) {
 
   const userNameElement = document.createElement("p");
   userNameElement.classList.add("user-name", "text-primary");
-  const authorName = post.author.name || "Anonymous";
+  const authorName = post.author.name ?? "Anonymous";
   const postDate = new Date(post.created).toLocaleDateString();
   userNameElement.innerHTML = `<div><span class="pe-3 fs-5 text-dark">${authorName}</span></div><div class="p">${postDate}</div>`;
   userInformation.append(userNameElement);

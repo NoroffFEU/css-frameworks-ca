@@ -16,12 +16,8 @@ if (path === "/profile/login/index.html") {
   listeners.setUpdatePostListener();
 } else if (path === "/profile/edit/") {
   listeners.setUpdateProfileListener();
+}else if (path === "/feed/index.html"){
+  listeners.displayPosts();
 }
 
-// async function testTemplate() {
-//   const posts = await postsMethods.getPosts();
-//   const container = document.querySelector("#posts");
-//   templates.renderPostTemplates(posts, container);
-// }
-// testTemplate();
 

@@ -35,7 +35,6 @@ export async function getAllPosts(sort = "", sortOrder = "desc") {
   };
 
   const response = await fetch(postsUrl, options);
-  console.log(response);
   const results = await response.json();
 
   if (!response.ok) {

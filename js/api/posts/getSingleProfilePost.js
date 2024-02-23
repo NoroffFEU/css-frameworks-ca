@@ -24,7 +24,6 @@ export async function getSingleProfilePost(id) {
   };
 
   const response = await fetch(`${postsUrl}/${id}`, options);
-  console.log(response);
   const results = await response.json();
 
   if (!response.ok) {

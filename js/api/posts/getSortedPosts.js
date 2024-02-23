@@ -12,7 +12,6 @@ export async function getSortedPosts(posts) {
 
   sortingSelect.addEventListener("change", async function () {
     const selectedOption = sortingSelect.value;
-    console.log(selectedOption);
     dateSortingHandler(posts, selectedOption);
   });
 }

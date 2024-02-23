@@ -13,7 +13,6 @@ import { deletePostHandler } from "./deletePostHandler.js";
 
 export async function displayProfilePostsHandler() {
   try {
-    console.log("posts handler");
     const userName = getUserName();
 
     if (!userName) {

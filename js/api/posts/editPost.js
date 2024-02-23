@@ -32,7 +32,6 @@ export async function editPost(event) {
     throw new Error("Sorry, we couldn't find the post you're looking for.");
   }
 
-  console.log(post);
   try {
     await updatePost(post);
     document.querySelector("form#editPostForm").style.display = "none";

@@ -26,7 +26,6 @@ export async function deletePost(id) {
 
   const deleteUrl = `${postsUrl}/${id}`;
   const response = await fetch(deleteUrl, options);
-  console.log(response);
   const results = await response.json();
 
   if (!response.ok) {

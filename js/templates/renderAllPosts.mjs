@@ -105,10 +105,5 @@ export function displayPost(post) {
   postLink.append(row);
   postSection.append(postLink);
 
-  postLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default behavior of link click
-    displayPostHandler(id); // Pass the post ID to the displayPostHandler
-  });
-
   return postSection;
 }

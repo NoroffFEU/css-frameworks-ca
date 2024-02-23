@@ -1,31 +1,30 @@
-import { getUserName } from "../handler/storage.mjs";
 
-// export function renderProfilePosts(posts) {
-//   const username = getUserName();
-//   const userPosts = posts.filter((post) => post.author.name === username);
-//   const container = document.querySelector("#card");
-//   const spinner = document.querySelector(".spinner-border");
+export function renderSinglePost(posts) {
+  const container = document.querySelector("#card");
+  const spinner = document.querySelector(".spinner-border");
 
-//   const showUserName = document.querySelector("#show-username");
-//   showUserName.textContent = username;
+  container.innerHTML = "";
+  const allPostsHtml = posts.map((post) => {
+    return displaySinglePost(post);
+  });
 
-//   const singlePostHtml = userPosts.map((post) => {
-//     return displayPost(post);
-//   });
+  container.append(...allPostsHtml);
 
-//   container.append(...singlePostsHtml);
-
-// }
-
-
-function renderSinglePost(parent, post) {
-  console.log("Post data:", post);
-  const showUserName = document.querySelector(parent);
-  showUserName.textContent = username;
-
-  const postLink = document.createElement("div");
-  
   spinner.style.display = "none";
+}
+
+export function displaySinglePost(post) {
+  console.log("Post data:", post);
+  const id = post.id;
+
+  const postLink = document.createElement("a");
+  postLink.style.textDecoration = "none";
+  postLink.href = `/feed/posts/post.html?id=${id}`;
+  // replace with your actual post page URL
+
+  const div = document.createElement("div");
+
+  postLink.appendChild(div);
 
   // Main post section
   const postSection = document.createElement("div");

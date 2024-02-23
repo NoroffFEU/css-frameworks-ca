@@ -4,21 +4,21 @@ import { displayMessage } from "../../ui/displayMessage.mjs";
 
 export function searchPostsHandler() {
   // get the form
-  const form = document.querySelector("#search-form");
+  const form = document.querySelector("#searchForm");
 
   // add the event listener = "submit"
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     // get the input value
-    const searchTerm = form.querySelector(".search-form").value;
+    const searchTerm = document.querySelector("#search").value.trim();
 
     // if the trimmed value is "" then return
     if (searchTerm.trim() === "") return;
     displayMessage(
       "#message",
       "warning",
-      "Can't find what you're looking for? Try search for a tag."
+      "Can't find what you're looking for? Try searching for a tag."
     );
 
     // call the search api
@@ -27,7 +27,7 @@ export function searchPostsHandler() {
 
       // if the response is ok then call the displayPost function
       displayPostsHandler(results);
-      document.querySelector(".search-form").value = "";
+      document.querySelector("#search").value = "";
     } catch (error) {
       // else throw an error
       console.error("Error searching posts:", error);

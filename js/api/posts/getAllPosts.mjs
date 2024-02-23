@@ -4,6 +4,19 @@ import { get as getToken } from "../../handler/storage.mjs";
 
 const action = "posts";
 
+/**
+ * Fetches all posts from the server.
+ *
+ * @returns {Promise<Array>} A promise that resolves to an array of posts.
+ * @throws {Error} If the user is not logged in or if the server response is not ok, throws an error with the appropriate message.
+ *
+ * @example
+ *
+ * getAllPosts()
+ *   .then(posts => console.log(posts))
+ *   .catch(error => console.error(error));
+ */
+
 export async function getAllPosts() {
   const token = getToken("token");
 

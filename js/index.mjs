@@ -29,6 +29,9 @@ function router() {
       searchPostsHandler();
       logoutHandler();
       break;
+    case "/feed/posts/post.html":
+    
+      break;
     case "/feed/edit/":
     case "/feed/edit/index.html":
       createPostFormListener();

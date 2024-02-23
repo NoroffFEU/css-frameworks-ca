@@ -1,43 +1,31 @@
-/**
- * Renders all posts.
- * It clears the container, generates the HTML for each post, appends the posts to the container, and hides the spinner.
- *
- * @param {Array} posts - The posts to render.
- */
+import { getUserName } from "../handler/storage.mjs";
 
-export function renderAllPosts(posts) {
-  const container = document.querySelector("#card");
-  const spinner = document.querySelector(".spinner-border");
+// export function renderProfilePosts(posts) {
+//   const username = getUserName();
+//   const userPosts = posts.filter((post) => post.author.name === username);
+//   const container = document.querySelector("#card");
+//   const spinner = document.querySelector(".spinner-border");
 
-  container.innerHTML = "";
-  const allPostsHtml = posts.map((post) => {
-    return displayPost(post);
-  });
+//   const showUserName = document.querySelector("#show-username");
+//   showUserName.textContent = username;
 
-  container.append(...allPostsHtml);
+//   const singlePostHtml = userPosts.map((post) => {
+//     return displayPost(post);
+//   });
 
+//   container.append(...singlePostsHtml);
+
+// }
+
+
+function renderSinglePost(parent, post) {
+  console.log("Post data:", post);
+  const showUserName = document.querySelector(parent);
+  showUserName.textContent = username;
+
+  const postLink = document.createElement("div");
+  
   spinner.style.display = "none";
-}
-
-/**
- * Generates the HTML for a post.
- * It creates a new div element for the post, adds the necessary classes, and populates it with the post data.
- *
- * @param {Object} post - The post data.
- * @returns {HTMLDivElement} The post's HTML.
- */
-
-export function displayPost(post) {
-  const id = post.id;
-
-  const postLink = document.createElement("a");
-  postLink.style.textDecoration = "none";
-  postLink.href = `/feed/posts/post.html?id=${id}`;
-  // replace with your actual post page URL
-
-  const div = document.createElement("div");
-
-  postLink.appendChild(div);
 
   // Main post section
   const postSection = document.createElement("div");
@@ -66,8 +54,9 @@ export function displayPost(post) {
   const userNameElement = document.createElement("p");
   userNameElement.classList.add("user-name", "text-primary");
   const authorName = post.author.name || "Anonymous";
-  const postDate = new Date(post.created).toLocaleDateString();
-  userNameElement.innerHTML = `<div><span class="pe-3 fs-5 text-dark">${authorName}</span></div><div class="p">${postDate}</div>`;
+  userNameElement.innerHTML = `<span class="pe-3 fs-5 text-dark">${authorName}</span>${new Date(
+    post.created
+  ).toLocaleDateString()}`;
   userInformation.append(userNameElement);
 
   row.append(userInformation);
@@ -104,11 +93,6 @@ export function displayPost(post) {
 
   postLink.append(row);
   postSection.append(postLink);
-
-  postLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default behavior of link click
-    displayPostHandler(id); // Pass the post ID to the displayPostHandler
-  });
 
   return postSection;
 }

@@ -1,6 +1,13 @@
 import { register } from "../../api/auth/register.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
+/**
+ * Attaches a submit event listener to the registration form.
+ * When the form is submitted, it prevents the default form submission, extracts the form data, and attempts to register a new user.
+ * If the registration is successful, it resets the form and displays a success message.
+ * If the registration fails, it displays an error message.
+ */
+
 export function registerFormListener() {
   const form = document.querySelector("#registerForm");
 
@@ -14,7 +21,7 @@ export function registerFormListener() {
 
       try {
         await register(profile);
-        // This display a message if the user is successfully registered
+
         form.reset();
         displayMessage(
           "#message",
@@ -23,7 +30,6 @@ export function registerFormListener() {
         );
       } catch (error) {
         displayMessage("#message", "danger", error.message);
-        // This display a message if the user is not successfully registered
       }
     });
   }

@@ -1,5 +1,12 @@
 import { getPost } from "../../api/posts/index.mjs";
 
+/**
+ * Attaches a submit event listener to the update post form.
+ * When the form is submitted, it prevents the default form submission, extracts the form data, and attempts to update a post.
+ * Before the form is submitted, it fetches the post data and populates the form with the post data.
+ * If the form is not present, it does nothing.
+ */
+
 export async function updatePostFormListener() {
   const form = document.querySelector("#updatePost");
 

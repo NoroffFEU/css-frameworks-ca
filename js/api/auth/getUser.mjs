@@ -1,6 +1,18 @@
 import { getPost } from "../api/posts/getPost.mjs";
 import * as storage from "../handler/storage.mjs";
 
+/**
+ * Fetches a post by its ID and displays it on the page.
+ *
+ * @param {number} id - The ID of the post to fetch and display.
+ * @returns {Promise<void>} Nothing.
+ *
+ * @example
+ *
+ * displayPostById(1)
+ *   .catch(error => console.error(error));
+ */
+
 async function displayPostById(id) {
   try {
     const post = await getPost(id);

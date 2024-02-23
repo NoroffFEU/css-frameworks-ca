@@ -1,5 +1,13 @@
 import { getUserName } from "../handler/storage.mjs";
 
+/**
+ * Renders all posts of the currently logged in user.
+ * It gets the username from storage, filters the posts by the username, and appends the posts to the container.
+ * It also displays the username and hides the spinner.
+ *
+ * @param {Array} posts - The posts to render.
+ */
+
 export function renderProfilePosts(posts) {
   const username = getUserName();
   const userPosts = posts.filter((post) => post.author.name === username);
@@ -18,9 +26,14 @@ export function renderProfilePosts(posts) {
 
   spinner.style.display = "none";
 }
-
-//   postLink.append(row);
-//  postSection.append(postLink);
+/**
+ * Generates the HTML for a post.
+ * It creates a new div element for the post, adds the necessary classes, and populates it with the post data.
+ * It also creates a dropdown menu for each post with options to edit and delete the post.
+ *
+ * @param {Object} post - The post data.
+ * @returns {HTMLDivElement} The post's HTML.
+ */
 
 function displayPost(post) {
   const postLink = document.createElement("div");

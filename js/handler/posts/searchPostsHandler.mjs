@@ -24,6 +24,7 @@ export function searchPostsHandler() {
     // call the search api
     try {
       const results = await searchPosts(searchTerm);
+      console.log(`Search term: ${searchTerm}, Results:`, results); // This will log the search term and the results
 
       // if the response is ok then call the displayPost function
       displayPostsHandler(results);

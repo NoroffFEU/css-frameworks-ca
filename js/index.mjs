@@ -8,7 +8,7 @@ import { displayProfilePostHandler } from "./handler/posts/index.mjs";
 import { removePostsHandler } from "./handler/posts/index.mjs";
 import { handleEditForm } from "./handler/posts/handleEditForm.mjs";
 import { searchPostsHandler } from "./handler/posts/index.mjs";
-import { renderSinglePost } from "./templates/renderSinglePost.mjs"; 
+import { displayPostHandler } from "./handler/posts/index.mjs";
 
 function router() {
   const path = location.pathname;
@@ -31,7 +31,7 @@ function router() {
       logoutHandler();
       break;
     case "/feed/posts/post.html":
-      renderSinglePost();
+      displayPostHandler();
       break;
     case "/feed/edit/":
     case "/feed/edit/index.html":

@@ -15,7 +15,7 @@ import { fetchToken } from "../fetchToken.mjs";
  *   .catch(error => console.error(error));
  */
 
-const action = "/posts";
+const action = "posts";
 
 export async function getPost(id) {
   const getPostURL = `${BASE_URL}${action}/${id}`;

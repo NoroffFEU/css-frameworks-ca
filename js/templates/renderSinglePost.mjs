@@ -1,26 +1,23 @@
-
-export function renderSinglePost(posts) {
-  const container = document.querySelector("#card");
+export function displaySinglePost(posts) {
+  const container = document.querySelector("#card-single");
   const spinner = document.querySelector(".spinner-border");
 
   container.innerHTML = "";
-  const allPostsHtml = posts.map((post) => {
+  const singlePostsHtml = posts.map((post) => {
     return displaySinglePost(post);
   });
 
-  container.append(...allPostsHtml);
+  container.append(...singlePostsHtml);
 
   spinner.style.display = "none";
 }
 
-export function displaySinglePost(post) {
+export function renderSinglePost(post) {
   console.log("Post data:", post);
-  const id = post.id;
 
   const postLink = document.createElement("a");
   postLink.style.textDecoration = "none";
-  postLink.href = `/feed/posts/post.html?id=${id}`;
-  // replace with your actual post page URL
+  postLink.href = "#";
 
   const div = document.createElement("div");
 

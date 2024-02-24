@@ -3,6 +3,14 @@ import { fetchToken } from "../fetchToken.mjs";
 
 const action = "posts";
 
+/**
+ * Searches for posts with a specific tag.
+ *
+ * @param {string} tag - The tag to search for.
+ * @returns {Promise<Object>} The result of the search.
+ * @throws {Error} When the API call is unsuccessful or no posts are found.
+ */
+
 export async function searchPosts(tag) {
   const url = `${BASE_URL}${action}?_tag=${tag}`;
 

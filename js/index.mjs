@@ -10,6 +10,15 @@ import { handleEditForm } from "./handler/posts/handleEditForm.mjs";
 import { searchPostsHandler } from "./handler/posts/index.mjs";
 import { displayPostHandler } from "./handler/posts/index.mjs";
 
+/**
+ * Routes the application based on the current path.
+ *
+ * Depending on the current path, different event listeners are added to handle
+ * user interactions. For example, on the login page, a listener is added to handle
+ * the login form submission. On the posts page, listeners are added to handle
+ * creating, displaying, and searching for posts.
+ */
+
 function router() {
   const path = location.pathname;
   console.log(path);

@@ -10,28 +10,47 @@ https://css-framework-ca-norheim.netlify.app/
 
 ## Description
 
-### This were our brief
+### Project Brief
 
-creating 3 pages in HTML using Bootstrap and SASS:
+This project started as a brief to create 3 pages in HTML using Bootstrap and SASS:
 
 - Authentication page (/index.html)
 - Feed Page (/feed/index.html)
 - Profile page (/profile/index.html)
 
-The authentication page should have a form to login or register to the application. Ensure to include HTML form validation and use /profile as the action attribute. Password must have a minimum length of 8 characters.
+The application has now been extended with JavaScript to add the following features:
 
-The feed page should have a list of posts thumbnails, a search bar, sort options and a form to create a new post. You may add additional design features beyond these requirements.
+- User with @noroff.no or @stud.noroff.no email can register profile
+- Registered user can login
+- User can view a post content feed
+- User can filter the post content feed
+- User can search the post content feed
+- User can view a post content item by ID
+- User can create a post content item
+- User can update a post content item
+- User can delete a post content item
 
-The profile page should have a profile image, username, list of user posts, follow button and an area to display following/followers.
+To complete the required features, the application makes use of GET, POST, PUT, and DELETE HTTP methods. The application also uses localStorage, especially for storing JWT tokens.
 
-There is no requirment for JS functionality beyond Bootstrap UX behaviour. For example, using the provided dropdowns, tabs or carousel is acceptable but there is no further requirement for custom JS.
+The application uses a provided API and API documentation to create a functioning user interface that allows for viewing, posting, editing, and deleting social media content.
 
 ## Built With
 
 - Figma (prototyping)
 - PhotoShop (Photo direction)
+- Visual Studio Code
 - Bootstrap5
 - SASS
+- JavaScript
+- GitHub Projects
+
+### Task manager
+
+I used GitHub Projects to keep track of my tasks.
+
+```bash
+Projects https://github.com/users/KariannNor/projects/2/views/1
+```
 
 ## Getting Started
 

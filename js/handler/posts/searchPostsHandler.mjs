@@ -2,6 +2,14 @@ import { searchPosts } from "../../api/posts/index.mjs";
 import { renderAllPosts } from "../../templates/renderAllPosts.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
+/**
+ * Handles the search posts form submission.
+ * When the form is submitted, it prevents the default form submission,
+ * gets the search term from the form, and calls the searchPosts API.
+ * If the API call is successful, it renders the posts using renderAllPosts.
+ * If the API call fails, it displays an error message using displayMessage.
+ */
+
 export function searchPostsHandler() {
   // get the form
   const form = document.querySelector("#searchForm");

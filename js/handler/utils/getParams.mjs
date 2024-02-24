@@ -6,8 +6,10 @@
  */
 
 export function getParams(paramName) {
+  console.log("getParams called with param:", paramName);
   const urlParams = new URLSearchParams(window.location.search);
   const paramValue = urlParams.get(paramName);
+  console.log("getParams returning value:", paramValue);
   if (!paramValue) {
     return null;
   }

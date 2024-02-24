@@ -1,26 +1,47 @@
-export function displaySinglePost(posts) {
-  console.log("displaySinglePost called");
-  console.log(posts);
+// export function renderSinglePost(posts) {
+//   console.log("renderSinglePost function called with post:", post);
+//   console.log(posts);
 
-  const container = document.querySelector("#card-single");
+//   const container = document.querySelector("#post");
+//   const spinner = document.querySelector(".spinner-border");
+
+//   container.innerHTML = "";
+
+//   const singlePostsHtml = posts.map((post) => {
+//     return displaySinglePost(post);
+//   });
+
+//   container.append(...singlePostsHtml);
+
+//   spinner.style.display = "none";
+// }
+
+export async function renderSinglePost(post) {
+  console.log("renderSinglePost function called with post:", post);
+  console.log(post);
+
+  const container = document.querySelector("#post");
   const spinner = document.querySelector(".spinner-border");
 
   container.innerHTML = "";
-  const singlePostsHtml = posts.map((post) => {
-    return renderSinglePost(post); // Changed this line
-  });
 
-  container.append(...singlePostsHtml);
+  console.log("Posts array before map call:", post);
+  const postElement = await displaySinglePost(post);
+  console.log("displaySinglePost has been called, postElement:", postElement);
+
+  container.appendChild(postElement);
 
   spinner.style.display = "none";
 }
 
-export function renderSinglePost(post) {
-  console.log("Post data:", post);
+export function displaySinglePost(post) {
+  console.log("displaySinglePost function called with post:", post);
+
+  const id = post.id || "default-id";
 
   const postLink = document.createElement("a");
   postLink.style.textDecoration = "none";
-  postLink.href = "#";
+  postLink.href = `/feed/posts/post.html?id=${id}`;
 
   const div = document.createElement("div");
 

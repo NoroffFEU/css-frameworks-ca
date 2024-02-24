@@ -1,5 +1,5 @@
 import { getPost } from "../../api/posts/index.mjs";
-import { displaySinglePost } from "../../templates/index.mjs";
+import { renderSinglePost } from "../../templates/index.mjs";
 import { getParams } from "../../handler/utils/getParams.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
@@ -10,16 +10,17 @@ import { displayMessage } from "../../ui/displayMessage.mjs";
  */
 
 export async function displayPostHandler() {
+  console.log("displayPostHandler called");
   try {
     const id = getParams("id");
-
+    console.log("Retrieved id:", id);
     if (!id) {
       throw new Error("No post ID was provided.");
     }
     const post = await getPost(id);
-
+    console.log("Retrieved post:", post);
     if (post) {
-      displaySinglePost(post, "#card");
+      renderSinglePost(post, "#card");
     }
   } catch (error) {
     displayMessage(

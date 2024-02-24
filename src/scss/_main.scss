@@ -1,0 +1,65 @@
+body {
+  margin-top: 150px;
+  font-family: 'Jost', sans-serif;
+  height: 100%;
+}
+
+h4 {
+  font-weight: 300;
+}
+
+h5 {
+color: $primary;
+}
+
+
+nav {
+  margin-bottom: 50px;
+
+  font-size: 18px;
+}
+
+h1 {
+color: $primary;
+}
+
+.display-4 {
+  font-weight: 200;
+}
+
+.active
+{
+  text-decoration: underline;
+}
+
+.custom-btn {
+width: 12em;
+}
+
+.navbar-brand {
+  margin: 1.5rem 2rem;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.navbar-nav {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.divider {
+  border-top: solid 2px $gray-300;
+
+  max-height: 500px;
+}
+
+
+/** login picture **/
+
+.crown {
+  margin: 0px auto 10px -30px !important;
+}
+
+// .container img {
+//   max-width: 230px;
+// }

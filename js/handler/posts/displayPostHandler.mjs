@@ -25,7 +25,7 @@ export async function displayPostHandler() {
     displayMessage(
       "#message",
       "danger",
-      "Something went wrong trying to sort the posts."
+      "Something went wrong trying to get the posts."
     );
   }
 }

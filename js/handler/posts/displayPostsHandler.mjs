@@ -19,7 +19,7 @@ export async function displayPostsHandler() {
     displayMessage(
       "#message",
       "danger",
-      "Something went wrong trying to sort the posts."
+      "Log in to continue"
     );
   }
 }

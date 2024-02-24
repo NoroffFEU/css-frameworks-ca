@@ -13,13 +13,13 @@ import { displayMessage } from "../../ui/displayMessage.mjs";
  */
 
 export async function displayProfilePostHandler() {
-  const username = getUserName();
-
-  if (!username) {
-    throw new Error("Username not found");
-  }
-
   try {
+    const username = getUserName();
+
+    if (!username) {
+      throw new Error("Username not found");
+    }
+
     const posts = await postMethods.getProfilePosts(username);
     const container = document.querySelector("#card");
 
@@ -27,6 +27,10 @@ export async function displayProfilePostHandler() {
     removePostsHandler();
   } catch (error) {
     console.error(error);
-    displayMessage("#message", "danger", "Please log in to create a post.");
+    displayMessage(
+      "#message",
+      "danger",
+      "Please log in to see your profile page."
+    );
   }
 }

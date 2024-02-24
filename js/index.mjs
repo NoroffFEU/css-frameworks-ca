@@ -51,6 +51,7 @@ function router() {
     case "/profile/":
     case "/profile/index.html":
       logoutHandler();
+      createPostFormListener();
       updatePostFormListener();
       displayProfilePostHandler();
       removePostsHandler();

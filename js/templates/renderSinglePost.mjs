@@ -1,3 +1,13 @@
+/**
+ * Renders a single post in the HTML container with the id "post".
+ *
+ * This function first clears the container, hides the spinner, and then calls `displaySinglePost`
+ * to create an HTML element for the post. It then appends the post element to the container.
+ *
+ * @function renderSinglePost
+ * @param {Object} post - The post object to be rendered.
+ */
+
 export function renderSinglePost(post) {
   const container = document.querySelector("#post");
   const spinner = document.querySelector(".spinner-border");
@@ -9,6 +19,18 @@ export function renderSinglePost(post) {
 
   container.appendChild(postElement);
 }
+
+/**
+ * Creates an HTML element for a single post.
+ *
+ * This function creates a series of nested HTML elements to represent the post,
+ * including elements for the user information, post media (if any), and post text.
+ * It then returns the top-level element.
+ *
+ * @function displaySinglePost
+ * @param {Object} post - The post object to be displayed.
+ * @returns {HTMLElement} The HTML element representing the post.
+ */
 
 export function displaySinglePost(post) {
   const postLink = document.createElement("a");

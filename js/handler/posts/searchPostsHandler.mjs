@@ -3,41 +3,56 @@ import { renderAllPosts } from "../../templates/renderAllPosts.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
 /**
- * Handles the search posts form submission.
- * When the form is submitted, it prevents the default form submission,
- * gets the search term from the form, and calls the searchPosts API.
- * If the API call is successful, it renders the posts using renderAllPosts.
- * If the API call fails, it displays an error message using displayMessage.
+ * Handles the search form submission event.
+ *
+ * When the form is submitted, it prevents the default form submission, clears any previous error message,
+ * gets the search term from the input field, and calls the `searchPosts` API with the search term.
+ *
+ * If the search term is empty, it returns early.
+ *
+ * If the `searchPosts` API returns null or an empty array, it displays a warning message and returns early.
+ *
+ * If the `searchPosts` API returns an array of posts, it renders the posts in the container element.
+ *
+ * If an error occurs during the process, it logs the error and displays an error message.
+ *
+ * @function searchPostsHandler
+ * @async
  */
 
 export function searchPostsHandler() {
-  // get the form
   const form = document.querySelector("#searchForm");
 
-  // add the event listener = "submit"
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    // get the input value
+    displayMessage("#message", "", "");
+
     const searchTerm = document.querySelector("#search").value.trim();
 
-    // if the trimmed value is "" then return
     if (searchTerm === "") return;
 
-    // call the search api
     try {
       const results = await searchPosts(searchTerm);
+
+      if (!results || results.length === 0) {
+        displayMessage(
+          "#message",
+          "warning",
+          "No posts found for your search term."
+        );
+        return;
+      }
 
       const container = document.querySelector("#card");
       renderAllPosts(results, container);
       document.querySelector("#search").value = "";
     } catch (error) {
-      // else throw an error
       console.error("Error searching posts:", error);
       displayMessage(
         "#message",
         "danger",
-        "Something went wrong trying to sort the posts."
+        "Something went wrong trying to get the posts."
       );
     }
   });

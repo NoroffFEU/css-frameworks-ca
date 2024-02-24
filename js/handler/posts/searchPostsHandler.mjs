@@ -15,11 +15,6 @@ export function searchPostsHandler() {
 
     // if the trimmed value is "" then return
     if (searchTerm === "") return;
-    displayMessage(
-      "#message",
-      "warning",
-      "Can't find what you're looking for? Try searching for a tag."
-    );
 
     // call the search api
     try {

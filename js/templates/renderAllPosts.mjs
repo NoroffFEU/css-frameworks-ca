@@ -6,7 +6,6 @@
  */
 
 export function renderAllPosts(posts) {
-  
   const container = document.querySelector("#card");
   const spinner = document.querySelector(".spinner-border");
 
@@ -29,7 +28,7 @@ export function renderAllPosts(posts) {
  */
 
 export function displayPost(post) {
-  const id = post.id;
+  const id = post.id || "default-id";
 
   const postLink = document.createElement("a");
   postLink.style.textDecoration = "none";
@@ -66,8 +65,10 @@ export function displayPost(post) {
 
   const userNameElement = document.createElement("p");
   userNameElement.classList.add("user-name", "text-primary");
-  const authorName = post.author.name ?? "Anonymous";
-  const postDate = new Date(post.created).toLocaleDateString();
+  const authorName = (post.author && post.author.name) || "Anonymous";
+  const postDate = post.created
+    ? new Date(post.created).toLocaleDateString()
+    : "Unknown date";
   userNameElement.innerHTML = `<div><span class="pe-3 fs-5 text-dark">${authorName}</span></div><div class="p">${postDate}</div>`;
   userInformation.append(userNameElement);
 

@@ -1,10 +1,13 @@
 export function displaySinglePost(posts) {
+  console.log("displaySinglePost called");
+  console.log(posts);
+
   const container = document.querySelector("#card-single");
   const spinner = document.querySelector(".spinner-border");
 
   container.innerHTML = "";
   const singlePostsHtml = posts.map((post) => {
-    return displaySinglePost(post);
+    return renderSinglePost(post); // Changed this line
   });
 
   container.append(...singlePostsHtml);

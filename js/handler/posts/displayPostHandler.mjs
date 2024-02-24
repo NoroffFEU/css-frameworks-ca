@@ -1,5 +1,5 @@
 import { getPost } from "../../api/posts/index.mjs";
-import { renderSinglePost } from "../../templates/index.mjs";
+import { displaySinglePost } from "../../templates/index.mjs";
 import { getParams } from "../../handler/utils/getParams.mjs";
 import { displayMessage } from "../../ui/displayMessage.mjs";
 
@@ -19,7 +19,7 @@ export async function displayPostHandler() {
     const post = await getPost(id);
 
     if (post) {
-      renderSinglePost(post, "#card");
+      displaySinglePost(post, "#card");
     }
   } catch (error) {
     displayMessage(

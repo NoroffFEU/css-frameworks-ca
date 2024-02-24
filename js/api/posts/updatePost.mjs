@@ -1,10 +1,6 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
 
-
-/**
- * Handles the form submission to update a post.
- * @param {Event} event - The submit event object.
- */
+const action = "/posts";
 
 const form = document.getElementById("single-page-container");
 form.addEventListener("submit", async function (event) {
@@ -16,7 +12,6 @@ form.addEventListener("submit", async function (event) {
     const postId = new URLSearchParams(window.location.search).get("id");
 
     try {
-
         const postData = {
             id: postId,
             title: title,
@@ -32,22 +27,24 @@ form.addEventListener("submit", async function (event) {
         bodyMessage.innerHTML = `
             <div class="alert alert-danger text-center w-50 mx-auto fs-4" role="alert">
                 ${error}<br><a class="text-dark text-center mx-auto fs-4" href="/profile/">Return here</a>
-            </div>`
+            </div>`;
     }
 });
 
-const action = "/posts";
+window.addEventListener('DOMContentLoaded', async () => {
+    const postId = new URLSearchParams(window.location.search).get("id");
 
-/**
- * Updates a post with the provided data.
- * @param {Object} postData The data of the post to be updated.
- * @param {String} postData.id The ID of the post to be updated.
- * @param {String} postData.title The title of the post.
- * @param {String} postData.body The body content of the post.
- * @param {String} postData.media The URL of the media associated with the post.
- * @returns {Promise} A promise that resolves with the updated post data.
- * @throws {Error} If failed to update the post.
- */
+    try {
+        const postData = await fetchPostData(postId);
+
+        // Populate the input fields with the retrieved data
+        document.getElementById("exampleFormControlInput1").value = postData.title;
+        document.getElementById("validationTextarea").value = postData.body;
+        document.getElementById("exampleFormControlInput2").value = postData.media;
+    } catch (error) {
+        console.error('Error fetching post data:', error.message);
+    }
+});
 
 export async function updatePost(postData) {
     const id = postData.id;
@@ -75,3 +72,35 @@ export async function updatePost(postData) {
         throw error;
     }
 };
+
+async function fetchPostData(postId) {
+    const fetchUrl = `${API_SOCIAL_URL}${action}/${postId}`;
+    const accessToken = localStorage.getItem("accessToken");
+
+    try {
+        const response = await fetch(fetchUrl, {
+            method: 'GET', 
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${accessToken}`
+            },
+        }); 
+        
+        if (!response.ok) {
+            throw new Error('Failed to fetch post data');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Error:", error);
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("alert", "alert-danger", "text-center", "w-50", "mx-auto", "fs-4");
+        errorMessageContainer.setAttribute("role", "alert");
+        errorMessageContainer.innerHTML = `${error}<br><a class="text-dark text-center mx-auto fs-4" href="/profile/">Go to Profile</a>`;
+    
+        const mainElement = document.querySelector("main");
+        mainElement.appendChild(errorMessageContainer);
+      }
+    }
+
+
+

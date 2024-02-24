@@ -42,10 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
             form.reset(); 
             getPosts();
         } catch (error) {
-            console.error('Error creating post:', error.message);
+            console.error("Error:", error);
+            const errorMessageContainer = document.createElement("div");
+            errorMessageContainer.classList.add("alert", "alert-danger", "text-center", "w-50", "mx-auto", "fs-4");
+            errorMessageContainer.setAttribute("role", "alert");
+            errorMessageContainer.innerHTML = `${error}<br><a class="text-dark text-center mx-auto fs-4" href="/profile/">Go to Profile</a>`;
+        
+            const mainElement = document.querySelector("main");
+            mainElement.appendChild(errorMessageContainer);
         }
     });
 });
+
 
 
 

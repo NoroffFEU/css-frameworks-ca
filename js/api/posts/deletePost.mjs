@@ -24,7 +24,10 @@ document.addEventListener('click', async function(event) {
                 await removePost(postId);
 
             } catch (error) {
-                console.error('Error deleting post:', error.message);
+                bodyMessage = document.querySelector("main");
+                bodyMessage.innerHTML = `
+                <div class="alert alert-danger text-center w-50 mx-auto fs-4" role="alert">
+                    ${error}<br><a class="text-dark text-center mx-auto fs-4" href="/profile/">`;
 
             }
         }
@@ -50,6 +53,13 @@ export async function removePost(id) {
 
         return await response.json(); 
     } catch (error) {
-        throw error; 
+        console.error("Error:", error);
+        const errorMessageContainer = document.createElement("div");
+        errorMessageContainer.classList.add("alert", "alert-danger", "text-center", "w-50", "mx-auto", "fs-4");
+        errorMessageContainer.setAttribute("role", "alert");
+        errorMessageContainer.innerHTML = `${error}<br><a class="text-dark text-center mx-auto fs-4" href="/profile/">Go to Profile</a>`;
+    
+        const mainElement = document.querySelector("main");
+        mainElement.appendChild(errorMessageContainer);
     }
 }

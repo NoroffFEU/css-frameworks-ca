@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.card-body {
+  background-color: #FFC857;
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
@@ -11988,6 +11998,7 @@ body {
 }
 
 .card-body {
+  flex: none !important;
   cursor: pointer;
 }
 
@@ -12005,4 +12016,8 @@ a.card-link, div {
   display: block;
   text-decoration: none;
   color: inherit;
+}
+
+.logout {
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */

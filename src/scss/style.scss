@@ -25,6 +25,7 @@ body {
 
 
 .card-body {
+  flex: none !important;
   cursor: pointer;
 }
 
@@ -41,6 +42,10 @@ a.card-link, div {
   display: block; 
   text-decoration: none; 
   color: inherit; 
+}
+
+.logout {
+  border-radius: 5px;
 }
 
 

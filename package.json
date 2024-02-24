@@ -30,6 +30,6 @@
     "jsdocs": "^0.0.1"
   },
   "devDependencies": {
-    "sass": "^1.71.0"
+    "sass": "^1.71.1"
   }
 }

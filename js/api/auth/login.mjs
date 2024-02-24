@@ -23,40 +23,53 @@ function getFormData() {
 }
 
 /**
- * This is the event listener for the login form. The .preventDefault() prevents the submit buttons default behaviour when clicked upon.
- * If successful, it'll send the user to the home section. 
+ * Event listener for the login form. Prevents the default form submission behavior.
+ * If successful, redirects the user to the home section. 
  * 
  * @param {Event} e Submit event object.
  */
-
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const formData = getFormData();
 
     const API_LOGIN = `${API_SOCIAL_URL}/auth/login`;
 
-    const userLoggedIn = document.querySelector(".userLoggedIn");
+    try {
+        const response = await fetch(API_LOGIN, {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
 
-    fetch(API_LOGIN, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            if (typeof data === "object" && data.hasOwnProperty("accessToken")) {
-                const accessToken = data.accessToken;
-                const profileName = data.name;
-                const profilePicture = data.avatar;
-                localStorage.setItem("accessToken", accessToken)
-                localStorage.setItem("name", profileName);
-                    window.location.href = "/profile/home";
+        const data = await response.json();
+
+        console.log(data);
+
+        if (typeof data === "object" && data.hasOwnProperty("accessToken")) {
+            const accessToken = data.accessToken;
+            const profileName = data.name;
+            const profilePicture = data.avatar;
+            localStorage.setItem("accessToken", accessToken);
+            localStorage.setItem("name", profileName);
+            window.location.href = "/profile/feed";
+        } else {
+            const errorMessage = data.errors[0].message;
+            const errorElement = document.querySelector(".error-message");
+            if (errorElement) {
+                errorElement.innerText = errorMessage;
             }
-
-        })
-        .catch(error => console.error("Error:", error));
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        const errorElement = document.querySelector(".error-message");
+        if (errorElement) {
+            errorElement.innerText = "An error occurred while logging in. Please try again later.";
+        }
+    }
 });
+
+
+

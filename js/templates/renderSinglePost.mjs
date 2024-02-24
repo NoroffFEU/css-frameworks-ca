@@ -1,47 +1,19 @@
-// export function renderSinglePost(posts) {
-//   console.log("renderSinglePost function called with post:", post);
-//   console.log(posts);
-
-//   const container = document.querySelector("#post");
-//   const spinner = document.querySelector(".spinner-border");
-
-//   container.innerHTML = "";
-
-//   const singlePostsHtml = posts.map((post) => {
-//     return displaySinglePost(post);
-//   });
-
-//   container.append(...singlePostsHtml);
-
-//   spinner.style.display = "none";
-// }
-
-export async function renderSinglePost(post) {
-  console.log("renderSinglePost function called with post:", post);
-  console.log(post);
-
+export function renderSinglePost(post) {
   const container = document.querySelector("#post");
   const spinner = document.querySelector(".spinner-border");
-
   container.innerHTML = "";
 
-  console.log("Posts array before map call:", post);
-  const postElement = await displaySinglePost(post);
-  console.log("displaySinglePost has been called, postElement:", postElement);
+  spinner.style.display = "none";
+
+  const postElement = displaySinglePost(post);
 
   container.appendChild(postElement);
-
-  spinner.style.display = "none";
 }
 
 export function displaySinglePost(post) {
-  console.log("displaySinglePost function called with post:", post);
-
-  const id = post.id || "default-id";
-
   const postLink = document.createElement("a");
   postLink.style.textDecoration = "none";
-  postLink.href = `/feed/posts/post.html?id=${id}`;
+  postLink.href = `/feed/posts/`;
 
   const div = document.createElement("div");
 
@@ -73,7 +45,8 @@ export function displaySinglePost(post) {
 
   const userNameElement = document.createElement("p");
   userNameElement.classList.add("user-name", "text-primary");
-  const authorName = post.author.name || "Anonymous";
+  const authorName =
+    post.author && post.author.name ? post.author.name : "Anonymous";
   userNameElement.innerHTML = `<span class="pe-3 fs-5 text-dark">${authorName}</span>${new Date(
     post.created
   ).toLocaleDateString()}`;

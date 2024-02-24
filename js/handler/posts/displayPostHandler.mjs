@@ -10,15 +10,14 @@ import { displayMessage } from "../../ui/displayMessage.mjs";
  */
 
 export async function displayPostHandler() {
-  console.log("displayPostHandler called");
   try {
     const id = getParams("id");
-    console.log("Retrieved id:", id);
+
     if (!id) {
       throw new Error("No post ID was provided.");
     }
     const post = await getPost(id);
-    console.log("Retrieved post:", post);
+
     if (post) {
       renderSinglePost(post, "#card");
     }

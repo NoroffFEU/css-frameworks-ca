@@ -18,7 +18,7 @@ import { fetchToken } from "../fetchToken.mjs";
 const action = "posts";
 
 export async function getPost(id) {
-  const getPostURL = `${BASE_URL}${action}/${id}`;
+  const getPostURL = `${BASE_URL}${action}/${id}?_author=true`;
 
   try {
     const response = await fetchToken(getPostURL);

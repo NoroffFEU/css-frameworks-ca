@@ -44,13 +44,11 @@ The application uses a provided API and API documentation to create a functionin
 - JavaScript
 - GitHub Projects
 
-### Task manager
+## Task manager
 
 I used GitHub Projects to keep track of my tasks.
 
-```bash
-Projects https://github.com/users/KariannNor/projects/2/views/1
-```
+Projects: https://github.com/users/KariannNor/projects/2/views/1
 
 ## Getting Started
 

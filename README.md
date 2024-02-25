@@ -30,7 +30,9 @@ DishDelight are created as a part of css-frameworks course assignment, and it's 
 
 > NodeJs
 
-> NPM
+```
+NPM
+```
 
 > npm install bootstrap
 

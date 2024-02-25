@@ -24,7 +24,9 @@ DishDelight are created as a part of css-frameworks course assignment, and it's 
 
 1. Clone the repo:
 
-> git clone https://github.com/krialex/css-frameworks-ca
+```
+git clone https://github.com/krialex/css-frameworks-ca
+```
 
 2. Install the dependencies:
 

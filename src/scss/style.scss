@@ -1,0 +1,142 @@
+//Costume variables
+$primary: #345cac;
+$secondary: #91D7F2;
+$primaryFont: 'Pacifico', cursive;
+
+//Import functions and variables
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$alt-theme-colors: (
+    "altlight": #fef8fa,
+    "altdark": #e74971
+);
+
+$theme-colors: map-merge($alt-theme-colors, $theme-colors);
+
+//import styles
+@import "../scss/buttons";
+
+
+//import bootstrap
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/index-img.png'); 
+    background-size: cover; 
+    background-position: end; 
+    opacity: 0.60; 
+    z-index: -1;
+}
+.content {
+    position: relative; 
+    z-index: 1;
+}
+
+h2, h1 {
+    font-family: $primaryFont;
+}
+h1 {
+    font-size: 3.5rem;
+    margin-top: 70px;
+}
+
+body {
+    background-color: map-get($alt-theme-colors, "altlight");
+}
+
+.header {
+    background-color: map-get($alt-theme-colors, "altdark");
+}
+
+.mobileHeadingLogo, .navbar-toggler, .navbar-toggler-icon, .navbar-nav a {
+    color: #FFF;
+    border-color: #FFF;
+}
+
+.card-text, .card-title {
+    color: black;
+}
+
+.logInForm {
+    background-color: map-get($alt-theme-colors, "altlight");
+    opacity: 0.90;
+}
+
+.feed, .profile-container {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.newPostContainer {
+    margin: 0px 20px;
+}
+
+.logo-img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.profil-img-container {
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+    border-radius: 50%;
+}
+.profile-img {
+    width: 100%; 
+    height: auto; 
+    clip-path: circle(50% at 50% 50%);
+}
+
+.follow-info {
+    max-width: 350px;
+    margin: 20px auto 5px;
+    text-align: center;
+}
+
+hr {
+    color: map-get($alt-theme-colors, "altdark");
+}
+
+.postImage {
+    max-width: 200px;
+}
+
+.newPost {
+    margin: 10x auto;
+}
+
+textarea {
+    max-width: 400px;
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+.filter-btn {
+    max-width: 100px;
+}
+.card {
+    width: 13rem;
+}
+
+@media (max-width: 600px) {
+    .mobileHeadingLogo {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        display: none;
+    }
+}
+

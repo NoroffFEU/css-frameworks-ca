@@ -28,7 +28,15 @@ DishDelight are created as a part of css-frameworks course assignment, and it's 
 
 2. Install the dependencies:
 
-> npm install
+> NodeJs
+
+> NPM
+
+> npm install bootstrap
+
+> npm install -g sass
+
+> npm install -g live-server
 
 ### Running
 

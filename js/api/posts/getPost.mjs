@@ -37,6 +37,13 @@ export async function getPosts() {
  * @param {Array} posts An array of posts to be displayed.
  * @returns {void}
  */
+// Function to sanitize HTML entities
+function sanitizeHTML(html) {
+    const div = document.createElement('div');
+    div.textContent = html;
+    return div.innerHTML;
+}
+
 export function displayPosts(posts) {
     const container = document.getElementById("post");
     container.innerHTML = "";
@@ -48,8 +55,8 @@ export function displayPosts(posts) {
         postElement.classList.add("m-4");
         postElement.style.width = "20rem";
 
-        let mediaIMG = post.media ? `<img class="card-img-top" src="${post.media}" alt="Post media">` : '<img class="card-img-top" src="https://www.wellingmobilityscooters.co.uk/wp-content/uploads/2016/04/dummy-post-horisontal-thegem-blog-default-large.jpg">';
-        let avatarIMG = post.avatar ? `<img class="mx-auto d-block rounded-circle border border-custom-col height="60" src="${post.avatar}" alt="avatar profile">` : '<img class="mx-auto d-block rounded-circle" height="30" src="/images/ape-logo.png">';
+        let mediaIMG = post.media ? `<img class="card-img-top" src="${sanitizeHTML(post.media)}" alt="Post media">` : '<img class="card-img-top" src="https://www.wellingmobilityscooters.co.uk/wp-content/uploads/2016/04/dummy-post-horisontal-thegem-blog-default-large.jpg">';
+        let avatarIMG = post.avatar ? `<img class="mx-auto d-block rounded-circle border border-custom-col height="60" src="${sanitizeHTML(post.avatar)}" alt="avatar profile">` : '<img class="mx-auto d-block rounded-circle" height="30" src="/images/ape-logo.png">';
 
         const date = new Date(post.created);
         const year = date.getFullYear();
@@ -61,11 +68,11 @@ export function displayPosts(posts) {
             ${mediaIMG}
             <div class="seperator p-4">
                 <div class="d-flex flex-column h-100">
-                    <h4 class="card-title mb-3">${post.title}</h4>
+                    <h4 class="card-title mb-3">${sanitizeHTML(post.title)}</h4>
                     <p class="mb-3">${newDate}</p>
                     ${avatarIMG}
                 </div>
-                <p class="m-0 d-flex justify-content-center">${post.author.name}</p>
+                <p class="m-0 d-flex justify-content-center">${sanitizeHTML(post.author.name)}</p>
             </div>`;
 
         container.appendChild(postElement);
@@ -79,6 +86,7 @@ export function displayPosts(posts) {
 }
 
 getPosts();
+
 
 
 

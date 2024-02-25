@@ -1,0 +1,51 @@
+@import "variables";
+@import "card";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss"; 
+
+body {
+  margin-top: 150px;
+}
+
+.navbar-custom,
+.login,
+ .card-body {
+  background-color: $primary;
+  border: $border-color;
+}
+
+.form-control {
+  background-color: white;
+}
+
+.form-control:focus {
+  border-color: #6c757d; 
+  background-color: white; 
+  color: black; 
+}
+
+
+.card-body {
+  flex: none !important;
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+.custom-container {
+  max-width: 600px;
+}
+
+a.card-link, div {
+  display: block; 
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.logout {
+  border-radius: 5px;
+}
+
+

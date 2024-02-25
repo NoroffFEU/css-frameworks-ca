@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A starting point for the CSS Frameworks CA project",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass src/scss/:dist/css --watch"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,18 @@
     "SCSS",
     "SASS"
   ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
+  "author": "Ephraim Djeket",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "jsdocs": "^0.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
 }

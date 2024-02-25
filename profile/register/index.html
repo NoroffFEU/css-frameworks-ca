@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApeAmigos | Sign up</title>
+    <link href="/dist/css/style.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <link rel="icon" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <script src="/js/api/auth/register.mjs" type="module" defer></script>
+</head>
+
+<body class="pt-4">
+
+    <header clas>
+        <header clas>
+            <nav class="navbar navbar-expand-md navbar-custom fixed-top">
+                <div class="text-center mx-auto">
+                    <h1 class="fs-4">Welcome to ApeAmigos</h1>
+                </div>
+            </nav>
+        </header>
+    </header>
+    <main>
+        <h1 class="text-light text-center fs-4 fs-md-3">🌴Sign up to the social jungle!🌴</h1>
+        <div class="custom-container login mx-auto rounded-4 col-md-8 col-10">
+            <div class="loginform row justify-content-center mt-5 border-dark">
+                <div class="col-7">
+                    <form class="formCollection">
+                        <div class="form-group">
+                            <h2 class="text-center mt-3 fs-4">Register</h2>
+                            <label for="username" class="d-none">Username:</label>
+                            <input type="name" class="form-control border-dark text-dark mt-4" id="username"
+                                placeholder="Enter your username"
+                                title="A valid username must only contain lower/upper case, letters, numbers and underscore(_)."
+                                pattern="^[\w]+$">
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="d-none">Email</label>
+                            <input type="email" class="form-control border-dark text-dark mt-4" id="email"
+                                placeholder="Enter your email" title="Email must contain @noroff.no or @stud.noroff.no"
+                                pattern="^[\w\-.]+@(stud\.)?noroff\.no$">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="d-none">Password:</label>
+                            <input type="password" class="form-control border-dark text-dark mt-4" id="password"
+                                placeholder="Enter your password" minlength="8" required>
+                        </div>
+                        <button type="submit" class="register btn text-white col-12 mt-4 mb-4 bg-secondary "
+                            href="/profile/">Create
+                            profile</button>
+                        <p class="userInfo d-flex justify-content-center text-dark"></p>
+                        <p class="text-dark mt-1 text-center fs-6 fs-md-3">Email must be @noroff.no or
+                            @stud.noroff.no </p>
+                        <p class="text-dark text-center fs-6 fs-md-3">Already have an account? <a class="text-dark"
+                                href="/index.html">Log in here</a>
+                        </p>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <p class="text-center text-light mt-4">Copyright 2023 © Ephraim Djeket</p>
+    </footer>
+</body>
+
+</html>

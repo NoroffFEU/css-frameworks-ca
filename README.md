@@ -1,6 +1,6 @@
 # DishDelight - CSS frameworks course assignment
 
-![Screenshot of the home page of the site](/img/ScreenshotToReadme.png "The home page")
+![Screenshot of the home page of the site](/img/ScreenshotReadme.png "The home page")
 
 ## Description
 

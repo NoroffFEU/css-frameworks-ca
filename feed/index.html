@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/hamburger.js" defer type="module"></script>
     <script src="../js/index.mjs" defer type="module"></script>
+
     <title>Feed</title>
 </head>
 
@@ -182,13 +183,16 @@
                         <form id="newPostForm">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="title" name="title"
-                                    placeholder="Enter title">
+                                <input type="text" class="form-control" id="title" name="title" required minlength="1"
+                                    maxlength="280">
+
                             </div>
+
                             <div class="mb-3">
                                 <label for="body" class="form-label">Post Content</label>
                                 <textarea class="form-control" id="body" name="body" rows="3"
-                                    placeholder="Write something about your art..."></textarea>
+                                    placeholder="Write something about your art..." required minlength="10"
+                                    maxlength="280"></textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="tags" class="form-label">Tags</label>
@@ -197,7 +201,7 @@
                             <div class="mb-3">
                                 <label for="media" class="form-label">Media (Image URL)</label>
                                 <input type="url" class="form-control" id="media" name="media"
-                                    placeholder="Enter image URL">
+                                    placeholder="Enter image URL" required>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

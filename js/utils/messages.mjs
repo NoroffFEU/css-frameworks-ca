@@ -53,5 +53,5 @@ export function showMessage(message, type) {
   setTimeout(() => {
     modal.hide();
     modalElement.remove();
-  }, 5000000);
+  }, 2000);
 }

@@ -73,6 +73,10 @@ footer {
     cursor: not-allowed;
 }
 
+.valid-feedback,
+.invalid-feedback {
+    display: none;
+}
 .btn-outline-primary{
     border-color: $primary-color;
     color: $primary-color;

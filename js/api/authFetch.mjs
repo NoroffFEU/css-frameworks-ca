@@ -9,9 +9,10 @@ export function headers() {
   }
 }
 
-export async function authFetch(url, options ={}) {
+export async function authFetch(url, options ={}) {console.log(options)
     return fetch (url, {
         ...options,
         headers:headers()
     })
+    
 } 

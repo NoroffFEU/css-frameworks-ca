@@ -1,0 +1,21 @@
+.publish-btn, .btn {
+    background-color: $primary;
+    color: #FFF;
+    width: 200px;
+}
+
+.publish-btn:hover, .btn:hover {
+    border: 1px solid $primary;
+    color: $primary;
+    background-color: #FFF;
+}
+
+.follow-btn {
+    max-width: 350px;
+    height: 40px;
+    margin: 10px auto;
+}
+
+.filter-btn {
+    max-width: 100px;
+}

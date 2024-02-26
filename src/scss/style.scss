@@ -1,0 +1,86 @@
+//Costume variables
+$primary: #345cac;
+$secondary: #91D7F2;
+$primaryFont: 'Pacifico', cursive;
+
+//Import functions and variables
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$alt-theme-colors: (
+    "altlight": #fef8fa,
+    "altdark": #e74971
+);
+
+$theme-colors: map-merge($alt-theme-colors, $theme-colors);
+
+//import styles
+@import "../scss/buttons";
+@import "../scss/profile.scss";
+@import "../scss/feed.scss";
+
+
+//import bootstrap
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/index-img.png'); 
+    background-size: cover; 
+    background-position: end; 
+    opacity: 0.60; 
+    z-index: -1;
+}
+.content {
+    position: relative; 
+    z-index: 1;
+}
+
+h2, h1 {
+    font-family: $primaryFont;
+}
+h1 {
+    font-size: 3.5rem;
+    margin-top: 70px;
+}
+
+body {
+    background-color: map-get($alt-theme-colors, "altlight");
+}
+
+.header {
+    background-color: map-get($alt-theme-colors, "altdark");
+}
+
+.mobileHeadingLogo, .navbar-toggler, .navbar-toggler-icon, .navbar-nav a {
+    color: #FFF;
+    border-color: #FFF;
+}
+
+.logInForm {
+    background-color: map-get($alt-theme-colors, "altlight");
+    opacity: 0.90;
+}
+
+.feed, .profile-container {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+@media (max-width: 600px) {
+    .mobileHeadingLogo {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    h1 {
+        display: none;
+    }
+}
+

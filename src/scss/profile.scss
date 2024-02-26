@@ -1,0 +1,30 @@
+.newPostContainer {
+    margin: 0px 20px;
+}
+
+.logo-img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.profil-img-container {
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden; 
+    border-radius: 50%;
+}
+.profile-img {
+    width: 100%; 
+    height: auto; 
+    clip-path: circle(50% at 50% 50%);
+}
+
+.follow-info {
+    max-width: 350px;
+    margin: 20px auto 5px;
+    text-align: center;
+}
+
+hr {
+    color: map-get($alt-theme-colors, "altdark");
+}

@@ -66,6 +66,11 @@ footer {
   cursor: not-allowed;
 }
 
+.valid-feedback,
+.invalid-feedback {
+  display: none;
+}
+
 .btn-outline-primary {
   border-color: rgb(1, 154, 210);
   color: rgb(1, 154, 210);

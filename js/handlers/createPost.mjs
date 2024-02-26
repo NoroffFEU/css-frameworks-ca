@@ -1,8 +1,9 @@
 import { createPost } from "../api/posts/index.mjs";
+import { showMessage } from "../utils/messages.mjs";
 
 export function setCreatePostListener() {
   const form = document.querySelector("#newPostForm");
-
+  const modal = new bootstrap.Modal(document.getElementById('createPostModal'));
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -10,7 +11,7 @@ export function setCreatePostListener() {
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
 
-      //makes tags optional//
+      // Makes tags optional
       const tags = formData.has("tags")
         ? formData
             .get("tags")
@@ -20,13 +21,17 @@ export function setCreatePostListener() {
       if (tags) {
         post.tags = tags;
       }
-     
 
       // Send it to the API
       createPost(post)
-        .then((data) => {})
+        .then((data) => {
+          // Form is valid, close the modal
+          modal.hide();
+          showMessage("Post created successfully!", "success");
+        })
         .catch((error) => {
           console.error("Error creating post:", error);
+          showMessage("Error creating post:", error);
         });
     });
   }

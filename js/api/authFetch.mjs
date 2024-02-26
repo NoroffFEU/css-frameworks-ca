@@ -6,7 +6,7 @@ export function headers() {
   return {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,
-  };
+  }
 }
 
 export async function authFetch(url, options ={}) {
@@ -14,4 +14,4 @@ export async function authFetch(url, options ={}) {
         ...options,
         headers:headers()
     })
-}
+} 

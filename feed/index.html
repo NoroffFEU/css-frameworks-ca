@@ -213,6 +213,50 @@
                 </div>
             </div>
         </div>
+    </div>
+    
+<!-- Edit Post Modal -->
+<div class="modal fade" id="editPostModal" tabindex="-1" aria-labelledby="editPostModalLabel" aria-hidden="true">
+    
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editPostModalLabel">Edit Post</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-dark">
+                <div class="container-fluid">
+                    <!-- Edit Post Form -->
+                    <form id="editPostForm">
+                        <input type="hidden" id="editPostId" name="id">
+                        <div class="mb-3">
+                            <label for="editTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="editTitle" name="title" required minlength="1" maxlength="280">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="editBody" class="form-label">Post Content</label>
+                            <textarea class="form-control" id="editBody" name="body" rows="3" placeholder="Write something about your art..." required minlength="10" maxlength="280"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editTags" class="form-label">Tags</label>
+                            <input type="text" class="form-control" id="editTags" name="tags" placeholder="Enter tags">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editMedia" class="form-label">Media (Image URL)</label>
+                            <input type="url" class="form-control" id="editMedia" name="media" placeholder="Enter image URL" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button id="updatePostButton" type="submit" class="btn btn-primary">Update Post</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         <footer class="m-0">
             <div

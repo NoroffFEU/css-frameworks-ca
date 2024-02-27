@@ -1,3 +1,5 @@
+import { handleEditButtonClick } from "../handlers/handleEditButton.mjs";
+
 export function createPostElement(postData) {
   const post = document.createElement("div");
   post.classList.add("card-body", "mb-3");
@@ -11,7 +13,7 @@ export function createPostElement(postData) {
     "d-flex",
     "justify-content-center",
     "align-items-start"
-  ); // Align items to the top
+  );
 
   const profileImg = document.createElement("img");
   profileImg.src = postData.author.avatar || "../../image/default-avatar.JPG";
@@ -44,7 +46,7 @@ export function createPostElement(postData) {
 
   const image = document.createElement("img");
   image.src = postData.media;
-  image.classList.add("card-img", "text-center", "w-50", "mx-auto", "d-block"); // Center the image horizontally
+  image.classList.add("card-img", "text-center", "w-50", "mx-auto", "d-block"); 
   image.alt = "Post image";
 
   const body = document.createElement("p");
@@ -58,9 +60,9 @@ export function createPostElement(postData) {
   editButton.classList.add("btn", "btn-outline-primary", "btn-sm", "me-2");
   editButton.textContent = "Edit";
   editButton.value = postData.id;
-  editButton.addEventListener("click", (event) =>
-    handleEditButtonClick(event, postData)
-  );
+  editButton.addEventListener("click", (event) => {
+    handleEditButtonClick(event, postData);
+  });
 
   const likeButton = document.createElement("button");
   likeButton.classList.add("btn", "btn-outline-primary", "btn-sm");
@@ -100,20 +102,4 @@ export function renderPostTemplates(postDataList, parent) {
   postDataList.forEach((postData) => {
     renderPostTemplate(postData, parent);
   });
-}
-
-function handleEditButtonClick(event, postData) {
-  console.log("Edit button clicked. Post Data:", postData);
-  const editPostModal = new bootstrap.Modal(
-    document.getElementById("editPostModal")
-  );
-
-  // Populate the form fields in the editPostModal with postData
-
-  document.getElementById("editTitle").value = postData.title;
-  document.getElementById("editBody").value = postData.body;
-  document.getElementById("editMedia").value = postData.media;
-
-  // Show the editPostModal
-  editPostModal.show();
 }

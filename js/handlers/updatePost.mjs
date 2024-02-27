@@ -1,4 +1,4 @@
-import { updatePost } from "../api/posts/index.mjs";
+import { updatePost } from "../api/posts/update.mjs";
 
 export function setUpdatePostListener() {
     document.addEventListener("DOMContentLoaded", () => {
@@ -13,8 +13,9 @@ export function setUpdatePostListener() {
 
                 // Send it to the API
                 try {
-                    const updatedPost = await updatePost(post);
-                    console.log("Post updated:", updatedPost);
+                    const { title, body, media, id } = post;
+                    const updatedPost = await updatePost(title, body, media, id); 
+                  
                 } catch (error) {
                     console.error("Error updating post:", error);
                 }

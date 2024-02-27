@@ -8,6 +8,7 @@ export async function displayPosts() {
     const container = document.querySelector("#posts");
     container.innerHTML = ""; // Clear the existing content
     posts.forEach((postData) => {
+      console.log(postData.author.email)
       renderPostTemplate(postData, container);
     });
   } catch (error) {

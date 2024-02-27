@@ -1,11 +1,17 @@
 import { handleEditButtonClick } from "../handlers/handleEditButton.mjs";
+import { load } from "../storage/index.mjs";
 
 export function createPostElement(postData) {
+  const userProfile = load("profile");
+
   const post = document.createElement("div");
   post.classList.add("card-body", "mb-3");
 
   const row = document.createElement("div");
   row.classList.add("row", "g-0");
+
+  const currentUserEmail = userProfile.email;
+  const postAuthorEmail = postData.author.email;
 
   const profileImgCol = document.createElement("div");
   profileImgCol.classList.add(
@@ -46,7 +52,7 @@ export function createPostElement(postData) {
 
   const image = document.createElement("img");
   image.src = postData.media;
-  image.classList.add("card-img", "text-center", "w-50", "mx-auto", "d-block"); 
+  image.classList.add("card-img", "text-center", "w-50", "mx-auto", "d-block");
   image.alt = "Post image";
 
   const body = document.createElement("p");
@@ -55,14 +61,6 @@ export function createPostElement(postData) {
 
   const actionsDiv = document.createElement("div");
   actionsDiv.classList.add("text-center");
-
-  const editButton = document.createElement("button");
-  editButton.classList.add("btn", "btn-outline-primary", "btn-sm", "me-2");
-  editButton.textContent = "Edit";
-  editButton.value = postData.id;
-  editButton.addEventListener("click", (event) => {
-    handleEditButtonClick(event, postData);
-  });
 
   const likeButton = document.createElement("button");
   likeButton.classList.add("btn", "btn-outline-primary", "btn-sm");
@@ -74,7 +72,17 @@ export function createPostElement(postData) {
 
   actionsDiv.appendChild(likeButton);
   actionsDiv.appendChild(commentButton);
-  actionsDiv.appendChild(editButton);
+ 
+  if (currentUserEmail === postAuthorEmail) {
+    const editButton = document.createElement("button");
+    editButton.classList.add("btn", "btn-outline-primary", "btn-sm", "me-2");
+    editButton.textContent = "Edit";
+    editButton.value = postData.id;
+    editButton.addEventListener("click", (event) => {
+      handleEditButtonClick(event, postData);
+    });
+    actionsDiv.appendChild(editButton);
+  }
 
   innerContent.appendChild(username);
   innerContent.appendChild(timestamp);
@@ -89,9 +97,9 @@ export function createPostElement(postData) {
   row.appendChild(postContentCol);
   post.appendChild(row);
 
+
   return post;
 }
-
 export function renderPostTemplate(postData, parent) {
   const postElement = createPostElement(postData);
   parent.appendChild(postElement);

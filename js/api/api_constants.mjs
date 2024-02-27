@@ -10,6 +10,7 @@ export const API_KEY_URL = "/create-api-key";
 export const API_SOCIAL_URL = `${API_HOST_URL}${API_BASE}${API_SOCIAL_BASE}`;
 
 export const registerURL = `${API_HOST_URL}${API_BASE}${API_SOCIAL_BASE}${API_AUTH}${API_REGISTER}`;
+export const postsURL = `${API_SOCIAL_URL}/posts`;
 // export function save (key, value){
 //     localStorage.setItem (key, JSON.stringify(value));
 // }

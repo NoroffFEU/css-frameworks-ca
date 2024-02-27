@@ -11,7 +11,7 @@ export async function getPosts() {
 
   return await response.json();
 }
-export async function getPost(id) {
+export async function getPostById(id) {
   if (!id) {
     throw new Error("Get requires a postID");
   }

@@ -5,6 +5,6 @@ export * from "./updatePost.mjs";
 
 export * from "./updateProfile.mjs";
 
-export * from "./feedDisplay.mjs";
+export * from "./postDisplay.mjs";
 export * from "./handleEditButton.mjs";
 export * from "./modalEditPost.mjs";

@@ -50,44 +50,60 @@
         </nav>
     </header>
 
-    <main class="flex-grow-1 bg-dark text-light">
-        <div class="container-fluid">
+    <main>
+        <section class="py-5 bg-secondary">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card border-light-subtle shadow">
+                            <div class="p-3">
+                                <div class="rounded-top z-10 profile-banner  ">
+                                    <div class="ms-4 mt-5 d-flex flex-column col-7">
+                                      <img src="" alt="profile image" class="replace-avatar img-thumbnail profile-img mt-4 z-10">
+                                    </div>
+                                  </div>
+                                <h2 class="fs-6 fw-normal text-center text-secondary mb-4">
+                                    Edit your profile
+                                </h2>
+                                <form id="editProfile">
+                                    <div class="form-floating mb-2">
+                                        <label for="Name" class="form-label text-secondary">Name</label>
+                                        <input type="text" class="form-control" name="name" disabled>
+                                    </div>
 
-            <form id="editProfile">
-                <div class="form-floating mb-2">
-                    <label for="Name" class="form-label text-secondary">Name</label>
-                    <input type="text" class="form-control" name="name" disabled>
-                </div>
+                                    <div class="form-floating mb-2">
+                                        <label for="email" class="form-label text-secondary">Email</label>
+                                        <input type="email" class="form-control" name="email" disabled>
+                                    </div>
 
-                <div class="form-floating mb-2">
-                    <label for="email" class="form-label text-secondary">Email</label>
-                    <input type="email" class="form-control" name="email" disabled>
-                </div>
+                                    <div class="form-floating mb-2">
+                                        <label for="title" class="form-label text-secondary">Banner</label>
+                                        <input type="url" class="form-control" name="banner">
+                                    </div>
 
+                                    <div class="form-floating mb-2">
+                                        <label for="" class="form-label text-secondary">Avatar</label>
+                                        <input type="url" class="form-control" name="avatar"></input>
+                                    </div>
 
-                <div class="form-floating mb-2">
-                    <label for="title" class="form-label text-secondary">Banner</label>
-                    <input type="url" class="form-control" name="banner">
-                </div>
-
-
-                <div class="form-floating mb-2">
-                    <label for="" class="form-label text-secondary">Avatar</label>
-                    <input type="url" class="form-control" name="avatar"></input>
-                </div>
-
-
-                <div class="col-12">
-                    <div class="d-grid my-3">
-                        <button class="btn btn-primary btn-md" type="submit">
-                            Update Profile
-                        </button>
+                                    <div class="col-12">
+                                        <div class="d-grid my-3">
+                                            <button class="btn btn-primary btn-md" type="submit">
+                                                Update Profile
+                                            </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div id="messageBox" ></div>
-        </div>
+            </div>
+        </section>
     </main>
+    
 
     <footer class="m-0">
         <div

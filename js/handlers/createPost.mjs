@@ -28,6 +28,9 @@ export function setCreatePostListener() {
           // Form is valid, close the modal
           modal.hide();
           showMessage("Post created successfully!", "success");
+          setTimeout(() => {
+            window.location.reload();
+          }, 2000);
         })
         .catch((error) => {
           console.error("Error creating post:", error);

@@ -29,8 +29,7 @@ export async function setUpdateProfileListener() {
         const formData = new FormData(form);
         const mediaData = Object.fromEntries(formData.entries());
 
-
-        console.log("Media data:", mediaData);
+ 
 
         // Send media update to the API
         await updateProfile(name, mediaData);
@@ -40,6 +39,11 @@ export async function setUpdateProfileListener() {
         const updatedProfile = { ...savedProfile, ...mediaData };
         save("profile", updatedProfile);
         showMessage("Profile updated successfully!", "success");
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+        
       });
     } catch (error) {
       console.error("Error fetching profile:", error);
@@ -52,3 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Call the setUpdateProfileListener function when DOM content is loaded
   setUpdateProfileListener();
 });
+
+

@@ -3,7 +3,7 @@ import { showMessage } from "../utils/messages.mjs";
 
 export function setCreatePostListener() {
   const form = document.querySelector("#newPostForm");
-  const modal = new bootstrap.Modal(document.getElementById('createPostModal'));
+  const modal = new bootstrap.Modal(document.getElementById("createPostModal"));
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();

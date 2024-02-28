@@ -9,9 +9,7 @@ export async function createPost(postData) {
 
   const response = await authFetch(createPostURL, {
     method,
-    body: JSON.stringify(postData), 
+    body: JSON.stringify(postData),
   });
-const post = await response.json();
-  // return await response.json();
+  const post = await response.json();
 }
-

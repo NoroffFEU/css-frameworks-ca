@@ -1,2 +1,2 @@
-export * from "./get.mjs"
-export * from "./update.mjs"
+export * from "./get.mjs";
+export * from "./update.mjs";

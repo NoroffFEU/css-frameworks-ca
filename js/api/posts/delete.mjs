@@ -11,8 +11,8 @@ export async function removePost(id) {
   const updatePostURL = `${API_SOCIAL_URL}${action}/${id}`;
 
   const response = await authFetch(updatePostURL, {
-    method
+    method,
   });
- 
+
   return await response.json();
 }

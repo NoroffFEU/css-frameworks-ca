@@ -13,7 +13,7 @@ export async function updatePost(title, body, media, id) {
     title: title,
     body: body,
     media: media,
-    id: id
+    id: id,
   };
 
   const updatePostURL = `${API_SOCIAL_URL}${action}/${id}`;
@@ -25,6 +25,3 @@ export async function updatePost(title, body, media, id) {
 
   return await response.json();
 }
-
-
-

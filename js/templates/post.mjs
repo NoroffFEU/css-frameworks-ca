@@ -72,7 +72,7 @@ export function createPostElement(postData) {
 
   actionsDiv.appendChild(likeButton);
   actionsDiv.appendChild(commentButton);
- 
+
   if (currentUserEmail === postAuthorEmail) {
     const editButton = document.createElement("button");
     editButton.classList.add("btn", "btn-outline-primary", "btn-sm", "me-2");
@@ -96,7 +96,6 @@ export function createPostElement(postData) {
 
   row.appendChild(postContentCol);
   post.appendChild(row);
-
 
   return post;
 }

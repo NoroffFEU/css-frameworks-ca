@@ -16,13 +16,11 @@ export async function login(profile) {
     body,
   });
 
-  
   const { accessToken, ...user } = await response.json();
-  
-    storage.save("token", accessToken);
-    storage.save("profile", user);
-    if (accessToken) {
-    
+
+  storage.save("token", accessToken);
+  storage.save("profile", user);
+  if (accessToken) {
     setTimeout(() => {
       window.location.href = "../../../profile/index.html";
     }, 2000);

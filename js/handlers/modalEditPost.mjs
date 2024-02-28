@@ -1,8 +1,5 @@
 import { updatePost } from "../api/posts/update.mjs";
-import {
-  storeScrollPosition,
-  restoreScrollPosition,
-} from "../utils/scrollePosition.mjs";
+import * as scrollUtils from "../utils/index.mjs";
 
 export function modalEditPost() {
   const editPostForm = document.querySelector("#editPostForm");
@@ -25,7 +22,7 @@ export function modalEditPost() {
 
       editPostModal.hide();
 
-      storeScrollPosition();
+      scrollUtils.storeScrollPosition();
       // Reload the page to reflect the updated post
       window.location.reload(true);
     } catch (error) {
@@ -34,6 +31,6 @@ export function modalEditPost() {
     }
   });
   setTimeout(() => {
-    restoreScrollPosition();
+    scrollUtils.restoreScrollPosition();
   }, 1000);
 }

@@ -14,13 +14,11 @@ export async function setUpdateProfileListener() {
     const button = form.querySelector("button");
     button.disabled = true;
 
-
     try {
       const profile = await getProfile(name);
 
       form.banner.value = profile.banner;
       form.avatar.value = profile.avatar;
-
 
       button.disabled = false;
 
@@ -28,8 +26,6 @@ export async function setUpdateProfileListener() {
         event.preventDefault();
         const formData = new FormData(form);
         const mediaData = Object.fromEntries(formData.entries());
-
- 
 
         // Send media update to the API
         await updateProfile(name, mediaData);
@@ -43,7 +39,6 @@ export async function setUpdateProfileListener() {
         setTimeout(() => {
           window.location.reload();
         }, 2000);
-        
       });
     } catch (error) {
       console.error("Error fetching profile:", error);
@@ -51,10 +46,7 @@ export async function setUpdateProfileListener() {
   }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   // Call the setUpdateProfileListener function when DOM content is loaded
   setUpdateProfileListener();
 });
-
-

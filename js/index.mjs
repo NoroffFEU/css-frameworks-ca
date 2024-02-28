@@ -2,8 +2,14 @@ import * as utils from "./utils/index.mjs";
 import * as listeners from "./handlers/index.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (utils.updateProfileFromLocalStorage) {
+    utils.updateProfileFromLocalStorage();
+  }
+
+  if (utils.hamburger) {
+    utils.hamburger();
+  }
   const path = location.pathname;
-  console.log(path);
 
   if (path === "/profile/login/index.html") {
     listeners.setLoginFormListener();
@@ -22,6 +28,4 @@ document.addEventListener("DOMContentLoaded", () => {
     listeners.setUpdatePostListener();
     listeners.modalEditPost();
   }
-
-  utils.updateProfileFromLocalStorage();
 });

@@ -5,7 +5,6 @@ export function updateProfileFromLocalStorage() {
   const userProfile = load("profile");
 
   if (userProfile) {
-    console.log(userProfile.email)
     // Replace "user name" with the user's name
     const elementsWithUsername = document.querySelectorAll(".replace-username");
     elementsWithUsername.forEach((element) => {

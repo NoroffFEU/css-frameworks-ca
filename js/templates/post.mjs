@@ -1,4 +1,5 @@
 import { handleEditButtonClick } from "../handlers/handleEditButton.mjs";
+import { handleDeleteButtonClick } from "../handlers/handleDeleteButtonClick.mjs";
 import { load } from "../storage/index.mjs";
 
 export function createPostElement(postData) {
@@ -38,9 +39,40 @@ export function createPostElement(postData) {
   const innerContent = document.createElement("div");
   innerContent.classList.add("bg-white", "pt-2");
 
+  const usernameAndButtons = document.createElement("div");
+  usernameAndButtons.classList.add(
+    "d-flex",
+    "justify-content-between",
+    "align-items-center"
+  );
+
   const username = document.createElement("p");
   username.classList.add("font-weight-bold", "mb-0", "ms-3");
   username.textContent = postData.author.name || "User name";
+  // Buttons container
+  const buttonsContainer = document.createElement("div");
+
+  // Append the edit and delete buttons only if the current user is the author
+  if (currentUserEmail === postAuthorEmail) {
+    const editButton = document.createElement("button");
+    editButton.classList.add("btn", "btn-link", "me-2");
+    editButton.innerHTML = '<i class="fas fa-edit"></i>';
+    editButton.value = postData.id;
+    editButton.addEventListener("click", (event) => {
+      handleEditButtonClick(event, postData);
+    });
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("btn", "btn-link", "me-2");
+    deleteButton.innerHTML = '<i class="fas fa-trash-alt text-danger"></i>';
+    deleteButton.value = postData.id;
+    deleteButton.addEventListener("click", (event) => {
+      handleDeleteButtonClick(event, postData.id);
+    });
+
+    buttonsContainer.appendChild(editButton);
+    buttonsContainer.appendChild(deleteButton);
+  }
 
   const timestamp = document.createElement("p");
   timestamp.classList.add("small", "text-muted", "ms-3");
@@ -63,28 +95,20 @@ export function createPostElement(postData) {
   actionsDiv.classList.add("text-center");
 
   const likeButton = document.createElement("button");
-  likeButton.classList.add("btn", "btn-outline-primary", "btn-sm");
+  likeButton.classList.add("btn", "btn-link", "btn-sm");
   likeButton.innerHTML = '<i class="fa fa-thumbs-up"></i> Like this!';
 
   const commentButton = document.createElement("button");
-  commentButton.classList.add("btn", "btn-outline-primary", "btn-sm");
+  commentButton.classList.add("btn", "btn-link", "btn-sm");
   commentButton.innerHTML = '<i class="fa fa-comments"></i> Comment';
+
+  usernameAndButtons.appendChild(username);
+  usernameAndButtons.appendChild(buttonsContainer);
 
   actionsDiv.appendChild(likeButton);
   actionsDiv.appendChild(commentButton);
 
-  if (currentUserEmail === postAuthorEmail) {
-    const editButton = document.createElement("button");
-    editButton.classList.add("btn", "btn-outline-primary", "btn-sm", "me-2");
-    editButton.textContent = "Edit";
-    editButton.value = postData.id;
-    editButton.addEventListener("click", (event) => {
-      handleEditButtonClick(event, postData);
-    });
-    actionsDiv.appendChild(editButton);
-  }
-
-  innerContent.appendChild(username);
+  innerContent.appendChild(usernameAndButtons);
   innerContent.appendChild(timestamp);
   innerContent.appendChild(title);
   innerContent.appendChild(image);

@@ -128,11 +128,19 @@ footer {
 .modal-body {
   padding: 10% 20px;
   color: white;
- text-shadow: $shaddow-dark;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   word-wrap: break-word;
+}
+
+
+#deletePostModal {
+  .modal-header, .modal-footer {
+    background-color: #ae2d3a; 
+    color: #fff; 
+   
+  }
 }

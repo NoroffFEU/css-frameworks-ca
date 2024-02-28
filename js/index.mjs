@@ -1,4 +1,3 @@
-
 import * as utils from "./utils/index.mjs";
 import * as listeners from "./handlers/index.mjs";
 
@@ -8,19 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (path === "/profile/login/index.html") {
     listeners.setLoginFormListener();
-
   } else if (path === "/profile/register/") {
     listeners.setRegisterFormListener();
+  } else if (path === "/profile/index.html") {
+    listeners.displayUserPosts();
+    listeners.setCreatePostListener();
+    listeners.setUpdatePostListener();
+    listeners.modalEditPost();
   } else if (path === "/profile/edit/") {
     listeners.setUpdateProfileListener();
- 
   } else if (path === "/feed/index.html") {
     listeners.displayPosts();
     listeners.setCreatePostListener();
     listeners.setUpdatePostListener();
     listeners.modalEditPost();
-}
+  }
 
- 
   utils.updateProfileFromLocalStorage();
 });

@@ -37,6 +37,13 @@ export function showMessage(message, type) {
   modalBody.classList.add(bgColor);
   modalBody.textContent = message;
 
+  // Check if the message is an Error object and extract the error message
+  if (message instanceof Error) {
+    modalBody.textContent = message.message;
+  } else {
+    modalBody.textContent = message;
+  }
+
   // Assemble modal
   modalContent.appendChild(modalBody);
   modalDialog.appendChild(modalContent);
@@ -53,5 +60,5 @@ export function showMessage(message, type) {
   setTimeout(() => {
     modal.hide();
     modalElement.remove();
-  }, 2000);
+  }, 3000);
 }

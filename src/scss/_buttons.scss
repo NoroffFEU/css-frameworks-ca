@@ -1,0 +1,52 @@
+.new-post-btn:hover {
+  background-color: var(--dark);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.scroll-to-top {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  font-size: 20px;
+  font-weight: bold;
+  position: fixed;
+  bottom: 100px;
+  right: 0px;
+  background-color: var(--dark);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  transform: translateX(0);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+.search-button:hover,
+.search-button:active {
+  background-color: var(--primary);
+  color: var(--dark);
+}
+
+.search-button {
+  background-color: var(--dark);
+  color: var(--primary);
+}
+
+.view-post-button {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.view-post-button:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}

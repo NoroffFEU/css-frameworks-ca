@@ -1,4 +1,6 @@
 import { addComment } from "../../api/posts/comment.mjs";
+import { subject } from "../observers.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
 function openCommentModal() {
   const commentModal = new bootstrap.Modal(
@@ -15,14 +17,23 @@ export async function handleCommentButtonClick(event, postId) {
     submitCommentBtn.addEventListener("click", async () => {
       const commentText = document.getElementById("commentText").value;
       if (commentText.trim() === "") {
-        alert("Please enter a comment.");
+        showMessage("Please enter a comment.", "error");
         return;
       }
 
       // Add the comment
-      await addComment(postId, commentText);
-      console.log("Comment added successfully.");
-
+      try {
+        await addComment(postId, commentText);
+        subject.notify(postId);
+        showMessage("Comment added successfully.", "success");
+      } catch (error) {
+        console.error("Error adding comment:", error);
+        showMessage(
+          "Failed to add comment. Please try again later.",
+          "error",
+          error
+        );
+      }
       // Close the modal after adding the comment
       const commentModal = bootstrap.Modal.getInstance(
         document.getElementById("commentModal")
@@ -30,6 +41,11 @@ export async function handleCommentButtonClick(event, postId) {
       commentModal.hide();
     });
   } catch (error) {
-    console.error("Error adding comment:", error);
+    console.error("Error handling comment click:", error);
+    showMessage(
+      "An unexpected error occurred. Please try again later.",
+      "error",
+      error
+    );
   }
 }

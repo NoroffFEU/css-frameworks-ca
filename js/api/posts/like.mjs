@@ -18,13 +18,13 @@ export async function likePost(postId, symbol) {
       const errorMessage = `Failed to like post: ${error.message}`;
       showMessage(errorMessage, "error");
       throw new Error("Failed to like post");
-    }
+    } 
 
     const responseData = await response.json();
     return responseData.likeCount; // Return the updated like count from the server
   } catch (error) {
     const errorMessage = `Failed to like post: ${error.message}`;
-    showMessage(errorMessage, "error");
+    showMessage(errorMessage, "error", error);
     throw new Error("Failed to like post");
-  }
+  } 
 }

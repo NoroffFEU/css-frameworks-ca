@@ -1,8 +1,9 @@
 import { handleEditButtonClick } from "../handlers/posts/editButton.mjs";
 import { handleDeleteButtonClick } from "../handlers/posts/delete.mjs";
 import { handleLikeButtonClick } from "../handlers/posts/likeClick.mjs";
-import { handleCommentButtonClick } from "../handlers/posts/comment.mjs";
+import { handleCommentButtonClick } from "../handlers/index.mjs";
 import { load } from "../storage/index.mjs";
+import { Counter, subject } from "../handlers/observers.mjs";
 
 export function createPostElement(postData) {
   const userProfile = load("profile");
@@ -96,20 +97,30 @@ export function createPostElement(postData) {
   const countersDiv = document.createElement("div");
   countersDiv.classList.add("text-center");
 
-  const likeCount = document.createElement("span");
-  likeCount.classList.add("like-count", "me-2");
-  likeCount.innerHTML = `<i class="fa fa-thumbs-up"></i> ${
+  const likeCountElement = document.createElement("span");
+  likeCountElement.classList.add("like-count", "me-2");
+  likeCountElement.innerHTML = `<i class="fa fa-thumbs-up"></i> <span class="like-count-number">${
     postData._count.reactions || 0
   }`;
 
-  const commentCount = document.createElement("span");
-  commentCount.classList.add("comment-count", "ms-2");
-  commentCount.innerHTML = `<i class="fa fa-comments"></i> ${
+  const commentCountElement = document.createElement("span");
+  commentCountElement.classList.add("comment-count", "ms-2");
+  commentCountElement.innerHTML = `<i class="fa fa-comments"></i> <span class="comment-count-number">${
     postData._count.comments || 0
   }`;
 
-  countersDiv.appendChild(likeCount);
-  countersDiv.appendChild(commentCount);
+  countersDiv.appendChild(likeCountElement);
+  countersDiv.appendChild(commentCountElement);
+
+  const likeCount = new Counter(likeCountElement, postData.id, "reactions");
+  const commentCount = new Counter(
+    commentCountElement,
+    postData.id,
+    "comments"
+  );
+
+  likeCount.setSubject(subject);
+  commentCount.setSubject(subject);
 
   const actionsDiv = document.createElement("div");
   actionsDiv.classList.add("text-center");
@@ -118,7 +129,7 @@ export function createPostElement(postData) {
   likeButton.classList.add("btn", "btn-link", "btn-sm");
   likeButton.innerHTML = "👍 Like this!";
   likeButton.addEventListener("click", (event) => {
-    handleLikeButtonClick(event, postData.id, postData, "👍");
+    handleLikeButtonClick(event, postData.id, "👍");
   });
 
   const commentButton = document.createElement("button");
@@ -127,7 +138,7 @@ export function createPostElement(postData) {
   commentButton.addEventListener("click", (event) => {
     handleCommentButtonClick(event, postData.id);
   });
-  
+
   usernameAndButtons.appendChild(username);
   usernameAndButtons.appendChild(buttonsContainer);
 

@@ -1,11 +1,18 @@
 import { likePost } from "../../api/posts/like.mjs";
+import { subject } from "../observers.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
-export async function handleLikeButtonClick(event, postId) {
-  const symbol = "👍"; // Define the symbol here
+export async function handleLikeButtonClick(event, postId, symbol) {
   try {
     await likePost(postId, symbol);
-    console.log("Post liked successfully.");
+
+    subject.notify(postId);
   } catch (error) {
     console.error("Error liking post:", error);
+    showMessage(
+      "An unexpected error occurred. Please try again later.",
+      "error",
+      error
+    );
   }
 }

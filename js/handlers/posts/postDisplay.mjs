@@ -1,6 +1,6 @@
-import { getPosts } from "../api/posts/get.mjs";
-import { renderPostTemplate } from "../templates/post.mjs";
-import { load } from "../storage/index.mjs";
+import { getPosts } from "../../api/posts/get.mjs";
+import { renderPostTemplate } from "../../templates/post.mjs";
+import { load } from "../../storage/index.mjs";
 
 export async function displayPosts() {
   try {

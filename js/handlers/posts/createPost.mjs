@@ -1,5 +1,5 @@
-import { createPost } from "../api/posts/index.mjs";
-import { showMessage } from "../utils/messages.mjs";
+import { createPost } from "../../api/posts/index.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
 export function setCreatePostListener() {
   const form = document.querySelector("#newPostForm");

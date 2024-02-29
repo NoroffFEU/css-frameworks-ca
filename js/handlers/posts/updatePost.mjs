@@ -1,4 +1,4 @@
-import { updatePost } from "../api/posts/update.mjs";
+import { updatePost } from "../../api/posts/update.mjs";
 
 export function setUpdatePostListener() {
   document.addEventListener("DOMContentLoaded", () => {

@@ -1,5 +1,7 @@
-import { handleEditButtonClick } from "../handlers/handleEditButton.mjs";
-import { handleDeleteButtonClick } from "../handlers/handleDeleteButtonClick.mjs";
+import { handleEditButtonClick } from "../handlers/posts/editButton.mjs";
+import { handleDeleteButtonClick } from "../handlers/posts/delete.mjs";
+import { handleLikeButtonClick } from "../handlers/posts/likeClick.mjs";
+import { handleCommentButtonClick } from "../handlers/posts/comment.mjs";
 import { load } from "../storage/index.mjs";
 
 export function createPostElement(postData) {
@@ -91,17 +93,41 @@ export function createPostElement(postData) {
   body.classList.add("card-text", "text-center");
   body.textContent = postData.body;
 
+  const countersDiv = document.createElement("div");
+  countersDiv.classList.add("text-center");
+
+  const likeCount = document.createElement("span");
+  likeCount.classList.add("like-count", "me-2");
+  likeCount.innerHTML = `<i class="fa fa-thumbs-up"></i> ${
+    postData._count.reactions || 0
+  }`;
+
+  const commentCount = document.createElement("span");
+  commentCount.classList.add("comment-count", "ms-2");
+  commentCount.innerHTML = `<i class="fa fa-comments"></i> ${
+    postData._count.comments || 0
+  }`;
+
+  countersDiv.appendChild(likeCount);
+  countersDiv.appendChild(commentCount);
+
   const actionsDiv = document.createElement("div");
   actionsDiv.classList.add("text-center");
 
   const likeButton = document.createElement("button");
   likeButton.classList.add("btn", "btn-link", "btn-sm");
-  likeButton.innerHTML = '<i class="fa fa-thumbs-up"></i> Like this!';
+  likeButton.innerHTML = "👍 Like this!";
+  likeButton.addEventListener("click", (event) => {
+    handleLikeButtonClick(event, postData.id, postData, "👍");
+  });
 
   const commentButton = document.createElement("button");
   commentButton.classList.add("btn", "btn-link", "btn-sm");
   commentButton.innerHTML = '<i class="fa fa-comments"></i> Comment';
-
+  commentButton.addEventListener("click", (event) => {
+    handleCommentButtonClick(event, postData.id);
+  });
+  
   usernameAndButtons.appendChild(username);
   usernameAndButtons.appendChild(buttonsContainer);
 
@@ -113,6 +139,7 @@ export function createPostElement(postData) {
   innerContent.appendChild(title);
   innerContent.appendChild(image);
   innerContent.appendChild(body);
+  innerContent.appendChild(countersDiv);
   innerContent.appendChild(actionsDiv);
 
   cardBody.appendChild(innerContent);

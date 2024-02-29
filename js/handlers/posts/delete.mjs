@@ -1,7 +1,7 @@
-import { getPostById } from "../api/posts/get.mjs";
-import { removePost } from "../api/posts/delete.mjs";
-import { showMessage } from "../utils/messages.mjs";
-import { createDeletePostElement } from "../templates/index.mjs";
+import { getPostById } from "../../api/posts/get.mjs";
+import { removePost } from "../../api/posts/delete.mjs";
+import { showMessage } from "../../utils/messages.mjs";
+import { createDeletePostElement } from "../../templates/index.mjs";
 
 export async function handleDeleteButtonClick(event, postId) {
   event.preventDefault();

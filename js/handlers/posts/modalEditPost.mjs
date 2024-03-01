@@ -1,5 +1,5 @@
-import { updatePost } from "../api/posts/update.mjs";
-import * as scrollUtils from "../utils/index.mjs";
+import { updatePost } from "../../api/posts/update.mjs";
+import * as scrollUtils from "../../utils/index.mjs";
 
 export function modalEditPost() {
   const editPostForm = document.querySelector("#editPostForm");

@@ -251,7 +251,7 @@
                                     placeholder="Enter image URL" required>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" >Close</button>
                                 <button id="updatePostButton" type="submit" class="btn btn-primary">Update Post</button>
                             </div>
                         </form>
@@ -283,6 +283,24 @@
  </div>
 </div>
 
+<!--Modal comment Post-->
+<div id="commentModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Comment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea id="commentText" class="form-control" rows="4"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button id="submitCommentBtn" type="button" class="btn btn-primary">Add Comment</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <footer class="m-0">
         <div
             class="container py-3 border-top d-flex flex-wrap justify-content-center justify-content-md-start align-items-center w-100">

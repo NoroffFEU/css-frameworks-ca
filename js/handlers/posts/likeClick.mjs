@@ -1,5 +1,5 @@
 import { likePost } from "../../api/posts/like.mjs";
-import { subject } from "../observers.mjs";
+import { subject } from "../observers/commonObservers.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 
 export async function handleLikeButtonClick(event, postId, symbol) {

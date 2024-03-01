@@ -1,5 +1,5 @@
 import { addComment } from "../../api/posts/comment.mjs";
-import { subject } from "../observers.mjs";
+import { subject } from "../observers/commonObservers.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 
 function openCommentModal() {

@@ -2,7 +2,9 @@ export * from "./profile/login.mjs";
 export * from "./profile/register.mjs";
 export * from "./profile/updateProfile.mjs";
 
-export * from "./observers.mjs";
+export * from "./observers/commonObservers.mjs"
+export * from "./observers/profileEdit.mjs"
+export * from "./observers/reactions.mjs"
 
 export * from "./posts/postDisplay.mjs";
 export * from "./posts/createPost.mjs";

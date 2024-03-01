@@ -1,27 +1,5 @@
-import { getPostById } from "../api/posts/get.mjs";
-import { showMessage } from "../utils/messages.mjs";
-
-export class Subject {
-  constructor() {
-    this.observers = [];
-    this.likedPostId = null;
-  }
-
-  subscribe(observer) {
-    this.observers.push(observer);
-  }
-
-  unsubscribe(observer) {
-    this.observers = this.observers.filter((obs) => obs !== observer);
-  }
-
-  notify(postId) {
-    this.likedPostId = postId;
-    this.observers.forEach((observer) => observer.update(postId));
-  }
-}
-
-export const subject = new Subject();
+import { getPostById } from "../../api/posts/get.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
 export class Counter {
   constructor(element, postId, type) {

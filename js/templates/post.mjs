@@ -3,7 +3,8 @@ import { handleDeleteButtonClick } from "../handlers/posts/delete.mjs";
 import { handleLikeButtonClick } from "../handlers/posts/likeClick.mjs";
 import { handleCommentButtonClick } from "../handlers/index.mjs";
 import { load } from "../storage/index.mjs";
-import { Counter, subject } from "../handlers/observers.mjs";
+import { subject } from "../handlers/observers/commonObservers.mjs";
+import { Counter } from "../handlers/index.mjs";
 
 export function createPostElement(postData) {
   const userProfile = load("profile");
@@ -102,7 +103,7 @@ export function createPostElement(postData) {
   likeCountElement.innerHTML = `<i class="fa fa-thumbs-up"></i> <span class="like-count-number">${
     postData._count.reactions || 0
   }`;
-
+  
   const commentCountElement = document.createElement("span");
   commentCountElement.classList.add("comment-count", "ms-2");
   commentCountElement.innerHTML = `<i class="fa fa-comments"></i> <span class="comment-count-number">${

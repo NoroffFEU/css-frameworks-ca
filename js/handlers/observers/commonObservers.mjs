@@ -14,7 +14,6 @@ export class Subject {
 
   notify(data) {
     this.data = data;
-    console.log("Subject: Notifying Observers");
     this.Observers.forEach((Observer) => Observer.update(this.data));
   }
 }
@@ -27,9 +26,7 @@ export class Observer {
   }
 
   update(data) {
-    console.log("Observer: Update called");
     // Update the UI element with the new data
     this.element.textContent = data;
   }
 }
-

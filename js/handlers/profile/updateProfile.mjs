@@ -4,8 +4,6 @@ import { showMessage } from "../../utils/messages.mjs";
 import { subject } from "../observers/commonObservers.mjs";
 import { ProfileEditObserver } from "../index.mjs";
 
-
-
 export async function setUpdateProfileListener() {
   const form = document.querySelector("#editProfile");
 
@@ -29,7 +27,11 @@ export async function setUpdateProfileListener() {
       //observe Elements to display changes
       const avatarElement = document.querySelector(".replace-avatar");
       const bannerElement = document.querySelector(".profile-banner");
-      const profileEditObserver = new ProfileEditObserver(avatarElement, bannerElement, name);
+      const profileEditObserver = new ProfileEditObserver(
+        avatarElement,
+        bannerElement,
+        name
+      );
       subject.subscribe(profileEditObserver);
 
       form.addEventListener("submit", async (event) => {
@@ -48,7 +50,6 @@ export async function setUpdateProfileListener() {
           showMessage("Profile updated successfully!", "success");
 
           // Notify the observer about the profile update
-          console.log("Notifying observer with data:", { name, ...mediaData });
           subject.notify({ name, ...mediaData });
         } catch (error) {
           console.error("Error updating profile:", error);
@@ -62,6 +63,5 @@ export async function setUpdateProfileListener() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Call the setUpdateProfileListener function when DOM content is loaded
   setUpdateProfileListener();
 });

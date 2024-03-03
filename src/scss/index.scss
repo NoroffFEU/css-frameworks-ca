@@ -1,1 +1,68 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
+body {
+  background-color: $primary-bg;
+  color: $primary-text;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  height: 40px;
+
+  @include media-breakpoint-up(md) {
+    height: 50px;
+  }
+}
+
+.bar-icon {
+  height: 25px;
+}
+
+// To hide the scrollbar
+.slider-section .d-flex.overflow-auto::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-section .d-flex.overflow-auto {
+  scrollbar-width: none; /* Firefox */
+}
+
+.secondary-bg {
+  background-color: $secondary-bg;
+}
+
+.max-w-md {
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.login-header {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.login-form {
+  height: 50px;
+  border: 1px solid $border-color;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    border-color: #fff;
+  }
+}
+
+.toggle-password {
+  right: 1em;
+}
+
+// .profile-button {
+//   color: $secondary-text;
+// }

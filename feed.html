@@ -1,0 +1,133 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Brag'bout - Home/Feed page"
+      content="This is the home page for the social media app Brag'bout. It contains the feed of the user's friends' brags."
+    />
+    <link type="text/css" rel="stylesheet" href="dist/css/index.css" />
+    <title>Brag'bout</title>
+  </head>
+  <body>
+    <nav class="navbar px-3 px-lg-5">
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="assets/images/logo.svg" alt="Logo" class="w-auto" />
+      </a>
+    </nav>
+
+    <!-- Feed section -->
+    <div class="comtainer max-w-md mt-2 mt-md-4 pb-5 mb-4">
+      <div class="d-flex justify-content-around px-5 my-md-2">
+        <div class="text-primary-text">Friends' brags</div>
+        <div class="text-not-active-text">Top brags</div>
+      </div>
+      <script type="text/template" id="image-template">
+        <div class="col-4 col-md-3">
+          <a href="/post">
+          <div class="square-block border border-dark">
+            <img src="IMAGE_SRC" alt="Brag Image" class="aspect-ratio-square w-100" />
+            <div class="d-flex align-items-center justify-content-between px-1">
+                <!-- Here post info will be inserted by JS  -->
+                <p class="fs-sm m-1">
+                  BRAGGER_NAME
+                </p>
+                <p class="fs-xxxs m-1 opacity-75">
+                  TIME_AGO
+                </p>
+            </div>
+          </div>
+        </a>
+        </div>
+      </script>
+
+      <div class="row p-1 g-1" id="image-container">
+        <!-- Images will be inserted here by JS -->
+      </div>
+    </div>
+
+    <!-- Mobile navbar -->
+    <nav class="fixed-bottom d-md-none bg-black">
+      <hr class="m-0" />
+      <div class="p-3">
+        <div class="d-flex justify-content-between">
+          <a href="#">
+            <img src="assets/icons/home.svg" alt="Home" class="bar-icon" />
+          </a>
+          <a href="#">
+            <img src="assets/icons/chat.svg" alt="Chat" class="bar-icon" />
+          </a>
+          <a href="#">
+            <img src="assets/icons/groups.svg" alt="Groups" class="bar-icon" />
+          </a>
+          <a class="nav-item nav-link" href="#"
+            ><img
+              src="assets/icons/add-brag.svg"
+              alt="add a brag"
+              class="bar-icon"
+          /></a>
+          <a href="#">
+            <img src="assets/icons/search.svg" alt="Search" class="bar-icon" />
+          </a>
+          <a href="#">
+            <img src="assets/icons/explore.svg" alt="Search" class="bar-icon" />
+          </a>
+          <a class="nav-item nav-link" href="/profile.html"
+            ><img
+              src="assets/images/user.svg"
+              alt="user profile"
+              class="bar-icon"
+          /></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Desktop sidebar -->
+    <nav
+      class="d-none d-md-flex flex-column position-fixed top-50 translate-middle-y ms-5"
+    >
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/home.svg" alt="Home" class="bar-icon me-3" />
+        <div class="">Home</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/chat.svg" alt="Chat" class="bar-icon me-3" />
+        <div class="">Chat</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/groups.svg" alt="Groups" class="bar-icon me-3" />
+        <div class="">Friends & Groups</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img
+          src="assets/icons/add-brag.svg"
+          alt="add a brag"
+          class="bar-icon me-3"
+        />
+        <div class="">Add a Brag</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/search.svg" alt="Search" class="bar-icon me-3" />
+        <div class="">Search</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img
+          src="assets/icons/explore.svg"
+          alt="Search"
+          class="bar-icon me-3"
+        />
+        <div class="">Explore</div>
+      </a>
+      <a href="/profile.html" class="mb-4 d-flex align-items-center opacity-75"
+        ><img
+          src="assets/images/user.svg"
+          alt="user profile"
+          class="bar-icon me-3"
+        />
+        <div class="">Profile</div>
+      </a>
+    </nav>
+
+    <script type="module" src="js/feed.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Brag'bout - Login page"
+      content="This is the login page for the social media app Brag'bout."
+    />
+    <link type="text/css" rel="stylesheet" href="dist/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Brag'bout</title>
+  </head>
+  <body>
+    <nav class="navbar px-3 px-lg-5 align-items-end">
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="assets/images/logo.svg" alt="Logo" />
+      </a>
+    </nav>
+
+    <!-- Log in section -->
+    <div class="row justify-content-center mt-5 px-3">
+      <div class="col-md-6 col-lg-4">
+        <p class="mb-4 text-center login-header">Have an account?</p>
+        <form action="/feed.html">
+          <div class="mb-4">
+            <input
+              type="text"
+              class="login-form w-100 bg-transparent rounded-5 px-3 py-2"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="position-relative mb-4">
+            <input
+              id="password-field"
+              type="password"
+              class="login-form w-100 bg-transparent rounded-5 px-3 py-2"
+              placeholder="Password"
+              required
+            />
+            <span
+              toggle="#password-field"
+              class="fa fa-fw fa-eye toggle-password opacity-75 position-absolute top-50 translate-middle-y"
+            ></span>
+          </div>
+          <div class="mb-2">
+            <button
+              type="submit"
+              class="px-3 w-100 bg-gradient border-0 rounded-5 py-2"
+            >
+              Sign In
+            </button>
+          </div>
+          <small class="d-flex justify-content-end">
+            <a href="#">Forgot Password</a>
+          </small>
+        </form>
+        <div class="mt-5">
+          <p class="text-center opacity-75">
+            Don't have an account?
+            <a href="#">Sign Up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/password.js"></script>
+  </body>
+</html>

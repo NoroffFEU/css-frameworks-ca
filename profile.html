@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Brag'bout - Profile page"
+      content="This is the profile page for the social media app Brag'bout. It contains the user's profile information and brags."
+    />
+    <link type="text/css" rel="stylesheet" href="dist/css/index.css" />
+    <title>Brag'bout</title>
+  </head>
+  <body>
+    <nav class="navbar px-3 px-lg-5">
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="assets/images/logo.svg" alt="Logo" class="w-auto" />
+      </a>
+    </nav>
+
+    <!-- Profile section -->
+    <div class="max-w-md my-5 pb-5 px-3">
+      <div class="d-flex">
+        <div class="w-25 bg-gradient rounded-4">
+          <img
+            src="assets/images/user.png"
+            alt="user profile"
+            class="w-100 rounded-4 p-1"
+          />
+        </div>
+        <div class="d-flex flex-column justify-content-around w-75 my-2">
+          <h5 class="text-center">Charles Davis</h5>
+          <div class="d-flex justify-content-center">
+            <button
+              class="rounded px-md-5 py-2 text-nowrap bg-gradient w-50 profile-button border-0"
+            >
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between mt-5">
+        <div class="d-flex">
+          <p class="fw-bolder">31</p>
+          <p class="fw-lighter ms-2">brags</p>
+        </div>
+        <div class="d-flex">
+          <p class="fw-bolder">142</p>
+          <p class="fw-lighter ms-2">following</p>
+        </div>
+        <div class="d-flex">
+          <p class="fw-bolder">1276</p>
+          <p class="fw-lighter ms-2">fallowers</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile navbar -->
+    <nav class="fixed-bottom d-md-none bg-black">
+      <hr class="m-0" />
+      <div class="p-3">
+        <div class="d-flex justify-content-between">
+          <a href="#">
+            <img src="assets/icons/home.svg" alt="Home" class="bar-icon" />
+          </a>
+          <a href="#">
+            <img src="assets/icons/chat.svg" alt="Chat" class="bar-icon" />
+          </a>
+          <a href="#">
+            <img src="assets/icons/groups.svg" alt="Groups" class="bar-icon" />
+          </a>
+          <a class="nav-item nav-link" href="#"
+            ><img
+              src="assets/icons/add-brag.svg"
+              alt="add a brag"
+              class="bar-icon"
+          /></a>
+          <a href="#">
+            <img src="assets/icons/search.svg" alt="Search" class="bar-icon" />
+          </a>
+          <a href="#">
+            <img src="assets/icons/explore.svg" alt="Search" class="bar-icon" />
+          </a>
+          <a class="nav-item nav-link" href="/profile.html"
+            ><img
+              src="assets/images/user.png"
+              alt="user profile"
+              class="bar-icon rounded"
+          /></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Desktop sidebar -->
+    <nav
+      class="d-none d-md-flex flex-column position-fixed top-50 translate-middle-y ms-5"
+    >
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/home.svg" alt="Home" class="bar-icon me-3" />
+        <div class="">Home</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/chat.svg" alt="Chat" class="bar-icon me-3" />
+        <div class="">Chat</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/groups.svg" alt="Groups" class="bar-icon me-3" />
+        <div class="">Friends & Groups</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img
+          src="assets/icons/add-brag.svg"
+          alt="add a brag"
+          class="bar-icon me-3"
+        />
+        <div class="">Add a Brag</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img src="assets/icons/search.svg" alt="Search" class="bar-icon me-3" />
+        <div class="">Search</div>
+      </a>
+      <a href="/feed.html" class="mb-4 d-flex align-items-center opacity-75">
+        <img
+          src="assets/icons/explore.svg"
+          alt="Search"
+          class="bar-icon me-3"
+        />
+        <div class="">Explore</div>
+      </a>
+      <a href="/profile.html" class="mb-4 d-flex align-items-center opacity-75"
+        ><img
+          src="assets/images/user.png"
+          alt="user profile"
+          class="bar-icon me-3 rounded"
+        />
+        <div class="">Profile</div>
+      </a>
+    </nav>
+
+    <script type="module" src="js/feed.js"></script>
+  </body>
+</html>

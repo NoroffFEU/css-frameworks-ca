@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (utils.hamburger) {
     utils.hamburger();
   }
+  
   const path = location.pathname;
 
   if (path === "/profile/login/index.html") {
@@ -35,5 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     listeners.displayPosts();
     listeners.setCreatePostListener();
     listeners.modalEditPost();
+  
   }
 });

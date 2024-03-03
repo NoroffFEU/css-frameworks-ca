@@ -6,7 +6,7 @@ export * from "./observers/commonObservers.mjs"
 export * from "./observers/profileEdit.mjs"
 export * from "./observers/reactions.mjs"
 
-export * from "./posts/postDisplay.mjs";
+export * from "./posts/displayPosts.mjs"
 export * from "./posts/createPost.mjs";
 export * from "./posts/updatePost.mjs";
 export * from "./posts/editButton.mjs";

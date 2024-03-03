@@ -5,6 +5,7 @@ import { handleCommentButtonClick } from "../handlers/index.mjs";
 import { load } from "../storage/index.mjs";
 import { subject } from "../handlers/observers/commonObservers.mjs";
 import { Counter } from "../handlers/index.mjs";
+import { displayComments } from "../handlers/posts/displayComments.mjs";
 
 export function createPostElement(postData) {
   const userProfile = load("profile");
@@ -42,6 +43,69 @@ export function createPostElement(postData) {
 
   const innerContent = document.createElement("div");
   innerContent.classList.add("bg-white", "pt-2");
+
+  // Comment Content
+  const comment = document.createElement("div");
+  comment.textContent = "comments:"
+  comment.classList.add("card-body", "border-top", "p-3", "mt-3");
+
+  if (postData.comments && postData.comments.length > 0) {
+    postData.comments.forEach(commentData => {
+      const commentRow = document.createElement("div");
+      commentRow.classList.add("row", "g-0");
+
+      const commentProfileImgCol = document.createElement("div");
+      commentProfileImgCol.classList.add("col-2");
+      
+      const commentProfileImg = document.createElement("img");
+      commentProfileImg.src = commentData.author.avatar || "../../image/default-avatar.JPG";
+      commentProfileImg.classList.add("img-thumbnail");
+      commentProfileImg.alt = "Profile image";
+
+      commentProfileImgCol.appendChild(commentProfileImg);
+      commentRow.appendChild(commentProfileImgCol);
+
+      const commentContentCol = document.createElement("div");
+      commentContentCol.classList.add("col-10");
+
+      const commentAuthorName = document.createElement("p");
+      commentAuthorName.classList.add("font-weight-bold", "mb-0", "ms-2");
+      commentAuthorName.textContent = commentData.author.name || "User name";
+
+      const commentTimestamp = document.createElement("p");
+      commentTimestamp.classList.add("small", "text-muted", "ms-3");
+      commentTimestamp.textContent = commentData.created || "Timestamp";
+
+      const commentBody = document.createElement("p");
+      commentBody.classList.add("mb-2", "ms-2");
+      commentBody.textContent = commentData.body || "Comment content";
+
+      const commentButtonsDiv = document.createElement("div");
+      const commentLikeButton = document.createElement("button");
+      commentLikeButton.classList.add("btn", "btn-link", "btn-sm");
+      commentLikeButton.innerHTML = '👍 Like this';
+
+      const commentReplyButton = document.createElement("button");
+      commentReplyButton.classList.add("btn", "btn-link", "btn-sm");
+      commentReplyButton.innerHTML = '<i class="fa fa-reply"></i> Reply';
+
+      commentButtonsDiv.appendChild(commentLikeButton);
+      commentButtonsDiv.appendChild(commentReplyButton);
+
+      commentContentCol.appendChild(commentAuthorName);
+      commentContentCol.appendChild(commentTimestamp);
+      commentContentCol.appendChild(commentBody);
+      commentContentCol.appendChild(commentButtonsDiv);
+
+      commentRow.appendChild(commentContentCol);
+      comment.appendChild(commentRow);
+    });
+  } else {
+    const noCommentText = document.createElement("p");
+    noCommentText.textContent = "No comments for this post yet.";
+    noCommentText.classList.add ("card-body")
+    comment.appendChild(noCommentText);
+  }
 
   const usernameAndButtons = document.createElement("div");
   usernameAndButtons.classList.add(
@@ -153,6 +217,7 @@ export function createPostElement(postData) {
   innerContent.appendChild(body);
   innerContent.appendChild(countersDiv);
   innerContent.appendChild(actionsDiv);
+  innerContent.appendChild(comment);
 
   cardBody.appendChild(innerContent);
   postContentCol.appendChild(cardBody);
@@ -162,6 +227,7 @@ export function createPostElement(postData) {
 
   return post;
 }
+
 export function renderPostTemplate(postData, parent) {
   const postElement = createPostElement(postData);
   parent.appendChild(postElement);
@@ -172,4 +238,25 @@ export function renderPostTemplates(postDataList, parent) {
   postDataList.forEach((postData) => {
     renderPostTemplate(postData, parent);
   });
+}
+
+
+export async function renderPostTemplateForComments(postData, parent) {
+  const postElement = createPostElement(postData);
+  parent.appendChild(postElement);
+  try {
+    if (postData.comments && postData.comments.length > 0) {
+      const commentsData = postData.comments;
+      const commentDiv = postElement.querySelector('.answer');
+      commentDiv.textContent = '';
+      commentsData.forEach(commentData => {
+        const commentElement = createCommentElement(commentData);
+        commentDiv.appendChild(commentElement);
+      });
+    } else {
+      console.log("No comments to display for post:", postData.id);
+    }
+  } catch (error) {
+    console.error("Failed to fetch and display comments:", error);
+  }
 }

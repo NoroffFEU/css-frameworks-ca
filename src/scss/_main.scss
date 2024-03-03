@@ -1,0 +1,35 @@
+
+h1, h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.texst-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } 
+
+ .add-post02{ 
+    display: none; 
+ }
+
+ p{
+    font-size: 20px;
+ }
+
+  @media (max-width: 1000px){
+ .add-post{
+    display: none;
+ }
+
+ .add-post02{
+    display: block;
+ }
+  }

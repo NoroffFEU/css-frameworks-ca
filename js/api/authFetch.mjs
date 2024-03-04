@@ -1,4 +1,5 @@
 import { load } from "../storage/index.mjs";
+import { showMessage } from "../utils/messages.mjs";
 
 export function headers() {
   const token = load("token");
@@ -10,8 +11,20 @@ export function headers() {
 }
 
 export async function authFetch(url, options = {}) {
-  return fetch(url, {
-    ...options,
-    headers: headers(),
-  });
+  try {
+    const response = await fetch(url, {
+      ...options,
+      headers: headers(),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return response;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    showMessage("Failed to fetch data. Please try again.");
+    throw new Error("Failed to fetch data. Please try again.");
+  }
 }

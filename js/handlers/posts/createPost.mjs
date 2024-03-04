@@ -34,7 +34,7 @@ export function setCreatePostListener() {
         })
         .catch((error) => {
           console.error("Error creating post:", error);
-          showMessage("Error creating post:", error);
+          showMessage("Error creating post:" + error.message, error);
         });
     });
   }

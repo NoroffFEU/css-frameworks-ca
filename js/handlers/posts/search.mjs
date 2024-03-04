@@ -1,5 +1,6 @@
 import { getPosts } from "../../api/posts/get.mjs";
 import { renderPostTemplate } from "../../templates/index.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("button-search");
@@ -23,6 +24,10 @@ searchButton.addEventListener("click", async () => {
     renderFilteredPosts(filteredPosts);
   } catch (error) {
     console.error("Error filtering posts by search:", error);
+    showMessage(
+      "Failed to update post. Please try again." + error.message,
+      "error"
+    );
   }
 });
 

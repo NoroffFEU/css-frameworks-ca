@@ -16,10 +16,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     utils.updateProfileFromLocalStorage();
   }
 
-  if (utils.hamburger) {
-    utils.hamburger();
-  }
-  
   const path = location.pathname;
 
   if (path === "/profile/login/index.html") {
@@ -37,7 +33,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     listeners.setCreatePostListener();
     listeners.modalEditPost();
     listeners.handleSortOptionChange();
-    listeners.renderFilteredPosts();
-  
   }
 });

@@ -11,7 +11,7 @@ if (document.readyState === "loading") {
   listeners.setUpdatePostListener();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   if (utils.updateProfileFromLocalStorage) {
     utils.updateProfileFromLocalStorage();
   }
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     listeners.displayPosts();
     listeners.setCreatePostListener();
     listeners.modalEditPost();
+    listeners.handleSortOptionChange();
   
   }
 });

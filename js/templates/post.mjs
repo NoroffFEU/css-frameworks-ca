@@ -5,7 +5,7 @@ import { handleCommentButtonClick } from "../handlers/index.mjs";
 import { load } from "../storage/index.mjs";
 import { subject } from "../handlers/observers/commonObservers.mjs";
 import { Counter } from "../handlers/index.mjs";
-import { displayComments } from "../handlers/posts/displayComments.mjs";
+import * as handlers from "../handlers/index.mjs"
 
 export function createPostElement(postData) {
   const userProfile = load("profile");
@@ -127,7 +127,7 @@ export function createPostElement(postData) {
     editButton.innerHTML = '<i class="fas fa-edit"></i>';
     editButton.value = postData.id;
     editButton.addEventListener("click", (event) => {
-      handleEditButtonClick(event, postData);
+      handlers.handleEditButtonClick(event, postData);
     });
 
     const deleteButton = document.createElement("button");
@@ -135,7 +135,7 @@ export function createPostElement(postData) {
     deleteButton.innerHTML = '<i class="fas fa-trash-alt text-danger"></i>';
     deleteButton.value = postData.id;
     deleteButton.addEventListener("click", (event) => {
-      handleDeleteButtonClick(event, postData.id);
+      handlers.handleDeleteButtonClick(event, postData.id);
     });
 
     buttonsContainer.appendChild(editButton);
@@ -194,14 +194,14 @@ export function createPostElement(postData) {
   likeButton.classList.add("btn", "btn-link", "btn-sm");
   likeButton.innerHTML = "👍 Like this!";
   likeButton.addEventListener("click", (event) => {
-    handleLikeButtonClick(event, postData.id, "👍");
+    handlers.handleLikeButtonClick(event, postData.id, "👍");
   });
 
   const commentButton = document.createElement("button");
   commentButton.classList.add("btn", "btn-link", "btn-sm");
   commentButton.innerHTML = '<i class="fa fa-comments"></i> Comment';
   commentButton.addEventListener("click", (event) => {
-    handleCommentButtonClick(event, postData.id);
+    handlers.handleCommentButtonClick(event, postData.id);
   });
 
   usernameAndButtons.appendChild(username);
@@ -241,22 +241,3 @@ export function renderPostTemplates(postDataList, parent) {
 }
 
 
-export async function renderPostTemplateForComments(postData, parent) {
-  const postElement = createPostElement(postData);
-  parent.appendChild(postElement);
-  try {
-    if (postData.comments && postData.comments.length > 0) {
-      const commentsData = postData.comments;
-      const commentDiv = postElement.querySelector('.answer');
-      commentDiv.textContent = '';
-      commentsData.forEach(commentData => {
-        const commentElement = createCommentElement(commentData);
-        commentDiv.appendChild(commentElement);
-      });
-    } else {
-      console.log("No comments to display for post:", postData.id);
-    }
-  } catch (error) {
-    console.error("Failed to fetch and display comments:", error);
-  }
-}

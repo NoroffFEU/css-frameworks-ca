@@ -3,6 +3,7 @@ import { load, save } from "../../storage/index.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 import { subject } from "../observers/commonObservers.mjs";
 import { ProfileEditObserver } from "../index.mjs";
+import { showLoader, hideLoader } from "../../utils/loader.mjs";
 
 export async function setUpdateProfileListener() {
   const form = document.querySelector("#editProfile");
@@ -17,6 +18,8 @@ export async function setUpdateProfileListener() {
     button.disabled = true;
 
     try {
+      showLoader(); // Show loader before fetching profile
+
       const profile = await getProfile(name);
 
       form.banner.value = profile.banner;
@@ -40,6 +43,8 @@ export async function setUpdateProfileListener() {
         const mediaData = Object.fromEntries(formData.entries());
 
         try {
+          showLoader(); // Show loader before updating profile
+
           // Send media update to the API
           await updateProfile(name, mediaData);
 
@@ -54,10 +59,14 @@ export async function setUpdateProfileListener() {
         } catch (error) {
           console.error("Error updating profile:", error);
           showMessage("Failed to update profile" + error.message, "error");
+        } finally {
+          hideLoader(); // Hide loader after updating profile
         }
       });
     } catch (error) {
       console.error("Error fetching profile:", error);
+    } finally {
+      hideLoader(); // Hide loader after fetching profile
     }
   }
 }

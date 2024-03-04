@@ -1,5 +1,6 @@
 import { registerURL } from "../api_constants.mjs";
 import { showMessage } from "../../utils/messages.mjs";
+import { showLoader, hideLoader } from "../../utils/loader.mjs";
 
 const method = "post";
 
@@ -7,6 +8,8 @@ export async function register(profile) {
   const body = JSON.stringify(profile);
 
   try {
+    showLoader();
+
     const response = await fetch(registerURL, {
       headers: { "Content-Type": "application/json" },
       method,
@@ -43,5 +46,7 @@ export async function register(profile) {
   } catch (error) {
     console.error("Error during registration:", error);
     showMessage("Registration failed. Please try again.", "error");
+  } finally {
+    hideLoader();
   }
 }

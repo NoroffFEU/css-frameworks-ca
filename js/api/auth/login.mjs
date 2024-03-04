@@ -3,6 +3,16 @@ import * as storage from "../../storage/index.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 import { showLoader, hideLoader } from "../../utils/loader.mjs";
 
+/**
+ * Logs in the user with the provided profile.
+ * 
+ * @param {Object} profile The user profile containing login credentials.
+ * @param {string} profile.username The username of the user.
+ * @param {string} profile.password The password of the user.
+ * @returns {Promise<void>} A Promise that resolves when the login process is complete.
+ * @throws {Error} If the login process fails.
+ */
+
 const action = "/auth/login";
 const method = "post";
 

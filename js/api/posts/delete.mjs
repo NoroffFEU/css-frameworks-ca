@@ -5,6 +5,13 @@ import { showMessage } from "../../utils/messages.mjs";
 const action = "/posts";
 const method = "delete";
 
+/**
+ * Removes a post by its ID.
+ * @param {string} id - The ID of the post to be removed.
+ * @returns {Promise<Object>} - A promise resolving to the removed post object.
+ * @throws {Error} - Throws an error if removing the post fails.
+ */
+
 export async function removePost(id) {
   try {
     if (!id) {

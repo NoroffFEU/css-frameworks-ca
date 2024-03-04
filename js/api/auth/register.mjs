@@ -2,6 +2,17 @@ import { registerURL } from "../api_constants.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 import { showLoader, hideLoader } from "../../utils/loader.mjs";
 
+
+/**
+ * Registers a new user profile.
+ * @param {Object} profile - The profile information to register.
+ * @param {string} profile.username - The username of the user.
+ * @param {string} profile.email - The email address of the user.
+ * @param {string} profile.password - The password for the user account.
+ * @returns {Promise<void>} - A promise indicating the completion of the registration process.
+ * @throws {Error} - Throws an error if registration fails.
+ */
+
 const method = "post";
 
 export async function register(profile) {

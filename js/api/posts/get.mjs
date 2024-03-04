@@ -1,8 +1,14 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
 import { authFetch } from "../authFetch.mjs";
-import { showMessage } from "../../utils/messages.mjs";;
+import { showMessage } from "../../utils/messages.mjs";
 
 const action = "/posts";
+
+/**
+ * Retrieves all posts from the server.
+ * @returns {Promise<Object[]>} An array of post objects.
+ * @throws {Error} If fetching posts fails.
+ */
 
 export async function getPosts() {
   const getPostURL = `${API_SOCIAL_URL}${action}?_author=true&_comments=true`;
@@ -19,6 +25,13 @@ export async function getPosts() {
     throw error;
   }
 }
+
+/**
+ * Retrieves comments for a post from the server.
+ * @param {string} postId - The ID of the post to retrieve comments for.
+ * @returns {Promise<Object[]>} An array of comment objects.
+ * @throws {Error} If fetching comments fails.
+ */
 
 export async function getPostById(id) {
   if (!id) {

@@ -1,3 +1,6 @@
+/**
+ * Shows a loader spinner on the screen.
+ */
 export function showLoader() {
   const spinner = document.createElement("div");
   spinner.className = "spinner-border text-info";
@@ -16,7 +19,9 @@ export function showLoader() {
 
   document.body.appendChild(loaderContainer);
 }
-
+/**
+ * Hides the loader spinner from the screen.
+ */
 export function hideLoader() {
   const loaderContainer = document.querySelector(".loader-container");
   if (loaderContainer) {

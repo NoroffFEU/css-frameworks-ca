@@ -3,6 +3,11 @@ import { Counter } from "../handlers/index.mjs";
 import { subject } from "../handlers/observers/commonObservers.mjs";
 import { load } from "../storage/index.mjs";
 
+/**
+ * Creates a post element based on the provided post data.
+ * @param {Object} postData - The data of the post.
+ * @returns {HTMLElement} - The created post element.
+ */
 export function createPostElement(postData) {
   try {
     const userProfile = load("profile");
@@ -241,11 +246,21 @@ export function createPostElement(postData) {
   }
 }
 
+/**
+ * Renders a single post template inside the specified parent element.
+ * @param {Object} postData - The data of the post to render.
+ * @param {HTMLElement} parent - The parent element to append the post template to.
+ */
 export function renderPostTemplate(postData, parent) {
   const postElement = createPostElement(postData);
   parent.appendChild(postElement);
 }
 
+/**
+ * Renders post templates for a list of post data inside the specified parent element.
+ * @param {Object[]} postDataList - The list of post data to render.
+ * @param {HTMLElement} parent - The parent element to append the post templates to.
+ */
 export function renderPostTemplates(postDataList, parent) {
   parent.innerHTML = ""; // Clear the existing content
   postDataList.forEach((postData) => {

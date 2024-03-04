@@ -4,6 +4,15 @@ import { showMessage } from "../../utils/messages.mjs";
 
 const REACT_ACTION = "/react";
 
+
+/**
+ * Likes a post.
+ * @param {string} postId - The ID of the post to like.
+ * @param {string} symbol - The symbol representing the action, e.g., 'like'.
+ * @returns {Promise<number>} - A promise resolving to the updated like count of the post.
+ * @throws {Error} - Throws an error if liking the post fails.
+ */
+
 export async function likePost(postId, symbol) {
   const likeUrl = `${API_SOCIAL_URL}/posts/${postId}${REACT_ACTION}/${symbol}`;
   const fetchOptions = {

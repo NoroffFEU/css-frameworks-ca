@@ -2,9 +2,12 @@ import { getPosts } from "../../api/posts/get.mjs";
 import { renderPostTemplate } from "../../templates/post.mjs";
 import { load } from "../../storage/index.mjs";
 import { showMessage } from "../../utils/messages.mjs";
+import { hideLoader, showLoader } from "../../utils/loader.mjs";
 
 export async function displayPosts() {
   try {
+    showLoader();
+
     const posts = await getPosts();
     const container = document.querySelector("#posts");
     container.innerHTML = ""; // Clear the existing content
@@ -13,7 +16,12 @@ export async function displayPosts() {
     });
   } catch (error) {
     console.error("Error fetching and displaying posts:", error);
-    showMessage("Failed to fetch and display posts. Please try again.", "error");
+    showMessage(
+      "Failed to fetch and display posts. Please try again.",
+      "error"
+    );
+  } finally {
+    hideLoader();
   }
 }
 
@@ -55,7 +63,10 @@ export async function displayUserPosts() {
     });
   } catch (error) {
     console.error("Error fetching and displaying user posts:", error);
-    showMessage("Failed to fetch and display user posts. Please try again.", "error");
+    showMessage(
+      "Failed to fetch and display user posts. Please try again.",
+      "error"
+    );
   }
 }
 

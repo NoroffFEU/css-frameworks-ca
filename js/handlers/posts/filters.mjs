@@ -81,4 +81,7 @@ showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 
+if (sortOptionsSelect) {
+
 sortOptionsSelect.addEventListener("change", handleSortOptionChange);
+}

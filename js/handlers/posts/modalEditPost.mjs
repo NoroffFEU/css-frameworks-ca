@@ -28,6 +28,7 @@ export function modalEditPost() {
     } catch (error) {
       console.error("Error updating post:", error);
       editPostModal.hide();
+      showMessage("Failed to update post. Please try again."+ error.message, "error");
     }
   });
   setTimeout(() => {

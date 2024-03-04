@@ -53,7 +53,7 @@ export async function setUpdateProfileListener() {
           subject.notify({ name, ...mediaData });
         } catch (error) {
           console.error("Error updating profile:", error);
-          showMessage("Failed to update profile", "error");
+          showMessage("Failed to update profile" + error.message, "error");
         }
       });
     } catch (error) {

@@ -1,6 +1,7 @@
 import { getPosts } from "../../api/posts/get.mjs";
 import { renderPostTemplate } from "../../templates/index.mjs";
 import { displayPosts } from "../../handlers/posts/displayPosts.mjs";
+import { showMessage } from "../../utils/messages.mjs";
 
 const sortOptionsSelect = document.getElementById("sortOptions");
 
@@ -22,6 +23,7 @@ export async function handleSortOptionChange() {
     }
   } catch (error) {
     console.error("Error filtering posts:", error);
+    showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 
@@ -39,6 +41,7 @@ export async function filterReactionPosts(container) {
     });
   } catch (error) {
     console.error("Error filtering posts:", error);
+    showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 
@@ -56,6 +59,7 @@ export async function filterCommentPosts(container) {
     });
   } catch (error) {
     console.error("Error filtering posts:", error);
+showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 
@@ -73,6 +77,7 @@ export async function filerImagePosts(container) {
     });
   } catch (error) {
     console.error("Error filtering posts:", error);
+showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 

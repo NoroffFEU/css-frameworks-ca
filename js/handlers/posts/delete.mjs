@@ -33,7 +33,7 @@ export async function handleDeleteButtonClick(event, postId) {
           window.location.reload();
         }, 2000);
       } catch (error) {
-        const errorMessage = `Could not delete post: ${error.message}`;
+        const errorMessage = "Could not delete post:" + error.message;
 
         showMessage(errorMessage, "error");
       }
@@ -41,7 +41,7 @@ export async function handleDeleteButtonClick(event, postId) {
 
     deletePostModal.show();
   } catch (error) {
-    const errorMessage = `Error fetching post data: ${error.message}`;
+    const errorMessage = "Error fetching post data:" + error.message;
     showMessage(errorMessage, "error");
     console.error("Error fetching post data:", error);
   }

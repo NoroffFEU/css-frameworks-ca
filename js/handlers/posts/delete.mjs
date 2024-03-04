@@ -1,7 +1,7 @@
 import { getPostById } from "../../api/posts/get.mjs";
 import { removePost } from "../../api/posts/delete.mjs";
 import { showMessage } from "../../utils/messages.mjs";
-import { createDeletePostElement } from "../../templates/index.mjs";
+import { createSinglePostElement } from "../../templates/index.mjs";
 
 export async function handleDeleteButtonClick(event, postId) {
   event.preventDefault();
@@ -17,7 +17,7 @@ export async function handleDeleteButtonClick(event, postId) {
     const modalContent = deletePostModal._element.querySelector(".modal-body");
     modalContent.innerHTML = "";
 
-    const deletePostElement = createDeletePostElement(postData);
+    const deletePostElement = createSinglePostElement(postData);
     modalContent.appendChild(deletePostElement);
 
     // Event listener to the confirm delete button

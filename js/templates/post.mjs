@@ -1,11 +1,7 @@
-import { handleEditButtonClick } from "../handlers/posts/editButton.mjs";
-import { handleDeleteButtonClick } from "../handlers/posts/delete.mjs";
-import { handleLikeButtonClick } from "../handlers/posts/likeClick.mjs";
-import { handleCommentButtonClick } from "../handlers/index.mjs";
-import { load } from "../storage/index.mjs";
-import { subject } from "../handlers/observers/commonObservers.mjs";
-import { Counter } from "../handlers/index.mjs";
 import * as handlers from "../handlers/index.mjs";
+import { Counter } from "../handlers/index.mjs";
+import { subject } from "../handlers/observers/commonObservers.mjs";
+import { load } from "../storage/index.mjs";
 
 export function createPostElement(postData) {
   try {
@@ -13,6 +9,11 @@ export function createPostElement(postData) {
 
     const post = document.createElement("div");
     post.classList.add("card-body", "mb-3");
+    post.addEventListener("click", (event) => {
+      if (!event.target.closest(".btn")) {
+        handlers.handleViewPostButtonClick(event, postData.id);
+      }
+    });
 
     const row = document.createElement("div");
     row.classList.add("row", "g-0");

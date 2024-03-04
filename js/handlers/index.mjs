@@ -14,5 +14,6 @@ export * from "./posts/modalEditPost.mjs";
 export * from "./posts/delete.mjs";
 export * from "./posts/comment.mjs";
 export * from "./posts/likeClick.mjs";
-export * from "./posts/filters.mjs"
-export * from "./posts/search.mjs"
+export * from "./posts/filters.mjs";
+export * from "./posts/search.mjs";
+export * from "./posts/displaySinglePost.mjs";

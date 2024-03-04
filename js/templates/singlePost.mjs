@@ -1,7 +1,7 @@
-export function createDeletePostElement(postData) {
+export function createSinglePostElement(postData) {
   try {
-    const deletePostElement = document.createElement("div");
-    deletePostElement.classList.add("delete-post");
+    const singlePostElement = document.createElement("div");
+    singlePostElement.classList.add("single-post");
 
     const title = document.createElement("h4");
     title.classList.add("card-title", "text-center");
@@ -16,13 +16,13 @@ export function createDeletePostElement(postData) {
     body.classList.add("card-text", "text-center");
     body.textContent = postData.body;
 
-    deletePostElement.appendChild(title);
-    deletePostElement.appendChild(media);
-    deletePostElement.appendChild(body);
+    singlePostElement.appendChild(title);
+    singlePostElement.appendChild(media);
+    singlePostElement.appendChild(body);
 
-    return deletePostElement;
+    return singlePostElement;
   } catch (error) {
-    console.error("Error creating delete post element:", error);
+    console.error("Error creating single post element:", error);
     return null; // Return null in case of error
   }
 }

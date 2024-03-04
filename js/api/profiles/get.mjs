@@ -5,6 +5,11 @@ import { showLoader, hideLoader } from "../../utils/loader.mjs";
 const action = "/profiles";
 const method = "get";
 
+/**
+ * Retrieves all profiles.
+ * @returns {Promise<Object>} - A promise resolving to the list of profiles.
+ * @throws {Error} - Throws an error if fetching profiles fails.
+ */
 export async function getProfiles() {
   try {
     showLoader();
@@ -19,6 +24,13 @@ export async function getProfiles() {
     hideLoader();
   }
 }
+
+/**
+ * Retrieves a profile by name.
+ * @param {string} [name=load("profile").name] - The name of the profile to retrieve.
+ * @returns {Promise<Object>} - A promise resolving to the profile object.
+ * @throws {Error} - Throws an error if fetching the profile fails.
+ */
 export async function getProfile(name = load("profile").name) {
   try {
     showLoader();

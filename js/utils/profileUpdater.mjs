@@ -1,5 +1,8 @@
 import { load } from "../storage/index.mjs";
 
+/**
+ * Updates profile information from localStorage and applies it to the DOM elements.
+ */
 export function updateProfileFromLocalStorage() {
   // Retrieve user profile from localStorage
   const userProfile = load("profile");

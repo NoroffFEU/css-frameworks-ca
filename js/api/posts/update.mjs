@@ -5,6 +5,16 @@ import { showMessage } from "../../utils/messages.mjs";
 const action = "/posts";
 const method = "PUT";
 
+/**
+ * Updates a post.
+ * @param {string} title - The new title of the post.
+ * @param {string} body - The new body content of the post.
+ * @param {string} media - The new media content (e.g., image URL) of the post.
+ * @param {string} id - The ID of the post to update.
+ * @returns {Promise<Object>} - A promise resolving to the updated post object.
+ * @throws {Error} - Throws an error if updating the post fails.
+ */
+
 export async function updatePost(title, body, media, id) {
   try {
     if (!id) {

@@ -1,3 +1,8 @@
+/**
+ * Creates a single post element based on the provided post data.
+ * @param {Object} postData - The data of the post.
+ * @returns {HTMLElement} - The created single post element.
+ */
 export function createSinglePostElement(postData) {
   try {
     const singlePostElement = document.createElement("div");

@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     listeners.setCreatePostListener();
     listeners.modalEditPost();
     listeners.handleSortOptionChange();
+    listeners.renderFilteredPosts();
   
   }
 });

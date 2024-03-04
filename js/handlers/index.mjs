@@ -15,3 +15,4 @@ export * from "./posts/delete.mjs";
 export * from "./posts/comment.mjs";
 export * from "./posts/likeClick.mjs";
 export * from "./posts/filters.mjs"
+export * from "./posts/search.mjs"

@@ -1,6 +1,7 @@
 import { API_SOCIAL_URL } from "../api_constants.mjs";
 import * as storage from "../../storage/index.mjs";
 import { showMessage } from "../../utils/messages.mjs";
+import { showLoader, hideLoader } from "../../utils/loader.mjs";
 
 const action = "/auth/login";
 const method = "post";
@@ -10,6 +11,8 @@ export async function login(profile) {
   const body = JSON.stringify(profile);
 
   try {
+    showLoader();
+
     const response = await fetch(loginURL, {
       headers: {
         "Content-Type": "application/json",
@@ -38,5 +41,7 @@ export async function login(profile) {
     console.error("Error logging in:", error);
     showMessage("Failed to login. Please try again later.", "error");
     throw error;
+  } finally {
+    hideLoader(); 
   }
 }

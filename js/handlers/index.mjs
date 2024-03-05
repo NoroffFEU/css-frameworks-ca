@@ -17,3 +17,4 @@ export * from "./posts/likeClick.mjs";
 export * from "./posts/filters.mjs";
 export * from "./posts/search.mjs";
 export * from "./posts/displaySinglePost.mjs";
+export * from "./posts/commentDelete.mjs"

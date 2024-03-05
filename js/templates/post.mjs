@@ -58,6 +58,9 @@ export function createPostElement(postData) {
 
     if (postData.comments && postData.comments.length > 0) {
       postData.comments.forEach((commentData) => {
+        const currentUserEmail = userProfile.email;
+        const commentAuthorEmail = commentData.author.email;
+
         const commentRow = document.createElement("div");
         commentRow.classList.add("row", "g-0");
 
@@ -104,7 +107,20 @@ export function createPostElement(postData) {
         commentContentCol.appendChild(commentTimestamp);
         commentContentCol.appendChild(commentBody);
         commentContentCol.appendChild(commentButtonsDiv);
-
+        if (currentUserEmail === commentAuthorEmail) {
+          const deleteCommentButton = document.createElement("button");
+          deleteCommentButton.classList.add("btn", "btn-link", "btn-sm");
+          deleteCommentButton.innerHTML =
+            '<i class="fa-regular fa-trash-can text-danger"></i>';
+          deleteCommentButton.addEventListener("click", (event) => {
+            handlers.handleDeleteCommentButtonClick(
+              event,
+              postData.id,
+              commentData.id
+            );
+          });
+          commentButtonsDiv.appendChild(deleteCommentButton);
+        }
         commentRow.appendChild(commentContentCol);
         comment.appendChild(commentRow);
       });
@@ -253,9 +269,17 @@ export function createPostElement(postData) {
  */
 export function renderPostTemplate(postData, parent) {
   const postElement = createPostElement(postData);
-  parent.appendChild(postElement);
+  const existingPostElement = parent.querySelector(
+    `[data-post-id="${postData.id}"]`
+  );
+  if (existingPostElement) {
+    // If post element already exists, replace it with the new one
+    parent.replaceChild(postElement, existingPostElement);
+  } else {
+    // Otherwise, append the new post element
+    parent.appendChild(postElement);
+  }
 }
-
 /**
  * Renders post templates for a list of post data inside the specified parent element.
  * @param {Object[]} postDataList - The list of post data to render.

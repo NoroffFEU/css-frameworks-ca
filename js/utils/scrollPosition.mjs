@@ -43,7 +43,7 @@ scrollToTopButton.addEventListener("click", scrollToTop);
 
 function handleScroll() {
   const scrollToTopButton = document.querySelector(".scroll-to-top-button");
-  if (window.scrollY > 100) {
+  if (window.scrollY > 5000) {
     scrollToTopButton.classList.add("visible");
   } else {
     scrollToTopButton.classList.remove("visible");

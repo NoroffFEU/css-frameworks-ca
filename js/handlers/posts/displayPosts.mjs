@@ -3,6 +3,7 @@ import { renderPostTemplate } from "../../templates/post.mjs";
 import { load } from "../../storage/index.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 import { hideLoader, showLoader } from "../../utils/loader.mjs";
+import { scrollToTop, createScrollToTopButton } from "../../utils/scrollPosition.mjs";
 
 export async function displayPosts() {
   try {
@@ -11,6 +12,8 @@ export async function displayPosts() {
     const posts = await getPosts();
     const container = document.querySelector("#posts");
     container.innerHTML = ""; // Clear the existing content
+    const scrollToTopButton = createScrollToTopButton();
+    scrollToTopButton.addEventListener('click', scrollToTop);
     posts.forEach((postData) => {
       renderPostTemplate(postData, container);
     });

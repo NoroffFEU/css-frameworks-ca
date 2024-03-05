@@ -136,4 +136,16 @@ footer {
   color: #fff;
 }
 
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none; /* Initially hide the button */
+}
+
+.scroll-to-top-button.visible {
+  display: block; /* Show the button when scrolled down */
+}
+
 /*# sourceMappingURL=custom.css.map */

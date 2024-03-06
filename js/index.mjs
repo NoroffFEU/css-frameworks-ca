@@ -1,5 +1,6 @@
 import * as utils from "./utils/index.mjs";
 import * as listeners from "./handlers/index.mjs";
+import { handleLogout } from "./handlers/index.mjs";
 
 // Add the code block here
 if (document.readyState === "loading") {
@@ -33,5 +34,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     listeners.setCreatePostListener();
     listeners.modalEditPost();
     listeners.handleSortOptionChange();
+  }
+  const logoutLink = document.getElementById("logoutLink");
+  if (logoutLink) {
+    logoutLink.addEventListener("click", handleLogout);
   }
 });

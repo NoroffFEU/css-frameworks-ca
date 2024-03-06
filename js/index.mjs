@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const path = location.pathname;
 
-  if (path === "/profile/login/index.html") {
+  if (path === "/profile/login/") {
     listeners.setLoginFormListener();
   } else if (path === "/profile/register/") {
     listeners.setRegisterFormListener();

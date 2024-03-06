@@ -1,6 +1,10 @@
 import { addComment } from "../../api/posts/comment.mjs";
 import { subject } from "../observers/commonObservers.mjs";
 import { showMessage } from "../../utils/messages.mjs";
+import {
+  storeScrollPosition,
+  restoreScrollPosition,
+} from "../../utils/scrollPosition.mjs";
 
 /**
  * Opens the comment modal.
@@ -20,7 +24,7 @@ function openCommentModal() {
 export function handleCommentButtonClick(event, postId) {
   try {
     openCommentModal();
-
+    storeScrollPosition();
     // Get the submit button outside the event listener
     const submitCommentBtn = document.getElementById("submitCommentBtn");
 
@@ -37,6 +41,8 @@ export function handleCommentButtonClick(event, postId) {
         await addComment(postId, commentText);
         subject.notify(postId);
         showMessage("Comment added successfully.", "success");
+        document.getElementById("commentText").value = "";
+        restoreScrollPosition();
       } catch (error) {
         console.error("Error adding comment:", error);
         showMessage(

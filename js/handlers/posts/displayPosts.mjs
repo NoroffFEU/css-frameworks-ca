@@ -38,13 +38,32 @@ export async function displayUserPosts() {
     userPosts = await getPosts();
     const container = document.querySelector("#userPosts");
     const showMoreBtn = document.querySelector("#showMoreBtn");
+    const noPostsMessage = document.querySelector("#noPostsMessage"); // Select the message element
     container.innerHTML = ""; // Clear the existing content
 
     const userProfile = load("profile");
     const currentUserEmail = userProfile.email;
 
-    let displayedCount = 0;
+    let userPostsCount = 0; // Count of posts authored by the current user
 
+    // Loop through all posts to count posts authored by the current user
+    userPosts.forEach((postData) => {
+      if (postData.author.email === currentUserEmail) {
+        userPostsCount++;
+      }
+    });
+
+    // If the current user has no posts, display the message
+    if (userPostsCount === 0) {
+      container.style.display = "none";
+      noPostsMessage.style.display = "block";
+    } else {
+      container.style.display = "block";
+      noPostsMessage.style.display = "none";
+    }
+
+    // Display user's posts in the container
+    let displayedCount = 0;
     userPosts.forEach((postData) => {
       if (
         displayedCount < displayedUserPostsCount + postLimit &&
@@ -72,6 +91,7 @@ export async function displayUserPosts() {
     );
   }
 }
+
 
 // Function to append more user posts when "Show More" button is clicked
 function appendMoreUserPosts(container, currentUserEmail) {

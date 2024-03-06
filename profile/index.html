@@ -132,17 +132,16 @@
                 <p class="text-center"><a href="#!" class="text-muted">Show all (239)</a></p>
               </div>
 
-              <!-- recent posts -->
-              <p class=" fw-normal mb-0 ms-4">Recent Posts</p>
+           
               <!-- New Post form -->
-              <div class="card-body">
+              <div class="card-body ">
                 <div class="row g-0 mb-5">
                   <div class="col-2">
                     <img src="../image/userIMG1.JPG" class="card-img replace-avatar" alt="Profile image">
                   </div>
                   <div class="card col-10 bg-light text-dark">
 
-                    <div class="card-body">
+                    <div class="card-body ">
                       <h5 class="card-title">Do you have some new art to show off?</h5>
                       <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
                         data-bs-target="#createPostModal">
@@ -152,8 +151,11 @@
                   </div>
                 </div>
               </div>
-              <!-- post 1 -->
-              <div class="card-body mb-3" id="userPosts"> </div>
+              <!-- post from api -->
+                 <!-- recent posts -->
+                 <p class=" fw-normal mb-0  card-body">Recent Posts</p>
+              <div class="card-body  border-top mb-3" id="userPosts"> </div>
+              <div id="noPostsMessage" class="card-body text-center border-top" style="display: none;">No posts created yet</div>
               <button class="btn btn-outline-primary btn-sm m-auto" id="showMoreBtn">Show More</button>
             </div>
           </div>

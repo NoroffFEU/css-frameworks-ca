@@ -90,7 +90,7 @@
                             <div class="card-body">
                                 <div class="row g-0 mb-5">
                                     <div class="col-2">
-                                        <img src="../image/userIMG1.JPG" class="card-img replace-avatar"
+                                        <img src="../image/default-avatar.JPG" class="card-img replace-avatar"
                                             alt="Profile image">
                                     </div>
                                     <div class="card col-10 bg-light text-dark">
@@ -106,68 +106,16 @@
                                 </div>
                             </div>
                             <div class="container" id="posts">
-                                <!-- Post 1 -->
-                                <div class="card-body mb-3">
-                                    <div class="row g-0">
-                                        <div class="col-2">
-                                            <img src="../image/ProfileImg  (2).JPG" class="img-thumbnail"
-                                                alt=" Profile image">
-                                        </div>
-                                        <div class="card col-10 bg-light text-dark">
-                                            <div class="card-body">
-                                                <div class="bg-white pt-1">
-                                                    <p class="font-weight-bold mb-0 ms-3 mt-1">Jermy Roldasol</p>
-                                                    <p class="small text-muted ms-3">January 21- 10:20</p>
+                                <!-- Post from api -->
 
-                                                    <div class="text-center">
-                                                        <img src="../image/art-IMG_0191.JPG" class="card-img w-50"
-                                                            alt="Profile image">
-
-                                                        <p class="card-text text-center">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                            Integer necodio.
-                                                        </p>
-
-                                                        <div>
-                                                            <button class="btn btn-outline-primary btn-sm"><i
-                                                                    class="fa fa-thumbs-up"></i> Like this!
-                                                            </button>
-                                                            <button class="btn btn-outline-primary btn-sm"><i
-                                                                    class="fa fa-comments"></i> Comment</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- answer -->
-                                            <div class="card-body bg-white m-2 answer">
-                                                <div class="row g-0">
-                                                    <div class="col-2">
-                                                        <img src="../image/ProfileImg  (4).JPG" class="img-thumbnail"
-                                                            alt=" Profile image">
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <p class="font-weight-bold mb-0 ms-2">Rammy Smith</p>
-                                                        <p class="small text-muted ms-3">January 21- 10:26</p>
-                                                        <p class=" mb-2">
-                                                            Suspendisse sed nisi lacus sed. Aliquet lectus proin nibh
-                                                            nisl
-                                                            condimentum id venenatis a condimentum.
-                                                        </p>
-
-                                                        <div>
-                                                            <button class="btn btn-outline-primary btn-sm"><i
-                                                                    class="fa fa-thumbs-up"></i> Like this!</button>
-                                                            <button class="btn btn-outline-primary btn-sm"><i
-                                                                    class="fa fa-comments"></i> Comment</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <!-- answer from api -->
+                                <div class="card-body bg-white m-2 answer">
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <!-- Create Post Modal -->
@@ -254,7 +202,7 @@
                                     placeholder="Enter image URL" required>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"data-bs-dismiss="modal" >Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button id="updatePostButton" type="submit" class="btn btn-primary">Update Post</button>
                             </div>
                         </form>
@@ -282,7 +230,7 @@
             </div>
         </div>
     </div>
-  
+
     <!-- Delete Post Modal -->
     <div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel"
         aria-hidden="true">
@@ -303,21 +251,24 @@
             </div>
         </div>
     </div>
-<!-- Modal for confirming comment deletion -->
-<div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteCommentModalLabel">Confirm Delete Comment</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-footer justify-content-center"> <!-- Added justify-content-center class here for button alignment -->
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelDeleteCommentButton">Cancel</button>
-                <button type="button" class="btn btn-danger" id="confirmDeleteCommentButton">Delete</button>
+    <!-- Modal for confirming comment deletion -->
+    <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteCommentModalLabel">Confirm Delete Comment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <!-- Added justify-content-center class here for button alignment -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        id="cancelDeleteCommentButton">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteCommentButton">Delete</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!--Modal comment Post-->
     <div id="commentModal" class="modal" tabindex="-1">

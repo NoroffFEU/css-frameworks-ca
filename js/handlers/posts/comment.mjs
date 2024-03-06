@@ -9,12 +9,15 @@ function openCommentModal() {
   commentModal.show();
 }
 
-export async function handleCommentButtonClick(event, postId) {
+export function handleCommentButtonClick(event, postId) {
   try {
     openCommentModal();
 
+    // Get the submit button outside the event listener
     const submitCommentBtn = document.getElementById("submitCommentBtn");
-    submitCommentBtn.addEventListener("click", async () => {
+
+    // Define the event listener function
+    async function submitCommentHandler() {
       const commentText = document.getElementById("commentText").value;
       if (commentText.trim() === "") {
         showMessage("Please enter a comment.", "error");
@@ -39,7 +42,12 @@ export async function handleCommentButtonClick(event, postId) {
         document.getElementById("commentModal")
       );
       commentModal.hide();
-    });
+
+
+      submitCommentBtn.removeEventListener("click", submitCommentHandler);
+    }
+
+    submitCommentBtn.addEventListener("click", submitCommentHandler);
   } catch (error) {
     console.error("Error handling comment click:", error);
     showMessage(

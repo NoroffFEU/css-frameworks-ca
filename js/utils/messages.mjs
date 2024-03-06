@@ -1,5 +1,3 @@
-
-
 /**
  * Shows a message modal with the specified message and type.
  * @param {string|Error} message - The message to display.

@@ -3,7 +3,9 @@ import { showMessage } from "../../utils/messages.mjs";
 
 export function setCreatePostListener() {
   const form = document.querySelector("#newPostForm");
-  const createPostModal = new bootstrap.Modal(document.getElementById("createPostModal"));
+  const createPostModal = new bootstrap.Modal(
+    document.getElementById("createPostModal")
+  );
   if (form) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -27,7 +29,9 @@ export function setCreatePostListener() {
         .then((data) => {
           // Form is valid, close the modal
           createPostModal.hide();
+          form.reset();
           showMessage("Post created successfully!", "success");
+
           setTimeout(() => {
             window.location.reload();
           }, 2000);

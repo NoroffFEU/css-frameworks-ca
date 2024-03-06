@@ -1,7 +1,14 @@
 import { addComment } from "../../api/posts/comment.mjs";
 import { subject } from "../observers/commonObservers.mjs";
 import { showMessage } from "../../utils/messages.mjs";
+import {
+  storeScrollPosition,
+  restoreScrollPosition,
+} from "../../utils/scrollPosition.mjs";
 
+/**
+ * Opens the comment modal.
+ */
 function openCommentModal() {
   const commentModal = new bootstrap.Modal(
     document.getElementById("commentModal")
@@ -9,12 +16,20 @@ function openCommentModal() {
   commentModal.show();
 }
 
-export async function handleCommentButtonClick(event, postId) {
+/**
+ * Handles the click event on the comment button.
+ * @param {Event} event - The click event object.
+ * @param {string} postId - The ID of the post.
+ */
+export function handleCommentButtonClick(event, postId) {
   try {
     openCommentModal();
-
+    storeScrollPosition();
+    // Get the submit button outside the event listener
     const submitCommentBtn = document.getElementById("submitCommentBtn");
-    submitCommentBtn.addEventListener("click", async () => {
+
+    // Define the event listener function
+    async function submitCommentHandler() {
       const commentText = document.getElementById("commentText").value;
       if (commentText.trim() === "") {
         showMessage("Please enter a comment.", "error");
@@ -26,6 +41,8 @@ export async function handleCommentButtonClick(event, postId) {
         await addComment(postId, commentText);
         subject.notify(postId);
         showMessage("Comment added successfully.", "success");
+        document.getElementById("commentText").value = "";
+        restoreScrollPosition();
       } catch (error) {
         console.error("Error adding comment:", error);
         showMessage(
@@ -39,7 +56,12 @@ export async function handleCommentButtonClick(event, postId) {
         document.getElementById("commentModal")
       );
       commentModal.hide();
-    });
+
+      // Remove the event listener after submitting the comment
+      submitCommentBtn.removeEventListener("click", submitCommentHandler);
+    }
+
+    submitCommentBtn.addEventListener("click", submitCommentHandler);
   } catch (error) {
     console.error("Error handling comment click:", error);
     showMessage(

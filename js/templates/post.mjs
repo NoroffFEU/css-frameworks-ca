@@ -54,7 +54,14 @@ export function createPostElement(postData) {
     // Comment Content
     const comment = document.createElement("div");
     comment.textContent = "comments:";
-    comment.classList.add("card-body", "border-top", "p-3", "mt-3");
+    comment.classList.add(
+      "card-body",
+      "border-top",
+      "p-3",
+      "mt-3",
+      "comments-section",
+      "d-none"
+    );
 
     if (postData.comments && postData.comments.length > 0) {
       postData.comments.forEach((commentData) => {
@@ -62,7 +69,13 @@ export function createPostElement(postData) {
         const commentAuthorEmail = commentData.author.email;
 
         const commentRow = document.createElement("div");
-        commentRow.classList.add("row", "g-0");
+        commentRow.classList.add(
+          "row",
+          "border",
+          "rounded-3",
+          "mb-2",
+          "bg-light"
+        );
 
         const commentProfileImgCol = document.createElement("div");
         commentProfileImgCol.classList.add("col-2");
@@ -93,11 +106,21 @@ export function createPostElement(postData) {
 
         const commentButtonsDiv = document.createElement("div");
         const commentLikeButton = document.createElement("button");
-        commentLikeButton.classList.add("btn", "btn-link", "btn-sm");
+        commentLikeButton.classList.add(
+          "btn",
+          "btn-link",
+          "text-decoration-none",
+          "btn-sm"
+        );
         commentLikeButton.innerHTML = "👍 Like this";
 
         const commentReplyButton = document.createElement("button");
-        commentReplyButton.classList.add("btn", "btn-link", "btn-sm");
+        commentReplyButton.classList.add(
+          "btn",
+          "btn-link",
+          "text-decoration-none",
+          "btn-sm"
+        );
         commentReplyButton.innerHTML = '<i class="fa fa-reply"></i> Reply';
 
         commentButtonsDiv.appendChild(commentLikeButton);
@@ -130,6 +153,13 @@ export function createPostElement(postData) {
       noCommentText.classList.add("card-body");
       comment.appendChild(noCommentText);
     }
+    const hideCommentsButton = document.createElement("button");
+    hideCommentsButton.classList.add("btn", "btn-link", "btn-sm", "text-info");
+    hideCommentsButton.innerHTML = '<i class="fa fa-times"></i>';
+    hideCommentsButton.addEventListener("click", () => {
+      comment.classList.add("d-none");
+    });
+    comment.appendChild(hideCommentsButton);
 
     const usernameAndButtons = document.createElement("div");
     usernameAndButtons.classList.add(
@@ -221,14 +251,29 @@ export function createPostElement(postData) {
     actionsDiv.classList.add("text-center");
 
     const likeButton = document.createElement("button");
-    likeButton.classList.add("btn", "btn-link", "btn-sm");
+    likeButton.classList.add(
+      "btn",
+      "btn-link",
+      "text-decoration-none",
+      "btn-sm"
+    );
     likeButton.innerHTML = "👍 Like this!";
     likeButton.addEventListener("click", (event) => {
       handlers.handleLikeButtonClick(event, postData.id, "👍");
+
+      if (likeButton.textContent === "👍 Like this!") {
+        likeButton.innerHTML = "👍 Liked";
+        likeButton.disabled = true;
+      }
     });
 
     const commentButton = document.createElement("button");
-    commentButton.classList.add("btn", "btn-link", "btn-sm");
+    commentButton.classList.add(
+      "btn",
+      "btn-link",
+      "text-decoration-none",
+      "btn-sm"
+    );
     commentButton.innerHTML = '<i class="fa fa-comments"></i> Comment';
     commentButton.addEventListener("click", (event) => {
       handlers.handleCommentButtonClick(event, postData.id);
@@ -237,8 +282,32 @@ export function createPostElement(postData) {
     usernameAndButtons.appendChild(username);
     usernameAndButtons.appendChild(buttonsContainer);
 
+    const showCommentsButton = document.createElement("button");
+    showCommentsButton.classList.add(
+      "btn",
+      "btn-link",
+      "btn-sm",
+      "text-decoration-none",
+      "text-secondary"
+    );
+    showCommentsButton.innerHTML =
+      '<i class="fas fa-caret-down"></i> Show Comments'; // Initial text and icon
+    showCommentsButton.addEventListener("click", () => {
+      comment.classList.toggle("d-none"); // Toggle visibility of comments section
+
+      // Toggle text and icon based on the visibility of comments
+      if (comment.classList.contains("d-none")) {
+        showCommentsButton.innerHTML =
+          '<i class="fas fa-caret-down"></i> Show Comments'; // If comments are hidden, show "Show Comments"
+      } else {
+        showCommentsButton.innerHTML =
+          '<i class="fas fa-caret-up"></i> Hide Comments'; // If comments are visible, show "Hide Comments"
+      }
+    });
+
     actionsDiv.appendChild(likeButton);
     actionsDiv.appendChild(commentButton);
+    actionsDiv.appendChild(showCommentsButton);
 
     innerContent.appendChild(usernameAndButtons);
     innerContent.appendChild(timestamp);

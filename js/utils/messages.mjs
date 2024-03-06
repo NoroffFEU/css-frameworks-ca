@@ -1,4 +1,4 @@
-import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
+import "../../node_modules/bootstrap/js/dist/modal.js";
 
 /**
  * Shows a message modal with the specified message and type.

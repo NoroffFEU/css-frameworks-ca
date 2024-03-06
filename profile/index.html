@@ -272,26 +272,7 @@
      </div>
  </div>
 </div>
-<!-- Delete Post Modal -->
-<div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel"
- aria-hidden="true">
- <div class="modal-dialog modal-dialog-centered">
-     <div class="modal-content">
-         <div class="modal-header">
-             <h5 class="modal-title text-center" id="deletePostModalLabel">Are you sure you want to delete Post
-             </h5>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         </div>
-         <div class="modal-body text-dark">
-             <!--added from js-->
-         </div>
-         <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-             <button id="confirmDeleteButton" type="button" class="btn btn-danger">Delete</button>
-         </div>
-     </div>
- </div>
-</div>
+
 
 <!--Modal comment Post-->
 <div id="commentModal" class="modal" tabindex="-1">
@@ -311,6 +292,43 @@
      </div>
  </div>
 </div>
+
+    <!-- Delete Post Modal -->
+    <div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="deletePostModalLabel">Are you sure you want to delete Post
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-dark">
+                    <!--added from js-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="confirmDeleteButton" type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal for confirming comment deletion -->
+<div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteCommentModalLabel">Confirm Delete Comment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelDeleteCommentButton">Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDeleteCommentButton">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   </main>
 
   <footer class="m-0">

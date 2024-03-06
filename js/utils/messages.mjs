@@ -1,5 +1,3 @@
-import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
-
 /**
  * Shows a message modal with the specified message and type.
  * @param {string|Error} message - The message to display.

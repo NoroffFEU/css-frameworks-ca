@@ -2,6 +2,9 @@ import { addComment } from "../../api/posts/comment.mjs";
 import { subject } from "../observers/commonObservers.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 
+/**
+ * Opens the comment modal.
+ */
 function openCommentModal() {
   const commentModal = new bootstrap.Modal(
     document.getElementById("commentModal")
@@ -9,6 +12,11 @@ function openCommentModal() {
   commentModal.show();
 }
 
+/**
+ * Handles the click event on the comment button.
+ * @param {Event} event - The click event object.
+ * @param {string} postId - The ID of the post.
+ */
 export function handleCommentButtonClick(event, postId) {
   try {
     openCommentModal();
@@ -43,7 +51,7 @@ export function handleCommentButtonClick(event, postId) {
       );
       commentModal.hide();
 
-
+      // Remove the event listener after submitting the comment
       submitCommentBtn.removeEventListener("click", submitCommentHandler);
     }
 

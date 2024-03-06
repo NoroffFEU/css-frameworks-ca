@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no stest specified\" && exit 1",
-    "build": "sass src/scss:css",
-    "watch": "sass --watch src/scss:css",
+    "copyJS": "npx copyfiles -f node_modules/bootstrap/dist/js/bootstrap.bundle.min.js dist",
+    "build": "sass src/scss:dist/css && npm run copyJS ",
+    "watch": "sass --watch src/scss:dist/css",
     "dev": "npm run watch & live-server"
   },
   "repository": {
@@ -22,18 +23,17 @@
     "SASS"
   ],
   "author": "Kristine T",
-
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
   },
   "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme",
-  
   "dependencies": {
     "bootstrap": "^5.3.2"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "live-server": "^1.2.2",
     "sass": "^1.70.0"
-}
+  }
 }

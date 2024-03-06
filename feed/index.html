@@ -8,11 +8,9 @@
         content="Discover a vibrant feed of art posts on ArtConnect. Like, comment, and share your favorite artworks">
     <meta name="keywords" content="art, feed, social media, posts, creativity">
     <script src="https://kit.fontawesome.com/db895f6c4c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../dist/css/styles.css">
     <script src="../js/index.mjs" defer type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="/dist/bootstrap.bundle.min.js"></script>
 
     <title>Feed</title>
 </head>
@@ -256,7 +254,7 @@
                                     placeholder="Enter image URL" required>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary"data-bs-dismiss="modal" >Close</button>
                                 <button id="updatePostButton" type="submit" class="btn btn-primary">Update Post</button>
                             </div>
                         </form>
@@ -284,7 +282,7 @@
             </div>
         </div>
     </div>
-
+  
     <!-- Delete Post Modal -->
     <div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="deletePostModalLabel"
         aria-hidden="true">
@@ -305,24 +303,21 @@
             </div>
         </div>
     </div>
-    <!-- Modal for confirming comment deletion -->
-    <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteCommentModalLabel">Confirm Delete Comment</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <!-- Added justify-content-center class here for button alignment -->
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                        id="cancelDeleteCommentButton">Cancel</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteCommentButton">Delete</button>
-                </div>
+<!-- Modal for confirming comment deletion -->
+<div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteCommentModalLabel">Confirm Delete Comment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer justify-content-center"> <!-- Added justify-content-center class here for button alignment -->
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelDeleteCommentButton">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteCommentButton">Delete</button>
             </div>
         </div>
     </div>
+</div>
 
     <!--Modal comment Post-->
     <div id="commentModal" class="modal" tabindex="-1">

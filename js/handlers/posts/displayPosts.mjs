@@ -1,9 +1,12 @@
-import { getPosts } from "../../api/posts/get.mjs";
+import { getPosts, getUserProfilePosts } from "../../api/posts/get.mjs";
 import { renderPostTemplate } from "../../templates/post.mjs";
 import { load } from "../../storage/index.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 import { hideLoader, showLoader } from "../../utils/loader.mjs";
-import { scrollToTop, createScrollToTopButton } from "../../utils/scrollPosition.mjs";
+import {
+  scrollToTop,
+  createScrollToTopButton,
+} from "../../utils/scrollPosition.mjs";
 
 export async function displayPosts() {
   try {
@@ -13,7 +16,7 @@ export async function displayPosts() {
     const container = document.querySelector("#posts");
     container.innerHTML = ""; // Clear the existing content
     const scrollToTopButton = createScrollToTopButton();
-    scrollToTopButton.addEventListener('click', scrollToTop);
+    scrollToTopButton.addEventListener("click", scrollToTop);
     posts.forEach((postData) => {
       renderPostTemplate(postData, container);
     });
@@ -35,7 +38,7 @@ let userPosts = [];
 
 export async function displayUserPosts() {
   try {
-    userPosts = await getPosts();
+    userPosts = await getUserProfilePosts();
     const container = document.querySelector("#userPosts");
     const showMoreBtn = document.querySelector("#showMoreBtn");
     const noPostsMessage = document.querySelector("#noPostsMessage"); // Select the message element
@@ -48,13 +51,13 @@ export async function displayUserPosts() {
 
     // Loop through all posts to count posts authored by the current user
     userPosts.forEach((postData) => {
-      if (postData.author.email === currentUserEmail) {
+      if (userPosts) {
         userPostsCount++;
       }
     });
 
     // If the current user has no posts, display the message
-    if (userPostsCount === 0) {
+    if (!userPosts || userPosts.length === 0)  {
       container.style.display = "none";
       noPostsMessage.style.display = "block";
     } else {
@@ -66,9 +69,7 @@ export async function displayUserPosts() {
     let displayedCount = 0;
     userPosts.forEach((postData) => {
       if (
-        displayedCount < displayedUserPostsCount + postLimit &&
-        postData.author.email === currentUserEmail
-      ) {
+        displayedCount < displayedUserPostsCount + postLimit){
         renderPostTemplate(postData, container);
         displayedCount++;
       }
@@ -92,22 +93,18 @@ export async function displayUserPosts() {
   }
 }
 
-
 // Function to append more user posts when "Show More" button is clicked
 function appendMoreUserPosts(container, currentUserEmail) {
   let additionalPostsCount = 0;
 
-  // Filter out posts that do not match the current user's email
-  const userPostsToAppend = userPosts.filter(
-    (postData) => postData.author.email === currentUserEmail
-  );
+
 
   for (
     let i = displayedUserPostsCount;
-    i < userPostsToAppend.length && additionalPostsCount < postLimit;
+    i < userPosts.length && additionalPostsCount < postLimit;
     i++
   ) {
-    const postData = userPostsToAppend[i];
+    const postData = userPosts[i];
     renderPostTemplate(postData, container);
     additionalPostsCount++;
   }
@@ -116,7 +113,7 @@ function appendMoreUserPosts(container, currentUserEmail) {
 
   // Update the display of the "Show More" button
   const showMoreBtn = document.querySelector("#showMoreBtn");
-  if (displayedUserPostsCount >= userPostsToAppend.length) {
+  if (displayedUserPostsCount >= userPosts.length) {
     showMoreBtn.disabled = true; // Disable the button if all posts have been displayed
   } else {
     showMoreBtn.disabled = false; // Enable the button if there are more posts to display

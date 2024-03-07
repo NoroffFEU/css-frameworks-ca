@@ -1,14 +1,15 @@
 import * as handlers from "../handlers/index.mjs";
 import { Counter } from "../handlers/index.mjs";
-import { subject } from "../handlers/observers/commonObservers.mjs";
+import { subject, Observer } from "../handlers/observers/commonObservers.mjs";
 import { load } from "../storage/index.mjs";
+
+
 
 /**
  * Creates a post element based on the provided post data.
  * @param {Object} postData - The data of the post.
- * @returns {HTMLElement} - The created post element.
- */
-export function createPostElement(postData) {
+ * @returns {Promise<HTMLElement>} - A Promise that resolves to the created post element.
+ */export function createPostElement(postData) {
   try {
     const userProfile = load("profile");
 
@@ -23,8 +24,8 @@ export function createPostElement(postData) {
     const row = document.createElement("div");
     row.classList.add("row", "g-0");
 
-    const currentUserEmail = userProfile.email;
-    const postAuthorEmail = postData.author.email;
+    const currentUser = userProfile;
+    const isAuthor = currentUser && postData.author.email === currentUser.email;
 
     const profileImgCol = document.createElement("div");
     profileImgCol.classList.add(
@@ -65,9 +66,6 @@ export function createPostElement(postData) {
 
     if (postData.comments && postData.comments.length > 0) {
       postData.comments.forEach((commentData) => {
-        const currentUserEmail = userProfile.email;
-        const commentAuthorEmail = commentData.author.email;
-
         const commentRow = document.createElement("div");
         commentRow.classList.add(
           "row",
@@ -130,7 +128,11 @@ export function createPostElement(postData) {
         commentContentCol.appendChild(commentTimestamp);
         commentContentCol.appendChild(commentBody);
         commentContentCol.appendChild(commentButtonsDiv);
-        if (currentUserEmail === commentAuthorEmail) {
+
+
+        const isCommentAuthor = currentUser && commentData.author.email === currentUser.email;
+
+        if (isCommentAuthor) {
           const deleteCommentButton = document.createElement("button");
           deleteCommentButton.classList.add("btn", "btn-link", "btn-sm");
           deleteCommentButton.innerHTML =
@@ -171,11 +173,11 @@ export function createPostElement(postData) {
     const username = document.createElement("p");
     username.classList.add("font-weight-bold", "mb-0", "ms-3");
     username.textContent = postData.author.name || "User name";
-    // Buttons container
+
     const buttonsContainer = document.createElement("div");
 
     // Append the edit and delete buttons only if the current user is the author
-    if (currentUserEmail === postAuthorEmail) {
+    if (isAuthor) {
       const editButton = document.createElement("button");
       editButton.classList.add("btn", "btn-link", "me-2");
       editButton.innerHTML = '<i class="fas fa-edit"></i>';
@@ -291,7 +293,7 @@ export function createPostElement(postData) {
       "text-secondary"
     );
     showCommentsButton.innerHTML =
-      '<i class="fas fa-caret-down"></i> Show Comments'; // Initial text and icon
+      '<i class="fas fa-caret-down"></i> Show Comments';
     showCommentsButton.addEventListener("click", () => {
       comment.classList.toggle("d-none"); // Toggle visibility of comments section
 
@@ -327,36 +329,45 @@ export function createPostElement(postData) {
     return post;
   } catch (error) {
     console.error("Error creating post element:", error);
-    return null; // Return null in case of error
+    return null;
   }
 }
 
 /**
  * Renders a single post template inside the specified parent element.
+ * @async
  * @param {Object} postData - The data of the post to render.
  * @param {HTMLElement} parent - The parent element to append the post template to.
+ * @returns {Promise<void>} - A Promise that resolves once the post template is rendered.
  */
-export function renderPostTemplate(postData, parent) {
-  const postElement = createPostElement(postData);
-  const existingPostElement = parent.querySelector(
-    `[data-post-id="${postData.id}"]`
-  );
-  if (existingPostElement) {
-    // If post element already exists, replace it with the new one
-    parent.replaceChild(postElement, existingPostElement);
-  } else {
-    // Otherwise, append the new post element
-    parent.appendChild(postElement);
+export async function renderPostTemplate(postData, parent, currentUser) {
+  try {
+    const postElement = await createPostElement(postData,currentUser);
+    if (postElement) {
+      const existingPostElement = parent.querySelector(
+        `[data-post-id="${postData.id}"]`
+      );
+      if (existingPostElement) {
+        // If post element already exists, replace it with the new one
+        parent.replaceChild(postElement, existingPostElement);
+      } else {
+        // Otherwise, append the new post element
+        parent.appendChild(postElement);
+      }
+    }
+  } catch (error) {
+    console.error("Error rendering post template:", error);
   }
+  subject.subscribe(Observer);
 }
 /**
  * Renders post templates for a list of post data inside the specified parent element.
  * @param {Object[]} postDataList - The list of post data to render.
  * @param {HTMLElement} parent - The parent element to append the post templates to.
  */
-export function renderPostTemplates(postDataList, parent) {
+export function renderPostTemplates(postDataList, parent, currentUser) {
   parent.innerHTML = ""; // Clear the existing content
   postDataList.forEach((postData) => {
-    renderPostTemplate(postData, parent);
+    renderPostTemplate(postData, parent, currentUser);
   });
 }

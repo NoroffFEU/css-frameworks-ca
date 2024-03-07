@@ -66,7 +66,7 @@ showMessage("Failed to filter posts. Please try again.", "error");
 // Function to filter and render posts based on images
 export async function filerImagePosts(container) {
   try {
-    const posts = await getPosts();
+    const posts = await getPosts(postId);
 
     const sortedPosts = posts.filter(
       (post) => post.media && post.media.length > 0

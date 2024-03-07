@@ -15,11 +15,13 @@ export async function handleSortOptionChange() {
     if (selectedValue === "mostLiked") {
       await filterReactionPosts(container); // Sort posts by likes
     } else if (selectedValue === "mostComments") {
-      await filterCommentPosts(container); // Sort posts by comments
+      await filterCommentPosts(container, "comments"); // Sort posts by comments
     } else if (selectedValue === "withImage") {
       await filerImagePosts(container); // Sort posts by images
-    } else {
+    } else if (selectedValue === "newestPosts") {
       await displayPosts(container); // Display all posts
+    } else if (selectedValue === "oldestposts") {
+      await displayOldestPosts(container);
     }
   } catch (error) {
     console.error("Error filtering posts:", error);
@@ -59,14 +61,14 @@ export async function filterCommentPosts(container) {
     });
   } catch (error) {
     console.error("Error filtering posts:", error);
-showMessage("Failed to filter posts. Please try again.", "error");
+    showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 
 // Function to filter and render posts based on images
 export async function filerImagePosts(container) {
   try {
-    const posts = await getPosts(postId);
+    const posts = await getPosts();
 
     const sortedPosts = posts.filter(
       (post) => post.media && post.media.length > 0
@@ -77,11 +79,35 @@ export async function filerImagePosts(container) {
     });
   } catch (error) {
     console.error("Error filtering posts:", error);
-showMessage("Failed to filter posts. Please try again.", "error");
+    showMessage("Failed to filter posts. Please try again.", "error");
+  }
+}
+
+export async function displayOldestPosts(container) {
+  try {
+    const posts = await getPosts();
+
+    const sortedPosts = posts.sort((a, b) => {
+      const dateA = new Date(a.created);
+      const dateB = new Date(b.created);
+      return dateA - dateB;
+    });
+
+    sortedPosts.forEach((post) => {
+      renderPostTemplate(post, container);
+    });
+  } catch (error) {
+    console.error("Error filtering posts:", error);
+    showMessage("Failed to filter posts. Please try again.", "error");
   }
 }
 
 if (sortOptionsSelect) {
-
-sortOptionsSelect.addEventListener("change", handleSortOptionChange);
+  sortOptionsSelect.addEventListener("change", handleSortOptionChange);
 }
+
+// Reset filter upon page load
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector("#sortOptions");
+  container.value = "newestPosts";
+});

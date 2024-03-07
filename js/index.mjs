@@ -19,17 +19,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const path = location.pathname;
 
-  if (path === "/profile/login/index.html") {
+  if (path === "/profile/login/") {
     listeners.setLoginFormListener();
   } else if (path === "/profile/register/") {
     listeners.setRegisterFormListener();
-  } else if (path === "/profile/index.html") {
+  } else if (path === "/profile/") {
     listeners.displayUserPosts();
     listeners.setCreatePostListener();
     listeners.modalEditPost();
   } else if (path === "/profile/edit/") {
     listeners.setUpdateProfileListener();
-  } else if (path === "/feed/index.html") {
+  } else if (path === "/feed/") {
     listeners.displayPosts();
     listeners.setCreatePostListener();
     listeners.modalEditPost();

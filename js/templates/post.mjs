@@ -2,6 +2,7 @@ import * as handlers from "../handlers/index.mjs";
 import { Counter } from "../handlers/index.mjs";
 import { subject, Observer } from "../handlers/observers/commonObservers.mjs";
 import { load } from "../storage/index.mjs";
+import { formatTimestamp } from "../utils/timestampFormat.mjs";
 
 
 
@@ -96,7 +97,7 @@ import { load } from "../storage/index.mjs";
 
         const commentTimestamp = document.createElement("p");
         commentTimestamp.classList.add("small", "text-muted", "ms-3");
-        commentTimestamp.textContent = commentData.created || "Timestamp";
+        commentTimestamp.textContent = formatTimestamp (commentData.created) || "Timestamp";
 
         const commentBody = document.createElement("p");
         commentBody.classList.add("mb-2", "ms-2");
@@ -200,7 +201,8 @@ import { load } from "../storage/index.mjs";
 
     const timestamp = document.createElement("p");
     timestamp.classList.add("small", "text-muted", "ms-3");
-    timestamp.textContent = postData.created || "Timestamp";
+    timestamp.textContent = formatTimestamp(postData.created) || "Timestamp";
+  
 
     const title = document.createElement("h4");
     title.classList.add("card-title", "text-center");

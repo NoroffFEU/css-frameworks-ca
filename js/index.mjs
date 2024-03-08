@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     listeners.setLoginFormListener();
   } else if (path === "/profile/register/") {
     listeners.setRegisterFormListener();
-  } else if (path === "/profile/") {
+  } else if (path === "/profile") {
     listeners.displayUserPosts();
     listeners.setCreatePostListener();
     listeners.modalEditPost();

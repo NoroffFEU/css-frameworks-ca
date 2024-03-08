@@ -138,10 +138,14 @@ footer {
 
 
 #deletePostModal {
-  .modal-header, .modal-footer {
+  .modal-header, .modal, .modal-footer {
     background-color: #ae2d3a; 
     color: #fff; 
    
+  }
+  .modal-content{
+    border: 4px solid #ae2d3a; 
+  border-radius: 15px;
   }
 }
 

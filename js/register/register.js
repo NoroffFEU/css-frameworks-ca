@@ -2,13 +2,15 @@
 //---------- register user ---------//
 
 import { REGISTER_URL } from '../shared/constans.js';
-
-// const BASE_URL = `https://api.noroff.dev/api/v1`; 
-// import { REGISTER_URL }  = `${BASE_URL}/social/auth/register`;
-
-import { doFetch } from '../handlers/fetch.js';
+import { doFetch } from '../shared/fetch.js';
 
 const registrationForm = document.querySelector('#registrationForm');
+
+/**
+ * Adds an event listener to the registration form to handle the submit event.
+ * Prevents the default form submission and extracts user input from the form fields
+ * to pass to the registerUser function for user registration.
+ */
 
 registrationForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -19,17 +21,38 @@ registrationForm.addEventListener('submit', (event) => {
     registerUser(name, email, password);
 })
 
+
+/**
+ * Registers a new user by sending a POST request to the registration URL with user's name, email, and password.
+ * On success, displays a success message and redirects the user to the homepage after 2 seconds.
+ * On failure, displays an error message.
+ *
+ * @param {string} name - The user's name.
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's chosen password.
+ * @returns {Promise<void>} A promise that resolves with no value when the registration is successful, or rejects with an error message if the registration fails.
+ */
+
 async function registerUser(name, email, password) {
-    // console.log('register user');
-    await doFetch(REGISTER_URL, false, {  
-        method: 'POST',
-        body: JSON.stringify({
-            name, 
-            email, 
-            password,
-        }),
-    });
-    
+    try {
+        await doFetch(REGISTER_URL, false, {
+            method: 'POST',
+            body: JSON.stringify({ name, email, password }),
+        });
+        // Oppdaterer meldingen med suksessinformasjon
+        const registrationMessage = document.querySelector('#registrationMessage');
+        registrationMessage.innerHTML = '<p class="text-success">Registration successful! Redirecting...</p>';
+        
+        // Omdiriger brukeren
+        setTimeout(() => {
+            window.location.href = '../../../index.html';
+        }, 2000); // Vent i 2 sekunder før omdirigering
+    } catch (error) {
+        // Viser en feilmelding dersom registreringen feiler
+        const registrationMessage = document.querySelector('#registrationMessage');
+        registrationMessage.innerHTML = '<p class="text-danger">Registration failed. Please try again.</p>';
+        console.error('Registration error:', error);
+    }
 }
 
 
@@ -37,20 +60,19 @@ async function registerUser(name, email, password) {
 
 
 
-// const registrationForm = document.querySelector('#registrationForm');
 
-// registrationForm.addEventListener('submit', (event) =>{
-//     event.preventDefault();
-//     // console.log(event);
-//     const name = event.target[0].value;
-//     const email = event.target[1].value;
-//     const password = event.target[2].value;
-//     registerUser(name, email, password);
-// })
 
-// export async function registerUser(name, email, password) {
-//     // console.log('login user');
-//     await doFetch(REGISTER_URL, {  
+
+
+
+
+
+
+
+// async function registerUser(name, email, password) {
+//     // console.log('register user');
+ 
+//     await doFetch(REGISTER_URL, false, {  
 //         method: 'POST',
 //         body: JSON.stringify({
 //             name, 
@@ -58,5 +80,27 @@ async function registerUser(name, email, password) {
 //             password,
 //         }),
 //     });
-    
+// }
+
+
+// async function registerUser(name, email, password) {
+//     try {
+//         const response = await doFetch(REGISTER_URL, false, {
+//             method: 'POST',
+//             body: JSON.stringify({
+//                 name,
+//                 email,
+//                 password,
+//             }),
+//         });
+//         // Viser en suksessmelding direkte etter at forespørselen er fullført
+//         alert('Registration successful! You will now be redirected to the homepage.');
+
+//         // Omdirigerer til 'index.html'
+//         window.location.href = '../../../index.html';
+//     } catch (error) {
+//         // Ved feil, vis en feilmelding
+//         alert('Registration failed. Please try again.');
+//         console.error('Registration error:', error);
+//     }
 // }

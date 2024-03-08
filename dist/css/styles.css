@@ -10887,28 +10887,129 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+
+
+
+
 /*Custom scss*/
-/*Index page*/
-Header .header-img {
-  width: 100vw; /* Bredden av viewporten */
-  height: 100vh; /* Høyden av viewporten */
-  object-fit: cover; /* Sørger for at bildet dekker hele området */
-  object-position: center; /* Sentrerer bildet */
+
+html, body {
+  overflow-x: hidden;
 }
 
+
+/*Index page*/
+Header {
+  /*width: 100vh; Bredden av viewporten */
+  /* height: 200px;  */
+  /*height: 50vh; /* Høyden av viewporten */
+  object-fit: cover; /* Sørger for at bildet dekker hele området */
+  object-position: center; /* Sentrerer bildet */
+  background-color: rgb(69, 115, 107);
+}
+
+.custom-header-text {
+  margin-top: 10px;
+}
+
+/* 
 .custom-background {
   background-image: url("../../images/homebackround.jpg");
   background-size: cover;
   background-position: center;
-}
+} */
 
-.header-img {
+/* .header-img {
   object-fit: cover; /* Sørger for at bildet dekker hele området */
-}
+  /* height: 300px; 
+}  */
 
 .login-text-container {
   background-color: rgba(140, 179, 172, 0.5);
 }
+
+.custom-background {
+  background: linear-gradient(130deg, rgba(140, 179, 172, 0.5), rgba(161, 215, 128, 0.2)), url("../../images/homebackround.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 50px;
+}
+
+.login-box {
+  background: rgba(140, 179, 172, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin: 20px;
+  width: 400px;
+  max-width: 100%;
+}
+
+.login-box h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-form .form-control {
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding: 18px 20px;
+}
+
+.login-form .btn-login {
+  /* background-color: #7b2ff7; */
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* 
+.login-form .btn-login:hover {
+  background-color: #f107a3;
+} */
+
+.login-form .link-primary {
+  color: #7b2ff7;
+}
+
+.login-form .link-secondary {
+  color: #f107a3;
+}
+
+.login-form .checkbox-inline {
+  font-size: 14px;
+}
+
+.login-form .forgot-link {
+  float: right;
+}
+
+.login-form .signup-link {
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-background {
+      padding: 0px;
+  }
+  .login-box {
+      width: 90%;
+  }
+}
+
+
+
 
 .friend-img {
   width: 30px; /* eller en annen passende størrelse */
@@ -11004,6 +11105,8 @@ Header .header-img {
   background-color: #b3d4ca;
 }
 
+
+
 /*Feed page*/
 .custom-form-input {
   font-size: 0.875rem;
@@ -11020,27 +11123,6 @@ Header .header-img {
   opacity: 1;
 }
 
-.modal {
-  display: none; /* Skjult som standard */
-  position: fixed; /* Bli på plass */
-  z-index: 1; /* Sitte på toppen */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full bredde */
-  height: 100%; /* Full høyde */
-  overflow: auto; /* Aktiver skroll hvis nødvendig */
-  background-color: rgb(0, 0, 0); /* Fallback-farge */
-  background-color: rgba(0, 0, 0, 0.4); /* Svart med opasitet */
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% fra toppen og sentrert */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Kunne være mer eller mindre, avhengig av skjermstørrelse */
-}
-
 .close-button {
   color: #aaa;
   float: right;
@@ -11054,8 +11136,24 @@ Header .header-img {
   text-decoration: none;
   cursor: pointer;
 }
+.custom-img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
 
 .custom-img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
+}
+
+.btn-custom-size {
+  font-size: 14px; /* Eller hvilken som helst annen størrelse du foretrekker */
+}
+
+
+/* .custom-img {
   width: 100%;
   max-width: 500px;
   object-fit: cover;
@@ -11082,31 +11180,93 @@ Header .header-img {
   padding: 2px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-}
+} */
 .custom-img-container:hover {
   cursor: pointer;
 }
+
+/* Skjuler skjemaet som standard */
+#toggleCreatePost:not(:checked) + label + .container {
+  display: none;
+}
+
+/* Viser skjemaet når checkboxen er sjekket */
+#toggleCreatePost:checked + label + .container {
+  display: block;
+}
+
 
 @media (max-width: 768px) {
   .custom-h4 {
     font-size: 1.25rem;
   }
 }
-.hover-sign {
+/* .hover-sign {
   display: none;
   position: absolute;
   margin-top: 4px;
   margin-left: 10px;
   transition: opacity 0.5s ease, left 0.5s ease;
+}*/
+
+/* Skjuler skjemaet som standard */
+#toggleCreatePost:not(:checked) + .container {
+  display: none;
 }
 
-.plus-sign:hover + .hover-sign {
-  display: inline;
+/* Viser skjemaet når checkboxen er sjekket */
+#toggleCreatePost:checked + .container {
+  display: block;
 }
+
+.plus-sign:hover {
+  display: inline;
+  text-decoration: underline;
+} 
 
 .plus-sign {
   cursor: pointer;
 }
+
+/*SinglePostPage*/
+/* Generell styling for post container */
+#detail-post-container {
+  max-width: 800px; /* Juster etter behov */
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil for posttittel */
+#detail-post-container h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Stil for postens innhold */
+#detail-post-container p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Stil for postbilde */
+#detail-post-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+
+
 
 /*Profile*/
 .custom-img-profile {

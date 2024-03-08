@@ -1,132 +1,107 @@
-// Funksjoner for å håndtere opprettelse, visning, redigering, og sletting av innlegg
-
-
-
-// Modal 
-
-// // Få modalen
-// var modal = document.getElementById("createPostModal");
-
-// // Få knappen som åpner modalen
-// var btn = document.getElementById("myBtn");
-
-// // Få <span> elementet som lukker modalen
-// var span = document.getElementsByClassName("close-button")[0];
-
-// // Når brukeren klikker på knappen, åpne modalen
-// btn.onclick = function() {
-//     modal.style.display = "block";
-// }
-
-// // Når brukeren klikker på <span> (x), lukk modalen
-// span.onclick = function() {
-//     modal.style.display = "none";
-// }
-
-// // Når brukeren klikker hvor som helst utenfor modalen, lukk den
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
-
-
-
-
-
-
-// export async function getPosts() {
-//     const response = await fetch(BASE_URL +"/social/posts", {
-//         headers: {
-//             Authorization: `Bearer ${load("token")}`
-//         }
-//     });
-//     return await response.json();
-// }
-
-
-
 
 import { POSTS_URL } from '../shared/constans.js';
-import { doFetch } from '../handlers/fetch.js';
-
-const DEFAULT_PROFILE_IMAGE_URL = 'https://www.m-boe.com/wp-content/uploads/2024/02/17436199_10155874895574186_1503564674971498559_o.jpg';
-
-const generateSinglePostHtml = (post) => {
-    console.log(post);
-    const postContainer = document.createElement('div');
-
-    const postLink = document.createElement('a');
-    postLink.href = `../../html/feed/singlepost.html?id=${post.id}`;
-
-    const postTitle = document.createElement('h3');
-    postTitle.textContent = post.title;
-
-    postLink.append(postTitle);
-
-    const postBody = document.createElement('p');
-    postBody.textContent = post.body;
-
-    const postImageContainer = document.createElement('div');
-
-    let postImageUrl = post.media ?? DEFAULT_PROFILE_IMAGE_URL;
-    const postImage = document.createElement('img');
-    postImage.src = postImageUrl;
-
-    postImageContainer.append(postImage);
-
-    postContainer.append(postLink, postBody, postImageContainer);
-
-    return postContainer;
-    
-}
+import { doFetch } from '../shared/fetch.js';
+import { previewPosts } from '../ui/previewPosts.js';
+import { detailPost } from '../ui/detailPost.js';
+import { filterPostBySearchTerm } from '../handlers/search.js';
+import { sortPost } from '../handlers/sort.js'; 
 
 const SHOW_REACTIONS = false;
 
-// function filterReactionPosts() {
-    
-// }
+
+async function getPosts(searchTerm = '', sortType = '') {
+    console.log('Getting posts');
+    try {
+        let posts = await doFetch(POSTS_URL, true);
+        if (searchTerm) {
+            posts = filterPostBySearchTerm(posts, searchTerm);
+        }
+        if (sortType) {
+            posts = sortPost(posts, sortType);
+        }
+        if (posts) {
+            displayPosts(posts);
+        }
+    } catch (error) {
+        console.error('Failed to get posts:', error);
+    }
+}
 
 
-function displayPost(post) {
-    const postDisplayContainer = document.querySelector(
-        '#post-display-container',
-        );
+function displayPosts(posts) {
+    const postDisplayContainer = document.querySelector('#preview-post-container');
+    postDisplayContainer.textContent = ''; 
 
-    postDisplayContainer.textContent = ''; //clear the container
-    // console.log(post);
-
-    post
-        .filter((post) => {
-            if (SHOW_REACTIONS) {
-                if (post._count.reactions > 0) {
-                    return true;
-                }
-            } else {
-                return true;
-            }
-        })
-
-    post.forEach ((post) => {
-        const postHtml = generateSinglePostHtml(post);
+    posts.forEach((post) => {
+        const postHtml = previewPosts(post);
         postDisplayContainer.appendChild(postHtml);
+        
     });
 }
 
-// function displayPosts();
-// console.log(posts);
 
-async function getPost() {
-    console.log('Getting post');
-    const post = await doFetch(POSTS_URL, true);
-    if (post) {
-        displayPost(post);
+function displayDetailPost(post) {
+    console.log('hello world');
+      const postDisplayContainer = document.querySelector(
+        '#detail-post-container',
+      );
+      postDisplayContainer.append(detailPost(post));
     }
-    // console.log(post);
+  
+  
+async function main() {      
+    const searchParams = new URLSearchParams(window.location.search);
+  
+    if (searchParams.has('id')) {
+        const postId = searchParams.get('id');
+        const postUrl = `${POSTS_URL}/${postId}`;
+        const post = await doFetch(postUrl, true);
+  
+        console.log(post.id);
+  
+        displayDetailPost(post);
+
+    }  else {
+        setupEventListeners();
+        getPosts(); // Kaller getPosts uten argumenter for å hente alle poster ved oppstart
+    }  
+}
+  
+
+function setupEventListeners() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value;
+        getPosts(searchTerm); // Oppdater getPosts for å ta imot et søkeord
+    });
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const sortType = this.getAttribute('data-sort');
+            getPosts(searchInput.value, sortType); // Oppdater getPosts for å inkludere sortType
+        });
+    });
 }
 
-function main() {
-    getPost();
-}
 
 main();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

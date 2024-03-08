@@ -2,8 +2,8 @@
 //---------- login user ---------//
 
 import { LOGIN_URL } from '../shared/constans.js';
-import { doFetch } from '../handlers/fetch.js';
-import { addAuthToken } from '../handlers/auth.js';
+import { doFetch } from '../shared/fetch.js';
+import { addAuthToken } from '../shared/auth.js';
 
 const loginForm = document.querySelector('#loginForm');
 
@@ -28,7 +28,7 @@ async function loginUser(email, password) {
     if (accessToken) {
         addAuthToken(accessToken);
         setTimeout(() => {
-            window.location.href = 'html/posts.html';
+            window.location.href = 'html/feed/posts.html';
         }, 2000); 
     } else {
         throw new Error ('No access token provided');
@@ -36,24 +36,3 @@ async function loginUser(email, password) {
 
 }
 
-// export async function loginUser(email, password) {
-//     // console.log('login user');
-//     const response = await doFetch(LOGIN_URL, {  
-//         method: 'POST',
-//         body: JSON.stringify({
-//             email, 
-//             password,
-//         }),
-//     });
-//     console.log(response);
-//     const accessToken = response.accessToken;
-
-//     if (accessToken) {
-//         addAuthToken(accessToken);
-//         setTimeout(() => {
-//             window.location.href = '/posts';
-//         }, 2000);
-//     } else {
-//         throw new Error('No access token provided');
-//     }
-// }

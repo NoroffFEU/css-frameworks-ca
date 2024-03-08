@@ -5,13 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link href="../dist/css/styles.css" rel="stylesheet">
+    <link href="../../dist/css/styles.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    <script defer src="../../js/handlers/singleposts.js" type="module"></script>
+    <!-- <script defer src="../../js/handlers/singleposts.js" type="module"></script> -->
+    <script defer src="../../js/posts/posts.js" type="module"></script>
+    <script defer src="../../js/ui/detailPost.js" type="module"></script>
+    <script defer src="../../js/posts/update.js" type="module"></script>
     <title>Post</title>
 </head>
-<body>  
-    <h1>Post</h1>
-    <div id="single-post-display-container"></div>
+<body>
+    <main>
+        <div id="detail-post-container"></div>
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">                        
+                    <h5>Edit your post</h5>
+                    <form id="updatePostForm">
+                        <div class="mb-3">
+                            <label for="postTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control form-control-sm" id="postTitle" required>
+                        </div>
+                        <div class="mb-3">                                
+                            <label for="postContent" class="form-label">Content</label>
+                            <textarea class="form-control form-control-sm" id="postContent" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="postMediaUrl" class="form-label">Image</label>
+                            <input type="url" class="form-control form-control-sm" id="postMediaUrl" placeholder="https://url.com/image.jpg">
+                        </div>
+                        <button type="submit" class="btn btn-success">Edit</button>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main> 
+    <footer class="bg-success bg-opacity-50 py-5">
+        <div class="container">
+            <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center flex-column">
+                        <p>Blog</p>
+                        <p>About</p>
+                        <p>Suport</p>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center flex-column">
+                        <p>Services</p>
+                        <p>Privacy</p>
+                        <p>Conditions</p>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center">
+                        <span class="social-icon"><i class="fa-brands fa-facebook"></i></span>
+                        <span class="social-icon"><i class="fa-brands fa-instagram"></i></span>
+                        <span class="social-icon"><i class="fa-brands fa-tiktok"></i></span>
+                    </div>  
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>

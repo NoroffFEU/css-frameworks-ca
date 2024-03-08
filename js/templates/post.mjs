@@ -4,13 +4,11 @@ import { subject, Observer } from "../handlers/observers/commonObservers.mjs";
 import { load } from "../storage/index.mjs";
 import { formatTimestamp } from "../utils/timestampFormat.mjs";
 
-
-
 /**
  * Creates a post element based on the provided post data.
  * @param {Object} postData - The data of the post.
  * @returns {Promise<HTMLElement>} - A Promise that resolves to the created post element.
- */export function createPostElement(postData) {
+ */ export function createPostElement(postData) {
   try {
     const userProfile = load("profile");
 
@@ -97,7 +95,8 @@ import { formatTimestamp } from "../utils/timestampFormat.mjs";
 
         const commentTimestamp = document.createElement("p");
         commentTimestamp.classList.add("small", "text-muted", "ms-3");
-        commentTimestamp.textContent = formatTimestamp (commentData.created) || "Timestamp";
+        commentTimestamp.textContent =
+          formatTimestamp(commentData.created) || "Timestamp";
 
         const commentBody = document.createElement("p");
         commentBody.classList.add("mb-2", "ms-2");
@@ -130,8 +129,8 @@ import { formatTimestamp } from "../utils/timestampFormat.mjs";
         commentContentCol.appendChild(commentBody);
         commentContentCol.appendChild(commentButtonsDiv);
 
-
-        const isCommentAuthor = currentUser && commentData.author.email === currentUser.email;
+        const isCommentAuthor =
+          currentUser && commentData.author.email === currentUser.email;
 
         if (isCommentAuthor) {
           const deleteCommentButton = document.createElement("button");
@@ -202,7 +201,6 @@ import { formatTimestamp } from "../utils/timestampFormat.mjs";
     const timestamp = document.createElement("p");
     timestamp.classList.add("small", "text-muted", "ms-3");
     timestamp.textContent = formatTimestamp(postData.created) || "Timestamp";
-  
 
     const title = document.createElement("h4");
     title.classList.add("card-title", "text-center");
@@ -344,7 +342,7 @@ import { formatTimestamp } from "../utils/timestampFormat.mjs";
  */
 export async function renderPostTemplate(postData, parent, currentUser) {
   try {
-    const postElement = await createPostElement(postData,currentUser);
+    const postElement = await createPostElement(postData, currentUser);
     if (postElement) {
       const existingPostElement = parent.querySelector(
         `[data-post-id="${postData.id}"]`
@@ -360,7 +358,6 @@ export async function renderPostTemplate(postData, parent, currentUser) {
   } catch (error) {
     console.error("Error rendering post template:", error);
   }
-  subject.subscribe(Observer);
 }
 /**
  * Renders post templates for a list of post data inside the specified parent element.

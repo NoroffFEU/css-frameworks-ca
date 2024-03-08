@@ -108,6 +108,12 @@ if (sortOptionsSelect) {
 
 // Reset filter upon page load
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector("#sortOptions");
-  container.value = "newestPosts";
+  const container = document.querySelector("#posts");
+  if (container) {
+    // Set the default value for the sort options
+    const sortOptionsSelect = document.getElementById("sortOptions");
+    if (sortOptionsSelect) {
+      sortOptionsSelect.value = "newestPosts";    sortOptionsSelect.dispatchEvent(new Event("change"));
+    }
+  }
 });

@@ -52,29 +52,28 @@ export async function displayUserPostImages() {
 }
 
 // Function to handle click event on "Show all" link
-// Function to handle click event on "Show all" link
 export async function displayAllUserImages() {
   const showAllImagesLink = document.getElementById("showAllImagesLink");
-  if (showAllImagesLink) {
-    let isShowing = false; // Flag to track the current state
 
+  if (showAllImagesLink) {
+    const allImages = await fetchUserPostImages();
+    const userPostImages = document.getElementById("allProfileImages");
+
+    let isShowing = false;
+    showAllImagesLink.textContent = `Show all (${allImages.length})`;
     showAllImagesLink.addEventListener("click", async (event) => {
       event.preventDefault();
 
       try {
-        // Fetch all images from the user's posts
-        const allImages = await fetchUserPostImages();
-        const userPostImages = document.getElementById("allProfileImages");
-
         if (allImages.length <= 4) {
           showAllImagesLink.textContent = "No more images";
-          return; // Exit early if there are no more images to show
+          return;
         }
 
         if (isShowing) {
           // If images are currently showing, hide them
           userPostImages.innerHTML = "";
-          showAllImagesLink.textContent = "Show all"; // Change link text
+          showAllImagesLink.textContent = `Show all (${allImages.length})`; // Change link text
         } else {
           userPostImages.innerHTML = "";
 
@@ -125,16 +124,3 @@ export async function displayAllUserImages() {
     });
   }
 }
-
-export async function countUserImages() {
-  try {
-    // Fetch all images from the user's posts
-    const allImages = await fetchUserPostImages();
-    return allImages.length;
-  } catch (error) {
-    console.error("Error fetching user post images:", error);
-    return 0;
-  }
-}
-const userImageCount = await countUserImages();
-console.log("User image count:", userImageCount);

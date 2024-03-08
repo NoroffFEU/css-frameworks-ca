@@ -1,6 +1,6 @@
 import { getPosts } from "../../api/posts/get.mjs";
 import { renderPostTemplate } from "../../templates/index.mjs";
-import { displayPosts } from "../../handlers/posts/displayPosts.mjs";
+import { displayPosts } from "./displayPosts.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 
 const sortOptionsSelect = document.getElementById("sortOptions");
@@ -13,24 +13,24 @@ export async function handleSortOptionChange() {
 
   try {
     if (selectedValue === "mostLiked") {
-      await filterReactionPosts(container); // Sort posts by likes
+      await sortReactionPosts(container); // Sort posts by likes
     } else if (selectedValue === "mostComments") {
-      await filterCommentPosts(container, "comments"); // Sort posts by comments
+      await sortCommentPosts(container, "comments"); // Sort posts by comments
     } else if (selectedValue === "withImage") {
-      await filerImagePosts(container); // Sort posts by images
+      await sortImagePosts(container); // Sort posts by images
     } else if (selectedValue === "newestPosts") {
       await displayPosts(container); // Display all posts
     } else if (selectedValue === "oldestposts") {
-      await displayOldestPosts(container);
+      await sortOldestPosts(container);
     }
   } catch (error) {
-    console.error("Error filtering posts:", error);
-    showMessage("Failed to filter posts. Please try again.", "error");
+    console.error("Error sorting posts:", error);
+    showMessage("Failed to sort posts. Please try again.", "error");
   }
 }
 
-// Function to filter and render posts based on reactions
-export async function filterReactionPosts(container) {
+// Function to sort and render posts based on reactions
+export async function sortReactionPosts(container) {
   try {
     const posts = await getPosts();
 
@@ -42,13 +42,13 @@ export async function filterReactionPosts(container) {
       renderPostTemplate(post, container);
     });
   } catch (error) {
-    console.error("Error filtering posts:", error);
-    showMessage("Failed to filter posts. Please try again.", "error");
+    console.error("Error sorting posts:", error);
+    showMessage("Failed to sort posts. Please try again.", "error");
   }
 }
 
-// Function to filter and render posts based on comments
-export async function filterCommentPosts(container) {
+// Function to sort and render posts based on comments
+export async function sortCommentPosts(container) {
   try {
     const posts = await getPosts();
 
@@ -60,13 +60,13 @@ export async function filterCommentPosts(container) {
       renderPostTemplate(post, container);
     });
   } catch (error) {
-    console.error("Error filtering posts:", error);
-    showMessage("Failed to filter posts. Please try again.", "error");
+    console.error("Error sorting posts:", error);
+    showMessage("Failed to sort posts. Please try again.", "error");
   }
 }
 
-// Function to filter and render posts based on images
-export async function filerImagePosts(container) {
+// Function to sort and render posts based on images
+export async function sortImagePosts(container) {
   try {
     const posts = await getPosts();
 
@@ -78,12 +78,12 @@ export async function filerImagePosts(container) {
       renderPostTemplate(post, container);
     });
   } catch (error) {
-    console.error("Error filtering posts:", error);
-    showMessage("Failed to filter posts. Please try again.", "error");
+    console.error("Error sorting posts:", error);
+    showMessage("Failed to sort posts. Please try again.", "error");
   }
 }
 
-export async function displayOldestPosts(container) {
+export async function sortOldestPosts(container) {
   try {
     const posts = await getPosts();
 
@@ -97,8 +97,8 @@ export async function displayOldestPosts(container) {
       renderPostTemplate(post, container);
     });
   } catch (error) {
-    console.error("Error filtering posts:", error);
-    showMessage("Failed to filter posts. Please try again.", "error");
+    console.error("Error sorting posts:", error);
+    showMessage("Failed to sort posts. Please try again.", "error");
   }
 }
 
@@ -106,14 +106,15 @@ if (sortOptionsSelect) {
   sortOptionsSelect.addEventListener("change", handleSortOptionChange);
 }
 
-// Reset filter upon page load
+// Reset sort upon page load
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector("#posts");
   if (container) {
     // Set the default value for the sort options
     const sortOptionsSelect = document.getElementById("sortOptions");
     if (sortOptionsSelect) {
-      sortOptionsSelect.value = "newestPosts";    sortOptionsSelect.dispatchEvent(new Event("change"));
+      sortOptionsSelect.value = "newestPosts";
+      sortOptionsSelect.dispatchEvent(new Event("change"));
     }
   }
 });

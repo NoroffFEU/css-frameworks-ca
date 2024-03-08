@@ -16,8 +16,8 @@ export async function handleViewPostButtonClick(event, postId) {
     const modalContent = viewPostModal._element.querySelector(".modal-body");
     modalContent.innerHTML = "";
 
-    const deletePostElement = createSinglePostElement(postData);
-    modalContent.appendChild(deletePostElement);
+    const displaySinglePostElement = createSinglePostElement(postData);
+    modalContent.appendChild(displaySinglePostElement);
 
     viewPostModal.show();
   } catch (error) {

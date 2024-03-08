@@ -15,6 +15,7 @@ export function router() {
       listeners.setCreatePostListener();
       listeners.modalEditPost();
       listeners.displayUserPostImages();
+      listeners.displayAllUserImages();
       return;
     case "/profile/edit/":
       listeners.setUpdateProfileListener();

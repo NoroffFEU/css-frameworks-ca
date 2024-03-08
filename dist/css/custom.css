@@ -131,9 +131,13 @@ footer {
   word-wrap: break-word;
 }
 
-#deletePostModal .modal-header, #deletePostModal .modal-footer {
+#deletePostModal .modal-header, #deletePostModal .modal, #deletePostModal .modal-footer {
   background-color: #ae2d3a;
   color: #fff;
+}
+#deletePostModal .modal-content {
+  border: 4px solid #ae2d3a;
+  border-radius: 15px;
 }
 
 .scroll-to-top-button {

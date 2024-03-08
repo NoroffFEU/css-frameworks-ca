@@ -1,8 +1,9 @@
 import * as utils from "./utils/index.mjs";
 import * as listeners from "./handlers/index.mjs";
 import { handleLogout } from "./handlers/index.mjs";
+import { router } from "./router.mjs";
 
-// Add the code block here
+
 if (document.readyState === "loading") {
   document.addEventListener(
     "DOMContentLoaded",
@@ -17,26 +18,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     utils.updateProfileFromLocalStorage();
   }
 
-  const path = location.pathname;
+  // Call the router function
+  router();
 
-  if (path === "/profile/login/") {
-    listeners.setLoginFormListener();
-  } else if (path === "/profile/register/") {
-    listeners.setRegisterFormListener();
-  } else if (path === "/profile") {
-    listeners.displayUserPosts();
-    listeners.setCreatePostListener();
-    listeners.modalEditPost();
-  } else if (path === "/profile/edit/") {
-    listeners.setUpdateProfileListener();
-  } else if (path === "/feed/") {
-    listeners.displayPosts();
-    listeners.setCreatePostListener();
-    listeners.modalEditPost();
-    listeners.handleSortOptionChange();
-  }
   const logoutLink = document.getElementById("logoutLink");
   if (logoutLink) {
     logoutLink.addEventListener("click", handleLogout);
   }
 });
+
+
+function main () {
+  const queryParams = new URLSearchParams(window.location.search);
+  console.log ("has id;", queryParams)
+}
+main()

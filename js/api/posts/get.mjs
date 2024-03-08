@@ -3,8 +3,10 @@ import { authFetch } from "../authFetch.mjs";
 import { showMessage } from "../../utils/messages.mjs";
 import { load } from "../../storage/index.mjs";
 
-const action = "/posts";
 
+const POST_ACTION = "/posts";
+const PROFILE_ACTION = "/profiles/";
+const QUERY_PARAMS = "_author=true&_comments=true";
 /**
  * Retrieves all posts from the server.
  * @returns {Promise<Object[]>} An array of post objects.
@@ -12,7 +14,7 @@ const action = "/posts";
  */
 
 export async function getPosts() {
-  const getPostURL = `${API_SOCIAL_URL}${action}?_author=true&_comments=true`;
+  const getPostURL = `${API_SOCIAL_URL}${POST_ACTION}?${QUERY_PARAMS}`;
 
   try {
     const response = await authFetch(getPostURL);
@@ -38,10 +40,10 @@ export async function getPostById(id) {
   if (!id) {
     throw new Error("Get requires a postID");
   }
-  const getPostURL = `${API_SOCIAL_URL}${action}/${id}?_author=true?&_comments=true`;
+  const getPostByIdURL = `${API_SOCIAL_URL}${POST_ACTION}/${id}?${QUERY_PARAMS}`
 
   try {
-    const response = await authFetch(getPostURL);
+    const response = await authFetch(getPostByIdURL);
     if (!response.ok) {
       throw new Error(`Failed to fetch post: ${response.status}`);
     }
@@ -60,10 +62,9 @@ export async function getPostById(id) {
  * @throws {Error} If fetching posts fails.
  */
 export async function getUserProfilePosts() {
- const action2 = "/profiles/";
   const userProfile = load("profile");
   const userName = userProfile.name;
-  const getUserPostsURL = `${API_SOCIAL_URL}${action2}${userName}${action}?_author=true&_comments=true`;
+  const getUserPostsURL = `${API_SOCIAL_URL}${PROFILE_ACTION}${userName}${POST_ACTION}?${QUERY_PARAMS}`;
   try {
     const response = await authFetch(getUserPostsURL);
     if (!response.ok) {

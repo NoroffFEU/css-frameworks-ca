@@ -42,7 +42,7 @@ export async function login(profile) {
 
     if (accessToken) {
       setTimeout(() => {
-        window.location.href = "../../../profile/index.html";
+        window.location.href = "../../../profile/";
       }, 2000);
     } else {
       throw new Error("No access token provided, please register");

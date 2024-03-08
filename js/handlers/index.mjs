@@ -2,6 +2,8 @@ export * from "./profile/login.mjs";
 export * from "./profile/register.mjs";
 export * from "./profile/updateProfile.mjs";
 export * from "./profile/logout.mjs";
+export * from "./profile/recentImages.mjs";
+export * from "./profile/viewImageClick.mjs";
 
 export * from "./observers/commonObservers.mjs";
 export * from "./observers/profileEdit.mjs";

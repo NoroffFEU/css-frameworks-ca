@@ -1,2 +1,3 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+This is a social media platform created with Bootstrap and Scss
+

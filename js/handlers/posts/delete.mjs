@@ -23,7 +23,7 @@ export async function handleDeleteButtonClick(event, postId) {
 
     const deletePostElement = createSinglePostElement(postData);
 
-    deletePostElement.style.maxHeight = "40vh";
+   
     modalContent.appendChild(deletePostElement);
     // Event listener to the confirm delete button
     const confirmDeleteButton = document.getElementById("confirmDeleteButton");

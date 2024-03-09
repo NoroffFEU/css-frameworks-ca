@@ -4,17 +4,20 @@ prinscreen of the design of my project
 
 ## The some app
 
-The purpose of this project was to apply knowledge of Bootstrap and SASS in building a responsive front end for a social media application.
+### Goal
 
-In this brief we were asked to create 3 pages in HTML using Bootstrap and SASS:
+The purpose of this project was to apply knowledge of Javascript in building a responsive front end for a social media application, utilizing the Noroff API for social media interactions.
 
-- Authentication Page (/index.html): A form for login or registration with HTML validation. The form should use /profile as the action attribute. The password field must have a minimum length of 8 characters.
+## API
 
-- Feed Page (/feed/index.html): This page should display a list of post thumbnails, include a search bar, sorting options, and a form to create a new post. Additional design features are encouraged.
+The application interacts with the Noroff API, specifically using the Social Endpoints for user authentication and content management. Users must register and login to obtain a JWT token and an API Key for accessing the protected routes.
 
-- Profile Page (/profile/index.html): Features should include a profile image, username, a list of user posts, a follow button, and an area to display following/followers.
+### Required Features
 
-Note: Only Bootstrap UX functionality is required; there's no need for custom JavaScript beyond this.
+- Registration and Login:** Users with @noroff.no or @stud.noroff.no email can register and login.
+- Content Interaction:** Users can view, filter, search, create, update, and delete post content.
+- Authentication and Authorization:** Utilizes JWT tokens and API Keys for secure access.
+- Documentation:** Key functions are documented using JSDocs, ensuring clarity and maintainability.
 
 ## Built With
 
@@ -22,12 +25,13 @@ Note: Only Bootstrap UX functionality is required; there's no need for custom Ja
     HTML
     Bootstrap
     SASS
+    Javascript
 
 ## Getting Started
 
 ### Installation
 
-    Clone the repo:https://github.com/Kikkiin/css-frameworks-ca
+    Clone the repo: https://github.com/Kikkiin/css-frameworks-ca/tree/V1
 
 git clone 
 
@@ -39,7 +43,7 @@ Use the live server to open the website in the browser by clicking on "open in l
 
 ## Contributing
 
-Unfortunately, I have only worked in the main branch on this task, so my pull request is not available at the moment. I will fix the issue as soon as possible.
+I opened a pull request for everyone to contribute to my project. 
 
 ## Contact
 
@@ -51,6 +55,6 @@ Feel free to contact me for questions, feedback, or collaborations:
 
 ## Acknowledgments
 
-I would like to thank teacher Oliver with all his knowledge teaching me about bootstrap.
+I would like to thank teacher Oliver and Martin with all his knowledge teaching me about javascript.
 
 I would also like to thank other fellow students for help and feedback in the class chat in moodle.

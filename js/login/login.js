@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', (event) =>{
     const email = event.target[0].value;
     const password = event.target[1].value;
     loginUser(email, password);
-}) //Trenger jeg all denne koden ??
+}) 
 
 async function loginUser(email, password) {
     // console.log('register user');

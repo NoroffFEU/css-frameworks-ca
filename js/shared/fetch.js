@@ -49,6 +49,7 @@ export async function doFetch(url, isAuth = false, options = {}) {
 
 
 
+
 // import { register } from "../api/auth/register.js";
 
 // export function setRegisterFormListener() {

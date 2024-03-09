@@ -41,7 +41,7 @@ function displayPosts(posts) {
 
 
 function displayDetailPost(post) {
-    console.log('hello world');
+    // console.log('hello world');
       const postDisplayContainer = document.querySelector(
         '#detail-post-container',
       );
@@ -63,7 +63,7 @@ async function main() {
 
     }  else {
         setupEventListeners();
-        getPosts(); // Kaller getPosts uten argumenter for å hente alle poster ved oppstart
+        getPosts(); // Kaller getPosts for å hente alle poster ved oppstart
     }  
 }
   

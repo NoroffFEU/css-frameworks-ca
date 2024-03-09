@@ -1,14 +1,14 @@
 
 export function sortPost(posts, sortType) {
-    console.log('Før sortering:', posts);
+    // console.log('before sorting:', posts);
     if (sortType === 'new') {
         return posts.sort((a, b) => new Date(b.created) - new Date(a.created));
     } else if (sortType === 'popular') {
-        // Anta at popularitet kan måles med antall reaksjoner (du må kanskje justere dette)
+        // Anta at popularitet kan måles med antall reaksjoner 
         return posts.sort((a, b) => b._count.reactions - a._count.reactions);
     } else if (sortType === 'alphabetically') {
         return posts.sort((a, b) => a.title.localeCompare(b.title));
     }
-    console.log('Etter sortering:', posts);
+    // console.log('After sorting:', posts);
     return posts; // Returner uendret hvis ingen sortType er gitt
 }

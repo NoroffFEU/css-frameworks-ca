@@ -14,7 +14,7 @@ const registrationForm = document.querySelector('#registrationForm');
 
 registrationForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
     const name = event.target[0].value;
     const email = event.target[1].value;
     const password = event.target[2].value;
@@ -64,43 +64,3 @@ async function registerUser(name, email, password) {
 
 
 
-
-
-
-
-
-// async function registerUser(name, email, password) {
-//     // console.log('register user');
- 
-//     await doFetch(REGISTER_URL, false, {  
-//         method: 'POST',
-//         body: JSON.stringify({
-//             name, 
-//             email, 
-//             password,
-//         }),
-//     });
-// }
-
-
-// async function registerUser(name, email, password) {
-//     try {
-//         const response = await doFetch(REGISTER_URL, false, {
-//             method: 'POST',
-//             body: JSON.stringify({
-//                 name,
-//                 email,
-//                 password,
-//             }),
-//         });
-//         // Viser en suksessmelding direkte etter at forespørselen er fullført
-//         alert('Registration successful! You will now be redirected to the homepage.');
-
-//         // Omdirigerer til 'index.html'
-//         window.location.href = '../../../index.html';
-//     } catch (error) {
-//         // Ved feil, vis en feilmelding
-//         alert('Registration failed. Please try again.');
-//         console.error('Registration error:', error);
-//     }
-// }

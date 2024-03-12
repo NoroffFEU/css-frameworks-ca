@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="/dist/css/theme.css" />
+    <script src="/src/js/index.mjs" defer type="module"></script>
+    <script src="/src/js/handlers/login.mjs" defer type="module"></script>
+    <title>Tech Community - registration form</title>
+    <meta name="description" content="Join our vibrant tech community! Connect with industry professionals, spark discussions, and enjoy the social media experience tailored for tech enthusiasts.">
+  
+</head>
+<body>
+  <main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                  <form name="contactForm" id="registerForm" action="#">
+                    <h2 class="mb-3 text-center">Create account</h2>
+                    <div class="">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" pattern="^[\w]+$" title="User name mast only contain lower case and upper case lerrers, numbers and underscore (_). Example: My_User123" required>
+                        <span id="nameError" class="text-danger"></span>
+                      </div>
+                    <div class="">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" id="email" name="email" class="form-control" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only @(stud.)noroff.no are allowed to register.">
+                      <span id="emailError" class="text-danger"></span>
+                    </div>
+                    <div class="">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" id="password" name="password" class="form-control" minlength="8" required>
+                      <span id="passwordError" class="text-danger"></span>
+                  </div>
+                  <div class="">
+                    <label for="banner" class="form-label">Banner</label>
+                    <input type="url" name="banner" id="banner" class="form-control">
+                </div>
+                <div class="">
+                    <label for="avatar" class="form-label">Avatar</label>
+                    <input type="url" name="avatar" id="avatar" class="form-control">
+                </div>
+                    <button class="btn btn-primary mt-3" type="submit">Register</button>
+                 </form>
+            </div>
+        <div class="col-md-6 bg-primary d-flex align-items-center justify-content-center vh-100">
+          <div class="text-center text-secondary">
+            <div class="mb-5">
+          <h1>The new way to connect</h1>
+        </div>
+        <div class="">
+          <p>Discover new people</p>
+          <p>Bond over new technologies</p>
+          <p>Share knowledge</p>
+        </div>
+          <div class="d-flex mt-3 mb-3 justify-content-around">
+          <button type="learnMore" class="btn btn-outline-secondary">Learn more </button>
+          <button type="inviteOthers" class="btn btn-outline-secondary">Invite others</button>
+          </div>
+          <img src="/tech-community/pictures/logo 1 tech connect.png" alt="Tech Connect Logo" class="img-fluid mt-3 mx-auto p-2" style="width: 250px;">
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+  

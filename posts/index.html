@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/theme.css" />
+    <script src="/src/js/index.mjs" defer type="module"></script>
+
+    <title>Tech-community list of Posts page</title>
+    <meta name="description" content="Stay updated with the latest tech news, discussions, and trends on the Tech-community Feed. Explore diverse topics, connect with fellow tech enthusiasts, and contribute to the dynamic tech ecosystem. Join the conversation and immerse yourself in the world of technology.">
+</head>
+<body class="bg-primary">
+    <header>
+        <a href="../index.html">
+        <img src="/tech-community/pictures/logo tech connect.png" alt="Tech Connect Little Logo" class="img-fluid mt-5 mx-5" style="width: 150px;">
+        </a>
+        <div class="container">
+            <div class="text-end mx-5 mb-5">
+                <h2 class="text-light fs-6">
+                    🟢 Rowan Etkinson
+                </h2>
+            </div> 
+            <div class="text-end mx-5">
+            <input type="search" class="rounded-pill" id="search" placeholder="Search 🔍">
+            </div>  
+            <div class="flex-grow-1 bg-primary text-light">
+      
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 align-items-center">
+                        <form  class="text-light" id="createPost">
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label">Title</label>
+                                <input type="text" name="title" class="form-control" required>
+                              </div>
+                              <div class="form-group mb-3">
+                                <label for="" class="form-label">Body</label>
+                                <textarea class="form-control" name="body" required></textarea>
+                              </div>
+                              <!-- <div class="form-group mb-3">
+                                <label for="" class="form-label">Tags</label>
+                                <input type="text" name="tags" class="form-control">
+                              </div> -->
+                              <div class="form-group mb-3">
+                                <label for="name" class="form-label">Media</label>
+                                <input type="url" name="media" class="form-control">
+                              </div>
+                              <div class="text-start">
+                            <button class="btn btn-primary mt-3" type="submit">Post</button>
+                            </div>
+                            
+                         </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </header>
+            <div class="container mt-5 mx-5">
+            <div class="text-end">
+                <label for="select"></label>
+                <select id="select">
+                    <option value="">Sort</option>
+                    <option value="">latest</option>
+                    <option value="">oldest</option>
+                </select>
+            </div>
+        </div>
+            </body>
+    
+
+            <main class="flex-grow-1 bg-primary text-light">
+                <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class=" col-12 col-md-6" id="posts">
+                   <!-- List of posts thumbnails-->
+
+
+                </div>
+            </div>
+        </div> 
+    </main>
+    
+    <footer>
+        <div class="d-flex flex-row mt-5 justify-content-center">
+            <div class="p-2 text-light fs-6 ">Help</div>
+            <div class="p-2 text-light fs-6">Job</div>
+            <div class="p-2 text-light fs-6">Meta</div>
+            <div class="p-2 text-light fs-6">Privacy</div>
+            <div class="p-2 text-light fs-6">Terms</div>
+            <div class="p-2 text-light fs-6">Threads</div>
+            <div class="p-2 text-light fs-6">Locations</div>
+          </div>
+        <div class="d-flex flex-row mb-3 justify-content-center">
+        <div class="p-2 text-light fs-6 "> All Rigths Reserverd Est. 2023 CA </div>
+        </div>
+    </footer>
+</body>
+</html>

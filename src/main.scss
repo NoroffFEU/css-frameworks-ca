@@ -1,0 +1,88 @@
+
+$primary: rgb(15, 15, 49) !default;
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+    background: rgb(218, 226, 241);
+    overflow-x: hidden;
+    
+}
+
+
+#feed-card {
+    padding: 10px;
+}
+
+
+
+#login-container {
+max-width: 600px;
+border: 1px solid $primary;
+border-radius: 20px;
+padding: 20px;
+background: white;
+margin-top: 40px;
+}
+
+#login-title{
+color: $primary;
+font-size: 40px ;
+
+}
+
+#error-message {
+    color: red;
+    
+}
+#profile-menu {
+    display: flex;
+    margin-left: 20px;
+    
+}
+#filter-div {
+    margin-left: 160px; 
+    display: flex;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+ 
+    #profile-menu {
+        font-size: 15px;
+        margin-left: -130px;
+        
+    }
+
+
+    #avatar-img {
+        margin-left: -80px;
+    }
+#ul-h1 {
+    font-size: 15px;
+}
+
+
+#filter-div {
+    display: block;
+    max-width: 300px;
+    
+    
+
+
+    
+}
+#input {
+    margin-right: 80px;
+    max-width: 170px;
+}
+
+#search-input {
+    margin-right: 80px;
+}
+
+}
+

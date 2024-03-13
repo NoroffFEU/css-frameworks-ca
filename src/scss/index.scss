@@ -1,1 +1,22 @@
+$blue:    #98aae6;
+$orange:  #F0D6BD;
+$yellow:  #F1D66F;
+$brown:   #F0AD6D;
 
+$info:      $orange;
+$danger:    $brown;
+
+.cus-thum{
+    object-fit: cover;
+    
+    &.cus-thum-sm{
+        max-width: 100px;
+        max-height: 100px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="/js/forms.js"></script>
+    <title>Log in</title>
+</head>
+<body class="bg-info">
+
+    <main class="d-flex min-vh-100 justify-content-center flex-column">
+        <img src="/images/mt_logo.png" alt="logo" class="img-fluid align-self-center mb-4">
+        <div class="d-flex flex-column align-self-center bg-primary p-5 rounded-5">
+            <!-- Login Form -->
+            <form action="html/profile.html" method="post" class="login-form" id="login">
+                <h1 class="text-white login-form">Log in</h1>
+                <div class="form-group mb-3">
+                    <label for="">Name</label>
+                    <input type="text" name="uid" class="form-control" placeholder="Username/Email..." required pattern="^[\w]+$">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Password</label>
+                    <input type="password" name="pwd" class="form-control" placeholder="Password..." minlength="8" required>
+                </div>
+                <p class="mt-1 text-white btn-link">Trouble logging in?</p>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                   <button class="btn btn-danger">Log in</button>
+                </div>
+                <button type="button" class="btn btn-link text-white mt-2 login-form" id="register-btn-access">Don't have an account? Sign up!</button>
+            </form>
+            <!-- Register form (hidden by default) -->
+            <form method="post" action="/auth/register" class="hidden" id="reg">
+                <h1 class="text-white">Register</h1>
+                <div class="form-group mb-3">
+                    <label for="">Name</label>
+                    <input type="text" name="uid" class="form-control" placeholder="Username..." maxlength="20" required pattern="^[\w]+$" title="Username must only contain lower case, upper case, numbers and underscore (_). Example: My_User123">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Email</label>
+                    <input type="" name="email" class="form-control" placeholder="Email..." required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="Only @(stud.)noroff.no domains are allowed to register.">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Password</label>
+                    <input type="password" name="pwd" class="form-control" placeholder="Password..." minlength="8" required>
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                   <button class="btn btn-danger">Register</button>
+                </div>
+                <button type="button" class="btn btn-link text-white mt-2" id="login-btn-access">Already have an account? Log in!</button>
+            </form>
+        </div>
+</body>
+</html>

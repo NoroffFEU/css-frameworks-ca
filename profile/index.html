@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../dist/css/main.css">
+    <title>NexNet | Profile</title>
+    <meta name="description" content="View and manage your NexNet profile. Showcase your interests, achievements, and connect with like-minded individuals. Personalize your profile, share updates, and be a part of the vibrant NexNet community.">
+    <meta name="keywords" content="NexNet, Profile, User">
+    <meta name="author" content="Marius Bjeglerud">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-sm-auto bg-light sticky-top vh-100">
+                <nav>
+                    <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top nav-menu">
+                        <i class="fs-1 letter-n">N</i>
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                            <li class="nav-item">
+                                <a href="../feed/" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Home" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi-house fs-1"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="#" id="profileLink" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Profile" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-person-circle fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-gear fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="logOutBtn" href="../" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Log Out" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-box-arrow-left fs-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <section class="col-sm p-3 min-vh-100 container">
+                <div class="row center-content">
+                    <div id="profileContainer" class="col-md-8 col-sm-12 offset-md-2 row mt-5 bg-primary rounded justify-content-center  mx-auto">
+                        <div class="col-md-5 mt-5">
+                            <img id="avatarSrc" class="profile-picture rounded" src="" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <h1 id="nameContent" class="fs-2 text-purple mt-5"></h1>
+                            <div class="row flex-md-row flex-column-reverse">
+                                <ul class="col-md-12 col-4">
+                                    <li class="fw-bold">Posts</li>
+                                    <li id="postCount"></li>
+                                </ul>
+                                <ul class="col-md-12 col-4">
+                                    <li class="fw-bold">Followers</li>
+                                    <li id="followersCount"></li>
+                                </ul>
+                                <ul class="col-md-12 col-4">
+                                    <li class="fw-bold">Following</li>
+                                    <li id="followingCount"></li>
+                                </ul>
+                            </div>
+                            <p id="bioContent" class="mt-3"></p>
+                        </div>
+                        <div class="col-md-11 mt-5 mb-5">
+                            <button id="editFollowBtn" class="col-12 btn btn-primary fw-bold fs-5">Edit Profile</button>
+                            <button id="friendPostBtn" class="col-12 mt-3 btn btn-sec fw-bold fs-5">New Post</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainContent" class="col-md-8 col-sm-12 mx-auto">
+                    <div class="col-md-8 col-sm-12 offset-md-2 row bg-primary rounded justify-content-center mt-4  mx-auto">
+                        <div id="postTemplate" class="post-template bg-primary container rounded mt-4 row mx-auto post d-none">
+                            <div class="col-md-11 column align-items-start py-2 px-2">
+                                <div class="row col-md-12 align-items-center">
+                                    <div class="author-info">
+                                        <img class="fs-1 rounded-circle post-avatar" src="" alt="">
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <a href="">
+                                            <p class="fs-6 m-auto text-purple post-author fw-bold">Author Name</p>
+                                            <p class="fs-6 m-auto text-primary post-date">Date</p>
+                                        </a>
+                                    </div>
+                                </div>                                    
+                                <a class="post-link" href="" data-post-index="">
+                                    <h2 class="fs-4 mt-4 text-purple post-title"></h2>
+                                    <p class="text-primary post-body"></p>
+                                    <img class="post-image" src="" alt="">
+                                    <p class="text-primary post-tags"></p>
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center post-reactions mb-2">
+                                <i class="bi bi-hand-thumbs-up text-primary"></i>
+                                <p class="my-0 mx-2 text-purple post-likes"></p>
+                                <i class="bi bi-chat text-primary"></i>
+                                <p class="my-0 mx-2 text-purple post-comments"></p>
+                                <div class="align-flex-end d-flex post-del-update">
+                                    <button class="edit-button btn btn-primary d-none">Edit</button>
+                                    <button class="delete-button btn btn-sec d-none">Delete</button>
+                                </div>
+                            </div>
+                            <div class="edit-form d-none">
+                                <form class="edit-form" id="editForm" action="submit">
+                                    <input class="form-control mb-2 mt-3 update-post-title" type="text" placeholder="Title...">
+                                    <input class="form-control mb-2 update-post-body" type="text" placeholder="Body...">
+                                    <button class="btn btn-3 mb-2">Update</button>
+                                </form>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </section>
+            <div id="editContainer" class="fixed-box col-md-8 col-sm-12 offset-md-2 row bg-primary rounded justify-content-center mt-4  mx-auto d-none">
+                <button id="closeButton" class="btn-close" aria-label="Close"></button>
+                <form id="profileForm">
+                    <h2>Edit Profile</h2>
+                    <div class="mb-3">
+                        <label for="bioInput" class="form-label">Bio</label>
+                        <input type="text" class="form-control" id="bioInput" placeholder="Enter your bio">
+                    </div>
+                    <div class="mb-3">
+                        <label for="bannerInput" class="form-label">Banner</label>
+                        <input type="text" class="form-control" id="bannerInput" placeholder="Enter your banner URL">
+                    </div>
+                    <div class="mb-3">
+                        <label for="avatarInput" class="form-label">Avatar</label>
+                        <input type="text" class="form-control" id="avatarInput" placeholder="Enter your avatar URL">
+                    </div>
+                    <button id="profileFormBtn" type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>            
+            <footer  class="footer d-flex justify-content-center align-items-center bg-light">
+                <p>© 2024 NexNet</p>
+            </footer>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../src/js/sidebar.js"></script>
+    <script type="module" src="../src/js/pages/profile/index.js"></script>
+</body>
+</html>

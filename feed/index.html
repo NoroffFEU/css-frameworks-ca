@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../dist/css/main.css">
+    <title>NexNet | Feed</title>
+    <meta name="description" content="This is the feed of NexNet.">
+    <meta name="keywords" content="NexNet, Home, Feed">
+    <meta name="author" content="Marius Bjeglerud">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <header class="col-sm-auto bg-light sticky-top vh-100">
+                <nav>
+                    <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top nav-menu">
+                        <i class="fs-1 letter-n">N</i>
+                        <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
+                            <li class="nav-item">
+                                <a href="../feed/" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Home" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi-house fs-1"></i>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="../profile/" id="profileLink" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Profile" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-person-circle fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Settings" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-gear fs-1"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="logOutBtn" href="../" class="nav-link py-3 px-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Log Out" data-bs-template='<div class="tooltip" role="tooltip"><div class="tooltip-inner"></div></div>'>
+                                    <i class="bi bi-box-arrow-left fs-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main class="col-sm p-3 min-vh-100">
+                <div>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12 mx-auto">
+                            <p class="text-purple fs-3 fw-bold">Welcome Back Marius</p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="dropdown">
+                                            <button class="btn btn-4 dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Sort by: <span id="selectedOption">Latest</span>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                                                <a class="dropdown-item" id="latestOption">Latest</a>
+                                                <a class="dropdown-item" id="oldestOption">Oldest</a>
+                                                <a class="dropdown-item" id="relevantOption">Relevant</a>
+                                                <a class="dropdown-item" id="popularOption">Popular</a>
+                                            </div>
+                                        </div>
+                                    </div>                                 
+                                    <div class="col-md-5 w-100 mt-2 position-relative">
+                                        <div class="input-group rounded">
+                                            <input id="searchInput" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                            <span class="input-group-text border-0" id="search-addon">
+                                                <i class="bi bi-search"></i>
+                                            </span>
+                                        </div>
+                                        <div class="border border-dark bg-primary position-absolute rounded container mw-100 mx-auto" id="searchResults">
+                                            <a id="searchTemplate" class="d-none search-result d-block p-3 border-top border-dark" href="">
+                                                <h2 class="mb-0 search-title fs-6 fw-bold"></h2>
+                                                <p class="mb-0 search-author fs-6"></p>
+                                            </a>
+                                        </div>
+                                    </div>                                                                                                       
+                                </div>
+                            </div>                            
+                            <div class="bg-primary container rounded row mt-3 mx-auto">
+                                <i class="bi bi-person-circle col-md-1 fs-1"></i>
+                                <form id="createPostForm" class="row align-items-start py-2 px-2">
+                                    <div class="col-md-11">
+                                        <input class="form-control mb-2" type="text" name="" id="newPostTitle" placeholder="Title..."> 
+                                        <input class="form-control mb-2" type="text" name="" id="newPostBody" placeholder="What do you want to share today?">
+                                        <button class="btn btn-3" type="submit">Post</button>
+                                    </div>
+                                </form>                                
+                            </div>
+                                <div id="postContainer">
+                                    <div id="postTemplate" class="post-template bg-primary container rounded mt-4 row mx-auto post d-none">
+                                        <div class="col-md-11 column align-items-start py-2 px-2">
+                                            <div class="row col-md-12 align-items-center">
+                                                <div class="author-info">
+                                                    <img class="fs-1 rounded-circle post-avatar" src="" alt="">
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <a class="author-link" href="">
+                                                        <p class="fs-6 m-auto text-purple post-author fw-bold">Author Name</p>
+                                                        <p class="fs-6 m-auto text-primary post-date">Date</p>
+                                                    </a>
+                                                </div>
+                                            </div>                                    
+                                            <a class="post-link" href="" data-post-index="">
+                                                <h2 class="fs-4 mt-4 text-purple post-title"></h2>
+                                                <p class="text-primary post-body"></p>
+                                                <img class="post-image" src="" alt="">
+                                                <p class="text-primary post-tags"></p>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-items-center post-reactions mb-2">
+                                            <i class="bi bi-hand-thumbs-up text-primary post-reaction"></i>
+                                            <i class="bi bi-hand-thumbs-up-fill text-purple post-reaction-liked"></i>
+                                            <p class="my-0 mx-2 text-purple post-likes"></p>
+                                            <i class="bi bi-chat text-primary"></i>
+                                            <p class="my-0 mx-2 text-purple post-comments"></p>
+                                            <div class="d-flex post-del-update">
+                                                <a class="edit-button btn btn-primary d-none">Edit</a>
+                                                <a class="delete-button btn btn-sec d-none">Delete</a>
+                                            </div>
+                                        </div>
+                                        <div class="edit-form d-none">
+                                            <form class="edit-form" id="editForm" action="submit">
+                                                <input class="form-control mb-2 mt-3 update-post-title" type="text" placeholder="Title...">
+                                                <input class="form-control mb-2 update-post-body" type="text" placeholder="Body...">
+                                                <button class="btn btn-3 mb-2">Update</button>
+                                            </form>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer  class="footer d-flex justify-content-center align-items-center bg-light">
+                <p>© 2024 NexNet</p>
+            </footer>
+        </div>
+    </div>
+    <script type="module" src="../src/js/sidebar.js"></script>
+    <script type="module" src="../src/js/pages/feed/index.js"></script>
+</body>
+</html>

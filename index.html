@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/index.css" />
+    <link rel="stylesheet" href="src/scss/index.scss">
+    <title>Space | Login</title>
+  </head>
+  <body class="bg-primary">
+
+    <h1 class="text-danger text-center mt-5">SPACE</h1>
+    <p class="text-danger text-center font-monospace ">Welcome to</p>
+    
+    
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card bg-danger">
+            <div class="card-header text-primary">
+              <h3 class="text-center">Login</h3>
+            </div>
+            <div class="card-body">
+              <form action="login" method="POST">
+                <div class="mb-3">
+                  <label for="username" class="form-label text-primary">Username</label>
+                  <input 
+                    type="text"
+                    class="form-control bg-primary"
+                    id="username"
+                    name="username"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label text-primary">Password</label>
+                  <input
+                    type="password"
+                    class="form-control bg-primary"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <a href="main.html" type="submit" class="btn btn-primary text-success">Login</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="/dist/css/index.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		<script
+			defer
+			src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<title>tTownTom | WhispR</title>
+	</head>
+	<body>
+		<div class="container-lg overflow-hidden">
+			<div class="row vh-100 overflow-auto">
+				<header
+					class="col-12 col-sm-4 col-md-3 col-xl-2 px-sm-2 px-0 bg-w-green bg-gradient d-flex sticky-top">
+					<nav
+						class="d-flex flex-wrap d-sm-block flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-w-white">
+						<a
+							href="/feed/"
+							class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-w-white text-decoration-none fw-bold">
+							<span class="display-6"
+								>W<span class="d-none d-sm-inline">hispR</span></span
+							>
+						</a>
+						<ul
+							class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start"
+							id="menu">
+							<li class="nav-item">
+								<a href="/feed/" class="nav-link px-sm-0 px-2 text-w-white">
+									<i class="fs-5 text-w-green-dark bi-house-fill"></i
+									><span class="ms-3 d-none d-sm-inline">Home</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a
+									href="#"
+									data-bs-toggle="collapse"
+									class="nav-link px-sm-0 px-2 text-w-white">
+									<i class="fs-5 text-w-green-dark bi-bell-fill"></i
+									><span class="ms-3 d-none d-sm-inline">Notifications</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a
+									href="#"
+									class="nav-link link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover px-sm-0 px-2 text-w-white">
+									<i class="fs-5 text-w-green-dark bi-binoculars-fill"></i
+									><span class="ms-3 d-none d-sm-inline">Explore</span></a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									href="#"
+									class="nav-link link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover px-sm-0 px-2 text-w-white">
+									<i class="fs-5 text-w-green-dark bi-star-fill"></i
+									><span class="ms-3 d-none d-sm-inline">Favorites</span></a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									href="#"
+									class="nav-link link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover px-sm-0 px-2 text-w-white">
+									<i class="fs-5 text-w-green-dark bi-envelope-fill"></i
+									><span class="ms-3 d-none d-sm-inline">Messages</span></a
+								>
+							</li>
+						</ul>
+						<div
+							class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+							<a
+								href="#"
+								class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+								id="dropdownUser"
+								data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<img
+									src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+									alt="ttowntom"
+									width="28"
+									height="28"
+									class="rounded-circle" />
+								<span class="d-none d-sm-inline mx-1 fw-bold">tTownTom</span>
+							</a>
+							<ul
+								class="dropdown-menu bg-w-white text-small shadow"
+								aria-labelledby="dropdownUser">
+								<li><a class="dropdown-item" href="#">New post...</a></li>
+								<li><a class="dropdown-item" href="#">Settings</a></li>
+								<li>
+									<a class="dropdown-item fw-bold" href="/profile/">Profile</a>
+								</li>
+								<li>
+									<hr class="dropdown-divider" />
+								</li>
+								<li><a class="dropdown-item" href="/">Sign out</a></li>
+							</ul>
+						</div>
+					</nav>
+				</header>
+				<div class="col d-flex flex-column h-sm-100 bg-w-desert">
+					<main class="row overflow-auto">
+						<div class="col py-4">
+							<section class="row">
+								<div class="col-auto">
+									<img
+										src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+										alt="ttowntom"
+										height="100px"
+										class="rounded-circle" />
+								</div>
+								<div class="col fw-light">
+									<h1 class="text-w-green">@tTownTom</h1>
+									<p>
+										A software developer and tinkerer. Fan of the outdoors,
+										technology, and movies.
+									</p>
+									<p>
+										<span class="fw-bold">242</span> Following
+										<span class="fw-bold ms-3">58K</span> Followers
+									</p>
+								</div>
+							</section>
+							<nav class="navbar navbar-expand">
+								<div
+									class="container-fluid d-flex flex-column-reverse flex-sm-row mx-0 px-0">
+									<div
+										class="collapse navbar-collapse border-bottom border-w-green">
+										<div class="navbar-nav">
+											<a
+												class="nav-link active text-w-green fw-bold border-bottom border-w-green border-5"
+												aria-current="page"
+												href="#"
+												>Posts</a
+											>
+											<a class="nav-link text-w-green fw-bold" href="#"
+												>Following</a
+											>
+											<a class="nav-link text-w-green fw-bold" href="#"
+												>Followers</a
+											>
+										</div>
+									</div>
+									<form class="d-flex justify-content-end">
+										<button
+											class="btn btn-w-green fw-bold text-w-white rounded-5 shadow-md"
+											type="button">
+											Follow
+										</button>
+									</form>
+								</div>
+							</nav>
+
+							<section class="row mt-4">
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Mar 14th, 2024
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Early morning hikes always clear my head before a day of
+												coding. Nature's beauty is unmatched. 🌲👨‍💻
+												<a href="#" class="text-decoration-none link-w-green"
+													>#NatureLover</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#CodeBreak</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Feb 20th, 2024
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Just finished setting up my home server. Now I've got my
+												own cloud! 🌥️🖥️
+												<a href="#" class="text-decoration-none link-w-green"
+													>#TechDIY</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#HomeServer</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Apr 1st, 2024
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Reflecting on how far I've come since starting my
+												front-end studies. It's not just about coding; it's
+												about creating experiences. 💡🎨
+												<a href="#" class="text-decoration-none link-w-green"
+													>#DevJourney</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#FrontEnd</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Jan 27th, 2023
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Just spotted a double rainbow while hiking in the
+												mountains! 🌈🌈 Nature really knows how to put on a
+												show.
+												<a href="#" class="text-decoration-none link-w-green"
+													>#NatureLovers</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#HikingAdventures</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Jan 27th, 2023
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Finally cracked the code to the perfect espresso at
+												home. Who needs a coffee shop when you have a good
+												machine and a little patience? ☕🏡
+												<a href="#" class="text-decoration-none link-w-green"
+													>#CoffeeConnoisseur</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#HomeBarista</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Jan 27th, 2023
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Why does every DIY project I start seem to require three
+												more trips to the hardware store than I originally
+												planned? 🛠️😅
+												<a href="#" class="text-decoration-none link-w-green"
+													>#DIYAdventures</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#HomeImprovement</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+
+								<article class="col-fluid mb-3">
+									<div class="card bg-white">
+										<div class="card-header bg-white">
+											<div class="row flex-row">
+												<div class="col-auto">
+													<img
+														src="https://i0.wp.com/info.opplevnorge.no/wp-content/uploads/2023/02/Torgeir-BW-Small.png?w=480&ssl=1"
+														alt="tTownTom"
+														height="50px"
+														class="rounded-circle" />
+												</div>
+												<div class="col">
+													<a
+														href="/profile/"
+														class="card-title lead fw-bold text-decoration-none text-w-green"
+														>tTownTom</a
+													>
+													<p
+														class="card-subtitle text-muted fw-light pt-0 mt-0">
+														Jan 27th, 2023
+													</p>
+												</div>
+											</div>
+										</div>
+										<div class="card-body">
+											<p class="card-text">
+												Coding for 12 hours straight and finally fixed that bug.
+												Never felt more like a wizard than I do right now. 💻🔮
+												<a href="#" class="text-decoration-none link-w-green"
+													>#DeveloperLife</a
+												>
+												<a href="#" class="text-decoration-none link-w-green"
+													>#CodingMagic</a
+												>
+											</p>
+										</div>
+									</div>
+								</article>
+							</section>
+						</div>
+					</main>
+					<footer class="row bg-w-dark-light py-2 mt-auto">
+						<div class="col">
+							<p class="text-center text-w-white m-0">&copy; 2024 WhispR</p>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,26 +1,38 @@
 {
-  "name": "css-frameworks-ca",
-  "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
-  "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NoroffFEU/css-frameworks-ca.git"
-  },
-  "keywords": [
-    "CSS",
-    "CSS",
-    "Frameworks",
-    "Bootstrap",
-    "SCSS",
-    "SASS"
-  ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
-  },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+	"name": "css-frameworks-ca",
+	"version": "0.0.1",
+	"description": "CA for the CSS Frameworks course at Noroff",
+	"scripts": {
+		"test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
+		"build": "sass src/scss:dist/css",
+		"live": "live-server",
+		"watch": "sass --watch src/scss:dist/css",
+		"dev": "npm-run-all --parallel watch live"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ttowntom/noroff-css-frameworks.git"
+	},
+	"keywords": [
+		"CSS",
+		"CSS",
+		"Frameworks",
+		"Bootstrap",
+		"SCSS",
+		"SASS"
+	],
+	"author": "Torgeir Helgesen Riseth <torris51469@stud.noroff.no>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ttowntom/noroff-css-frameworks#issues"
+	},
+	"homepage": "https://github.com/ttowntom/noroff-css-frameworks#readme",
+	"devDependencies": {
+		"live-server": "^1.2.2",
+		"npm-run-all": "^4.1.5",
+		"sass": "^1.71.1"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.3"
+	}
 }

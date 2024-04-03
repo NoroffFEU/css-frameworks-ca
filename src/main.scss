@@ -1,0 +1,50 @@
+@import './scss/tools', './scss/variables'; 
+
+body {
+    background-color: $background-color !important;
+    font-family: $font-family !important;
+}
+
+.index-content {
+    justify-content: space-between;
+    gap: 180px;
+}
+
+.index-banner {
+
+    background: $primary-color;
+    border-radius: 0 0 100px 100px;
+    height: 270px;
+
+    &-icon {
+        height: 100px;
+        object-fit: cover;
+    }
+}
+
+.aut-button {
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: $f-medium;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+}
+
+.login-button {
+    background-color: $secondary-color;
+
+}
+
+.signup-button {
+    background-color: $primary-color;
+}
+
+
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";

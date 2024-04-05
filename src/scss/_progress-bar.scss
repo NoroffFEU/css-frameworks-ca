@@ -1,0 +1,42 @@
+//Tools 
+
+.progress-points {
+
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+
+.prog-bar {
+    width: 1000px;
+    height: 200px;
+
+    gap: 20px;
+}
+
+.progress-point {
+
+    &-active {
+        background-color: $secondary-color;
+        @extend .progress-points;
+    }
+
+    &-inactive {
+        background-color: beige;
+        @extend .progress-points;
+    }
+}
+
+.progress-line {
+
+    height: 10px;
+    min-width: 100px;
+    border-radius: 10px;
+    background-color: beige;
+
+    &-active {
+        background-color: $secondary-color;
+    }
+}

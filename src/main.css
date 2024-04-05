@@ -4,6 +4,42 @@
   padding: 0;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-points, .progress-point-inactive, .progress-point-active {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.prog-bar {
+  width: 1000px;
+  height: 200px;
+  gap: 20px;
+}
+
+.progress-point-active {
+  background-color: #FFD290;
+}
+.progress-point-inactive {
+  background-color: beige;
+}
+
+.progress-line {
+  height: 10px;
+  min-width: 100px;
+  border-radius: 10px;
+  background-color: beige;
+}
+.progress-line-active {
+  background-color: #FFD290;
+}
+
 body {
   background-color: #BA9479 !important;
   font-family: "Raleway", sans-serif !important;
@@ -25,25 +61,14 @@ body {
      object-fit: cover;
 }
 
-.aut-button {
-  border: none;
-  border-radius: 10px;
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 500;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
+.index-button {
+  width: 150px;
+  background-color: #FFD290 !important;
+  border: none !important;
+  font-weight: 500 !important;
 }
-
-.login-button {
-  background-color: #FFD290;
-}
-
-.signup-button {
-  background-color: #BC845D;
+.index-button:hover {
+  background-color: #BC845D !important;
 }
 
 /*!

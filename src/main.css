@@ -10,34 +10,35 @@
   align-items: center;
 }
 
-.progress-points, .progress-point-inactive, .progress-point-active {
-  height: 20px;
-  width: 20px;
+.gap-50 {
+  gap: 50px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.error-message-indicator, .error-message-indicator-success, .error-message-indicator-error {
+  height: 18px;
+  width: 18px;
+  background-color: white;
   border-radius: 50%;
-  display: inline-block;
+}
+.error-message-indicator-error {
+  background-color: red;
+  border: 1px solid grey;
+}
+.error-message-indicator-success {
+  background-color: green;
+  border: 1px solid grey;
 }
 
-.prog-bar {
-  width: 1000px;
-  height: 200px;
-  gap: 20px;
-}
-
-.progress-point-active {
-  background-color: #FFD290;
-}
-.progress-point-inactive {
-  background-color: beige;
-}
-
-.progress-line {
-  height: 10px;
-  min-width: 100px;
-  border-radius: 10px;
-  background-color: beige;
-}
-.progress-line-active {
-  background-color: #FFD290;
+.toggle-password-visibility {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 body {
@@ -69,6 +70,20 @@ body {
 }
 .index-button:hover {
   background-color: #BC845D !important;
+}
+
+.registration-content {
+  gap: 50px;
+}
+
+.registration {
+  background-color: #FFD290;
+  border-radius: 100px 100px 0 0;
+  padding: 100px;
+}
+
+.register-form {
+  max-width: 500px;
 }
 
 /*!

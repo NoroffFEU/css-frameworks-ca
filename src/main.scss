@@ -1,4 +1,4 @@
-@import './scss/tools', './scss/variables', './scss/progress-bar';
+@import './scss/tools', './scss/variables', './scss/error-reg';
 
 body {
     background-color: $background-color !important;
@@ -33,7 +33,22 @@ body {
     }
 }
 
+.registration-content {
+    gap: 50px;
+}
+
+.registration {
+
+    background-color: $secondary-color;
+    border-radius: 100px 100px 0 0;
+    padding: 100px;
+}
+
+.register-form {
+    max-width: 500px;
+}
+
 
 
 // Then import Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/bootstrap/scss/bootstrap';

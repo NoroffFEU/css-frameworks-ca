@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/src/media/quiply-icon.png">
+
+    <link rel="stylesheet" href="/styles.css">
+    <title>Register</title>
+</head>
+<body class="registration-content flex-center flex-column">
+    <div class="prog-bar flex-center">
+        <!-- Going to make the progress bar inline and functional later -->
+        <img class="prog-bar-image" src="/src/media/register-process.png" alt="Progress bar">
+    </div>
+    <h1 class="register-title">Register</h1>
+    <div class="container-fluid registration">
+        <form class="register-form mx-auto" action="/src/profile/index.html" method="POST">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" minlength="8" required>
+                <label for="floatingPassword">Password</label>
+                <img class="toggle-password-visibility" src="/src/media/icons/eye-closed.png" alt="Show password icon">
+              </div>
+            <div class="error mt-4">
+                <div class="error-message d-flex align-items-center gap-10">
+                    <div class="error-message-indicator-success"></div>
+                    <p class="error-message-text p-0 m-0">Email must be valid</p>
+                </div>
+                <div class="error-message d-flex align-items-center gap-10">
+                    <div class="error-message-indicator-error"></div>
+                    <p class="error-message-text p-0 m-0">Password must be 8 characters or more</p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

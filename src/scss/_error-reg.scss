@@ -1,0 +1,33 @@
+.error {
+
+
+    &-message-indicator {
+        height: 18px;
+        width: 18px;
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    &-message-indicator-error {
+        @extend .error-message-indicator;
+        background-color: red;
+        border: 1px solid grey;
+    }
+
+    &-message-indicator-success {
+        @extend .error-message-indicator;
+        background-color: green;
+        border: 1px solid grey;
+    }
+
+   
+}
+
+.toggle-password-visibility {
+
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed Page</title>
+   <link rel="stylesheet" href="../dist/css/index.css">
+    <script defer src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> 
+    <link rel="stylesheet" href="../dist/css/theme.css" />
+  </head>
+  <body class="bg-body-bg">
+    <header>
+      <nav class="container navbar navbar-dark bg-secondary">
+        <div class="container-fluid">
+          <a href="/index.html" class="navbar-brand">Navbar</a>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 bg-danger"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h1 class="mt-5 mb-4">Feed Page</h1>
+        <div class="mb-4">
+          <label for="sortOptions" class="form-label">Sort By:</label>
+          <select class="form-select" id="sortOptions">
+            <option selected>Newest</option>
+            <option>Oldest</option>
+            <option>Most Popular</option>
+          </select>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="../assets/img/p1.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">My Most happy Day</h5>
+                <p class="card-text">
+                  I was asked by he head teacher at my kindergadern to represent
+                  the school for a photo shoot
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../assets/img/p2.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">My Most happy Day</h5>
+                <p class="card-text">
+                  I was asked by he head teacher at my kindergadern to represent
+                  the school for a photo shoot
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../assets/img/p3.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">My Most happy Day</h5>
+                <p class="card-text">
+                  I was asked by he head teacher at my kindergadern to represent
+                  the school for a photo shoot
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../assets/img/p4.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">My Most happy Day</h5>
+                <p class="card-text">
+                  I was asked by he head teacher at my kindergadern to represent
+                  the school for a photo shoot
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../assets/img/p5.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">My Most happy Day</h5>
+                <p class="card-text">
+                  I was asked by he head teacher at my kindergadern to represent
+                  the school for a photo shoot
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="../assets/img/p6.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">My Most happy Day</h5>
+                <p class="card-text">
+                  I was asked by he head teacher at my kindergadern to represent
+                  the school for a photo shoot
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3>Create New Post</h3>
+          <form>
+            <div class="mb-3">
+              <label for="postTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="postTitle" required />
+            </div>
+            <div class="mb-3">
+              <label for="postDescription" class="form-label">Description</label>
+              <textarea class="form-control"id="postDescription" rows="3" required></textarea>
+            </div>
+            <a href="/profile-page/index.html" class="btn btn-primary">Post</a>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer class="container bg-secondary py-2 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-3">
+            <a class="nav-item nav-link active" href="/index.html">Login</a>
+          </div>
+          <div class="col col-md-3">
+            <a class="nav-item nav-link active" href="/feed-page/index.html">Feed</a>
+          </div>
+          <div class="col col-md-3">
+            <a class="nav-item nav-link active" href="/profile-page/index.html">profile</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

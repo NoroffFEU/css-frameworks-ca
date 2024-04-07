@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4639419757.js" crossorigin="anonymous"></script>
+    <title>Vibely | Feed</title>
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <script type="module" src="/src/js/index.js"></script>
+</head>
+<body>
+    <div class="container-lg overflow-hidden">
+        <div class="row vh-100 overflow-auto">
+            <header class="col-12 col-lg-3 col-xl-2 d-flex sticky-top mx-lg-5 mt-lg-5 bg-secondary rounded-4 shadow mh-75">
+                <nav class="d-flex flex-wrap d-lg-block flex-lg-column flex-row flex-grow-1 align-items-center align-items-lg-start px-sm-2 px-lg-3 mt-4">
+                    <a href="/feed/" class="text-decoration-none d-flex justify-content-center p-3"><h2>Vibely</h2></a>
+                    <span class="d-none d-lg-flex flex-md-column flex-wrap align-items-center py-4">
+                        <a href="/profile/"><img class="rounded-circle" src="/images/cecaur.png" width="100" height="100"></a>
+                        <a href="/profile/" class="text-decoration-none"><h3 class="text-center">Cecilie Aagedal</h3></a>
+                        <a href="/profile/" class="text-decoration-none">@CAagedal</a>
+                    </span>
+                    <ul class="nav flex-lg-column flex-row flex-nowrap justify-content-center align-items-center align-items-md-start flex-shrink-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/feed/"><i class="fa-solid fa-house"></i> <span class="d-none d-md-inline">Home</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i> <span class="d-none d-md-inline">Explore</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i> <span class="d-none d-md-inline">Notifications</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-comments"></i> <span class="d-none d-md-inline">Messages</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main class="h-sm-100 d-flex col mt-lg-5">
+                <div class="row">
+                    <section class="d-flex flex-row-reverse">
+                        <div class="input-group mb-3 w-25">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                          </div>
+                    </section>
+                    <section>
+                        <div class="mt-5 d-flex align-items-center gap-4">
+                            <img src="/images/cecaur.png" class="rounded-circle" height="50" width="50">
+                            <p>Cecilie Aagedal (@CAagedal)</p>
+                        </div>
+                        <div class="form-floating">
+                            <textarea class="form-control mt-3" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">What are you thinking about?</label>
+                          </div>
+                        <button type="submit" class="btn btn-secondary my-3 text-primary">post</button>
+                    </section>                
+                    <section class="row border-bottom my-3">
+                            <ul class="nav d-flex justify-content-evenly">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-secondary" aria-current="page" href="#">Following</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-secondary" href="#">For you</a>
+                                </li>
+                                <li class="nav-item">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-filter"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#">Action</a></li>
+                                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        </ul>
+                                      </div>
+                                </li>
+                            </ul>
+                    </section>
+                    <section class="row">
+                        <div>
+                            <div class="card bg-secondary rounded-4 m-md-5 border-0 my-5">
+                                <div class="card-body m-md-3">
+                                    <div class="d-flex align-items-center ">
+                                        <img src="/images/cecaur.png" class="rounded-circle" height="50" width="50">
+                                        <p class="text-primary px-2">Cecilie Aagedal (@CAagedal)</p>
+                                    </div> 
+                                    <p class="text-primary pt-3">"Discovered that my dog dreams in woof. 🐶💤 Wondering if she's barking at mailmen in her sleep or just singing the songs of her people. #DogDreams #WoofInSleep"</p>
+                                    <div class="d-flex flex-row-reverse gap-4">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                        <i class="fa-solid fa-retweet"></i>
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-comment"></i>
+                                    </div>                                
+                                </div>
+                            </div> 
+                            <div class="card bg-secondary rounded-4 m-md-5 border-0 my-5">
+                                <div class="card-body m-md-3">
+                                    <div class="d-flex align-items-center ">
+                                        <img src="/images/cecaur.png" class="rounded-circle" height="50" width="50">
+                                        <p class="text-primary px-2">Cecilie Aagedal (@CAagedal)</p>
+                                    </div> 
+                                    <p class="text-primary pt-3">"Discovered that my dog dreams in woof. 🐶💤 Wondering if she's barking at mailmen in her sleep or just singing the songs of her people. #DogDreams #WoofInSleep"</p>
+                                    <div class="d-flex flex-row-reverse gap-4">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                        <i class="fa-solid fa-retweet"></i>
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-comment"></i>
+                                    </div>                                
+                                </div>
+                            </div>  
+                            <div class="card bg-secondary rounded-4 m-md-5 border-0 my-5">
+                                <div class="card-body m-md-3">
+                                    <div class="d-flex align-items-center ">
+                                        <img src="/images/cecaur.png" class="rounded-circle" height="50" width="50">
+                                        <p class="text-primary px-2">Cecilie Aagedal (@CAagedal)</p>
+                                    </div> 
+                                    <p class="text-primary pt-3">"Discovered that my dog dreams in woof. 🐶💤 Wondering if she's barking at mailmen in her sleep or just singing the songs of her people. #DogDreams #WoofInSleep"</p>
+                                    <div class="d-flex flex-row-reverse gap-4">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                        <i class="fa-solid fa-retweet"></i>
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-comment"></i>
+                                    </div>                                
+                                </div>
+                            </div>  
+                            <div class="card bg-secondary rounded-4 m-md-5 border-0 my-5">
+                                <div class="card-body m-md-3">
+                                    <div class="d-flex align-items-center ">
+                                        <img src="/images/cecaur.png" class="rounded-circle" height="50" width="50">
+                                        <p class="text-primary px-2">Cecilie Aagedal (@CAagedal)</p>
+                                    </div> 
+                                    <p class="text-primary pt-3">"Discovered that my dog dreams in woof. 🐶💤 Wondering if she's barking at mailmen in her sleep or just singing the songs of her people. #DogDreams #WoofInSleep"</p>
+                                    <div class="d-flex flex-row-reverse gap-4">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                        <i class="fa-solid fa-retweet"></i>
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-comment"></i>
+                                    </div>                                
+                                </div>
+                            </div>  
+                            <div class="card bg-secondary rounded-4 m-md-5 border-0 my-5">
+                                <div class="card-body m-md-3">
+                                    <div class="d-flex align-items-center ">
+                                        <img src="/images/cecaur.png" class="rounded-circle" height="50" width="50">
+                                        <p class="text-primary px-2">Cecilie Aagedal (@CAagedal)</p>
+                                    </div> 
+                                    <p class="text-primary pt-3">"Discovered that my dog dreams in woof. 🐶💤 Wondering if she's barking at mailmen in her sleep or just singing the songs of her people. #DogDreams #WoofInSleep"</p>
+                                    <div class="d-flex flex-row-reverse gap-4">
+                                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                                        <i class="fa-solid fa-retweet"></i>
+                                        <i class="fa-solid fa-heart"></i>
+                                        <i class="fa-solid fa-comment"></i>
+                                    </div>                                
+                                </div>
+                            </div>                             
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer class="d-flex flex-shrink-1 justify-content-center align-items-center">
+                <p class="py-3">© 2024 Vibely</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

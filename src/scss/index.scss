@@ -1,1 +1,6 @@
+@import "/src/scss/colors.scss";
 
+@import "../../node_modules/bootstrap/scss/functions";
+
+$secondary: red; 
+@import "../../node_modules/bootstrap/scss/bootstrap";

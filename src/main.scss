@@ -1,4 +1,4 @@
-@import './scss/tools', './scss/variables', './scss/error-reg';
+@import './scss/tools', './scss/variables', './scss/error-reg', './scss/post', './scss/header';
 
 body {
     background-color: $background-color !important;
@@ -12,7 +12,7 @@ body {
 
 .index-banner {
 
-    background: $primary-color;
+    background: $primary;
     border-radius: 0 0 100px 100px;
     height: 270px;
 
@@ -24,12 +24,12 @@ body {
 
 .index-button {
     width: 150px;
-    background-color: $secondary-color !important;
+    background-color: $secondary !important;
     border: none !important;
     font-weight: $f-medium !important;
 
     &:hover {
-        background-color: $primary-color !important;
+        background-color: $primary !important;
     }
 }
 
@@ -39,14 +39,50 @@ body {
 
 .registration {
 
-    background-color: $secondary-color;
-    border-radius: 100px 100px 0 0;
     padding: 100px;
+    
 }
 
 .register-form {
     max-width: 500px;
 }
+
+
+.profile {
+
+    &-image {
+        cursor: pointer;
+    }
+
+    &-stats {
+
+        &-col {
+    
+            background-color: $secondary;
+            border-radius: 20px;
+            min-width: 80px;
+            border: 2px solid $primary;
+            cursor: pointer
+        }
+
+        &-text {
+            font-weight: $f-bold;
+            font-family: $text-family;
+        }
+    }
+
+    &-pinned {
+
+        &-img{
+
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+
+}
+
 
 
 

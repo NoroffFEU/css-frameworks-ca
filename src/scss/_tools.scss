@@ -1,3 +1,5 @@
+@import 'variables';
+
 .no-pad {
     padding: 0;
 }
@@ -14,4 +16,8 @@
 
 .gap-10 {
     gap: 10px;
+}
+
+.bold {
+    font-weight: $f-bold;
 }

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/src/media/quiply-icon.png">
+
+    <link rel="stylesheet" href="/styles.css">
+    <title>Feed</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid d-flex justify-content-between">
+                <a href="/src/feed/index.html">
+                    <img src="/src/media/quiply-icon.png" alt="Quiply logo">
+                </a>
+                <div class="d-flex gap-10 align-items-center">
+                    <a href="/src/profile/index.html" class="nav-link">
+                        <img src="/src/media/profile-image.png" alt="Profile link">
+                    </a>
+                    <form action="/index.html">
+                        <button class="btn btn-primary">Logout</button>
+                    </form>
+                </div>
+            </div>
+                    
+          </nav>
+    </header>
+    <main class="feed">
+        <div class="container">
+            <h1 class="mt-4 mb-3">Feed Page</h1>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search...">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">Search</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body bg-secondary">
+                <h2 class="card-title">New Quip</h2>
+                <form>
+                  <div class="form-group">
+                    <label for="postDescription"></label>
+                    <textarea class="form-control" id="postDescription" rows="3" placeholder="Enter description"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sortOptions"></label>
+                <select class="form-control" id="sortOptions">
+                  <option>Newest</option>
+                  <option>Oldest</option>
+                  <option>Most Popular</option>
+                </select>
+            </div>
+
+            <div class="container">
+                <div class="profile-posts-row row justify-content-center">
+                    <div class="profile-posts-col col-12 col-lg-8 d-flex flex-column m-2 post p-4">
+                        <div class="profile-content flex-center gap-10">
+                            <div class="post-image flex-center flex-column p-2">
+                                <img class="post-image-img" src="/src/media/profile-image.png" alt="Profile image">
+                                <p class="m-0">
+                                    DanielEker
+                                </p>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ea.</p>
+                                <div class="post-action d-flex gap-10">
+                                    <div class="post-action-like flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/heart.png" alt="Like icon">
+                                        <p class="post-action-count m-0 bold text-start">12</p>
+                                    </div>
+                                    <div class="post-action-comment flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/comment.png" alt="Comment icon">
+                                        <p class="post-action-count m-0 bold text-start">3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-posts-col col-12 col-lg-8 d-flex flex-column m-2 post p-4">
+                        <div class="profile-content flex-center gap-10">
+                            <div class="post-image flex-center flex-column p-2">
+                                <img class="post-image-img" src="/src/media/profile-image.png" alt="Profile image">
+                                <p class="m-0">
+                                    DanielEker
+                                </p>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ea.</p>
+                                <div class="post-action d-flex gap-10">
+                                    <div class="post-action-like flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/heart.png" alt="Like icon">
+                                        <p class="post-action-count m-0 bold text-start">12</p>
+                                    </div>
+                                    <div class="post-action-comment flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/comment.png" alt="Comment icon">
+                                        <p class="post-action-count m-0 bold text-start">3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-posts-col col-12 col-lg-8 d-flex flex-column m-2 post p-4">
+                        <div class="profile-content flex-center gap-10">
+                            <div class="post-image flex-center flex-column p-2">
+                                <img class="post-image-img" src="/src/media/profile-image.png" alt="Profile image">
+                                <p class="m-0">
+                                    DanielEker
+                                </p>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ea.</p>
+                                <div class="post-action d-flex gap-10">
+                                    <div class="post-action-like flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/heart.png" alt="Like icon">
+                                        <p class="post-action-count m-0 bold text-start">12</p>
+                                    </div>
+                                    <div class="post-action-comment flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/comment.png" alt="Comment icon">
+                                        <p class="post-action-count m-0 bold text-start">3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-posts-col col-12 col-lg-8 d-flex flex-column m-2 post p-4">
+                        <div class="profile-content flex-center gap-10">
+                            <div class="post-image flex-center flex-column p-2">
+                                <img class="post-image-img" src="/src/media/profile-image.png" alt="Profile image">
+                                <p class="m-0">
+                                    DanielEker
+                                </p>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ea.</p>
+                                <div class="post-action d-flex gap-10">
+                                    <div class="post-action-like flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/heart.png" alt="Like icon">
+                                        <p class="post-action-count m-0 bold text-start">12</p>
+                                    </div>
+                                    <div class="post-action-comment flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/comment.png" alt="Comment icon">
+                                        <p class="post-action-count m-0 bold text-start">3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-posts-col col-12 col-lg-8 d-flex flex-column m-2 post p-4">
+                        <div class="profile-content flex-center gap-10">
+                            <div class="post-image flex-center flex-column p-2">
+                                <img class="post-image-img" src="/src/media/profile-image.png" alt="Profile image">
+                                <p class="m-0">
+                                    DanielEker
+                                </p>
+                            </div>
+                            <div class="post-content">
+                                <p class="post-text m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ea.</p>
+                                <div class="post-action d-flex gap-10">
+                                    <div class="post-action-like flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/heart.png" alt="Like icon">
+                                        <p class="post-action-count m-0 bold text-start">12</p>
+                                    </div>
+                                    <div class="post-action-comment flex-center gap-10">
+                                        <img class="post-action-img" src="/src/media/icons/comment.png" alt="Comment icon">
+                                        <p class="post-action-count m-0 bold text-start">3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+          </div>
+    </main>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

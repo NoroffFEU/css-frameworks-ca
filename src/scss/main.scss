@@ -1,4 +1,4 @@
-@import './scss/tools', './scss/variables', './scss/error-reg', './scss/post', './scss/header';
+@import './partials/tools', './partials/variables', './partials/error-reg', './partials/post', './partials/header';
 
 body {
     background-color: $background-color !important;
@@ -87,4 +87,5 @@ body {
 
 
 // Then import Bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap';
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss'

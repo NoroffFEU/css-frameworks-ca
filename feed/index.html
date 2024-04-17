@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <title>MOONLIGHT - Feed</title>
+</head>
+<body class="shadow-lg">
+    <header>
+        <!--NAV FOR TOP PAGE-->
+        <nav class="border-bottom position-relative border-1 d-flex fixed-top justify-content-between m-0 p-2">
+            <h1 class="position-relative font-righteous text-primary fs-7 fs-md-6 m-2 mt-0 ms-4 ">MOONLIGHT</h1>
+            <img src="/images/pinkmoon.png" style="width: 40px; height: 40px;" class="d-flex position-absolute" alt="Moon">
+            <form class="form-inline d-flex mw-50 justify-content-center md-form form-sm search-box m-2 pb-1 border-bottom border-2 border-primary">
+                <div class="input-group border border-0 search-box">
+                    <i class="bi bi-search-heart pt-1" aria-hidden="true"></i>
+                    <input class="form-control form-control-sm border border-0" type="text" placeholder="Search" aria-label="Search">            
+                </div>
+                <button class="btn btn-outline-primary my-1 p-1 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <!--NAV FOR BOTTOM PAGE  / FIXED-->
+        <nav class="navbar d-flex justify-content-between align-items-center m-auto border-top border-1 border-primary fixed-bottom navbar-light bg-white" style="max-width: 1100px;">
+            <div class="container d-flex justify-content-center align-items-center text-primary h-25 m-auto" style="max-width: 600px;">
+                <a class="navbar-brand m-auto text-secondary active" href="/feed"><i class="bi bi-house-fill" style="font-size: 30px;"></i></a>
+                <a class="navbar-brand m-auto text-primary rounded-circle" href="#"><i class="bi bi-chat-heart-fill" style="font-size: 30px;"></i></a>
+                <div class="bg-white mt-n5 px-2 border border-3 border-primary rounded-circle"><a class="navbar-brand m-auto text-primary" href="#sharepost"><i class="bi bi-plus-circle-fill " style="padding-left: 2px; font-size: 2.4em;"></i></a></div>
+                <a class="navbar-brand m-auto text-primary" href="/profile"><i class="bi bi-person-hearts boot-icon p-0" style="font-size: 30px;"></i></a>
+                <a class="navbar-brand m-auto text-primary" href="#"><i class="bi bi-heart-fill" style="font-size: 30px;"></i></a>
+            </div>
+        </nav> 
+    </header>
+    <main class="pt-3">
+        <!--UPLOAD POST-->
+        <form id="sharepost" class="w-100 justify-content-center m-auto">
+            <div class="container-sm p-2 border border-4 border-black border-opacity-75 text-primary m-auto justify-content-center rounded-4 w-75 w-md-50">
+                <div class="row d-block d-md-flex m-auto justify-content-center">
+                    <h1 class="text-center fs-5">ADD NEW POST</h1>
+                    <div class="col col-md-6 mb-6 pt-2">
+                        <label for="textarea" class="fs-6 pb-2 ps-1">Add your text</label>
+                        <textarea rows="3" class="form-control fs-7" placeholder="What's on your mind..." id="textarea"></textarea>
+                    </div>
+                    <div class="col col-md-6 justify-content-center m-auto mt-n3 mt-md-0">
+                        <label for="form-post" class="form-label fs-6 text-primary mt-5 mt-md-2 ps-1">Choose image</label>
+                        <input class="form-control form-control-sm" id="form-post" type="file">        
+                        <div class="col-12 mt-4 mb-3 pt-1 mt-md-3 m-auto justify-content-center">
+                            <button type="submit" class="btn btn-white p-0 w-100 border border-2 border-primary rounded lt-sp fw-bold" style="width: 120px;">SHARE <i class="bi bi-share-fill"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--SORT - Doesn't open-->
+        <div class="container-sm">
+            <div class="row">
+                <span class="d-none d-md-flex col-lg-1 ms-lg-4"></span>
+                <div class="col-5 col-lg-3 ms-3 ms-sm-n2">
+                    <div class="dropdown border-bottom border-2 border-primary mw-25 mt-5">
+                        <button class="btn btn-white dropdown-toggle fs-6 fs-lg-5 fw-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          SORT
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">OLD TO NEW</a>
+                            <a class="dropdown-item" href="#">NEW TO OLD</a>
+                            <a class="dropdown-item" href="#">MOST LIKED</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--POSTS-->
+         <section style="max-width: 800px;" class="d-block m-auto mt-5 w-100 w-sm-75 w-md-50 p-3">
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-black border-opacity-50">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/cb.jpg" alt="Profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Cathrine Bekk</h2>
+                                <p class="fs-8 mt-n2 text-black">28.03.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end text-primary">
+                            <p><i class="bi bi-star px-1 fs-3"></i>899</p>
+                            <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>645</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Returning to work after leave brings a mix of emotions. Excitement to reconnect, but also nerves about the unknown. Yet, I remind myself: feeling nervous is natural. I'm ready to embrace this transition with openness and resilience, knowing growth awaits beyond my comfort zone."</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/work.jpeg" alt="Backtowork">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>899</p>
+                                    <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>645</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-black border-opacity-50">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/sk.jpg" alt="Profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Sevina Khan</h2>
+                                <p class="fs-8 mt-n2 text-black">16.03.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end text-primary">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1206</p>
+                            <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>895</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Moving to a new place is like turning the page to a new chapter in life. There's excitement for the adventures that lie ahead, yet there's also a tinge of apprehension about leaving the familiar behind. But with each box packed and each step taken, I remind myself that change brings growth, and every new beginning is an opportunity to write a beautiful story filled with memories yet to be made."</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/move.jpeg" alt="Movingaway">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1206</p>
+                                    <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>895</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-black border-opacity-50">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/hh.jpg" alt="Profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Håkon Hansen</h2>
+                                <p class="fs-8 mt-n2 text-black">18.02.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end text-primary">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1396</p>
+                            <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>1595</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Rallying is like a high-speed dance between man and machine, where every twist and turn is a thrilling performance of skill, courage, and adrenaline. Just remember, it's not the size of the car that matters, but the size of the driver's heart."</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/rally.jpeg" alt="Rally">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1396</p>
+                                    <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>1595</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-black border-opacity-50">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/jf.jpg" alt="Profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Jeccy Fort</h2>
+                                <p class="fs-8 mt-n2 text-black">04.02.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end text-primary">
+                            <p><i class="bi bi-star px-1 fs-3"></i>974</p>
+                            <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>873</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Baking is like a delicious science experiment where the end result is always a treat worth savoring. Just remember, even if your cake doesn't rise as planned, you still get to eat the evidence!"</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/cake.jpeg" alt="Cake-baking">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>974</p>
+                                    <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>873</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-black border-opacity-50">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/hb.jpg" alt="Profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Henrik Bekk</h2>
+                                <p class="fs-8 mt-n2 text-black">26.01.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end text-primary">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1670</p>
+                            <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>1393</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Electricity is the silent force that powers our modern world, illuminating our homes, fueling our technologies, and connecting us across vast distances. It's the invisible thread weaving through the fabric of our daily lives, sparking innovation and driving progress towards a brighter, more sustainable future."</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/voltage.avif" alt="Cake-baking">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1670</p>
+                                    <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>1393</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-black border-opacity-50">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/ym.jpg" alt="Profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Yadu Mehman</h2>
+                                <p class="fs-8 mt-n2 text-black">05.01.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end text-primary">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1820</p>
+                            <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>1292</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Training isn't just about building muscle or endurance; it's about cultivating strength from within, pushing past limitations, and discovering the power of resilience. Each session is an opportunity to redefine what's possible, to sweat out doubts and insecurities, and to emerge stronger, both physically and mentally. So let's lace up those shoes, embrace the burn, and show the world what we're made of."</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/training.avif" alt="Training">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1820</p>
+                                    <p class="ms-3"><i class="bi bi-send px-1 fs-3"></i>1292</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </section>
+    <!--OLDER POST BTN--> 
+       <div class="container text-center mt-4">
+            <div class="row m-auto justify-content-center">
+                <div class="col p-0">
+                    <button class="btn btn-white m-0 px-2 pt-1 p-0">                    
+                        <p class="mb-n2 py-0 px-1 font-righteous text-primary">OLDER</p> 
+                        <p class="mb-n2">POSTS</p>
+                        <i class="bi bi-caret-down fs-1 text-primary"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mb-5 pb-5">
+        <div class="container-fluid mb-3 mt-5 pt-3 d-block border-top border-4 border-primary">
+            <div class="row d-flex text-center pb-4 m-auto justify-content-center">
+                <div class="col-7" style="max-width: 180px;">
+                    <h1 class="font-righteous text-primary fs-7 ms-1 ms-md-2 mb-0">MOONLIGHT</h1>
+                    <img src="/images/pinkmoon.png" style="width: 40px; height: 40px;" class="d-flex mt-n4 ms-2 ms-md-1" alt="Moon">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <p class="fs-7 font-righteous text-center">Copyright &copy; 2024 - Moonlight</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

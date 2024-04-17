@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <title>MOONLIGHT - My profile</title>
+</head>
+<body class="shadow-lg">
+    <header>
+        <!--NAV FOR TOP PAGE-->
+        <nav class="border-bottom position-relative border-1 d-flex fixed-top justify-content-between m-0 p-2">
+            <h1 class="position-relative font-righteous text-primary fs-7 fs-md-6 m-2 mt-0 ms-4 ">MOONLIGHT</h1>
+            <img src="/images/pinkmoon.png" style="width: 40px; height: 40px;" class="d-flex position-absolute" alt="Moon">
+            <form class="form-inline d-flex mw-50 justify-content-center md-form form-sm search-box m-2 pb-1 border-bottom border-2 border-primary">
+                <div class="input-group border border-0 search-box">
+                    <i class="bi bi-search-heart pt-1" aria-hidden="true"></i>
+                    <input class="form-control form-control-sm border border-0" type="text" placeholder="Search" aria-label="Search">            
+                </div>
+                <button class="btn btn-outline-primary my-1 p-1 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <!--NAV FOR BOTTOM PAGE  / FIXED-->
+        <nav class="navbar d-flex justify-content-between align-items-center m-auto border-top border-1 border-primary fixed-bottom navbar-light bg-white" style="max-width: 1100px;">
+            <div class="container d-flex justify-content-center align-items-center text-primary h-25 m-auto" style="max-width: 600px;">
+               <a class="navbar-brand m-auto text-primary" href="/feed"><i class="bi bi-house-fill" style="font-size: 30px;"></i></a>
+               <a class="navbar-brand m-auto text-primary" href="#"><i class="bi bi-chat-heart-fill" style="font-size: 30px;"></i></a>
+               <div class="bg-white mt-n5 px-2 m-auto border border-3 border-primary rounded-circle"><a class="navbar-brand m-auto text-primary" href="/feed/#sharepost"><i class="bi bi-plus-circle-fill " style="padding-left: 2px; font-size: 2.4em;"></i></a></div>
+               <a class="navbar-brand m-auto text-secondary active" href="/profile"><i class="bi bi-person-hearts" style="font-size: 30px;"></i></a>
+               <a class="navbar-brand m-auto text-primary" href="#"><i class="bi bi-heart-fill" style="font-size: 30px;"></i></a>
+            </div>
+        </nav> 
+    </header>
+    <main>
+        <div class="container-lg profilebackground p-0 m-auto"></div>
+        <div class="container-lg d-block m-auto justify-content-center border-bottom border-2 border-primary pb-4">
+            <div class="row d-flex text-primary bg-white mt-n4 justify-content-center border-top border-2 border-primary rounded-top-5">
+                <div class="col-3 d-block text-center text-primary mt-2 p-0">
+                    <p class="fs-5 fw-bold text-primary">8,3K</p>
+                    <p class="fs-7 mt-n3 text-uppercase">Followers</p>
+                </div>
+                <div class="col-4 col-md-3 profileimage d-flex mt-n1 mt-md-n4 p-0">
+                    <img src="/images/profileimages/profileimg.jpeg" class="profile-image m-auto mt-n5 border border-3 border-primary bg-white rounded-circle pt-n4" style="width: 110px; height: 100px;" alt="Profile img">
+                </div>   
+                <div class="col-3 d-block text-center mt-2 p-0">
+                    <p class="fs-5 fw-bold text-primary">620</p>
+                    <p class="fs-7 mt-n3 text-uppercase">following</p>
+                </div>
+            </div>   
+            <div class="row d-flex py-sm-3 m-auto text-primary">
+                <div class="col-12 profilename d-flex my-2 justify-content-center align-items-center">
+                    <h1 class="fs-4 text-primary m-0 rounded fw-semibold">Rena Hashimi</h1>
+                </div>
+            </div>
+
+            <div class="row d-flex mt-4">
+                <div class="col-6">
+                    <button class="btn btn-white float-end p-0 px-1 border border-2 border-primary fw-bold" style="width: 130px;">FOLLOW <i class="bi bi-plus-lg"></i></button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-white float-start p-0 px-1 border border-2 border-primary rounded fw-bold" style="width: 130px;">MESSAGE <i class="bi bi-envelope-heart"></i></button>
+                </div>
+            </div>
+        </div> 
+    <!--POSTS-->
+        <section style="max-width: 800px;" class="d-block flex-wrap-column m-auto d-block m-auto w-100 p-2 p-md-5">
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row shadow-lg justify-content-left m-auto border border-3 border-primary border-opacity-75">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/profileimg.jpeg" alt="My profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Rena Hashimi</h2>
+                                <p class="fs-8 mt-n2 text-black">20.03.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1267</p>
+                            <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>745</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Happy Novruz! May this celebration bring you the joy of spring's arrival, the warmth of cherished traditions, and the blessings of renewal and prosperity. Wishing you and your loved ones a beautiful and festive Novruz filled with love, happiness, and abundance."</p>
+                        </div>
+                        <div class="col col-md-5 d-block p-0 pe-md-2 pb-1">                            
+                            <img class="border border-2 border-black mb-1 w-100 h-100" src="/images/postimages/semeni.jpeg" alt="Semeni / Novruz">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                 <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1267</p>
+                                    <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>745</p> 
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-primary border-opacity-75">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/profileimg.jpeg" alt="My profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Rena Hashimi</h2>
+                                <p class="fs-8 mt-n2 text-black">13.03.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end">
+                            <p><i class="bi bi-star px-1 fs-3"></i>4388</p>
+                            <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>985</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Happy 5th Birthday, my precious one! Each year, you shine brighter and fill our lives with more joy. May your special day be as magical and sweet as you are. Here's to a day filled with laughter, hugs, and all the fun in the world. Love you to the moon and back!"</p>
+                        </div>
+                        <div class="col col-md-5 p-0 pe-md-2 pb-1">                            
+                            <img class=" w-100 h-100 border border-2 border-black mb-1" src="/images/postimages/b-cake.jpeg" alt="Cake">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>4388</p>
+                                    <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>985</p>
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-primary border-opacity-75">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/profileimg.jpeg" alt="My profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Rena Hashimi</h2>
+                                <p class="fs-8 mt-n2 text-black">28.02.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end">
+                            <p><i class="bi bi-star px-1 fs-3"></i>2434</p>
+                            <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>1398</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Introducing your children to the enchanting worlds of Harry Potter, Marvel, and Disney is like opening the doors to a treasure trove of imagination and wonder. Each of these universes offers unique stories, characters, and lessons that can captivate young hearts and minds."</p>
+                        </div>
+                        <div class="col col-md-5 p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100 border border-2 border-black mb-1" src="/images/postimages/marvel.jpeg" alt="Marvel">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                <div class="d-flex">                                
+                                    <p><i class="bi bi-star px-1 fs-3"></i>2434</p>
+                                     <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>1398</p>
+                                    </div>
+                                    <div class="float end">
+                                        <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-primary border-opacity-75">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/profileimg.jpeg" alt="My profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Rena Hashimi</h2>
+                                <p class="fs-8 mt-n2 text-black">06.02.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1459</p>
+                            <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>568</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Feeling grateful for what we have while recognizing that not everyone shares the same blessings is not shame; it's empathy and humility. It's an acknowledgment of our privilege and a reminder to use it to uplift others. It's about cultivating a spirit of generosity and compassion, knowing that we have the power to create a more equitable world for everyone."</p>
+                        </div>
+                        <div class="col col-md-5 p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100 border border-2 border-black mb-1" src="/images/postimages/zen-stones.jpeg" alt="Zen Stones">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1459</p>
+                                    <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>568</p>
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div id="postbackground" class="row justify-content-left m-auto m-2 border border-3 border-primary border-opacity-75">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/profileimg.jpeg" alt="My profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Rena Hashimi</h2>
+                                <p class="fs-8 mt-n2 text-black">20.01.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end">
+                            <p><i class="bi bi-star px-1 fs-3"></i>1045</p>
+                            <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>497</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Life is full of unexpected twists and turns, but within each challenge lies an opportunity for growth and discovery. Embrace each moment, find joy in the little things, and let your heart be your guide. For in the end, it's not about reaching the finish line, but how we choose to dance in the rain and chase our dreams amidst life's ever-changing winds."</p>
+                        </div>
+                        <div class="col col-md-5 p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/jumpingsunset.jpeg" alt="Jumping lady">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>1045</p>
+                                    <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>497</p>
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-2 fs-3 d-flex float-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-sm d-block justify-content-center my-3 m-auto">
+                <div class="row justify-content-left m-auto m-2 border border-3 border-primary border-opacity-75">
+                    <div class="col p-2 pb-0 bg-white d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="profileimg" src="/images/profileimages/profileimg.jpeg" alt="My profile image">
+                            <div class="px-3 text-primary">
+                                <h2 class="fs-6 mt-1">Rena Hashimi</h2>
+                                <p class="fs-8 mt-n2 text-black">01.01.2024</p>
+                            </div>
+                        </div>
+                        <div class="bg-white fs-6 d-none d-sm-flex float-end">
+                            <p><i class="bi bi-star px-1 fs-3"></i>3767</p>
+                            <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>1288</p>
+                            <i class="bi bi-bookmark ms-3 fs-3"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0 p-1 pt-2 d-block d-sm-flex border-top border-primary border-2">
+                        <div class="col col-md-7">
+                            <p>"Waking up my kids for New Year's Eve fireworks is like herding sleepy zombies. They stumble out of bed, eyes barely open, and by the time we get outside, they're halfway to dreamland. But hey, who needs fireworks when you've got your own comedy show in pajamas?  Happy New Year from our sleepy squad to yours!"</p>
+                        </div>
+                        <div class="col col-md-5 p-0 pe-md-2 pb-1">                            
+                            <img class="w-100 h-100  border border-2 border-black mb-1" src="/images/postimages/firecracker.jpg" alt="Fire Cracker">
+                            <div class="bg-white fs-7 border-top border-2 border-primary p-2 pb-0 d-flex d-sm-none justify-content-between">
+                                <div class="d-flex">
+                                    <p><i class="bi bi-star px-1 fs-3"></i>3767</p>
+                                    <p class="ps-3"><i class="bi bi-send px-1 fs-3"></i>1288</p>
+                                </div>
+                                <div class="float end">
+                                    <i class="bi bi-bookmark p-0 mb-n4 fs-3 d-flex float-end"></i>
+                                </div>  
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+    <!--OLDER POST BTN--> 
+        <div class="container text-center mt-4">
+            <div class="row m-auto justify-content-center">
+                <div class="col p-0">
+                    <button class="btn btn-white m-0 px-2 pt-1 p-0">                    
+                        <p class="mb-n2 py-0 px-1 font-righteous text-primary">OLDER</p> 
+                        <p class="mb-n2">POSTS</p>
+                        <i class="bi bi-caret-down fs-1 text-primary"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mb-5 pb-5">
+        <div class="container-fluid mb-3 mt-5 pt-3 d-block border-top border-4 border-primary">
+            <div class="row d-flex text-center pb-4 m-auto justify-content-center">
+                <div class="col-7" style="max-width: 180px;">
+                    <h1 class="font-righteous text-primary fs-7 ms-1 ms-md-2 mb-0">MOONLIGHT</h1>
+                    <img src="/images/pinkmoon.png" style="width: 40px; height: 40px;" class="d-flex mt-n4 ms-2 ms-md-1" alt="Moon">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <p class="fs-7 font-righteous text-center">Copyright &copy; 2024 - Moonlight</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

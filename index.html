@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+    <title>MOONLIGHT - Sosial Media App</title>
+</head>
+<body class="shadow-lg">
+    <header> 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col mt-4 pt-3">
+                    <h2 class="text-center fs-7 text-muted">Share your thoughts and inspire others at <span class="fw-bolder">Moonlight</span><i class="bi bi-moon p-1"></i></h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <body>
+    <main>
+        <section class="d-block pb-3 pt-md-5 justify-content-center m-auto">
+            <section class="d-block d-md-flex px-md-4">
+            <div id="medianame" class="container-fluid d-flex mt-2 mb-0  align-items-center justify-content-center" style="max-width: 300px; max-height: 200px;">
+                <div class="row">
+                    <img src="/images/pinkmoon.png" class="col-5 position-relative my-5 m-0 ps-3" alt="Moon">
+                    <h1 class="col-7 text-primary text-center mt-5 pt-4 pt-md-3 pt-lg-3 fs-1 fs-sm-5 me-n6 font-righteous">MOONLIGHT</h1>
+                </div>
+            </div>
+            <div class="container-fluid form-group d-block mt-1 justify-content-center text-black" style="max-width: 300px;">
+                <form class="was-validated" action="/profile">
+                    <div class="mb-3 mt-1 pt-4">
+                        <div class="input-group border border-2">
+                            <div class="input-group-addon p-0 bg-primary text-white">
+                                <i class="bi bi-at mt-2 p-0 fs-2 px-2"></i>
+                            </div>
+                            <label for="emailHelp" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{12,}$" class="form-label d-none">Email</label>
+                            <input type="email" class="form-control rounded-0" id="emailHelp" placeholder="EMAIL" required>
+                            <span id="emailHelp invalid-feedback" class="form-text px-1 text-danger fs-9 border-0">
+                                Enter your email address.
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="mb-0">
+                        <div class="input-group border border-2">
+                            <div class="input-group-addon p-0 bg-primary text-white">
+                                <i class="bi bi-key mt-2 fs-2 px-2"></i>
+                            </div>
+                            <label for="passwordHelpBlock" class="form-label d-none">Password</label>
+                            <input type="password" class="form-control" id="passwordHelpBlock" placeholder="PASSWORD" minlength="8" required>
+                            <span id="passwordHelpBlock invalid-feedback" class="form-text text-danger px-1 fs-9 border-0">
+                                Must be more than 8 characters.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-2 form-check d-block justify-content-between">
+                        <div class="d-block form-text ms-n4 mb-1">
+                            <a class="pl-md-4 text-black" href="/">Forgot password?</a>
+                        </div >
+                        <input type="checkbox" class="form-check-input border-primary" id="exampleCheck1">
+                        <label class="form-check-label text-primary" for="exampleCheck1">Keep me logged in!</label>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center">
+                        <!-- <button type="submit" class="d-flex btn btn-primary fs-4 mb-4 px-5 border-white">LOGIN</button> -->
+                        <button type="submit" class="btn btn-white d-flex fs-4 m-4 px-5 py-0 border-primary border-4 fw-bolder" role="button">SIGN IN</button>
+                    </div> 
+                </form>
+            </div>
+        </section>
+            <div class="container-fluid shadow bg-white text-uppercase my-3 py-1 border-top border-bottom border-3 border-primary">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="font-righteous p-3 fs-5 text-center">Not a member yet?</h3>
+                    </div>
+                </div>
+                <div class="row  d-flex align-items-center justify-content-center">
+                    <div class="col d-flex justify-content-center">
+                        <button type="submit" class="d-flex btn btn-white fs-5 mb-4 px-5 py-0 border-primary border-2 fw-bolder">SIGN UP</button>  
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid shadow-lg text-center py-3 mt-3 mt-1">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="font-righteous text-uppercase text-decoration-underline fs-7 fs-1-md mt-2">Available on iPhone and Android</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="mb-5 pb-2">
+        <div class="container-fluid mt-1 mb-5 pb-4 d-block border-top border-4 border-primary">
+            <div class="row mt-3 mb-n5">
+                <div class="col">
+                    <p class="fs-7 font-righteous text-center">Copyright &copy; 2024 - Moonlight</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

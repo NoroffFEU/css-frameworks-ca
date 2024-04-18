@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UnityGrid/Feed</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/sort.js" defer></script>
+  </head>
+  <body>
+    <header class="bg-primary text-white text-center py-4">
+      <h1>UnityGrid</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Feed</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="feed.html">Feed</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-3">
+      <input
+        type="text"
+        id="searchInput"
+        class="form-control"
+        placeholder="Search posts..."
+        onkeyup="filterPosts()"
+      />
+    </div>
+    <div class="container mt-3">
+      <select id="sortSelect" class="form-select" onchange="sortPosts()">
+        <option value="">Sort By</option>
+        <option value="title">Title</option>
+        <option value="date">Date</option>
+      </select>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- First Post -->
+          <div class="card mb-3" data-date="2024-01-01">
+            <img
+              src="images/cheese.webp"
+              class="card-img-top"
+              alt="cheeseboard"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cheeeese</h5>
+              <p class="card-text">
+                Feast your eyes on this epic cheeseboard! 🧀✨ From the creamy
+                Brie to the punchy blue, each cheese is a star of its own.
+                Paired with juicy grapes 🍇, crunchy nuts 🥜, and crisp
+                crackers, it's a flavor journey not to be missed. Perfect for
+                those cozy kitchen gatherings where the laughter is as abundant
+                as the spread! #CheeseLover #GourmetExperience #BoardGoals
+              </p>
+            </div>
+          </div>
+          <!-- Second Post -->
+          <div class="card mb-3" data-date="2024-02-14">
+            <img
+              src="images/elegence.webp"
+              class="card-img-top"
+              alt="Elegant dress"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Defining elegance anew</h5>
+              <p class="card-text">
+                Introducing a masterpiece where fashion meets art 🌟✨ The
+                latest in haute couture has arrived, defining elegance anew.
+                With every intricate detail and sweeping train, this dress isn't
+                just made for the red carpet, but for making history. Are you
+                ready to step into the spotlight? #EleganceRedefined
+                #HauteCouture #FashionForward
+              </p>
+            </div>
+          </div>
+          <!-- Third Post -->
+          <div class="card mb-3" data-date="2024-03-03">
+            <img
+              src="images/future.webp"
+              class="card-img-top"
+              alt="futuristic city"
+            />
+            <div class="card-body">
+              <h5 class="card-title">To the future</h5>
+              <p class="card-text">
+                Zooming into the future! 🚀✨ This cityscape redefines the
+                skyline with neon lights and gravity-defying cars. Where
+                technology soars as high as our dreams, the future isn't just
+                bright; it's dazzling. Are we in the year 3000 yet?
+                #CityOfTomorrow #FuturisticVibes #SciFiLife
+              </p>
+            </div>
+          </div>
+          <!-- Fourth Post -->
+          <div class="card mb-3">
+            <img
+              src="images/coffeeshop.webp"
+              class="card-img-top"
+              alt="Coffeeshop with people talking"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Coffee Corner</h5>
+              <p class="card-text">
+                Find your cozy nook in the hustle of life at our Coffee Corner
+                ☕🌿✨. It's not just coffee, it's a warm embrace in a cup, a
+                peaceful moment, and a sweet escape wrapped in rustic charm.
+                Come in and let the world outside fade away... #CoffeeEscape
+                #CafeVibes #CozyCorner
+              </p>
+            </div>
+          </div>
+          <!-- Fifth Post -->
+          <div class="card mb-3" data-date="2024-05-20">
+            <img
+              src="images/kitchen.webp"
+              class="card-img-top"
+              alt="Nice kitchen"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Kitchen Goals</h5>
+              <p class="card-text">
+                Sleek lines, cool marble, and the glow of natural light. ✨ This
+                isn't just a kitchen; it's a statement. Where every meal is a
+                masterpiece and every moment is infused with modern luxury.
+                #KitchenGoals #ModernDesign #HomeInspo
+              </p>
+            </div>
+          </div>
+          <!-- Sixth Post -->
+          <div class="card mb-3" data-date="2024-06-30">
+            <img
+              src="images/fishing_lake.webp"
+              class="card-img-top"
+              alt="Serenity lake with boat and dock"
+            />
+            <div class="card-body">
+              <h5 class="card-title">I'm going fishing</h5>
+              <p class="card-text">
+                Cast your line into the sunset's glow, where the waters are as
+                calm as your heart. 🎣🌄 This is where the busy world fades and
+                the simple joy of fishing takes over. Serenity isn't just a
+                place, it's the feeling you get with a rod in hand and nature's
+                symphony all around. #FishingParadise #CatchAndRelease
+                #PeacefulWaters
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer fixed-bottom py-3 bg-light">
+      <div class="container d-flex justify-content-between">
+        <span class="text-muted">© 2024 UnityGrid</span>
+        <span>Designed by <strong>Robert Filep</strong></span>
+      </div>
+    </footer>
+  </body>
+</html>

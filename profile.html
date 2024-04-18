@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <header class="bg-primary text-white text-center py-4">
+      <h1>UnityGrid</h1>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">User Profile</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="feed.html">Feed</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <img
+                src="images/profile.JPG"
+                alt="Profile Picture"
+                class="img-fluid rounded-circle mb-3"
+              />
+              <h2 class="card-title">Robert Filep</h2>
+              <p class="card-text">Web Developer</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Follow</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">About Me</h2>
+              <p class="card-text">
+                Hello! My name is Robert Filep and I'm a Front-End Student at
+                Noroff. I am passionate about Web development and enjoy F1 and
+                fishing. In my free time, I like to spend time with my family,
+                wife Camilla and my son Sander. I am always eager to learn new
+                things and expand my knowledge in Web-Development. Let's connect
+                and create something amazing together!
+              </p>
+            </div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h2 class="card-title">Following/Followers</h2>
+              <p class="card-text">Following: 100</p>
+              <p class="card-text">Followers: 500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- Posts Section -->
+          <div class="card mb-3" data-date="2024-01-01">
+            <img
+              src="images/cheese.webp"
+              class="card-img-top"
+              alt="cheeseboard"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cheeeese</h5>
+              <p class="card-text">
+                Feast your eyes on this epic cheeseboard! 🧀✨ From the creamy
+                Brie to the punchy blue, each cheese is a star of its own.
+                Paired with juicy grapes 🍇, crunchy nuts 🥜, and crisp
+                crackers, it's a flavor journey not to be missed. Perfect for
+                those cozy kitchen gatherings where the laughter is as abundant
+                as the spread! #CheeseLover #GourmetExperience #BoardGoals
+              </p>
+            </div>
+          </div>
+          <div class="card mb-3" data-date="2024-02-14">
+            <img
+              src="images/elegence.webp"
+              class="card-img-top"
+              alt="Elegant dress"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Defining elegance anew</h5>
+              <p class="card-text">
+                Introducing a masterpiece where fashion meets art 🌟✨ The
+                latest in haute couture has arrived, defining elegance anew.
+                With every intricate detail and sweeping train, this dress isn't
+                just made for the red carpet, but for making history. Are you
+                ready to step into the spotlight? #EleganceRedefined
+                #HauteCouture #FashionForward
+              </p>
+            </div>
+          </div>
+          <div class="card mb-3" data-date="2024-03-03">
+            <img
+              src="images/future.webp"
+              class="card-img-top"
+              alt="futuristic city"
+            />
+            <div class="card-body">
+              <h5 class="card-title">To the future</h5>
+              <p class="card-text">
+                Zooming into the future! 🚀✨ This cityscape redefines the
+                skyline with neon lights and gravity-defying cars. Where
+                technology soars as high as our dreams, the future isn't just
+                bright; it's dazzling. Are we in the year 3000 yet?
+                #CityOfTomorrow #FuturisticVibes #SciFiLife
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer fixed-bottom py-3 bg-light">
+      <div class="container d-flex justify-content-between">
+        <span class="text-muted">© 2024 UnityGrid</span>
+        <span>Designed by <strong>Robert Filep</strong></span>
+      </div>
+    </footer>
+  </body>
+</html>

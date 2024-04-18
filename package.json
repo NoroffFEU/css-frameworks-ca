@@ -1,26 +1,43 @@
 {
   "name": "css-frameworks-ca",
   "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
+  "description": "This project leverages Bootstrap and SASS to create responsive front-end designs for a social media application. It includes customized authentication, feed, and profile pages, showcasing modern web development practices and responsive design techniques.",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
+    "build": "sass src/scss:dist/css",
+    "sass": "sass --watch src/scss:index.scss:css/index.css",
+    "watch:scss": "sass --watch src/scss/custom-styles.scss:dist/css/custom-styles.scss",
+    "start": "live-server",
+    "watch": "npm-run-all -p watch:scss start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NoroffFEU/css-frameworks-ca.git"
+    "url": "https://github.com/robfil50219/css-frameworks-ca.git"
   },
   "keywords": [
-    "CSS",
     "CSS",
     "Frameworks",
     "Bootstrap",
     "SCSS",
     "SASS"
   ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
+  "author": "Robert Filep <robfil50219@stud.noroff.no>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+  "homepage": "https://github.com/robfil50219/css-frameworks-ca.git",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.74.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5"
+  }
 }
+
+
+
+
+
+

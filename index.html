@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="dist/css/index.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cherry+Bomb+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login | Bubble</title>
+  </head>
+  <body class="bg-secondary">
+    <div class="container mt-5">
+      <div class="row align-items-center">
+        <!-- HOME COLLAGE -->
+        <div class="col col-md-12 col-lg-5 offset-lg-1 mh-50 p-5 mx-5">
+          <img
+            src="images/login-collage.png"
+            alt=""
+            class="w-100 d-none d-xl-block"
+          />
+        </div>
+
+        <!-- LOGIN WIDGET -->
+        <div
+          class="col col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-1 d-flex flex-column align-items-center"
+        >
+          <h1>
+            <img src="images/logo-with-tagline.svg" alt="" class="img-fluid" />
+          </h1>
+          <div class="card bg-light mt-3 w-100 border-0 rounded-5 shadow">
+            <form action="javascript:void(0);" method="post" class="" onsubmit="window.location.href='profile/index.html'; return false;">
+              <div class="py-5 px-3">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control rounded-4"
+                    id="floatingInput"
+                    placeholder="name@example.com"
+                    pattern=".+@((noroff\.no)|(stud\.noroff\.no))$"
+                    title="Email must end with @noroff.no or @stud.noroff.no"
+                    required
+                  />
+                  <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control rounded-4"
+                    id="floatingPassword"
+                    placeholder="Password"
+                    minlength="8"
+                    title="Password must be at least 8 characters long"
+                    required
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+              <button type="submit" class="text-black text-center btn-success bg-success w-100 border-0 rounded-bottom-5 rounded-top-0 py-3 display-6">
+                Sign in
+              </button>
+            </form>
+            
+          </div>
+          <a
+            href=""
+            class="bg-light rounded-5 w-100 mt-3 border-0 p-3 text-center text-black text-decoration-none"
+          >
+            Don't have a Bubble account?
+            <br />
+            <span
+              class="text-decoration-underline text-primary link-body-emphasis"
+              >Sign up now!</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="container mt-3 mt-md-5 d-flex justify-content-center flex-wrap gap-4"
+    >
+      <a href="">Help</a>
+      <a href="">Join us</a>
+      <a href="">Affiliates</a>
+      <a href="">Legal</a>
+    </footer>
+  </body>
+</html>

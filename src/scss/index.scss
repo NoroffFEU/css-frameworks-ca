@@ -1,1 +1,67 @@
 
+// scss-docs-start color-variables
+$blue:    #1766af !default;
+$indigo:  #8237fb !default;
+$purple:  #6f42c1 !default;
+$pink:    #ff69b4 !default;
+$red:     #FE8E8E !default;
+$orange:  #feaf6f !default;
+$yellow:  #ffda6c !default;
+$green:   #A4C5AB !default;
+$teal:    #29ffbf !default;
+$cyan:    #65e5ff !default;
+// // scss-docs-end color-variables
+
+
+// // scss-docs-start theme-color-variables
+$primary:       $blue;
+$secondary:     #B6CBDE;
+$success:       #A4C5AB;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        #FE8E8E !default;
+$light:         #F5F5F5;
+$dark:          #606060 !default;
+
+// // scss-docs-end theme-color-variables
+$font-family-sans-serif: "Cabin", sans-serif;
+$display-font-family:  "Cherry Bomb One", system-ui;
+
+$primary-text-emphasis:   shade-color($primary, 60%) !default;
+$secondary-text-emphasis: shade-color($secondary, 60%) !default;
+$success-text-emphasis:   shade-color($success, 60%) !default;
+$info-text-emphasis:      shade-color($info, 60%) !default;
+$warning-text-emphasis:   shade-color($warning, 60%) !default;
+$danger-text-emphasis:    shade-color($danger, 50%) !default;
+
+
+$body-tertiary-bg:          #D4E5EF;
+
+$gradient: linear-gradient(180deg, #D4E5EF, #F5F5F5, #B6CBDE);
+
+.card{
+    max-width: 496px;
+}
+
+.profile-thumbnail{
+    width: 48px;
+}
+
+.profile-img{
+    width: 20%;
+    max-width: 200px;
+}
+
+.feed{
+    margin-top: 80px;
+}
+
+.btn.border-bottom-left-radius{
+    border-radius: 0px 0px 0px 2rem;
+}
+
+.btn.border-bottom-right-radius{
+    border-radius:  0px 0px 2rem 0px;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

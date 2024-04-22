@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Cherry+Bomb+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <title>Profile | Bubble</title>
+  </head>
+  <body class="bg-secondary">
+    <!-- HEADER -->
+    <header class="container-fluid">
+      <nav
+        class="navbar mx-auto shadow-lg fixed-top bg-body-tertiary d-flex justify-content-between align-items-center p-2 px-5 rounded-bottom-5"
+        style="max-width: 600px"
+      >
+        <a href=""><i class="bi bi-bell-fill text-black h3"></i></a>
+        <img
+          src="../images/logo.svg"
+          alt="Bubble logo"
+          class="w-50 navbar-brand"
+        />
+        <a href=""><i class="bi bi-envelope-fill text-black h4"></i></a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- PROFILE INFO -->
+      <div class="container-xl m-auto p-0 position-relative">
+        <img src="../images/profile-splash.jpg" alt="" class="img-fluid" style="max-height: 400px; width: 100%; object-fit: cover;" />
+        <img
+          src="../images/profile-cameron.jpg"
+          alt=""
+          class="profile-img img-thumbnail rounded-circle p-0 border-black shadow-lg z-2 position-absolute bottom-0 start-0 m-3 bg-transparent"
+        />
+      </div>
+
+      <div class="container-xl m-auto bg-gradient h-100 pb-5">
+        <div class="row">
+          <div class="col p-3 pb-0 pb-md-3">
+            <h1>Cameron Evergreen</h1>
+            <h2 class="text-dark">@evermorecam</h2>
+          </div>
+
+          <div class="col text-end p-3">
+            <a href="" class="text-black text-decoration-none"
+              >edit profile <i class="bi bi-pencil-square"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-12 col-sm-7 p-3 pt-0">
+            <p>
+              🌿 Nature aficionado with a passion for hiking and discovering
+              hidden trails. Let's explore the great outdoors and share our
+              adventures! 🏔️ #HikerLife #BubbleExplorer 🥾
+            </p>
+          </div>
+
+          <div
+            class="col col-sm-4 d-flex justify-content-center gap-3 gap-lg-5 text-center p-3 pt-0 ps-sm-5"
+          >
+            <a href="" class="text-decoration-none">43<br />followers</a>
+            <a href="" class="text-decoration-none">267<br />following</a>
+            <a href="" class="text-decoration-none">61<br />posts</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- POSTS -->
+      <div class="container pb-5">
+        <div class="card rounded-5 bg-light m-auto p-0 border-0 mb-3">
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <form action="" class="p-3">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="Share your thoughts"
+                      id="newPost"
+                    ></textarea>
+                    <label for="newPost"
+                      ><i class="bi bi-pencil"></i> Share your
+                      thoughts...</label
+                    >
+                  </div>
+                </form>
+                <button
+                  class="btn-success bg-body-tertiary w-100 border-0 rounded-bottom-5 rounded-top-0 py-1"
+                >
+                  <i class="bi bi-camera h3"></i>
+                  <br />
+                  Add a photo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-5 bg-light m-auto p-0 border-0 mb-3">
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <p class="card-text px-4 pb-3">
+                  Reached the summit solo today. The solitude allowed me to
+                  fully immerse myself in the moment and appreciate the beauty
+                  of nature without any distractions. 🏔️🌿 #SoloAdventure
+                  #NatureReflections
+                  <br />
+                  <i class="text-dark">2 hours ago</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-5 bg-light m-auto p-0 border-0 mb-3">
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <p class="card-text px-4 pb-3">
+                  Spent the day hiking off-trail, away from the crowds. Being
+                  alone with my thoughts allowed me to reconnect with myself and
+                  gain clarity amidst the serenity of the wilderness. 🌲🥾
+                  #OffTheGrid #SelfDiscovery
+                  <br />
+                  <i class="text-dark">19 hours ago</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card rounded-5 bg-light m-auto p-0 border-0 mb-3 card-w-image"
+        >
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <img
+              src="../images/post-1-cameron.jpg"
+              alt=""
+              class="card-image w-100 pb-3"
+            />
+
+            <div class="row">
+              <div class="col">
+                <p class="card-text px-4 pb-3">
+                  Discovered a hidden spot deep in the forest where I could sit
+                  and ponder life's mysteries undisturbed. Moments like these
+                  remind me of the importance of introspection and
+                  self-reflection. 💭🌳 #QuietContemplation #InnerJourney
+                  <br />
+                  <i class="text-dark">2 days ago</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-5 bg-light m-auto p-0 border-0 mb-3">
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <p class="card-text px-4 pb-3">
+                  Watched the sunset in solitude today, surrounded only by the
+                  sounds of nature. It's moments like these that remind me of
+                  the power and beauty of being alone with oneself. 🌅🌲
+                  #SunsetSolitude #NatureTherapy 3 days ago
+                  <br />
+                  <i class="text-dark">3 days ago</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card rounded-5 bg-light m-auto p-0 border-0 mb-3 card-w-image"
+        >
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <img
+              src="../images/post-2-cameron.jpg"
+              alt=""
+              class="card-image w-100 pb-3"
+            />
+
+            <div class="row">
+              <div class="col">
+                <p class="card-text px-4 pb-3">
+                  Wandered aimlessly through the woods today, allowing my
+                  thoughts to roam freely without any external influence.
+                  Finding peace in solitude is a true gift of nature. 🌿💫
+                  #MindfulWandering #SoulSearching
+                  <br />
+                  <i class="text-dark">1 week ago</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-5 bg-light m-auto p-0 border-0 mb-3">
+          <div class="card-body p-0">
+            <div class="row p-3">
+              <div class="col col-2 pe-0">
+                <img
+                  src="../images/profile-cameron.jpg"
+                  alt=""
+                  class="profile-thumbnail img-thumbnail rounded-circle p-0"
+                />
+              </div>
+              <div class="col col-auto">
+                <h3 class="card-title h4 pt-3 ps-0 text-start">
+                  Cameron Evergreen
+                </h3>
+              </div>
+              <div class="col">
+                <button class="btn visually-hidden p-3"></button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <p class="card-text px-4 pb-3">
+                  Ended the day by the lake, watching the stars reflect on the
+                  calm waters. Being alone in nature brings a sense of clarity
+                  and inner peace that's hard to find elsewhere. 🌌💙
+                  #LakeReflections #SoloRetreat
+                  <br />
+                  <i class="text-dark">1 week ago</i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <ul
+      class="navbar nav justify-content-center bg-body-tertiary m-auto fixed-bottom rounded-top-5"
+      style="max-width: 400px"
+    >
+      <li class="nav-item">
+        <a class="nav-link" href="../profile/index.html"
+          ><i class="bi bi-person-circle text-black h3"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"
+          ><i class="bi bi-search text-black h3"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="../feed/index.html"
+          ><i class="bi bi-house-heart-fill text-black h3"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"
+          ><i class="bi bi-plus-circle-fill text-black h3"></i
+        ></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"
+          ><i class="bi bi-gear-fill text-black h3"></i
+        ></a>
+      </li>
+    </ul>
+    </main>
+
+
+  </body>
+</html>

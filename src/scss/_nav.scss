@@ -1,0 +1,19 @@
+.current {
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  border-color: $primary;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.nav-item a {
+  max-width: 83px;
+}
+.nav-item:hover {
+  font-weight: bold;
+  padding:0;
+  
+ 
+}

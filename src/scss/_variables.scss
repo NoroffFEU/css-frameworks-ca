@@ -1,0 +1,37 @@
+$pink: #fff9fb;
+$red: #db1226;
+
+$primary: $red;
+$secondary: #fff;
+$info: #3854c4;
+$light: #f5f2f2;
+
+$navbar-light-icon-color: $red;
+
+$font-heading: "Poppins";
+$font-paragraph: "Open sans";
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer * 1,
+  4: $spacer * 2.5,
+  5: $spacer * 4,
+);
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 1.4;
+$h3-font-size: $font-size-base * 1.4;
+$h4-font-size: $font-size-base * 1.4;
+$h5-font-size: $font-size-base * 1.2;
+$h6-font-size: $font-size-base;
+
+$input-btn-padding-y: 0.2rem;
+$input-btn-padding-x: 0.6rem;
+$btn-border-radius: 0px;
+
+$input-border-radius: 0px;

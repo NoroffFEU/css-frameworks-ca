@@ -1,1 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Righteous&display=swap');
 
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "variables";
+@import "variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+.font-righteous {
+    font-family: "Righteous", sans-serif;
+}
+
+.font-dosis {
+    font-family: "Dosis", sans-serif;
+}

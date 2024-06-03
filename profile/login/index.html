@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- <script type="module" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script> -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <script type="module" src="../../src/js/index.mjs"></script>
+    <title>MOONLIGHT - LOGIN</title>
+</head>
+<body class="back-sm-Image3">
+    <header>
+        <!--NO HEADER-->
+    </header>
+    <main class="backImage2 margin-sm-top150 border-top border-4 border-light">
+        <div class="container-fluid mt-3 py-5 p-sm-5 text-light" style="max-width: 800px;">
+            <div class="container-fluid  text-center mt-2 mb-5 d-block d-sm-none font-righteous">
+                <h1 class="text-uppercase text-light">Moonlight</h1>
+                <p class="mb-4 mt-n2 fw-lighter text-secondary">Brings people together</p>
+            </div>    
+            <div class="row justify-content-between font-righteous">
+                <div class="col col-sm-6 d-none d-sm-block">
+                    <h2 class="text-uppercase text-light fs-10">Moonlight</h2>
+                    <p class="mb-5 mt-n2 text-secondary">Brings people together</p>
+  
+                    <div class="margin-sm-top150">
+                        <h3 class="mt-5 fs-6 text-secondary">Are you not registered?</h3>
+                        <a href="/profile/register/" class="text-decoration-underline text-uppercase text-light fs-6">Sign up here</a>
+                    </div>
+                </div>
+                <div class="col-10 col-sm-6 m-auto">
+                    <h2 class="mb-3 fs-5 text-uppercase">Sign in</h2>
+                    <form id="loginForm" action="/auth/register" method="POST">
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" name="email" placeholder="Enter a valid email" title="Please enter domains containing @(stud).noroff.no" pattern="^[\w\-.]+@(stud\.)?noroff\.no$" required autocomplete="on">
+                        </div>
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="password">Password</label>
+                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter your password" minlength="8" required autocomplete="current-password">
+                        </div>
+                        <button type="submit" class="btn btn-primary text-uppercase border my-2 px-3 fs-5">Sign in</button>
+                    </form>
+                    <div class="d-sm-none">
+                        <h3 class="mt-5 pt-5 fs-6 text-secondary">Are you not registered?</h3>
+                        <a href="/profile/register/" class="text-decoration-underline text-uppercase text-light fs-4">Sign up here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mb-2">
+        <div class="container-fluid mb-1 pb-3 d-block border-top border-4 border-light">
+            <div class="row mt-3 mb-n5">
+                <div class="col">
+                    <p class="fs-5 font-righteous text-left ms-4 text-secondary">Copyright &copy; 2024 - Moonlight</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

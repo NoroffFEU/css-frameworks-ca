@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <script type="module" src="../../src/js/index.mjs"></script>
+
+    <title>MOONLIGHT - REGISTER</title>
+</head>
+<body class="back-sm-Image3">
+    <header>
+    <!--NO HEADER-->
+    </header>
+    <main class="backImage2 margin-sm-top50 border-top border-4 border-light">
+        <div class="container-fluid mt-3 py-5 p-sm-5 text-light" style="max-width: 800px;">
+            <div class="container-fluid text-center mt-2 mb-5 d-block d-sm-none font-righteous">
+                <h1 class="text-uppercase text-light">Moonlight</h1>
+                <p class="mb-4 mt-n2 fw-lighter text-secondary">Brings people together</p>
+            </div>   
+            <div class="row justify-content-between font-righteous">
+                <div class="col col-sm-6 d-none d-sm-block">
+                    <h2 class="text-uppercase text-light fs-10">Moonlight</h2>
+                    <p class="mb-5 mt-n2 text-secondary">Brings people together</p>
+  
+                    <div class="margin-sm-top300">
+                        <h3 class="mt-5 pt-5 fs-6 text-secondary">Are you registered?</h3>
+                        <a href="/profile/login" class="text-decoration-underline text-uppercase text-light fs-6">Login now</a>
+                    </div>
+                </div>
+                <div class="col-10 col-sm-6 m-auto">
+                    <h2 class="mb-3 fs-5 text-uppercase">Create your account</h2>
+                    <form id="registerForm" action="/auth/register" method="POST">
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="name">Name</label>
+                            <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name" title="You can use uppercase, lowercase, numbers and underscore." pattern="^[\w]+$" required autocomplete="on">
+                        </div>
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" name="email" placeholder="Enter a valid email" title="Please enter domains containing @(stud).noroff.no" pattern="^[\w\-.]+@(stud\.)?noroff\.no$" required autocomplete="on">
+                        </div>
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="password">Password</label>
+                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter your password" minlength="8" required autocomplete="current-password">
+                        </div>
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="banner">Banner</label>
+                            <input class="form-control" id="banner" type="url" name="url" placeholder="Optional">
+                        </div>
+                        <div class="form-group my-2">
+                            <label class="text-uppercase text-light py-1" for="avatar">Avatar</label>
+                            <input class="form-control" id="avatar" type="url" name="avatar" placeholder="Optional">
+                        </div>
+                        <button type="submit" class="btn btn-primary text-uppercase border my-2 px-3 fs-5">Sign up</button>
+                    </form>
+                    <div class="mt-3 d-sm-none">
+                        <h3 class="mt-5 fs-6 text-secondary">Are you registered?</h3>
+                        <a href="/profile/login" class="text-decoration-underline text-uppercase text-light fs-4">Login now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mb-5 pb-2">
+        <div class="container-fluid mb-5 pb-4 d-block border-top border-4 border-light">
+            <div class="row mt-3 mb-n5">
+                <div class="col">
+                    <p class="fs-5 font-righteous text-left ms-4 text-secondary">Copyright &copy; 2024 - Moonlight</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <script type="module" src="../../src/js/index.mjs"></script>
+    <title>MOONLIGHT - POSTS</title>
+</head>
+<body>
+    <header>
+        <!--NAV FOR BOTTOM PAGE  / FIXED-->
+        <div class="container-fluid bg-dark back-sm-ImageNav border-bottom border-light border-2">
+            <div class="row">
+                <div class="col-12 col-md-3">
+                    <h1 class="text-secondary font-righteous py-3 ps-1">MOONLIGHT</h1>
+                </div>
+                <div class="d-none d-lg-flex col-9 justify-content-end float-end">
+                    <nav class="navbar d-none d-lg-flex">
+                        <div class="d-flex justify-content-end float-end m-auto text-center">
+                            <div class="d-block mx-3">     
+                                <a class="navbar-brand m-auto text-secondary active" href="/feed/posts/"><i class="bi bi-house-fill" style="font-size: 30px;"></i>
+                                <p class="mt-n1 fs-7 text-secondary active">POSTS</p></a>
+                            </div>
+                            <div class="d-block text-light mx-3">     
+                                <a class="navbar-brand m-auto text-light" href="#"><i class="bi bi-chat-heart-fill" style="font-size: 30px;"></i>
+                                <p class="mt-n1 fs-7 text-light">MESSAGE</p></a>
+                            </div>
+                            <div class="d-block text-light mx-3">     
+                                <a class="navbar-brand m-auto text-light" href="/profile/myProfile/"><i class="bi bi-person-hearts" style="font-size: 30px;"></i>
+                                <p class="mt-n1 fs-7">PROFILE</p></a>
+                            </div>
+                            <div class="d-block text-light mx-3">     
+                                <a id="logout2" class="navbar-brand m-auto text-light" href="#"><i class="bi bi-door-closed-fill" style="font-size: 30px;"></i>
+                                <p class="mt-n1 fs-7">SIGN OUT</p></a>
+                            </div>
+                        </div>
+                    </nav> 
+                </div>
+            </div>
+        </div>
+        <!--NAV FOR BOTTOM PAGE  / FIXED-->
+        <nav class="navbar d-flex d-lg-none justify-content-between align-items-center m-auto border-top border-2 border-primary fixed-bottom navbar-light bg-white" style="max-width: 1100px;">
+            <div class="container d-flex justify-content-center align-items-center text-primary h-25 m-auto" style="max-width: 600px;">
+                <a class="navbar-brand m-auto text-secondary active" href="/feed/posts/"><i class="bi bi-house-fill" style="font-size: 30px;"></i></a>
+                <a class="navbar-brand m-auto text-primary" href="#"><i class="bi bi-chat-heart-fill" style="font-size: 30px;"></i></a>
+                <div class="bg-secondary rounded-circle mt-n5 px-2 py-0 m-auto"><a class="navbar-brand m-auto text-primary px-1" href="/feed/post/create/"><i class="bi bi-plus-circle-fill" style="font-size: 2.6em;"></i></a></div>
+                <a class="navbar-brand m-auto text-primary" href="/profile/myProfile/"><i class="bi bi-person-hearts" style="font-size: 30px;"></i></a>
+                <a id="logout" class="navbar-brand m-auto text-primary" href="#"><i class="bi bi-door-closed-fill" style="font-size: 30px;"></i></a>
+            </div>
+        </nav>  
+    </header>
+    <main class="flex-grow-1 text-primary">
+        <h1 class="fs-2 m-2 p-3 text-secondary text-center fw-bolder font-righteous bg-dark">MOONLIGHT <span class="text-light">FEEDS</span> </h1>
+        <!--SEARCH & FILTER CONTAINER-->
+        <div class="container-fluid d-block justify-content-center bg-dark mt-2 ps-2 py-2 border-5 border-secondary border-top border-bottom justify-content-center">
+          <!--FILTER-->                
+            <div class="container d-block justify-content-center text-light border-bottom border-light border-2">
+                <div><h2 class="d-flex justify-content-center font-righteous fs-3 my-2 text-uppercase">Filter</h2></div>
+                <div class="mt-2 mb-3 d-flex flex-wrap fs-4 justify-content-center">
+                    <div class="form-check p-0">
+                        <input class="form-check-input" type="checkbox" role="switch" id="allFeeds" hidden checked>
+                        <label class="form-check-label border p-1 text-uppercase fs-6" for="allFeeds">All feeds</label>
+                    </div>
+                    <div class="form-check px-2">
+                        <input class="form-check-input" type="checkbox" role="switch" id="byDate" hidden>
+                        <label class="form-check-label border p-1 text-uppercase fs-6" for="byDate">Old-New</label>
+                    </div>
+                    <div class="form-check p-0">
+                        <input class="form-check-input" type="checkbox" role="switch" id="byMedia" hidden>
+                        <label class="form-check-label border p-1 text-uppercase fs-6" for="byMedia">Media</label>
+                    </div>
+                </div>
+            </div>
+            <!--SEARCH-->
+            <div class="input-group d-block">
+                <div class="d-flex justify-content-center mt-1"><h2 class="d-flex text-light font-righteous fs-3 my-2 text-uppercase">Search</h2></div>
+                <div class="container form-group d-flex m-auto justify-content-center py-2" style="max-width: 600px;">
+                    <label class="form-label d-none" for="searchForm">Search</label>
+                    <input type="search" id="searchForm" class="form-control m-auto justify-content-center" placeholder="Type a word, any word!">
+                    <!-- <button type="button" class="btn btn-secondary searchButton"><i class="bi bi-search"></i></button> -->
+                </div>                        
+            </div>
+        </div>
+        <!--LIST OF POSTS-->
+        <div class="container-fluid mt-2 border-2 border-light border-top" id="posts"></div>
+    </main>
+    <footer>
+        <div class="container-fluid mb-5 pb-4 d-block border-top border-4 border-primary">
+            <div class="row mt-3" style="margin-bottom: 90px;">
+                <div class="col">
+                    <p class="fs-5 font-righteous text-center text-dark">Copyright &copy; 2024 - Moonlight</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

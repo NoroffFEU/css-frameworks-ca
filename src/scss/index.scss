@@ -1,1 +1,111 @@
 
+@import "variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+body {
+  background: $background_color;
+  overflow-x: hidden;
+
+}
+
+// Sign in and register page
+
+
+
+#form-container {
+margin-top: 30px;
+padding: 20px;
+  max-width: 60%;
+  border: 1px solid $primary;
+  border-radius: 20px;
+  background: white;
+}
+
+#form-title {
+  margin-top: 100px;
+  text-align: center;
+}
+
+
+
+
+
+// Profile page
+
+
+
+#profile-img {
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+#title-h1 {
+  text-align: center;
+  color: $primary;
+  margin-top: 50px;
+
+}
+
+
+
+// cards for feed and profile page
+
+#card-row {
+  justify-content: center;
+  
+}
+
+
+.card {
+  width: 18rem;
+  
+}
+
+.card-img-top {
+  max-height: 150px;
+  object-fit: cover;
+}
+
+
+
+
+// feed page
+
+#search-form {
+
+  margin-left: 600px;
+}
+
+
+
+//footer
+
+#footer {
+  background: $primary;
+  height: 150px;
+  border-radius: 20px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
+#footer-icon {
+  height: 100px;
+  width: 100px;
+  
+}
+
+
+
+

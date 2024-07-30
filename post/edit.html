@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/dist/css/index.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src="../js/edit-post.mjs" type="module"></script>
+  <script type="module">
+    import { checkLoginStatus, logoutUser } from "../js/login.mjs";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!checkLoginStatus()) {
+        window.location.href = "/index.html";
+      }
+
+      const signOutButton = document.getElementById("signOutButton");
+      signOutButton.classList.remove("d-none");
+      signOutButton.addEventListener("click", logoutUser);
+    });
+  </script>
+  <title>Edit Post</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg bg-white">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-1 ms-3" href="../index.html">SLXEED</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link ms-3" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ms-3" href="/profile/">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ms-3" href="/feed/">Feed</a>
+            </li>
+          </ul>
+          <button class="btn btn-outline-danger d-none" id="signOutButton">Sign Out</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container mt-5">
+    <h1 class="text-center mt-5 mb-5">Edit Post</h1>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <form id="editPostForm">
+          <div class="mb-3">
+            <label for="editTitle" class="form-label">Title</label>
+            <input type="text" class="form-control" id="editTitle" required>
+          </div>
+          <div class="mb-3">
+            <label for="editBodyText" class="form-label">Content</label>
+            <textarea class="form-control" id="editBodyText" rows="5" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="editImage" class="form-label">Image URL (optional)</label>
+            <input type="url" class="form-control" id="editImage">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Post</button>
+        </form>
+      </div>
+    </div>
+    <div class="loader-container" style="display:none;">Loading...</div>
+  </main>
+  <footer class="py-3 my-4 mt-5">
+    <hr>
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="../index.html" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+    </ul>
+    <p class="text-center text-muted">SLXEED</p>
+    <p class="text-center text-muted">© 2024 Sigrid Lydvo</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

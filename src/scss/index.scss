@@ -1,1 +1,51 @@
+$primarycolor: white;
+$secondcolor: #191654;
+$primarytextcolor: black;
+$secondtextcolor: white;
 
+body {
+  caret-color: transparent;
+  background-color: $primarycolor;
+}
+img {
+  width: 100px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  .search-post-bar {
+    margin-top: 5rem;
+    form {
+      width: 400px;
+    }
+  }
+  .postContainer {
+    .all-posts_card-container {
+      width: 500px;
+      margin: auto;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#userAvatar {
+  width: 200px;
+  height: 200px;
+}
+#loginForm {
+  display: flex;
+  width: fit-content;
+  btn {
+    width: 100%;
+  }
+}
+.homePageContainer {
+  margin-top: 10rem;
+}
+.registerContainer form {
+  margin-top: 10rem;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

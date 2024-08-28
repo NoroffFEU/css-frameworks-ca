@@ -1,0 +1,71 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is the login page for the social media app Brag'bout."
+    />
+
+    <link type="text/css" rel="stylesheet" href="dist/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Brag'bout</title>
+  </head>
+  <body>
+    <nav class="navbar mt-5 px-3 px-lg-5 align-items-end">
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="assets/images/logo.svg" alt="Logo" />
+      </a>
+    </nav>
+
+    <!-- Log in Section -->
+    <div class="row justify-content-center mt-5 px-3">
+      <div class="col-md-6 col-lg-4">
+        <h1 class="visually-hidden">Login to Brag'bout</h1>
+        <p class="mb-4 text-center login-header">Have an account?</p>
+        <form action="/profile.html">
+          <div class="mb-4">
+            <input
+              type="email"
+              class="login-form w-100 bg-transparent rounded-5 px-3 py-2"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="position-relative mb-2">
+            <input
+              id="password-field"
+              type="password"
+              class="login-form w-100 bg-transparent rounded-5 px-3 py-2"
+              placeholder="Password"
+              minlength="8"
+              required
+            />
+            <span
+              toggle="#password-field"
+              class="fa fa-fw fa-eye toggle-password opacity-75 position-absolute top-50 translate-middle-y"
+            ></span>
+          </div>
+          <small class="d-flex justify-content-end mb-4">
+            <a href="#">Forgot Password</a>
+          </small>
+          <button
+            type="submit"
+            class="px-3 w-100 bg-gradient border-0 rounded-5 py-2"
+          >
+            Sign In
+          </button>
+        </form>
+        <p class="text-center opacity-75">
+          Don't have an account?
+          <a href="#">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="/js/password.js"></script>
+  </body>
+</html>

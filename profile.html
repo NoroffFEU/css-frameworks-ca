@@ -1,0 +1,519 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is the profile page for the social media app Brag'bout. It contains the user's profile information and brags."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link type="text/css" rel="stylesheet" href="dist/css/index.css" />
+    <title>Brag'bout</title>
+  </head>
+  <body>
+    <nav class="navbar px-3 px-lg-5 mt-md-3">
+      <a class="navbar-brand mx-auto" href="/feed.html">
+        <img src="assets/images/logo.svg" alt="Logo" class="w-auto" />
+      </a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Desktop Sidebar -->
+        <nav
+          class="col-md-3 col-lg-2 d-none d-md-flex flex-column position-fixed start-0 top-0 ms-5 sidebar"
+        >
+          <a
+            href="/feed.html"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+          >
+            <img
+              src="assets/icons/home.svg"
+              alt="Home"
+              class="bar-icon ms-2 me-3"
+            />
+            <div class="d-none d-xl-flex">Home</div>
+          </a>
+          <a
+            href="/feed.html"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+          >
+            <img
+              src="assets/icons/chat.svg"
+              alt="Chat"
+              class="bar-icon ms-2 me-3"
+            />
+            <div class="d-none d-xl-flex">Chat</div>
+          </a>
+          <a
+            href="/feed.html"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+          >
+            <img
+              src="assets/icons/groups.svg"
+              alt="Groups"
+              class="bar-icon ms-2 me-3"
+            />
+            <div class="d-none d-xl-flex">Friends & Groups</div>
+          </a>
+          <a
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#addPostModal"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+          >
+            <img
+              src="assets/icons/add-brag.svg"
+              alt="add a brag"
+              class="bar-icon ms-2 me-3"
+            />
+            <div class="d-none d-xl-flex">Add a Brag</div>
+          </a>
+          <a
+            href="#"
+            data-bs-toggle="modal"
+            data-bs-target="#searchModal"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+          >
+            <img
+              src="assets/icons/search.svg"
+              alt="Search"
+              class="bar-icon ms-2 me-3"
+            />
+            <div class="d-none d-xl-flex">Search</div>
+          </a>
+          <a
+            href="/feed.html"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+          >
+            <img
+              src="assets/icons/explore.svg"
+              alt="Search"
+              class="bar-icon ms-2 me-3"
+            />
+            <div class="d-none d-xl-flex">Explore</div>
+          </a>
+          <a
+            href="/profile.html"
+            class="mb-4 d-flex align-items-center sidebar-link flex-grow-1"
+            ><img
+              src="assets/images/user.png"
+              alt="user profile"
+              class="bar-img me-3 rounded"
+            />
+            <div class="d-none d-xl-flex">Profile</div>
+          </a>
+        </nav>
+
+        <!-- Profile Section -->
+        <div
+          class="col-md-8 col-lg-10 offset-md-3 offset-lg-2 max-w-md my-5 pb-5 px-3"
+        >
+          <div class="d-flex">
+            <div class="w-25 bg-gradient rounded-circle">
+              <img
+                src="assets/images/user.png"
+                alt="user profile"
+                class="w-100 h-100 rounded-circle p-1"
+              />
+            </div>
+            <div
+              class="d-flex flex-column justify-content-center align-items-start w-75 my-2 ps-5"
+            >
+              <h1 class="text-center fs-3xl">Charles Davis</h1>
+              <div class="d-flex justify-content-center">
+                <a class="fw-lighter">Edit Profile</a>
+                <!-- Follow button for other user profiles -->
+                <button class="px-3 py-1 rounded-3 border-0 d-none follow-btn">
+                  Follow
+                </button>
+                <!-- Comment to explain the intent -->
+                <!-- Note: In a real application, the 'Follow' button should be displayed instead of 'Edit Profile' when viewing another user's profile. -->
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <!-- Tab Navigation -->
+            <div class="d-flex justify-content-between">
+              <a
+                href="#tab1"
+                class="tab-link fw-bolder cursor-pointer px-3 py-1 rounded-2"
+                data-tab="tab1"
+                >7 brags</a
+              >
+              <a
+                href="#tab2"
+                class="tab-link fw-bolder cursor-pointer px-3 py-1 rounded-2"
+                data-tab="tab2"
+                >14 following</a
+              >
+              <a
+                href="#tab3"
+                class="tab-link fw-bolder cursor-pointer px-3 py-1 rounded-2"
+                data-tab="tab3"
+                >6 followers</a
+              >
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content mt-4">
+              <div id="tab1" class="tab-pane">
+                <script type="text/template" id="image-template">
+                  <div class="col-12 col-md-3">
+                    <a href="#">
+                    <div class="square-block border border-dark">
+                      <img src="IMAGE_SRC" alt="Brag Image" class="aspect-ratio-square w-100" />
+                    </div>
+                  </a>
+                  </div>
+                </script>
+
+                <div class="row g-1" id="image-container">
+                  <!-- Brags will be inserted here by JS -->
+                </div>
+              </div>
+
+              <!-- Here is 'following' section -->
+              <div id="tab2" class="tab-pane m-3 mt-5">
+                <!-- Following List -->
+                <div class="list-group gap-2">
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1517630800677-932d836ab680?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Jane Smith</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>John Doe</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1533636721434-0e2d61030955?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Michael Johnson</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1508184964240-ee96bb9677a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Emily Davis</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Chris Brown</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Jessica Wilson</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1523307730650-594bc63f9d67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>David Martinez</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Ashley Moore</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>James Anderson</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1578320339911-5e7974b2720a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Amy Taylor</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Daniel Thomas</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1470406852800-b97e5d92e2aa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Laura Garcia</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Matthew Lewis</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1535585105038-bf206e97d068?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Olivia Martin</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Here is 'followers' section -->
+              <div id="tab3" class="tab-pane m-3 mt-5">
+                <!-- Followers List -->
+                <div class="list-group gap-2">
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1517630800677-932d836ab680?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Jane Smith</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>John Doe</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1533636721434-0e2d61030955?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Michael Johnson</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1508184964240-ee96bb9677a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Emily Davis</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Chris Brown</span>
+                  </a>
+                  <a href="#" class="d-flex align-items-center">
+                    <img
+                      src="https://images.unsplash.com/photo-1499557354967-2b2d8910bcca?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                      alt="Profile Image"
+                      class="me-3 rounded-circle user-img"
+                    />
+                    <span>Jessica Wilson</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Modal -->
+        <div
+          class="modal fade"
+          id="searchModal"
+          tabindex="-1"
+          aria-labelledby="searchModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <form id="search-form">
+                  <div class="input-group position-relative">
+                    <input
+                      type="text"
+                      class="form-control rounded-3 pe-5 search-input"
+                      placeholder="Search brags..."
+                      aria-label="Search"
+                    />
+                    <button
+                      class="position-absolute top-50 translate-middle-y me-2 border-0 bg-transparent search-button"
+                      type="submit"
+                    >
+                      <img src="assets/icons/search.svg" alt="Search" />
+                    </button>
+                  </div>
+                </form>
+                <div class="search-res">Search results:</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add New Post Modal -->
+        <div
+          class="modal fade"
+          id="addPostModal"
+          tabindex="-1"
+          aria-labelledby="addPostModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header d-flex justify-content-between">
+                <h5 class="modal-title" id="addPostModalLabel">
+                  Add a New Brag
+                </h5>
+                <button
+                  type="button"
+                  class="close border-0 bg-transparent"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <i class="fa fa-times"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="add-post-form">
+                  <div class="mb-3">
+                    <label for="post-title" class="form-label"
+                      >Brag Title</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control search-input"
+                      placeholder="Brag title"
+                      id="post-title"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="post-image" class="form-label"
+                      >Upload Image</label
+                    >
+                    <input
+                      type="file"
+                      class="form-control search-input"
+                      id="post-image"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="post-description" class="form-label"
+                      >Description</label
+                    >
+                    <textarea
+                      class="form-control search-input"
+                      id="post-description"
+                      placeholder="Brag description"
+                      rows="2"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="px-3 border-0 py-1 rounded-2 bg-gradient"
+                  >
+                    Post
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <nav class="fixed-bottom d-md-none bg-black">
+          <hr class="m-0" />
+          <div class="p-3">
+            <div class="d-flex justify-content-between">
+              <a href="/feed.html">
+                <img src="assets/icons/home.svg" alt="Home" class="bar-icon" />
+              </a>
+              <a href="#">
+                <img src="assets/icons/chat.svg" alt="Chat" class="bar-icon" />
+              </a>
+              <a href="#">
+                <img
+                  src="assets/icons/groups.svg"
+                  alt="Groups"
+                  class="bar-icon"
+                />
+              </a>
+              <a
+                class="nav-item nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#addPostModal"
+                ><img
+                  src="assets/icons/add-brag.svg"
+                  alt="add a brag"
+                  class="bar-icon"
+              /></a>
+              <a href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <img
+                  src="assets/icons/search.svg"
+                  alt="Search"
+                  class="bar-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="assets/icons/explore.svg"
+                  alt="Search"
+                  class="bar-icon"
+                />
+              </a>
+              <a class="nav-item nav-link" href="/profile.html"
+                ><img
+                  src="assets/images/user.png"
+                  alt="user profile"
+                  class="bar-icon rounded"
+              /></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script type="module" src="js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

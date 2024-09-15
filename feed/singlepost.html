@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/css/index.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script defer type="module" src="../src/js/singlePostPage.mjs"></script>
+    <title>Noroff Social Media | Post</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand justify-content-center" href="./index.html">Noroff Social Media</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0  w-75 flex-row-reverse">
+                <li class="nav-item">
+                    <a class="nav-link p-2 mt-2 mb-2 active" id="link-to-my-profile" aria-current="page" href="/profile/index.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2 mt-2 mb-2 active" aria-current="page" href="/feed/index.html">Feed</a>
+                </li>
+            </ul>
+        </div>
+        </div>       
+      </nav>    
+    
+      <main class="d-flex flex-column justify-content-center align-items-center mt-5">
+        <div class="single-post m-5">
+            
+        </div>
+
+        <div class="edit-post-div">
+            <img id="cancel-editing" width="15" height="15" src="https://img.icons8.com/ios-filled/50/x.png" alt="x"/>
+            <form class="edit-post-form d-flex flex-column align-items-center" action="submit">
+                <label for="title">Post Title</label>
+                <input type="text" name="title" id="title">
+                <label for="body">Body text</label>
+                <textarea name="body" id="body" cols="30" rows="10"></textarea>
+                <label for="media">Media</label>
+                <input type="text" name="media" id="media">
+                <button>Save changes</button>
+            </form>
+        </div>
+
+        <div>
+            <div class="reactions">
+
+                
+            </div>
+
+                <div class="new-reactions ">
+                    <input type="checkbox" name="plus-symbol-checkbox" id="plus-symbol-checkbox">
+                    <label for="plus-symbol-checkbox">
+                        <svg class="add-reaction" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="add-reaction bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg> 
+                    </label>
+
+                <p class="all-emojis">
+                    <span class="add-emoji">&#x2764;</span>
+                    <span class="add-emoji">&#128568;</span>
+                    <span class="add-emoji">&#128170;</span>
+                    <span class="add-emoji">&#128175;</span>
+                    <span class="add-emoji">&#129305;</span>
+                </p>
+                </div>
+        </div>
+
+        <div class="add-comment">
+            <div class="row">
+                <form class="add-post-form d-flex justify-content-center align-items-center flex-column" action="">
+                    <h2 class="h3"><u>Add a comment:</u></h2>
+                    <div class="form-outline col-6">
+                        <fieldset class="add-post-fieldset">
+                            <textarea class="form-control" name="body" id="form4Example3" rows="7" placeholder="Say something clever, minimum  15 characters, max 250" minlength="15" maxlength="250" required></textarea>
+                            <label class="form-label" for="form4Example3"><span class="counter">0</span> / <span class="max-val">250</span></label>
+                        </fieldset>
+                    </div>
+                    <button type="submit" class="btn add-post-btn btn-primary btn-block mb-4" disabled>Post</button> 
+                </form>
+                <span class="error-msg"></span>
+            </div>
+        </div>
+
+        <div class="comments">
+
+        </div>
+      </main>
+
+</body>
+</html>

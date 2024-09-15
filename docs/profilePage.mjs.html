@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: profilePage.mjs</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: profilePage.mjs</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { getData } from "./components/getData.mjs";
+import { creatreProfileUser } from "./components/getActions.mjs";
+import { createPostHistory } from "./components/getActions.mjs";
+import { showFollowers } from "./components/getActions.mjs";
+import { showFollowing } from "./components/getActions.mjs";
+import { putData } from "./components/putData.mjs";
+import { submitForm } from "./components/submitForm.mjs";
+import { clearForm } from "./components/submitForm.mjs";
+
+const linkToMyProfile = document.querySelector("#link-to-my-profile");
+const myUserName = localStorage.getItem("userName");
+const profileSummaryDom = document.querySelector(".profile-user");
+const queryString = document.location.search;
+const parameter = new URLSearchParams(queryString);
+const name = parameter.get("name");
+const postHistoryDom = document.querySelector(".posts-history-here");
+const followersDom = document.querySelector(".followers");
+const followingDom = document.querySelector(".following");
+
+const token = localStorage.getItem("accessToken");
+const baseUrl = "https://api.noroff.dev/api/v1";
+let endpoint = `/social/profiles/${name}`;
+let queries = `?_following=true&amp;_followers=true&amp;_posts=true`;
+const fullUrl = `${baseUrl}${endpoint}${queries}`;
+
+linkToMyProfile.href += `?name=${myUserName}`;
+if(name === myUserName){
+    linkToMyProfile.classList.remove("active");
+    linkToMyProfile.classList.add("disabled");
+};
+
+getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+getData(fullUrl, token, postHistoryDom, createPostHistory);
+getData(fullUrl, token, followersDom, showFollowers);
+getData(fullUrl, token, followingDom, showFollowing);
+
+
+
+/**
+ * Observes a DOM element for changes
+ * If a user does not have a set avatar, this observer will replace the 
+ * broken image icon with a placeholder icon
+ */
+const profileSummaryObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(){
+        const userAvatar = document.querySelector(".profile-pic");
+            if (userAvatar.outerHTML === `&lt;img class=\"profile-pic m-3\" src=\"null\" alt=\"User icon created by Freepik\">` || userAvatar.outerHTML === `&lt;img class=\"profile-pic m-3\" src="" alt=\"User icon created by Freepik\">`) {
+                userAvatar.outerHTML = `&lt;img class="profile-pic" src="../images_and_icon/icons/user_icon.png" alt="User icon">`
+            }
+
+        const changeAvatarForm = document.querySelector(".set-avatar");
+        if (changeAvatarForm) {
+            changeAvatarForm.addEventListener("submit", (e) => {
+                e.preventDefault()
+                endpoint = `/social/profiles/${name}/media`;
+                const changeAvatarURl = `${baseUrl}${endpoint}`;
+                submitForm(changeAvatarForm, changeAvatarURl, putData);
+                clearForm(changeAvatarForm);
+                setTimeout(() => {
+                    getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+                }, 1000);
+            })
+        }
+
+        const followBtn = document.querySelector(".follow-btn");
+        if (followBtn) {
+            followBtn.addEventListener("click", (e) => {
+                endpoint = `/social/profiles/${name}/follow`;
+                const followUrl = `${baseUrl}${endpoint}`;
+                putData(followUrl, "")
+                setTimeout(() => {
+                    getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+                }, 1000);
+            });
+        }
+
+        const unfollowBtn = document.querySelector(".unfollow-btn");
+        if (unfollowBtn) {
+            unfollowBtn.addEventListener("click", (e) => {
+                endpoint = `/social/profiles/${name}/unfollow`;
+                const followUrl = `${baseUrl}${endpoint}`;
+                putData(followUrl, "")
+                setTimeout(() => {
+                    getData(fullUrl, token, profileSummaryDom, creatreProfileUser);
+                }, 1000);
+            });
+        }
+    })  
+});
+
+const profilePostsObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(){
+        const userAvatars = document.querySelectorAll(".profile-pic-tiny");
+        userAvatars.forEach((userAvatar) => {
+            if (userAvatar.outerHTML === `&lt;img class="profile-pic-tiny" src="null" alt="User icon">` || userAvatar.outerHTML === `&lt;img class="profile-pic-tiny" src="" alt="User icon">`) {
+                userAvatar.outerHTML = `&lt;img class="profile-pic-tiny" src="../images_and_icon/icons/user_icon.png" alt="User icon">`
+            }
+            })
+    })
+});
+
+const config = {attributes: true, childList: true, subtree: true};
+
+profileSummaryObserver.observe(profileSummaryDom, config);
+profilePostsObserver.observe(followersDom, config);
+profilePostsObserver.observe(followingDom, config);
+profilePostsObserver.observe(postHistoryDom, config);
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#characterCount">characterCount</a></li><li><a href="global.html#clearForm">clearForm</a></li><li><a href="global.html#commentsObserver">commentsObserver</a></li><li><a href="global.html#createComments">createComments</a></li><li><a href="global.html#createPostHistory">createPostHistory</a></li><li><a href="global.html#createReactions">createReactions</a></li><li><a href="global.html#creatreProfileUser">creatreProfileUser</a></li><li><a href="global.html#formCheck">formCheck</a></li><li><a href="global.html#getData">getData</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#makePost">makePost</a></li><li><a href="global.html#observer">observer</a></li><li><a href="global.html#postData">postData</a></li><li><a href="global.html#postObserver">postObserver</a></li><li><a href="global.html#printFeed">printFeed</a></li><li><a href="global.html#profileSummaryObserver">profileSummaryObserver</a></li><li><a href="global.html#putData">putData</a></li><li><a href="global.html#reactionObserver">reactionObserver</a></li><li><a href="global.html#searchArray">searchArray</a></li><li><a href="global.html#showFollowers">showFollowers</a></li><li><a href="global.html#showFollowing">showFollowing</a></li><li><a href="global.html#singlePostContent">singlePostContent</a></li><li><a href="global.html#sortArray">sortArray</a></li><li><a href="global.html#submitForm">submitForm</a></li><li><a href="global.html#trueChecker">trueChecker</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Dec 05 2023 14:34:48 GMT+0100 (sentraleuropeisk normaltid)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

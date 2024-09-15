@@ -1,0 +1,23 @@
+@use "../utilities/variables" as variables;
+
+nav, footer{
+    background-color: map-get($map: variables.$colors, $key: green-header-footer);
+    
+    footer{
+        min-height: 150px
+    }
+
+    .nav-link{
+        max-height: 50px;
+        border-radius: 15px;
+    }
+
+    .nav-link:hover{
+        background-color: map-get($map: variables.$colors, $key:blue-light);
+    }
+
+    .disabled{
+        color: map-get($map: variables.$colors, $key: blue-dark);
+        background-color: map-get($map: variables.$colors, $key: green-background);
+    }
+}

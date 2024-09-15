@@ -1,0 +1,8 @@
+{
+  "recurseDepth": 10,
+  "source": {
+    "includePattern": ".+\\.+mjs(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "sourceType": "module"
+}

@@ -1,2 +1,5 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+## CSS bootstrap frameworks course assignment. 
+
+Here you will find my bootstrap CA regarding a social media 

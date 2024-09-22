@@ -1,0 +1,10 @@
+.hidden {
+    width: 100%;
+    display: none;
+    background-color: white;
+    z-index: 10;
+}
+.hover-element:hover .hidden  {
+    display: block;
+    position: absolute;
+}

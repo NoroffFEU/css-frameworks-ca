@@ -1,0 +1,34 @@
+.mt-6 {
+  margin-top: 6rem !important;
+}
+
+.hidden {
+  width: 100%;
+  display: none;
+  background-color: white;
+  z-index: 10;
+}
+
+.hover-element:hover .hidden {
+  display: block;
+  position: absolute;
+}
+
+.bg-lightblue {
+  background-color: rgb(160, 203, 240);
+}
+
+.profile-icon {
+  height: 35px;
+  width: 35px;
+}
+
+.background-container {
+  background-image: url("../../images/alif-ngoylung-jg-6ARMiaPM-unsplash.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=styles.css.map */

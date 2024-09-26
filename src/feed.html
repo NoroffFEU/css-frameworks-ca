@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/public/css/main.css">
+        <title>CSS Course Assignment</title>
+    </head>
+<body>
+    <h1 class="display-4 text-center mt-4"">CSS framework CA, Social Media Page</h1>
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <div class="card postbox shadow">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </div>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-primary commentbutton" onclick="toggleComments(this)">Comment <i class="far fa-comment"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <div class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,2 +1,10 @@
 # css-frameworks-ca
-Replace this text with a description of your social media project.
+
+##### This is a simple 3 page social media site built with html and bootstrap. No functionality. 
+
+## Installation
+
+#### git clone
+#### git npm install
+#### npm start
+

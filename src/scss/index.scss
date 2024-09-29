@@ -1,1 +1,16 @@
+// ABSTRACTS
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
+// BASE
+@import "base/reset";
+@import "base/typography";
+@import "base/global";
+
+//PAGES
+@import "pages/authentication";
+@import "pages/feed";
+@import "pages/profile";
+
+// NODE_MODULES
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

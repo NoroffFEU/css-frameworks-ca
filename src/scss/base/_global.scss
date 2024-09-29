@@ -1,0 +1,20 @@
+header {
+  margin-bottom: 4rem;
+}
+
+.navbar-brand {
+  font-family: "Pacifico", cursive, sans-serif;
+}
+
+.navbar .nav-link {
+  &.active {
+    font-weight: bold;
+    color: $primary !important;
+  }
+
+  &:hover {
+    color: $primary;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

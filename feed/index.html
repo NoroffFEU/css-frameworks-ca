@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Social Media Feed</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Social Media</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/feed/index.html">Feed</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile/index.html">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3 mb-4">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="3" placeholder="What's on your mind?"
+                                        aria-label="Publish"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Publish</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <input type="search" class="form-control mb-3" placeholder="Search" aria-label="Search">
+                            <div class="btn-group w-100" role="group" aria-label="Filter posts">
+                                <button type="button" class="btn btn-outline-secondary active">Popular</button>
+                                <button type="button" class="btn btn-outline-secondary">Trending</button>
+                                <button type="button" class="btn btn-outline-secondary">New</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9">
+                    <div class="post-container">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header d-flex align-items-center">
+                                <img src="/resources/avatar.png" alt="User Avatar" class="rounded-circle me-3"
+                                    width="50" height="50">
+                                <div>
+                                    <h5 class="mb-0">User Name</h5>
+                                    <small class="text-muted">Posted on October 1, 2024</small>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel dui nec urna
+                                    interdum facilisis.</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <button class="btn btn-outline-primary btn-sm">Like</button>
+                                <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                                <button class="btn btn-outline-success btn-sm">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-container">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header d-flex align-items-center">
+                                <img src="/resources/avatar.png" alt="User Avatar" class="rounded-circle me-3"
+                                    width="50" height="50">
+                                <div>
+                                    <h5 class="mb-0">User Name</h5>
+                                    <small class="text-muted">Posted on October 1, 2024</small>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel dui nec urna
+                                    interdum facilisis.</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <button class="btn btn-outline-primary btn-sm">Like</button>
+                                <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                                <button class="btn btn-outline-success btn-sm">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-container">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header d-flex align-items-center">
+                                <img src="/resources/avatar.png" alt="User Avatar" class="rounded-circle me-3"
+                                    width="50" height="50">
+                                <div>
+                                    <h5 class="mb-0">User Name</h5>
+                                    <small class="text-muted">Posted on October 1, 2024</small>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel dui nec urna
+                                    interdum facilisis.</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <button class="btn btn-outline-primary btn-sm">Like</button>
+                                <button class="btn btn-outline-secondary btn-sm">Comment</button>
+                                <button class="btn btn-outline-success btn-sm">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

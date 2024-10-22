@@ -1,0 +1,78 @@
+.login-container {
+	text-align: center;
+}
+
+.login-box {
+	background-color: white;
+	padding: 40px;
+	border-radius: 15px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	width: 300px;
+}
+
+.login-btn {
+	background-color: #00ff00;
+	border: none;
+	color: black;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: #00cc00;
+	}
+}
+
+.login-body {
+	font-family: Arial, sans-serif;
+	background-color: #1c3a5b;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.input-group {
+	margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.register-btn {
+	background-color: #007bff;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: #0056b3;
+	}
+}
+
+.forgot-password {
+	display: block;
+	margin-top: 15px;
+	color: #007bff;
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+	text-decoration: underline;
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <title>CSS Course Assignment</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">CSS framework CA, Social Media Page</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="d-flex mb-4">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Newest</a>
+                    <a class="dropdown-item" href="#">Oldest</a>
+                    <a class="dropdown-item" href="#">Most Liked</a>
+                    <a class="dropdown-item" href="#">Least Liked</a>
+                </div>
+            </div>
+        </section>
+        <section class="d-flex align-items-center mb-4">
+            <input class="form-control mr-2" type="text" placeholder="Search">
+            <button class="btn btn-primary">Search</button>
+        </section>
+    </div>
+    <main class="container mt-4">
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+        <article class="card postbox shadow">
+            <div class="card-body">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="posttags">
+                        <span class="badge badge-primary">Tags: Cool story, Nice</span>
+                    </div>
+                    <button class="btn btn-sm btn-outline-secondary editbutton">Edit post</button>
+                </header>
+                <h2 class="card-title postpreviewheading">This is a post</h2>
+                <p class="card-text postpreviewtext">Here goes the text, maybe an image also?</p>
+                <footer class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="postdatetime">Posted: 16.08.1987</div>
+                    <div class="likecounter">Reactions: 2 likes</div>
+                </footer>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-outline-primary thumbsup" data-post-id="postId">Like <i class="far fa-thumbs-up"></i></button>
+                    <button class="btn btn-sm btn-outline-danger deletebutton">Delete <i class="far fa-trash"></i></button>
+                </div>
+                <section class="commentsection mt-3">
+                    <textarea class="form-control mb-2 commentbox" placeholder="Write a comment..."></textarea>
+                    <button class="btn btn-primary btn-sm commentpostbutton">Post Comment</button>
+                    <div class="previouscomments mt-2">
+                        <div class="comment">
+                            <strong>Geir Arne:</strong> Nice post!
+                        </div>
+                        <div class="comment">
+                            <strong>Durek:</strong> Great content!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+</body>
+</html>

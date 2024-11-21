@@ -1,1 +1,137 @@
+// Font Import
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+// Variables for colors and fonts
+$primary-color: #D94E48;
+$secondary-color: #A59BB0;
+$background-color: #FFFFFF;
+$card-background: #F7F7F7;
+$text-color: #333333;
+$font-family: 'Montserrat', sans-serif;
+
+// Global styles
+body {
+    background-color: $background-color; 
+    font-family: $font-family; 
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+// Navbar styles
+.navbar {
+    background-color: $card-background;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+// Header styles
+.auth-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: $text-color;
+    margin-bottom: 20px;
+}
+.navbar {
+    background-color: $background-color;
+    border-bottom: 2px solid $primary-color;
+    transition: background-color 0.3s ease;
+
+    &.shadow-sm {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        color: $text-color; 
+        font-weight: 500; 
+        margin-left: 15px;
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken($primary-color, 10%);
+        }
+    }
+
+    .dropdown-item {
+        color: $text-color;
+
+        &:hover {
+            background-color: $primary-color;
+            color: white;
+        }
+    }
+}
+
+// Tagline styles
+.tagline {
+    text-align: center;
+    color: $secondary-color;
+    margin-bottom: 30px;
+}
+
+// Authentication container styles
+.auth-container {
+    margin-top: 50px;
+}
+
+// Card styles
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+// Form styles
+.form-label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    border-radius: 4px;
+}
+
+// Button styles
+.btn {
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: darken($primary-color, 10%);
+}
+
+.btn-outline-secondary {
+    color: $secondary-color;
+    border: 2px solid $secondary-color;
+
+    &:hover {
+        background-color: $secondary-color;
+        color: white;
+    }
+}
+
+
+// Footer links styles
+.footer-links {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    a {
+        color: $secondary-color;
+        text-decoration: none;
+        margin: 0 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

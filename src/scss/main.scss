@@ -1,0 +1,23 @@
+$primary: #25486b;
+$secondary: #d3d3d3;
+$success: rgb(94, 153, 94);
+$danger: rgb(177, 30, 30);
+$info: rgb(0, 114, 114);
+$warning: rgb(255, 255, 0);
+$light: rgb(241, 241, 241);
+$dark: rgb(83, 83, 83);
+
+$body-bg:$light;
+$input-bg:#fff;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../scss/_fonts.scss";
+@import "../scss/_profile.scss";
+@import "../scss/_feed.scss";
+@import "../scss/_buttons.sass";
+
+
+html, body {
+  overflow-x: hidden;
+  font-family: $primary-font;
+}

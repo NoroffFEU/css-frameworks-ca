@@ -1,0 +1,29 @@
+$btn-bg-primary: #25486b
+$btn-bg-secondary: #25486b
+$btn-padding: 5px 10px
+$btn-hover-darken: 10%
+$btn-hover-transition: 0.3s
+
+$btn-font-family: "Michroma"
+
+@import "../../node_modules/bootstrap/scss/bootstrap"
+@import "_fonts.scss"
+
+
+@mixin button-style($bg-color, $hover-darken)
+    background-color: $bg-color
+    color: #fff
+    padding: $btn-padding
+    border: none
+    border-radius: 5px
+    transition: $btn-hover-transition
+    &:hover
+        background-color: darken($bg-color, $hover-darken)
+
+
+.btn-primary
+    @include button-style($btn-bg-primary, $btn-hover-darken)
+
+
+.btn-secondary
+    @include button-style($btn-bg-secondary, $btn-hover-darken)

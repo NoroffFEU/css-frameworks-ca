@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/css/main.css">
+  <title>Feed Page</title>
+</head>
+<body class="bg-secondary">
+  <header class="bg-primary text-secondary">
+    <h1 class="display-5 text-center">CSS Framework CA, Social Media Page</h1>
+</header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="profile.html">My Profile</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="feed.html">Feed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="profile.html">My Profile</a> <!-- Active link -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+  <main class="mt-5 mb-5">
+    <section class="row justify-content-center">
+      <article class="col-md-8 rounded p-4 bg-white shadow-lg profile-card">
+        <div>
+          <div>
+            <p class="fs-1 fw-bold">Will Smith</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div>
+              <h5>Followers</h5>
+              <p>99k</p>
+            </div>
+            <div>
+              <h5>Following</h5>
+              <p>1</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="media/will.jpg" alt="picture of Will Smith" class="img-fluid rounded">
+        </div>
+        <div class="mt-5 mb-5">
+          <button class="btn btn-primary">Edit Profile Picture <i class="fa-regular fa-pen-to-square"></i></button>
+        </div>
+        <div class="mb-4">
+          <img class="img-fluid rounded-circle border border-dark shadow-lg" src="media/avatar.jpg" alt="User Avatar">
+        </div>
+        <div class="mb-4">
+          <button class="btn btn-primary">Edit Avatar 
+            <i class="fa-regular fa-pen-to-square"></i></button>
+        </div>
+        <div class="text-start">
+          <p class="text-lg" > <span class="fw-bold">Name:</span> Will Smith</p>
+          <p class="text-sm-x" id="userEmail"><span class="fw-bold">Email:</span> Will@email.com</p>
+          <p class="text-sm-x" id="userAge"><span class="fw-bold">Age:</span> 16</p>
+          <p class="text-sm-x" id="userGender"><span class="fw-bold">Gender:</span> Male</p>
+          <p class="text-sm-x" id="userAbout"><span class="fw-bold">About:</span><br>Hey everyone, it’s Will. Let’s get real for a second...</p>
+        </div>
+
+        <section class="mt-4" id="mostRecent">
+          <h2 class="text-center">Most Recent Posts</h2>
+          <div class="row">
+            
+            <article class="col-md-4 mb-4">
+              <a href="post1.html" class="text-decoration-none">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Had fun at concert</h5>
+                    <p class="card-text">I watched Ed Sheeran the other day, was fun until...</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+            
+            <article class="col-md-4 mb-4">
+              <a href="post2.html" class="text-decoration-none">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Weird socks</h5>
+                    <p class="card-text">You know what they say about the socks that contain...</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+            
+            <article class="col-md-4 mb-4">
+              <a href="post3.html" class="text-decoration-none">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Oscar goes to</h5>
+                    <p class="card-text">Had fun at the Oscars the other day until...</p>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+        </section>
+        <div class="text-center">
+          <button id="followButton" class="btn btn-primary mb-4">Follow <i class="fa-solid fa-user-plus"></i></button>
+          <button id="messageButton" class="btn btn-primary mb-4">Message <i class="fa-regular fa-message"></i></button>
+        </div>
+      </article>
+    </section>
+  </main>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/00a541403c.js" crossorigin="anonymous"></script>
+</body>
+</html>

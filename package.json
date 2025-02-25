@@ -1,26 +1,36 @@
 {
   "name": "css-frameworks-ca",
   "version": "0.0.1",
-  "description": "A starting point for the CSS Frameworks CA project",
+  "description": "CA project",
   "scripts": {
-    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1"
+    "test": "echo \"We will learn more about testing in the Workflow course\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NoroffFEU/css-frameworks-ca.git"
+    "url": "https://github.com/AB30001/css-frameworks-ca"
+  },
+  "author": "Arnas Balciunas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AB30001/css-frameworks-ca"
   },
   "keywords": [
-    "CSS",
     "CSS",
     "Frameworks",
     "Bootstrap",
     "SCSS",
     "SASS"
   ],
-  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NoroffFEU/css-frameworks-ca/issues"
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3"
   },
-  "homepage": "https://github.com/NoroffFEU/css-frameworks-ca#readme"
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.74.1"
+  }
+
+
 }

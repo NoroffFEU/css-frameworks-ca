@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="/assets/favi.webp">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Profile</title>
+       
+        <link rel="stylesheet" href="/dist/css/index.css">
+       
+    </head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="/feed/index.html">TuiterApp</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/feed/index.html">Feed</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-10 col-lg-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="/assets/Profile.png" alt="Profile" class="rounded-circle mb-3" style="width: 150px; height: 150px;">
+                        <h3>John Penguin</h3>
+                        <p class="text-muted">@JohnPenguin99</p>
+                        <p>I'm a Superman on Earth. I like icecream. Favorite animal - Penguin</p>
+                        <p><i class="fas fa-globe-americas"></i> Toronto | Joined August 2012</p>
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="px-3">
+                                <strong>445</strong> Following
+                            </div>
+                            <div class="px-3">
+                                <strong>990</strong> Followers
+                            </div>
+                        </div>
+                        <!-- Posts Section -->
+                        <ul class="nav nav-tabs justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Posts</a>
+                            </li>
+                        </ul>
+                        
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                              <!-- Post 1 -->
+                              <div class="card">
+                                <div class="card-body">
+                                  <p class="card-text">Just finished a new book on JavaScript! Highly recommend to any aspiring devs out there.</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                              <!-- Post 2 -->
+                              <div class="card">
+                                <div class="card-body">
+                                  <p class="card-text">What a game last night! Proud of the team for pulling through with a win in the final minutes.</p>
+                                </div>
+                              </div>
+                              
+                            </div>
+
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-dark text-white-50 py-3">
+        <div class="container text-center">
+            <small>© 2024 TuiterApp - All Rights Reserved</small>
+        </div>
+    </footer>
+
+</body>
+</html>

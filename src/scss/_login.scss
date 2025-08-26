@@ -1,0 +1,52 @@
+body {
+  background-image: url("../../images/background3.png");
+  background-size: 1000px auto;
+}
+
+.login-h1 {
+  font-size: 6rem;
+}
+
+.login-worm-green img {
+  height: 170px;
+}
+
+.login-btn:hover {
+  background-color: var(--bs-dark);
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+#createNewAccount {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+#createNewAccount::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+#createNewAccount:hover::after {
+  width: 100%;
+}
+
+.modal-backdrop {
+  background-color: rgba(128, 128, 128, 0.6);
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+#loginForm input {
+  color: white;
+}

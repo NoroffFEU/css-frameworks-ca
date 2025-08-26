@@ -1,0 +1,19 @@
+.nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--pink);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.baloo {
+  font-family: "baloo 2", sans-serif;
+}
+
+.small-user-picture {
+  width: 40px;
+  height: 40px;
+}
+
+footer {
+  font-family: "Open Sans", sans-serif;
+}

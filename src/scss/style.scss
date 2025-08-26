@@ -1,0 +1,47 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "feed";
+@import "login";
+@import "main";
+@import "profile";
+@import "forms";
+@import "buttons";
+@import "loader";
+
+main {
+  flex: 1 0 auto;
+}
+
+#formTitle {
+  color: var(--dark);
+  z-index: 100;
+}
+
+.post-row-bottom {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 5px;
+}
+
+.post-row-top {
+  border-top: 2px solid var(--primary);
+  padding-top: 5px;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.post-image {
+  max-width: 100%;
+  max-height: 400px;
+  display: block;
+  object-fit: contain;
+}
+
+// .post-section {
+//   max-width: 400px;
+// }
+
+.sticky-footer {
+  margin-top: auto;
+}
